@@ -1,5 +1,12 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
+// Extend Window interface for our custom property
+declare global {
+  interface Window {
+    __lastDsnToken?: string;
+  }
+}
+
 interface Token {
   name: string;
   cssVar: string;
@@ -213,10 +220,23 @@ function useComputedCssValue(cssVar: string): string {
     const handleStorybookUpdate = () => triggerUpdate();
     window.addEventListener('storybook-globals-updated', handleStorybookUpdate);
 
+    // Poll for changes as fallback (useful for docs-only pages where decorator doesn't run)
+    const pollInterval = setInterval(() => {
+      // Check if data-dsn-tokens attribute changed
+      const currentToken = document
+        .querySelector('[data-dsn-tokens]')
+        ?.getAttribute('data-dsn-tokens');
+      if (currentToken && currentToken !== window.__lastDsnToken) {
+        window.__lastDsnToken = currentToken;
+        triggerUpdate();
+      }
+    }, 500);
+
     return () => {
       headObserver.disconnect();
       bodyObserver.disconnect();
       htmlObserver.disconnect();
+      clearInterval(pollInterval);
       window.removeEventListener(
         'storybook-globals-updated',
         handleStorybookUpdate
