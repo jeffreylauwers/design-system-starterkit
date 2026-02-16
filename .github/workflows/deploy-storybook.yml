@@ -36,8 +36,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build Storybook
-        run: pnpm run build
+      - name: Build design tokens
+        run: pnpm build:tokens
+
+      - name: Build core package
+        run: pnpm --filter @dsn/core build
+
+      - name: Build components
+        run: pnpm build:components
+
+      - name: Build Storybook for GitHub Pages
+        run: pnpm --filter @dsn/storybook run build:gh-pages
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
