@@ -41,14 +41,11 @@ jobs:
       - name: Format check
         run: pnpm format:check
 
-      - name: Build tokens & core
-        run: pnpm build:tokens && pnpm --filter @dsn/core build
+      - name: Build all packages
+        run: pnpm build
 
       - name: Type check
         run: pnpm type-check
 
       - name: Test
         run: pnpm test
-
-      - name: Build all packages
-        run: pnpm build
