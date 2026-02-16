@@ -30,6 +30,7 @@
   "author": "Jeffrey Lauwers",
   "license": "MIT",
   "dependencies": {
+    "@dsn/components-html": "workspace:*",
     "@dsn/design-tokens": "workspace:*"
   },
   "devDependencies": {
