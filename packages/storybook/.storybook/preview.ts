@@ -14,7 +14,8 @@ import './preview-body.css';
 
 // Map of all available configurations
 // We'll dynamically fetch and apply these when globals change
-const CONFIG_BASE_URL = '/design-tokens/dist/css';
+// Use relative path to support both local and GitHub Pages deployment
+const CONFIG_BASE_URL = './design-tokens/dist/css';
 
 /**
  * Loads a CSS configuration file and applies it to the document.
@@ -45,9 +46,11 @@ async function loadTokenConfig(configName: string): Promise<void> {
     document.head.appendChild(style);
 
     // Dispatch event for components that need to react
-    window.dispatchEvent(new CustomEvent('storybook-globals-updated', {
-      detail: { configName }
-    }));
+    window.dispatchEvent(
+      new CustomEvent('storybook-globals-updated', {
+        detail: { configName },
+      })
+    );
   } catch (error) {
     console.error('Error loading token config:', error);
   }
@@ -110,7 +113,11 @@ const preview: Preview = {
         icon: 'listunordered',
         items: [
           { value: 'default', title: 'Default (Fluid)', icon: 'expand' },
-          { value: 'information-dense', title: 'Information Dense (Fixed)', icon: 'collapse' },
+          {
+            value: 'information-dense',
+            title: 'Information Dense (Fixed)',
+            icon: 'collapse',
+          },
         ],
         dynamicTitle: true,
       },
@@ -128,14 +135,17 @@ const preview: Preview = {
       // Load the appropriate token configuration
       if (typeof window !== 'undefined') {
         // Check if we need to load a new config
-        const currentConfig = document.querySelector('[data-dsn-tokens]')?.getAttribute('data-dsn-tokens');
+        const currentConfig = document
+          .querySelector('[data-dsn-tokens]')
+          ?.getAttribute('data-dsn-tokens');
 
         if (currentConfig !== configName) {
           loadTokenConfig(configName);
         }
 
         // Update body classes for any CSS scoping
-        const densityClass = projectType === 'information-dense' ? 'dense' : 'default';
+        const densityClass =
+          projectType === 'information-dense' ? 'dense' : 'default';
         document.body.className = `dsn-theme-${theme} dsn-mode-${mode} dsn-density-${densityClass}`;
       }
 
