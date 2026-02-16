@@ -221,13 +221,26 @@ function useComputedCssValue(cssVar: string): string {
     window.addEventListener('storybook-globals-updated', handleStorybookUpdate);
 
     // Poll for changes as fallback (useful for docs-only pages where decorator doesn't run)
+    // Check both the data attribute AND the actual CSS value to catch all changes
     const pollInterval = setInterval(() => {
-      // Check if data-dsn-tokens attribute changed
+      // Method 1: Check if data-dsn-tokens attribute changed
       const currentToken = document
         .querySelector('[data-dsn-tokens]')
         ?.getAttribute('data-dsn-tokens');
       if (currentToken && currentToken !== window.__lastDsnToken) {
         window.__lastDsnToken = currentToken;
+        triggerUpdate();
+        return;
+      }
+
+      // Method 2: Poll the actual CSS value to detect changes
+      // This catches cases where tokens load but data attribute isn't set yet
+      const currentValue = getComputedStyle(document.documentElement)
+        .getPropertyValue(cssVar)
+        .trim();
+
+      if (currentValue && currentValue !== window.__lastDsnToken) {
+        window.__lastDsnToken = currentValue;
         triggerUpdate();
       }
     }, 500);
