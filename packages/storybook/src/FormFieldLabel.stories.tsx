@@ -33,9 +33,18 @@ export const AllStates: Story = {
       </div>
 
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With "(niet verplicht)" suffix</h3>
-        <p style={{ fontSize: '0.875rem', color: '#666', marginBlockEnd: '1rem' }}>
-          Gebruik dit wanneer de meeste velden verplicht zijn en je de enkele optionele velden wilt markeren.
+        <h3 style={{ marginBlockEnd: '1rem' }}>
+          With &ldquo;(niet verplicht)&rdquo; suffix
+        </h3>
+        <p
+          style={{
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBlockEnd: '1rem',
+          }}
+        >
+          Gebruik dit wanneer de meeste velden verplicht zijn en je de enkele
+          optionele velden wilt markeren.
         </p>
         <FormFieldLabel htmlFor="middlename" suffix="(niet verplicht)">
           Tussenvoegsel
@@ -43,9 +52,18 @@ export const AllStates: Story = {
       </div>
 
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With "(verplicht)" suffix</h3>
-        <p style={{ fontSize: '0.875rem', color: '#666', marginBlockEnd: '1rem' }}>
-          Gebruik dit wanneer de meeste velden optioneel zijn en je de verplichte velden wilt markeren.
+        <h3 style={{ marginBlockEnd: '1rem' }}>
+          With &ldquo;(verplicht)&rdquo; suffix
+        </h3>
+        <p
+          style={{
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBlockEnd: '1rem',
+          }}
+        >
+          Gebruik dit wanneer de meeste velden optioneel zijn en je de
+          verplichte velden wilt markeren.
         </p>
         <FormFieldLabel htmlFor="email" suffix="(verplicht)">
           E-mailadres
@@ -53,7 +71,9 @@ export const AllStates: Story = {
       </div>
 
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Examples with different content</h3>
+        <h3 style={{ marginBlockEnd: '1rem' }}>
+          Examples with different content
+        </h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <FormFieldLabel htmlFor="firstname">Voornaam</FormFieldLabel>
           <FormFieldLabel htmlFor="lastname">Achternaam</FormFieldLabel>
@@ -71,7 +91,8 @@ export const AllStates: Story = {
         <h3 style={{ marginBlockEnd: '1rem' }}>Long label text</h3>
         <div style={{ maxWidth: '400px' }}>
           <FormFieldLabel htmlFor="long" suffix="(niet verplicht)">
-            Dit is een langere label tekst die demonstreert hoe het label en de suffix zich gedragen wanneer de tekst over meerdere regels loopt
+            Dit is een langere label tekst die demonstreert hoe het label en de
+            suffix zich gedragen wanneer de tekst over meerdere regels loopt
           </FormFieldLabel>
         </div>
       </div>

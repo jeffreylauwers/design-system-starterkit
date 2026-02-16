@@ -71,18 +71,24 @@ const meta: Meta<typeof Link> = {
     iconStart: {
       control: 'select',
       options: iconOptions,
-      mapping: iconOptions.reduce((acc, icon) => {
-        acc[icon ?? 'undefined'] = icon ? <Icon name={icon} /> : undefined;
-        return acc;
-      }, {} as Record<string, React.ReactNode>),
+      mapping: iconOptions.reduce(
+        (acc, icon) => {
+          acc[icon ?? 'undefined'] = icon ? <Icon name={icon} /> : undefined;
+          return acc;
+        },
+        {} as Record<string, React.ReactNode>
+      ),
     },
     iconEnd: {
       control: 'select',
       options: iconOptions,
-      mapping: iconOptions.reduce((acc, icon) => {
-        acc[icon ?? 'undefined'] = icon ? <Icon name={icon} /> : undefined;
-        return acc;
-      }, {} as Record<string, React.ReactNode>),
+      mapping: iconOptions.reduce(
+        (acc, icon) => {
+          acc[icon ?? 'undefined'] = icon ? <Icon name={icon} /> : undefined;
+          return acc;
+        },
+        {} as Record<string, React.ReactNode>
+      ),
     },
   },
   args: {
@@ -129,7 +135,9 @@ export const AllStates: Story = {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Default states</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <div
+          style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}
+        >
           <Link href="#">Normal link (hover to see effect)</Link>
           <Link href="#" current>
             Current page link
@@ -145,21 +153,34 @@ export const AllStates: Story = {
         <Link href="https://example.com" external>
           External site
         </Link>
-        <p style={{ fontSize: '0.875rem', color: '#666', marginBlockStart: '0.5rem' }}>
-          Automatically adds target="_blank" and "(opens in new tab)" text
+        <p
+          style={{
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBlockStart: '0.5rem',
+          }}
+        >
+          Automatically adds target=&ldquo;_blank&rdquo; and &ldquo;(opens in
+          new tab)&rdquo; text
         </p>
       </div>
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>With icons</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <div
+          style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}
+        >
           <Link href="#" iconStart={<Icon name="download" />}>
             Download file
           </Link>
           <Link href="#" iconEnd={<Icon name="arrow-right" />}>
             Next page
           </Link>
-          <Link href="#" iconStart={<Icon name="external-link" />} iconEnd={<Icon name="arrow-right" />}>
+          <Link
+            href="#"
+            iconStart={<Icon name="external-link" />}
+            iconEnd={<Icon name="arrow-right" />}
+          >
             With both icons
           </Link>
         </div>
@@ -167,7 +188,9 @@ export const AllStates: Story = {
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Icon sizes per link size</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <div
+          style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}
+        >
           <Link href="#" size="small" iconStart={<Icon name="check" />}>
             Small link with icon
           </Link>
