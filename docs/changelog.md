@@ -6,6 +6,51 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 4.2.0 (February 16, 2025)
+
+### GitHub Pages Deployment & Storybook Improvements
+
+**GitHub Pages Setup**
+
+- **Automated Storybook deployment** — GitHub Actions workflow deploys Storybook to GitHub Pages on every push to main
+- **Live Storybook URL** — [https://jeffreylauwers.github.io/design-system-starterkit/](https://jeffreylauwers.github.io/design-system-starterkit/)
+- **Base path configuration** — Vite base path configured via `STORYBOOK_BASE_PATH` environment variable
+- **Relative asset paths** — Design tokens use relative paths (`./design-tokens/dist/css`) for GitHub Pages compatibility
+
+**Introduction Page**
+
+- **Welcome page added** — Comprehensive introduction page as Storybook landing page
+- **Navigation ordering** — Introduction appears first in sidebar, before Foundations and Components
+- **Design tokens preload** — Default tokens (start-light-default) loaded immediately on Storybook start
+- **Quick start guide** — Installation instructions, usage examples, component overview included
+
+**Form Field Container Components**
+
+- **FormFieldLegend component** — Legend element component for fieldset/legend structure, reuses FormFieldLabel CSS
+- **FormFieldset component** — Container component for group controls (checkbox groups, radio groups)
+- **FormField invalid state** — Red left border when error prop is present
+- **Design tokens for invalid state** — form-field.json extended with invalid border styling
+
+**FormFieldStatus Enhancements**
+
+- **Three-variant system** — default (subtle info), positive (success with check icon), warning (caution with alert-triangle icon)
+- **Icon support** — Conditional icons for positive and warning variants
+- **showIcon prop** — Allows disabling icons on positive/warning variants
+
+**Bug Fixes & Improvements**
+
+- **ESLint errors fixed** — Unescaped quotes in JSX replaced with HTML entities (&ldquo;/&rdquo;/&rsquo;)
+- **Prettier formatting** — All 81 files formatted consistently
+- **TypeScript exports** — FormFieldStatusVariant type properly exported
+- **Component index files** — Added missing index.ts for FormFieldLegend and FormFieldset
+
+**Component Count**
+
+- **21 form components** — FormFieldLegend and FormFieldset added to form component collection
+- **25 total components** — 7 content components + 18 form components (Priority 1-4 complete)
+
+---
+
 ## Version 4.1.0 (February 14, 2026)
 
 ### Build Pipeline & Module System Improvements

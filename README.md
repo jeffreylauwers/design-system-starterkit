@@ -174,7 +174,7 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 | **Paragraph**     | Yes      | Yes   | Yes           |
 | **UnorderedList** | Yes      | Yes   | Yes           |
 
-**Form Components (19 total)**
+**Form Components (21 total)**
 
 | Component                 | HTML/CSS | React | Web Component |
 | ------------------------- | -------- | ----- | ------------- |
@@ -186,8 +186,11 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 | **FormFieldDescription**  | Yes      | Yes   | —             |
 | **FormFieldErrorMessage** | Yes      | Yes   | —             |
 | **FormFieldLabel**        | Yes      | Yes   | —             |
+| **FormFieldLegend**       | Yes      | Yes   | —             |
+| **FormFieldset**          | Yes      | Yes   | —             |
 | **FormFieldStatus**       | Yes      | Yes   | —             |
 | **NumberInput**           | Yes      | Yes   | —             |
+| **OptionLabel**           | Yes      | Yes   | —             |
 | **PasswordInput**         | Yes      | Yes   | —             |
 | **Radio**                 | Yes      | Yes   | —             |
 | **RadioGroup**            | Yes      | Yes   | —             |
@@ -345,6 +348,7 @@ MIT - Jeffrey Lauwers
 ## Links
 
 - [Repository](https://github.com/jeffreylauwers/design-system-starter-kit)
+- [Live Storybook](https://jeffreylauwers.github.io/design-system-starterkit/)
 - [Documentation](./docs/)
 
 ---
