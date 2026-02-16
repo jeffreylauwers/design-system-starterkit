@@ -38,10 +38,14 @@ const config: StorybookConfig = {
       plugins: [svgr()],
       resolve: {
         alias: {
-          '@dsn/components-react': path.resolve(__dirname, '../../components-react/src'),
+          '@dsn/components-react': path.resolve(
+            __dirname,
+            '../../components-react/src'
+          ),
           '@dsn/core': path.resolve(__dirname, '../../core/src'),
         },
       },
+      base: process.env.STORYBOOK_BASE_PATH || '/',
     });
   },
 };
