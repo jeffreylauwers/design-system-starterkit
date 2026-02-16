@@ -1,0 +1,122 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction" />
+
+# Design System Starter Kit
+
+Welkom bij de Design System Starter Kit - een moderne, schaalbare en toegankelijke design system implementatie.
+
+## 🎨 Wat is dit?
+
+Dit design system biedt een complete set van herbruikbare componenten, design tokens en richtlijnen voor het bouwen van consistente gebruikersinterfaces. Het systeem ondersteunt:
+
+- **Meerdere thema's** - Start theme en Wireframe theme
+- **Dark mode** - Volledige ondersteuning voor light en dark mode
+- **Typography densiteit** - Default (fluid) en Information Dense (fixed) opties
+- **Toegankelijkheid** - WCAG-compliant componenten
+- **Framework flexibiliteit** - React, Web Components en vanilla HTML/CSS
+
+## 📦 Beschikbare packages
+
+Het design system bestaat uit meerdere packages:
+
+- **@dsn/design-tokens** - Design tokens voor kleuren, typografie, spacing en meer
+- **@dsn/core** - Core utilities, reset styles en helper functies
+- **@dsn/components-html** - Pure HTML/CSS componenten
+- **@dsn/components-react** - React wrapper componenten
+- **@dsn/components-web** - Web Components (native custom elements)
+
+## 🚀 Aan de slag
+
+### Installatie
+
+```bash
+# Clone de repository
+git clone https://github.com/jeffreylauwers/design-system-starterkit.git
+
+# Installeer dependencies
+pnpm install
+
+# Start Storybook lokaal
+pnpm run dev
+```
+
+### Basis gebruik
+
+```tsx
+import { Button, Icon } from '@dsn/components-react';
+
+function App() {
+  return (
+    <Button variant="primary" iconEnd="arrow-right">
+      Ga verder
+    </Button>
+  );
+}
+```
+
+## 🎯 Componenten overzicht
+
+### Content Components
+Basis tekstuele componenten voor content structuur.
+- **Icon** - SVG iconen systeem met 45 iconen
+- **Heading** - H1 t/m H6 met semantische hiërarchie
+- **Paragraph** - Body text met lead, default en small-print varianten
+- **Link** - Hyperlinks met icon ondersteuning en externe link handling
+- **Lists** - Ordered en unordered lists
+
+### Form Components
+Complete set van form elementen met validation ondersteuning.
+- **Inputs** - Text, Email, Password, Number, Telephone, Search, Time, TextArea
+- **Options** - Checkbox, Radio, met group containers
+- **Form Fields** - Labels, descriptions, error messages, status indicators
+- **Form Containers** - FormField en FormFieldset voor semantische structuur
+
+## 🎨 Design Tokens
+
+Alle visuele eigenschappen worden gedefinieerd via design tokens. Bekijk de **Foundations / Design Tokens** pagina voor een volledig overzicht van beschikbare tokens.
+
+Tokens zijn beschikbaar als:
+- CSS custom properties
+- SCSS variabelen
+- JavaScript/TypeScript objecten
+- JSON bestanden
+
+## 🌓 Thema's en modes
+
+Gebruik de toolbar bovenaan om te wisselen tussen:
+- **Theme** - Start (default branding) of Wireframe (minimaal)
+- **Mode** - Light of Dark mode
+- **Density** - Default (fluid scaling) of Information Dense (fixed sizes)
+
+## 📚 Bronnen
+
+- [GitHub Repository](https://github.com/jeffreylauwers/design-system-starterkit)
+- [Storybook (live)](https://jeffreylauwers.github.io/design-system-starterkit/)
+- Documentatie per component - Zie de individuele component pagina's
+
+## 🔧 Development
+
+```bash
+# Build alle packages
+pnpm build
+
+# Run tests
+pnpm test
+
+# Lint code
+pnpm lint
+
+# Format code
+pnpm format
+```
+
+## 📄 Licentie
+
+MIT License - zie LICENSE bestand voor details.
+
+---
+
+**Versie:** 0.1.0
+**Laatste update:** Februari 2025
+**Auteur:** Jeffrey Lauwers

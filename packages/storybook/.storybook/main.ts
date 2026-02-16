@@ -6,6 +6,7 @@ import { configureSort } from 'storybook-multilevel-sort';
 
 configureSort({
   storyOrder: {
+    introduction: null,
     foundations: null,
     components: {
       '*': { docs: null },

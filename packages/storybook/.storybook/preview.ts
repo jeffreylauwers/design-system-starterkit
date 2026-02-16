@@ -60,6 +60,12 @@ async function loadTokenConfig(configName: string): Promise<void> {
 // GLOBAL TYPES (Storybook Toolbar)
 // =============================================================================
 
+// Preload default tokens immediately when Storybook loads
+// This ensures tokens are available even on docs-only pages (like Introduction)
+if (typeof window !== 'undefined') {
+  loadTokenConfig('start-light-default');
+}
+
 const preview: Preview = {
   parameters: {
     backgrounds: { disable: true },
