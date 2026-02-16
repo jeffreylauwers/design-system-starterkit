@@ -3,7 +3,10 @@ import { classNames } from '@dsn/core';
 import { Icon } from '../Icon';
 import './Checkbox.css';
 
-export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export interface CheckboxProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  'type'
+> {
   /**
    * Whether the checkbox is in an invalid state
    */

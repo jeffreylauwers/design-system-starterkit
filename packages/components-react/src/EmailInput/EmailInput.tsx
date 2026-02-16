@@ -2,7 +2,10 @@ import React from 'react';
 import { classNames, FormControlWidth } from '@dsn/core';
 import '../TextInput/TextInput.css';
 
-export interface EmailInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export interface EmailInputProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  'type'
+> {
   /**
    * Whether the input is in an invalid state
    * @default false

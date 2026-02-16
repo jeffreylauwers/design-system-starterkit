@@ -36,16 +36,17 @@ export interface CheckboxGroupProps extends React.HTMLAttributes<HTMLDivElement>
  * </FormFieldset>
  * ```
  */
-export const CheckboxGroup = React.forwardRef<HTMLDivElement, CheckboxGroupProps>(
-  ({ className, children, ...props }, ref) => {
-    const classes = classNames('dsn-checkbox-group', className);
+export const CheckboxGroup = React.forwardRef<
+  HTMLDivElement,
+  CheckboxGroupProps
+>(({ className, children, ...props }, ref) => {
+  const classes = classNames('dsn-checkbox-group', className);
 
-    return (
-      <div ref={ref} className={classes} {...props}>
-        {children}
-      </div>
-    );
-  }
-);
+  return (
+    <div ref={ref} className={classes} {...props}>
+      {children}
+    </div>
+  );
+});
 
 CheckboxGroup.displayName = 'CheckboxGroup';

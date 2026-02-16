@@ -92,7 +92,10 @@ export interface FormFieldsetProps {
  * </FormFieldset>
  * ```
  */
-export const FormFieldset = React.forwardRef<HTMLFieldSetElement, FormFieldsetProps>(
+export const FormFieldset = React.forwardRef<
+  HTMLFieldSetElement,
+  FormFieldsetProps
+>(
   (
     {
       legend,
@@ -106,26 +109,28 @@ export const FormFieldset = React.forwardRef<HTMLFieldSetElement, FormFieldsetPr
     },
     ref
   ) => {
-    const containerClasses = classNames('dsn-form-field', {
-      'dsn-form-field--invalid': !!error,
-    }, className);
+    const containerClasses = classNames(
+      'dsn-form-field',
+      {
+        'dsn-form-field--invalid': !!error,
+      },
+      className
+    );
 
     return (
       <fieldset ref={ref} className={containerClasses}>
-        <FormFieldLegend suffix={legendSuffix}>
-          {legend}
-        </FormFieldLegend>
+        <FormFieldLegend suffix={legendSuffix}>{legend}</FormFieldLegend>
 
-        {description && <FormFieldDescription>{description}</FormFieldDescription>}
+        {description && (
+          <FormFieldDescription>{description}</FormFieldDescription>
+        )}
 
         {error && <FormFieldErrorMessage>{error}</FormFieldErrorMessage>}
 
         {children}
 
         {status && (
-          <FormFieldStatus variant={statusVariant}>
-            {status}
-          </FormFieldStatus>
+          <FormFieldStatus variant={statusVariant}>{status}</FormFieldStatus>
         )}
       </fieldset>
     );

@@ -46,17 +46,21 @@ export const Examples: Story = {
         <h3 style={{ marginBlockEnd: '1rem' }}>List with longer content</h3>
         <OrderedList>
           <li>
-            First step with a longer description that spans multiple lines to demonstrate how the list handles text wrapping and line height.
+            First step with a longer description that spans multiple lines to
+            demonstrate how the list handles text wrapping and line height.
           </li>
           <li>
-            Second step also has extended text to show consistent spacing and alignment across items of varying lengths.
+            Second step also has extended text to show consistent spacing and
+            alignment across items of varying lengths.
           </li>
           <li>Third step with shorter text</li>
         </OrderedList>
       </div>
 
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Starting from a specific number</h3>
+        <h3 style={{ marginBlockEnd: '1rem' }}>
+          Starting from a specific number
+        </h3>
         <OrderedList start={5}>
           <li>Fifth step (starts at 5)</li>
           <li>Sixth step</li>

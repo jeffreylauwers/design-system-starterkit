@@ -28,14 +28,16 @@ export const AllStates: Story = {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Short description</h3>
-        <FormFieldDescription>Vul hier uw volledige naam in.</FormFieldDescription>
+        <FormFieldDescription>
+          Vul hier uw volledige naam in.
+        </FormFieldDescription>
       </div>
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Medium description</h3>
         <FormFieldDescription>
-          We gebruiken uw e-mailadres alleen voor accountgerelateerde berichten. U ontvangt geen marketing
-          e-mails.
+          We gebruiken uw e-mailadres alleen voor accountgerelateerde berichten.
+          U ontvangt geen marketing e-mails.
         </FormFieldDescription>
       </div>
 
@@ -43,8 +45,9 @@ export const AllStates: Story = {
         <h3 style={{ marginBlockEnd: '1rem' }}>Long description</h3>
         <div style={{ maxWidth: '500px' }}>
           <FormFieldDescription>
-            Vul hier uw telefoonnummer in inclusief landcode. Dit nummer wordt gebruikt voor verificatie en
-            belangrijke mededelingen over uw account. We delen uw telefoonnummer nooit met derden zonder uw
+            Vul hier uw telefoonnummer in inclusief landcode. Dit nummer wordt
+            gebruikt voor verificatie en belangrijke mededelingen over uw
+            account. We delen uw telefoonnummer nooit met derden zonder uw
             toestemming.
           </FormFieldDescription>
         </div>
@@ -53,16 +56,22 @@ export const AllStates: Story = {
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>With ID for aria-describedby</h3>
         <FormFieldDescription id="password-description">
-          Uw wachtwoord moet minimaal 8 tekens lang zijn en een combinatie bevatten van letters, cijfers en
-          speciale tekens.
+          Uw wachtwoord moet minimaal 8 tekens lang zijn en een combinatie
+          bevatten van letters, cijfers en speciale tekens.
         </FormFieldDescription>
       </div>
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Multiple examples</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          <FormFieldDescription>Alleen letters en cijfers zijn toegestaan.</FormFieldDescription>
-          <FormFieldDescription>Selecteer minimaal één optie.</FormFieldDescription>
+        <div
+          style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
+        >
+          <FormFieldDescription>
+            Alleen letters en cijfers zijn toegestaan.
+          </FormFieldDescription>
+          <FormFieldDescription>
+            Selecteer minimaal één optie.
+          </FormFieldDescription>
           <FormFieldDescription>
             Dit veld is optioneel maar helpt ons om uw ervaring te verbeteren.
           </FormFieldDescription>

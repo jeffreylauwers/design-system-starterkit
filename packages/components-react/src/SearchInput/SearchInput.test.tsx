@@ -6,7 +6,9 @@ import { SearchInput } from './SearchInput';
 describe('SearchInput', () => {
   it('renders a wrapper div', () => {
     const { container } = render(<SearchInput data-testid="input" />);
-    expect(container.querySelector('.dsn-search-input-wrapper')).toBeInTheDocument();
+    expect(
+      container.querySelector('.dsn-search-input-wrapper')
+    ).toBeInTheDocument();
   });
 
   it('renders an input element inside wrapper', () => {
@@ -57,14 +59,22 @@ describe('SearchInput', () => {
   });
 
   it('spreads additional HTML attributes to input', () => {
-    render(<SearchInput id="search" placeholder="Search..." data-testid="input" />);
+    render(
+      <SearchInput id="search" placeholder="Search..." data-testid="input" />
+    );
     const el = screen.getByTestId('input');
     expect(el).toHaveAttribute('id', 'search');
     expect(el).toHaveAttribute('placeholder', 'Search...');
   });
 
   it('accepts value prop', () => {
-    render(<SearchInput value="search query" onChange={() => {}} data-testid="input" />);
+    render(
+      <SearchInput
+        value="search query"
+        onChange={() => {}}
+        data-testid="input"
+      />
+    );
     expect(screen.getByTestId('input')).toHaveValue('search query');
   });
 
@@ -86,7 +96,10 @@ describe('SearchInput', () => {
   describe('invalid state', () => {
     it('sets aria-invalid when invalid prop is true', () => {
       render(<SearchInput invalid data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-invalid', 'true');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-invalid',
+        'true'
+      );
     });
 
     it('does not set aria-invalid when invalid prop is false', () => {
@@ -128,12 +141,18 @@ describe('SearchInput', () => {
   describe('accessibility', () => {
     it('can have aria-describedby', () => {
       render(<SearchInput aria-describedby="help-text" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-describedby', 'help-text');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-describedby',
+        'help-text'
+      );
     });
 
     it('can have aria-labelledby', () => {
       render(<SearchInput aria-labelledby="label-id" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-labelledby', 'label-id');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-labelledby',
+        'label-id'
+      );
     });
   });
 });

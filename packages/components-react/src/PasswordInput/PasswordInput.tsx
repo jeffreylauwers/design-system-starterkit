@@ -4,7 +4,10 @@ import './PasswordInput.css';
 
 export type PasswordAutocomplete = 'current-password' | 'new-password' | 'off';
 
-export interface PasswordInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export interface PasswordInputProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  'type'
+> {
   /**
    * Autocomplete value for password managers
    * @default 'current-password'
@@ -49,8 +52,21 @@ export interface PasswordInputProps extends Omit<React.InputHTMLAttributes<HTMLI
  * <PasswordInput invalid aria-invalid="true" aria-describedby="error" />
  * ```
  */
-export const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
-  ({ passwordAutocomplete = 'current-password', className, invalid, width, autoComplete, ...props }, ref) => {
+export const PasswordInput = React.forwardRef<
+  HTMLInputElement,
+  PasswordInputProps
+>(
+  (
+    {
+      passwordAutocomplete = 'current-password',
+      className,
+      invalid,
+      width,
+      autoComplete,
+      ...props
+    },
+    ref
+  ) => {
     const classes = classNames(
       'dsn-text-input',
       'dsn-password-input',

@@ -113,7 +113,9 @@ describe('DsnButton', () => {
     it('applies default classes', () => {
       const el = createElement();
       const btn = getInternalButton(el);
-      expect(btn.className).toBe('dsn-button dsn-button--strong dsn-button--size-default');
+      expect(btn.className).toBe(
+        'dsn-button dsn-button--strong dsn-button--size-default'
+      );
     });
 
     it('applies variant class from attribute', () => {

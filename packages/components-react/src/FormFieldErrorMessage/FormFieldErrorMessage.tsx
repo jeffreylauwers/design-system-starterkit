@@ -42,17 +42,18 @@ export interface FormFieldErrorMessageProps extends React.HTMLAttributes<HTMLPar
  * </FormFieldErrorMessage>
  * ```
  */
-export const FormFieldErrorMessage = React.forwardRef<HTMLParagraphElement, FormFieldErrorMessageProps>(
-  ({ showIcon = true, className, children, ...props }, ref) => {
-    const classes = classNames('dsn-form-field-error-message', className);
+export const FormFieldErrorMessage = React.forwardRef<
+  HTMLParagraphElement,
+  FormFieldErrorMessageProps
+>(({ showIcon = true, className, children, ...props }, ref) => {
+  const classes = classNames('dsn-form-field-error-message', className);
 
-    return (
-      <p ref={ref} className={classes} {...props}>
-        {showIcon && <Icon name="exclamation-circle" aria-hidden />}
-        {children}
-      </p>
-    );
-  }
-);
+  return (
+    <p ref={ref} className={classes} {...props}>
+      {showIcon && <Icon name="exclamation-circle" aria-hidden />}
+      {children}
+    </p>
+  );
+});
 
 FormFieldErrorMessage.displayName = 'FormFieldErrorMessage';

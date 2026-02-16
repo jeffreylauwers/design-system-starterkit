@@ -34,8 +34,14 @@ function buildComponentCss(shadowCssPath, outputPath, varName) {
 }
 
 function buildIconPaths() {
-  const iconsDir = path.resolve(__dirname, '../../components-html/assets/icons');
-  const outputPath = path.resolve(__dirname, '../src/icon/icon-paths.generated.ts');
+  const iconsDir = path.resolve(
+    __dirname,
+    '../../components-html/assets/icons'
+  );
+  const outputPath = path.resolve(
+    __dirname,
+    '../src/icon/icon-paths.generated.ts'
+  );
 
   if (!fs.existsSync(iconsDir)) {
     console.error(`Error: Icons directory not found at ${iconsDir}`);
@@ -72,7 +78,9 @@ function buildIconPaths() {
   }
 
   fs.writeFileSync(outputPath, output, 'utf-8');
-  console.log(`Generated icon-paths.generated.ts with ${svgFiles.length} icons`);
+  console.log(
+    `Generated icon-paths.generated.ts with ${svgFiles.length} icons`
+  );
 }
 
 // Build button styles
@@ -113,14 +121,20 @@ buildComponentCss(
 // Build unordered list styles
 buildComponentCss(
   path.resolve(__dirname, '../src/unordered-list/unordered-list.shadow.css'),
-  path.resolve(__dirname, '../src/unordered-list/unordered-list-styles.generated.ts'),
+  path.resolve(
+    __dirname,
+    '../src/unordered-list/unordered-list-styles.generated.ts'
+  ),
   'unorderedListStyles'
 );
 
 // Build ordered list styles
 buildComponentCss(
   path.resolve(__dirname, '../src/ordered-list/ordered-list.shadow.css'),
-  path.resolve(__dirname, '../src/ordered-list/ordered-list-styles.generated.ts'),
+  path.resolve(
+    __dirname,
+    '../src/ordered-list/ordered-list-styles.generated.ts'
+  ),
   'orderedListStyles'
 );
 

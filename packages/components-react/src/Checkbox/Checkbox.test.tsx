@@ -45,7 +45,9 @@ describe('Checkbox', () => {
   });
 
   it('spreads additional HTML attributes', () => {
-    render(<Checkbox id="terms" name="terms" value="yes" data-testid="checkbox" />);
+    render(
+      <Checkbox id="terms" name="terms" value="yes" data-testid="checkbox" />
+    );
     const el = screen.getByTestId('checkbox');
     expect(el).toHaveAttribute('id', 'terms');
     expect(el).toHaveAttribute('name', 'terms');
@@ -58,7 +60,9 @@ describe('Checkbox', () => {
   });
 
   it('can be unchecked', () => {
-    render(<Checkbox checked={false} onChange={() => {}} data-testid="checkbox" />);
+    render(
+      <Checkbox checked={false} onChange={() => {}} data-testid="checkbox" />
+    );
     expect(screen.getByTestId('checkbox')).not.toBeChecked();
   });
 
@@ -75,22 +79,31 @@ describe('Checkbox', () => {
   describe('invalid state', () => {
     it('sets aria-invalid when invalid prop is true', () => {
       render(<Checkbox invalid data-testid="checkbox" />);
-      expect(screen.getByTestId('checkbox')).toHaveAttribute('aria-invalid', 'true');
+      expect(screen.getByTestId('checkbox')).toHaveAttribute(
+        'aria-invalid',
+        'true'
+      );
     });
 
     it('adds invalid class when invalid prop is true', () => {
       render(<Checkbox invalid data-testid="checkbox" />);
-      expect(screen.getByTestId('checkbox')).toHaveClass('dsn-checkbox__input--invalid');
+      expect(screen.getByTestId('checkbox')).toHaveClass(
+        'dsn-checkbox__input--invalid'
+      );
     });
 
     it('does not set aria-invalid when invalid prop is false', () => {
       render(<Checkbox invalid={false} data-testid="checkbox" />);
-      expect(screen.getByTestId('checkbox')).not.toHaveAttribute('aria-invalid');
+      expect(screen.getByTestId('checkbox')).not.toHaveAttribute(
+        'aria-invalid'
+      );
     });
 
     it('does not set aria-invalid by default', () => {
       render(<Checkbox data-testid="checkbox" />);
-      expect(screen.getByTestId('checkbox')).not.toHaveAttribute('aria-invalid');
+      expect(screen.getByTestId('checkbox')).not.toHaveAttribute(
+        'aria-invalid'
+      );
     });
   });
 
@@ -152,12 +165,18 @@ describe('Checkbox', () => {
   describe('accessibility', () => {
     it('can have aria-describedby', () => {
       render(<Checkbox aria-describedby="help-text" data-testid="checkbox" />);
-      expect(screen.getByTestId('checkbox')).toHaveAttribute('aria-describedby', 'help-text');
+      expect(screen.getByTestId('checkbox')).toHaveAttribute(
+        'aria-describedby',
+        'help-text'
+      );
     });
 
     it('can have aria-labelledby', () => {
       render(<Checkbox aria-labelledby="label-id" data-testid="checkbox" />);
-      expect(screen.getByTestId('checkbox')).toHaveAttribute('aria-labelledby', 'label-id');
+      expect(screen.getByTestId('checkbox')).toHaveAttribute(
+        'aria-labelledby',
+        'label-id'
+      );
     });
 
     it('control has aria-hidden', () => {

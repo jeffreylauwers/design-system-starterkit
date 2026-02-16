@@ -4,8 +4,12 @@ import { FormFieldDescription } from './FormFieldDescription';
 
 describe('FormFieldDescription', () => {
   it('renders children', () => {
-    render(<FormFieldDescription>Vul uw officiële voornaam in.</FormFieldDescription>);
-    expect(screen.getByText('Vul uw officiële voornaam in.')).toBeInTheDocument();
+    render(
+      <FormFieldDescription>Vul uw officiële voornaam in.</FormFieldDescription>
+    );
+    expect(
+      screen.getByText('Vul uw officiële voornaam in.')
+    ).toBeInTheDocument();
   });
 
   it('renders as a <p> element', () => {
@@ -15,11 +19,17 @@ describe('FormFieldDescription', () => {
 
   it('always has base dsn-form-field-description class', () => {
     render(<FormFieldDescription>Description</FormFieldDescription>);
-    expect(screen.getByText('Description')).toHaveClass('dsn-form-field-description');
+    expect(screen.getByText('Description')).toHaveClass(
+      'dsn-form-field-description'
+    );
   });
 
   it('applies custom className', () => {
-    render(<FormFieldDescription className="custom">Description</FormFieldDescription>);
+    render(
+      <FormFieldDescription className="custom">
+        Description
+      </FormFieldDescription>
+    );
     const el = screen.getByText('Description');
     expect(el).toHaveClass('dsn-form-field-description');
     expect(el).toHaveClass('custom');
@@ -32,7 +42,11 @@ describe('FormFieldDescription', () => {
   });
 
   it('spreads additional HTML attributes', () => {
-    render(<FormFieldDescription id="email-desc" data-testid="description">Help text</FormFieldDescription>);
+    render(
+      <FormFieldDescription id="email-desc" data-testid="description">
+        Help text
+      </FormFieldDescription>
+    );
     const el = screen.getByTestId('description');
     expect(el).toHaveAttribute('id', 'email-desc');
   });

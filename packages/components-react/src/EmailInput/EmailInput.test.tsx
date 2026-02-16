@@ -21,7 +21,10 @@ describe('EmailInput', () => {
 
   it('has email autocomplete by default', () => {
     render(<EmailInput data-testid="input" />);
-    expect(screen.getByTestId('input')).toHaveAttribute('autocomplete', 'email');
+    expect(screen.getByTestId('input')).toHaveAttribute(
+      'autocomplete',
+      'email'
+    );
   });
 
   it('always has base dsn-text-input class', () => {
@@ -43,14 +46,26 @@ describe('EmailInput', () => {
   });
 
   it('spreads additional HTML attributes', () => {
-    render(<EmailInput id="email" placeholder="example@email.com" data-testid="input" />);
+    render(
+      <EmailInput
+        id="email"
+        placeholder="example@email.com"
+        data-testid="input"
+      />
+    );
     const el = screen.getByTestId('input');
     expect(el).toHaveAttribute('id', 'email');
     expect(el).toHaveAttribute('placeholder', 'example@email.com');
   });
 
   it('accepts value prop', () => {
-    render(<EmailInput value="test@example.com" onChange={() => {}} data-testid="input" />);
+    render(
+      <EmailInput
+        value="test@example.com"
+        onChange={() => {}}
+        data-testid="input"
+      />
+    );
     expect(screen.getByTestId('input')).toHaveValue('test@example.com');
   });
 
@@ -77,7 +92,10 @@ describe('EmailInput', () => {
   describe('invalid state', () => {
     it('sets aria-invalid when invalid prop is true', () => {
       render(<EmailInput invalid data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-invalid', 'true');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-invalid',
+        'true'
+      );
     });
 
     it('does not set aria-invalid when invalid prop is false', () => {
@@ -119,12 +137,18 @@ describe('EmailInput', () => {
   describe('accessibility', () => {
     it('can have aria-describedby', () => {
       render(<EmailInput aria-describedby="help-text" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-describedby', 'help-text');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-describedby',
+        'help-text'
+      );
     });
 
     it('can have aria-labelledby', () => {
       render(<EmailInput aria-labelledby="label-id" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-labelledby', 'label-id');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-labelledby',
+        'label-id'
+      );
     });
   });
 });

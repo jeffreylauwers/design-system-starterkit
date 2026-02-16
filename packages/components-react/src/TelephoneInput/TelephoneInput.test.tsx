@@ -43,14 +43,26 @@ describe('TelephoneInput', () => {
   });
 
   it('spreads additional HTML attributes', () => {
-    render(<TelephoneInput id="phone" placeholder="+31 6 12345678" data-testid="input" />);
+    render(
+      <TelephoneInput
+        id="phone"
+        placeholder="+31 6 12345678"
+        data-testid="input"
+      />
+    );
     const el = screen.getByTestId('input');
     expect(el).toHaveAttribute('id', 'phone');
     expect(el).toHaveAttribute('placeholder', '+31 6 12345678');
   });
 
   it('accepts value prop', () => {
-    render(<TelephoneInput value="+31612345678" onChange={() => {}} data-testid="input" />);
+    render(
+      <TelephoneInput
+        value="+31612345678"
+        onChange={() => {}}
+        data-testid="input"
+      />
+    );
     expect(screen.getByTestId('input')).toHaveValue('+31612345678');
   });
 
@@ -77,7 +89,10 @@ describe('TelephoneInput', () => {
   describe('invalid state', () => {
     it('sets aria-invalid when invalid prop is true', () => {
       render(<TelephoneInput invalid data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-invalid', 'true');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-invalid',
+        'true'
+      );
     });
 
     it('does not set aria-invalid when invalid prop is false', () => {
@@ -118,13 +133,21 @@ describe('TelephoneInput', () => {
 
   describe('accessibility', () => {
     it('can have aria-describedby', () => {
-      render(<TelephoneInput aria-describedby="help-text" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-describedby', 'help-text');
+      render(
+        <TelephoneInput aria-describedby="help-text" data-testid="input" />
+      );
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-describedby',
+        'help-text'
+      );
     });
 
     it('can have aria-labelledby', () => {
       render(<TelephoneInput aria-labelledby="label-id" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-labelledby', 'label-id');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-labelledby',
+        'label-id'
+      );
     });
   });
 });

@@ -33,7 +33,15 @@ import { iconPaths } from '../icon/icon-paths.generated';
 
 export class DsnButton extends HTMLElement {
   static get observedAttributes(): string[] {
-    return ['variant', 'size', 'disabled', 'loading', 'full-width', 'icon-only', 'type'];
+    return [
+      'variant',
+      'size',
+      'disabled',
+      'loading',
+      'full-width',
+      'icon-only',
+      'type',
+    ];
   }
 
   private _button: HTMLButtonElement;
@@ -69,7 +77,11 @@ export class DsnButton extends HTMLElement {
     this._updateType();
   }
 
-  attributeChangedCallback(name: string, _oldValue: string | null, _newValue: string | null): void {
+  attributeChangedCallback(
+    name: string,
+    _oldValue: string | null,
+    _newValue: string | null
+  ): void {
     switch (name) {
       case 'variant':
       case 'size':
@@ -122,7 +134,7 @@ export class DsnButton extends HTMLElement {
     svg.classList.add('dsn-icon', 'dsn-button__loader');
 
     const paths = iconPaths['loader'] || [];
-    paths.forEach(d => {
+    paths.forEach((d) => {
       const path = document.createElementNS(ns, 'path');
       path.setAttribute('d', d);
       // Skip the transparent fill path (bounding box)

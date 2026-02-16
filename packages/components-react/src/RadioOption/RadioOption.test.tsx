@@ -5,7 +5,9 @@ import { RadioOption } from './RadioOption';
 
 describe('RadioOption', () => {
   it('renders as a label wrapper', () => {
-    const { container } = render(<RadioOption label="Option A" data-testid="radio" />);
+    const { container } = render(
+      <RadioOption label="Option A" data-testid="radio" />
+    );
     const wrapper = container.querySelector('.dsn-radio-option');
     expect(wrapper?.tagName).toBe('LABEL');
   });
@@ -25,19 +27,30 @@ describe('RadioOption', () => {
   });
 
   it('applies custom className to wrapper', () => {
-    const { container } = render(<RadioOption label="Test" className="custom" />);
+    const { container } = render(
+      <RadioOption label="Test" className="custom" />
+    );
     const wrapper = container.querySelector('.dsn-radio-option');
     expect(wrapper).toHaveClass('custom');
   });
 
   it('passes props to radio', () => {
-    render(<RadioOption label="Test" checked onChange={() => {}} data-testid="radio" />);
+    render(
+      <RadioOption
+        label="Test"
+        checked
+        onChange={() => {}}
+        data-testid="radio"
+      />
+    );
     expect(screen.getByTestId('radio')).toBeChecked();
   });
 
   it('can be selected by clicking label', async () => {
     const user = userEvent.setup();
-    const { container } = render(<RadioOption label="Option A" data-testid="radio" />);
+    const { container } = render(
+      <RadioOption label="Option A" data-testid="radio" />
+    );
     const radio = screen.getByTestId('radio') as HTMLInputElement;
     const label = screen.getByText('Option A');
 
@@ -47,9 +60,13 @@ describe('RadioOption', () => {
   });
 
   it('applies disabled to both radio and label', () => {
-    const { container } = render(<RadioOption label="Test" disabled data-testid="radio" />);
+    const { container } = render(
+      <RadioOption label="Test" disabled data-testid="radio" />
+    );
     expect(screen.getByTestId('radio')).toBeDisabled();
-    expect(container.querySelector('.dsn-option-label--disabled')).toBeInTheDocument();
+    expect(
+      container.querySelector('.dsn-option-label--disabled')
+    ).toBeInTheDocument();
   });
 
   it('supports invalid state', () => {
@@ -61,8 +78,18 @@ describe('RadioOption', () => {
     const user = userEvent.setup();
     render(
       <div>
-        <RadioOption label="Option A" name="choice" value="a" data-testid="radio-a" />
-        <RadioOption label="Option B" name="choice" value="b" data-testid="radio-b" />
+        <RadioOption
+          label="Option A"
+          name="choice"
+          value="a"
+          data-testid="radio-a"
+        />
+        <RadioOption
+          label="Option B"
+          name="choice"
+          value="b"
+          data-testid="radio-b"
+        />
       </div>
     );
     const radioA = screen.getByTestId('radio-a') as HTMLInputElement;

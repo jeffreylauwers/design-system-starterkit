@@ -20,7 +20,11 @@ describe('OptionLabel', () => {
   });
 
   it('applies custom className', () => {
-    render(<OptionLabel className="custom" data-testid="label">Test</OptionLabel>);
+    render(
+      <OptionLabel className="custom" data-testid="label">
+        Test
+      </OptionLabel>
+    );
     const el = screen.getByTestId('label');
     expect(el).toHaveClass('dsn-option-label');
     expect(el).toHaveClass('custom');
@@ -33,7 +37,11 @@ describe('OptionLabel', () => {
   });
 
   it('spreads additional HTML attributes', () => {
-    render(<OptionLabel id="my-label" data-custom="value" data-testid="label">Test</OptionLabel>);
+    render(
+      <OptionLabel id="my-label" data-custom="value" data-testid="label">
+        Test
+      </OptionLabel>
+    );
     const el = screen.getByTestId('label');
     expect(el).toHaveAttribute('id', 'my-label');
     expect(el).toHaveAttribute('data-custom', 'value');
@@ -41,13 +49,21 @@ describe('OptionLabel', () => {
 
   describe('disabled state', () => {
     it('adds disabled class when disabled prop is true', () => {
-      render(<OptionLabel disabled data-testid="label">Test</OptionLabel>);
-      expect(screen.getByTestId('label')).toHaveClass('dsn-option-label--disabled');
+      render(
+        <OptionLabel disabled data-testid="label">
+          Test
+        </OptionLabel>
+      );
+      expect(screen.getByTestId('label')).toHaveClass(
+        'dsn-option-label--disabled'
+      );
     });
 
     it('does not add disabled class by default', () => {
       render(<OptionLabel data-testid="label">Test</OptionLabel>);
-      expect(screen.getByTestId('label')).not.toHaveClass('dsn-option-label--disabled');
+      expect(screen.getByTestId('label')).not.toHaveClass(
+        'dsn-option-label--disabled'
+      );
     });
   });
 });

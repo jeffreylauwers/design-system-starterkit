@@ -29,7 +29,11 @@ describe('FormField', () => {
 
     it('renders label with suffix', () => {
       render(
-        <FormField label="Optional Field" htmlFor="test" labelSuffix="(niet verplicht)">
+        <FormField
+          label="Optional Field"
+          htmlFor="test"
+          labelSuffix="(niet verplicht)"
+        >
           <TextInput id="test" />
         </FormField>
       );
@@ -39,7 +43,11 @@ describe('FormField', () => {
 
     it('renders description', () => {
       render(
-        <FormField label="Test" htmlFor="test" description="This is a description">
+        <FormField
+          label="Test"
+          htmlFor="test"
+          description="This is a description"
+        >
           <TextInput id="test" />
         </FormField>
       );
@@ -57,7 +65,11 @@ describe('FormField', () => {
 
     it('renders status message', () => {
       render(
-        <FormField label="Test" htmlFor="test" status="280 characters remaining">
+        <FormField
+          label="Test"
+          htmlFor="test"
+          status="280 characters remaining"
+        >
           <TextInput id="test" />
         </FormField>
       );
@@ -105,8 +117,12 @@ describe('FormField', () => {
           </div>
         </FormField>
       );
-      expect(container.querySelector('fieldset.dsn-form-field')).toBeInTheDocument();
-      expect(container.querySelector('div.dsn-form-field')).not.toBeInTheDocument();
+      expect(
+        container.querySelector('fieldset.dsn-form-field')
+      ).toBeInTheDocument();
+      expect(
+        container.querySelector('div.dsn-form-field')
+      ).not.toBeInTheDocument();
     });
 
     it('renders legend instead of label', () => {
@@ -146,13 +162,19 @@ describe('FormField', () => {
 
     it('renders error in fieldset', () => {
       render(
-        <FormField label="Test Group" isGroup error="Select at least one option">
+        <FormField
+          label="Test Group"
+          isGroup
+          error="Select at least one option"
+        >
           <div>
             <CheckboxOption label="Option 1" value="1" />
           </div>
         </FormField>
       );
-      expect(screen.getByText('Select at least one option')).toBeInTheDocument();
+      expect(
+        screen.getByText('Select at least one option')
+      ).toBeInTheDocument();
     });
 
     it('hides legend when hideLabel is true', () => {
@@ -169,14 +191,22 @@ describe('FormField', () => {
 
     it('sets aria-describedby on fieldset', () => {
       const { container } = render(
-        <FormField label="Test Group" htmlFor="test-group" isGroup description="Help text">
+        <FormField
+          label="Test Group"
+          htmlFor="test-group"
+          isGroup
+          description="Help text"
+        >
           <div>
             <CheckboxOption label="Option 1" value="1" />
           </div>
         </FormField>
       );
       const fieldset = container.querySelector('fieldset');
-      expect(fieldset).toHaveAttribute('aria-describedby', 'test-group-description');
+      expect(fieldset).toHaveAttribute(
+        'aria-describedby',
+        'test-group-description'
+      );
     });
   });
 

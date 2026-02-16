@@ -14,17 +14,18 @@ export interface CheckboxOptionProps extends CheckboxProps {
 /**
  * Checkbox with label - combines Checkbox and OptionLabel
  */
-export const CheckboxOption = React.forwardRef<HTMLInputElement, CheckboxOptionProps>(
-  ({ label, disabled, className, ...checkboxProps }, ref) => {
-    const wrapperClasses = classNames('dsn-checkbox-option', className);
+export const CheckboxOption = React.forwardRef<
+  HTMLInputElement,
+  CheckboxOptionProps
+>(({ label, disabled, className, ...checkboxProps }, ref) => {
+  const wrapperClasses = classNames('dsn-checkbox-option', className);
 
-    return (
-      <label className={wrapperClasses}>
-        <Checkbox ref={ref} disabled={disabled} {...checkboxProps} />
-        <OptionLabel disabled={disabled}>{label}</OptionLabel>
-      </label>
-    );
-  }
-);
+  return (
+    <label className={wrapperClasses}>
+      <Checkbox ref={ref} disabled={disabled} {...checkboxProps} />
+      <OptionLabel disabled={disabled}>{label}</OptionLabel>
+    </label>
+  );
+});
 
 CheckboxOption.displayName = 'CheckboxOption';

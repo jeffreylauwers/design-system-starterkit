@@ -3,7 +3,10 @@ import { classNames, FormControlWidth } from '@dsn/core';
 import { Icon } from '../Icon';
 import './TimeInput.css';
 
-export interface TimeInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export interface TimeInputProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  'type'
+> {
   /**
    * Whether the input is in an invalid state
    * @default false

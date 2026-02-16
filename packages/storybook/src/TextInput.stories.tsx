@@ -90,25 +90,72 @@ export const Widths: Story = {
 export const AllStates: Story = {
   name: 'All states',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '400px' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem',
+        maxWidth: '400px',
+      }}
+    >
       <div>
-        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Default</label>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Default
+        </label>
         <TextInput placeholder="Enter text..." />
       </div>
       <div>
-        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>With value</label>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          With value
+        </label>
         <TextInput defaultValue="Sample text" />
       </div>
       <div>
-        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Disabled</label>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Disabled
+        </label>
         <TextInput disabled value="Disabled text" />
       </div>
       <div>
-        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Read-only</label>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Read-only
+        </label>
         <TextInput readOnly value="Read-only text" />
       </div>
       <div>
-        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Invalid</label>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Invalid
+        </label>
         <TextInput invalid value="Invalid input" />
       </div>
     </div>

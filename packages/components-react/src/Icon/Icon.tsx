@@ -9,23 +9,26 @@ export type { IconName };
 export { iconMap };
 export type IconSize = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
 
-export interface IconProps extends Omit<React.SVGAttributes<SVGSVGElement>, 'name'> {
+export interface IconProps extends Omit<
+  React.SVGAttributes<SVGSVGElement>,
+  'name'
+> {
   /**
    * Icon name from Tabler Icons
    */
   name: IconName;
-  
+
   /**
    * Icon size variant
    * @default 'md'
    */
   size?: IconSize;
-  
+
   /**
    * Additional CSS class names
    */
   className?: string;
-  
+
   /**
    * Accessible label for the icon
    * If not provided, icon is marked as decorative (aria-hidden="true")
@@ -36,15 +39,15 @@ export interface IconProps extends Omit<React.SVGAttributes<SVGSVGElement>, 'nam
 /**
  * Icon component using individual Tabler Icon SVG imports
  * Only icons you use will be included in your bundle (tree-shaking)
- * 
+ *
  * @example
  * ```tsx
  * // Decorative icon (no label needed)
  * <Icon name="check" size="md" />
- * 
+ *
  * // Standalone icon (needs label)
  * <Icon name="settings" size="lg" aria-label="Open settings" />
- * 
+ *
  * // Icon with text (mark as decorative)
  * <span>
  *   <Icon name="check" size="sm" />
@@ -53,7 +56,10 @@ export interface IconProps extends Omit<React.SVGAttributes<SVGSVGElement>, 'nam
  * ```
  */
 export const Icon = React.forwardRef<SVGSVGElement, IconProps>(
-  ({ name, size = 'md', className, 'aria-label': ariaLabel, ...props }, ref) => {
+  (
+    { name, size = 'md', className, 'aria-label': ariaLabel, ...props },
+    ref
+  ) => {
     const IconComponent = iconMap[name];
 
     if (!IconComponent) {
@@ -77,12 +83,7 @@ export const Icon = React.forwardRef<SVGSVGElement, IconProps>(
       : { 'aria-hidden': true };
 
     return (
-      <IconComponent
-        ref={ref}
-        className={classes}
-        {...ariaProps}
-        {...props}
-      />
+      <IconComponent ref={ref} className={classes} {...ariaProps} {...props} />
     );
   }
 );

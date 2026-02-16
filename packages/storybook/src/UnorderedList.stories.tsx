@@ -42,10 +42,12 @@ export const Examples: Story = {
         <h3 style={{ marginBlockEnd: '1rem' }}>List with longer content</h3>
         <UnorderedList>
           <li>
-            First item with a longer description that spans multiple lines to demonstrate how the list handles text wrapping and line height.
+            First item with a longer description that spans multiple lines to
+            demonstrate how the list handles text wrapping and line height.
           </li>
           <li>
-            Second item also has extended text to show consistent spacing and alignment across items of varying lengths.
+            Second item also has extended text to show consistent spacing and
+            alignment across items of varying lengths.
           </li>
           <li>Third item with shorter text</li>
         </UnorderedList>

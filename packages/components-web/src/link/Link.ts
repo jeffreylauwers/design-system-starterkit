@@ -36,7 +36,8 @@ export class DsnLink extends HTMLElement {
     // Create the internal anchor element
     this._anchor = document.createElement('a');
     this._anchor.classList.add('dsn-link');
-    this._anchor.innerHTML = '<slot name="icon-start"></slot><slot></slot><slot name="icon-end"></slot>';
+    this._anchor.innerHTML =
+      '<slot name="icon-start"></slot><slot></slot><slot name="icon-end"></slot>';
 
     // Create style element with embedded CSS
     const style = document.createElement('style');

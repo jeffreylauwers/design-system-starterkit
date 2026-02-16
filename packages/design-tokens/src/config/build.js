@@ -18,7 +18,7 @@ const distDirs = [
   'dist/json',
 ];
 
-distDirs.forEach(dir => {
+distDirs.forEach((dir) => {
   const fullPath = path.join(__dirname, '..', '..', dir);
   if (!fs.existsSync(fullPath)) {
     fs.mkdirSync(fullPath, { recursive: true });
@@ -36,12 +36,16 @@ console.log(`   Total combinations: ${Object.keys(fullConfigs).length}\n`);
 // BUILD FULL CONFIGURATIONS
 // =============================================================================
 
-console.log('🔨 Building full configurations (Theme × Mode × Project Type)...\n');
+console.log(
+  '🔨 Building full configurations (Theme × Mode × Project Type)...\n'
+);
 
 const fullConfigNames = Object.keys(fullConfigs);
 fullConfigNames.forEach((name, index) => {
   const config = fullConfigs[name];
-  console.log(`   [${index + 1}/${fullConfigNames.length}] Building ${name}...`);
+  console.log(
+    `   [${index + 1}/${fullConfigNames.length}] Building ${name}...`
+  );
 
   try {
     const sd = StyleDictionary.extend(config);
@@ -58,12 +62,16 @@ console.log(`\n✅ Built ${fullConfigNames.length} full configurations\n`);
 // BUILD SCOPED CONFIGURATIONS (for runtime switching)
 // =============================================================================
 
-console.log('🔨 Building scoped configurations (for runtime theme/mode/density switching)...\n');
+console.log(
+  '🔨 Building scoped configurations (for runtime theme/mode/density switching)...\n'
+);
 
 const scopedConfigNames = Object.keys(scopedConfigs);
 scopedConfigNames.forEach((name, index) => {
   const config = scopedConfigs[name];
-  console.log(`   [${index + 1}/${scopedConfigNames.length}] Building ${name}...`);
+  console.log(
+    `   [${index + 1}/${scopedConfigNames.length}] Building ${name}...`
+  );
 
   try {
     const sd = StyleDictionary.extend(config);
@@ -108,11 +116,23 @@ aliasMap.forEach(([aliasPath, sourcePath]) => {
 });
 
 // Create the special dark scoped file for backward compatibility
-const darkScopedSource = path.join(__dirname, '..', '..', 'dist/css/scoped/start-dark.css');
-const darkScopedDest = path.join(__dirname, '..', '..', 'dist/css/variables-dark-scoped.css');
+const darkScopedSource = path.join(
+  __dirname,
+  '..',
+  '..',
+  'dist/css/scoped/start-dark.css'
+);
+const darkScopedDest = path.join(
+  __dirname,
+  '..',
+  '..',
+  'dist/css/variables-dark-scoped.css'
+);
 if (fs.existsSync(darkScopedSource)) {
   fs.copyFileSync(darkScopedSource, darkScopedDest);
-  console.log(`   dist/css/variables-dark-scoped.css → dist/css/scoped/start-dark.css`);
+  console.log(
+    `   dist/css/variables-dark-scoped.css → dist/css/scoped/start-dark.css`
+  );
 }
 
 console.log('\n✅ Backward compatibility aliases created\n');
@@ -124,7 +144,7 @@ console.log('\n✅ Backward compatibility aliases created\n');
 console.log('📁 Generated files:\n');
 
 console.log('   Full configurations (CSS + SCSS + JS + JSON):');
-fullConfigNames.forEach(name => {
+fullConfigNames.forEach((name) => {
   console.log(`   - ${name}`);
 });
 

@@ -1,7 +1,7 @@
 /**
  * Combines class names conditionally
  * Similar to the popular 'classnames' package
- * 
+ *
  * @example
  * classNames('btn', 'btn--primary') // 'btn btn--primary'
  * classNames('btn', { 'btn--active': true, 'btn--disabled': false }) // 'btn btn--active'
@@ -31,7 +31,7 @@ export function classNames(
 
 /**
  * BEM (Block Element Modifier) class name helper
- * 
+ *
  * @example
  * bem('button') // 'button'
  * bem('button', 'icon') // 'button__icon'
@@ -58,9 +58,9 @@ export function bem(
 
 /**
  * Generates BEM class names with multiple modifiers
- * 
+ *
  * @example
- * bemModifiers('button', ['primary', 'large']) 
+ * bemModifiers('button', ['primary', 'large'])
  * // 'button button--primary button--large'
  */
 export function bemModifiers(

@@ -6,7 +6,12 @@ interface Token {
   value?: string; // Optional - will be computed live if not provided
 }
 
-type PreviewType = 'color' | 'spacing' | 'typography-size' | 'border-radius' | 'none';
+type PreviewType =
+  | 'color'
+  | 'spacing'
+  | 'typography-size'
+  | 'border-radius'
+  | 'none';
 
 interface TokenTableProps {
   tokens: Token[];
@@ -116,7 +121,9 @@ function useComputedCssValue(cssVar: string): string {
   const updateValue = useCallback(() => {
     if (typeof window === 'undefined') return;
 
-    const computed = getComputedStyle(document.documentElement).getPropertyValue(cssVar);
+    const computed = getComputedStyle(
+      document.documentElement
+    ).getPropertyValue(cssVar);
     setValue(computed.trim() || '(not defined)');
   }, [cssVar]);
 
@@ -210,7 +217,10 @@ function useComputedCssValue(cssVar: string): string {
       headObserver.disconnect();
       bodyObserver.disconnect();
       htmlObserver.disconnect();
-      window.removeEventListener('storybook-globals-updated', handleStorybookUpdate);
+      window.removeEventListener(
+        'storybook-globals-updated',
+        handleStorybookUpdate
+      );
     };
   }, [cssVar, updateValue]);
 
@@ -222,7 +232,11 @@ function LiveValue({ cssVar }: { cssVar: string }) {
   return <>{value}</>;
 }
 
-export function TokenTable({ tokens, previewType = 'none', showLiveValue = true }: TokenTableProps) {
+export function TokenTable({
+  tokens,
+  previewType = 'none',
+  showLiveValue = true,
+}: TokenTableProps) {
   const showPreview = previewType !== 'none';
 
   return (
@@ -249,8 +263,17 @@ export function TokenTable({ tokens, previewType = 'none', showLiveValue = true 
               </td>
             )}
             <td style={cellStyle}>{token.cssVar}</td>
-            <td style={{ ...cellStyle, color: 'var(--dsn-color-neutral-color-subtle, #666)' }}>
-              {showLiveValue ? <LiveValue cssVar={token.cssVar} /> : token.value}
+            <td
+              style={{
+                ...cellStyle,
+                color: 'var(--dsn-color-neutral-color-subtle, #666)',
+              }}
+            >
+              {showLiveValue ? (
+                <LiveValue cssVar={token.cssVar} />
+              ) : (
+                token.value
+              )}
             </td>
           </tr>
         ))}

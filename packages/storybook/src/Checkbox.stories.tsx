@@ -33,15 +33,36 @@ export const AllStates: Story = {
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Default states</h3>
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}
+          >
             <Checkbox aria-label="Unchecked" />
             <span style={{ fontSize: '0.75rem' }}>Unchecked</span>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}
+          >
             <Checkbox checked aria-label="Checked" readOnly />
             <span style={{ fontSize: '0.75rem' }}>Checked</span>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}
+          >
             <Checkbox indeterminate aria-label="Indeterminate" />
             <span style={{ fontSize: '0.75rem' }}>Indeterminate</span>
           </div>
@@ -51,16 +72,41 @@ export const AllStates: Story = {
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Disabled states</h3>
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}
+          >
             <Checkbox disabled aria-label="Disabled unchecked" />
             <span style={{ fontSize: '0.75rem' }}>Disabled</span>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}
+          >
             <Checkbox checked disabled aria-label="Disabled checked" readOnly />
             <span style={{ fontSize: '0.75rem' }}>Disabled checked</span>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-            <Checkbox indeterminate disabled aria-label="Disabled indeterminate" />
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}
+          >
+            <Checkbox
+              indeterminate
+              disabled
+              aria-label="Disabled indeterminate"
+            />
             <span style={{ fontSize: '0.75rem' }}>Disabled indeterminate</span>
           </div>
         </div>
@@ -69,7 +115,14 @@ export const AllStates: Story = {
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Invalid state</h3>
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}
+          >
             <Checkbox invalid aria-label="Invalid" />
             <span style={{ fontSize: '0.75rem' }}>Invalid</span>
           </div>
@@ -78,7 +131,13 @@ export const AllStates: Story = {
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Interactive</h3>
-        <p style={{ fontSize: '0.875rem', color: '#666', marginBlockEnd: '1rem' }}>
+        <p
+          style={{
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBlockEnd: '1rem',
+          }}
+        >
           Hover, focus (tab), and click to see interaction states
         </p>
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>

@@ -84,7 +84,10 @@ export class DsnIcon extends HTMLElement {
 
     // Add paths
     for (const d of paths) {
-      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      const path = document.createElementNS(
+        'http://www.w3.org/2000/svg',
+        'path'
+      );
       path.setAttribute('d', d);
       svg.appendChild(path);
     }

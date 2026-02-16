@@ -40,7 +40,9 @@ export const AllStates: Story = {
         <h3 style={{ marginBlockEnd: '1rem' }}>Long text</h3>
         <div style={{ maxWidth: '400px' }}>
           <OptionLabel>
-            This is a longer option label that demonstrates how the text wraps when it exceeds the available width. The label should maintain proper line height and readability.
+            This is a longer option label that demonstrates how the text wraps
+            when it exceeds the available width. The label should maintain
+            proper line height and readability.
           </OptionLabel>
         </div>
       </div>

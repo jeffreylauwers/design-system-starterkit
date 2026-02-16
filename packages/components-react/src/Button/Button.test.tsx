@@ -6,7 +6,9 @@ import { Button } from './Button';
 describe('Button', () => {
   it('renders children', () => {
     render(<Button>Click me</Button>);
-    expect(screen.getByRole('button', { name: 'Click me' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Click me' })
+    ).toBeInTheDocument();
   });
 
   it('defaults to type="button"', () => {
@@ -58,7 +60,11 @@ describe('Button', () => {
   });
 
   it('applies icon-only class', () => {
-    render(<Button iconOnly aria-label="Close">X</Button>);
+    render(
+      <Button iconOnly aria-label="Close">
+        X
+      </Button>
+    );
     expect(screen.getByRole('button')).toHaveClass('dsn-button--icon-only');
   });
 
@@ -75,7 +81,15 @@ describe('Button', () => {
   it('handles click events', async () => {
     const user = userEvent.setup();
     let clicked = false;
-    render(<Button onClick={() => { clicked = true; }}>Click</Button>);
+    render(
+      <Button
+        onClick={() => {
+          clicked = true;
+        }}
+      >
+        Click
+      </Button>
+    );
     await user.click(screen.getByRole('button'));
     expect(clicked).toBe(true);
   });
@@ -83,7 +97,16 @@ describe('Button', () => {
   it('does not fire click when disabled', async () => {
     const user = userEvent.setup();
     let clicked = false;
-    render(<Button disabled onClick={() => { clicked = true; }}>Click</Button>);
+    render(
+      <Button
+        disabled
+        onClick={() => {
+          clicked = true;
+        }}
+      >
+        Click
+      </Button>
+    );
     await user.click(screen.getByRole('button'));
     expect(clicked).toBe(false);
   });
@@ -99,11 +122,17 @@ describe('Button', () => {
   });
 
   it('supports sentiment variants', () => {
-    const { rerender } = render(<Button variant="strong-negative">Delete</Button>);
-    expect(screen.getByRole('button')).toHaveClass('dsn-button--strong-negative');
+    const { rerender } = render(
+      <Button variant="strong-negative">Delete</Button>
+    );
+    expect(screen.getByRole('button')).toHaveClass(
+      'dsn-button--strong-negative'
+    );
 
     rerender(<Button variant="strong-positive">Confirm</Button>);
-    expect(screen.getByRole('button')).toHaveClass('dsn-button--strong-positive');
+    expect(screen.getByRole('button')).toHaveClass(
+      'dsn-button--strong-positive'
+    );
   });
 
   it('forwards ref', () => {
@@ -114,9 +143,7 @@ describe('Button', () => {
 
   it('renders iconStart before children', () => {
     render(
-      <Button iconStart={<span data-testid="icon-start">★</span>}>
-        Save
-      </Button>
+      <Button iconStart={<span data-testid="icon-start">★</span>}>Save</Button>
     );
     const button = screen.getByRole('button');
     const iconStart = button.querySelector('[data-testid="icon-start"]');
@@ -127,9 +154,7 @@ describe('Button', () => {
 
   it('renders iconEnd after children', () => {
     render(
-      <Button iconEnd={<span data-testid="icon-end">→</span>}>
-        Next
-      </Button>
+      <Button iconEnd={<span data-testid="icon-end">→</span>}>Next</Button>
     );
     const button = screen.getByRole('button');
     const iconEnd = button.querySelector('[data-testid="icon-end"]');
@@ -170,7 +195,9 @@ describe('Button', () => {
     );
     const button = screen.getByRole('button');
     // iconStart should be replaced by loader
-    expect(button.querySelector('[data-testid="icon-start"]')).not.toBeInTheDocument();
+    expect(
+      button.querySelector('[data-testid="icon-start"]')
+    ).not.toBeInTheDocument();
     // loader icon should be present
     expect(button.querySelector('.dsn-button__loader')).toBeInTheDocument();
   });

@@ -35,17 +35,27 @@ export const AllStates: Story = {
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Without icon</h3>
-        <FormFieldErrorMessage showIcon={false}>Dit veld is verplicht.</FormFieldErrorMessage>
+        <FormFieldErrorMessage showIcon={false}>
+          Dit veld is verplicht.
+        </FormFieldErrorMessage>
       </div>
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Different error messages</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <FormFieldErrorMessage>Dit veld is verplicht.</FormFieldErrorMessage>
-          <FormFieldErrorMessage>Vul een geldig e-mailadres in.</FormFieldErrorMessage>
-          <FormFieldErrorMessage>Het wachtwoord moet minimaal 8 tekens bevatten.</FormFieldErrorMessage>
-          <FormFieldErrorMessage>De twee wachtwoorden komen niet overeen.</FormFieldErrorMessage>
-          <FormFieldErrorMessage>Selecteer minimaal één optie.</FormFieldErrorMessage>
+          <FormFieldErrorMessage>
+            Vul een geldig e-mailadres in.
+          </FormFieldErrorMessage>
+          <FormFieldErrorMessage>
+            Het wachtwoord moet minimaal 8 tekens bevatten.
+          </FormFieldErrorMessage>
+          <FormFieldErrorMessage>
+            De twee wachtwoorden komen niet overeen.
+          </FormFieldErrorMessage>
+          <FormFieldErrorMessage>
+            Selecteer minimaal één optie.
+          </FormFieldErrorMessage>
         </div>
       </div>
 
@@ -53,8 +63,9 @@ export const AllStates: Story = {
         <h3 style={{ marginBlockEnd: '1rem' }}>Long error message</h3>
         <div style={{ maxWidth: '500px' }}>
           <FormFieldErrorMessage>
-            De ingevoerde waarde is niet geldig. Zorg ervoor dat u een geldig telefoonnummer invoert inclusief
-            landcode (bijv. +31 6 12345678). Het nummer moet tussen de 10 en 15 cijfers bevatten.
+            De ingevoerde waarde is niet geldig. Zorg ervoor dat u een geldig
+            telefoonnummer invoert inclusief landcode (bijv. +31 6 12345678).
+            Het nummer moet tussen de 10 en 15 cijfers bevatten.
           </FormFieldErrorMessage>
         </div>
       </div>
@@ -68,12 +79,23 @@ export const AllStates: Story = {
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Multiple errors</h3>
-        <p style={{ fontSize: '0.875rem', color: '#666', marginBlockEnd: '1rem' }}>
-          Bij complexe validatie kunnen meerdere foutmeldingen tegelijk getoond worden.
+        <p
+          style={{
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBlockEnd: '1rem',
+          }}
+        >
+          Bij complexe validatie kunnen meerdere foutmeldingen tegelijk getoond
+          worden.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <FormFieldErrorMessage>Het wachtwoord moet minimaal 8 tekens bevatten.</FormFieldErrorMessage>
-          <FormFieldErrorMessage>Het wachtwoord moet minimaal één cijfer bevatten.</FormFieldErrorMessage>
+          <FormFieldErrorMessage>
+            Het wachtwoord moet minimaal 8 tekens bevatten.
+          </FormFieldErrorMessage>
+          <FormFieldErrorMessage>
+            Het wachtwoord moet minimaal één cijfer bevatten.
+          </FormFieldErrorMessage>
           <FormFieldErrorMessage>
             Het wachtwoord moet minimaal één speciaal teken bevatten.
           </FormFieldErrorMessage>

@@ -75,12 +75,17 @@ describe('Radio', () => {
   describe('invalid state', () => {
     it('sets aria-invalid when invalid prop is true', () => {
       render(<Radio invalid data-testid="radio" />);
-      expect(screen.getByTestId('radio')).toHaveAttribute('aria-invalid', 'true');
+      expect(screen.getByTestId('radio')).toHaveAttribute(
+        'aria-invalid',
+        'true'
+      );
     });
 
     it('adds invalid class when invalid prop is true', () => {
       render(<Radio invalid data-testid="radio" />);
-      expect(screen.getByTestId('radio')).toHaveClass('dsn-radio__input--invalid');
+      expect(screen.getByTestId('radio')).toHaveClass(
+        'dsn-radio__input--invalid'
+      );
     });
 
     it('does not set aria-invalid when invalid prop is false', () => {
@@ -143,12 +148,18 @@ describe('Radio', () => {
   describe('accessibility', () => {
     it('can have aria-describedby', () => {
       render(<Radio aria-describedby="help-text" data-testid="radio" />);
-      expect(screen.getByTestId('radio')).toHaveAttribute('aria-describedby', 'help-text');
+      expect(screen.getByTestId('radio')).toHaveAttribute(
+        'aria-describedby',
+        'help-text'
+      );
     });
 
     it('can have aria-labelledby', () => {
       render(<Radio aria-labelledby="label-id" data-testid="radio" />);
-      expect(screen.getByTestId('radio')).toHaveAttribute('aria-labelledby', 'label-id');
+      expect(screen.getByTestId('radio')).toHaveAttribute(
+        'aria-labelledby',
+        'label-id'
+      );
     });
 
     it('control has aria-hidden', () => {

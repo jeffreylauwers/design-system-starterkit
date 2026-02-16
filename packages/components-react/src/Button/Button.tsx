@@ -3,15 +3,15 @@ import { classNames } from '@dsn/core';
 import { Icon } from '../Icon';
 import './Button.css';
 
-export type ButtonVariant = 
-  | 'strong' 
-  | 'strong-negative' 
+export type ButtonVariant =
+  | 'strong'
+  | 'strong-negative'
   | 'strong-positive'
-  | 'default' 
-  | 'default-negative' 
+  | 'default'
+  | 'default-negative'
   | 'default-positive'
-  | 'subtle' 
-  | 'subtle-negative' 
+  | 'subtle'
+  | 'subtle-negative'
   | 'subtle-positive'
   | 'link';
 export type ButtonSize = 'small' | 'default' | 'large';
@@ -22,25 +22,25 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    * @default 'strong'
    */
   variant?: ButtonVariant;
-  
+
   /**
    * Button size
    * @default 'default'
    */
   size?: ButtonSize;
-  
+
   /**
    * Whether button shows loading state
    * @default false
    */
   loading?: boolean;
-  
+
   /**
    * Whether button takes full width of container
    * @default false
    */
   fullWidth?: boolean;
-  
+
   /**
    * Whether button contains only an icon (adjusts padding)
    * @default false
@@ -70,12 +70,12 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 /**
  * Button component with multiple variants and sizes
- * 
+ *
  * @example
  * ```tsx
  * // Basic usage
  * <Button variant="strong">Save</Button>
- * 
+ *
  * // With icon before text
  * <Button variant="default" iconStart={<Icon name="plus" />}>
  *   Add item
@@ -95,15 +95,15 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
  * <Button variant="subtle" iconOnly aria-label="Close">
  *   <Icon name="x" />
  * </Button>
- * 
+ *
  * // Loading state
  * <Button loading disabled>Saving...</Button>
- * 
+ *
  * // Different sizes
  * <Button size="small">Small</Button>
  * <Button size="default">Default</Button>
  * <Button size="large">Large</Button>
- * 
+ *
  * // Sentiment variants
  * <Button variant="strong-negative">Delete</Button>
  * <Button variant="strong-positive">Confirm</Button>

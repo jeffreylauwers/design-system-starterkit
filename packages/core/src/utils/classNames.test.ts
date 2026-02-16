@@ -11,11 +11,15 @@ describe('classNames', () => {
   });
 
   it('handles object arguments', () => {
-    expect(classNames('btn', { 'btn--active': true, 'btn--disabled': false })).toBe('btn btn--active');
+    expect(
+      classNames('btn', { 'btn--active': true, 'btn--disabled': false })
+    ).toBe('btn btn--active');
   });
 
   it('handles mixed arguments', () => {
-    expect(classNames('btn', null, { 'btn--active': true }, 'extra')).toBe('btn btn--active extra');
+    expect(classNames('btn', null, { 'btn--active': true }, 'extra')).toBe(
+      'btn btn--active extra'
+    );
   });
 
   it('returns empty string when no valid classes', () => {
@@ -55,11 +59,15 @@ describe('bem', () => {
 
 describe('bemModifiers', () => {
   it('returns block with modifiers', () => {
-    expect(bemModifiers('button', ['primary', 'large'])).toBe('button button--primary button--large');
+    expect(bemModifiers('button', ['primary', 'large'])).toBe(
+      'button button--primary button--large'
+    );
   });
 
   it('filters out falsy modifiers', () => {
-    expect(bemModifiers('button', ['primary', null, undefined, false, 'large'])).toBe('button button--primary button--large');
+    expect(
+      bemModifiers('button', ['primary', null, undefined, false, 'large'])
+    ).toBe('button button--primary button--large');
   });
 
   it('returns only block when no valid modifiers', () => {

@@ -110,13 +110,18 @@ export const FormField = React.forwardRef<HTMLDivElement, FormFieldProps>(
     },
     ref
   ) => {
-    const descriptionId = htmlFor && description ? `${htmlFor}-description` : undefined;
+    const descriptionId =
+      htmlFor && description ? `${htmlFor}-description` : undefined;
     const errorId = htmlFor && error ? `${htmlFor}-error` : undefined;
     const statusId = htmlFor && status ? `${htmlFor}-status` : undefined;
 
-    const containerClasses = classNames('dsn-form-field', {
-      'dsn-form-field--invalid': !!error,
-    }, className);
+    const containerClasses = classNames(
+      'dsn-form-field',
+      {
+        'dsn-form-field--invalid': !!error,
+      },
+      className
+    );
 
     return (
       <div ref={ref} className={containerClasses}>
@@ -124,9 +129,15 @@ export const FormField = React.forwardRef<HTMLDivElement, FormFieldProps>(
           {label}
         </FormFieldLabel>
 
-        {description && <FormFieldDescription id={descriptionId}>{description}</FormFieldDescription>}
+        {description && (
+          <FormFieldDescription id={descriptionId}>
+            {description}
+          </FormFieldDescription>
+        )}
 
-        {error && <FormFieldErrorMessage id={errorId}>{error}</FormFieldErrorMessage>}
+        {error && (
+          <FormFieldErrorMessage id={errorId}>{error}</FormFieldErrorMessage>
+        )}
 
         {children}
 

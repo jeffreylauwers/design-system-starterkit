@@ -74,7 +74,11 @@ describe('CheckboxGroup', () => {
 
   it('passes through fieldset attributes', () => {
     const { container } = render(
-      <CheckboxGroup legend="Test Group" disabled aria-describedby="description">
+      <CheckboxGroup
+        legend="Test Group"
+        disabled
+        aria-describedby="description"
+      >
         <CheckboxOption label="Option 1" value="1" />
       </CheckboxGroup>
     );

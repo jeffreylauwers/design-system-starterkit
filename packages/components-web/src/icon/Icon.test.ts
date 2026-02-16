@@ -188,10 +188,26 @@ describe('DsnIcon', () => {
 
   describe('icons', () => {
     const iconNames = [
-      'arrow-left', 'arrow-right', 'check', 'chevron-down', 'chevron-left',
-      'chevron-right', 'chevron-up', 'download', 'edit', 'heart',
-      'home', 'menu', 'minus', 'plus', 'search',
-      'settings', 'star', 'trash', 'user', 'x',
+      'arrow-left',
+      'arrow-right',
+      'check',
+      'chevron-down',
+      'chevron-left',
+      'chevron-right',
+      'chevron-up',
+      'download',
+      'edit',
+      'heart',
+      'home',
+      'menu',
+      'minus',
+      'plus',
+      'search',
+      'settings',
+      'star',
+      'trash',
+      'user',
+      'x',
     ];
 
     it.each(iconNames)('should render icon "%s"', (name) => {

@@ -32,14 +32,20 @@ describe('FormFieldStatus', () => {
   });
 
   it('spreads additional HTML attributes', () => {
-    render(<FormFieldStatus id="bio-status" data-testid="status">Character count</FormFieldStatus>);
+    render(
+      <FormFieldStatus id="bio-status" data-testid="status">
+        Character count
+      </FormFieldStatus>
+    );
     const el = screen.getByTestId('status');
     expect(el).toHaveAttribute('id', 'bio-status');
   });
 
   it('renders character counter content', () => {
     render(<FormFieldStatus>280 van 500 karakters gebruikt</FormFieldStatus>);
-    expect(screen.getByText('280 van 500 karakters gebruikt')).toBeInTheDocument();
+    expect(
+      screen.getByText('280 van 500 karakters gebruikt')
+    ).toBeInTheDocument();
   });
 
   it('renders password strength content', () => {

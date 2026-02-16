@@ -33,7 +33,11 @@ export const AllStates: Story = {
         <CheckboxGroup>
           <CheckboxOption label="Unchecked option" value="1" />
           <CheckboxOption label="Checked option" value="2" checked readOnly />
-          <CheckboxOption label="Indeterminate option" value="3" indeterminate />
+          <CheckboxOption
+            label="Indeterminate option"
+            value="3"
+            indeterminate
+          />
         </CheckboxGroup>
       </div>
 
@@ -42,14 +46,26 @@ export const AllStates: Story = {
         <CheckboxGroup>
           <CheckboxOption label="Active option" value="1" />
           <CheckboxOption label="Disabled unchecked" value="2" disabled />
-          <CheckboxOption label="Disabled checked" value="3" disabled checked readOnly />
+          <CheckboxOption
+            label="Disabled checked"
+            value="3"
+            disabled
+            checked
+            readOnly
+          />
           <CheckboxOption label="Another active option" value="4" />
         </CheckboxGroup>
       </div>
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Interactive group</h3>
-        <p style={{ fontSize: '0.875rem', color: '#666', marginBlockEnd: '1rem' }}>
+        <p
+          style={{
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBlockEnd: '1rem',
+          }}
+        >
           Multiple checkboxes can be selected at the same time.
         </p>
         <CheckboxGroup>

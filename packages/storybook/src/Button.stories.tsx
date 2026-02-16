@@ -81,18 +81,24 @@ const meta: Meta<typeof Button> = {
     iconStart: {
       control: 'select',
       options: iconOptions,
-      mapping: iconOptions.reduce((acc, icon) => {
-        acc[icon ?? 'undefined'] = icon ? <Icon name={icon} /> : undefined;
-        return acc;
-      }, {} as Record<string, React.ReactNode>),
+      mapping: iconOptions.reduce(
+        (acc, icon) => {
+          acc[icon ?? 'undefined'] = icon ? <Icon name={icon} /> : undefined;
+          return acc;
+        },
+        {} as Record<string, React.ReactNode>
+      ),
     },
     iconEnd: {
       control: 'select',
       options: iconOptions,
-      mapping: iconOptions.reduce((acc, icon) => {
-        acc[icon ?? 'undefined'] = icon ? <Icon name={icon} /> : undefined;
-        return acc;
-      }, {} as Record<string, React.ReactNode>),
+      mapping: iconOptions.reduce(
+        (acc, icon) => {
+          acc[icon ?? 'undefined'] = icon ? <Icon name={icon} /> : undefined;
+          return acc;
+        },
+        {} as Record<string, React.ReactNode>
+      ),
     },
   },
   args: {
@@ -139,7 +145,14 @@ export const Loading: Story = {
 export const LoadingWithIcon: Story = {
   name: 'Loading with icon',
   render: () => (
-    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div
+      style={{
+        display: 'flex',
+        gap: '0.5rem',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+      }}
+    >
       <Button variant="strong" loading iconStart={<Icon name="check" />}>
         Saving...
       </Button>
@@ -157,9 +170,15 @@ export const LoadingSizes: Story = {
   name: 'Loading sizes',
   render: () => (
     <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-      <Button size="small" loading>Small</Button>
-      <Button size="default" loading>Default</Button>
-      <Button size="large" loading>Large</Button>
+      <Button size="small" loading>
+        Small
+      </Button>
+      <Button size="default" loading>
+        Default
+      </Button>
+      <Button size="large" loading>
+        Large
+      </Button>
     </div>
   ),
 };
@@ -186,18 +205,39 @@ export const AllVariants: Story = {
   name: 'All variants',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+      <div
+        style={{
+          display: 'flex',
+          gap: '0.5rem',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+        }}
+      >
         <Button variant="strong">Strong</Button>
         <Button variant="default">Default</Button>
         <Button variant="subtle">Subtle</Button>
         <Button variant="link">Link</Button>
       </div>
-      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+      <div
+        style={{
+          display: 'flex',
+          gap: '0.5rem',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+        }}
+      >
         <Button variant="strong-negative">Strong negative</Button>
         <Button variant="default-negative">Default negative</Button>
         <Button variant="subtle-negative">Subtle negative</Button>
       </div>
-      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+      <div
+        style={{
+          display: 'flex',
+          gap: '0.5rem',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+        }}
+      >
         <Button variant="strong-positive">Strong positive</Button>
         <Button variant="default-positive">Default positive</Button>
         <Button variant="subtle-positive">Subtle positive</Button>
@@ -220,7 +260,14 @@ export const AllSizes: Story = {
 export const WithIconStart: Story = {
   name: 'With icon start',
   render: () => (
-    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div
+      style={{
+        display: 'flex',
+        gap: '0.5rem',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+      }}
+    >
       <Button variant="strong" iconStart={<Icon name="check" />}>
         Save
       </Button>
@@ -240,7 +287,14 @@ export const WithIconStart: Story = {
 export const WithIconEnd: Story = {
   name: 'With icon end',
   render: () => (
-    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div
+      style={{
+        display: 'flex',
+        gap: '0.5rem',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+      }}
+    >
       <Button variant="strong" iconEnd={<Icon name="arrow-right" />}>
         Next
       </Button>
@@ -257,11 +311,26 @@ export const WithIconEnd: Story = {
 export const WithIconStartAndEnd: Story = {
   name: 'With icon start and end',
   render: () => (
-    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-      <Button variant="strong" iconStart={<Icon name="check" />} iconEnd={<Icon name="arrow-right" />}>
+    <div
+      style={{
+        display: 'flex',
+        gap: '0.5rem',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+      }}
+    >
+      <Button
+        variant="strong"
+        iconStart={<Icon name="check" />}
+        iconEnd={<Icon name="arrow-right" />}
+      >
         Confirm & continue
       </Button>
-      <Button variant="default" iconStart={<Icon name="edit" />} iconEnd={<Icon name="chevron-down" />}>
+      <Button
+        variant="default"
+        iconStart={<Icon name="edit" />}
+        iconEnd={<Icon name="chevron-down" />}
+      >
         Edit options
       </Button>
     </div>

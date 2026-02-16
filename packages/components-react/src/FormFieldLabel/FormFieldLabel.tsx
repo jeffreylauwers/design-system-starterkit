@@ -39,17 +39,18 @@ export interface FormFieldLabelProps extends React.LabelHTMLAttributes<HTMLLabel
  * </FormFieldLabel>
  * ```
  */
-export const FormFieldLabel = React.forwardRef<HTMLLabelElement, FormFieldLabelProps>(
-  ({ suffix, className, children, ...props }, ref) => {
-    const classes = classNames('dsn-form-field-label', className);
+export const FormFieldLabel = React.forwardRef<
+  HTMLLabelElement,
+  FormFieldLabelProps
+>(({ suffix, className, children, ...props }, ref) => {
+  const classes = classNames('dsn-form-field-label', className);
 
-    return (
-      <label ref={ref} className={classes} {...props}>
-        {children}
-        {suffix && <span className="dsn-form-field-label-suffix">{suffix}</span>}
-      </label>
-    );
-  }
-);
+  return (
+    <label ref={ref} className={classes} {...props}>
+      {children}
+      {suffix && <span className="dsn-form-field-label-suffix">{suffix}</span>}
+    </label>
+  );
+});
 
 FormFieldLabel.displayName = 'FormFieldLabel';

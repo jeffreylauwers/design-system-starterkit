@@ -45,7 +45,11 @@ export const AllStates: Story = {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <CheckboxOption disabled label="Disabled unchecked" />
           <CheckboxOption checked disabled label="Disabled checked" readOnly />
-          <CheckboxOption indeterminate disabled label="Disabled indeterminate" />
+          <CheckboxOption
+            indeterminate
+            disabled
+            label="Disabled indeterminate"
+          />
         </div>
       </div>
 
@@ -58,8 +62,15 @@ export const AllStates: Story = {
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Interactive</h3>
-        <p style={{ fontSize: '0.875rem', color: '#666', marginBlockEnd: '1rem' }}>
-          Click anywhere on the label or checkbox to toggle. Hover, focus (tab), and click to see interaction states.
+        <p
+          style={{
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBlockEnd: '1rem',
+          }}
+        >
+          Click anywhere on the label or checkbox to toggle. Hover, focus (tab),
+          and click to see interaction states.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <CheckboxOption label="Interactive unchecked" />
@@ -70,7 +81,14 @@ export const AllStates: Story = {
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Long labels</h3>
-        <div style={{ maxWidth: '400px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div
+          style={{
+            maxWidth: '400px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem',
+          }}
+        >
           <CheckboxOption label="This is a longer label that demonstrates how the checkbox option handles text wrapping when the label exceeds the available width. The label should maintain proper alignment with the checkbox." />
           <CheckboxOption
             checked

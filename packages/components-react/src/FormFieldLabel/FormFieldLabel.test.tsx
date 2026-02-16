@@ -32,20 +32,28 @@ describe('FormFieldLabel', () => {
   });
 
   it('spreads additional HTML attributes', () => {
-    render(<FormFieldLabel htmlFor="firstname" data-testid="label">Voornaam</FormFieldLabel>);
+    render(
+      <FormFieldLabel htmlFor="firstname" data-testid="label">
+        Voornaam
+      </FormFieldLabel>
+    );
     const el = screen.getByTestId('label');
     expect(el).toHaveAttribute('for', 'firstname');
   });
 
   describe('suffix', () => {
     it('renders suffix when provided', () => {
-      render(<FormFieldLabel suffix="(niet verplicht)">Tussenvoegsel</FormFieldLabel>);
+      render(
+        <FormFieldLabel suffix="(niet verplicht)">Tussenvoegsel</FormFieldLabel>
+      );
       expect(screen.getByText('(niet verplicht)')).toBeInTheDocument();
     });
 
     it('suffix has correct class', () => {
       render(<FormFieldLabel suffix="(niet verplicht)">Label</FormFieldLabel>);
-      expect(screen.getByText('(niet verplicht)')).toHaveClass('dsn-form-field-label-suffix');
+      expect(screen.getByText('(niet verplicht)')).toHaveClass(
+        'dsn-form-field-label-suffix'
+      );
     });
 
     it('renders suffix as span inside label', () => {

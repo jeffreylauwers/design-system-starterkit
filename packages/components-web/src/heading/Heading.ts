@@ -88,7 +88,7 @@ export class DsnHeading extends HTMLElement {
   // Property: appearance
   get appearance(): HeadingAppearance {
     const attr = this.getAttribute('appearance') as HeadingAppearance;
-    return attr || `heading-${this.level}` as HeadingAppearance;
+    return attr || (`heading-${this.level}` as HeadingAppearance);
   }
 
   set appearance(value: HeadingAppearance) {

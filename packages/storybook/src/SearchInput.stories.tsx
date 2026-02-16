@@ -38,7 +38,7 @@ export const WithValue: Story = {
 
 export const Placeholder: Story = {
   args: {
-    placeholder: 'Zoek producten, pagina\'s, documenten...',
+    placeholder: "Zoek producten, pagina's, documenten...",
   },
 };
 
@@ -67,25 +67,72 @@ export const Invalid: Story = {
 export const AllStates: Story = {
   name: 'All states',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '400px' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem',
+        maxWidth: '400px',
+      }}
+    >
       <div>
-        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Default</label>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Default
+        </label>
         <SearchInput placeholder="Zoeken..." />
       </div>
       <div>
-        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>With value</label>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          With value
+        </label>
         <SearchInput defaultValue="zoekterm" />
       </div>
       <div>
-        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Disabled</label>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Disabled
+        </label>
         <SearchInput disabled value="zoekterm" />
       </div>
       <div>
-        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Read-only</label>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Read-only
+        </label>
         <SearchInput readOnly value="zoekterm" />
       </div>
       <div>
-        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Invalid</label>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Invalid
+        </label>
         <SearchInput invalid value="te kort" />
       </div>
     </div>

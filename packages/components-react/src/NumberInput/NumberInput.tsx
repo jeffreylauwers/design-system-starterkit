@@ -4,7 +4,10 @@ import '../TextInput/TextInput.css';
 
 export type DecimalSeparator = 'comma' | 'period';
 
-export interface NumberInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export interface NumberInputProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  'type'
+> {
   /**
    * Decimal separator character
    * @default 'comma'
@@ -51,7 +54,10 @@ export interface NumberInputProps extends Omit<React.InputHTMLAttributes<HTMLInp
  * ```
  */
 export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
-  ({ decimalSeparator = 'comma', className, invalid, width, ...props }, ref) => {
+  (
+    { decimalSeparator = 'comma', className, invalid, width, ...props },
+    ref
+  ) => {
     const classes = classNames(
       'dsn-text-input',
       width && `dsn-text-input--width-${width}`,

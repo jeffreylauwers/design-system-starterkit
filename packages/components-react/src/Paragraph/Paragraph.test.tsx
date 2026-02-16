@@ -25,7 +25,9 @@ describe('Paragraph', () => {
 
   it('applies small-print variant class', () => {
     render(<Paragraph variant="small-print">Small print</Paragraph>);
-    expect(screen.getByText('Small print')).toHaveClass('dsn-paragraph--small-print');
+    expect(screen.getByText('Small print')).toHaveClass(
+      'dsn-paragraph--small-print'
+    );
   });
 
   it('always has base dsn-paragraph class', () => {
@@ -47,7 +49,11 @@ describe('Paragraph', () => {
   });
 
   it('spreads additional HTML attributes', () => {
-    render(<Paragraph id="intro" data-testid="paragraph">Content</Paragraph>);
+    render(
+      <Paragraph id="intro" data-testid="paragraph">
+        Content
+      </Paragraph>
+    );
     const el = screen.getByTestId('paragraph');
     expect(el).toHaveAttribute('id', 'intro');
   });

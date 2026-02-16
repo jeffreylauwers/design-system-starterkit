@@ -56,15 +56,26 @@ export interface FormFieldStatusProps extends React.HTMLAttributes<HTMLParagraph
  * </FormFieldStatus>
  * ```
  */
-export const FormFieldStatus = React.forwardRef<HTMLParagraphElement, FormFieldStatusProps>(
-  ({ className, variant = 'default', showIcon = true, children, ...props }, ref) => {
+export const FormFieldStatus = React.forwardRef<
+  HTMLParagraphElement,
+  FormFieldStatusProps
+>(
+  (
+    { className, variant = 'default', showIcon = true, children, ...props },
+    ref
+  ) => {
     const classes = classNames(
       'dsn-form-field-status',
       variant !== 'default' && `dsn-form-field-status--${variant}`,
       className
     );
 
-    const iconName = variant === 'positive' ? 'check' : variant === 'warning' ? 'alert-triangle' : null;
+    const iconName =
+      variant === 'positive'
+        ? 'check'
+        : variant === 'warning'
+          ? 'alert-triangle'
+          : null;
     const shouldShowIcon = showIcon && iconName && variant !== 'default';
 
     return (

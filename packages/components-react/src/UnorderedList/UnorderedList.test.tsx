@@ -36,7 +36,10 @@ describe('UnorderedList', () => {
         <li>Item</li>
       </UnorderedList>
     );
-    expect(screen.getByTestId('list')).toHaveClass('dsn-unordered-list', 'custom');
+    expect(screen.getByTestId('list')).toHaveClass(
+      'dsn-unordered-list',
+      'custom'
+    );
   });
 
   it('forwards ref', () => {
@@ -55,7 +58,10 @@ describe('UnorderedList', () => {
         <li>Item</li>
       </UnorderedList>
     );
-    expect(screen.getByTestId('list')).toHaveAttribute('aria-label', 'Navigation items');
+    expect(screen.getByTestId('list')).toHaveAttribute(
+      'aria-label',
+      'Navigation items'
+    );
   });
 
   it('renders multiple list items', () => {

@@ -1,5 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FormFieldset, CheckboxGroup, CheckboxOption, RadioGroup, RadioOption } from '@dsn/components-react';
+import {
+  FormFieldset,
+  CheckboxGroup,
+  CheckboxOption,
+  RadioGroup,
+  RadioOption,
+} from '@dsn/components-react';
 import DocsPage from './FormFieldset.docs.mdx';
 
 const meta: Meta<typeof FormFieldset> = {
@@ -65,7 +71,11 @@ export const AllStates: Story = {
           <CheckboxGroup>
             <CheckboxOption label="E-mail" value="email" defaultChecked />
             <CheckboxOption label="SMS" value="sms" />
-            <CheckboxOption label="Push notificaties" value="push" defaultChecked />
+            <CheckboxOption
+              label="Push notificaties"
+              value="push"
+              defaultChecked
+            />
           </CheckboxGroup>
         </FormFieldset>
       </div>
@@ -82,7 +92,9 @@ export const AllStates: Story = {
       </div>
 
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With error message (invalid state)</h3>
+        <h3 style={{ marginBlockEnd: '1rem' }}>
+          With error message (invalid state)
+        </h3>
         <FormFieldset
           legend="Privacy instellingen"
           legendSuffix="(verplicht)"
@@ -90,7 +102,13 @@ export const AllStates: Story = {
           error="Selecteer minimaal één optie om door te gaan"
         >
           <CheckboxGroup>
-            <CheckboxOption label="Functionele cookies (verplicht)" value="functional" disabled checked readOnly />
+            <CheckboxOption
+              label="Functionele cookies (verplicht)"
+              value="functional"
+              disabled
+              checked
+              readOnly
+            />
             <CheckboxOption label="Analytische cookies" value="analytics" />
             <CheckboxOption label="Marketing cookies" value="marketing" />
           </CheckboxGroup>
@@ -104,28 +122,48 @@ export const AllStates: Story = {
             <RadioOption name="gender" label="Man" value="male" />
             <RadioOption name="gender" label="Vrouw" value="female" />
             <RadioOption name="gender" label="Anders" value="other" />
-            <RadioOption name="gender" label="Wil ik niet zeggen" value="prefer-not-to-say" />
+            <RadioOption
+              name="gender"
+              label="Wil ik niet zeggen"
+              value="prefer-not-to-say"
+            />
           </RadioGroup>
         </FormFieldset>
       </div>
 
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Radio group with description and error</h3>
+        <h3 style={{ marginBlockEnd: '1rem' }}>
+          Radio group with description and error
+        </h3>
         <FormFieldset
           legend="Verzendmethode"
           description="Kies hoe je je bestelling wilt ontvangen"
           error="Selecteer een verzendmethode"
         >
           <RadioGroup>
-            <RadioOption name="shipping" label="Standaard verzending (3-5 dagen) - Gratis" value="standard" />
-            <RadioOption name="shipping" label="Express verzending (1-2 dagen) - €5,95" value="express" />
-            <RadioOption name="shipping" label="Ophalen in winkel - Gratis" value="pickup" />
+            <RadioOption
+              name="shipping"
+              label="Standaard verzending (3-5 dagen) - Gratis"
+              value="standard"
+            />
+            <RadioOption
+              name="shipping"
+              label="Express verzending (1-2 dagen) - €5,95"
+              value="express"
+            />
+            <RadioOption
+              name="shipping"
+              label="Ophalen in winkel - Gratis"
+              value="pickup"
+            />
           </RadioGroup>
         </FormFieldset>
       </div>
 
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With status (warning variant)</h3>
+        <h3 style={{ marginBlockEnd: '1rem' }}>
+          With status (warning variant)
+        </h3>
         <FormFieldset
           legend="Marketingvoorkeuren"
           description="We respecteren je privacy"
@@ -135,28 +173,47 @@ export const AllStates: Story = {
           <CheckboxGroup>
             <CheckboxOption label="Nieuwsbrief ontvangen" value="newsletter" />
             <CheckboxOption label="Product updates" value="updates" />
-            <CheckboxOption label="Promoties en aanbiedingen" value="promotions" />
+            <CheckboxOption
+              label="Promoties en aanbiedingen"
+              value="promotions"
+            />
           </CheckboxGroup>
         </FormFieldset>
       </div>
 
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With status (positive variant)</h3>
+        <h3 style={{ marginBlockEnd: '1rem' }}>
+          With status (positive variant)
+        </h3>
         <FormFieldset
           legend="Vereiste rechten"
           status="Alle vereiste rechten zijn geaccepteerd"
           statusVariant="positive"
         >
           <CheckboxGroup>
-            <CheckboxOption label="Algemene voorwaarden" value="terms" defaultChecked />
-            <CheckboxOption label="Privacybeleid" value="privacy" defaultChecked />
-            <CheckboxOption label="Cookie beleid" value="cookies" defaultChecked />
+            <CheckboxOption
+              label="Algemene voorwaarden"
+              value="terms"
+              defaultChecked
+            />
+            <CheckboxOption
+              label="Privacybeleid"
+              value="privacy"
+              defaultChecked
+            />
+            <CheckboxOption
+              label="Cookie beleid"
+              value="cookies"
+              defaultChecked
+            />
           </CheckboxGroup>
         </FormFieldset>
       </div>
 
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Complete example (all sub-components)</h3>
+        <h3 style={{ marginBlockEnd: '1rem' }}>
+          Complete example (all sub-components)
+        </h3>
         <FormFieldset
           legend="Account type"
           legendSuffix="(verplicht)"
@@ -165,9 +222,17 @@ export const AllStates: Story = {
           status="Prijzen zijn exclusief BTW"
         >
           <RadioGroup>
-            <RadioOption name="account" label="Gratis - Voor individueel gebruik" value="free" />
+            <RadioOption
+              name="account"
+              label="Gratis - Voor individueel gebruik"
+              value="free"
+            />
             <RadioOption name="account" label="Pro - €9,99/maand" value="pro" />
-            <RadioOption name="account" label="Business - €29,99/maand" value="business" />
+            <RadioOption
+              name="account"
+              label="Business - €29,99/maand"
+              value="business"
+            />
           </RadioGroup>
         </FormFieldset>
       </div>

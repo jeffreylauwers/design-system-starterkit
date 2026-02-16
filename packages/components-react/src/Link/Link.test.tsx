@@ -26,46 +26,86 @@ describe('Link', () => {
   });
 
   it('applies custom className', () => {
-    render(<Link href="/about" className="custom">About</Link>);
+    render(
+      <Link href="/about" className="custom">
+        About
+      </Link>
+    );
     expect(screen.getByRole('link')).toHaveClass('dsn-link', 'custom');
   });
 
   it('forwards ref', () => {
     const ref = { current: null as HTMLAnchorElement | null };
-    render(<Link ref={ref} href="/about">About</Link>);
+    render(
+      <Link ref={ref} href="/about">
+        About
+      </Link>
+    );
     expect(ref.current).toBeInstanceOf(HTMLAnchorElement);
   });
 
   it('passes target attribute', () => {
-    render(<Link href="/about" target="_blank">About</Link>);
+    render(
+      <Link href="/about" target="_blank">
+        About
+      </Link>
+    );
     expect(screen.getByRole('link')).toHaveAttribute('target', '_blank');
   });
 
   it('passes rel attribute', () => {
-    render(<Link href="/about" rel="noopener noreferrer">About</Link>);
-    expect(screen.getByRole('link')).toHaveAttribute('rel', 'noopener noreferrer');
+    render(
+      <Link href="/about" rel="noopener noreferrer">
+        About
+      </Link>
+    );
+    expect(screen.getByRole('link')).toHaveAttribute(
+      'rel',
+      'noopener noreferrer'
+    );
   });
 
   describe('disabled state', () => {
     it('sets aria-disabled when disabled', () => {
-      render(<Link href="/about" disabled>About</Link>);
-      expect(screen.getByText('About')).toHaveAttribute('aria-disabled', 'true');
+      render(
+        <Link href="/about" disabled>
+          About
+        </Link>
+      );
+      expect(screen.getByText('About')).toHaveAttribute(
+        'aria-disabled',
+        'true'
+      );
     });
 
     it('removes href when disabled', () => {
-      render(<Link href="/about" disabled>About</Link>);
+      render(
+        <Link href="/about" disabled>
+          About
+        </Link>
+      );
       expect(screen.getByText('About')).not.toHaveAttribute('href');
     });
 
     it('sets tabIndex to -1 when disabled', () => {
-      render(<Link href="/about" disabled>About</Link>);
+      render(
+        <Link href="/about" disabled>
+          About
+        </Link>
+      );
       expect(screen.getByText('About')).toHaveAttribute('tabindex', '-1');
     });
 
     it('prevents click when disabled', () => {
       let clicked = false;
       render(
-        <Link href="/about" disabled onClick={() => { clicked = true; }}>
+        <Link
+          href="/about"
+          disabled
+          onClick={() => {
+            clicked = true;
+          }}
+        >
           About
         </Link>
       );
@@ -82,7 +122,11 @@ describe('Link', () => {
 
   describe('current state', () => {
     it('sets aria-current="page" when current', () => {
-      render(<Link href="/dashboard" current>Dashboard</Link>);
+      render(
+        <Link href="/dashboard" current>
+          Dashboard
+        </Link>
+      );
       expect(screen.getByRole('link')).toHaveAttribute('aria-current', 'page');
     });
 
@@ -95,7 +139,10 @@ describe('Link', () => {
   describe('icon support', () => {
     it('renders iconStart before children', () => {
       render(
-        <Link href="/download" iconStart={<span data-testid="icon-start">⬇</span>}>
+        <Link
+          href="/download"
+          iconStart={<span data-testid="icon-start">⬇</span>}
+        >
           Download
         </Link>
       );
@@ -151,23 +198,52 @@ describe('Link', () => {
     });
 
     it('applies size class when size is small', () => {
-      render(<Link href="/about" size="small">About</Link>);
-      expect(screen.getByRole('link')).toHaveClass('dsn-link', 'dsn-link--size-small');
+      render(
+        <Link href="/about" size="small">
+          About
+        </Link>
+      );
+      expect(screen.getByRole('link')).toHaveClass(
+        'dsn-link',
+        'dsn-link--size-small'
+      );
     });
 
     it('applies size class when size is default', () => {
-      render(<Link href="/about" size="default">About</Link>);
-      expect(screen.getByRole('link')).toHaveClass('dsn-link', 'dsn-link--size-default');
+      render(
+        <Link href="/about" size="default">
+          About
+        </Link>
+      );
+      expect(screen.getByRole('link')).toHaveClass(
+        'dsn-link',
+        'dsn-link--size-default'
+      );
     });
 
     it('applies size class when size is large', () => {
-      render(<Link href="/about" size="large">About</Link>);
-      expect(screen.getByRole('link')).toHaveClass('dsn-link', 'dsn-link--size-large');
+      render(
+        <Link href="/about" size="large">
+          About
+        </Link>
+      );
+      expect(screen.getByRole('link')).toHaveClass(
+        'dsn-link',
+        'dsn-link--size-large'
+      );
     });
 
     it('combines size class with custom className', () => {
-      render(<Link href="/about" size="small" className="custom">About</Link>);
-      expect(screen.getByRole('link')).toHaveClass('dsn-link', 'dsn-link--size-small', 'custom');
+      render(
+        <Link href="/about" size="small" className="custom">
+          About
+        </Link>
+      );
+      expect(screen.getByRole('link')).toHaveClass(
+        'dsn-link',
+        'dsn-link--size-small',
+        'custom'
+      );
     });
   });
 
@@ -175,7 +251,13 @@ describe('Link', () => {
     const user = userEvent.setup();
     let clicked = false;
     render(
-      <Link href="/about" onClick={(e) => { e.preventDefault(); clicked = true; }}>
+      <Link
+        href="/about"
+        onClick={(e) => {
+          e.preventDefault();
+          clicked = true;
+        }}
+      >
         About
       </Link>
     );
@@ -185,17 +267,32 @@ describe('Link', () => {
 
   describe('external link', () => {
     it('sets target="_blank" when external', () => {
-      render(<Link href="https://example.com" external>External</Link>);
+      render(
+        <Link href="https://example.com" external>
+          External
+        </Link>
+      );
       expect(screen.getByRole('link')).toHaveAttribute('target', '_blank');
     });
 
     it('sets rel="noopener noreferrer" when external', () => {
-      render(<Link href="https://example.com" external>External</Link>);
-      expect(screen.getByRole('link')).toHaveAttribute('rel', 'noopener noreferrer');
+      render(
+        <Link href="https://example.com" external>
+          External
+        </Link>
+      );
+      expect(screen.getByRole('link')).toHaveAttribute(
+        'rel',
+        'noopener noreferrer'
+      );
     });
 
     it('adds visible "(opens in new tab)" hint when external', () => {
-      render(<Link href="https://example.com" external>External</Link>);
+      render(
+        <Link href="https://example.com" external>
+          External
+        </Link>
+      );
       const link = screen.getByRole('link');
       expect(link).toHaveTextContent('External (opens in new tab)');
     });
@@ -208,23 +305,37 @@ describe('Link', () => {
     });
 
     it('allows overriding target when external', () => {
-      render(<Link href="https://example.com" external target="_self">External</Link>);
+      render(
+        <Link href="https://example.com" external target="_self">
+          External
+        </Link>
+      );
       expect(screen.getByRole('link')).toHaveAttribute('target', '_self');
     });
 
     it('allows overriding rel when external', () => {
-      render(<Link href="https://example.com" external rel="noopener">External</Link>);
+      render(
+        <Link href="https://example.com" external rel="noopener">
+          External
+        </Link>
+      );
       expect(screen.getByRole('link')).toHaveAttribute('rel', 'noopener');
     });
 
     it('keeps iconEnd when external', () => {
       render(
-        <Link href="https://example.com" external iconEnd={<span data-testid="custom-icon">→</span>}>
+        <Link
+          href="https://example.com"
+          external
+          iconEnd={<span data-testid="custom-icon">→</span>}
+        >
           External
         </Link>
       );
       const link = screen.getByRole('link');
-      expect(link.querySelector('[data-testid="custom-icon"]')).toBeInTheDocument();
+      expect(
+        link.querySelector('[data-testid="custom-icon"]')
+      ).toBeInTheDocument();
       expect(link).toHaveTextContent('External (opens in new tab)');
     });
   });

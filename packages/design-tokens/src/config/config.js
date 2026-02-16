@@ -42,15 +42,14 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'typescript/declarations',
   formatter: function ({ dictionary }) {
-    const lines = dictionary.allProperties
-      .map((token) => {
-        const name = token.name
-          .split('-')
-          .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-          .join('');
-        const comment = token.comment ? ` // ${token.comment}` : '';
-        return `export declare const ${name}: string;${comment}`;
-      });
+    const lines = dictionary.allProperties.map((token) => {
+      const name = token.name
+        .split('-')
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join('');
+      const comment = token.comment ? ` // ${token.comment}` : '';
+      return `export declare const ${name}: string;${comment}`;
+    });
     return lines.join('\n') + '\n';
   },
 });
@@ -147,9 +146,10 @@ function createFullConfig(theme, mode, projectType) {
  * allowing them to work as overlays on top of a full config.
  */
 function createModeScopedConfig(theme, mode) {
-  const selector = mode === 'light'
-    ? `.dsn-theme-${theme}`
-    : `.dsn-theme-${theme}.dsn-mode-dark, .dsn-mode-dark .dsn-theme-${theme}`;
+  const selector =
+    mode === 'light'
+      ? `.dsn-theme-${theme}`
+      : `.dsn-theme-${theme}.dsn-mode-dark, .dsn-mode-dark .dsn-theme-${theme}`;
 
   return {
     source: [
@@ -178,14 +178,10 @@ function createModeScopedConfig(theme, mode) {
  * They use outputReferences to keep CSS custom property references intact.
  */
 function createProjectTypeScopedConfig(projectType) {
-  const selector = projectType === 'default'
-    ? ':root'
-    : '.dsn-density-dense';
+  const selector = projectType === 'default' ? ':root' : '.dsn-density-dense';
 
   return {
-    source: [
-      `src/tokens/project-types/${projectType}/typography.json`,
-    ],
+    source: [`src/tokens/project-types/${projectType}/typography.json`],
     platforms: {
       css: {
         transformGroup: 'css',
@@ -209,9 +205,7 @@ function createProjectTypeScopedConfig(projectType) {
  */
 function createThemeBaseScopedConfig(theme) {
   return {
-    source: [
-      `src/tokens/themes/${theme}/base.json`,
-    ],
+    source: [`src/tokens/themes/${theme}/base.json`],
     platforms: {
       css: {
         transformGroup: 'css',
@@ -220,7 +214,10 @@ function createThemeBaseScopedConfig(theme) {
           {
             destination: `theme-${theme}-base.css`,
             format: 'css/variables-scoped',
-            options: { selector: `.dsn-theme-${theme}`, outputReferences: true },
+            options: {
+              selector: `.dsn-theme-${theme}`,
+              outputReferences: true,
+            },
           },
         ],
       },
@@ -249,9 +246,9 @@ function createLegacyConfig() {
 
 // Generate all full configurations (Theme × Mode × Project Type)
 const fullConfigs = {};
-themes.forEach(theme => {
-  modes.forEach(mode => {
-    projectTypes.forEach(projectType => {
+themes.forEach((theme) => {
+  modes.forEach((mode) => {
+    projectTypes.forEach((projectType) => {
       const name = `${theme}-${mode}-${projectType}`;
       fullConfigs[name] = createFullConfig(theme, mode, projectType);
     });
@@ -269,7 +266,10 @@ themes.forEach(theme => {
 const scopedConfigs = {
   // Density configs work - they only contain font-size tokens with no external references
   ...Object.fromEntries(
-    projectTypes.map(pt => [`density-${pt}`, createProjectTypeScopedConfig(pt)])
+    projectTypes.map((pt) => [
+      `density-${pt}`,
+      createProjectTypeScopedConfig(pt),
+    ])
   ),
   // Wireframe color configs work - they use simple value aliases
   'wireframe-light-scoped': createModeScopedConfig('wireframe', 'light'),

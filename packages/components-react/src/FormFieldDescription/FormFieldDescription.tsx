@@ -31,16 +31,17 @@ export interface FormFieldDescriptionProps extends React.HTMLAttributes<HTMLPara
  * </FormFieldDescription>
  * ```
  */
-export const FormFieldDescription = React.forwardRef<HTMLParagraphElement, FormFieldDescriptionProps>(
-  ({ className, children, ...props }, ref) => {
-    const classes = classNames('dsn-form-field-description', className);
+export const FormFieldDescription = React.forwardRef<
+  HTMLParagraphElement,
+  FormFieldDescriptionProps
+>(({ className, children, ...props }, ref) => {
+  const classes = classNames('dsn-form-field-description', className);
 
-    return (
-      <p ref={ref} className={classes} {...props}>
-        {children}
-      </p>
-    );
-  }
-);
+  return (
+    <p ref={ref} className={classes} {...props}>
+      {children}
+    </p>
+  );
+});
 
 FormFieldDescription.displayName = 'FormFieldDescription';

@@ -52,7 +52,9 @@ describe('NumberInput', () => {
   });
 
   it('accepts value prop', () => {
-    render(<NumberInput value="123,45" onChange={() => {}} data-testid="input" />);
+    render(
+      <NumberInput value="123,45" onChange={() => {}} data-testid="input" />
+    );
     expect(screen.getByTestId('input')).toHaveValue('123,45');
   });
 
@@ -87,7 +89,10 @@ describe('NumberInput', () => {
   describe('invalid state', () => {
     it('sets aria-invalid when invalid prop is true', () => {
       render(<NumberInput invalid data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-invalid', 'true');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-invalid',
+        'true'
+      );
     });
 
     it('does not set aria-invalid when invalid prop is false', () => {
@@ -138,12 +143,18 @@ describe('NumberInput', () => {
   describe('accessibility', () => {
     it('can have aria-describedby', () => {
       render(<NumberInput aria-describedby="help-text" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-describedby', 'help-text');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-describedby',
+        'help-text'
+      );
     });
 
     it('can have aria-labelledby', () => {
       render(<NumberInput aria-labelledby="label-id" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-labelledby', 'label-id');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-labelledby',
+        'label-id'
+      );
     });
   });
 });

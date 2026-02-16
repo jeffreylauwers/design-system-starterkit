@@ -36,7 +36,10 @@ describe('OrderedList', () => {
         <li>Step</li>
       </OrderedList>
     );
-    expect(screen.getByTestId('list')).toHaveClass('dsn-ordered-list', 'custom');
+    expect(screen.getByTestId('list')).toHaveClass(
+      'dsn-ordered-list',
+      'custom'
+    );
   });
 
   it('forwards ref', () => {

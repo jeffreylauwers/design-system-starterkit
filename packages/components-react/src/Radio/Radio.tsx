@@ -2,7 +2,10 @@ import React from 'react';
 import { classNames } from '@dsn/core';
 import './Radio.css';
 
-export interface RadioProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export interface RadioProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  'type'
+> {
   /**
    * Whether the radio button is in an invalid state
    */

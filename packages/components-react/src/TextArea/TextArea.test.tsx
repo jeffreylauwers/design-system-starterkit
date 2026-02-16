@@ -38,20 +38,27 @@ describe('TextArea', () => {
   });
 
   it('spreads additional HTML attributes', () => {
-    render(<TextArea id="bio" placeholder="Enter bio" data-testid="textarea" />);
+    render(
+      <TextArea id="bio" placeholder="Enter bio" data-testid="textarea" />
+    );
     const el = screen.getByTestId('textarea');
     expect(el).toHaveAttribute('id', 'bio');
     expect(el).toHaveAttribute('placeholder', 'Enter bio');
   });
 
   it('accepts value prop', () => {
-    render(<TextArea value="Test value" onChange={() => {}} data-testid="textarea" />);
+    render(
+      <TextArea value="Test value" onChange={() => {}} data-testid="textarea" />
+    );
     expect(screen.getByTestId('textarea')).toHaveValue('Test value');
   });
 
   it('accepts placeholder', () => {
     render(<TextArea placeholder="Enter text" data-testid="textarea" />);
-    expect(screen.getByTestId('textarea')).toHaveAttribute('placeholder', 'Enter text');
+    expect(screen.getByTestId('textarea')).toHaveAttribute(
+      'placeholder',
+      'Enter text'
+    );
   });
 
   it('can be disabled', () => {
@@ -72,17 +79,24 @@ describe('TextArea', () => {
   describe('invalid state', () => {
     it('sets aria-invalid when invalid prop is true', () => {
       render(<TextArea invalid data-testid="textarea" />);
-      expect(screen.getByTestId('textarea')).toHaveAttribute('aria-invalid', 'true');
+      expect(screen.getByTestId('textarea')).toHaveAttribute(
+        'aria-invalid',
+        'true'
+      );
     });
 
     it('does not set aria-invalid when invalid prop is false', () => {
       render(<TextArea invalid={false} data-testid="textarea" />);
-      expect(screen.getByTestId('textarea')).not.toHaveAttribute('aria-invalid');
+      expect(screen.getByTestId('textarea')).not.toHaveAttribute(
+        'aria-invalid'
+      );
     });
 
     it('does not set aria-invalid by default', () => {
       render(<TextArea data-testid="textarea" />);
-      expect(screen.getByTestId('textarea')).not.toHaveAttribute('aria-invalid');
+      expect(screen.getByTestId('textarea')).not.toHaveAttribute(
+        'aria-invalid'
+      );
     });
   });
 
@@ -123,12 +137,18 @@ describe('TextArea', () => {
   describe('accessibility', () => {
     it('can have aria-describedby', () => {
       render(<TextArea aria-describedby="help-text" data-testid="textarea" />);
-      expect(screen.getByTestId('textarea')).toHaveAttribute('aria-describedby', 'help-text');
+      expect(screen.getByTestId('textarea')).toHaveAttribute(
+        'aria-describedby',
+        'help-text'
+      );
     });
 
     it('can have aria-labelledby', () => {
       render(<TextArea aria-labelledby="label-id" data-testid="textarea" />);
-      expect(screen.getByTestId('textarea')).toHaveAttribute('aria-labelledby', 'label-id');
+      expect(screen.getByTestId('textarea')).toHaveAttribute(
+        'aria-labelledby',
+        'label-id'
+      );
     });
   });
 });

@@ -82,31 +82,80 @@ export const Default: Story = {};
 export const AllSizes: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '0.5rem',
+        }}
+      >
         <Icon name="check" size="sm" />
         <span style={{ fontSize: '0.75rem' }}>sm</span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '0.5rem',
+        }}
+      >
         <Icon name="check" size="md" />
         <span style={{ fontSize: '0.75rem' }}>md</span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '0.5rem',
+        }}
+      >
         <Icon name="check" size="lg" />
         <span style={{ fontSize: '0.75rem' }}>lg</span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '0.5rem',
+        }}
+      >
         <Icon name="check" size="xl" />
         <span style={{ fontSize: '0.75rem' }}>xl</span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '0.5rem',
+        }}
+      >
         <Icon name="check" size="2xl" />
         <span style={{ fontSize: '0.75rem' }}>2xl</span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '0.5rem',
+        }}
+      >
         <Icon name="check" size="3xl" />
         <span style={{ fontSize: '0.75rem' }}>3xl</span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '0.5rem',
+        }}
+      >
         <Icon name="check" size="4xl" />
         <span style={{ fontSize: '0.75rem' }}>4xl</span>
       </div>
@@ -116,7 +165,13 @@ export const AllSizes: Story = {
 
 export const AllIcons: Story = {
   render: () => (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))', gap: '1.5rem' }}>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))',
+        gap: '1.5rem',
+      }}
+    >
       {[
         'alert-triangle',
         'archive',
@@ -174,7 +229,9 @@ export const AllIcons: Story = {
           }}
         >
           <Icon name={iconName as IconName} size="lg" />
-          <span style={{ fontSize: '0.75rem', textAlign: 'center' }}>{iconName}</span>
+          <span style={{ fontSize: '0.75rem', textAlign: 'center' }}>
+            {iconName}
+          </span>
         </div>
       ))}
     </div>

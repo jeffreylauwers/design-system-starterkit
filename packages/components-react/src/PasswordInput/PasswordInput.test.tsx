@@ -16,7 +16,10 @@ describe('PasswordInput', () => {
 
   it('has current-password autocomplete by default', () => {
     render(<PasswordInput data-testid="input" />);
-    expect(screen.getByTestId('input')).toHaveAttribute('autocomplete', 'current-password');
+    expect(screen.getByTestId('input')).toHaveAttribute(
+      'autocomplete',
+      'current-password'
+    );
   });
 
   it('always has base dsn-text-input class', () => {
@@ -44,14 +47,26 @@ describe('PasswordInput', () => {
   });
 
   it('spreads additional HTML attributes', () => {
-    render(<PasswordInput id="password" placeholder="Enter password" data-testid="input" />);
+    render(
+      <PasswordInput
+        id="password"
+        placeholder="Enter password"
+        data-testid="input"
+      />
+    );
     const el = screen.getByTestId('input');
     expect(el).toHaveAttribute('id', 'password');
     expect(el).toHaveAttribute('placeholder', 'Enter password');
   });
 
   it('accepts value prop', () => {
-    render(<PasswordInput value="secret123" onChange={() => {}} data-testid="input" />);
+    render(
+      <PasswordInput
+        value="secret123"
+        onChange={() => {}}
+        data-testid="input"
+      />
+    );
     expect(screen.getByTestId('input')).toHaveValue('secret123');
   });
 
@@ -73,29 +88,55 @@ describe('PasswordInput', () => {
   describe('passwordAutocomplete prop', () => {
     it('uses current-password by default', () => {
       render(<PasswordInput data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('autocomplete', 'current-password');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'autocomplete',
+        'current-password'
+      );
     });
 
     it('accepts new-password', () => {
-      render(<PasswordInput passwordAutocomplete="new-password" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('autocomplete', 'new-password');
+      render(
+        <PasswordInput
+          passwordAutocomplete="new-password"
+          data-testid="input"
+        />
+      );
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'autocomplete',
+        'new-password'
+      );
     });
 
     it('accepts off', () => {
       render(<PasswordInput passwordAutocomplete="off" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('autocomplete', 'off');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'autocomplete',
+        'off'
+      );
     });
 
     it('autoComplete prop overrides passwordAutocomplete', () => {
-      render(<PasswordInput passwordAutocomplete="new-password" autoComplete="off" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('autocomplete', 'off');
+      render(
+        <PasswordInput
+          passwordAutocomplete="new-password"
+          autoComplete="off"
+          data-testid="input"
+        />
+      );
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'autocomplete',
+        'off'
+      );
     });
   });
 
   describe('invalid state', () => {
     it('sets aria-invalid when invalid prop is true', () => {
       render(<PasswordInput invalid data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-invalid', 'true');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-invalid',
+        'true'
+      );
     });
 
     it('does not set aria-invalid when invalid prop is false', () => {
@@ -136,13 +177,21 @@ describe('PasswordInput', () => {
 
   describe('accessibility', () => {
     it('can have aria-describedby', () => {
-      render(<PasswordInput aria-describedby="help-text" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-describedby', 'help-text');
+      render(
+        <PasswordInput aria-describedby="help-text" data-testid="input" />
+      );
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-describedby',
+        'help-text'
+      );
     });
 
     it('can have aria-labelledby', () => {
       render(<PasswordInput aria-labelledby="label-id" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-labelledby', 'label-id');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-labelledby',
+        'label-id'
+      );
     });
   });
 });

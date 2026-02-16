@@ -6,8 +6,14 @@ export default defineConfig({
   plugins: [svgr()],
   resolve: {
     alias: {
-      '@dsn/components-react': path.resolve(__dirname, 'packages/components-react/src'),
-      '@dsn/components-html': path.resolve(__dirname, 'packages/components-html/src'),
+      '@dsn/components-react': path.resolve(
+        __dirname,
+        'packages/components-react/src'
+      ),
+      '@dsn/components-html': path.resolve(
+        __dirname,
+        'packages/components-html/src'
+      ),
       '@dsn/core': path.resolve(__dirname, 'packages/core/src'),
       '@dsn/design-tokens': path.resolve(__dirname, 'packages/design-tokens'),
     },

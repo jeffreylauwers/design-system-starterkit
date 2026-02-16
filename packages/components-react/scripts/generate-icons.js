@@ -15,7 +15,10 @@ const fs = require('fs');
 const path = require('path');
 
 const iconsDir = path.resolve(__dirname, '../../components-html/assets/icons');
-const outputPath = path.resolve(__dirname, '../src/Icon/icon-registry.generated.ts');
+const outputPath = path.resolve(
+  __dirname,
+  '../src/Icon/icon-registry.generated.ts'
+);
 
 // Verify the icons source directory exists
 if (!fs.existsSync(iconsDir)) {
@@ -78,4 +81,6 @@ if (!fs.existsSync(outputDir)) {
 }
 
 fs.writeFileSync(outputPath, output, 'utf-8');
-console.log(`Generated icon registry with ${iconNames.length} icons: ${outputPath}`);
+console.log(
+  `Generated icon registry with ${iconNames.length} icons: ${outputPath}`
+);

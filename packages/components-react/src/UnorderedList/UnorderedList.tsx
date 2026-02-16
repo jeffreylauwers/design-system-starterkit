@@ -26,16 +26,17 @@ export interface UnorderedListProps extends React.HTMLAttributes<HTMLUListElemen
  * </UnorderedList>
  * ```
  */
-export const UnorderedList = React.forwardRef<HTMLUListElement, UnorderedListProps>(
-  ({ className, children, ...props }, ref) => {
-    const classes = classNames('dsn-unordered-list', className);
+export const UnorderedList = React.forwardRef<
+  HTMLUListElement,
+  UnorderedListProps
+>(({ className, children, ...props }, ref) => {
+  const classes = classNames('dsn-unordered-list', className);
 
-    return (
-      <ul ref={ref} className={classes} {...props}>
-        {children}
-      </ul>
-    );
-  }
-);
+  return (
+    <ul ref={ref} className={classes} {...props}>
+      {children}
+    </ul>
+  );
+});
 
 UnorderedList.displayName = 'UnorderedList';

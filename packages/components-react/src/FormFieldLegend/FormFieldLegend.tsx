@@ -40,17 +40,18 @@ export interface FormFieldLegendProps extends React.HTMLAttributes<HTMLLegendEle
  * </FormFieldLegend>
  * ```
  */
-export const FormFieldLegend = React.forwardRef<HTMLLegendElement, FormFieldLegendProps>(
-  ({ suffix, className, children, ...props }, ref) => {
-    const classes = classNames('dsn-form-field-label', className);
+export const FormFieldLegend = React.forwardRef<
+  HTMLLegendElement,
+  FormFieldLegendProps
+>(({ suffix, className, children, ...props }, ref) => {
+  const classes = classNames('dsn-form-field-label', className);
 
-    return (
-      <legend ref={ref} className={classes} {...props}>
-        {children}
-        {suffix && <span className="dsn-form-field-label-suffix">{suffix}</span>}
-      </legend>
-    );
-  }
-);
+  return (
+    <legend ref={ref} className={classes} {...props}>
+      {children}
+      {suffix && <span className="dsn-form-field-label-suffix">{suffix}</span>}
+    </legend>
+  );
+});
 
 FormFieldLegend.displayName = 'FormFieldLegend';

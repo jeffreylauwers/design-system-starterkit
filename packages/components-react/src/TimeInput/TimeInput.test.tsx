@@ -6,7 +6,9 @@ import { TimeInput } from './TimeInput';
 describe('TimeInput', () => {
   it('renders a wrapper div', () => {
     const { container } = render(<TimeInput data-testid="input" />);
-    expect(container.querySelector('.dsn-time-input-wrapper')).toBeInTheDocument();
+    expect(
+      container.querySelector('.dsn-time-input-wrapper')
+    ).toBeInTheDocument();
   });
 
   it('renders an input element inside wrapper', () => {
@@ -86,7 +88,10 @@ describe('TimeInput', () => {
   describe('invalid state', () => {
     it('sets aria-invalid when invalid prop is true', () => {
       render(<TimeInput invalid data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-invalid', 'true');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-invalid',
+        'true'
+      );
     });
 
     it('does not set aria-invalid when invalid prop is false', () => {
@@ -128,12 +133,18 @@ describe('TimeInput', () => {
   describe('accessibility', () => {
     it('can have aria-describedby', () => {
       render(<TimeInput aria-describedby="help-text" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-describedby', 'help-text');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-describedby',
+        'help-text'
+      );
     });
 
     it('can have aria-labelledby', () => {
       render(<TimeInput aria-labelledby="label-id" data-testid="input" />);
-      expect(screen.getByTestId('input')).toHaveAttribute('aria-labelledby', 'label-id');
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'aria-labelledby',
+        'label-id'
+      );
     });
   });
 });

@@ -34,33 +34,72 @@ export const AllStates: Story = {
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Default states</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <RadioOption label="Unchecked option" name="demo-1" value="unchecked" />
-          <RadioOption checked label="Checked option" name="demo-1" value="checked" readOnly />
+          <RadioOption
+            label="Unchecked option"
+            name="demo-1"
+            value="unchecked"
+          />
+          <RadioOption
+            checked
+            label="Checked option"
+            name="demo-1"
+            value="checked"
+            readOnly
+          />
         </div>
       </div>
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Disabled states</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <RadioOption disabled label="Disabled unchecked" name="demo-2" value="disabled-unchecked" />
-          <RadioOption checked disabled label="Disabled checked" name="demo-2" value="disabled-checked" readOnly />
+          <RadioOption
+            disabled
+            label="Disabled unchecked"
+            name="demo-2"
+            value="disabled-unchecked"
+          />
+          <RadioOption
+            checked
+            disabled
+            label="Disabled checked"
+            name="demo-2"
+            value="disabled-checked"
+            readOnly
+          />
         </div>
       </div>
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Invalid state</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <RadioOption invalid label="Invalid option" name="demo-3" value="invalid" />
+          <RadioOption
+            invalid
+            label="Invalid option"
+            name="demo-3"
+            value="invalid"
+          />
         </div>
       </div>
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Interactive group</h3>
-        <p style={{ fontSize: '0.875rem', color: '#666', marginBlockEnd: '1rem' }}>
-          Click anywhere on the label or radio button to select. Only one can be selected at a time.
+        <p
+          style={{
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBlockEnd: '1rem',
+          }}
+        >
+          Click anywhere on the label or radio button to select. Only one can be
+          selected at a time.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <RadioOption label="Option A" name="demo-4" value="a" defaultChecked />
+          <RadioOption
+            label="Option A"
+            name="demo-4"
+            value="a"
+            defaultChecked
+          />
           <RadioOption label="Option B" name="demo-4" value="b" />
           <RadioOption label="Option C" name="demo-4" value="c" />
         </div>
@@ -68,7 +107,14 @@ export const AllStates: Story = {
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Long labels</h3>
-        <div style={{ maxWidth: '400px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div
+          style={{
+            maxWidth: '400px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem',
+          }}
+        >
           <RadioOption
             label="This is a longer label that demonstrates how the radio option handles text wrapping when the label exceeds the available width. The label should maintain proper alignment with the radio button."
             name="demo-5"

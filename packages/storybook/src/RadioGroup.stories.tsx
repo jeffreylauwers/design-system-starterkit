@@ -32,8 +32,18 @@ export const AllStates: Story = {
         <h3 style={{ marginBlockEnd: '1rem' }}>Default group</h3>
         <RadioGroup>
           <RadioOption name="demo-1" label="Unchecked option" value="1" />
-          <RadioOption name="demo-1" label="Checked option" value="2" checked readOnly />
-          <RadioOption name="demo-1" label="Another unchecked option" value="3" />
+          <RadioOption
+            name="demo-1"
+            label="Checked option"
+            value="2"
+            checked
+            readOnly
+          />
+          <RadioOption
+            name="demo-1"
+            label="Another unchecked option"
+            value="3"
+          />
         </RadioGroup>
       </div>
 
@@ -41,22 +51,44 @@ export const AllStates: Story = {
         <h3 style={{ marginBlockEnd: '1rem' }}>With some disabled options</h3>
         <RadioGroup>
           <RadioOption name="demo-2" label="Active option" value="1" />
-          <RadioOption name="demo-2" label="Disabled unchecked" value="2" disabled />
-          <RadioOption name="demo-2" label="Disabled checked" value="3" disabled checked readOnly />
+          <RadioOption
+            name="demo-2"
+            label="Disabled unchecked"
+            value="2"
+            disabled
+          />
+          <RadioOption
+            name="demo-2"
+            label="Disabled checked"
+            value="3"
+            disabled
+            checked
+            readOnly
+          />
           <RadioOption name="demo-2" label="Another active option" value="4" />
         </RadioGroup>
       </div>
 
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Interactive group</h3>
-        <p style={{ fontSize: '0.875rem', color: '#666', marginBlockEnd: '1rem' }}>
+        <p
+          style={{
+            fontSize: '0.875rem',
+            color: '#666',
+            marginBlockEnd: '1rem',
+          }}
+        >
           Only one radio button can be selected at a time.
         </p>
         <RadioGroup>
           <RadioOption name="demo-3" label="Man" value="male" defaultChecked />
           <RadioOption name="demo-3" label="Vrouw" value="female" />
           <RadioOption name="demo-3" label="Anders" value="other" />
-          <RadioOption name="demo-3" label="Wil ik niet zeggen" value="prefer-not-to-say" />
+          <RadioOption
+            name="demo-3"
+            label="Wil ik niet zeggen"
+            value="prefer-not-to-say"
+          />
         </RadioGroup>
       </div>
 

@@ -17,7 +17,14 @@ const meta: Meta<typeof Heading> = {
     },
     appearance: {
       control: 'select',
-      options: ['heading-1', 'heading-2', 'heading-3', 'heading-4', 'heading-5', 'heading-6'],
+      options: [
+        'heading-1',
+        'heading-2',
+        'heading-3',
+        'heading-4',
+        'heading-5',
+        'heading-6',
+      ],
     },
   },
   args: {
@@ -83,7 +90,13 @@ export const SemanticVsVisual: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <div>
-        <p style={{ marginBlockEnd: '1rem', fontSize: '0.875rem', color: '#666' }}>
+        <p
+          style={{
+            marginBlockEnd: '1rem',
+            fontSize: '0.875rem',
+            color: '#666',
+          }}
+        >
           Semantic h2, visual heading-1 (larger appearance):
         </p>
         <Heading level={2} appearance="heading-1">
@@ -92,7 +105,13 @@ export const SemanticVsVisual: Story = {
       </div>
 
       <div>
-        <p style={{ marginBlockEnd: '1rem', fontSize: '0.875rem', color: '#666' }}>
+        <p
+          style={{
+            marginBlockEnd: '1rem',
+            fontSize: '0.875rem',
+            color: '#666',
+          }}
+        >
           Semantic h3, visual heading-5 (smaller appearance):
         </p>
         <Heading level={3} appearance="heading-5">
@@ -101,8 +120,15 @@ export const SemanticVsVisual: Story = {
       </div>
 
       <div>
-        <p style={{ marginBlockEnd: '1rem', fontSize: '0.875rem', color: '#666' }}>
-          Use this pattern to maintain document structure while achieving desired visual hierarchy.
+        <p
+          style={{
+            marginBlockEnd: '1rem',
+            fontSize: '0.875rem',
+            color: '#666',
+          }}
+        >
+          Use this pattern to maintain document structure while achieving
+          desired visual hierarchy.
         </p>
       </div>
     </div>

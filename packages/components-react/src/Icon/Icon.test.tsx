@@ -27,11 +27,16 @@ describe('Icon', () => {
 
   it('is decorative (aria-hidden) when no aria-label', () => {
     const { container } = render(<Icon name="check" />);
-    expect(container.querySelector('svg')).toHaveAttribute('aria-hidden', 'true');
+    expect(container.querySelector('svg')).toHaveAttribute(
+      'aria-hidden',
+      'true'
+    );
   });
 
   it('has role="img" and aria-label when label is provided', () => {
-    const { container } = render(<Icon name="settings" aria-label="Open settings" />);
+    const { container } = render(
+      <Icon name="settings" aria-label="Open settings" />
+    );
     const svg = container.querySelector('svg');
     expect(svg).toHaveAttribute('role', 'img');
     expect(svg).toHaveAttribute('aria-label', 'Open settings');
