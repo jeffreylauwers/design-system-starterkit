@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Component - Design System</title>
+
+    <!-- Design Tokens -->
+    <link
+      rel="stylesheet"
+      href="../../../design-tokens/dist/css/variables.css"
+    />
+
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="../../../core/dist/core.css" />
+
+    <!-- Icon Component -->
+    <style>
+      .dsn-icon {
+        display: inline-block;
+        width: var(--dsn-icon-size-md);
+        height: var(--dsn-icon-size-md);
+        flex-shrink: 0;
+      }
+      .dsn-icon--sm {
+        width: var(--dsn-icon-size-sm);
+        height: var(--dsn-icon-size-sm);
+      }
+    </style>
+
+    <!-- Button Component -->
+    <link rel="stylesheet" href="button.css" />
+
+    <style>
+      body {
+        font-family: var(--dsn-text-font-family-default);
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: var(--dsn-color-neutral-bg-document);
+        color: var(--dsn-color-neutral-color-document);
+      }
+
+      .demo-section {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: white;
+        border-radius: var(--dsn-border-radius-lg);
+        border: 1px solid var(--dsn-color-neutral-border-subtle);
+      }
+
+      .demo-section h2 {
+        margin-bottom: 1.5rem;
+        font-size: var(--dsn-text-font-size-xl);
+        color: var(--dsn-color-neutral-color-document);
+      }
+
+      .demo-section h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-size: var(--dsn-text-font-size-lg);
+        color: var(--dsn-color-neutral-color-default);
+      }
+
+      .demo-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .demo-label {
+        font-size: var(--dsn-text-font-size-sm);
+        color: var(--dsn-color-neutral-color-subtle);
+        margin-bottom: 0.5rem;
+        font-weight: var(--dsn-text-font-weight-bold);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Button Component Examples</h1>
+
+    <!-- Variants -->
+    <div class="demo-section">
+      <h2>Button Variants</h2>
+
+      <div class="demo-label">Strong (Main actions)</div>
+      <div class="demo-row">
+        <button class="dsn-button dsn-button--strong dsn-button--size-default">
+          Save
+        </button>
+        <button class="dsn-button dsn-button--strong dsn-button--size-default">
+          Submit
+        </button>
+        <button class="dsn-button dsn-button--strong dsn-button--size-default">
+          Continue
+        </button>
+      </div>
+
+      <div class="demo-label">Default (Alternative actions)</div>
+      <div class="demo-row">
+        <button class="dsn-button dsn-button--default dsn-button--size-default">
+          Cancel
+        </button>
+        <button class="dsn-button dsn-button--default dsn-button--size-default">
+          Back
+        </button>
+        <button class="dsn-button dsn-button--default dsn-button--size-default">
+          Learn more
+        </button>
+      </div>
+
+      <div class="demo-label">Subtle (Low emphasis)</div>
+      <div class="demo-row">
+        <button class="dsn-button dsn-button--subtle dsn-button--size-default">
+          Edit
+        </button>
+        <button class="dsn-button dsn-button--subtle dsn-button--size-default">
+          Share
+        </button>
+        <button class="dsn-button dsn-button--subtle dsn-button--size-default">
+          More
+        </button>
+      </div>
+
+      <div class="demo-label">Link (Text-style button)</div>
+      <div class="demo-row">
+        <button class="dsn-button dsn-button--link dsn-button--size-default">
+          Learn more
+        </button>
+        <button class="dsn-button dsn-button--link dsn-button--size-default">
+          View details
+        </button>
+        <button class="dsn-button dsn-button--link dsn-button--size-default">
+          Skip
+        </button>
+      </div>
+
+      <h3>Negative Sentiment</h3>
+
+      <div class="demo-label">Strong Negative (Destructive actions)</div>
+      <div class="demo-row">
+        <button
+          class="dsn-button dsn-button--strong-negative dsn-button--size-default"
+        >
+          Delete
+        </button>
+        <button
+          class="dsn-button dsn-button--strong-negative dsn-button--size-default"
+        >
+          Remove
+        </button>
+        <button
+          class="dsn-button dsn-button--strong-negative dsn-button--size-default"
+        >
+          Reset
+        </button>
+      </div>
+
+      <div class="demo-label">Default Negative</div>
+      <div class="demo-row">
+        <button
+          class="dsn-button dsn-button--default-negative dsn-button--size-default"
+        >
+          Delete
+        </button>
+        <button
+          class="dsn-button dsn-button--default-negative dsn-button--size-default"
+        >
+          Remove
+        </button>
+        <button
+          class="dsn-button dsn-button--default-negative dsn-button--size-default"
+        >
+          Discard
+        </button>
+      </div>
+
+      <div class="demo-label">Subtle Negative</div>
+      <div class="demo-row">
+        <button
+          class="dsn-button dsn-button--subtle-negative dsn-button--size-default"
+        >
+          Delete
+        </button>
+        <button
+          class="dsn-button dsn-button--subtle-negative dsn-button--size-default"
+        >
+          Remove
+        </button>
+        <button
+          class="dsn-button dsn-button--subtle-negative dsn-button--size-default"
+        >
+          Discard
+        </button>
+      </div>
+
+      <h3>Positive Sentiment</h3>
+
+      <div class="demo-label">Strong Positive (Confirmation actions)</div>
+      <div class="demo-row">
+        <button
+          class="dsn-button dsn-button--strong-positive dsn-button--size-default"
+        >
+          Approve
+        </button>
+        <button
+          class="dsn-button dsn-button--strong-positive dsn-button--size-default"
+        >
+          Confirm
+        </button>
+        <button
+          class="dsn-button dsn-button--strong-positive dsn-button--size-default"
+        >
+          Accept
+        </button>
+      </div>
+
+      <div class="demo-label">Default Positive</div>
+      <div class="demo-row">
+        <button
+          class="dsn-button dsn-button--default-positive dsn-button--size-default"
+        >
+          Approve
+        </button>
+        <button
+          class="dsn-button dsn-button--default-positive dsn-button--size-default"
+        >
+          Like
+        </button>
+        <button
+          class="dsn-button dsn-button--default-positive dsn-button--size-default"
+        >
+          Enable
+        </button>
+      </div>
+
+      <div class="demo-label">Subtle Positive</div>
+      <div class="demo-row">
+        <button
+          class="dsn-button dsn-button--subtle-positive dsn-button--size-default"
+        >
+          Like
+        </button>
+        <button
+          class="dsn-button dsn-button--subtle-positive dsn-button--size-default"
+        >
+          Upvote
+        </button>
+        <button
+          class="dsn-button dsn-button--subtle-positive dsn-button--size-default"
+        >
+          Star
+        </button>
+      </div>
+    </div>
+
+    <!-- Sizes -->
+    <div class="demo-section">
+      <h2>Button Sizes</h2>
+
+      <div class="demo-label">Small</div>
+      <div class="demo-row">
+        <button class="dsn-button dsn-button--strong dsn-button--size-small">
+          Small Strong
+        </button>
+        <button class="dsn-button dsn-button--default dsn-button--size-small">
+          Small Default
+        </button>
+        <button
+          class="dsn-button dsn-button--strong-negative dsn-button--size-small"
+        >
+          Small Negative
+        </button>
+      </div>
+
+      <div class="demo-label">Default (Medium)</div>
+      <div class="demo-row">
+        <button class="dsn-button dsn-button--strong dsn-button--size-default">
+          Default Strong
+        </button>
+        <button class="dsn-button dsn-button--default dsn-button--size-default">
+          Default Default
+        </button>
+        <button
+          class="dsn-button dsn-button--strong-negative dsn-button--size-default"
+        >
+          Default Negative
+        </button>
+      </div>
+
+      <div class="demo-label">Large</div>
+      <div class="demo-row">
+        <button class="dsn-button dsn-button--strong dsn-button--size-large">
+          Large Strong
+        </button>
+        <button class="dsn-button dsn-button--default dsn-button--size-large">
+          Large Default
+        </button>
+        <button
+          class="dsn-button dsn-button--strong-negative dsn-button--size-large"
+        >
+          Large Negative
+        </button>
+      </div>
+    </div>
+
+    <!-- With Icons -->
+    <div class="demo-section">
+      <h2>Buttons with Icons</h2>
+
+      <div class="demo-label">Icon + Text</div>
+      <div class="demo-row">
+        <button class="dsn-button dsn-button--strong dsn-button--size-default">
+          <svg
+            class="dsn-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 5l0 14" />
+            <path d="M5 12l14 0" />
+          </svg>
+          Add item
+        </button>
+
+        <button class="dsn-button dsn-button--default dsn-button--size-default">
+          <svg
+            class="dsn-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+            <path d="M7 11l5 5l5 -5" />
+            <path d="M12 4l0 12" />
+          </svg>
+          Download
+        </button>
+
+        <button
+          class="dsn-button dsn-button--strong-negative dsn-button--size-default"
+        >
+          <svg
+            class="dsn-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M4 7l16 0" />
+            <path d="M10 11l0 6" />
+            <path d="M14 11l0 6" />
+            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+          </svg>
+          Delete
+        </button>
+      </div>
+
+      <div class="demo-label">Icon Only</div>
+      <div class="demo-row">
+        <button
+          class="dsn-button dsn-button--strong dsn-button--size-default dsn-button--icon-only"
+          aria-label="Add"
+        >
+          <svg
+            class="dsn-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 5l0 14" />
+            <path d="M5 12l14 0" />
+          </svg>
+        </button>
+
+        <button
+          class="dsn-button dsn-button--default dsn-button--size-default dsn-button--icon-only"
+          aria-label="Settings"
+        >
+          <svg
+            class="dsn-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"
+            />
+            <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+          </svg>
+        </button>
+
+        <button
+          class="dsn-button dsn-button--subtle dsn-button--size-default dsn-button--icon-only"
+          aria-label="Close"
+        >
+          <svg
+            class="dsn-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+          </svg>
+        </button>
+
+        <button
+          class="dsn-button dsn-button--strong-negative dsn-button--size-default dsn-button--icon-only"
+          aria-label="Delete"
+        >
+          <svg
+            class="dsn-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 7l16 0" />
+            <path d="M10 11l0 6" />
+            <path d="M14 11l0 6" />
+            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="demo-label">Small Icon Only</div>
+      <div class="demo-row">
+        <button
+          class="dsn-button dsn-button--strong dsn-button--size-small dsn-button--icon-only"
+          aria-label="Add"
+        >
+          <svg
+            class="dsn-icon dsn-icon--sm"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 5l0 14" />
+            <path d="M5 12l14 0" />
+          </svg>
+        </button>
+
+        <button
+          class="dsn-button dsn-button--default dsn-button--size-small dsn-button--icon-only"
+          aria-label="Edit"
+        >
+          <svg
+            class="dsn-icon dsn-icon--sm"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"
+            />
+            <path
+              d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"
+            />
+            <path d="M16 5l3 3" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- States -->
+    <div class="demo-section">
+      <h2>Button States</h2>
+
+      <div class="demo-label">Disabled</div>
+      <div class="demo-row">
+        <button
+          class="dsn-button dsn-button--strong dsn-button--size-default"
+          disabled
+        >
+          Disabled Strong
+        </button>
+        <button
+          class="dsn-button dsn-button--default dsn-button--size-default"
+          disabled
+        >
+          Disabled Default
+        </button>
+        <button
+          class="dsn-button dsn-button--strong-negative dsn-button--size-default"
+          disabled
+        >
+          Disabled Negative
+        </button>
+      </div>
+
+      <div class="demo-label">Loading</div>
+      <div class="demo-row">
+        <button
+          class="dsn-button dsn-button--strong dsn-button--size-default dsn-button--loading"
+          disabled
+        >
+          Saving...
+        </button>
+        <button
+          class="dsn-button dsn-button--default dsn-button--size-default dsn-button--loading"
+          disabled
+        >
+          Loading...
+        </button>
+      </div>
+    </div>
+
+    <!-- Full Width -->
+    <div class="demo-section">
+      <h2>Full Width Buttons</h2>
+
+      <button
+        class="dsn-button dsn-button--strong dsn-button--size-default dsn-button--full-width"
+        style="margin-bottom: 0.5rem"
+      >
+        Full Width Strong
+      </button>
+      <button
+        class="dsn-button dsn-button--default dsn-button--size-default dsn-button--full-width"
+      >
+        Full Width Default
+      </button>
+    </div>
+  </body>
+</html>

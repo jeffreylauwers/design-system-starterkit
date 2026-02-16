@@ -1,0 +1,1516 @@
+{
+  "dsn": {
+    "color": {
+      "neutral": {
+        "bg-document": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "#000000",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "#000000",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "#000000",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "#000000",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "#000000",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "#000000",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "#000000",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "#000000",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "#000000",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "accent-1": {
+        "bg-document": {
+          "value": "{dsn.color.neutral.bg-document}",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.neutral.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.neutral.bg-default}",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.neutral.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.neutral.bg-active}",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.neutral.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.neutral.border-default}",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.neutral.border-hover}",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "{dsn.color.neutral.border-active}",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "{dsn.color.neutral.color-default}",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.neutral.color-hover}",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "{dsn.color.neutral.color-active}",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.neutral.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "{dsn.color.neutral.color-document}",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "accent-2": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1.bg-document}",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1.bg-default}",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1.bg-active}",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1.border-default}",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1.border-hover}",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1.border-active}",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1.color-default}",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1.color-hover}",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1.color-active}",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1.color-document}",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "accent-3": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1.bg-document}",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1.bg-default}",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1.bg-active}",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1.border-default}",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1.border-hover}",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1.border-active}",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1.color-default}",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1.color-hover}",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1.color-active}",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1.color-document}",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "action-1": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1.bg-document}",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1.bg-default}",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1.bg-active}",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1.border-default}",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1.border-hover}",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1.border-active}",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1.color-default}",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1.color-hover}",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1.color-active}",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1.color-document}",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "action-2": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1.bg-document}",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1.bg-default}",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1.bg-active}",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1.border-default}",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1.border-hover}",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1.border-active}",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1.color-default}",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1.color-hover}",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1.color-active}",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1.color-document}",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "positive": {
+        "bg-document": {
+          "value": "{dsn.color.neutral.bg-document}",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.neutral.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.neutral.bg-default}",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.neutral.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.neutral.bg-active}",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.neutral.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.neutral.border-default}",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.neutral.border-hover}",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "{dsn.color.neutral.border-active}",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "{dsn.color.neutral.color-default}",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.neutral.color-hover}",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "{dsn.color.neutral.color-active}",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.neutral.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "{dsn.color.neutral.color-document}",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "negative": {
+        "bg-document": {
+          "value": "{dsn.color.neutral.bg-document}",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.neutral.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.neutral.bg-default}",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.neutral.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.neutral.bg-active}",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.neutral.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.neutral.border-default}",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.neutral.border-hover}",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "{dsn.color.neutral.border-active}",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "{dsn.color.neutral.color-default}",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.neutral.color-hover}",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "{dsn.color.neutral.color-active}",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.neutral.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "{dsn.color.neutral.color-document}",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "warning": {
+        "bg-document": {
+          "value": "{dsn.color.neutral.bg-document}",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.neutral.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.neutral.bg-default}",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.neutral.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.neutral.bg-active}",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.neutral.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.neutral.border-default}",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.neutral.border-hover}",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "{dsn.color.neutral.border-active}",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "{dsn.color.neutral.color-default}",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.neutral.color-hover}",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "{dsn.color.neutral.color-active}",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.neutral.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "{dsn.color.neutral.color-document}",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "info": {
+        "bg-document": {
+          "value": "{dsn.color.neutral.bg-document}",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.neutral.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.neutral.bg-default}",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.neutral.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.neutral.bg-active}",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.neutral.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.neutral.border-default}",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.neutral.border-hover}",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "{dsn.color.neutral.border-active}",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "{dsn.color.neutral.color-default}",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.neutral.color-hover}",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "{dsn.color.neutral.color-active}",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.neutral.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "{dsn.color.neutral.color-document}",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "neutral-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.neutral.color-document}",
+          "type": "color",
+          "comment": "Inverse document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.neutral.color-active}",
+          "type": "color",
+          "comment": "Inverse subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.neutral.color-hover}",
+          "type": "color",
+          "comment": "Inverse default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.neutral.color-default}",
+          "type": "color",
+          "comment": "Inverse hover background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.neutral.color-subtle}",
+          "type": "color",
+          "comment": "Inverse active background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.neutral.border-active}",
+          "type": "color",
+          "comment": "Inverse subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.neutral.border-hover}",
+          "type": "color",
+          "comment": "Inverse default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.neutral.border-default}",
+          "type": "color",
+          "comment": "Inverse hover border"
+        },
+        "border-active": {
+          "value": "{dsn.color.neutral.border-subtle}",
+          "type": "color",
+          "comment": "Inverse active border"
+        },
+        "color-default": {
+          "value": "{dsn.color.neutral.bg-active}",
+          "type": "color",
+          "comment": "Inverse default text"
+        },
+        "color-hover": {
+          "value": "{dsn.color.neutral.bg-hover}",
+          "type": "color",
+          "comment": "Inverse hover text"
+        },
+        "color-active": {
+          "value": "{dsn.color.neutral.bg-default}",
+          "type": "color",
+          "comment": "Inverse active text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.neutral.bg-subtle}",
+          "type": "color",
+          "comment": "Inverse subtle text"
+        },
+        "color-document": {
+          "value": "{dsn.color.neutral.bg-document}",
+          "type": "color",
+          "comment": "Inverse document text"
+        }
+      },
+      "accent-1-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.neutral-inverse.bg-document}",
+          "type": "color",
+          "comment": "Inverse document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.neutral-inverse.bg-subtle}",
+          "type": "color",
+          "comment": "Inverse subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.neutral-inverse.bg-default}",
+          "type": "color",
+          "comment": "Inverse default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.neutral-inverse.bg-hover}",
+          "type": "color",
+          "comment": "Inverse hover background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.neutral-inverse.bg-active}",
+          "type": "color",
+          "comment": "Inverse active background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.neutral-inverse.border-subtle}",
+          "type": "color",
+          "comment": "Inverse subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.neutral-inverse.border-default}",
+          "type": "color",
+          "comment": "Inverse default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.neutral-inverse.border-hover}",
+          "type": "color",
+          "comment": "Inverse hover border"
+        },
+        "border-active": {
+          "value": "{dsn.color.neutral-inverse.border-active}",
+          "type": "color",
+          "comment": "Inverse active border"
+        },
+        "color-default": {
+          "value": "{dsn.color.neutral-inverse.color-default}",
+          "type": "color",
+          "comment": "Inverse default text"
+        },
+        "color-hover": {
+          "value": "{dsn.color.neutral-inverse.color-hover}",
+          "type": "color",
+          "comment": "Inverse hover text"
+        },
+        "color-active": {
+          "value": "{dsn.color.neutral-inverse.color-active}",
+          "type": "color",
+          "comment": "Inverse active text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.neutral-inverse.color-subtle}",
+          "type": "color",
+          "comment": "Inverse subtle text"
+        },
+        "color-document": {
+          "value": "{dsn.color.neutral-inverse.color-document}",
+          "type": "color",
+          "comment": "Inverse document text"
+        }
+      },
+      "accent-2-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1-inverse.bg-document}",
+          "type": "color"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1-inverse.bg-subtle}",
+          "type": "color"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1-inverse.bg-default}",
+          "type": "color"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1-inverse.bg-hover}",
+          "type": "color"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1-inverse.bg-active}",
+          "type": "color"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1-inverse.border-subtle}",
+          "type": "color"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1-inverse.border-default}",
+          "type": "color"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1-inverse.border-hover}",
+          "type": "color"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1-inverse.border-active}",
+          "type": "color"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1-inverse.color-default}",
+          "type": "color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1-inverse.color-hover}",
+          "type": "color"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1-inverse.color-active}",
+          "type": "color"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1-inverse.color-subtle}",
+          "type": "color"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1-inverse.color-document}",
+          "type": "color"
+        }
+      },
+      "accent-3-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1-inverse.bg-document}",
+          "type": "color"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1-inverse.bg-subtle}",
+          "type": "color"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1-inverse.bg-default}",
+          "type": "color"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1-inverse.bg-hover}",
+          "type": "color"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1-inverse.bg-active}",
+          "type": "color"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1-inverse.border-subtle}",
+          "type": "color"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1-inverse.border-default}",
+          "type": "color"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1-inverse.border-hover}",
+          "type": "color"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1-inverse.border-active}",
+          "type": "color"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1-inverse.color-default}",
+          "type": "color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1-inverse.color-hover}",
+          "type": "color"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1-inverse.color-active}",
+          "type": "color"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1-inverse.color-subtle}",
+          "type": "color"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1-inverse.color-document}",
+          "type": "color"
+        }
+      },
+      "action-1-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1-inverse.bg-document}",
+          "type": "color"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1-inverse.bg-subtle}",
+          "type": "color"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1-inverse.bg-default}",
+          "type": "color"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1-inverse.bg-hover}",
+          "type": "color"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1-inverse.bg-active}",
+          "type": "color"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1-inverse.border-subtle}",
+          "type": "color"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1-inverse.border-default}",
+          "type": "color"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1-inverse.border-hover}",
+          "type": "color"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1-inverse.border-active}",
+          "type": "color"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1-inverse.color-default}",
+          "type": "color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1-inverse.color-hover}",
+          "type": "color"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1-inverse.color-active}",
+          "type": "color"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1-inverse.color-subtle}",
+          "type": "color"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1-inverse.color-document}",
+          "type": "color"
+        }
+      },
+      "action-2-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1-inverse.bg-document}",
+          "type": "color"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1-inverse.bg-subtle}",
+          "type": "color"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1-inverse.bg-default}",
+          "type": "color"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1-inverse.bg-hover}",
+          "type": "color"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1-inverse.bg-active}",
+          "type": "color"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1-inverse.border-subtle}",
+          "type": "color"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1-inverse.border-default}",
+          "type": "color"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1-inverse.border-hover}",
+          "type": "color"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1-inverse.border-active}",
+          "type": "color"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1-inverse.color-default}",
+          "type": "color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1-inverse.color-hover}",
+          "type": "color"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1-inverse.color-active}",
+          "type": "color"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1-inverse.color-subtle}",
+          "type": "color"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1-inverse.color-document}",
+          "type": "color"
+        }
+      },
+      "positive-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.neutral-inverse.bg-document}",
+          "type": "color"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.neutral-inverse.bg-subtle}",
+          "type": "color"
+        },
+        "bg-default": {
+          "value": "{dsn.color.neutral-inverse.bg-default}",
+          "type": "color"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.neutral-inverse.bg-hover}",
+          "type": "color"
+        },
+        "bg-active": {
+          "value": "{dsn.color.neutral-inverse.bg-active}",
+          "type": "color"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.neutral-inverse.border-subtle}",
+          "type": "color"
+        },
+        "border-default": {
+          "value": "{dsn.color.neutral-inverse.border-default}",
+          "type": "color"
+        },
+        "border-hover": {
+          "value": "{dsn.color.neutral-inverse.border-hover}",
+          "type": "color"
+        },
+        "border-active": {
+          "value": "{dsn.color.neutral-inverse.border-active}",
+          "type": "color"
+        },
+        "color-default": {
+          "value": "{dsn.color.neutral-inverse.color-default}",
+          "type": "color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.neutral-inverse.color-hover}",
+          "type": "color"
+        },
+        "color-active": {
+          "value": "{dsn.color.neutral-inverse.color-active}",
+          "type": "color"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.neutral-inverse.color-subtle}",
+          "type": "color"
+        },
+        "color-document": {
+          "value": "{dsn.color.neutral-inverse.color-document}",
+          "type": "color"
+        }
+      },
+      "negative-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.neutral-inverse.bg-document}",
+          "type": "color"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.neutral-inverse.bg-subtle}",
+          "type": "color"
+        },
+        "bg-default": {
+          "value": "{dsn.color.neutral-inverse.bg-default}",
+          "type": "color"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.neutral-inverse.bg-hover}",
+          "type": "color"
+        },
+        "bg-active": {
+          "value": "{dsn.color.neutral-inverse.bg-active}",
+          "type": "color"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.neutral-inverse.border-subtle}",
+          "type": "color"
+        },
+        "border-default": {
+          "value": "{dsn.color.neutral-inverse.border-default}",
+          "type": "color"
+        },
+        "border-hover": {
+          "value": "{dsn.color.neutral-inverse.border-hover}",
+          "type": "color"
+        },
+        "border-active": {
+          "value": "{dsn.color.neutral-inverse.border-active}",
+          "type": "color"
+        },
+        "color-default": {
+          "value": "{dsn.color.neutral-inverse.color-default}",
+          "type": "color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.neutral-inverse.color-hover}",
+          "type": "color"
+        },
+        "color-active": {
+          "value": "{dsn.color.neutral-inverse.color-active}",
+          "type": "color"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.neutral-inverse.color-subtle}",
+          "type": "color"
+        },
+        "color-document": {
+          "value": "{dsn.color.neutral-inverse.color-document}",
+          "type": "color"
+        }
+      },
+      "warning-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.neutral-inverse.bg-document}",
+          "type": "color"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.neutral-inverse.bg-subtle}",
+          "type": "color"
+        },
+        "bg-default": {
+          "value": "{dsn.color.neutral-inverse.bg-default}",
+          "type": "color"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.neutral-inverse.bg-hover}",
+          "type": "color"
+        },
+        "bg-active": {
+          "value": "{dsn.color.neutral-inverse.bg-active}",
+          "type": "color"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.neutral-inverse.border-subtle}",
+          "type": "color"
+        },
+        "border-default": {
+          "value": "{dsn.color.neutral-inverse.border-default}",
+          "type": "color"
+        },
+        "border-hover": {
+          "value": "{dsn.color.neutral-inverse.border-hover}",
+          "type": "color"
+        },
+        "border-active": {
+          "value": "{dsn.color.neutral-inverse.border-active}",
+          "type": "color"
+        },
+        "color-default": {
+          "value": "{dsn.color.neutral-inverse.color-default}",
+          "type": "color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.neutral-inverse.color-hover}",
+          "type": "color"
+        },
+        "color-active": {
+          "value": "{dsn.color.neutral-inverse.color-active}",
+          "type": "color"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.neutral-inverse.color-subtle}",
+          "type": "color"
+        },
+        "color-document": {
+          "value": "{dsn.color.neutral-inverse.color-document}",
+          "type": "color"
+        }
+      },
+      "info-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.neutral-inverse.bg-document}",
+          "type": "color"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.neutral-inverse.bg-subtle}",
+          "type": "color"
+        },
+        "bg-default": {
+          "value": "{dsn.color.neutral-inverse.bg-default}",
+          "type": "color"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.neutral-inverse.bg-hover}",
+          "type": "color"
+        },
+        "bg-active": {
+          "value": "{dsn.color.neutral-inverse.bg-active}",
+          "type": "color"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.neutral-inverse.border-subtle}",
+          "type": "color"
+        },
+        "border-default": {
+          "value": "{dsn.color.neutral-inverse.border-default}",
+          "type": "color"
+        },
+        "border-hover": {
+          "value": "{dsn.color.neutral-inverse.border-hover}",
+          "type": "color"
+        },
+        "border-active": {
+          "value": "{dsn.color.neutral-inverse.border-active}",
+          "type": "color"
+        },
+        "color-default": {
+          "value": "{dsn.color.neutral-inverse.color-default}",
+          "type": "color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.neutral-inverse.color-hover}",
+          "type": "color"
+        },
+        "color-active": {
+          "value": "{dsn.color.neutral-inverse.color-active}",
+          "type": "color"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.neutral-inverse.color-subtle}",
+          "type": "color"
+        },
+        "color-document": {
+          "value": "{dsn.color.neutral-inverse.color-document}",
+          "type": "color"
+        }
+      },
+      "transparent": {
+        "value": "transparent",
+        "type": "color",
+        "comment": "Fully transparent - for invisible backgrounds and borders"
+      }
+    },
+    "heading": {
+      "color": {
+        "value": "{dsn.color.neutral.color-document}",
+        "type": "color",
+        "comment": "Heading text color"
+      }
+    },
+    "form-control": {
+      "accent-color": {
+        "value": "{dsn.color.action-1.color-default}",
+        "type": "color",
+        "comment": "Form control accent color (checkboxes, radio buttons)"
+      },
+      "background-color": {
+        "value": "{dsn.color.neutral.bg-document}",
+        "type": "color",
+        "comment": "Form control background"
+      },
+      "border-color": {
+        "value": "{dsn.color.neutral.border-default}",
+        "type": "color",
+        "comment": "Form control border"
+      },
+      "color": {
+        "value": "{dsn.color.neutral.color-document}",
+        "type": "color",
+        "comment": "Form control text color"
+      },
+      "placeholder": {
+        "color": {
+          "value": "{dsn.color.neutral.color-subtle}",
+          "type": "color",
+          "comment": "Form control placeholder text color"
+        }
+      },
+      "hover": {
+        "accent-color": {
+          "value": "{dsn.color.action-1.color-hover}",
+          "type": "color",
+          "comment": "Form control hover accent color"
+        },
+        "background-color": {
+          "value": "{dsn.color.neutral.bg-hover}",
+          "type": "color",
+          "comment": "Form control hover background"
+        },
+        "border-color": {
+          "value": "{dsn.color.neutral.border-hover}",
+          "type": "color",
+          "comment": "Form control hover border"
+        },
+        "color": {
+          "value": "{dsn.form-control.color}",
+          "type": "color",
+          "comment": "Form control hover text color"
+        }
+      },
+      "focus": {
+        "background-color": {
+          "value": "{dsn.form-control.background-color}",
+          "type": "color",
+          "comment": "Form control focus background"
+        },
+        "border-color": {
+          "value": "{dsn.color.neutral.border-active}",
+          "type": "color",
+          "comment": "Form control focus border"
+        },
+        "color": {
+          "value": "{dsn.form-control.color}",
+          "type": "color",
+          "comment": "Form control focus text color"
+        }
+      },
+      "active": {
+        "accent-color": {
+          "value": "{dsn.color.action-1.color-active}",
+          "type": "color",
+          "comment": "Form control active accent color"
+        },
+        "background-color": {
+          "value": "{dsn.color.neutral.bg-active}",
+          "type": "color",
+          "comment": "Form control active background"
+        },
+        "border-color": {
+          "value": "{dsn.color.neutral.border-active}",
+          "type": "color",
+          "comment": "Form control active border"
+        },
+        "color": {
+          "value": "{dsn.form-control.color}",
+          "type": "color",
+          "comment": "Form control active text color"
+        }
+      },
+      "disabled": {
+        "accent-color": {
+          "value": "{dsn.color.neutral.bg-subtle}",
+          "type": "color",
+          "comment": "Form control disabled accent color"
+        },
+        "background-color": {
+          "value": "{dsn.color.neutral.bg-subtle}",
+          "type": "color",
+          "comment": "Form control disabled background"
+        },
+        "border-color": {
+          "value": "{dsn.color.neutral.border-subtle}",
+          "type": "color",
+          "comment": "Form control disabled border"
+        },
+        "color": {
+          "value": "{dsn.color.neutral.color-subtle}",
+          "type": "color",
+          "comment": "Form control disabled text color"
+        }
+      },
+      "invalid": {
+        "background-color": {
+          "value": "{dsn.color.negative.bg-default}",
+          "type": "color",
+          "comment": "Form control invalid background"
+        },
+        "border-color": {
+          "value": "{dsn.color.negative.border-default}",
+          "type": "color",
+          "comment": "Form control invalid border"
+        },
+        "color": {
+          "value": "{dsn.color.negative.color-default}",
+          "type": "color",
+          "comment": "Form control invalid text color"
+        }
+      },
+      "read-only": {
+        "background-color": {
+          "value": "{dsn.color.neutral.bg-subtle}",
+          "type": "color",
+          "comment": "Form control read-only background"
+        },
+        "border-color": {
+          "value": "{dsn.color.transparent}",
+          "type": "color",
+          "comment": "Form control read-only border"
+        },
+        "color": {
+          "value": "{dsn.color.neutral.color-document}",
+          "type": "color",
+          "comment": "Form control read-only text color"
+        }
+      }
+    },
+    "focus": {
+      "background-color": {
+        "value": "#ffdd00",
+        "type": "color",
+        "comment": "Focus indicator background - yellow"
+      },
+      "color": {
+        "value": "#000000",
+        "type": "color",
+        "comment": "Focus indicator text color"
+      },
+      "outline-color": {
+        "value": "#000000",
+        "type": "color",
+        "comment": "Focus outline color"
+      },
+      "inverse": {
+        "outline-color": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Focus outline color for use on tinted/dark backgrounds - opposite of outline-color"
+        }
+      }
+    }
+  }
+}

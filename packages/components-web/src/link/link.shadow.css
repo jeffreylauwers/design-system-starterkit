@@ -1,0 +1,15 @@
+/**
+ * Shadow DOM wrapper styles for the Link Web Component.
+ * The core link styles are imported from the shared HTML/CSS source.
+ */
+
+:host {
+  display: inline;
+}
+
+::slotted(*) {
+  pointer-events: none;
+}
+
+/* Shared link styles - single source of truth */
+@import '../../../components-html/src/link/link.css';

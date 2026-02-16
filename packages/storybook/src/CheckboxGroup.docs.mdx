@@ -1,0 +1,15 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as CheckboxGroupStories from './CheckboxGroup.stories';
+import docs from './CheckboxGroup.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={CheckboxGroupStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={CheckboxGroupStories.Default} />
+
+<Markdown>{rest}</Markdown>

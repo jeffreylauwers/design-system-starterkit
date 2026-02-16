@@ -1,0 +1,6 @@
+/**
+ * OrderedList Component Styles for React
+ * Re-exports the base OrderedList styles from components-html
+ */
+
+@import '../../../components-html/src/ordered-list/ordered-list.css';

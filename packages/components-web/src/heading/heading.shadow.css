@@ -1,0 +1,11 @@
+/**
+ * Shadow DOM wrapper styles for the Heading Web Component.
+ * The core heading styles are imported from the shared HTML/CSS source.
+ */
+
+:host {
+  display: block;
+}
+
+/* Shared heading styles - single source of truth */
+@import '../../../components-html/src/heading/heading.css';

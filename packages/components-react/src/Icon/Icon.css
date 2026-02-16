@@ -1,0 +1,6 @@
+/**
+ * Icon Component Styles for React
+ * Re-exports the base Icon styles from components-html
+ */
+
+@import '../../../components-html/src/icon/icon.css';

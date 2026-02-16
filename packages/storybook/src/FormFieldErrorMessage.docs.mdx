@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as FormFieldErrorMessageStories from './FormFieldErrorMessage.stories';
+import docs from './FormFieldErrorMessage.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={FormFieldErrorMessageStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={FormFieldErrorMessageStories.Default} />
+
+<Controls of={FormFieldErrorMessageStories.Default} />
+
+<Markdown>{rest}</Markdown>

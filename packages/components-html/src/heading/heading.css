@@ -1,0 +1,74 @@
+/**
+ * Heading Component
+ * Uses semantic component tokens for consistent styling
+ *
+ * Each appearance level has its own complete set of tokens
+ * (font-family, font-weight, color, font-size, line-height, margin).
+ *
+ * The `level` prop controls the semantic HTML element (h1–h6).
+ * The `appearance` prop controls the visual style, independently of level.
+ */
+
+.dsn-heading {
+  margin-block-start: 0;
+}
+
+/* Heading 1 Appearance */
+.dsn-heading--heading-1 {
+  font-family: var(--dsn-heading-level-1-font-family);
+  font-weight: var(--dsn-heading-level-1-font-weight);
+  color: var(--dsn-heading-level-1-color);
+  font-size: var(--dsn-heading-level-1-font-size);
+  line-height: var(--dsn-heading-level-1-line-height);
+  margin-block-end: var(--dsn-heading-level-1-margin-block-end);
+}
+
+/* Heading 2 Appearance */
+.dsn-heading--heading-2 {
+  font-family: var(--dsn-heading-level-2-font-family);
+  font-weight: var(--dsn-heading-level-2-font-weight);
+  color: var(--dsn-heading-level-2-color);
+  font-size: var(--dsn-heading-level-2-font-size);
+  line-height: var(--dsn-heading-level-2-line-height);
+  margin-block-end: var(--dsn-heading-level-2-margin-block-end);
+}
+
+/* Heading 3 Appearance */
+.dsn-heading--heading-3 {
+  font-family: var(--dsn-heading-level-3-font-family);
+  font-weight: var(--dsn-heading-level-3-font-weight);
+  color: var(--dsn-heading-level-3-color);
+  font-size: var(--dsn-heading-level-3-font-size);
+  line-height: var(--dsn-heading-level-3-line-height);
+  margin-block-end: var(--dsn-heading-level-3-margin-block-end);
+}
+
+/* Heading 4 Appearance */
+.dsn-heading--heading-4 {
+  font-family: var(--dsn-heading-level-4-font-family);
+  font-weight: var(--dsn-heading-level-4-font-weight);
+  color: var(--dsn-heading-level-4-color);
+  font-size: var(--dsn-heading-level-4-font-size);
+  line-height: var(--dsn-heading-level-4-line-height);
+  margin-block-end: var(--dsn-heading-level-4-margin-block-end);
+}
+
+/* Heading 5 Appearance */
+.dsn-heading--heading-5 {
+  font-family: var(--dsn-heading-level-5-font-family);
+  font-weight: var(--dsn-heading-level-5-font-weight);
+  color: var(--dsn-heading-level-5-color);
+  font-size: var(--dsn-heading-level-5-font-size);
+  line-height: var(--dsn-heading-level-5-line-height);
+  margin-block-end: var(--dsn-heading-level-5-margin-block-end);
+}
+
+/* Heading 6 Appearance */
+.dsn-heading--heading-6 {
+  font-family: var(--dsn-heading-level-6-font-family);
+  font-weight: var(--dsn-heading-level-6-font-weight);
+  color: var(--dsn-heading-level-6-color);
+  font-size: var(--dsn-heading-level-6-font-size);
+  line-height: var(--dsn-heading-level-6-line-height);
+  margin-block-end: var(--dsn-heading-level-6-margin-block-end);
+}

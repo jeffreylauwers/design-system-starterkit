@@ -1,0 +1,38 @@
+{
+  "name": "@dsn/components-web",
+  "version": "0.1.0",
+  "description": "Web Components for the design system",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "node scripts/build-css.js && tsc",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "design-system",
+    "web-components",
+    "custom-elements"
+  ],
+  "author": "Jeffrey Lauwers",
+  "license": "MIT",
+  "dependencies": {
+    "@dsn/design-tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

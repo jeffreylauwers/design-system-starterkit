@@ -1,0 +1,120 @@
+/**
+ * Text Area Component
+ * Multi-line text input with support for various states
+ *
+ * Usage:
+ * <textarea class="dsn-text-area" rows="4"></textarea>
+ */
+
+.dsn-text-area {
+  /* Typography */
+  font-family: var(--dsn-text-area-font-family);
+  font-size: var(--dsn-text-area-font-size);
+  font-weight: var(--dsn-text-area-font-weight);
+  line-height: var(--dsn-text-area-line-height);
+
+  /* Colors */
+  color: var(--dsn-text-area-color);
+  background-color: var(--dsn-text-area-background-color);
+
+  /* Border */
+  border: var(--dsn-text-area-border-width) solid
+    var(--dsn-text-area-border-color);
+  border-radius: var(--dsn-text-area-border-radius);
+
+  /* Spacing */
+  padding-block-start: var(--dsn-text-area-padding-block-start);
+  padding-block-end: var(--dsn-text-area-padding-block-end);
+  padding-inline-start: var(--dsn-text-area-padding-inline-start);
+  padding-inline-end: var(--dsn-text-area-padding-inline-end);
+
+  /* Sizing */
+  min-block-size: var(--dsn-text-area-min-block-size);
+  min-inline-size: var(--dsn-text-area-min-inline-size);
+  inline-size: 100%;
+  max-inline-size: var(--dsn-form-control-max-inline-size);
+
+  /* Display */
+  display: block;
+  box-sizing: border-box;
+
+  /* Resize behavior */
+  resize: var(--dsn-text-area-resize);
+
+  /* Transitions */
+  transition-property: border-color, box-shadow, background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Placeholder */
+.dsn-text-area::placeholder {
+  color: var(--dsn-text-area-placeholder-color);
+  opacity: 1;
+}
+
+/* Hover state */
+.dsn-text-area:hover:not(:disabled):not(:read-only) {
+  box-shadow: inset 0 0 0 var(--dsn-text-area-hover-box-shadow-spread)
+    var(--dsn-text-area-hover-box-shadow-color);
+}
+
+/* Focus state */
+.dsn-text-area:focus {
+  outline: none;
+  background-color: var(--dsn-text-area-focus-background-color);
+  border-color: var(--dsn-text-area-focus-border-color);
+  box-shadow: inset 0 0 0 var(--dsn-text-area-focus-box-shadow-spread)
+    var(--dsn-text-area-focus-box-shadow-color);
+}
+
+/* Disabled state */
+.dsn-text-area:disabled {
+  color: var(--dsn-text-area-disabled-color);
+  background-color: var(--dsn-text-area-disabled-background-color);
+  border-color: var(--dsn-text-area-disabled-border-color);
+  cursor: not-allowed;
+  resize: none;
+}
+
+/* Read-only state */
+.dsn-text-area:read-only {
+  color: var(--dsn-text-area-read-only-color);
+  background-color: var(--dsn-text-area-read-only-background-color);
+  border-color: var(--dsn-text-area-read-only-border-color);
+  cursor: default;
+}
+
+/* Invalid state (using aria-invalid or :invalid) */
+.dsn-text-area:invalid,
+.dsn-text-area[aria-invalid='true'] {
+  background-color: var(--dsn-text-area-invalid-background-color);
+  border-color: var(--dsn-text-area-invalid-border-color);
+  box-shadow: inset 0 0 0 var(--dsn-text-area-invalid-box-shadow-spread)
+    var(--dsn-text-area-invalid-box-shadow-color);
+}
+
+/* Width variants */
+.dsn-text-area--width-xs {
+  max-inline-size: var(--dsn-form-control-width-xs);
+}
+
+.dsn-text-area--width-sm {
+  max-inline-size: var(--dsn-form-control-width-sm);
+}
+
+.dsn-text-area--width-md {
+  max-inline-size: var(--dsn-form-control-width-md);
+}
+
+.dsn-text-area--width-lg {
+  max-inline-size: var(--dsn-form-control-width-lg);
+}
+
+.dsn-text-area--width-xl {
+  max-inline-size: var(--dsn-form-control-width-xl);
+}
+
+.dsn-text-area--width-full {
+  max-inline-size: var(--dsn-form-control-width-full);
+}

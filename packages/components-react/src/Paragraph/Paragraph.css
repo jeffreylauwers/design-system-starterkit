@@ -1,0 +1,6 @@
+/**
+ * Paragraph Component Styles for React
+ * Re-exports the base Paragraph styles from components-html
+ */
+
+@import '../../../components-html/src/paragraph/paragraph.css';

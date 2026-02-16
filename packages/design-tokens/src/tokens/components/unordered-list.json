@@ -1,0 +1,51 @@
+{
+  "dsn": {
+    "unordered-list": {
+      "font-family": {
+        "value": "{dsn.text.font-family.default}",
+        "type": "fontFamily",
+        "comment": "Unordered list font family"
+      },
+      "font-weight": {
+        "value": "{dsn.text.font-weight.default}",
+        "type": "fontWeight",
+        "comment": "Unordered list font weight"
+      },
+      "color": {
+        "value": "{dsn.color.neutral.color-document}",
+        "type": "color",
+        "comment": "Unordered list text color"
+      },
+      "font-size": {
+        "value": "{dsn.text.font-size.md}",
+        "type": "fontSize",
+        "comment": "Unordered list font size"
+      },
+      "line-height": {
+        "value": "{dsn.text.line-height.md}",
+        "type": "lineHeight",
+        "comment": "Unordered list line height"
+      },
+      "padding-inline-start": {
+        "value": "{dsn.space.inline.3xl}",
+        "type": "spacing",
+        "comment": "Unordered list left indentation"
+      },
+      "margin-block-end": {
+        "value": "{dsn.space.row.lg}",
+        "type": "spacing",
+        "comment": "Unordered list bottom margin"
+      },
+      "gap": {
+        "value": "{dsn.space.row.sm}",
+        "type": "spacing",
+        "comment": "Space between list items"
+      },
+      "marker-color": {
+        "value": "{dsn.color.accent-1.color-default}",
+        "type": "color",
+        "comment": "Bullet marker color"
+      }
+    }
+  }
+}

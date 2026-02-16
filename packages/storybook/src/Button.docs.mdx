@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories';
+import docs from './Button.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={ButtonStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={ButtonStories.Default} />
+
+<Controls of={ButtonStories.Default} />
+
+<Markdown>{rest}</Markdown>

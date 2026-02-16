@@ -1,0 +1,48 @@
+{
+  "name": "@dsn/components-react",
+  "version": "0.1.0",
+  "description": "React components for the design system",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "generate:icons": "node scripts/generate-icons.js",
+    "build": "node scripts/generate-icons.js && tsc",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "design-system",
+    "react",
+    "components"
+  ],
+  "author": "Jeffrey Lauwers",
+  "license": "MIT",
+  "dependencies": {
+    "@dsn/core": "workspace:*",
+    "@dsn/design-tokens": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.1.0",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.3"
+  }
+}

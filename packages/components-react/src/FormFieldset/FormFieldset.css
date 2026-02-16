@@ -1,0 +1,15 @@
+/**
+ * FormFieldset Component Styles
+ * Container for group controls using fieldset/legend
+ * Re-uses FormField CSS classes for consistency
+ */
+
+/* FormFieldset uses the same .dsn-form-field classes as FormField */
+/* Additional fieldset-specific styles if needed can be added here */
+
+fieldset.dsn-form-field {
+  border: none;
+  margin: 0;
+  padding: 0;
+  min-inline-size: 0; /* Reset fieldset min-width */
+}

@@ -1,0 +1,198 @@
+{
+  "dsn": {
+    "heading": {
+      "level-1": {
+        "font-family": {
+          "value": "{dsn.heading.font-family}",
+          "type": "fontFamily",
+          "comment": "Heading 1 font family"
+        },
+        "font-weight": {
+          "value": "{dsn.heading.font-weight}",
+          "type": "fontWeight",
+          "comment": "Heading 1 font weight"
+        },
+        "color": {
+          "value": "{dsn.heading.color}",
+          "type": "color",
+          "comment": "Heading 1 text color"
+        },
+        "font-size": {
+          "value": "{dsn.text.font-size.3xl}",
+          "type": "fontSize",
+          "comment": "Heading 1 font size"
+        },
+        "line-height": {
+          "value": "{dsn.text.line-height.3xl}",
+          "type": "lineHeight",
+          "comment": "Heading 1 line height"
+        },
+        "margin-block-end": {
+          "value": "{dsn.space.row.xl}",
+          "type": "spacing",
+          "comment": "Heading 1 bottom margin"
+        }
+      },
+      "level-2": {
+        "font-family": {
+          "value": "{dsn.heading.font-family}",
+          "type": "fontFamily",
+          "comment": "Heading 2 font family"
+        },
+        "font-weight": {
+          "value": "{dsn.heading.font-weight}",
+          "type": "fontWeight",
+          "comment": "Heading 2 font weight"
+        },
+        "color": {
+          "value": "{dsn.heading.color}",
+          "type": "color",
+          "comment": "Heading 2 text color"
+        },
+        "font-size": {
+          "value": "{dsn.text.font-size.2xl}",
+          "type": "fontSize",
+          "comment": "Heading 2 font size"
+        },
+        "line-height": {
+          "value": "{dsn.text.line-height.2xl}",
+          "type": "lineHeight",
+          "comment": "Heading 2 line height"
+        },
+        "margin-block-end": {
+          "value": "{dsn.space.row.xl}",
+          "type": "spacing",
+          "comment": "Heading 2 bottom margin"
+        }
+      },
+      "level-3": {
+        "font-family": {
+          "value": "{dsn.heading.font-family}",
+          "type": "fontFamily",
+          "comment": "Heading 3 font family"
+        },
+        "font-weight": {
+          "value": "{dsn.heading.font-weight}",
+          "type": "fontWeight",
+          "comment": "Heading 3 font weight"
+        },
+        "color": {
+          "value": "{dsn.heading.color}",
+          "type": "color",
+          "comment": "Heading 3 text color"
+        },
+        "font-size": {
+          "value": "{dsn.text.font-size.xl}",
+          "type": "fontSize",
+          "comment": "Heading 3 font size"
+        },
+        "line-height": {
+          "value": "{dsn.text.line-height.xl}",
+          "type": "lineHeight",
+          "comment": "Heading 3 line height"
+        },
+        "margin-block-end": {
+          "value": "{dsn.space.row.lg}",
+          "type": "spacing",
+          "comment": "Heading 3 bottom margin"
+        }
+      },
+      "level-4": {
+        "font-family": {
+          "value": "{dsn.heading.font-family}",
+          "type": "fontFamily",
+          "comment": "Heading 4 font family"
+        },
+        "font-weight": {
+          "value": "{dsn.heading.font-weight}",
+          "type": "fontWeight",
+          "comment": "Heading 4 font weight"
+        },
+        "color": {
+          "value": "{dsn.heading.color}",
+          "type": "color",
+          "comment": "Heading 4 text color"
+        },
+        "font-size": {
+          "value": "{dsn.text.font-size.lg}",
+          "type": "fontSize",
+          "comment": "Heading 4 font size"
+        },
+        "line-height": {
+          "value": "{dsn.text.line-height.lg}",
+          "type": "lineHeight",
+          "comment": "Heading 4 line height"
+        },
+        "margin-block-end": {
+          "value": "{dsn.space.row.lg}",
+          "type": "spacing",
+          "comment": "Heading 4 bottom margin"
+        }
+      },
+      "level-5": {
+        "font-family": {
+          "value": "{dsn.heading.font-family}",
+          "type": "fontFamily",
+          "comment": "Heading 5 font family"
+        },
+        "font-weight": {
+          "value": "{dsn.heading.font-weight}",
+          "type": "fontWeight",
+          "comment": "Heading 5 font weight"
+        },
+        "color": {
+          "value": "{dsn.heading.color}",
+          "type": "color",
+          "comment": "Heading 5 text color"
+        },
+        "font-size": {
+          "value": "{dsn.text.font-size.md}",
+          "type": "fontSize",
+          "comment": "Heading 5 font size"
+        },
+        "line-height": {
+          "value": "{dsn.text.line-height.md}",
+          "type": "lineHeight",
+          "comment": "Heading 5 line height"
+        },
+        "margin-block-end": {
+          "value": "{dsn.space.row.md}",
+          "type": "spacing",
+          "comment": "Heading 5 bottom margin"
+        }
+      },
+      "level-6": {
+        "font-family": {
+          "value": "{dsn.heading.font-family}",
+          "type": "fontFamily",
+          "comment": "Heading 6 font family"
+        },
+        "font-weight": {
+          "value": "{dsn.heading.font-weight}",
+          "type": "fontWeight",
+          "comment": "Heading 6 font weight"
+        },
+        "color": {
+          "value": "{dsn.heading.color}",
+          "type": "color",
+          "comment": "Heading 6 text color"
+        },
+        "font-size": {
+          "value": "{dsn.text.font-size.sm}",
+          "type": "fontSize",
+          "comment": "Heading 6 font size"
+        },
+        "line-height": {
+          "value": "{dsn.text.line-height.sm}",
+          "type": "lineHeight",
+          "comment": "Heading 6 line height"
+        },
+        "margin-block-end": {
+          "value": "{dsn.space.row.md}",
+          "type": "spacing",
+          "comment": "Heading 6 bottom margin"
+        }
+      }
+    }
+  }
+}

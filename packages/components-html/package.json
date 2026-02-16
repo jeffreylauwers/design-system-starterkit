@@ -1,0 +1,44 @@
+{
+  "name": "@dsn/components-html",
+  "version": "0.1.0",
+  "description": "Pure HTML/CSS components for the design system",
+  "style": "dist/components.css",
+  "main": "dist/components.css",
+  "exports": {
+    ".": "./dist/components.css",
+    "./button": "./src/button/button.css",
+    "./icon": "./src/icon/icon.css",
+    "./paragraph": "./src/paragraph/paragraph.css",
+    "./heading": "./src/heading/heading.css",
+    "./link": "./src/link/link.css",
+    "./unordered-list": "./src/unordered-list/unordered-list.css",
+    "./ordered-list": "./src/ordered-list/ordered-list.css",
+    "./text-input": "./src/text-input/text-input.css",
+    "./text-area": "./src/text-area/text-area.css",
+    "./form-field-label": "./src/form-field-label/form-field-label.css",
+    "./form-field-description": "./src/form-field-description/form-field-description.css",
+    "./form-field-error-message": "./src/form-field-error-message/form-field-error-message.css",
+    "./form-field-status": "./src/form-field-status/form-field-status.css",
+    "./form-field": "./src/form-field/form-field.css"
+  },
+  "files": [
+    "dist",
+    "src",
+    "assets"
+  ],
+  "scripts": {
+    "build": "mkdir -p dist && cat src/button/button.css src/icon/icon.css src/paragraph/paragraph.css src/heading/heading.css src/link/link.css src/unordered-list/unordered-list.css src/ordered-list/ordered-list.css > dist/components.css",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "design-system",
+    "css",
+    "html",
+    "components"
+  ],
+  "author": "Jeffrey Lauwers",
+  "license": "MIT",
+  "dependencies": {
+    "@dsn/design-tokens": "workspace:*"
+  }
+}

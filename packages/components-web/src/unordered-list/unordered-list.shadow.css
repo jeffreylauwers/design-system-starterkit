@@ -1,0 +1,11 @@
+/**
+ * Shadow DOM wrapper styles for the UnorderedList Web Component.
+ * The core styles are imported from the shared HTML/CSS source.
+ */
+
+:host {
+  display: block;
+}
+
+/* Shared unordered list styles - single source of truth */
+@import '../../../components-html/src/unordered-list/unordered-list.css';

@@ -1,0 +1,182 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Icon } from '@dsn/components-react';
+import type { IconName } from '@dsn/components-react/icon-registry.generated';
+import DocsPage from './Icon.docs.mdx';
+
+const meta: Meta<typeof Icon> = {
+  title: 'Components/Icon',
+  component: Icon,
+  parameters: {
+    docs: {
+      page: DocsPage,
+    },
+  },
+  argTypes: {
+    name: {
+      control: 'select',
+      options: [
+        'alert-triangle',
+        'archive',
+        'arrow-down',
+        'arrow-left',
+        'arrow-narrow-down',
+        'arrow-narrow-up',
+        'arrow-right',
+        'arrow-up',
+        'bell',
+        'calendar-event',
+        'check',
+        'chevron-down',
+        'chevron-left',
+        'chevron-right',
+        'chevron-up',
+        'circle-check',
+        'clock',
+        'dots-vertical',
+        'download',
+        'edit',
+        'exclamation-circle',
+        'external-link',
+        'eye',
+        'file-description',
+        'folder',
+        'heart-filled',
+        'heart',
+        'home',
+        'info-circle',
+        'loader',
+        'mail',
+        'menu',
+        'message-circle',
+        'minus',
+        'paperclip',
+        'plus',
+        'search',
+        'selector',
+        'settings',
+        'star-filled',
+        'star',
+        'trash',
+        'upload',
+        'user',
+        'x',
+      ] as IconName[],
+    },
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
+    },
+    'aria-label': { control: 'text' },
+  },
+  args: {
+    name: 'check',
+    size: 'md',
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof Icon>;
+
+export const Default: Story = {};
+
+export const AllSizes: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="check" size="sm" />
+        <span style={{ fontSize: '0.75rem' }}>sm</span>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="check" size="md" />
+        <span style={{ fontSize: '0.75rem' }}>md</span>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="check" size="lg" />
+        <span style={{ fontSize: '0.75rem' }}>lg</span>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="check" size="xl" />
+        <span style={{ fontSize: '0.75rem' }}>xl</span>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="check" size="2xl" />
+        <span style={{ fontSize: '0.75rem' }}>2xl</span>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="check" size="3xl" />
+        <span style={{ fontSize: '0.75rem' }}>3xl</span>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="check" size="4xl" />
+        <span style={{ fontSize: '0.75rem' }}>4xl</span>
+      </div>
+    </div>
+  ),
+};
+
+export const AllIcons: Story = {
+  render: () => (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))', gap: '1.5rem' }}>
+      {[
+        'alert-triangle',
+        'archive',
+        'arrow-down',
+        'arrow-left',
+        'arrow-narrow-down',
+        'arrow-narrow-up',
+        'arrow-right',
+        'arrow-up',
+        'bell',
+        'calendar-event',
+        'check',
+        'chevron-down',
+        'chevron-left',
+        'chevron-right',
+        'chevron-up',
+        'circle-check',
+        'clock',
+        'dots-vertical',
+        'download',
+        'edit',
+        'exclamation-circle',
+        'external-link',
+        'eye',
+        'file-description',
+        'folder',
+        'heart-filled',
+        'heart',
+        'home',
+        'info-circle',
+        'loader',
+        'mail',
+        'menu',
+        'message-circle',
+        'minus',
+        'paperclip',
+        'plus',
+        'search',
+        'selector',
+        'settings',
+        'star-filled',
+        'star',
+        'trash',
+        'upload',
+        'user',
+        'x',
+      ].map((iconName) => (
+        <div
+          key={iconName}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '0.5rem',
+          }}
+        >
+          <Icon name={iconName as IconName} size="lg" />
+          <span style={{ fontSize: '0.75rem', textAlign: 'center' }}>{iconName}</span>
+        </div>
+      ))}
+    </div>
+  ),
+};

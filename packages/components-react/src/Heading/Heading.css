@@ -1,0 +1,6 @@
+/**
+ * Heading Component Styles for React
+ * Re-exports the base Heading styles from components-html
+ */
+
+@import '../../../components-html/src/heading/heading.css';

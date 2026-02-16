@@ -1,0 +1,41 @@
+{
+  "dsn": {
+    "form-field-label": {
+      "font-family": {
+        "value": "{dsn.text.font-family.default}",
+        "type": "fontFamily",
+        "comment": "Form field label font family"
+      },
+      "font-size": {
+        "value": "{dsn.text.font-size.md}",
+        "type": "fontSize",
+        "comment": "Form field label font size"
+      },
+      "font-weight": {
+        "value": "{dsn.text.font-weight.bold}",
+        "type": "fontWeight",
+        "comment": "Form field label font weight"
+      },
+      "line-height": {
+        "value": "{dsn.text.line-height.md}",
+        "type": "lineHeight",
+        "comment": "Form field label line height"
+      },
+      "color": {
+        "value": "{dsn.color.neutral.color-document}",
+        "type": "color",
+        "comment": "Form field label text color"
+      },
+      "margin-block-end": {
+        "value": "{dsn.space.block.md}",
+        "type": "dimension",
+        "comment": "Space below label before form control (when no description follows)"
+      },
+      "margin-block-end-with-description": {
+        "value": "{dsn.space.block.sm}",
+        "type": "dimension",
+        "comment": "Space below label when description follows"
+      }
+    }
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "dsn": {
+    "text-area": {
+      "background-color": {
+        "value": "{dsn.form-control.background-color}",
+        "type": "color",
+        "comment": "Text area background color"
+      },
+      "border-color": {
+        "value": "{dsn.form-control.border-color}",
+        "type": "color",
+        "comment": "Text area border color"
+      },
+      "border-radius": {
+        "value": "{dsn.form-control.border-radius}",
+        "type": "dimension",
+        "comment": "Text area border radius"
+      },
+      "border-width": {
+        "value": "{dsn.form-control.border-width}",
+        "type": "dimension",
+        "comment": "Text area border width"
+      },
+      "color": {
+        "value": "{dsn.form-control.color}",
+        "type": "color",
+        "comment": "Text area text color"
+      },
+      "font-family": {
+        "value": "{dsn.form-control.font-family}",
+        "type": "fontFamily",
+        "comment": "Text area font family"
+      },
+      "font-size": {
+        "value": "{dsn.form-control.font-size}",
+        "type": "fontSize",
+        "comment": "Text area font size"
+      },
+      "font-weight": {
+        "value": "{dsn.form-control.font-weight}",
+        "type": "fontWeight",
+        "comment": "Text area font weight"
+      },
+      "line-height": {
+        "value": "{dsn.form-control.line-height}",
+        "type": "lineHeight",
+        "comment": "Text area line height"
+      },
+      "min-block-size": {
+        "value": "{dsn.pointer-target.min-block-size}",
+        "type": "dimension",
+        "comment": "Text area minimum height"
+      },
+      "min-inline-size": {
+        "value": "{dsn.pointer-target.min-inline-size}",
+        "type": "dimension",
+        "comment": "Text area minimum width"
+      },
+      "outline-offset": {
+        "value": "0px",
+        "type": "dimension",
+        "comment": "Text area outline offset"
+      },
+      "padding-block-end": {
+        "value": "{dsn.form-control.padding-block-end}",
+        "type": "dimension",
+        "comment": "Text area bottom padding"
+      },
+      "padding-block-start": {
+        "value": "{dsn.form-control.padding-block-start}",
+        "type": "dimension",
+        "comment": "Text area top padding"
+      },
+      "padding-inline-end": {
+        "value": "{dsn.form-control.padding-inline-end}",
+        "type": "dimension",
+        "comment": "Text area right padding"
+      },
+      "padding-inline-start": {
+        "value": "{dsn.form-control.padding-inline-start}",
+        "type": "dimension",
+        "comment": "Text area left padding"
+      },
+      "resize": {
+        "value": "vertical",
+        "type": "other",
+        "comment": "Text area resize behavior (vertical, horizontal, both, none)"
+      },
+      "placeholder": {
+        "color": {
+          "value": "{dsn.form-control.placeholder.color}",
+          "type": "color",
+          "comment": "Text area placeholder color"
+        }
+      },
+      "disabled": {
+        "background-color": {
+          "value": "{dsn.form-control.disabled.background-color}",
+          "type": "color",
+          "comment": "Text area disabled background"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.disabled.border-color}",
+          "type": "color",
+          "comment": "Text area disabled border"
+        },
+        "color": {
+          "value": "{dsn.form-control.disabled.color}",
+          "type": "color",
+          "comment": "Text area disabled text color"
+        }
+      },
+      "focus": {
+        "background-color": {
+          "value": "{dsn.form-control.focus.background-color}",
+          "type": "color",
+          "comment": "Text area focus background"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.focus.border-color}",
+          "type": "color",
+          "comment": "Text area focus border"
+        },
+        "box-shadow-x": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text area focus box shadow x offset"
+        },
+        "box-shadow-y": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text area focus box shadow y offset"
+        },
+        "box-shadow-blur": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text area focus box shadow blur"
+        },
+        "box-shadow-spread": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension",
+          "comment": "Text area focus box shadow spread (creates thicker border effect)"
+        },
+        "box-shadow-color": {
+          "value": "{dsn.text-area.focus.border-color}",
+          "type": "color",
+          "comment": "Text area focus box shadow color"
+        },
+        "color": {
+          "value": "{dsn.form-control.focus.color}",
+          "type": "color",
+          "comment": "Text area focus text color"
+        }
+      },
+      "hover": {
+        "box-shadow-x": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text area hover box shadow x offset"
+        },
+        "box-shadow-y": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text area hover box shadow y offset"
+        },
+        "box-shadow-blur": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text area hover box shadow blur"
+        },
+        "box-shadow-spread": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension",
+          "comment": "Text area hover box shadow spread (creates thicker border effect)"
+        },
+        "box-shadow-color": {
+          "value": "{dsn.text-area.border-color}",
+          "type": "color",
+          "comment": "Text area hover box shadow color"
+        }
+      },
+      "invalid": {
+        "background-color": {
+          "value": "{dsn.form-control.invalid.background-color}",
+          "type": "color",
+          "comment": "Text area invalid background"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.invalid.border-color}",
+          "type": "color",
+          "comment": "Text area invalid border"
+        },
+        "box-shadow-x": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text area invalid box shadow x offset"
+        },
+        "box-shadow-y": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text area invalid box shadow y offset"
+        },
+        "box-shadow-blur": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text area invalid box shadow blur"
+        },
+        "box-shadow-spread": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension",
+          "comment": "Text area invalid box shadow spread (creates thicker border effect)"
+        },
+        "box-shadow-color": {
+          "value": "{dsn.text-area.invalid.border-color}",
+          "type": "color",
+          "comment": "Text area invalid box shadow color"
+        },
+        "color": {
+          "value": "{dsn.form-control.color}",
+          "type": "color",
+          "comment": "Text area invalid text color"
+        }
+      },
+      "read-only": {
+        "background-color": {
+          "value": "{dsn.form-control.read-only.background-color}",
+          "type": "color",
+          "comment": "Text area read-only background"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.read-only.border-color}",
+          "type": "color",
+          "comment": "Text area read-only border"
+        },
+        "color": {
+          "value": "{dsn.form-control.read-only.color}",
+          "type": "color",
+          "comment": "Text area read-only text color"
+        }
+      }
+    }
+  }
+}

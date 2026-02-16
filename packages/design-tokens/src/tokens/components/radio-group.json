@@ -1,0 +1,58 @@
+{
+  "dsn": {
+    "radio-group": {
+      "border-width": {
+        "value": "0px",
+        "type": "dimension",
+        "comment": "No border by default for fieldset"
+      },
+      "padding": {
+        "value": "0px",
+        "type": "dimension",
+        "comment": "No padding by default for fieldset"
+      },
+      "margin": {
+        "value": "0px",
+        "type": "dimension",
+        "comment": "No margin by default for fieldset"
+      },
+      "gap": {
+        "value": "{dsn.space.block.sm}",
+        "type": "dimension",
+        "comment": "Space between radio options in the group"
+      },
+      "legend": {
+        "font-family": {
+          "value": "{dsn.form-field-label.font-family}",
+          "type": "fontFamily",
+          "comment": "Font family for the legend (reuses form field label)"
+        },
+        "font-size": {
+          "value": "{dsn.form-field-label.font-size}",
+          "type": "fontSize",
+          "comment": "Font size for the legend (reuses form field label)"
+        },
+        "font-weight": {
+          "value": "{dsn.form-field-label.font-weight}",
+          "type": "fontWeight",
+          "comment": "Font weight for the legend (reuses form field label)"
+        },
+        "line-height": {
+          "value": "{dsn.form-field-label.line-height}",
+          "type": "lineHeight",
+          "comment": "Line height for the legend (reuses form field label)"
+        },
+        "color": {
+          "value": "{dsn.form-field-label.color}",
+          "type": "color",
+          "comment": "Text color for the legend (reuses form field label)"
+        },
+        "margin-block-end": {
+          "value": "{dsn.form-field-label.margin-block-end-with-description}",
+          "type": "dimension",
+          "comment": "Space below the legend before the radio options (uses smaller margin like when description follows)"
+        }
+      }
+    }
+  }
+}

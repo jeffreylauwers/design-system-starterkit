@@ -1,0 +1,6 @@
+/**
+ * FormFieldLabel Component Styles for React
+ * Re-exports the base FormFieldLabel styles from components-html
+ */
+
+@import '../../../components-html/src/form-field-label/form-field-label.css';

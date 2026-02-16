@@ -1,0 +1,41 @@
+{
+  "name": "@dsn/core",
+  "version": "0.1.0",
+  "description": "Core styles and utilities for the design system",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/core.css",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./css": "./dist/core.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "mkdir -p dist && cat src/styles/reset.css src/styles/utilities.css > dist/core.css",
+    "build:js": "tsc",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "design-system",
+    "css",
+    "utilities",
+    "reset"
+  ],
+  "author": "Jeffrey Lauwers",
+  "license": "MIT",
+  "dependencies": {
+    "@dsn/design-tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,11 @@
+/**
+ * Shadow DOM wrapper styles for the Paragraph Web Component.
+ * The core paragraph styles are imported from the shared HTML/CSS source.
+ */
+
+:host {
+  display: block;
+}
+
+/* Shared paragraph styles - single source of truth */
+@import '../../../components-html/src/paragraph/paragraph.css';

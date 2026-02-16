@@ -1,0 +1,7 @@
+/**
+ * FormFieldLegend Component Styles
+ * Re-uses FormFieldLabel styles for consistent appearance
+ * The legend element uses the same .dsn-form-field-label class
+ */
+
+/* FormFieldLegend uses the FormFieldLabel CSS classes, no additional styles needed */

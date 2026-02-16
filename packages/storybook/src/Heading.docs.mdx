@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as HeadingStories from './Heading.stories';
+import docs from './Heading.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={HeadingStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={HeadingStories.Default} />
+
+<Controls of={HeadingStories.Default} />
+
+<Markdown>{rest}</Markdown>

@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as RadioOptionStories from './RadioOption.stories';
+import docs from './RadioOption.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={RadioOptionStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={RadioOptionStories.Default} />
+
+<Controls of={RadioOptionStories.Default} />
+
+<Markdown>{rest}</Markdown>

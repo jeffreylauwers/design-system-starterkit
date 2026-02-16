@@ -1,0 +1,60 @@
+/**
+ * Form Field Status Component
+ * Status message displayed below the form control
+ * Supports three variants: default (subtle info), positive (success), warning (caution)
+ *
+ * Usage:
+ * <!-- Default variant (no icon) -->
+ * <p class="dsn-form-field-status">
+ *   45 van 100 karakters
+ * </p>
+ *
+ * <!-- Positive variant (with check icon) -->
+ * <p class="dsn-form-field-status dsn-form-field-status--positive">
+ *   <svg class="dsn-icon" aria-hidden="true">...</svg>
+ *   Wachtwoord is sterk genoeg
+ * </p>
+ *
+ * <!-- Warning variant (with alert-triangle icon) -->
+ * <p class="dsn-form-field-status dsn-form-field-status--warning">
+ *   <svg class="dsn-icon" aria-hidden="true">...</svg>
+ *   Wachtwoord is zwak
+ * </p>
+ */
+
+.dsn-form-field-status {
+  font-family: var(--dsn-form-field-status-font-family);
+  font-size: var(--dsn-form-field-status-font-size);
+  font-weight: var(--dsn-form-field-status-font-weight);
+  line-height: var(--dsn-form-field-status-line-height);
+  color: var(--dsn-form-field-status-color);
+  margin-block-start: var(--dsn-form-field-status-margin-block-start);
+  margin-block-end: 0;
+}
+
+/* Positive and warning variants use flexbox for icon + text layout */
+.dsn-form-field-status--positive,
+.dsn-form-field-status--warning {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--dsn-space-text-sm);
+}
+
+/* Positive variant - success feedback */
+.dsn-form-field-status--positive {
+  color: var(--dsn-color-positive-color-default);
+}
+
+/* Warning variant - caution feedback */
+.dsn-form-field-status--warning {
+  color: var(--dsn-color-warning-color-default);
+}
+
+/* Icon sizing within status message (positive and warning only) */
+.dsn-form-field-status--positive > .dsn-icon,
+.dsn-form-field-status--warning > .dsn-icon {
+  flex-shrink: 0;
+  width: var(--dsn-icon-size-md);
+  height: var(--dsn-icon-size-md);
+  color: inherit;
+}

@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as OptionLabelStories from './OptionLabel.stories';
+import docs from './OptionLabel.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={OptionLabelStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={OptionLabelStories.Default} />
+
+<Controls of={OptionLabelStories.Default} />
+
+<Markdown>{rest}</Markdown>

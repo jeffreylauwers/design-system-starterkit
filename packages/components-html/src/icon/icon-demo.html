@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icon Component - Design System</title>
+  
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="../../../design-tokens/dist/css/variables.css">
+  
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="../../../core/dist/core.css">
+  
+  <style>
+    body {
+      font-family: var(--dsn-text-font-family-default);
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .demo-section {
+      margin-bottom: 3rem;
+    }
+    
+    .demo-section h2 {
+      margin-bottom: 1rem;
+      font-size: var(--dsn-text-font-size-xl);
+    }
+    
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .demo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem;
+      border: 1px solid var(--dsn-color-neutral-border-default);
+      border-radius: var(--dsn-border-radius-md);
+    }
+    
+    .demo-item__icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    
+    .demo-item__name {
+      font-size: var(--dsn-text-font-size-sm);
+      color: var(--dsn-color-neutral-color-subtle);
+    }
+    
+    .size-demo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--dsn-color-neutral-border-default);
+      border-radius: var(--dsn-border-radius-md);
+      margin-bottom: 0.5rem;
+    }
+    
+    .size-demo__label {
+      min-width: 60px;
+      font-size: var(--dsn-text-font-size-sm);
+      color: var(--dsn-color-neutral-color-subtle);
+    }
+    
+    /* Icon sizing classes */
+    .icon--sm { width: var(--dsn-icon-size-sm); height: var(--dsn-icon-size-sm); }
+    .icon--md { width: var(--dsn-icon-size-md); height: var(--dsn-icon-size-md); }
+    .icon--lg { width: var(--dsn-icon-size-lg); height: var(--dsn-icon-size-lg); }
+    .icon--xl { width: var(--dsn-icon-size-xl); height: var(--dsn-icon-size-xl); }
+    .icon--2xl { width: var(--dsn-icon-size-2xl); height: var(--dsn-icon-size-2xl); }
+    .icon--3xl { width: var(--dsn-icon-size-3xl); height: var(--dsn-icon-size-3xl); }
+    .icon--4xl { width: var(--dsn-icon-size-4xl); height: var(--dsn-icon-size-4xl); }
+  </style>
+</head>
+<body>
+
+  <h1>Icon Component Examples</h1>
+  <p><strong>Note:</strong> This is a static HTML demo. Icons are shown using inline SVG. For React/Web Components, icons are imported individually for tree-shaking.</p>
+  
+  <!-- Size Variants -->
+  <div class="demo-section">
+    <h2>Size Variants</h2>
+    <p>All sizes use design tokens (coupled to typography)</p>
+    
+    <div class="size-demo">
+      <span class="size-demo__label">sm</span>
+      <svg class="demo-item__icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12l5 5l10 -10" />
+      </svg>
+      <code>icon--sm</code>
+      <span>(21px)</span>
+    </div>
+    
+    <div class="size-demo">
+      <span class="size-demo__label">md</span>
+      <svg class="demo-item__icon icon--md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12l5 5l10 -10" />
+      </svg>
+      <code>icon--md</code>
+      <span>(24px - default)</span>
+    </div>
+    
+    <div class="size-demo">
+      <span class="size-demo__label">lg</span>
+      <svg class="demo-item__icon icon--lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12l5 5l10 -10" />
+      </svg>
+      <code>icon--lg</code>
+      <span>(25px)</span>
+    </div>
+    
+    <div class="size-demo">
+      <span class="size-demo__label">xl</span>
+      <svg class="demo-item__icon icon--xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12l5 5l10 -10" />
+      </svg>
+      <code>icon--xl</code>
+      <span>(30px)</span>
+    </div>
+    
+    <div class="size-demo">
+      <span class="size-demo__label">2xl</span>
+      <svg class="demo-item__icon icon--2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12l5 5l10 -10" />
+      </svg>
+      <code>icon--2xl</code>
+      <span>(40px)</span>
+    </div>
+    
+    <div class="size-demo">
+      <span class="size-demo__label">3xl</span>
+      <svg class="demo-item__icon icon--3xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12l5 5l10 -10" />
+      </svg>
+      <code>icon--3xl</code>
+      <span>(50px)</span>
+    </div>
+    
+    <div class="size-demo">
+      <span class="size-demo__label">4xl</span>
+      <svg class="demo-item__icon icon--4xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12l5 5l10 -10" />
+      </svg>
+      <code>icon--4xl</code>
+      <span>(52.8px)</span>
+    </div>
+  </div>
+
+  <!-- All Available Icons -->
+  <div class="demo-section">
+    <h2>Available Icons (20 icons)</h2>
+    <p>Each icon is a separate SVG file for tree-shaking</p>
+    
+    <div class="demo-grid">
+      <div class="demo-item">
+        <svg class="demo-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Check icon">
+          <path d="M5 12l5 5l10 -10" />
+        </svg>
+        <span class="demo-item__name">check</span>
+      </div>
+      
+      <div class="demo-item">
+        <svg class="demo-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Close icon">
+          <path d="M18 6l-12 12" />
+          <path d="M6 6l12 12" />
+        </svg>
+        <span class="demo-item__name">x</span>
+      </div>
+      
+      <div class="demo-item">
+        <svg class="demo-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Chevron down icon">
+          <path d="M6 9l6 6l6 -6" />
+        </svg>
+        <span class="demo-item__name">chevron-down</span>
+      </div>
+      
+      <div class="demo-item">
+        <svg class="demo-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Plus icon">
+          <path d="M12 5l0 14" />
+          <path d="M5 12l14 0" />
+        </svg>
+        <span class="demo-item__name">plus</span>
+      </div>
+      
+      <div class="demo-item">
+        <svg class="demo-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Search icon">
+          <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+          <path d="M21 21l-6 -6" />
+        </svg>
+        <span class="demo-item__name">search</span>
+      </div>
+      
+      <div class="demo-item">
+        <svg class="demo-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Menu icon">
+          <path d="M4 6l16 0" />
+          <path d="M4 12l16 0" />
+          <path d="M4 18l16 0" />
+        </svg>
+        <span class="demo-item__name">menu</span>
+      </div>
+      
+      <div class="demo-item">
+        <svg class="demo-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Home icon">
+          <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+          <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+          <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+        </svg>
+        <span class="demo-item__name">home</span>
+      </div>
+      
+      <div class="demo-item">
+        <svg class="demo-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="User icon">
+          <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+          <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+        </svg>
+        <span class="demo-item__name">user</span>
+      </div>
+      
+      <div class="demo-item">
+        <svg class="demo-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Heart icon">
+          <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+        </svg>
+        <span class="demo-item__name">heart</span>
+      </div>
+      
+      <div class="demo-item">
+        <svg class="demo-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Settings icon">
+          <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+          <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+        </svg>
+        <span class="demo-item__name">settings</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

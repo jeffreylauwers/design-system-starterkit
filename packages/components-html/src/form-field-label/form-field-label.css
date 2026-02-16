@@ -1,0 +1,42 @@
+/**
+ * Form Field Label Component
+ * Label for form controls with optional suffix for "(niet verplicht)" or "(verplicht)"
+ *
+ * Usage:
+ * <label class="dsn-form-field-label">
+ *   Voornaam
+ *   <span class="dsn-form-field-label-suffix">(niet verplicht)</span>
+ * </label>
+ */
+
+.dsn-form-field-label {
+  display: block;
+  font-family: var(--dsn-form-field-label-font-family);
+  font-size: var(--dsn-form-field-label-font-size);
+  font-weight: var(--dsn-form-field-label-font-weight);
+  line-height: var(--dsn-form-field-label-line-height);
+  color: var(--dsn-form-field-label-color);
+  margin-block-start: 0;
+  margin-block-end: var(--dsn-form-field-label-margin-block-end);
+}
+
+/* Reduced margin when followed by description */
+.dsn-form-field-label:has(+ .dsn-form-field-description) {
+  margin-block-end: var(
+    --dsn-form-field-label-margin-block-end-with-description
+  );
+}
+
+/**
+ * Form Field Label Suffix
+ * Optional suffix text within the label (e.g., "(niet verplicht)")
+ * Same size but regular weight and inline with label text
+ */
+.dsn-form-field-label-suffix {
+  font-family: var(--dsn-form-field-label-suffix-font-family);
+  font-size: var(--dsn-form-field-label-suffix-font-size);
+  font-weight: var(--dsn-form-field-label-suffix-font-weight);
+  line-height: var(--dsn-form-field-label-suffix-line-height);
+  color: var(--dsn-form-field-label-suffix-color);
+  margin-inline-start: var(--dsn-form-field-label-suffix-margin-inline-start);
+}

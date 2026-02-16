@@ -1,0 +1,6 @@
+/**
+ * FormFieldErrorMessage Component Styles for React
+ * Re-exports the base FormFieldErrorMessage styles from components-html
+ */
+
+@import '../../../components-html/src/form-field-error-message/form-field-error-message.css';

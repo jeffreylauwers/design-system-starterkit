@@ -1,0 +1,209 @@
+{
+  "dsn": {
+    "radio": {
+      "size": {
+        "value": "calc(var(--dsn-text-font-size-md) * var(--dsn-text-line-height-md))",
+        "type": "dimension",
+        "comment": "Size of the radio button - fluid based on text size and line-height"
+      },
+      "border-width": {
+        "value": "{dsn.border.width.thin}",
+        "type": "dimension"
+      },
+      "background-color": {
+        "value": "{dsn.form-control.background-color}",
+        "type": "color"
+      },
+      "border-color": {
+        "value": "{dsn.form-control.border-color}",
+        "type": "color"
+      },
+      "color": {
+        "value": "{dsn.form-control.border-color}",
+        "type": "color",
+        "comment": "Inner circle color in default state"
+      },
+      "icon": {
+        "size": {
+          "value": "calc(var(--dsn-radio-size) * 0.33)",
+          "type": "dimension",
+          "comment": "Inner circle size when checked - 33% of radio size"
+        }
+      },
+      "hover": {
+        "background-color": {
+          "value": "{dsn.form-control.hover.background-color}",
+          "type": "color"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.hover.border-color}",
+          "type": "color"
+        },
+        "border-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension"
+        },
+        "color": {
+          "value": "{dsn.form-control.hover.border-color}",
+          "type": "color"
+        }
+      },
+      "focus": {
+        "background-color": {
+          "value": "{dsn.form-control.focus.background-color}",
+          "type": "color"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.focus.border-color}",
+          "type": "color"
+        },
+        "border-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension"
+        },
+        "color": {
+          "value": "{dsn.form-control.focus.border-color}",
+          "type": "color"
+        }
+      },
+      "active": {
+        "background-color": {
+          "value": "{dsn.form-control.active.background-color}",
+          "type": "color"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.active.border-color}",
+          "type": "color"
+        },
+        "border-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension"
+        },
+        "color": {
+          "value": "{dsn.form-control.active.border-color}",
+          "type": "color"
+        }
+      },
+      "disabled": {
+        "background-color": {
+          "value": "{dsn.form-control.disabled.background-color}",
+          "type": "color"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.disabled.border-color}",
+          "type": "color"
+        },
+        "color": {
+          "value": "{dsn.form-control.disabled.border-color}",
+          "type": "color"
+        }
+      },
+      "invalid": {
+        "background-color": {
+          "value": "{dsn.form-control.invalid.background-color}",
+          "type": "color"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.invalid.border-color}",
+          "type": "color"
+        },
+        "border-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension"
+        },
+        "color": {
+          "value": "{dsn.form-control.invalid.border-color}",
+          "type": "color"
+        }
+      },
+      "checked": {
+        "background-color": {
+          "value": "{dsn.form-control.accent-color}",
+          "type": "color"
+        },
+        "border-color": {
+          "value": "transparent",
+          "type": "color"
+        },
+        "border-width": {
+          "value": "{dsn.border.width.thin}",
+          "type": "dimension"
+        },
+        "color": {
+          "value": "{dsn.color.neutral-inverse.color-default}",
+          "type": "color",
+          "comment": "Inner circle color when checked"
+        }
+      },
+      "checked-hover": {
+        "background-color": {
+          "value": "{dsn.form-control.hover.accent-color}",
+          "type": "color"
+        },
+        "border-color": {
+          "value": "transparent",
+          "type": "color"
+        },
+        "border-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension"
+        },
+        "color": {
+          "value": "{dsn.color.neutral-inverse.color-default}",
+          "type": "color"
+        }
+      },
+      "checked-focus": {
+        "background-color": {
+          "value": "{dsn.form-control.focus.background-color}",
+          "type": "color"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.focus.border-color}",
+          "type": "color"
+        },
+        "border-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension"
+        },
+        "color": {
+          "value": "{dsn.form-control.focus.color}",
+          "type": "color"
+        }
+      },
+      "checked-active": {
+        "background-color": {
+          "value": "{dsn.form-control.active.accent-color}",
+          "type": "color"
+        },
+        "border-color": {
+          "value": "transparent",
+          "type": "color"
+        },
+        "border-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension"
+        },
+        "color": {
+          "value": "{dsn.color.neutral-inverse.color-default}",
+          "type": "color"
+        }
+      },
+      "checked-disabled": {
+        "background-color": {
+          "value": "{dsn.form-control.disabled.accent-color}",
+          "type": "color"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.disabled.border-color}",
+          "type": "color"
+        },
+        "color": {
+          "value": "{dsn.form-control.disabled.color}",
+          "type": "color",
+          "comment": "Inner circle color - dark text color for contrast against disabled accent background"
+        }
+      }
+    }
+  }
+}

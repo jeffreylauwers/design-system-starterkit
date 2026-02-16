@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as ParagraphStories from './Paragraph.stories';
+import docs from './Paragraph.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={ParagraphStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={ParagraphStories.Default} />
+
+<Controls of={ParagraphStories.Default} />
+
+<Markdown>{rest}</Markdown>

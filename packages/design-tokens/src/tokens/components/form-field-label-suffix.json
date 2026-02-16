@@ -1,0 +1,36 @@
+{
+  "dsn": {
+    "form-field-label-suffix": {
+      "font-family": {
+        "value": "{dsn.text.font-family.default}",
+        "type": "fontFamily",
+        "comment": "Form field label suffix font family"
+      },
+      "font-size": {
+        "value": "{dsn.text.font-size.md}",
+        "type": "fontSize",
+        "comment": "Form field label suffix font size"
+      },
+      "font-weight": {
+        "value": "{dsn.text.font-weight.default}",
+        "type": "fontWeight",
+        "comment": "Form field label suffix font weight"
+      },
+      "line-height": {
+        "value": "{dsn.text.line-height.md}",
+        "type": "lineHeight",
+        "comment": "Form field label suffix line height"
+      },
+      "color": {
+        "value": "{dsn.color.neutral.color-document}",
+        "type": "color",
+        "comment": "Form field label suffix text color"
+      },
+      "margin-inline-start": {
+        "value": "{dsn.space.text.sm}",
+        "type": "dimension",
+        "comment": "Space between label text and suffix text"
+      }
+    }
+  }
+}

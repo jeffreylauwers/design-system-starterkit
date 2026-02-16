@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as UnorderedListStories from './UnorderedList.stories';
+import docs from './UnorderedList.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={UnorderedListStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={UnorderedListStories.Default} />
+
+<Controls of={UnorderedListStories.Default} />
+
+<Markdown>{rest}</Markdown>

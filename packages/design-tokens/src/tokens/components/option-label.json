@@ -1,0 +1,32 @@
+{
+  "dsn": {
+    "option-label": {
+      "color": {
+        "value": "{dsn.color.neutral.color-document}",
+        "type": "color"
+      },
+      "font-family": {
+        "value": "{dsn.text.font-family.default}",
+        "type": "fontFamily"
+      },
+      "font-size": {
+        "value": "{dsn.text.font-size.md}",
+        "type": "fontSize"
+      },
+      "font-weight": {
+        "value": "{dsn.text.font-weight.default}",
+        "type": "fontWeight"
+      },
+      "line-height": {
+        "value": "{dsn.text.line-height.md}",
+        "type": "lineHeight"
+      },
+      "disabled": {
+        "color": {
+          "value": "{dsn.form-control.disabled.color}",
+          "type": "color"
+        }
+      }
+    }
+  }
+}

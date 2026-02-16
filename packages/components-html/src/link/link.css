@@ -1,0 +1,102 @@
+/**
+ * Link Component
+ * Uses component tokens for consistent styling
+ */
+
+.dsn-link {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  gap: var(--dsn-link-gap);
+
+  /* Typography */
+  color: var(--dsn-link-color);
+  text-decoration-line: var(--dsn-link-text-decoration-line);
+  text-decoration-color: var(--dsn-link-text-decoration-color);
+  text-decoration-thickness: var(--dsn-link-text-decoration-thickness);
+  text-underline-offset: var(--dsn-link-text-underline-offset);
+  font: inherit;
+
+  /* Interaction */
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
+}
+
+/* Icon sizing */
+.dsn-link > .dsn-icon {
+  width: var(--dsn-link-icon-size);
+  height: var(--dsn-link-icon-size);
+  flex-shrink: 0;
+}
+
+/* Size Variants */
+.dsn-link--size-small {
+  font-size: var(--dsn-link-size-small-font-size);
+  gap: var(--dsn-link-size-small-gap);
+}
+
+.dsn-link--size-default {
+  font-size: var(--dsn-link-size-default-font-size);
+  gap: var(--dsn-link-size-default-gap);
+}
+
+.dsn-link--size-large {
+  font-size: var(--dsn-link-size-large-font-size);
+  gap: var(--dsn-link-size-large-gap);
+}
+
+/* Icon sizing per link size */
+.dsn-link--size-small > .dsn-icon {
+  width: var(--dsn-link-size-small-icon-size);
+  height: var(--dsn-link-size-small-icon-size);
+}
+
+.dsn-link--size-default > .dsn-icon {
+  width: var(--dsn-link-size-default-icon-size);
+  height: var(--dsn-link-size-default-icon-size);
+}
+
+.dsn-link--size-large > .dsn-icon {
+  width: var(--dsn-link-size-large-icon-size);
+  height: var(--dsn-link-size-large-icon-size);
+}
+
+/* Hover */
+.dsn-link:hover:not([aria-disabled='true']) {
+  color: var(--dsn-link-hover-color);
+  text-decoration-line: var(--dsn-link-hover-text-decoration-line);
+}
+
+/* Active */
+.dsn-link:active:not([aria-disabled='true']) {
+  color: var(--dsn-link-active-color);
+}
+
+/* Focus */
+.dsn-link:focus-visible {
+  background-color: var(--dsn-focus-background-color);
+  color: var(--dsn-focus-color);
+  text-decoration: none;
+  outline: var(--dsn-focus-outline-width) var(--dsn-focus-outline-style)
+    var(--dsn-focus-outline-color);
+  outline-offset: var(--dsn-focus-outline-offset);
+  box-shadow: 0 0 0
+    calc(var(--dsn-focus-outline-offset) + var(--dsn-focus-outline-width))
+    var(--dsn-focus-inverse-outline-color);
+  box-decoration-break: clone;
+}
+
+/* Current page */
+.dsn-link[aria-current='page'] {
+  cursor: default;
+  text-decoration-line: none;
+}
+
+/* Disabled */
+.dsn-link[aria-disabled='true'] {
+  color: var(--dsn-link-disabled-color);
+  cursor: not-allowed;
+  pointer-events: none;
+}

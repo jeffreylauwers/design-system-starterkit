@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as LinkStories from './Link.stories';
+import docs from './Link.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={LinkStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={LinkStories.Default} />
+
+<Controls of={LinkStories.Default} />
+
+<Markdown>{rest}</Markdown>

@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as FormFieldLabelStories from './FormFieldLabel.stories';
+import docs from './FormFieldLabel.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={FormFieldLabelStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={FormFieldLabelStories.Default} />
+
+<Controls of={FormFieldLabelStories.Default} />
+
+<Markdown>{rest}</Markdown>

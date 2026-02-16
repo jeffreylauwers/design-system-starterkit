@@ -1,0 +1,51 @@
+/**
+ * Icon Component Styles
+ * Uses design tokens for sizing (coupled to typography)
+ *
+ * Usage:
+ *   <svg class="dsn-icon dsn-icon--lg" ...>
+ *     <use href="..." />
+ *   </svg>
+ */
+
+.dsn-icon {
+  /* Base styles */
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+
+  /* Default size (md) */
+  width: var(--dsn-icon-size-md);
+  height: var(--dsn-icon-size-md);
+}
+
+/* Size Variants - Using design tokens */
+.dsn-icon--sm {
+  width: var(--dsn-icon-size-sm);
+  height: var(--dsn-icon-size-sm);
+}
+
+.dsn-icon--lg {
+  width: var(--dsn-icon-size-lg);
+  height: var(--dsn-icon-size-lg);
+}
+
+.dsn-icon--xl {
+  width: var(--dsn-icon-size-xl);
+  height: var(--dsn-icon-size-xl);
+}
+
+.dsn-icon--2xl {
+  width: var(--dsn-icon-size-2xl);
+  height: var(--dsn-icon-size-2xl);
+}
+
+.dsn-icon--3xl {
+  width: var(--dsn-icon-size-3xl);
+  height: var(--dsn-icon-size-3xl);
+}
+
+.dsn-icon--4xl {
+  width: var(--dsn-icon-size-4xl);
+  height: var(--dsn-icon-size-4xl);
+}

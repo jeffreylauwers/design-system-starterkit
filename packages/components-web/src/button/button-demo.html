@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Web Component - Design System</title>
+
+    <!-- Design Tokens -->
+    <link
+      rel="stylesheet"
+      href="../../../design-tokens/dist/css/variables.css"
+    />
+
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="../../../core/dist/core.css" />
+
+    <!-- Web Component -->
+    <script type="module">
+      import { defineButton } from './Button.js';
+      defineButton();
+    </script>
+
+    <style>
+      body {
+        font-family: var(--dsn-text-font-family-default);
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: var(--dsn-color-neutral-bg-document);
+        color: var(--dsn-color-neutral-color-document);
+      }
+
+      .demo-section {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: white;
+        border-radius: var(--dsn-border-radius-lg);
+        border: 1px solid var(--dsn-color-neutral-border-subtle);
+      }
+
+      .demo-section h2 {
+        margin-bottom: 1.5rem;
+        font-size: var(--dsn-text-font-size-xl);
+        color: var(--dsn-color-neutral-color-document);
+      }
+
+      .demo-section h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-size: var(--dsn-text-font-size-lg);
+        color: var(--dsn-color-neutral-color-default);
+      }
+
+      .demo-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .demo-label {
+        font-size: var(--dsn-text-font-size-sm);
+        color: var(--dsn-color-neutral-color-subtle);
+        margin-bottom: 0.5rem;
+        font-weight: var(--dsn-text-font-weight-bold);
+      }
+
+      .code-example {
+        background: var(--dsn-color-neutral-bg-subtle);
+        padding: 1rem;
+        border-radius: var(--dsn-border-radius-md);
+        font-family: var(--dsn-text-font-family-monospace);
+        font-size: var(--dsn-text-font-size-sm);
+        margin-top: 0.5rem;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Button Web Component Examples</h1>
+    <p>
+      The <code>&lt;dsn-button&gt;</code> web component provides a consistent
+      button API across frameworks. It uses the same design tokens and visual
+      styling as the HTML and React button components.
+    </p>
+
+    <!-- Variants -->
+    <div class="demo-section">
+      <h2>Button Variants</h2>
+
+      <div class="demo-label">Strong (Main actions)</div>
+      <div class="demo-row">
+        <dsn-button variant="strong">Save</dsn-button>
+        <dsn-button variant="strong">Submit</dsn-button>
+        <dsn-button variant="strong">Continue</dsn-button>
+      </div>
+      <div class="code-example">
+        &lt;dsn-button variant="strong"&gt;Save&lt;/dsn-button&gt;
+      </div>
+
+      <div class="demo-label">Default (Alternative actions)</div>
+      <div class="demo-row">
+        <dsn-button variant="default">Cancel</dsn-button>
+        <dsn-button variant="default">Back</dsn-button>
+        <dsn-button variant="default">Learn more</dsn-button>
+      </div>
+      <div class="code-example">
+        &lt;dsn-button variant="default"&gt;Cancel&lt;/dsn-button&gt;
+      </div>
+
+      <div class="demo-label">Subtle (Low emphasis)</div>
+      <div class="demo-row">
+        <dsn-button variant="subtle">Edit</dsn-button>
+        <dsn-button variant="subtle">Share</dsn-button>
+        <dsn-button variant="subtle">More</dsn-button>
+      </div>
+      <div class="code-example">
+        &lt;dsn-button variant="subtle"&gt;Edit&lt;/dsn-button&gt;
+      </div>
+
+      <div class="demo-label">Link (Text-style button)</div>
+      <div class="demo-row">
+        <dsn-button variant="link">Learn more</dsn-button>
+        <dsn-button variant="link">View details</dsn-button>
+        <dsn-button variant="link">Skip</dsn-button>
+      </div>
+      <div class="code-example">
+        &lt;dsn-button variant="link"&gt;Learn more&lt;/dsn-button&gt;
+      </div>
+
+      <h3>Negative Sentiment</h3>
+
+      <div class="demo-label">Strong Negative (Destructive actions)</div>
+      <div class="demo-row">
+        <dsn-button variant="strong-negative">Delete</dsn-button>
+        <dsn-button variant="strong-negative">Remove</dsn-button>
+        <dsn-button variant="strong-negative">Reset</dsn-button>
+      </div>
+      <div class="code-example">
+        &lt;dsn-button variant="strong-negative"&gt;Delete&lt;/dsn-button&gt;
+      </div>
+
+      <div class="demo-label">Default Negative</div>
+      <div class="demo-row">
+        <dsn-button variant="default-negative">Delete</dsn-button>
+        <dsn-button variant="default-negative">Remove</dsn-button>
+        <dsn-button variant="default-negative">Discard</dsn-button>
+      </div>
+
+      <div class="demo-label">Subtle Negative</div>
+      <div class="demo-row">
+        <dsn-button variant="subtle-negative">Delete</dsn-button>
+        <dsn-button variant="subtle-negative">Remove</dsn-button>
+        <dsn-button variant="subtle-negative">Discard</dsn-button>
+      </div>
+
+      <h3>Positive Sentiment</h3>
+
+      <div class="demo-label">Strong Positive (Confirmation actions)</div>
+      <div class="demo-row">
+        <dsn-button variant="strong-positive">Approve</dsn-button>
+        <dsn-button variant="strong-positive">Confirm</dsn-button>
+        <dsn-button variant="strong-positive">Accept</dsn-button>
+      </div>
+      <div class="code-example">
+        &lt;dsn-button variant="strong-positive"&gt;Approve&lt;/dsn-button&gt;
+      </div>
+
+      <div class="demo-label">Default Positive</div>
+      <div class="demo-row">
+        <dsn-button variant="default-positive">Approve</dsn-button>
+        <dsn-button variant="default-positive">Like</dsn-button>
+        <dsn-button variant="default-positive">Enable</dsn-button>
+      </div>
+
+      <div class="demo-label">Subtle Positive</div>
+      <div class="demo-row">
+        <dsn-button variant="subtle-positive">Like</dsn-button>
+        <dsn-button variant="subtle-positive">Upvote</dsn-button>
+        <dsn-button variant="subtle-positive">Star</dsn-button>
+      </div>
+    </div>
+
+    <!-- Sizes -->
+    <div class="demo-section">
+      <h2>Button Sizes</h2>
+
+      <div class="demo-label">Small</div>
+      <div class="demo-row">
+        <dsn-button variant="strong" size="small">Small Strong</dsn-button>
+        <dsn-button variant="default" size="small">Small Default</dsn-button>
+        <dsn-button variant="strong-negative" size="small"
+          >Small Negative</dsn-button
+        >
+      </div>
+      <div class="code-example">
+        &lt;dsn-button variant="strong" size="small"&gt;Small
+        Strong&lt;/dsn-button&gt;
+      </div>
+
+      <div class="demo-label">Default (Medium)</div>
+      <div class="demo-row">
+        <dsn-button variant="strong" size="default">Default Strong</dsn-button>
+        <dsn-button variant="default" size="default"
+          >Default Default</dsn-button
+        >
+        <dsn-button variant="strong-negative" size="default"
+          >Default Negative</dsn-button
+        >
+      </div>
+      <div class="code-example">
+        &lt;dsn-button variant="strong" size="default"&gt;Default
+        Strong&lt;/dsn-button&gt;
+      </div>
+
+      <div class="demo-label">Large</div>
+      <div class="demo-row">
+        <dsn-button variant="strong" size="large">Large Strong</dsn-button>
+        <dsn-button variant="default" size="large">Large Default</dsn-button>
+        <dsn-button variant="strong-negative" size="large"
+          >Large Negative</dsn-button
+        >
+      </div>
+      <div class="code-example">
+        &lt;dsn-button variant="strong" size="large"&gt;Large
+        Strong&lt;/dsn-button&gt;
+      </div>
+    </div>
+
+    <!-- With Icons -->
+    <div class="demo-section">
+      <h2>Buttons with Icons</h2>
+
+      <div class="demo-label">Icon + Text</div>
+      <div class="demo-row">
+        <dsn-button variant="strong">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 5l0 14" />
+            <path d="M5 12l14 0" />
+          </svg>
+          Add item
+        </dsn-button>
+
+        <dsn-button variant="default">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+            <path d="M7 11l5 5l5 -5" />
+            <path d="M12 4l0 12" />
+          </svg>
+          Download
+        </dsn-button>
+
+        <dsn-button variant="strong-negative">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M4 7l16 0" />
+            <path d="M10 11l0 6" />
+            <path d="M14 11l0 6" />
+            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+          </svg>
+          Delete
+        </dsn-button>
+      </div>
+
+      <div class="demo-label">Icon Only</div>
+      <div class="demo-row">
+        <dsn-button variant="strong" icon-only aria-label="Add">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 5l0 14" />
+            <path d="M5 12l14 0" />
+          </svg>
+        </dsn-button>
+
+        <dsn-button variant="default" icon-only aria-label="Settings">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"
+            />
+            <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+          </svg>
+        </dsn-button>
+
+        <dsn-button variant="subtle" icon-only aria-label="Close">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+          </svg>
+        </dsn-button>
+
+        <dsn-button variant="strong-negative" icon-only aria-label="Delete">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 7l16 0" />
+            <path d="M10 11l0 6" />
+            <path d="M14 11l0 6" />
+            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+          </svg>
+        </dsn-button>
+      </div>
+      <div class="code-example">
+        &lt;dsn-button variant="strong" icon-only
+        aria-label="Add"&gt;<br />&nbsp;&nbsp;&lt;svg ...&gt;...&lt;/svg&gt;<br />&lt;/dsn-button&gt;
+      </div>
+    </div>
+
+    <!-- States -->
+    <div class="demo-section">
+      <h2>Button States</h2>
+
+      <div class="demo-label">Disabled</div>
+      <div class="demo-row">
+        <dsn-button variant="strong" disabled>Disabled Strong</dsn-button>
+        <dsn-button variant="default" disabled>Disabled Default</dsn-button>
+        <dsn-button variant="strong-negative" disabled
+          >Disabled Negative</dsn-button
+        >
+      </div>
+      <div class="code-example">
+        &lt;dsn-button variant="strong" disabled&gt;Disabled
+        Strong&lt;/dsn-button&gt;
+      </div>
+
+      <div class="demo-label">Loading</div>
+      <div class="demo-row">
+        <dsn-button variant="strong" loading>Saving...</dsn-button>
+        <dsn-button variant="default" loading>Loading...</dsn-button>
+      </div>
+      <div class="code-example">
+        &lt;dsn-button variant="strong" loading&gt;Saving...&lt;/dsn-button&gt;
+      </div>
+    </div>
+
+    <!-- Full Width -->
+    <div class="demo-section">
+      <h2>Full Width Buttons</h2>
+
+      <dsn-button variant="strong" full-width style="margin-bottom: 0.5rem">
+        Full Width Strong
+      </dsn-button>
+      <dsn-button variant="default" full-width>Full Width Default</dsn-button>
+      <div class="code-example">
+        &lt;dsn-button variant="strong" full-width&gt;Full Width
+        Strong&lt;/dsn-button&gt;
+      </div>
+    </div>
+
+    <!-- API Comparison -->
+    <div class="demo-section">
+      <h2>API Comparison</h2>
+      <p>
+        The <code>&lt;dsn-button&gt;</code> web component uses the same naming
+        conventions as the React component:
+      </p>
+      <table
+        style="
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 1rem;
+          font-size: var(--dsn-text-font-size-sm);
+        "
+      >
+        <thead>
+          <tr style="background: var(--dsn-color-neutral-bg-subtle)">
+            <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--dsn-color-neutral-border-default)">Feature</th>
+            <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--dsn-color-neutral-border-default)">HTML (CSS classes)</th>
+            <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--dsn-color-neutral-border-default)">React (props)</th>
+            <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--dsn-color-neutral-border-default)">Web Component (attributes)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)">Variant</td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>dsn-button--strong</code></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>variant="strong"</code></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>variant="strong"</code></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)">Size</td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>dsn-button--size-small</code></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>size="small"</code></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>size="small"</code></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)">Loading</td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>dsn-button--loading</code></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>loading</code></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>loading</code></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)">Full width</td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>dsn-button--full-width</code></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>fullWidth</code></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>full-width</code></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)">Icon only</td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>dsn-button--icon-only</code></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>iconOnly</code></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid var(--dsn-color-neutral-border-subtle)"><code>icon-only</code></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem">Disabled</td>
+            <td style="padding: 0.75rem"><code>disabled</code></td>
+            <td style="padding: 0.75rem"><code>disabled</code></td>
+            <td style="padding: 0.75rem"><code>disabled</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+/**
+ * Shadow DOM wrapper styles for the OrderedList Web Component.
+ * The core styles are imported from the shared HTML/CSS source.
+ */
+
+:host {
+  display: block;
+}
+
+/* Shared ordered list styles - single source of truth */
+@import '../../../components-html/src/ordered-list/ordered-list.css';

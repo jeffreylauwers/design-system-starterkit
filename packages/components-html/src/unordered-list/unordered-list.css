@@ -1,0 +1,31 @@
+/**
+ * Unordered List Component
+ * Uses component tokens for consistent styling.
+ * Bullet markers are colored via the marker-color token.
+ */
+
+.dsn-unordered-list {
+  font-family: var(--dsn-unordered-list-font-family);
+  font-weight: var(--dsn-unordered-list-font-weight);
+  color: var(--dsn-unordered-list-color);
+  font-size: var(--dsn-unordered-list-font-size);
+  line-height: var(--dsn-unordered-list-line-height);
+  padding-inline-start: var(--dsn-unordered-list-padding-inline-start);
+  margin-block-start: 0;
+  margin-block-end: var(--dsn-unordered-list-margin-block-end);
+  list-style-type: disc;
+}
+
+/* Colored bullet markers */
+.dsn-unordered-list ::marker {
+  color: var(--dsn-unordered-list-marker-color);
+}
+
+/* Spacing between list items */
+.dsn-unordered-list > li {
+  margin-block-end: var(--dsn-unordered-list-gap);
+}
+
+.dsn-unordered-list > li:last-child {
+  margin-block-end: 0;
+}

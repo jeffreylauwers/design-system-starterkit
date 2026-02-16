@@ -1,0 +1,16 @@
+{
+  "dsn": {
+    "radio-option": {
+      "gap": {
+        "value": "{dsn.space.text.md}",
+        "type": "dimension",
+        "comment": "Gap between radio button and label"
+      },
+      "padding-block": {
+        "value": "{dsn.space.block.md}",
+        "type": "dimension",
+        "comment": "Vertical padding for touch target accessibility (WCAG 2.5.5)"
+      }
+    }
+  }
+}

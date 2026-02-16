@@ -1,0 +1,243 @@
+{
+  "dsn": {
+    "text-input": {
+      "background-color": {
+        "value": "{dsn.form-control.background-color}",
+        "type": "color",
+        "comment": "Text input background color"
+      },
+      "border-color": {
+        "value": "{dsn.form-control.border-color}",
+        "type": "color",
+        "comment": "Text input border color"
+      },
+      "border-radius": {
+        "value": "{dsn.form-control.border-radius}",
+        "type": "dimension",
+        "comment": "Text input border radius"
+      },
+      "border-width": {
+        "value": "{dsn.form-control.border-width}",
+        "type": "dimension",
+        "comment": "Text input border width"
+      },
+      "color": {
+        "value": "{dsn.form-control.color}",
+        "type": "color",
+        "comment": "Text input text color"
+      },
+      "column-gap": {
+        "value": "{dsn.space.text.lg}",
+        "type": "dimension",
+        "comment": "Gap between text and icons (for future icon support)"
+      },
+      "font-family": {
+        "value": "{dsn.form-control.font-family}",
+        "type": "fontFamily",
+        "comment": "Text input font family"
+      },
+      "font-size": {
+        "value": "{dsn.form-control.font-size}",
+        "type": "fontSize",
+        "comment": "Text input font size"
+      },
+      "font-weight": {
+        "value": "{dsn.form-control.font-weight}",
+        "type": "fontWeight",
+        "comment": "Text input font weight"
+      },
+      "line-height": {
+        "value": "{dsn.form-control.line-height}",
+        "type": "lineHeight",
+        "comment": "Text input line height"
+      },
+      "min-block-size": {
+        "value": "{dsn.pointer-target.min-block-size}",
+        "type": "dimension",
+        "comment": "Text input minimum height (WCAG touch target)"
+      },
+      "min-inline-size": {
+        "value": "{dsn.pointer-target.min-inline-size}",
+        "type": "dimension",
+        "comment": "Text input minimum width (WCAG touch target)"
+      },
+      "outline-offset": {
+        "value": "0px",
+        "type": "dimension",
+        "comment": "Text input outline offset"
+      },
+      "padding-block-end": {
+        "value": "{dsn.form-control.padding-block-end}",
+        "type": "dimension",
+        "comment": "Text input bottom padding"
+      },
+      "padding-block-start": {
+        "value": "{dsn.form-control.padding-block-start}",
+        "type": "dimension",
+        "comment": "Text input top padding"
+      },
+      "padding-inline-end": {
+        "value": "{dsn.form-control.padding-inline-end}",
+        "type": "dimension",
+        "comment": "Text input right padding"
+      },
+      "padding-inline-start": {
+        "value": "{dsn.form-control.padding-inline-start}",
+        "type": "dimension",
+        "comment": "Text input left padding"
+      },
+      "placeholder": {
+        "color": {
+          "value": "{dsn.form-control.placeholder.color}",
+          "type": "color",
+          "comment": "Text input placeholder color"
+        }
+      },
+      "disabled": {
+        "background-color": {
+          "value": "{dsn.form-control.disabled.background-color}",
+          "type": "color",
+          "comment": "Text input disabled background"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.disabled.border-color}",
+          "type": "color",
+          "comment": "Text input disabled border"
+        },
+        "color": {
+          "value": "{dsn.form-control.disabled.color}",
+          "type": "color",
+          "comment": "Text input disabled text color"
+        }
+      },
+      "focus": {
+        "background-color": {
+          "value": "{dsn.form-control.focus.background-color}",
+          "type": "color",
+          "comment": "Text input focus background"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.focus.border-color}",
+          "type": "color",
+          "comment": "Text input focus border"
+        },
+        "box-shadow-x": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text input focus box shadow x offset"
+        },
+        "box-shadow-y": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text input focus box shadow y offset"
+        },
+        "box-shadow-blur": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text input focus box shadow blur"
+        },
+        "box-shadow-spread": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension",
+          "comment": "Text input focus box shadow spread (creates thicker border effect)"
+        },
+        "box-shadow-color": {
+          "value": "{dsn.text-input.focus.border-color}",
+          "type": "color",
+          "comment": "Text input focus box shadow color"
+        },
+        "color": {
+          "value": "{dsn.form-control.focus.color}",
+          "type": "color",
+          "comment": "Text input focus text color"
+        }
+      },
+      "hover": {
+        "box-shadow-x": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text input hover box shadow x offset"
+        },
+        "box-shadow-y": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text input hover box shadow y offset"
+        },
+        "box-shadow-blur": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text input hover box shadow blur"
+        },
+        "box-shadow-spread": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension",
+          "comment": "Text input hover box shadow spread (creates thicker border effect)"
+        },
+        "box-shadow-color": {
+          "value": "{dsn.text-input.border-color}",
+          "type": "color",
+          "comment": "Text input hover box shadow color"
+        }
+      },
+      "invalid": {
+        "background-color": {
+          "value": "{dsn.form-control.invalid.background-color}",
+          "type": "color",
+          "comment": "Text input invalid background"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.invalid.border-color}",
+          "type": "color",
+          "comment": "Text input invalid border"
+        },
+        "box-shadow-x": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text input invalid box shadow x offset"
+        },
+        "box-shadow-y": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text input invalid box shadow y offset"
+        },
+        "box-shadow-blur": {
+          "value": "0",
+          "type": "dimension",
+          "comment": "Text input invalid box shadow blur"
+        },
+        "box-shadow-spread": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension",
+          "comment": "Text input invalid box shadow spread (creates thicker border effect)"
+        },
+        "box-shadow-color": {
+          "value": "{dsn.text-input.invalid.border-color}",
+          "type": "color",
+          "comment": "Text input invalid box shadow color"
+        },
+        "color": {
+          "value": "{dsn.form-control.color}",
+          "type": "color",
+          "comment": "Text input invalid text color"
+        }
+      },
+      "read-only": {
+        "background-color": {
+          "value": "{dsn.form-control.read-only.background-color}",
+          "type": "color",
+          "comment": "Text input read-only background"
+        },
+        "border-color": {
+          "value": "{dsn.form-control.read-only.border-color}",
+          "type": "color",
+          "comment": "Text input read-only border"
+        },
+        "color": {
+          "value": "{dsn.form-control.read-only.color}",
+          "type": "color",
+          "comment": "Text input read-only text color"
+        }
+      }
+    }
+  }
+}

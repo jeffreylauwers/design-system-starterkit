@@ -1,0 +1,20 @@
+/**
+ * Shadow DOM wrapper styles for the Button Web Component.
+ * The core button styles are imported from the shared HTML/CSS source.
+ */
+
+:host {
+  display: inline-block;
+}
+
+:host([full-width]) {
+  display: block;
+  width: 100%;
+}
+
+::slotted(*) {
+  pointer-events: none;
+}
+
+/* Shared button styles - single source of truth */
+@import '../../../components-html/src/button/button.css';

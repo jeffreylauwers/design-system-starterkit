@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as IconStories from './Icon.stories';
+import docs from './Icon.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={IconStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={IconStories.Default} />
+
+<Controls of={IconStories.Default} />
+
+<Markdown>{rest}</Markdown>

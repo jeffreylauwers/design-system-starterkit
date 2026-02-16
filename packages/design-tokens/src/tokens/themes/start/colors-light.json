@@ -1,0 +1,1628 @@
+{
+  "dsn": {
+    "color": {
+      "neutral": {
+        "bg-document": {
+          "value": "#FCFCFC",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "#F6F6F6",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "#F1F1F1",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "#EBEBEB",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "#E5E5E5",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "#C4C4C4",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "#868686",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "#7C7C7C",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "#727272",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "#595959",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "#4B4B4B",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "#3E3E3E",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "#636363",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "#1B1B1B",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "accent-1": {
+        "bg-document": {
+          "value": "#FBFCFD",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "#F4F7FA",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "#ECF1F7",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "#E4ECF4",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "#DDE6F1",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "#B0C6DF",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "#5C89BE",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "#4E7FB8",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "#3F74B2",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "#1B59A4",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "#04499A",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "#003B81",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "#2964AA",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "#001B3C",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "accent-2": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1.bg-document}",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1.bg-default}",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1.bg-active}",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1.border-default}",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1.border-hover}",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1.border-active}",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1.color-default}",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1.color-hover}",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1.color-active}",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1.color-document}",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "accent-3": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1.bg-document}",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1.bg-default}",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1.bg-active}",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1.border-default}",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1.border-hover}",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1.border-active}",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1.color-default}",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1.color-hover}",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1.color-active}",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1.color-document}",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "action-1": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1.bg-document}",
+          "type": "color",
+          "comment": "Document background - Primary actions (buttons)"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background - Primary actions (buttons)"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1.bg-default}",
+          "type": "color",
+          "comment": "Default background - Primary actions (buttons)"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background - Primary actions (buttons)"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1.bg-active}",
+          "type": "color",
+          "comment": "Active state background - Primary actions (buttons)"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border - Primary actions (buttons)"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1.border-default}",
+          "type": "color",
+          "comment": "Default border - Primary actions (buttons)"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1.border-hover}",
+          "type": "color",
+          "comment": "Hover state border - Primary actions (buttons)"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1.border-active}",
+          "type": "color",
+          "comment": "Active state border - Primary actions (buttons)"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1.color-default}",
+          "type": "color",
+          "comment": "Default text color - Primary actions (buttons)"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1.color-hover}",
+          "type": "color",
+          "comment": "Hover state text - Primary actions (buttons)"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1.color-active}",
+          "type": "color",
+          "comment": "Active state text - Primary actions (buttons)"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color - Primary actions (buttons)"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1.color-document}",
+          "type": "color",
+          "comment": "Document text color - Primary actions (buttons)"
+        }
+      },
+      "action-2": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1.bg-document}",
+          "type": "color",
+          "comment": "Document background - Secondary actions (links, navigation)"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background - Secondary actions (links, navigation)"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1.bg-default}",
+          "type": "color",
+          "comment": "Default background - Secondary actions (links, navigation)"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background - Secondary actions (links, navigation)"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1.bg-active}",
+          "type": "color",
+          "comment": "Active state background - Secondary actions (links, navigation)"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border - Secondary actions (links, navigation)"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1.border-default}",
+          "type": "color",
+          "comment": "Default border - Secondary actions (links, navigation)"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1.border-hover}",
+          "type": "color",
+          "comment": "Hover state border - Secondary actions (links, navigation)"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1.border-active}",
+          "type": "color",
+          "comment": "Active state border - Secondary actions (links, navigation)"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1.color-default}",
+          "type": "color",
+          "comment": "Default text color - Secondary actions (links, navigation)"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1.color-hover}",
+          "type": "color",
+          "comment": "Hover state text - Secondary actions (links, navigation)"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1.color-active}",
+          "type": "color",
+          "comment": "Active state text - Secondary actions (links, navigation)"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color - Secondary actions (links, navigation)"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1.color-document}",
+          "type": "color",
+          "comment": "Document text color - Secondary actions (links, navigation)"
+        }
+      },
+      "info": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1.bg-document}",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1.bg-default}",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1.bg-active}",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1.border-default}",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1.border-hover}",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1.border-active}",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1.color-default}",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1.color-hover}",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1.color-active}",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1.color-document}",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "negative": {
+        "bg-document": {
+          "value": "#FFFBFB",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "#FEF4F4",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "#FEEDED",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "#FDE6E6",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "#FDDEDE",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "#F9B1B1",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "#F14848",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "#EF2929",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "#E60000",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "#B70000",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "#9C0000",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "#930000",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "#CA0000",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "#410000",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "positive": {
+        "bg-document": {
+          "value": "#FAFDFB",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "#EFF9F3",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "#E4F5EA",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "#D9F1E2",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "#CEEDD9",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "#8AD3A6",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "#009B3A",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "#009036",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "#008432",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "#006827",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "#005821",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "#00481B",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "#00732B",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "#00210C",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "warning": {
+        "bg-document": {
+          "value": "#FFFCF8",
+          "type": "color",
+          "comment": "Document background"
+        },
+        "bg-subtle": {
+          "value": "#FFF5EB",
+          "type": "color",
+          "comment": "Subtle background"
+        },
+        "bg-default": {
+          "value": "#FFEEDD",
+          "type": "color",
+          "comment": "Default background"
+        },
+        "bg-hover": {
+          "value": "#FFE7D0",
+          "type": "color",
+          "comment": "Hover state background"
+        },
+        "bg-active": {
+          "value": "#FFE0C2",
+          "type": "color",
+          "comment": "Active state background"
+        },
+        "border-subtle": {
+          "value": "#FFB46B",
+          "type": "color",
+          "comment": "Subtle border"
+        },
+        "border-default": {
+          "value": "#C8700E",
+          "type": "color",
+          "comment": "Default border"
+        },
+        "border-hover": {
+          "value": "#B86810",
+          "type": "color",
+          "comment": "Hover state border"
+        },
+        "border-active": {
+          "value": "#A96011",
+          "type": "color",
+          "comment": "Active state border"
+        },
+        "color-default": {
+          "value": "#844C12",
+          "type": "color",
+          "comment": "Default text color"
+        },
+        "color-hover": {
+          "value": "#6F4012",
+          "type": "color",
+          "comment": "Hover state text"
+        },
+        "color-active": {
+          "value": "#5A3511",
+          "type": "color",
+          "comment": "Active state text"
+        },
+        "color-subtle": {
+          "value": "#935412",
+          "type": "color",
+          "comment": "Subtle text color"
+        },
+        "color-document": {
+          "value": "#27190A",
+          "type": "color",
+          "comment": "Document text color"
+        }
+      },
+      "neutral-inverse": {
+        "bg-document": {
+          "value": "#242424",
+          "type": "color",
+          "comment": "Document background (inverse)"
+        },
+        "bg-subtle": {
+          "value": "#1B1B1B",
+          "type": "color",
+          "comment": "Subtle background (inverse)"
+        },
+        "bg-default": {
+          "value": "#595959",
+          "type": "color",
+          "comment": "Default background (inverse)"
+        },
+        "bg-hover": {
+          "value": "#4B4B4B",
+          "type": "color",
+          "comment": "Hover state background (inverse)"
+        },
+        "bg-active": {
+          "value": "#3E3E3E",
+          "type": "color",
+          "comment": "Active state background (inverse)"
+        },
+        "border-subtle": {
+          "value": "#474747",
+          "type": "color",
+          "comment": "Subtle border (inverse)"
+        },
+        "border-default": {
+          "value": "#C9C9C9",
+          "type": "color",
+          "comment": "Default border (inverse)"
+        },
+        "border-hover": {
+          "value": "#D4D4D4",
+          "type": "color",
+          "comment": "Hover state border (inverse)"
+        },
+        "border-active": {
+          "value": "#DFDFDF",
+          "type": "color",
+          "comment": "Active state border (inverse)"
+        },
+        "color-default": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Default text color (inverse)"
+        },
+        "color-hover": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Hover state text (inverse)"
+        },
+        "color-active": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Active state text (inverse)"
+        },
+        "color-subtle": {
+          "value": "#C4C4C4",
+          "type": "color",
+          "comment": "Subtle text color (inverse)"
+        },
+        "color-document": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Document text color (inverse)"
+        }
+      },
+      "accent-1-inverse": {
+        "bg-document": {
+          "value": "#00234D",
+          "type": "color",
+          "comment": "Document background (inverse)"
+        },
+        "bg-subtle": {
+          "value": "#001B3C",
+          "type": "color",
+          "comment": "Subtle background (inverse)"
+        },
+        "bg-default": {
+          "value": "#1B59A4",
+          "type": "color",
+          "comment": "Default background (inverse)"
+        },
+        "bg-hover": {
+          "value": "#04499A",
+          "type": "color",
+          "comment": "Hover state background (inverse)"
+        },
+        "bg-active": {
+          "value": "#003B81",
+          "type": "color",
+          "comment": "Active state background (inverse)"
+        },
+        "border-subtle": {
+          "value": "#004494",
+          "type": "color",
+          "comment": "Subtle border (inverse)"
+        },
+        "border-default": {
+          "value": "#B8CBE2",
+          "type": "color",
+          "comment": "Default border (inverse)"
+        },
+        "border-hover": {
+          "value": "#C6D6E8",
+          "type": "color",
+          "comment": "Hover state border (inverse)"
+        },
+        "border-active": {
+          "value": "#D5E1EE",
+          "type": "color",
+          "comment": "Active state border (inverse)"
+        },
+        "color-default": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Default text color (inverse)"
+        },
+        "color-hover": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Hover state text (inverse)"
+        },
+        "color-active": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Active state text (inverse)"
+        },
+        "color-subtle": {
+          "value": "#B0C6DF",
+          "type": "color",
+          "comment": "Subtle text color (inverse)"
+        },
+        "color-document": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Document text color (inverse)"
+        }
+      },
+      "accent-2-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1-inverse.bg-document}",
+          "type": "color",
+          "comment": "Document background (inverse)"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1-inverse.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background (inverse)"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1-inverse.bg-default}",
+          "type": "color",
+          "comment": "Default background (inverse)"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1-inverse.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background (inverse)"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1-inverse.bg-active}",
+          "type": "color",
+          "comment": "Active state background (inverse)"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1-inverse.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border (inverse)"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1-inverse.border-default}",
+          "type": "color",
+          "comment": "Default border (inverse)"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1-inverse.border-hover}",
+          "type": "color",
+          "comment": "Hover state border (inverse)"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1-inverse.border-active}",
+          "type": "color",
+          "comment": "Active state border (inverse)"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1-inverse.color-default}",
+          "type": "color",
+          "comment": "Default text color (inverse)"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1-inverse.color-hover}",
+          "type": "color",
+          "comment": "Hover state text (inverse)"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1-inverse.color-active}",
+          "type": "color",
+          "comment": "Active state text (inverse)"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1-inverse.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color (inverse)"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1-inverse.color-document}",
+          "type": "color",
+          "comment": "Document text color (inverse)"
+        }
+      },
+      "accent-3-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1-inverse.bg-document}",
+          "type": "color",
+          "comment": "Document background (inverse)"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1-inverse.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background (inverse)"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1-inverse.bg-default}",
+          "type": "color",
+          "comment": "Default background (inverse)"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1-inverse.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background (inverse)"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1-inverse.bg-active}",
+          "type": "color",
+          "comment": "Active state background (inverse)"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1-inverse.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border (inverse)"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1-inverse.border-default}",
+          "type": "color",
+          "comment": "Default border (inverse)"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1-inverse.border-hover}",
+          "type": "color",
+          "comment": "Hover state border (inverse)"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1-inverse.border-active}",
+          "type": "color",
+          "comment": "Active state border (inverse)"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1-inverse.color-default}",
+          "type": "color",
+          "comment": "Default text color (inverse)"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1-inverse.color-hover}",
+          "type": "color",
+          "comment": "Hover state text (inverse)"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1-inverse.color-active}",
+          "type": "color",
+          "comment": "Active state text (inverse)"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1-inverse.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color (inverse)"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1-inverse.color-document}",
+          "type": "color",
+          "comment": "Document text color (inverse)"
+        }
+      },
+      "action-1-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1-inverse.bg-document}",
+          "type": "color",
+          "comment": "Document background (inverse) - Primary actions (buttons)"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1-inverse.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background (inverse) - Primary actions (buttons)"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1-inverse.bg-default}",
+          "type": "color",
+          "comment": "Default background (inverse) - Primary actions (buttons)"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1-inverse.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background (inverse) - Primary actions (buttons)"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1-inverse.bg-active}",
+          "type": "color",
+          "comment": "Active state background (inverse) - Primary actions (buttons)"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1-inverse.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border (inverse) - Primary actions (buttons)"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1-inverse.border-default}",
+          "type": "color",
+          "comment": "Default border (inverse) - Primary actions (buttons)"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1-inverse.border-hover}",
+          "type": "color",
+          "comment": "Hover state border (inverse) - Primary actions (buttons)"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1-inverse.border-active}",
+          "type": "color",
+          "comment": "Active state border (inverse) - Primary actions (buttons)"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1-inverse.color-default}",
+          "type": "color",
+          "comment": "Default text color (inverse) - Primary actions (buttons)"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1-inverse.color-hover}",
+          "type": "color",
+          "comment": "Hover state text (inverse) - Primary actions (buttons)"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1-inverse.color-active}",
+          "type": "color",
+          "comment": "Active state text (inverse) - Primary actions (buttons)"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1-inverse.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color (inverse) - Primary actions (buttons)"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1-inverse.color-document}",
+          "type": "color",
+          "comment": "Document text color (inverse) - Primary actions (buttons)"
+        }
+      },
+      "action-2-inverse": {
+        "bg-document": {
+          "value": "{dsn.color.accent-1-inverse.bg-document}",
+          "type": "color",
+          "comment": "Document background (inverse) - Secondary actions (links, navigation)"
+        },
+        "bg-subtle": {
+          "value": "{dsn.color.accent-1-inverse.bg-subtle}",
+          "type": "color",
+          "comment": "Subtle background (inverse) - Secondary actions (links, navigation)"
+        },
+        "bg-default": {
+          "value": "{dsn.color.accent-1-inverse.bg-default}",
+          "type": "color",
+          "comment": "Default background (inverse) - Secondary actions (links, navigation)"
+        },
+        "bg-hover": {
+          "value": "{dsn.color.accent-1-inverse.bg-hover}",
+          "type": "color",
+          "comment": "Hover state background (inverse) - Secondary actions (links, navigation)"
+        },
+        "bg-active": {
+          "value": "{dsn.color.accent-1-inverse.bg-active}",
+          "type": "color",
+          "comment": "Active state background (inverse) - Secondary actions (links, navigation)"
+        },
+        "border-subtle": {
+          "value": "{dsn.color.accent-1-inverse.border-subtle}",
+          "type": "color",
+          "comment": "Subtle border (inverse) - Secondary actions (links, navigation)"
+        },
+        "border-default": {
+          "value": "{dsn.color.accent-1-inverse.border-default}",
+          "type": "color",
+          "comment": "Default border (inverse) - Secondary actions (links, navigation)"
+        },
+        "border-hover": {
+          "value": "{dsn.color.accent-1-inverse.border-hover}",
+          "type": "color",
+          "comment": "Hover state border (inverse) - Secondary actions (links, navigation)"
+        },
+        "border-active": {
+          "value": "{dsn.color.accent-1-inverse.border-active}",
+          "type": "color",
+          "comment": "Active state border (inverse) - Secondary actions (links, navigation)"
+        },
+        "color-default": {
+          "value": "{dsn.color.accent-1-inverse.color-default}",
+          "type": "color",
+          "comment": "Default text color (inverse) - Secondary actions (links, navigation)"
+        },
+        "color-hover": {
+          "value": "{dsn.color.accent-1-inverse.color-hover}",
+          "type": "color",
+          "comment": "Hover state text (inverse) - Secondary actions (links, navigation)"
+        },
+        "color-active": {
+          "value": "{dsn.color.accent-1-inverse.color-active}",
+          "type": "color",
+          "comment": "Active state text (inverse) - Secondary actions (links, navigation)"
+        },
+        "color-subtle": {
+          "value": "{dsn.color.accent-1-inverse.color-subtle}",
+          "type": "color",
+          "comment": "Subtle text color (inverse) - Secondary actions (links, navigation)"
+        },
+        "color-document": {
+          "value": "{dsn.color.accent-1-inverse.color-document}",
+          "type": "color",
+          "comment": "Document text color (inverse) - Secondary actions (links, navigation)"
+        }
+      },
+      "info-inverse": {
+        "bg-document": {
+          "value": "#00234D",
+          "type": "color",
+          "comment": "Document background (inverse)"
+        },
+        "bg-subtle": {
+          "value": "#001B3C",
+          "type": "color",
+          "comment": "Subtle background (inverse)"
+        },
+        "bg-default": {
+          "value": "#1B59A4",
+          "type": "color",
+          "comment": "Default background (inverse)"
+        },
+        "bg-hover": {
+          "value": "#04499A",
+          "type": "color",
+          "comment": "Hover state background (inverse)"
+        },
+        "bg-active": {
+          "value": "#003B81",
+          "type": "color",
+          "comment": "Active state background (inverse)"
+        },
+        "border-subtle": {
+          "value": "#004494",
+          "type": "color",
+          "comment": "Subtle border (inverse)"
+        },
+        "border-default": {
+          "value": "#B8CBE2",
+          "type": "color",
+          "comment": "Default border (inverse)"
+        },
+        "border-hover": {
+          "value": "#C6D6E8",
+          "type": "color",
+          "comment": "Hover state border (inverse)"
+        },
+        "border-active": {
+          "value": "#D5E1EE",
+          "type": "color",
+          "comment": "Active state border (inverse)"
+        },
+        "color-default": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Default text color (inverse)"
+        },
+        "color-hover": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Hover state text (inverse)"
+        },
+        "color-active": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Active state text (inverse)"
+        },
+        "color-subtle": {
+          "value": "#B0C6DF",
+          "type": "color",
+          "comment": "Subtle text color (inverse)"
+        },
+        "color-document": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Document text color (inverse)"
+        }
+      },
+      "negative-inverse": {
+        "bg-document": {
+          "value": "#510000",
+          "type": "color",
+          "comment": "Document background (inverse)"
+        },
+        "bg-subtle": {
+          "value": "#410000",
+          "type": "color",
+          "comment": "Subtle background (inverse)"
+        },
+        "bg-default": {
+          "value": "#B70000",
+          "type": "color",
+          "comment": "Default background (inverse)"
+        },
+        "bg-hover": {
+          "value": "#9C0000",
+          "type": "color",
+          "comment": "Hover state background (inverse)"
+        },
+        "bg-active": {
+          "value": "#820000",
+          "type": "color",
+          "comment": "Active state background (inverse)"
+        },
+        "border-subtle": {
+          "value": "#930000",
+          "type": "color",
+          "comment": "Subtle border (inverse)"
+        },
+        "border-default": {
+          "value": "#FAB9B9",
+          "type": "color",
+          "comment": "Default border (inverse)"
+        },
+        "border-hover": {
+          "value": "#FBC8C8",
+          "type": "color",
+          "comment": "Hover state border (inverse)"
+        },
+        "border-active": {
+          "value": "#FCD7D7",
+          "type": "color",
+          "comment": "Active state border (inverse)"
+        },
+        "color-default": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Default text color (inverse)"
+        },
+        "color-hover": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Hover state text (inverse)"
+        },
+        "color-active": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Active state text (inverse)"
+        },
+        "color-subtle": {
+          "value": "#F9B1B1",
+          "type": "color",
+          "comment": "Subtle text color (inverse)"
+        },
+        "color-document": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Document text color (inverse)"
+        }
+      },
+      "positive-inverse": {
+        "bg-document": {
+          "value": "#002B10",
+          "type": "color",
+          "comment": "Document background (inverse)"
+        },
+        "bg-subtle": {
+          "value": "#00210C",
+          "type": "color",
+          "comment": "Subtle background (inverse)"
+        },
+        "bg-default": {
+          "value": "#006827",
+          "type": "color",
+          "comment": "Default background (inverse)"
+        },
+        "bg-hover": {
+          "value": "#005821",
+          "type": "color",
+          "comment": "Hover state background (inverse)"
+        },
+        "bg-active": {
+          "value": "#00481B",
+          "type": "color",
+          "comment": "Active state background (inverse)"
+        },
+        "border-subtle": {
+          "value": "#00531F",
+          "type": "color",
+          "comment": "Subtle border (inverse)"
+        },
+        "border-default": {
+          "value": "#96D8AE",
+          "type": "color",
+          "comment": "Default border (inverse)"
+        },
+        "border-hover": {
+          "value": "#ACE0C0",
+          "type": "color",
+          "comment": "Hover state border (inverse)"
+        },
+        "border-active": {
+          "value": "#C3E9D1",
+          "type": "color",
+          "comment": "Active state border (inverse)"
+        },
+        "color-default": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Default text color (inverse)"
+        },
+        "color-hover": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Hover state text (inverse)"
+        },
+        "color-active": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Active state text (inverse)"
+        },
+        "color-subtle": {
+          "value": "#8AD3A6",
+          "type": "color",
+          "comment": "Subtle text color (inverse)"
+        },
+        "color-document": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Document text color (inverse)"
+        }
+      },
+      "warning-inverse": {
+        "bg-document": {
+          "value": "#331F0D",
+          "type": "color",
+          "comment": "Document background (inverse)"
+        },
+        "bg-subtle": {
+          "value": "#27190A",
+          "type": "color",
+          "comment": "Subtle background (inverse)"
+        },
+        "bg-default": {
+          "value": "#844C12",
+          "type": "color",
+          "comment": "Default background (inverse)"
+        },
+        "bg-hover": {
+          "value": "#6F4012",
+          "type": "color",
+          "comment": "Hover state background (inverse)"
+        },
+        "bg-active": {
+          "value": "#5A3511",
+          "type": "color",
+          "comment": "Active state background (inverse)"
+        },
+        "border-subtle": {
+          "value": "#683C12",
+          "type": "color",
+          "comment": "Subtle border (inverse)"
+        },
+        "border-default": {
+          "value": "#FFBC7A",
+          "type": "color",
+          "comment": "Default border (inverse)"
+        },
+        "border-hover": {
+          "value": "#FFCB98",
+          "type": "color",
+          "comment": "Hover state border (inverse)"
+        },
+        "border-active": {
+          "value": "#FFD9B4",
+          "type": "color",
+          "comment": "Active state border (inverse)"
+        },
+        "color-default": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Default text color (inverse)"
+        },
+        "color-hover": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Hover state text (inverse)"
+        },
+        "color-active": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Active state text (inverse)"
+        },
+        "color-subtle": {
+          "value": "#FFB46B",
+          "type": "color",
+          "comment": "Subtle text color (inverse)"
+        },
+        "color-document": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Document text color (inverse)"
+        }
+      },
+      "transparent": {
+        "value": "transparent",
+        "type": "color",
+        "comment": "Fully transparent - for invisible backgrounds and borders"
+      }
+    },
+    "heading": {
+      "color": {
+        "value": "{dsn.color.neutral.color-document}",
+        "type": "color",
+        "comment": "Heading text color"
+      }
+    },
+    "form-control": {
+      "accent-color": {
+        "value": "{dsn.color.action-1.color-default}",
+        "type": "color",
+        "comment": "Form control accent color (checkboxes, radio buttons)"
+      },
+      "background-color": {
+        "value": "{dsn.color.neutral.bg-document}",
+        "type": "color",
+        "comment": "Form control background"
+      },
+      "border-color": {
+        "value": "{dsn.color.neutral.border-default}",
+        "type": "color",
+        "comment": "Form control border"
+      },
+      "color": {
+        "value": "{dsn.color.neutral.color-document}",
+        "type": "color",
+        "comment": "Form control text color"
+      },
+      "placeholder": {
+        "color": {
+          "value": "{dsn.color.neutral.color-subtle}",
+          "type": "color",
+          "comment": "Form control placeholder text color"
+        }
+      },
+      "hover": {
+        "accent-color": {
+          "value": "{dsn.color.action-1.color-hover}",
+          "type": "color",
+          "comment": "Form control hover accent color"
+        },
+        "background-color": {
+          "value": "{dsn.color.neutral.bg-hover}",
+          "type": "color",
+          "comment": "Form control hover background"
+        },
+        "border-color": {
+          "value": "{dsn.color.neutral.border-hover}",
+          "type": "color",
+          "comment": "Form control hover border"
+        },
+        "color": {
+          "value": "{dsn.form-control.color}",
+          "type": "color",
+          "comment": "Form control hover text color"
+        }
+      },
+      "focus": {
+        "background-color": {
+          "value": "{dsn.form-control.background-color}",
+          "type": "color",
+          "comment": "Form control focus background"
+        },
+        "border-color": {
+          "value": "{dsn.color.neutral.border-active}",
+          "type": "color",
+          "comment": "Form control focus border"
+        },
+        "color": {
+          "value": "{dsn.form-control.color}",
+          "type": "color",
+          "comment": "Form control focus text color"
+        }
+      },
+      "active": {
+        "accent-color": {
+          "value": "{dsn.color.action-1.color-active}",
+          "type": "color",
+          "comment": "Form control active accent color"
+        },
+        "background-color": {
+          "value": "{dsn.color.neutral.bg-active}",
+          "type": "color",
+          "comment": "Form control active background"
+        },
+        "border-color": {
+          "value": "{dsn.color.neutral.border-active}",
+          "type": "color",
+          "comment": "Form control active border"
+        },
+        "color": {
+          "value": "{dsn.form-control.color}",
+          "type": "color",
+          "comment": "Form control active text color"
+        }
+      },
+      "disabled": {
+        "accent-color": {
+          "value": "{dsn.color.neutral.bg-subtle}",
+          "type": "color",
+          "comment": "Form control disabled accent color"
+        },
+        "background-color": {
+          "value": "{dsn.color.neutral.bg-subtle}",
+          "type": "color",
+          "comment": "Form control disabled background"
+        },
+        "border-color": {
+          "value": "{dsn.color.neutral.border-subtle}",
+          "type": "color",
+          "comment": "Form control disabled border"
+        },
+        "color": {
+          "value": "{dsn.color.neutral.color-subtle}",
+          "type": "color",
+          "comment": "Form control disabled text color"
+        }
+      },
+      "invalid": {
+        "background-color": {
+          "value": "{dsn.color.negative.bg-default}",
+          "type": "color",
+          "comment": "Form control invalid background"
+        },
+        "border-color": {
+          "value": "{dsn.color.negative.border-default}",
+          "type": "color",
+          "comment": "Form control invalid border"
+        },
+        "color": {
+          "value": "{dsn.color.negative.color-default}",
+          "type": "color",
+          "comment": "Form control invalid text color"
+        }
+      },
+      "read-only": {
+        "background-color": {
+          "value": "{dsn.color.neutral.bg-subtle}",
+          "type": "color",
+          "comment": "Form control read-only background"
+        },
+        "border-color": {
+          "value": "{dsn.color.transparent}",
+          "type": "color",
+          "comment": "Form control read-only border"
+        },
+        "color": {
+          "value": "{dsn.color.neutral.color-document}",
+          "type": "color",
+          "comment": "Form control read-only text color"
+        }
+      }
+    },
+    "focus": {
+      "background-color": {
+        "value": "#ffdd00",
+        "type": "color",
+        "comment": "Focus indicator background"
+      },
+      "color": {
+        "value": "#0b0c0c",
+        "type": "color",
+        "comment": "Focus indicator text color"
+      },
+      "outline-color": {
+        "value": "#0b0c0c",
+        "type": "color",
+        "comment": "Focus outline color"
+      },
+      "inverse": {
+        "outline-color": {
+          "value": "#ffffff",
+          "type": "color",
+          "comment": "Focus outline color for use on tinted/dark backgrounds - opposite of outline-color"
+        }
+      }
+    }
+  }
+}

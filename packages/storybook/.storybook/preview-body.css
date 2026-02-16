@@ -1,0 +1,7 @@
+body {
+  background-color: var(--dsn-color-neutral-bg-document);
+  color: var(--dsn-color-neutral-color-document);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}

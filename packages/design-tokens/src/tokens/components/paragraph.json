@@ -1,0 +1,77 @@
+{
+  "dsn": {
+    "paragraph": {
+      "font-family": {
+        "value": "{dsn.text.font-family.default}",
+        "type": "fontFamily",
+        "comment": "Paragraph font family"
+      },
+      "font-weight": {
+        "value": "{dsn.text.font-weight.default}",
+        "type": "fontWeight",
+        "comment": "Paragraph font weight"
+      },
+      "color": {
+        "value": "{dsn.color.neutral.color-document}",
+        "type": "color",
+        "comment": "Paragraph text color"
+      },
+      "max-inline-size": {
+        "value": "65ch",
+        "type": "sizing",
+        "comment": "Paragraph max width for readability"
+      },
+      "default": {
+        "font-size": {
+          "value": "{dsn.text.font-size.md}",
+          "type": "fontSize",
+          "comment": "Default paragraph font size"
+        },
+        "line-height": {
+          "value": "{dsn.text.line-height.md}",
+          "type": "lineHeight",
+          "comment": "Default paragraph line height"
+        },
+        "margin-block-end": {
+          "value": "{dsn.space.row.lg}",
+          "type": "spacing",
+          "comment": "Default paragraph bottom margin"
+        }
+      },
+      "lead": {
+        "font-size": {
+          "value": "{dsn.text.font-size.lg}",
+          "type": "fontSize",
+          "comment": "Lead paragraph font size"
+        },
+        "line-height": {
+          "value": "{dsn.text.line-height.lg}",
+          "type": "lineHeight",
+          "comment": "Lead paragraph line height"
+        },
+        "margin-block-end": {
+          "value": "{dsn.space.row.xl}",
+          "type": "spacing",
+          "comment": "Lead paragraph bottom margin"
+        }
+      },
+      "small-print": {
+        "font-size": {
+          "value": "{dsn.text.font-size.sm}",
+          "type": "fontSize",
+          "comment": "Small print paragraph font size"
+        },
+        "line-height": {
+          "value": "{dsn.text.line-height.sm}",
+          "type": "lineHeight",
+          "comment": "Small print paragraph line height"
+        },
+        "margin-block-end": {
+          "value": "{dsn.space.row.md}",
+          "type": "spacing",
+          "comment": "Small print paragraph bottom margin"
+        }
+      }
+    }
+  }
+}

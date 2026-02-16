@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as TextAreaStories from './TextArea.stories';
+import docs from './TextArea.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={TextAreaStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={TextAreaStories.Default} />
+
+<Controls of={TextAreaStories.Default} />
+
+<Markdown>{rest}</Markdown>

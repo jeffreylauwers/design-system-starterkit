@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as OrderedListStories from './OrderedList.stories';
+import docs from './OrderedList.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={OrderedListStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={OrderedListStories.Default} />
+
+<Controls of={OrderedListStories.Default} />
+
+<Markdown>{rest}</Markdown>

@@ -1,0 +1,148 @@
+<script>
+  // Dynamic token loading script for Storybook
+  // This runs in the preview iframe and handles theme/mode/density switching
+  (function() {
+    const CONFIG_BASE_URL = '/design-tokens/dist/css';
+    let currentConfigName = null;
+    let styleElement = null;
+
+    function getGlobalsFromUrl() {
+      const url = new URL(window.location.href);
+      const globalsParam = url.searchParams.get('globals') || '';
+      const globals = {};
+
+      globalsParam.split(';').forEach(pair => {
+        const [key, value] = pair.split(':');
+        if (key && value) {
+          globals[key] = value;
+        }
+      });
+
+      return {
+        theme: globals.theme || 'start',
+        mode: globals.mode || 'light',
+        projectType: globals.projectType || 'default'
+      };
+    }
+
+    function loadTokenConfig(configName, forceReload = false) {
+      if (currentConfigName === configName && !forceReload) return;
+
+      const url = `${CONFIG_BASE_URL}/${configName}.css`;
+
+      fetch(url)
+        .then(response => {
+          if (!response.ok) throw new Error('Failed to load: ' + url);
+          return response.text();
+        })
+        .then(cssText => {
+          // Remove existing dynamic style if it exists
+          if (styleElement && styleElement.parentNode) {
+            styleElement.remove();
+          }
+
+          // Create new style element
+          styleElement = document.createElement('style');
+          styleElement.setAttribute('data-dsn-tokens', configName);
+          // Add high specificity by wrapping in :root:root
+          styleElement.textContent = cssText.replace(':root', ':root:root');
+
+          // Always append to end of head to ensure highest priority
+          document.head.appendChild(styleElement);
+          currentConfigName = configName;
+
+          // Dispatch event for TokenTable components
+          window.dispatchEvent(new CustomEvent('storybook-globals-updated', {
+            detail: { configName }
+          }));
+        })
+        .catch(err => console.error('Token config load error:', err));
+    }
+
+    function updateTokens() {
+      const { theme, mode, projectType } = getGlobalsFromUrl();
+      const configName = `${theme}-${mode}-${projectType}`;
+      loadTokenConfig(configName);
+
+      // Update body classes when body is available
+      if (document.body) {
+        const densityClass = projectType === 'information-dense' ? 'dense' : 'default';
+        const existingClasses = document.body.className.split(' ').filter(c =>
+          !c.startsWith('dsn-theme-') && !c.startsWith('dsn-mode-') && !c.startsWith('dsn-density-')
+        );
+        document.body.className = [...existingClasses, `dsn-theme-${theme}`, `dsn-mode-${mode}`, `dsn-density-${densityClass}`].join(' ');
+      }
+    }
+
+    // Ensure our style stays at the end of head (highest priority)
+    function ensureStylePriority() {
+      if (styleElement && styleElement.parentNode === document.head) {
+        const lastChild = document.head.lastElementChild;
+        if (lastChild !== styleElement) {
+          // Move our style to the end
+          document.head.appendChild(styleElement);
+        }
+      }
+    }
+
+    // Watch for new styles being added and ensure ours stays last
+    const headObserver = new MutationObserver((mutations) => {
+      let needsReposition = false;
+      for (const mutation of mutations) {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+          for (const node of mutation.addedNodes) {
+            if (node instanceof HTMLStyleElement || node instanceof HTMLLinkElement) {
+              if (node !== styleElement) {
+                needsReposition = true;
+              }
+            }
+          }
+        }
+      }
+      if (needsReposition) {
+        ensureStylePriority();
+      }
+    });
+
+    // Initial load - wait for DOM to be ready
+    function init() {
+      updateTokens();
+
+      // Start observing head for new styles
+      headObserver.observe(document.head, { childList: true });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+
+    // Listen for URL changes (Storybook uses history API)
+    let lastUrl = window.location.href;
+    const checkUrlChange = () => {
+      if (window.location.href !== lastUrl) {
+        lastUrl = window.location.href;
+        updateTokens();
+      }
+    };
+
+    // Poll for URL changes (history API doesn't trigger events reliably)
+    setInterval(checkUrlChange, 200);
+
+    // Also listen for popstate
+    window.addEventListener('popstate', updateTokens);
+
+    // Listen for custom Storybook channel events if available
+    function setupChannelListeners() {
+      if (window.__STORYBOOK_ADDONS_CHANNEL__) {
+        window.__STORYBOOK_ADDONS_CHANNEL__.on('updateGlobals', updateTokens);
+        window.__STORYBOOK_ADDONS_CHANNEL__.on('setGlobals', updateTokens);
+      } else {
+        // Retry after a short delay if channel isn't ready
+        setTimeout(setupChannelListeners, 100);
+      }
+    }
+    setupChannelListeners();
+  })();
+</script>

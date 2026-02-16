@@ -1,0 +1,36 @@
+{
+  "dsn": {
+    "text": {
+      "font-size": {
+        "sm": {
+          "value": "0.875rem",
+          "comment": "Small text - 14px (fixed)"
+        },
+        "md": {
+          "value": "1rem",
+          "comment": "Medium text - 16px (fixed)"
+        },
+        "lg": {
+          "value": "1.25rem",
+          "comment": "Large text - 20px (fixed)"
+        },
+        "xl": {
+          "value": "1.5rem",
+          "comment": "Extra large text - 24px (fixed)"
+        },
+        "2xl": {
+          "value": "2rem",
+          "comment": "2XL text - 32px (fixed)"
+        },
+        "3xl": {
+          "value": "2.5rem",
+          "comment": "3XL text - 40px (fixed)"
+        },
+        "4xl": {
+          "value": "3rem",
+          "comment": "4XL text - 48px (fixed)"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as SearchInputStories from './SearchInput.stories';
+import docs from './SearchInput.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={SearchInputStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={SearchInputStories.Default} />
+
+<Controls of={SearchInputStories.Default} />
+
+<Markdown>{rest}</Markdown>

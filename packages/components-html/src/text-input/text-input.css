@@ -1,0 +1,116 @@
+/**
+ * Text Input Component
+ * Single-line text input with support for various states
+ *
+ * Usage:
+ * <input type="text" class="dsn-text-input" />
+ */
+
+.dsn-text-input {
+  /* Typography */
+  font-family: var(--dsn-text-input-font-family);
+  font-size: var(--dsn-text-input-font-size);
+  font-weight: var(--dsn-text-input-font-weight);
+  line-height: var(--dsn-text-input-line-height);
+
+  /* Colors */
+  color: var(--dsn-text-input-color);
+  background-color: var(--dsn-text-input-background-color);
+
+  /* Border */
+  border: var(--dsn-text-input-border-width) solid
+    var(--dsn-text-input-border-color);
+  border-radius: var(--dsn-text-input-border-radius);
+
+  /* Spacing */
+  padding-block-start: var(--dsn-text-input-padding-block-start);
+  padding-block-end: var(--dsn-text-input-padding-block-end);
+  padding-inline-start: var(--dsn-text-input-padding-inline-start);
+  padding-inline-end: var(--dsn-text-input-padding-inline-end);
+
+  /* Sizing */
+  min-block-size: var(--dsn-text-input-min-block-size);
+  min-inline-size: var(--dsn-text-input-min-inline-size);
+  inline-size: 100%;
+  max-inline-size: var(--dsn-form-control-max-inline-size);
+
+  /* Display */
+  display: block;
+  box-sizing: border-box;
+
+  /* Transitions */
+  transition-property: border-color, box-shadow, background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Placeholder */
+.dsn-text-input::placeholder {
+  color: var(--dsn-text-input-placeholder-color);
+  opacity: 1;
+}
+
+/* Hover state */
+.dsn-text-input:hover:not(:disabled):not(:read-only) {
+  box-shadow: inset 0 0 0 var(--dsn-text-input-hover-box-shadow-spread)
+    var(--dsn-text-input-hover-box-shadow-color);
+}
+
+/* Focus state */
+.dsn-text-input:focus {
+  outline: none;
+  background-color: var(--dsn-text-input-focus-background-color);
+  border-color: var(--dsn-text-input-focus-border-color);
+  box-shadow: inset 0 0 0 var(--dsn-text-input-focus-box-shadow-spread)
+    var(--dsn-text-input-focus-box-shadow-color);
+}
+
+/* Disabled state */
+.dsn-text-input:disabled {
+  color: var(--dsn-text-input-disabled-color);
+  background-color: var(--dsn-text-input-disabled-background-color);
+  border-color: var(--dsn-text-input-disabled-border-color);
+  cursor: not-allowed;
+}
+
+/* Read-only state */
+.dsn-text-input:read-only {
+  color: var(--dsn-text-input-read-only-color);
+  background-color: var(--dsn-text-input-read-only-background-color);
+  border-color: var(--dsn-text-input-read-only-border-color);
+  cursor: default;
+}
+
+/* Invalid state (using aria-invalid or :invalid) */
+.dsn-text-input:invalid,
+.dsn-text-input[aria-invalid='true'] {
+  background-color: var(--dsn-text-input-invalid-background-color);
+  border-color: var(--dsn-text-input-invalid-border-color);
+  box-shadow: inset 0 0 0 var(--dsn-text-input-invalid-box-shadow-spread)
+    var(--dsn-text-input-invalid-box-shadow-color);
+}
+
+/* Width variants */
+.dsn-text-input--width-xs {
+  max-inline-size: var(--dsn-form-control-width-xs);
+}
+
+.dsn-text-input--width-sm {
+  max-inline-size: var(--dsn-form-control-width-sm);
+}
+
+.dsn-text-input--width-md {
+  max-inline-size: var(--dsn-form-control-width-md);
+}
+
+.dsn-text-input--width-lg {
+  max-inline-size: var(--dsn-form-control-width-lg);
+}
+
+.dsn-text-input--width-xl {
+  max-inline-size: var(--dsn-form-control-width-xl);
+}
+
+.dsn-text-input--width-full {
+  max-inline-size: var(--dsn-form-control-width-full);
+}

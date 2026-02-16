@@ -1,0 +1,19 @@
+/**
+ * Form Field Description Component
+ * Optional help text displayed below the label and above the form control
+ *
+ * Usage:
+ * <p class="dsn-form-field-description">
+ *   Vul hier uw officiële voornaam in zoals deze op uw paspoort staat.
+ * </p>
+ */
+
+.dsn-form-field-description {
+  font-family: var(--dsn-form-field-description-font-family);
+  font-size: var(--dsn-form-field-description-font-size);
+  font-weight: var(--dsn-form-field-description-font-weight);
+  line-height: var(--dsn-form-field-description-line-height);
+  color: var(--dsn-form-field-description-color);
+  margin-block-start: 0;
+  margin-block-end: var(--dsn-form-field-description-margin-block-end);
+}

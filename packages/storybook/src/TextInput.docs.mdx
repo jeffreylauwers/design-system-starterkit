@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as TextInputStories from './TextInput.stories';
+import docs from './TextInput.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={TextInputStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={TextInputStories.Default} />
+
+<Controls of={TextInputStories.Default} />
+
+<Markdown>{rest}</Markdown>

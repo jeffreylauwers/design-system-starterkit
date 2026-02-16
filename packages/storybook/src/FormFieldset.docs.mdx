@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as FormFieldsetStories from './FormFieldset.stories';
+import docs from './FormFieldset.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={FormFieldsetStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={FormFieldsetStories.Default} />
+
+<Controls of={FormFieldsetStories.Default} />
+
+<Markdown>{rest}</Markdown>

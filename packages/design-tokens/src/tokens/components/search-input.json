@@ -1,0 +1,21 @@
+{
+  "dsn": {
+    "search-input": {
+      "icon-size": {
+        "value": "{dsn.icon.size.md}",
+        "type": "dimension",
+        "comment": "Search input icon size"
+      },
+      "icon-gap": {
+        "value": "{dsn.space.text.md}",
+        "type": "dimension",
+        "comment": "Gap between search icon and input text"
+      },
+      "padding-inline-start-with-icon": {
+        "value": "calc({dsn.search-input.icon-size} + {dsn.search-input.icon-gap} + {dsn.form-control.padding-inline-start})",
+        "type": "dimension",
+        "comment": "Left padding when icon is present"
+      }
+    }
+  }
+}

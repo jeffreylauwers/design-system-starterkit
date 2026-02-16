@@ -1,0 +1,31 @@
+{
+  "dsn": {
+    "time-input": {
+      "icon-size": {
+        "value": "{dsn.icon.size.md}",
+        "type": "dimension",
+        "comment": "Time input icon size"
+      },
+      "icon-gap": {
+        "value": "{dsn.space.text.md}",
+        "type": "dimension",
+        "comment": "Gap between clock icon and input text"
+      },
+      "padding-inline-end-with-icon": {
+        "value": "calc({dsn.time-input.icon-size} + {dsn.time-input.icon-gap} + {dsn.form-control.padding-inline-end})",
+        "type": "dimension",
+        "comment": "Right padding when icon is present"
+      },
+      "icon-color": {
+        "value": "{dsn.color.action-2.color-default}",
+        "type": "color",
+        "comment": "Clock icon color (interactive, action color)"
+      },
+      "icon-hover-color": {
+        "value": "{dsn.color.action-2.color-hover}",
+        "type": "color",
+        "comment": "Clock icon hover color"
+      }
+    }
+  }
+}

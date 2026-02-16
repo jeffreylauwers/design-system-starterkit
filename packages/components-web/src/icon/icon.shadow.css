@@ -1,0 +1,13 @@
+/**
+ * Shadow DOM wrapper styles for the Icon Web Component.
+ * The core icon styles are imported from the shared HTML/CSS source.
+ */
+
+:host {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0;
+}
+
+/* Shared icon styles - single source of truth */
+@import '../../../components-html/src/icon/icon.css';

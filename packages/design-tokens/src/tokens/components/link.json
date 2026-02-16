@@ -1,0 +1,120 @@
+{
+  "dsn": {
+    "link": {
+      "color": {
+        "value": "{dsn.color.action-2.color-default}",
+        "type": "color",
+        "comment": "Link text color"
+      },
+      "text-decoration-color": {
+        "value": "{dsn.color.action-2.color-default}",
+        "type": "color",
+        "comment": "Link underline color"
+      },
+      "text-decoration-line": {
+        "value": "underline",
+        "type": "string",
+        "comment": "Link text decoration line"
+      },
+      "text-decoration-thickness": {
+        "value": "auto",
+        "type": "string",
+        "comment": "Link underline thickness"
+      },
+      "text-underline-offset": {
+        "value": "4px",
+        "type": "string",
+        "comment": "Link underline offset"
+      },
+      "gap": {
+        "value": "{dsn.space.text.sm}",
+        "type": "dimension",
+        "comment": "Link gap between icon and text"
+      },
+      "icon-size": {
+        "value": "{dsn.icon.size.md}",
+        "type": "dimension",
+        "comment": "Link icon size"
+      },
+      "hover": {
+        "color": {
+          "value": "{dsn.color.action-2.color-hover}",
+          "type": "color",
+          "comment": "Link hover text color"
+        },
+        "text-decoration-line": {
+          "value": "none",
+          "type": "string",
+          "comment": "Link hover text decoration"
+        }
+      },
+      "active": {
+        "color": {
+          "value": "{dsn.color.action-2.color-active}",
+          "type": "color",
+          "comment": "Link active text color"
+        }
+      },
+      "disabled": {
+        "color": {
+          "value": "{dsn.color.neutral.color-subtle}",
+          "type": "color",
+          "comment": "Link disabled text color"
+        }
+      },
+      "size": {
+        "small": {
+          "font-size": {
+            "value": "{dsn.text.font-size.sm}",
+            "type": "dimension",
+            "comment": "Small link font size"
+          },
+          "gap": {
+            "value": "{dsn.space.text.sm}",
+            "type": "dimension",
+            "comment": "Small link gap between icon and text"
+          },
+          "icon-size": {
+            "value": "{dsn.icon.size.sm}",
+            "type": "dimension",
+            "comment": "Small link icon size"
+          }
+        },
+        "default": {
+          "font-size": {
+            "value": "{dsn.text.font-size.md}",
+            "type": "dimension",
+            "comment": "Default link font size"
+          },
+          "gap": {
+            "value": "{dsn.space.text.sm}",
+            "type": "dimension",
+            "comment": "Default link gap between icon and text"
+          },
+          "icon-size": {
+            "value": "{dsn.icon.size.md}",
+            "type": "dimension",
+            "comment": "Default link icon size"
+          }
+        },
+        "large": {
+          "font-size": {
+            "value": "{dsn.text.font-size.lg}",
+            "type": "dimension",
+            "comment": "Large link font size"
+          },
+          "gap": {
+            "value": "{dsn.space.text.md}",
+            "type": "dimension",
+            "comment": "Large link gap between icon and text"
+          },
+          "icon-size": {
+            "value": "{dsn.icon.size.lg}",
+            "type": "dimension",
+            "comment": "Large link icon size"
+          }
+        }
+      }
+    }
+  }
+}

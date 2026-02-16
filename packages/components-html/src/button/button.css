@@ -1,0 +1,346 @@
+/**
+ * Button Component
+ * Uses component tokens for consistent styling
+ */
+
+.dsn-button {
+  /* Reset */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Typography */
+  font-family: var(--dsn-text-font-family-default);
+  font-weight: var(--dsn-text-font-weight-bold);
+  line-height: var(--dsn-text-line-height-md);
+  text-decoration: none;
+
+  /* Borders */
+  border: var(--dsn-border-width-thin) solid transparent;
+  border-radius: var(--dsn-border-radius-md);
+
+  /* Interaction */
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  /* Accessibility - WCAG pointer target */
+  min-block-size: var(--dsn-pointer-target-min-block-size);
+  min-inline-size: var(--dsn-pointer-target-min-inline-size);
+}
+
+/* =============================================================================
+   Size Variants
+   ============================================================================= */
+
+.dsn-button--size-small {
+  font-size: var(--dsn-button-size-small-font-size);
+  padding-block: var(--dsn-button-size-small-padding-block);
+  padding-inline: var(--dsn-button-size-small-padding-inline);
+  gap: var(--dsn-button-size-small-gap);
+  min-block-size: 2.5rem;
+}
+
+.dsn-button--size-default {
+  font-size: var(--dsn-button-size-default-font-size);
+  padding-block: var(--dsn-button-size-default-padding-block);
+  padding-inline: var(--dsn-button-size-default-padding-inline);
+  gap: var(--dsn-button-size-default-gap);
+}
+
+.dsn-button--size-large {
+  font-size: var(--dsn-button-size-large-font-size);
+  padding-block: var(--dsn-button-size-large-padding-block);
+  padding-inline: var(--dsn-button-size-large-padding-inline);
+  gap: var(--dsn-button-size-large-gap);
+}
+
+/* Icon sizing per button size */
+.dsn-button--size-small > .dsn-icon {
+  width: var(--dsn-button-size-small-icon-size);
+  height: var(--dsn-button-size-small-icon-size);
+}
+
+.dsn-button--size-default > .dsn-icon {
+  width: var(--dsn-button-size-default-icon-size);
+  height: var(--dsn-button-size-default-icon-size);
+}
+
+.dsn-button--size-large > .dsn-icon {
+  width: var(--dsn-button-size-large-icon-size);
+  height: var(--dsn-button-size-large-icon-size);
+}
+
+/* Icon Only Button */
+.dsn-button--icon-only {
+  padding-inline: var(--dsn-button-size-default-icon-only-padding);
+}
+
+.dsn-button--icon-only.dsn-button--size-small {
+  padding-inline: var(--dsn-button-size-small-icon-only-padding);
+}
+
+.dsn-button--icon-only.dsn-button--size-large {
+  padding-inline: var(--dsn-button-size-large-icon-only-padding);
+}
+
+/* =============================================================================
+   Focus State (shared across all non-link variants)
+   ============================================================================= */
+
+.dsn-button:focus-visible:not(.dsn-button--link) {
+  background-color: var(--dsn-focus-background-color);
+  color: var(--dsn-focus-color);
+  border-color: var(--dsn-focus-background-color);
+  outline: var(--dsn-focus-outline-width) var(--dsn-focus-outline-style)
+    var(--dsn-focus-outline-color);
+  outline-offset: var(--dsn-focus-outline-offset);
+  box-shadow: 0 0 0
+    calc(var(--dsn-focus-outline-offset) + var(--dsn-focus-outline-width))
+    var(--dsn-focus-inverse-outline-color);
+}
+
+/* =============================================================================
+   Color Variants
+   ============================================================================= */
+
+/* Variant: Strong (main CTA) */
+.dsn-button--strong {
+  background-color: var(--dsn-button-strong-background-color);
+  color: var(--dsn-button-strong-color);
+  border-color: var(--dsn-button-strong-border-color);
+}
+
+.dsn-button--strong:hover:not(:disabled) {
+  background-color: var(--dsn-button-strong-hover-background-color);
+  color: var(--dsn-button-strong-hover-color);
+  border-color: var(--dsn-button-strong-hover-border-color);
+}
+
+.dsn-button--strong:active:not(:disabled) {
+  background-color: var(--dsn-button-strong-active-background-color);
+  color: var(--dsn-button-strong-active-color);
+  border-color: var(--dsn-button-strong-active-border-color);
+}
+
+/* Variant: Default (alternative actions) */
+.dsn-button--default {
+  background-color: var(--dsn-button-default-background-color);
+  color: var(--dsn-button-default-color);
+  border-color: var(--dsn-button-default-border-color);
+}
+
+.dsn-button--default:hover:not(:disabled) {
+  background-color: var(--dsn-button-default-hover-background-color);
+  color: var(--dsn-button-default-hover-color);
+  border-color: var(--dsn-button-default-hover-border-color);
+}
+
+.dsn-button--default:active:not(:disabled) {
+  background-color: var(--dsn-button-default-active-background-color);
+  color: var(--dsn-button-default-active-color);
+  border-color: var(--dsn-button-default-active-border-color);
+}
+
+/* Variant: Subtle (low emphasis) */
+.dsn-button--subtle {
+  background-color: var(--dsn-button-subtle-background-color);
+  color: var(--dsn-button-subtle-color);
+  border-color: var(--dsn-button-subtle-border-color);
+}
+
+.dsn-button--subtle:hover:not(:disabled) {
+  background-color: var(--dsn-button-subtle-hover-background-color);
+  color: var(--dsn-button-subtle-hover-color);
+  border-color: var(--dsn-button-subtle-hover-border-color);
+}
+
+.dsn-button--subtle:active:not(:disabled) {
+  background-color: var(--dsn-button-subtle-active-background-color);
+  color: var(--dsn-button-subtle-active-color);
+  border-color: var(--dsn-button-subtle-active-border-color);
+}
+
+/* Variant: Link */
+.dsn-button--link {
+  background-color: var(--dsn-button-link-background-color);
+  color: var(--dsn-button-link-color);
+  border-color: var(--dsn-button-link-border-color);
+  text-decoration: underline;
+  padding-inline: 0;
+  min-inline-size: auto;
+}
+
+.dsn-button--link:hover:not(:disabled) {
+  background-color: var(--dsn-button-link-hover-background-color);
+  color: var(--dsn-button-link-hover-color);
+  border-color: var(--dsn-button-link-hover-border-color);
+}
+
+.dsn-button--link:active:not(:disabled) {
+  background-color: var(--dsn-button-link-active-background-color);
+  color: var(--dsn-button-link-active-color);
+  border-color: var(--dsn-button-link-active-border-color);
+}
+
+.dsn-button--link:focus-visible {
+  background-color: var(--dsn-focus-background-color);
+  color: var(--dsn-focus-color);
+  border-color: var(--dsn-color-transparent);
+  text-decoration: none;
+  outline: var(--dsn-focus-outline-width) var(--dsn-focus-outline-style)
+    var(--dsn-focus-outline-color);
+  outline-offset: var(--dsn-focus-outline-offset);
+  box-shadow: 0 0 0
+    calc(var(--dsn-focus-outline-offset) + var(--dsn-focus-outline-width))
+    var(--dsn-focus-inverse-outline-color);
+}
+
+/* =============================================================================
+   Sentiment Variants: Negative
+   ============================================================================= */
+
+.dsn-button--strong-negative {
+  background-color: var(--dsn-button-strong-negative-background-color);
+  color: var(--dsn-button-strong-negative-color);
+  border-color: var(--dsn-button-strong-negative-border-color);
+}
+
+.dsn-button--strong-negative:hover:not(:disabled) {
+  background-color: var(--dsn-button-strong-negative-hover-background-color);
+  color: var(--dsn-button-strong-negative-hover-color);
+  border-color: var(--dsn-button-strong-negative-hover-border-color);
+}
+
+.dsn-button--strong-negative:active:not(:disabled) {
+  background-color: var(--dsn-button-strong-negative-active-background-color);
+  color: var(--dsn-button-strong-negative-active-color);
+  border-color: var(--dsn-button-strong-negative-active-border-color);
+}
+
+.dsn-button--default-negative {
+  background-color: var(--dsn-button-default-negative-background-color);
+  color: var(--dsn-button-default-negative-color);
+  border-color: var(--dsn-button-default-negative-border-color);
+}
+
+.dsn-button--default-negative:hover:not(:disabled) {
+  background-color: var(--dsn-button-default-negative-hover-background-color);
+  color: var(--dsn-button-default-negative-hover-color);
+  border-color: var(--dsn-button-default-negative-hover-border-color);
+}
+
+.dsn-button--default-negative:active:not(:disabled) {
+  background-color: var(--dsn-button-default-negative-active-background-color);
+  color: var(--dsn-button-default-negative-active-color);
+  border-color: var(--dsn-button-default-negative-active-border-color);
+}
+
+.dsn-button--subtle-negative {
+  background-color: var(--dsn-button-subtle-negative-background-color);
+  color: var(--dsn-button-subtle-negative-color);
+  border-color: var(--dsn-button-subtle-negative-border-color);
+}
+
+.dsn-button--subtle-negative:hover:not(:disabled) {
+  background-color: var(--dsn-button-subtle-negative-hover-background-color);
+  color: var(--dsn-button-subtle-negative-hover-color);
+  border-color: var(--dsn-button-subtle-negative-hover-border-color);
+}
+
+.dsn-button--subtle-negative:active:not(:disabled) {
+  background-color: var(--dsn-button-subtle-negative-active-background-color);
+  color: var(--dsn-button-subtle-negative-active-color);
+  border-color: var(--dsn-button-subtle-negative-active-border-color);
+}
+
+/* =============================================================================
+   Sentiment Variants: Positive
+   ============================================================================= */
+
+.dsn-button--strong-positive {
+  background-color: var(--dsn-button-strong-positive-background-color);
+  color: var(--dsn-button-strong-positive-color);
+  border-color: var(--dsn-button-strong-positive-border-color);
+}
+
+.dsn-button--strong-positive:hover:not(:disabled) {
+  background-color: var(--dsn-button-strong-positive-hover-background-color);
+  color: var(--dsn-button-strong-positive-hover-color);
+  border-color: var(--dsn-button-strong-positive-hover-border-color);
+}
+
+.dsn-button--strong-positive:active:not(:disabled) {
+  background-color: var(--dsn-button-strong-positive-active-background-color);
+  color: var(--dsn-button-strong-positive-active-color);
+  border-color: var(--dsn-button-strong-positive-active-border-color);
+}
+
+.dsn-button--default-positive {
+  background-color: var(--dsn-button-default-positive-background-color);
+  color: var(--dsn-button-default-positive-color);
+  border-color: var(--dsn-button-default-positive-border-color);
+}
+
+.dsn-button--default-positive:hover:not(:disabled) {
+  background-color: var(--dsn-button-default-positive-hover-background-color);
+  color: var(--dsn-button-default-positive-hover-color);
+  border-color: var(--dsn-button-default-positive-hover-border-color);
+}
+
+.dsn-button--default-positive:active:not(:disabled) {
+  background-color: var(--dsn-button-default-positive-active-background-color);
+  color: var(--dsn-button-default-positive-active-color);
+  border-color: var(--dsn-button-default-positive-active-border-color);
+}
+
+.dsn-button--subtle-positive {
+  background-color: var(--dsn-button-subtle-positive-background-color);
+  color: var(--dsn-button-subtle-positive-color);
+  border-color: var(--dsn-button-subtle-positive-border-color);
+}
+
+.dsn-button--subtle-positive:hover:not(:disabled) {
+  background-color: var(--dsn-button-subtle-positive-hover-background-color);
+  color: var(--dsn-button-subtle-positive-hover-color);
+  border-color: var(--dsn-button-subtle-positive-hover-border-color);
+}
+
+.dsn-button--subtle-positive:active:not(:disabled) {
+  background-color: var(--dsn-button-subtle-positive-active-background-color);
+  color: var(--dsn-button-subtle-positive-active-color);
+  border-color: var(--dsn-button-subtle-positive-active-border-color);
+}
+
+/* =============================================================================
+   States
+   ============================================================================= */
+
+/* Disabled State */
+.dsn-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading State */
+.dsn-button--loading {
+  pointer-events: none;
+}
+
+.dsn-button--loading > .dsn-button__loader {
+  animation: dsn-button-spin 0.8s linear infinite;
+}
+
+@keyframes dsn-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Full Width */
+.dsn-button--full-width {
+  width: 100%;
+}

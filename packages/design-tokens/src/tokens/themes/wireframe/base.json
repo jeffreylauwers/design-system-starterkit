@@ -1,0 +1,503 @@
+{
+  "dsn": {
+    "text": {
+      "font-family": {
+        "default": {
+          "value": "'Comic Sans MS', 'Comic Sans', cursive",
+          "comment": "Comic Sans font stack for wireframe"
+        },
+        "monospace": {
+          "value": "ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace",
+          "comment": "System monospace font stack"
+        }
+      },
+      "font-weight": {
+        "default": {
+          "value": "400",
+          "comment": "Regular weight"
+        },
+        "bold": {
+          "value": "600",
+          "comment": "Semi-bold weight for wireframe"
+        }
+      },
+      "line-height": {
+        "sm": {
+          "value": "1.4",
+          "comment": "140% line height for small text"
+        },
+        "md": {
+          "value": "1.4",
+          "comment": "140% line height for medium text"
+        },
+        "lg": {
+          "value": "1.2",
+          "comment": "120% line height for large text"
+        },
+        "xl": {
+          "value": "1.2",
+          "comment": "120% line height for headings"
+        },
+        "2xl": {
+          "value": "1.2",
+          "comment": "120% line height for large headings"
+        },
+        "3xl": {
+          "value": "1.1",
+          "comment": "110% line height for display text"
+        },
+        "4xl": {
+          "value": "1.1",
+          "comment": "110% line height for hero text"
+        }
+      }
+    },
+    "heading": {
+      "font-family": {
+        "value": "'Comic Sans MS', 'Comic Sans', cursive",
+        "comment": "Comic Sans font for headings"
+      },
+      "font-weight": {
+        "value": "600",
+        "comment": "Semi-bold weight for headings"
+      }
+    },
+    "space": {
+      "base": {
+        "value": "0.5rem",
+        "comment": "8px - Base unit for 8pt grid system"
+      },
+      "block": {
+        "2xs": {
+          "value": "calc(0.5rem * 0.125)",
+          "comment": "1px - Vertical spacing within components"
+        },
+        "xs": {
+          "value": "calc(0.5rem * 0.25)",
+          "comment": "2px - Vertical spacing within components"
+        },
+        "sm": {
+          "value": "calc(0.5rem * 0.5)",
+          "comment": "4px - Vertical spacing within components"
+        },
+        "md": {
+          "value": "calc(0.5rem * 1)",
+          "comment": "8px - Vertical spacing within components"
+        },
+        "lg": {
+          "value": "calc(0.5rem * 1.5)",
+          "comment": "12px - Vertical spacing within components"
+        },
+        "xl": {
+          "value": "calc(0.5rem * 2)",
+          "comment": "16px - Vertical spacing within components"
+        },
+        "2xl": {
+          "value": "calc(0.5rem * 2.5)",
+          "comment": "20px - Vertical spacing within components"
+        },
+        "3xl": {
+          "value": "calc(0.5rem * 3)",
+          "comment": "24px - Vertical spacing within components"
+        },
+        "4xl": {
+          "value": "calc(0.5rem * 4)",
+          "comment": "32px - Vertical spacing within components"
+        },
+        "5xl": {
+          "value": "calc(0.5rem * 6)",
+          "comment": "48px - Vertical spacing within components"
+        },
+        "6xl": {
+          "value": "calc(0.5rem * 8)",
+          "comment": "64px - Vertical spacing within components"
+        }
+      },
+      "inline": {
+        "2xs": {
+          "value": "calc(0.5rem * 0.125)",
+          "comment": "1px - Horizontal spacing within components"
+        },
+        "xs": {
+          "value": "calc(0.5rem * 0.25)",
+          "comment": "2px - Horizontal spacing within components"
+        },
+        "sm": {
+          "value": "calc(0.5rem * 0.5)",
+          "comment": "4px - Horizontal spacing within components"
+        },
+        "md": {
+          "value": "calc(0.5rem * 1)",
+          "comment": "8px - Horizontal spacing within components"
+        },
+        "lg": {
+          "value": "calc(0.5rem * 1.5)",
+          "comment": "12px - Horizontal spacing within components"
+        },
+        "xl": {
+          "value": "calc(0.5rem * 2)",
+          "comment": "16px - Horizontal spacing within components"
+        },
+        "2xl": {
+          "value": "calc(0.5rem * 2.5)",
+          "comment": "20px - Horizontal spacing within components"
+        },
+        "3xl": {
+          "value": "calc(0.5rem * 3)",
+          "comment": "24px - Horizontal spacing within components"
+        },
+        "4xl": {
+          "value": "calc(0.5rem * 4)",
+          "comment": "32px - Horizontal spacing within components"
+        },
+        "5xl": {
+          "value": "calc(0.5rem * 6)",
+          "comment": "48px - Horizontal spacing within components"
+        },
+        "6xl": {
+          "value": "calc(0.5rem * 8)",
+          "comment": "64px - Horizontal spacing within components"
+        }
+      },
+      "text": {
+        "3xs": {
+          "value": "calc(0.5rem * 0.125)",
+          "comment": "1px - Spacing between text and icons"
+        },
+        "2xs": {
+          "value": "calc(0.5rem * 0.25)",
+          "comment": "2px - Spacing between text and icons"
+        },
+        "xs": {
+          "value": "calc(0.5rem * 0.25)",
+          "comment": "2px - Spacing between text and icons"
+        },
+        "sm": {
+          "value": "calc(0.5rem * 0.5)",
+          "comment": "4px - Spacing between text and icons"
+        },
+        "md": {
+          "value": "calc(0.5rem * 1)",
+          "comment": "8px - Spacing between text and icons"
+        },
+        "lg": {
+          "value": "calc(0.5rem * 1.5)",
+          "comment": "12px - Spacing between text and icons"
+        },
+        "xl": {
+          "value": "calc(0.5rem * 2)",
+          "comment": "16px - Spacing between text and icons"
+        },
+        "2xl": {
+          "value": "calc(0.5rem * 2.5)",
+          "comment": "20px - Spacing between text and icons"
+        },
+        "3xl": {
+          "value": "calc(0.5rem * 3)",
+          "comment": "24px - Spacing between text and icons"
+        }
+      },
+      "column": {
+        "2xs": {
+          "value": "calc(0.5rem * 0.125)",
+          "comment": "1px - Horizontal spacing between components"
+        },
+        "xs": {
+          "value": "calc(0.5rem * 0.25)",
+          "comment": "2px - Horizontal spacing between components"
+        },
+        "sm": {
+          "value": "calc(0.5rem * 0.5)",
+          "comment": "4px - Horizontal spacing between components"
+        },
+        "md": {
+          "value": "calc(0.5rem * 1)",
+          "comment": "8px - Horizontal spacing between components"
+        },
+        "lg": {
+          "value": "calc(0.5rem * 1.5)",
+          "comment": "12px - Horizontal spacing between components"
+        },
+        "xl": {
+          "value": "calc(0.5rem * 2)",
+          "comment": "16px - Horizontal spacing between components"
+        },
+        "2xl": {
+          "value": "calc(0.5rem * 2.5)",
+          "comment": "20px - Horizontal spacing between components"
+        },
+        "3xl": {
+          "value": "calc(0.5rem * 3)",
+          "comment": "24px - Horizontal spacing between components"
+        },
+        "4xl": {
+          "value": "calc(0.5rem * 4)",
+          "comment": "32px - Horizontal spacing between components"
+        },
+        "5xl": {
+          "value": "calc(0.5rem * 8)",
+          "comment": "64px - Horizontal spacing between components"
+        },
+        "6xl": {
+          "value": "calc(0.5rem * 20)",
+          "comment": "160px - Horizontal spacing between components"
+        }
+      },
+      "row": {
+        "2xs": {
+          "value": "calc(0.5rem * 0.125)",
+          "comment": "1px - Vertical spacing between components"
+        },
+        "xs": {
+          "value": "calc(0.5rem * 0.25)",
+          "comment": "2px - Vertical spacing between components"
+        },
+        "sm": {
+          "value": "calc(0.5rem * 0.5)",
+          "comment": "4px - Vertical spacing between components"
+        },
+        "md": {
+          "value": "calc(0.5rem * 1)",
+          "comment": "8px - Vertical spacing between components"
+        },
+        "lg": {
+          "value": "calc(0.5rem * 1.5)",
+          "comment": "12px - Vertical spacing between components"
+        },
+        "xl": {
+          "value": "calc(0.5rem * 2)",
+          "comment": "16px - Vertical spacing between components"
+        },
+        "2xl": {
+          "value": "calc(0.5rem * 2.5)",
+          "comment": "20px - Vertical spacing between components"
+        },
+        "3xl": {
+          "value": "calc(0.5rem * 3)",
+          "comment": "24px - Vertical spacing between components"
+        },
+        "4xl": {
+          "value": "calc(0.5rem * 4)",
+          "comment": "32px - Vertical spacing between components"
+        },
+        "5xl": {
+          "value": "calc(0.5rem * 8)",
+          "comment": "64px - Vertical spacing between components"
+        },
+        "6xl": {
+          "value": "calc(0.5rem * 20)",
+          "comment": "160px - Vertical spacing between components"
+        }
+      }
+    },
+    "icon": {
+      "size": {
+        "sm": {
+          "value": "calc({dsn.text.font-size.sm} * {dsn.text.line-height.sm})",
+          "comment": "Fluid icon size - coupled to font-size.sm × line-height.sm"
+        },
+        "md": {
+          "value": "calc({dsn.text.font-size.md} * {dsn.text.line-height.md})",
+          "comment": "Fluid icon size - coupled to font-size.md × line-height.md"
+        },
+        "lg": {
+          "value": "calc({dsn.text.font-size.lg} * {dsn.text.line-height.lg})",
+          "comment": "Fluid icon size - coupled to font-size.lg × line-height.lg"
+        },
+        "xl": {
+          "value": "calc({dsn.text.font-size.xl} * {dsn.text.line-height.xl})",
+          "comment": "Fluid icon size - coupled to font-size.xl × line-height.xl"
+        },
+        "2xl": {
+          "value": "calc({dsn.text.font-size.2xl} * {dsn.text.line-height.2xl})",
+          "comment": "Fluid icon size - coupled to font-size.2xl × line-height.2xl"
+        },
+        "3xl": {
+          "value": "calc({dsn.text.font-size.3xl} * {dsn.text.line-height.3xl})",
+          "comment": "Fluid icon size - coupled to font-size.3xl × line-height.3xl"
+        },
+        "4xl": {
+          "value": "calc({dsn.text.font-size.4xl} * {dsn.text.line-height.4xl})",
+          "comment": "Fluid icon size - coupled to font-size.4xl × line-height.4xl"
+        }
+      }
+    },
+    "pointer-target": {
+      "min-block-size": {
+        "value": "3rem",
+        "type": "dimension",
+        "comment": "WCAG 2.5.5 Target Size - Minimum 48px (3rem) touch target"
+      },
+      "min-inline-size": {
+        "value": "3rem",
+        "type": "dimension",
+        "comment": "WCAG 2.5.5 Target Size - Minimum 48px (3rem) touch target"
+      }
+    },
+    "border": {
+      "radius": {
+        "sm": {
+          "value": "2px",
+          "comment": "Small border radius - minimal for wireframe"
+        },
+        "md": {
+          "value": "4px",
+          "comment": "Medium border radius - minimal for wireframe"
+        },
+        "lg": {
+          "value": "8px",
+          "comment": "Large border radius - minimal for wireframe"
+        },
+        "round": {
+          "value": "999px",
+          "comment": "Fully rounded (pills, circles)"
+        }
+      },
+      "width": {
+        "thin": {
+          "value": "2px",
+          "comment": "Thin border"
+        },
+        "medium": {
+          "value": "4px",
+          "comment": "Medium border"
+        },
+        "thick": {
+          "value": "8px",
+          "comment": "Thick border"
+        }
+      }
+    },
+    "focus": {
+      "outline-offset": {
+        "value": "2px",
+        "comment": "Focus outline offset"
+      },
+      "outline-style": {
+        "value": "solid",
+        "comment": "Focus outline style - solid for wireframe"
+      },
+      "outline-width": {
+        "value": "2px",
+        "comment": "Focus outline width"
+      }
+    },
+    "form-control": {
+      "font-family": {
+        "value": "{dsn.text.font-family.default}",
+        "type": "fontFamily",
+        "comment": "Form control font family"
+      },
+      "font-size": {
+        "value": "{dsn.text.font-size.md}",
+        "type": "fontSize",
+        "comment": "Form control font size"
+      },
+      "font-weight": {
+        "value": "{dsn.text.font-weight.default}",
+        "type": "fontWeight",
+        "comment": "Form control font weight"
+      },
+      "line-height": {
+        "value": "{dsn.text.line-height.md}",
+        "type": "lineHeight",
+        "comment": "Form control line height"
+      },
+      "padding-block-start": {
+        "value": "{dsn.space.block.lg}",
+        "type": "dimension",
+        "comment": "Form control top padding"
+      },
+      "padding-block-end": {
+        "value": "{dsn.space.block.lg}",
+        "type": "dimension",
+        "comment": "Form control bottom padding"
+      },
+      "padding-inline-start": {
+        "value": "{dsn.space.inline.lg}",
+        "type": "dimension",
+        "comment": "Form control left padding"
+      },
+      "padding-inline-end": {
+        "value": "{dsn.space.inline.lg}",
+        "type": "dimension",
+        "comment": "Form control right padding"
+      },
+      "max-inline-size": {
+        "value": "25rem",
+        "type": "dimension",
+        "comment": "Form control maximum width"
+      },
+      "border-radius": {
+        "value": "2px",
+        "type": "dimension",
+        "comment": "Form control border radius - minimal for wireframe"
+      },
+      "border-width": {
+        "value": "{dsn.border.width.thin}",
+        "type": "dimension",
+        "comment": "Form control border width"
+      },
+      "width": {
+        "xs": {
+          "value": "8ch",
+          "type": "dimension",
+          "comment": "Extra small width - for short inputs (e.g., postal code, 6 characters)"
+        },
+        "sm": {
+          "value": "16ch",
+          "type": "dimension",
+          "comment": "Small width - for medium inputs (e.g., phone number, 10-12 digits)"
+        },
+        "md": {
+          "value": "32ch",
+          "type": "dimension",
+          "comment": "Medium width (default) - for standard inputs (e.g., email, name)"
+        },
+        "lg": {
+          "value": "48ch",
+          "type": "dimension",
+          "comment": "Large width - for longer inputs (e.g., URL)"
+        },
+        "xl": {
+          "value": "64ch",
+          "type": "dimension",
+          "comment": "Extra large width - for very long text fields"
+        },
+        "full": {
+          "value": "100%",
+          "type": "dimension",
+          "comment": "Full width - responsive to container"
+        }
+      },
+      "hover": {
+        "border-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension",
+          "comment": "Form control hover border width"
+        }
+      },
+      "focus": {
+        "border-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension",
+          "comment": "Form control focus border width"
+        }
+      },
+      "active": {
+        "border-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension",
+          "comment": "Form control active border width"
+        }
+      },
+      "invalid": {
+        "border-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension",
+          "comment": "Form control invalid border width"
+        }
+      }
+    }
+  }
+}
