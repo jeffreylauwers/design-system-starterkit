@@ -4,27 +4,20 @@ import { CheckboxGroup } from './CheckboxGroup';
 import { CheckboxOption } from '../CheckboxOption';
 
 describe('CheckboxGroup', () => {
-  it('renders a fieldset element', () => {
+  it('renders a div element', () => {
     const { container } = render(
-      <CheckboxGroup legend="Test Group">
+      <CheckboxGroup>
         <CheckboxOption label="Option 1" value="1" />
       </CheckboxGroup>
     );
-    expect(container.querySelector('fieldset')).toBeInTheDocument();
-  });
-
-  it('renders the legend', () => {
-    render(
-      <CheckboxGroup legend="My Group">
-        <CheckboxOption label="Option 1" value="1" />
-      </CheckboxGroup>
-    );
-    expect(screen.getByText('My Group')).toBeInTheDocument();
+    expect(
+      container.querySelector('div.dsn-checkbox-group')
+    ).toBeInTheDocument();
   });
 
   it('renders children', () => {
     render(
-      <CheckboxGroup legend="Test Group">
+      <CheckboxGroup>
         <CheckboxOption label="Option 1" value="1" />
         <CheckboxOption label="Option 2" value="2" />
       </CheckboxGroup>
@@ -35,55 +28,34 @@ describe('CheckboxGroup', () => {
 
   it('applies custom className', () => {
     const { container } = render(
-      <CheckboxGroup legend="Test Group" className="custom-class">
+      <CheckboxGroup className="custom-class">
         <CheckboxOption label="Option 1" value="1" />
       </CheckboxGroup>
     );
     expect(container.querySelector('.custom-class')).toBeInTheDocument();
   });
 
-  it('hides legend visually when hideLegend is true', () => {
+  it('forwards ref to div element', () => {
+    const ref = React.createRef<HTMLDivElement>();
     render(
-      <CheckboxGroup legend="Hidden Legend" hideLegend>
+      <CheckboxGroup ref={ref}>
         <CheckboxOption label="Option 1" value="1" />
       </CheckboxGroup>
     );
-    const legend = screen.getByText('Hidden Legend');
-    expect(legend).toHaveClass('dsn-visually-hidden');
+    expect(ref.current).toBeInstanceOf(HTMLDivElement);
   });
 
-  it('shows legend when hideLegend is false', () => {
-    render(
-      <CheckboxGroup legend="Visible Legend" hideLegend={false}>
-        <CheckboxOption label="Option 1" value="1" />
-      </CheckboxGroup>
-    );
-    const legend = screen.getByText('Visible Legend');
-    expect(legend).not.toHaveClass('dsn-visually-hidden');
-  });
-
-  it('forwards ref to fieldset element', () => {
-    const ref = React.createRef<HTMLFieldSetElement>();
-    render(
-      <CheckboxGroup legend="Test Group" ref={ref}>
-        <CheckboxOption label="Option 1" value="1" />
-      </CheckboxGroup>
-    );
-    expect(ref.current).toBeInstanceOf(HTMLFieldSetElement);
-  });
-
-  it('passes through fieldset attributes', () => {
+  it('passes through div attributes', () => {
     const { container } = render(
       <CheckboxGroup
-        legend="Test Group"
-        disabled
         aria-describedby="description"
+        data-testid="checkbox-group"
       >
         <CheckboxOption label="Option 1" value="1" />
       </CheckboxGroup>
     );
-    const fieldset = container.querySelector('fieldset');
-    expect(fieldset).toHaveAttribute('disabled');
-    expect(fieldset).toHaveAttribute('aria-describedby', 'description');
+    const div = container.querySelector('.dsn-checkbox-group');
+    expect(div).toHaveAttribute('aria-describedby', 'description');
+    expect(div).toHaveAttribute('data-testid', 'checkbox-group');
   });
 });
