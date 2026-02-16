@@ -7,6 +7,7 @@ interface TokenControlsProps {
 export function TokenControls({ onRefresh }: TokenControlsProps) {
   const [theme, setTheme] = useState('start');
   const [mode, setMode] = useState('light');
+  const [projectType, setProjectType] = useState('default');
 
   // Load current values on mount
   useEffect(() => {
@@ -17,13 +18,18 @@ export function TokenControls({ onRefresh }: TokenControlsProps) {
       ?.getAttribute('data-dsn-tokens');
 
     if (currentConfig) {
-      const [t, m] = currentConfig.split('-');
+      const [t, m, p] = currentConfig.split('-');
       setTheme(t || 'start');
       setMode(m || 'light');
+      setProjectType(p || 'default');
     }
   }, []);
 
-  const applyTokens = (newTheme: string, newMode: string) => {
+  const applyTokens = (
+    newTheme: string,
+    newMode: string,
+    newProjectType: string
+  ) => {
     if (typeof window === 'undefined') return;
 
     // Remove old token stylesheet
@@ -32,8 +38,8 @@ export function TokenControls({ onRefresh }: TokenControlsProps) {
       oldLink.remove();
     }
 
-    // Create new token config (always use 'default' density since it's the only one)
-    const config = `${newTheme}-${newMode}-default`;
+    // Create new token config
+    const config = `${newTheme}-${newMode}-${newProjectType}`;
 
     // Add new stylesheet
     const link = document.createElement('link');
@@ -63,13 +69,19 @@ export function TokenControls({ onRefresh }: TokenControlsProps) {
   const handleThemeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newTheme = e.target.value;
     setTheme(newTheme);
-    applyTokens(newTheme, mode);
+    applyTokens(newTheme, mode, projectType);
   };
 
   const handleModeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newMode = e.target.value;
     setMode(newMode);
-    applyTokens(theme, newMode);
+    applyTokens(theme, newMode, projectType);
+  };
+
+  const handleProjectTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newProjectType = e.target.value;
+    setProjectType(newProjectType);
+    applyTokens(theme, mode, newProjectType);
   };
 
   return (
@@ -147,6 +159,39 @@ export function TokenControls({ onRefresh }: TokenControlsProps) {
         >
           <option value="light">Light</option>
           <option value="dark">Dark</option>
+        </select>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <label
+          htmlFor="project-type-select"
+          style={{
+            fontSize: '11px',
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em',
+            color: 'var(--dsn-color-neutral-color-subtle, #666)',
+          }}
+        >
+          Project Type
+        </label>
+        <select
+          id="project-type-select"
+          value={projectType}
+          onChange={handleProjectTypeChange}
+          style={{
+            padding: '8px 12px',
+            borderRadius: '4px',
+            border:
+              '1px solid var(--dsn-color-neutral-border-default, #868686)',
+            background: 'var(--dsn-color-neutral-bg-document, #fff)',
+            fontSize: '14px',
+            fontFamily: 'var(--dsn-text-font-family-default, sans-serif)',
+            cursor: 'pointer',
+          }}
+        >
+          <option value="default">Default</option>
+          <option value="information-dense">Information Dense</option>
         </select>
       </div>
 
