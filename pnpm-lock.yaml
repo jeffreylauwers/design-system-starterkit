@@ -105,6 +105,9 @@ importers:
 
   packages/components-web:
     dependencies:
+      '@dsn/components-html':
+        specifier: workspace:*
+        version: link:../components-html
       '@dsn/design-tokens':
         specifier: workspace:*
         version: link:../design-tokens
