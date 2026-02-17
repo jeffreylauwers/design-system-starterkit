@@ -65,7 +65,7 @@ pnpm --filter @dsn/design-tokens watch
 # Start Storybook in development mode
 pnpm dev
 
-# Run tests (628 tests across 35 test suites)
+# Run tests (613 tests across 35 test suites)
 pnpm test
 
 # Run tests in watch mode
@@ -174,7 +174,7 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 | **Paragraph**     | Yes      | Yes   | Yes           |
 | **UnorderedList** | Yes      | Yes   | Yes           |
 
-**Form Components (21 total)**
+**Form Components (22 total)**
 
 | Component                 | HTML/CSS | React | Web Component |
 | ------------------------- | -------- | ----- | ------------- |
@@ -253,25 +253,24 @@ Components are designed to compose together:
 </FormField>
 
 // React — Checkbox group with fieldset/legend
-<FormField
-  label="Notification preferences"
-  isGroup
+<FormFieldset
+  legend="Notification preferences"
   description="Choose how you want to be notified"
 >
-  <CheckboxGroup legend="Notification preferences">
-    <CheckboxOption label="Email notifications" />
-    <CheckboxOption label="SMS notifications" />
-    <CheckboxOption label="Push notifications" />
+  <CheckboxGroup>
+    <CheckboxOption label="Email notifications" value="email" />
+    <CheckboxOption label="SMS notifications" value="sms" />
+    <CheckboxOption label="Push notifications" value="push" />
   </CheckboxGroup>
-</FormField>
+</FormFieldset>
 
 // React — Radio group
-<FormField label="Delivery method" isGroup>
-  <RadioGroup legend="Delivery method">
-    <RadioOption label="Standard shipping" name="delivery" />
-    <RadioOption label="Express shipping" name="delivery" />
+<FormFieldset legend="Delivery method">
+  <RadioGroup>
+    <RadioOption label="Standard shipping" name="delivery" value="standard" />
+    <RadioOption label="Express shipping" name="delivery" value="express" />
   </RadioGroup>
-</FormField>
+</FormFieldset>
 ```
 
 ## Accessibility
@@ -324,7 +323,7 @@ Comprehensive documentation is available in the `/docs` folder:
 
 - **Pre-commit hooks** via Husky + lint-staged (ESLint + Prettier)
 - **Type checking** across all packages (`pnpm type-check`)
-- **396 tests** covering React components, Web Components, and utilities
+- **613 tests** covering React components, Web Components, and utilities
 - **CI/CD** via GitHub Actions (lint, type-check, test, build)
 
 ## Tech Stack

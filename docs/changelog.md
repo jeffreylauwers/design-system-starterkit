@@ -6,6 +6,44 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 4.3.0 (February 17, 2025)
+
+### CI/CD Fixes & Interactive Design Token Explorer
+
+**CI/CD Test Fixes**
+
+- **FormField tests rewritten** — Tests updated to match refactored architecture: `FormField` always renders div/label, removed all `isGroup` test cases
+- **CheckboxGroup tests rewritten** — Tests updated to match refactored component: renders div container (not fieldset), removed `legend`/`hideLegend` prop tests
+- **RadioGroup tests rewritten** — Tests updated to match refactored component: renders div container (not fieldset), removed `legend`/`hideLegend` prop tests
+- **All 613 tests passing** across 35 test suites (down from 628 due to removed tests for deleted API surface)
+
+**Architecture Clarification (documented in tests)**
+
+The component architecture was refactored in v4.2.0 but tests weren't updated:
+
+| Component       | Old API (removed)            | New API                                         |
+| --------------- | ---------------------------- | ----------------------------------------------- |
+| `FormField`     | `isGroup`, `hideLabel` props | Always div/label; use `FormFieldset` for groups |
+| `CheckboxGroup` | `legend`, `hideLegend` props | Simple div container only                       |
+| `RadioGroup`    | `legend`, `hideLegend` props | Simple div container only                       |
+
+**Interactive Design Token Explorer**
+
+- **TokenControls component** added to Design Tokens documentation page
+- **Three selectors** for live token exploration: Theme, Mode, and Project Type
+- **Theme options**: Start, Wireframe (matches actual available token files)
+- **Mode options**: Light, Dark
+- **Project Type options**: Default, Information Dense (from `project-types/` folder)
+- **Live updates**: Selecting a configuration dynamically loads the corresponding CSS file and refreshes all TokenTable values on the page
+- All 8 configurations available: 2 themes × 2 modes × 2 project types
+
+**Documentation Updates**
+
+- README component composition examples updated to use new `FormFieldset` API
+- Test counts updated to 613
+
+---
+
 ## Version 4.2.0 (February 16, 2025)
 
 ### GitHub Pages Deployment & Storybook Improvements
@@ -125,9 +163,10 @@ import './Button.css';
 - **Radio component** — Complete (HTML/CSS, React) with checked, disabled states
 - **CheckboxOption component** — Complete (HTML/CSS, React) combines Checkbox + Label with accessible touch targets
 - **RadioOption component** — Complete (HTML/CSS, React) combines Radio + Label with accessible touch targets
-- **CheckboxGroup component** — Complete (HTML/CSS, React) uses fieldset/legend for accessible grouping
-- **RadioGroup component** — Complete (HTML/CSS, React) uses fieldset/legend for accessible grouping
-- **FormField component** — Complete (HTML/CSS, React) intelligent container with automatic fieldset/legend vs div/label rendering
+- **CheckboxGroup component** — Complete (HTML/CSS, React) div container for CheckboxOption items; pair with FormFieldset for accessible grouping
+- **RadioGroup component** — Complete (HTML/CSS, React) div container for RadioOption items; pair with FormFieldset for accessible grouping
+- **FormField component** — Complete (HTML/CSS, React) div/label container for single-value inputs (TextInput, TextArea, etc.)
+- **FormFieldset component** — Complete (HTML/CSS, React) fieldset/legend container for group controls (CheckboxGroup, RadioGroup)
 - **FormFieldLabel component** — Complete (HTML/CSS, React) with required indicator and suffix support
 - **FormFieldDescription component** — Complete (HTML/CSS, React) for help text
 - **FormFieldErrorMessage component** — Complete (HTML/CSS, React) for validation errors
