@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as EmailInputStories from './EmailInput.stories';
+import docs from './EmailInput.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={EmailInputStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={EmailInputStories.Default} />
+
+<Controls of={EmailInputStories.Default} />
+
+<Markdown>{rest}</Markdown>
