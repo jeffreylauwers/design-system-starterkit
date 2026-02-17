@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as NumberInputStories from './NumberInput.stories';
+import docs from './NumberInput.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={NumberInputStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={NumberInputStories.Default} />
+
+<Controls of={NumberInputStories.Default} />
+
+<Markdown>{rest}</Markdown>

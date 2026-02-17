@@ -2,18 +2,10 @@ import React from 'react';
 import { classNames, FormControlWidth } from '@dsn/core';
 import '../TextInput/TextInput.css';
 
-export type DecimalSeparator = 'comma' | 'period';
-
 export interface NumberInputProps extends Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
   'type'
 > {
-  /**
-   * Decimal separator character
-   * @default 'comma'
-   */
-  decimalSeparator?: DecimalSeparator;
-
   /**
    * Whether the input is in an invalid state
    * @default false
@@ -27,6 +19,14 @@ export interface NumberInputProps extends Omit<
   width?: FormControlWidth;
 
   /**
+   * Allow decimal input (e.g. amounts). When false, uses GOV.UK pattern:
+   * inputmode="numeric" + pattern="[0-9]*" for a numeric-only keyboard.
+   * When true, uses inputmode="decimal" without pattern restriction.
+   * @default false
+   */
+  allowDecimals?: boolean;
+
+  /**
    * Additional CSS class names
    */
   className?: string;
@@ -34,45 +34,35 @@ export interface NumberInputProps extends Omit<
 
 /**
  * Number Input component
- * Uses type="text" with inputmode="numeric" for better mobile UX (no spinner buttons)
- * Supports both comma and period as decimal separator
+ * Uses type="text" with inputmode="decimal" for better mobile UX (no spinner buttons)
  *
  * @example
  * ```tsx
- * // Basic usage (comma separator, Dutch format)
- * <NumberInput placeholder="Bedrag" />
- *
- * // With period separator (international format)
- * <NumberInput decimalSeparator="period" placeholder="Amount" />
+ * // Basic usage
+ * <NumberInput placeholder="0,00" />
  *
  * // With label
- * <FormFieldLabel htmlFor="age">Leeftijd</FormFieldLabel>
- * <NumberInput id="age" />
+ * <FormFieldLabel htmlFor="amount">Bedrag</FormFieldLabel>
+ * <NumberInput id="amount" />
  *
  * // Invalid state
  * <NumberInput invalid aria-invalid="true" aria-describedby="error" />
  * ```
  */
 export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
-  (
-    { decimalSeparator = 'comma', className, invalid, width, ...props },
-    ref
-  ) => {
+  ({ className, invalid, width, allowDecimals = false, ...props }, ref) => {
     const classes = classNames(
       'dsn-text-input',
       width && `dsn-text-input--width-${width}`,
       className
     );
 
-    // Pattern allows: digits, comma, period, minus sign
-    const pattern = '[0-9,.-]*';
-
     return (
       <input
         ref={ref}
         type="text"
-        inputMode="numeric"
-        pattern={pattern}
+        inputMode={allowDecimals ? 'decimal' : 'numeric'}
+        pattern={allowDecimals ? undefined : '[0-9]*'}
         className={classes}
         aria-invalid={invalid || undefined}
         autoComplete="off"

@@ -9,16 +9,16 @@ describe('NumberInput', () => {
     expect(screen.getByTestId('input').tagName).toBe('INPUT');
   });
 
-  it('has text type with numeric inputmode', () => {
+  it('has text type with numeric inputmode by default', () => {
     render(<NumberInput data-testid="input" />);
     const input = screen.getByTestId('input');
     expect(input).toHaveAttribute('type', 'text');
     expect(input).toHaveAttribute('inputmode', 'numeric');
   });
 
-  it('has pattern attribute for numeric input', () => {
+  it('has pattern [0-9]* by default', () => {
     render(<NumberInput data-testid="input" />);
-    expect(screen.getByTestId('input')).toHaveAttribute('pattern', '[0-9,.-]*');
+    expect(screen.getByTestId('input')).toHaveAttribute('pattern', '[0-9]*');
   });
 
   it('has autocomplete off by default', () => {
@@ -73,17 +73,44 @@ describe('NumberInput', () => {
     expect(screen.getByTestId('input')).toBeRequired();
   });
 
-  describe('decimalSeparator prop', () => {
-    it('defaults to comma', () => {
-      render(<NumberInput data-testid="input" />);
-      // Default behavior doesn't change attributes, just documents intent
-      expect(screen.getByTestId('input')).toBeInTheDocument();
+  describe('allowDecimals prop', () => {
+    it('uses decimal inputmode when allowDecimals is true', () => {
+      render(<NumberInput allowDecimals data-testid="input" />);
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'inputmode',
+        'decimal'
+      );
     });
 
-    it('accepts period as decimal separator', () => {
-      render(<NumberInput decimalSeparator="period" data-testid="input" />);
-      expect(screen.getByTestId('input')).toBeInTheDocument();
+    it('does not set pattern when allowDecimals is true', () => {
+      render(<NumberInput allowDecimals data-testid="input" />);
+      expect(screen.getByTestId('input')).not.toHaveAttribute('pattern');
     });
+
+    it('uses numeric inputmode when allowDecimals is false', () => {
+      render(<NumberInput allowDecimals={false} data-testid="input" />);
+      expect(screen.getByTestId('input')).toHaveAttribute(
+        'inputmode',
+        'numeric'
+      );
+    });
+
+    it('sets pattern [0-9]* when allowDecimals is false', () => {
+      render(<NumberInput allowDecimals={false} data-testid="input" />);
+      expect(screen.getByTestId('input')).toHaveAttribute('pattern', '[0-9]*');
+    });
+  });
+
+  describe('width variants', () => {
+    it.each(['xs', 'sm', 'md', 'lg', 'xl', 'full'] as const)(
+      'applies width class for %s',
+      (w) => {
+        render(<NumberInput width={w} data-testid="input" />);
+        expect(screen.getByTestId('input')).toHaveClass(
+          `dsn-text-input--width-${w}`
+        );
+      }
+    );
   });
 
   describe('invalid state', () => {
@@ -107,22 +134,13 @@ describe('NumberInput', () => {
   });
 
   describe('user interaction', () => {
-    it('accepts numeric input with comma', async () => {
+    it('accepts numeric input', async () => {
       const user = userEvent.setup();
       render(<NumberInput data-testid="input" />);
       const input = screen.getByTestId('input') as HTMLInputElement;
 
       await user.type(input, '123,45');
       expect(input).toHaveValue('123,45');
-    });
-
-    it('accepts numeric input with period', async () => {
-      const user = userEvent.setup();
-      render(<NumberInput decimalSeparator="period" data-testid="input" />);
-      const input = screen.getByTestId('input') as HTMLInputElement;
-
-      await user.type(input, '123.45');
-      expect(input).toHaveValue('123.45');
     });
 
     it('calls onChange handler', async () => {
