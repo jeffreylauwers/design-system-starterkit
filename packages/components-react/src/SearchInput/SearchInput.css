@@ -30,6 +30,14 @@
   padding-inline-start: var(--dsn-search-input-padding-inline-start-with-icon);
 }
 
+/* Hide browser-native clear button — will be implemented as a separate pattern */
+.dsn-search-input::-webkit-search-cancel-button {
+  display: none;
+}
+.dsn-search-input::-webkit-search-decoration {
+  display: none;
+}
+
 /* Width variants on the wrapper */
 .dsn-search-input-wrapper--width-xs {
   max-inline-size: var(--dsn-form-control-width-xs);

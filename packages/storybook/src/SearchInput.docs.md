@@ -30,7 +30,7 @@ De SearchInput component is een gespecialiseerd invoerveld voor zoekfunctionalit
 ## Accessibility
 
 - Het zoekicoon heeft `aria-hidden="true"` — het is puur decoratief en wordt niet voorgelezen door screen readers.
-- `type="search"` biedt op sommige browsers een ingebouwde clear-knop.
+- De native browser clear-knop (×) van `type="search"` is verborgen via CSS. Een clear-knop wordt later geïmplementeerd als een apart patroon.
 - De extra `padding-inline-start` zorgt ervoor dat ingevoerde tekst nooit over het icoon heen loopt.
 
 ## Anatomy
