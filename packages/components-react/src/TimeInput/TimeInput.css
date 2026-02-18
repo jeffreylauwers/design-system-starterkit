@@ -1,84 +1,77 @@
 /**
  * TimeInput Component Styles
- * Extends base text input styles for time input
+ * Wrapper positions the interactive clock button at inline-end inside the input.
+ * The input uses dsn-text-input base styles with extra padding-inline-end
+ * to prevent typed text from overlapping the button.
  */
 
-.dsn-time-input {
-  font-family: var(--dsn-form-control-font-family);
-  font-size: var(--dsn-form-control-font-size);
-  font-weight: var(--dsn-form-control-font-weight);
-  line-height: var(--dsn-form-control-line-height);
-  color: var(--dsn-form-control-text-color);
-  background-color: var(--dsn-form-control-bg);
-  border: var(--dsn-form-control-border-width) solid
-    var(--dsn-form-control-border-color);
-  border-radius: var(--dsn-form-control-border-radius);
-  padding-block: var(--dsn-form-control-padding-block);
-  padding-inline: var(--dsn-form-control-padding-inline);
-  transition:
-    border-color var(--dsn-form-control-transition-speed)
-      var(--dsn-form-control-transition-easing),
-    background-color var(--dsn-form-control-transition-speed)
-      var(--dsn-form-control-transition-easing),
-    box-shadow var(--dsn-form-control-transition-speed)
-      var(--dsn-form-control-transition-easing);
+/* Wrapper — positions clock button absolutely inside the input */
+.dsn-time-input-wrapper {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  max-inline-size: var(--dsn-form-control-max-inline-size);
 }
 
-.dsn-time-input::placeholder {
-  color: var(--dsn-form-control-placeholder-text-color);
-  opacity: 1;
+/* Clock button — centered vertically, positioned at inline-end */
+.dsn-time-input__button {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: var(--dsn-form-control-padding-inline-end);
+  transform: translateY(-50%);
+  inline-size: var(--dsn-time-input-icon-size);
+  block-size: var(--dsn-time-input-icon-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--dsn-time-input-icon-color);
 }
 
-.dsn-time-input:hover:not(:disabled):not(:read-only) {
-  border-color: var(--dsn-form-control-hover-border-color);
-  background-color: var(--dsn-form-control-hover-bg);
+.dsn-time-input__button:hover {
+  color: var(--dsn-time-input-icon-hover-color);
 }
 
-.dsn-time-input:focus {
+.dsn-time-input__button:focus-visible {
   outline: var(--dsn-focus-outline-width) solid var(--dsn-focus-outline-color);
   outline-offset: var(--dsn-focus-outline-offset);
-  border-color: var(--dsn-form-control-focus-border-color);
-  background-color: var(--dsn-form-control-focus-bg);
+  border-radius: var(--dsn-border-radius-sm);
 }
 
-.dsn-time-input:disabled {
-  border-color: var(--dsn-form-control-disabled-border-color);
-  background-color: var(--dsn-form-control-disabled-bg);
-  color: var(--dsn-form-control-disabled-text-color);
-  opacity: var(--dsn-form-control-disabled-opacity);
-  cursor: not-allowed;
+/* Disabled state — button is hidden when input is disabled */
+.dsn-time-input-wrapper:has(.dsn-time-input:disabled) .dsn-time-input__button {
+  display: none;
 }
 
-.dsn-time-input:read-only {
-  border-color: var(--dsn-form-control-readonly-border-color);
-  background-color: var(--dsn-form-control-readonly-bg);
-  cursor: default;
+/* Read-only state — button is hidden when input is read-only */
+.dsn-time-input-wrapper:has(.dsn-time-input:read-only) .dsn-time-input__button {
+  display: none;
 }
 
-.dsn-time-input--invalid {
-  border-color: var(--dsn-form-control-invalid-border-color);
+/* Input — extra padding-inline-end to make room for the clock button */
+.dsn-time-input {
+  padding-inline-end: var(--dsn-time-input-padding-inline-end-with-icon);
 }
 
-.dsn-time-input--invalid:focus {
-  outline-color: var(--dsn-form-control-invalid-border-color);
+/* Width variants on the wrapper */
+.dsn-time-input-wrapper--width-xs {
+  max-inline-size: var(--dsn-form-control-width-xs);
 }
-
-/* Width variants */
-.dsn-time-input--width-xs {
-  width: var(--dsn-form-control-width-xs);
+.dsn-time-input-wrapper--width-sm {
+  max-inline-size: var(--dsn-form-control-width-sm);
 }
-.dsn-time-input--width-sm {
-  width: var(--dsn-form-control-width-sm);
+.dsn-time-input-wrapper--width-md {
+  max-inline-size: var(--dsn-form-control-width-md);
 }
-.dsn-time-input--width-md {
-  width: var(--dsn-form-control-width-md);
+.dsn-time-input-wrapper--width-lg {
+  max-inline-size: var(--dsn-form-control-width-lg);
 }
-.dsn-time-input--width-lg {
-  width: var(--dsn-form-control-width-lg);
+.dsn-time-input-wrapper--width-xl {
+  max-inline-size: var(--dsn-form-control-width-xl);
 }
-.dsn-time-input--width-xl {
-  width: var(--dsn-form-control-width-xl);
-}
-.dsn-time-input--width-full {
-  width: 100%;
+.dsn-time-input-wrapper--width-full {
+  max-inline-size: var(--dsn-form-control-width-full);
 }

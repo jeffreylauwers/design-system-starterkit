@@ -1,6 +1,7 @@
 import React from 'react';
 import { classNames, FormControlWidth } from '@dsn/core';
 import { Icon } from '../Icon';
+import '../TextInput/TextInput.css';
 import './TimeInput.css';
 
 export interface TimeInputProps extends Omit<
@@ -27,7 +28,7 @@ export interface TimeInputProps extends Omit<
 
 /**
  * Time Input component
- * Time input with clock icon on the right that triggers native time picker
+ * Time input with an interactive clock button at inline-end that opens the native time picker.
  *
  * @example
  * ```tsx
@@ -39,14 +40,37 @@ export interface TimeInputProps extends Omit<
  * <TimeInput id="time" />
  *
  * // With default value
- * <TimeInput value="14:30" />
+ * <TimeInput defaultValue="14:30" />
  *
  * // Invalid state
  * <TimeInput invalid aria-invalid="true" aria-describedby="error" />
  * ```
  */
 export const TimeInput = React.forwardRef<HTMLInputElement, TimeInputProps>(
-  ({ className, invalid, width, ...props }, ref) => {
+  ({ className, invalid, width, disabled, readOnly, ...props }, ref) => {
+    const inputRef = React.useRef<HTMLInputElement>(null);
+
+    // Merge external ref with internal ref
+    const handleRef = React.useCallback(
+      (node: HTMLInputElement | null) => {
+        (inputRef as React.MutableRefObject<HTMLInputElement | null>).current =
+          node;
+        if (typeof ref === 'function') {
+          ref(node);
+        } else if (ref) {
+          (ref as React.MutableRefObject<HTMLInputElement | null>).current =
+            node;
+        }
+      },
+      [ref]
+    );
+
+    const handleButtonClick = () => {
+      if (inputRef.current && 'showPicker' in inputRef.current) {
+        inputRef.current.showPicker();
+      }
+    };
+
     const wrapperClasses = classNames(
       'dsn-time-input-wrapper',
       width && `dsn-time-input-wrapper--width-${width}`
@@ -54,21 +78,32 @@ export const TimeInput = React.forwardRef<HTMLInputElement, TimeInputProps>(
     const inputClasses = classNames(
       'dsn-text-input',
       'dsn-time-input',
-      width && `dsn-text-input--width-${width}`,
       className
     );
-    const iconClasses = classNames('dsn-time-input__icon');
 
     return (
       <div className={wrapperClasses}>
         <input
-          ref={ref}
+          ref={handleRef}
           type="time"
           className={inputClasses}
           aria-invalid={invalid || undefined}
+          disabled={disabled}
+          readOnly={readOnly}
           {...props}
         />
-        <Icon name="clock" className={iconClasses} aria-hidden />
+        {!disabled && !readOnly && (
+          <button
+            type="button"
+            className="dsn-time-input__button"
+            onClick={handleButtonClick}
+            tabIndex={-1}
+            aria-hidden="true"
+          >
+            <Icon name="clock" aria-hidden />
+            <span className="dsn-visually-hidden">Tijdkiezer openen</span>
+          </button>
+        )}
       </div>
     );
   }
