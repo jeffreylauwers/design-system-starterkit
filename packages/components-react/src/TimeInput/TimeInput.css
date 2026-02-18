@@ -1,84 +1,50 @@
 /**
  * TimeInput Component Styles
- * Extends base text input styles for time input
+ * Fixed-width wrapper positions the Button (subtle, small, icon-only) at inline-end inside the input.
+ * The input uses dsn-text-input base styles with extra padding-inline-end
+ * to prevent typed text from overlapping the button.
+ * Button hover/focus/color states come from the Button component itself.
  */
 
+/* Wrapper — fixed sm width, positions clock button absolutely inside the input */
+.dsn-time-input-wrapper {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  max-inline-size: var(--dsn-form-control-width-sm);
+}
+
+/* Clock button — centered vertically, positioned at inline-end */
+.dsn-time-input__button {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: var(--dsn-form-control-padding-inline-end);
+  transform: translateY(-50%);
+}
+
+/* Visually hidden button label — accessible to screen readers, invisible to sighted users */
+.dsn-time-input__button-label {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Input — extra padding-inline-end to make room for the clock button */
+/* Hide the native browser clock/time picker indicator */
 .dsn-time-input {
-  font-family: var(--dsn-form-control-font-family);
-  font-size: var(--dsn-form-control-font-size);
-  font-weight: var(--dsn-form-control-font-weight);
-  line-height: var(--dsn-form-control-line-height);
-  color: var(--dsn-form-control-text-color);
-  background-color: var(--dsn-form-control-bg);
-  border: var(--dsn-form-control-border-width) solid
-    var(--dsn-form-control-border-color);
-  border-radius: var(--dsn-form-control-border-radius);
-  padding-block: var(--dsn-form-control-padding-block);
-  padding-inline: var(--dsn-form-control-padding-inline);
-  transition:
-    border-color var(--dsn-form-control-transition-speed)
-      var(--dsn-form-control-transition-easing),
-    background-color var(--dsn-form-control-transition-speed)
-      var(--dsn-form-control-transition-easing),
-    box-shadow var(--dsn-form-control-transition-speed)
-      var(--dsn-form-control-transition-easing);
+  padding-inline-end: var(--dsn-time-input-padding-inline-end-with-icon);
 }
 
-.dsn-time-input::placeholder {
-  color: var(--dsn-form-control-placeholder-text-color);
-  opacity: 1;
+.dsn-time-input::-webkit-calendar-picker-indicator {
+  display: none;
 }
 
-.dsn-time-input:hover:not(:disabled):not(:read-only) {
-  border-color: var(--dsn-form-control-hover-border-color);
-  background-color: var(--dsn-form-control-hover-bg);
-}
-
-.dsn-time-input:focus {
-  outline: var(--dsn-focus-outline-width) solid var(--dsn-focus-outline-color);
-  outline-offset: var(--dsn-focus-outline-offset);
-  border-color: var(--dsn-form-control-focus-border-color);
-  background-color: var(--dsn-form-control-focus-bg);
-}
-
-.dsn-time-input:disabled {
-  border-color: var(--dsn-form-control-disabled-border-color);
-  background-color: var(--dsn-form-control-disabled-bg);
-  color: var(--dsn-form-control-disabled-text-color);
-  opacity: var(--dsn-form-control-disabled-opacity);
-  cursor: not-allowed;
-}
-
-.dsn-time-input:read-only {
-  border-color: var(--dsn-form-control-readonly-border-color);
-  background-color: var(--dsn-form-control-readonly-bg);
-  cursor: default;
-}
-
-.dsn-time-input--invalid {
-  border-color: var(--dsn-form-control-invalid-border-color);
-}
-
-.dsn-time-input--invalid:focus {
-  outline-color: var(--dsn-form-control-invalid-border-color);
-}
-
-/* Width variants */
-.dsn-time-input--width-xs {
-  width: var(--dsn-form-control-width-xs);
-}
-.dsn-time-input--width-sm {
-  width: var(--dsn-form-control-width-sm);
-}
-.dsn-time-input--width-md {
-  width: var(--dsn-form-control-width-md);
-}
-.dsn-time-input--width-lg {
-  width: var(--dsn-form-control-width-lg);
-}
-.dsn-time-input--width-xl {
-  width: var(--dsn-form-control-width-xl);
-}
-.dsn-time-input--width-full {
-  width: 100%;
+.dsn-time-input::-webkit-inner-spin-button {
+  display: none;
 }

@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as TimeInputStories from './TimeInput.stories';
+import docs from './TimeInput.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={TimeInputStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={TimeInputStories.Default} />
+
+<Controls of={TimeInputStories.Default} />
+
+<Markdown>{rest}</Markdown>

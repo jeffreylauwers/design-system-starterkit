@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { TimeInput } from './TimeInput';
@@ -19,19 +19,6 @@ describe('TimeInput', () => {
   it('has time type', () => {
     render(<TimeInput data-testid="input" />);
     expect(screen.getByTestId('input')).toHaveAttribute('type', 'time');
-  });
-
-  it('renders clock icon', () => {
-    const { container } = render(<TimeInput />);
-    const icon = container.querySelector('.dsn-time-input__icon');
-    expect(icon).toBeInTheDocument();
-    expect(icon).toHaveClass('dsn-icon');
-  });
-
-  it('clock icon is hidden from screen readers', () => {
-    const { container } = render(<TimeInput />);
-    const icon = container.querySelector('.dsn-time-input__icon');
-    expect(icon).toHaveAttribute('aria-hidden', 'true');
   });
 
   it('always has base dsn-text-input class on input', () => {
@@ -68,6 +55,102 @@ describe('TimeInput', () => {
   it('accepts value prop', () => {
     render(<TimeInput value="14:30" onChange={() => {}} data-testid="input" />);
     expect(screen.getByTestId('input')).toHaveValue('14:30');
+  });
+
+  it('wrapper always has fixed width (no width prop)', () => {
+    const { container } = render(<TimeInput />);
+    const wrapper = container.querySelector('.dsn-time-input-wrapper');
+    expect(wrapper?.className).toBe('dsn-time-input-wrapper');
+  });
+
+  describe('clock button', () => {
+    it('renders a clock button', () => {
+      const { container } = render(<TimeInput />);
+      expect(
+        container.querySelector('.dsn-time-input__button')
+      ).toBeInTheDocument();
+    });
+
+    it('clock button is a Button component (has dsn-button class)', () => {
+      const { container } = render(<TimeInput />);
+      const button = container.querySelector('.dsn-time-input__button');
+      expect(button).toHaveClass('dsn-button');
+    });
+
+    it('clock button uses subtle variant', () => {
+      const { container } = render(<TimeInput />);
+      const button = container.querySelector('.dsn-time-input__button');
+      expect(button).toHaveClass('dsn-button--subtle');
+    });
+
+    it('clock button uses small size', () => {
+      const { container } = render(<TimeInput />);
+      const button = container.querySelector('.dsn-time-input__button');
+      expect(button).toHaveClass('dsn-button--size-small');
+    });
+
+    it('clock button uses icon-only', () => {
+      const { container } = render(<TimeInput />);
+      const button = container.querySelector('.dsn-time-input__button');
+      expect(button).toHaveClass('dsn-button--icon-only');
+    });
+
+    it('clock button has tabIndex -1', () => {
+      const { container } = render(<TimeInput />);
+      const button = container.querySelector('.dsn-time-input__button');
+      expect(button).toHaveAttribute('tabindex', '-1');
+    });
+
+    it('clock button has type button', () => {
+      const { container } = render(<TimeInput />);
+      const button = container.querySelector('.dsn-time-input__button');
+      expect(button).toHaveAttribute('type', 'button');
+    });
+
+    it('clock button has aria-hidden', () => {
+      const { container } = render(<TimeInput />);
+      const button = container.querySelector('.dsn-time-input__button');
+      expect(button).toHaveAttribute('aria-hidden', 'true');
+    });
+
+    it('clock button has visually hidden label text', () => {
+      const { container } = render(<TimeInput />);
+      const hiddenLabel = container.querySelector(
+        '.dsn-time-input__button-label'
+      );
+      expect(hiddenLabel).toBeInTheDocument();
+      expect(hiddenLabel).toHaveTextContent('Tijdkiezer openen');
+    });
+
+    it('does not render clock button when disabled', () => {
+      const { container } = render(<TimeInput disabled data-testid="input" />);
+      expect(
+        container.querySelector('.dsn-time-input__button')
+      ).not.toBeInTheDocument();
+    });
+
+    it('does not render clock button when readOnly', () => {
+      const { container } = render(<TimeInput readOnly data-testid="input" />);
+      expect(
+        container.querySelector('.dsn-time-input__button')
+      ).not.toBeInTheDocument();
+    });
+
+    it('calls showPicker on button click when available', async () => {
+      const user = userEvent.setup();
+      const showPicker = vi.fn();
+      const { container } = render(<TimeInput data-testid="input" />);
+      const input = screen.getByTestId('input') as HTMLInputElement;
+      Object.defineProperty(input, 'showPicker', {
+        value: showPicker,
+        writable: true,
+      });
+      const button = container.querySelector(
+        '.dsn-time-input__button'
+      ) as HTMLButtonElement;
+      await user.click(button);
+      expect(showPicker).toHaveBeenCalledOnce();
+    });
   });
 
   it('can be disabled', () => {
