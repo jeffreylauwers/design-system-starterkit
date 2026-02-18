@@ -1,84 +1,51 @@
 /**
  * SearchInput Component Styles
- * Extends base text input styles for search input
+ * Wrapper positions the search icon inline-start inside the input.
+ * The input uses dsn-text-input base styles with extra padding-inline-start
+ * to prevent typed text from overlapping the icon.
  */
 
+/* Wrapper — positions icon absolutely inside the input */
+.dsn-search-input-wrapper {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  max-inline-size: var(--dsn-form-control-max-inline-size);
+}
+
+/* Icon — centered vertically, positioned at inline-start */
+.dsn-search-input__icon {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: var(--dsn-form-control-padding-inline-start);
+  transform: translateY(-50%);
+  inline-size: var(--dsn-search-input-icon-size);
+  block-size: var(--dsn-search-input-icon-size);
+  color: var(--dsn-text-input-color);
+  pointer-events: none;
+}
+
+/* Input — extra padding-inline-start to make room for the icon */
 .dsn-search-input {
-  font-family: var(--dsn-form-control-font-family);
-  font-size: var(--dsn-form-control-font-size);
-  font-weight: var(--dsn-form-control-font-weight);
-  line-height: var(--dsn-form-control-line-height);
-  color: var(--dsn-form-control-text-color);
-  background-color: var(--dsn-form-control-bg);
-  border: var(--dsn-form-control-border-width) solid
-    var(--dsn-form-control-border-color);
-  border-radius: var(--dsn-form-control-border-radius);
-  padding-block: var(--dsn-form-control-padding-block);
-  padding-inline: var(--dsn-form-control-padding-inline);
-  transition:
-    border-color var(--dsn-form-control-transition-speed)
-      var(--dsn-form-control-transition-easing),
-    background-color var(--dsn-form-control-transition-speed)
-      var(--dsn-form-control-transition-easing),
-    box-shadow var(--dsn-form-control-transition-speed)
-      var(--dsn-form-control-transition-easing);
+  padding-inline-start: var(--dsn-search-input-padding-inline-start-with-icon);
 }
 
-.dsn-search-input::placeholder {
-  color: var(--dsn-form-control-placeholder-text-color);
-  opacity: 1;
+/* Width variants on the wrapper */
+.dsn-search-input-wrapper--width-xs {
+  max-inline-size: var(--dsn-form-control-width-xs);
 }
-
-.dsn-search-input:hover:not(:disabled):not(:read-only) {
-  border-color: var(--dsn-form-control-hover-border-color);
-  background-color: var(--dsn-form-control-hover-bg);
+.dsn-search-input-wrapper--width-sm {
+  max-inline-size: var(--dsn-form-control-width-sm);
 }
-
-.dsn-search-input:focus {
-  outline: var(--dsn-focus-outline-width) solid var(--dsn-focus-outline-color);
-  outline-offset: var(--dsn-focus-outline-offset);
-  border-color: var(--dsn-form-control-focus-border-color);
-  background-color: var(--dsn-form-control-focus-bg);
+.dsn-search-input-wrapper--width-md {
+  max-inline-size: var(--dsn-form-control-width-md);
 }
-
-.dsn-search-input:disabled {
-  border-color: var(--dsn-form-control-disabled-border-color);
-  background-color: var(--dsn-form-control-disabled-bg);
-  color: var(--dsn-form-control-disabled-text-color);
-  opacity: var(--dsn-form-control-disabled-opacity);
-  cursor: not-allowed;
+.dsn-search-input-wrapper--width-lg {
+  max-inline-size: var(--dsn-form-control-width-lg);
 }
-
-.dsn-search-input:read-only {
-  border-color: var(--dsn-form-control-readonly-border-color);
-  background-color: var(--dsn-form-control-readonly-bg);
-  cursor: default;
+.dsn-search-input-wrapper--width-xl {
+  max-inline-size: var(--dsn-form-control-width-xl);
 }
-
-.dsn-search-input--invalid {
-  border-color: var(--dsn-form-control-invalid-border-color);
-}
-
-.dsn-search-input--invalid:focus {
-  outline-color: var(--dsn-form-control-invalid-border-color);
-}
-
-/* Width variants */
-.dsn-search-input--width-xs {
-  width: var(--dsn-form-control-width-xs);
-}
-.dsn-search-input--width-sm {
-  width: var(--dsn-form-control-width-sm);
-}
-.dsn-search-input--width-md {
-  width: var(--dsn-form-control-width-md);
-}
-.dsn-search-input--width-lg {
-  width: var(--dsn-form-control-width-lg);
-}
-.dsn-search-input--width-xl {
-  width: var(--dsn-form-control-width-xl);
-}
-.dsn-search-input--width-full {
-  width: 100%;
+.dsn-search-input-wrapper--width-full {
+  max-inline-size: var(--dsn-form-control-width-full);
 }

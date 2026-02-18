@@ -1,10 +1,10 @@
 # SearchInput
 
-Een invoerveld specifiek voor zoekfunctionaliteit met een zoek-icoon.
+Een invoerveld voor zoekopdrachten met een zoekicoon aan de linkerkant.
 
 ## Doel
 
-De SearchInput component is een gespecialiseerd invoerveld voor zoekfunctionaliteit. Het toont een zoek-icoon aan de linkerkant van het veld en gebruikt `type="search"` voor browser-specifieke functionaliteit zoals een ingebouwde clear-knop. Het veld is visueel duidelijk als zoekveld door het icoon en is geoptimaliseerd voor gebruik in headers, toolbars en dedicated zoekpagina's.
+De SearchInput component is een gespecialiseerd invoerveld voor zoekfunctionaliteit. Een niet-interactief zoekicoon staat links in het veld (`inline-start`) en heeft dezelfde kleur als de ingevoerde tekst (`--dsn-text-input-color`). De `padding-inline-start` van het invoerveld wordt automatisch vergroot zodat tekst nooit achter het icoon terechtkomt. De breedte van het veld wordt bepaald door de wrapper, niet door het input-element zelf.
 
 <!-- VOORBEELD -->
 
@@ -21,23 +21,25 @@ De SearchInput component is een gespecialiseerd invoerveld voor zoekfunctionalit
 
 ## Best practices
 
-- **Gebruik een duidelijke placeholder.** Geef aan wat gebruikers kunnen zoeken (bijv. "Zoek producten...", "Zoek in artikelen...").
+- **Gebruik een duidelijke placeholder.** Geef aan wat gebruikers kunnen zoeken (bijv. `Zoek producten...`, `Zoek in artikelen...`).
+- **Gebruik `role="search"` op een wrapper element.** Dit helpt screen readers de zoekfunctionaliteit te identificeren.
 - **Implementeer live search of debouncing.** Update resultaten tijdens het typen, maar niet bij elke toetsaanslag.
-- **Toon zoekresultaten duidelijk.** Gebruik een dropdown of dedicated resultaten sectie.
-- **Geef feedback bij geen resultaten.** Toon "Geen resultaten gevonden voor 'zoekterm'" met suggesties.
-- **Bewaar recente zoekopdrachten.** Toon een lijst met recente zoekopdrachten bij focus (optioneel).
-- **Maak het toegankelijk.** Gebruik `role="search"` op een wrapper element voor betere screen reader ondersteuning.
-- **Overweeg autocomplete suggesties.** Help gebruikers sneller te vinden wat ze zoeken.
-- **Plaats prominent.** Zoekvelden horen vaak in de header of prominent boven content.
+- **Geef feedback bij geen resultaten.** Toon een melding als er geen resultaten zijn gevonden.
+- **Combineer met FormField voor een label.** Gebruik `FormFieldLabel` of `FormField` voor toegankelijkheid.
+
+## Accessibility
+
+- Het zoekicoon heeft `aria-hidden="true"` — het is puur decoratief en wordt niet voorgelezen door screen readers.
+- `type="search"` biedt op sommige browsers een ingebouwde clear-knop.
+- De extra `padding-inline-start` zorgt ervoor dat ingevoerde tekst nooit over het icoon heen loopt.
 
 ## Anatomy
 
 Een SearchInput bestaat uit:
 
-- **Wrapper div** voor icoon positionering
-- **Zoek-icoon** links in het veld
-- **Input element** met `type="search"`
-- **Extra padding links** om ruimte te maken voor het icoon
+- **Wrapper div** — regelt de breedte en positioneert het icoon relatief aan het veld
+- **Zoekicoon** — links in het veld, niet-interactief, zelfde kleur als de tekst
+- **Input element** — `type="search"` met extra padding links voor het icoon
 
 ## States
 
@@ -51,30 +53,30 @@ Een SearchInput bestaat uit:
 
 ## Design tokens
 
-| Token                                     | Beschrijving                          |
-| ----------------------------------------- | ------------------------------------- |
-| `--dsn-search-input-icon-size`            | Grootte van het zoek-icoon            |
-| `--dsn-search-input-icon-color`           | Kleur van het zoek-icoon              |
-| `--dsn-search-input-padding-inline-start` | Extra padding links voor icoon ruimte |
+| Token                                               | Beschrijving                                                           |
+| --------------------------------------------------- | ---------------------------------------------------------------------- |
+| `--dsn-search-input-icon-size`                      | Grootte van het zoekicoon                                              |
+| `--dsn-search-input-icon-gap`                       | Ruimte tussen icoon en tekst                                           |
+| `--dsn-search-input-padding-inline-start-with-icon` | Berekende padding links: `icon-size + icon-gap + padding-inline-start` |
 
 SearchInput erft verder alle tokens van [TextInput](/docs/components-textinput--docs):
 
-| Token                                        | Beschrijving              |
-| -------------------------------------------- | ------------------------- |
-| `--dsn-text-input-font-family`               | Lettertypefamilie         |
-| `--dsn-text-input-font-size`                 | Font size                 |
-| `--dsn-text-input-font-weight`               | Font weight               |
-| `--dsn-text-input-line-height`               | Line height               |
-| `--dsn-text-input-color`                     | Tekstkleur                |
-| `--dsn-text-input-background-color`          | Achtergrondkleur          |
-| `--dsn-text-input-border-color`              | Borderkleur default state |
-| `--dsn-text-input-border-width`              | Dikte van de border       |
-| `--dsn-text-input-border-radius`             | Border radius             |
-| `--dsn-text-input-padding-block-start`       | Padding boven             |
-| `--dsn-text-input-padding-block-end`         | Padding onder             |
-| `--dsn-text-input-hover-border-color`        | Borderkleur hover state   |
-| `--dsn-text-input-focus-border-color`        | Borderkleur focus state   |
-| `--dsn-text-input-disabled-background-color` | Achtergrondkleur disabled |
-| `--dsn-text-input-disabled-color`            | Tekstkleur disabled       |
-| `--dsn-text-input-invalid-border-color`      | Borderkleur invalid state |
-| `--dsn-text-input-placeholder-color`         | Placeholder tekstkleur    |
+| Token                                        | Beschrijving                             |
+| -------------------------------------------- | ---------------------------------------- |
+| `--dsn-text-input-color`                     | Tekstkleur — ook gebruikt voor het icoon |
+| `--dsn-text-input-font-family`               | Lettertypefamilie                        |
+| `--dsn-text-input-font-size`                 | Font size                                |
+| `--dsn-text-input-font-weight`               | Font weight                              |
+| `--dsn-text-input-line-height`               | Line height                              |
+| `--dsn-text-input-background-color`          | Achtergrondkleur                         |
+| `--dsn-text-input-border-color`              | Borderkleur default state                |
+| `--dsn-text-input-border-width`              | Dikte van de border                      |
+| `--dsn-text-input-border-radius`             | Border radius                            |
+| `--dsn-text-input-padding-block-start`       | Padding boven                            |
+| `--dsn-text-input-padding-block-end`         | Padding onder                            |
+| `--dsn-text-input-hover-border-color`        | Borderkleur hover state                  |
+| `--dsn-text-input-focus-border-color`        | Borderkleur focus state                  |
+| `--dsn-text-input-disabled-background-color` | Achtergrondkleur disabled                |
+| `--dsn-text-input-disabled-color`            | Tekstkleur disabled                      |
+| `--dsn-text-input-invalid-border-color`      | Borderkleur invalid state                |
+| `--dsn-text-input-placeholder-color`         | Placeholder tekstkleur                   |
