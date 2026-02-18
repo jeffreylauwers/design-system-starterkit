@@ -4,7 +4,7 @@ Een invoerveld voor tijden met een interactieve klokknop aan de rechterkant.
 
 ## Doel
 
-De TimeInput component is een gespecialiseerd invoerveld voor het invoeren van een tijdstip. Een interactieve klokknop staat rechts in het veld (`inline-end`) en opent de native tijdkiezer van de browser of het mobiele apparaat bij klikken. De `padding-inline-end` van het invoerveld wordt automatisch vergroot zodat tekst nooit achter de knop terechtkomt. De breedte van het veld wordt bepaald door de wrapper, niet door het input-element zelf.
+De TimeInput component is een gespecialiseerd invoerveld voor het invoeren van een tijdstip. Een interactieve klokknop staat rechts in het veld (`inline-end`) en opent de native tijdkiezer van de browser of het mobiele apparaat bij klikken. De `padding-inline-end` van het invoerveld wordt automatisch vergroot zodat tekst nooit achter de knop terechtkomt. Het veld heeft een vaste `sm`-breedte (16ch) — tijdvelden hebben een voorspelbare inhoudsbreedte waarvoor dit altijd voldoende is.
 
 <!-- VOORBEELD -->
 

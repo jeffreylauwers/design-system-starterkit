@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames, FormControlWidth } from '@dsn/core';
+import { classNames } from '@dsn/core';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import '../TextInput/TextInput.css';
@@ -16,12 +16,6 @@ export interface TimeInputProps extends Omit<
   invalid?: boolean;
 
   /**
-   * Width variant for the input
-   * @default undefined (uses default max-width from form-control)
-   */
-  width?: FormControlWidth;
-
-  /**
    * Additional CSS class names
    */
   className?: string;
@@ -30,6 +24,7 @@ export interface TimeInputProps extends Omit<
 /**
  * Time Input component
  * Time input with an interactive clock button at inline-end that opens the native time picker.
+ * Fixed width (sm) — not configurable, as time inputs have a predictable content width.
  *
  * @example
  * ```tsx
@@ -48,7 +43,7 @@ export interface TimeInputProps extends Omit<
  * ```
  */
 export const TimeInput = React.forwardRef<HTMLInputElement, TimeInputProps>(
-  ({ className, invalid, width, disabled, readOnly, ...props }, ref) => {
+  ({ className, invalid, disabled, readOnly, ...props }, ref) => {
     const inputRef = React.useRef<HTMLInputElement>(null);
 
     // Merge external ref with internal ref
@@ -72,10 +67,6 @@ export const TimeInput = React.forwardRef<HTMLInputElement, TimeInputProps>(
       }
     };
 
-    const wrapperClasses = classNames(
-      'dsn-time-input-wrapper',
-      width && `dsn-time-input-wrapper--width-${width}`
-    );
     const inputClasses = classNames(
       'dsn-text-input',
       'dsn-time-input',
@@ -83,7 +74,7 @@ export const TimeInput = React.forwardRef<HTMLInputElement, TimeInputProps>(
     );
 
     return (
-      <div className={wrapperClasses}>
+      <div className="dsn-time-input-wrapper">
         <input
           ref={handleRef}
           type="time"
@@ -104,7 +95,9 @@ export const TimeInput = React.forwardRef<HTMLInputElement, TimeInputProps>(
             aria-hidden="true"
           >
             <Icon name="clock" aria-hidden />
-            <span className="dsn-visually-hidden">Tijdkiezer openen</span>
+            <span className="dsn-time-input__button-label">
+              Tijdkiezer openen
+            </span>
           </Button>
         )}
       </div>

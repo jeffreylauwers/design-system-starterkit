@@ -57,6 +57,12 @@ describe('TimeInput', () => {
     expect(screen.getByTestId('input')).toHaveValue('14:30');
   });
 
+  it('wrapper always has fixed width (no width prop)', () => {
+    const { container } = render(<TimeInput />);
+    const wrapper = container.querySelector('.dsn-time-input-wrapper');
+    expect(wrapper?.className).toBe('dsn-time-input-wrapper');
+  });
+
   describe('clock button', () => {
     it('renders a clock button', () => {
       const { container } = render(<TimeInput />);
@@ -109,7 +115,9 @@ describe('TimeInput', () => {
 
     it('clock button has visually hidden label text', () => {
       const { container } = render(<TimeInput />);
-      const hiddenLabel = container.querySelector('.dsn-visually-hidden');
+      const hiddenLabel = container.querySelector(
+        '.dsn-time-input__button-label'
+      );
       expect(hiddenLabel).toBeInTheDocument();
       expect(hiddenLabel).toHaveTextContent('Tijdkiezer openen');
     });
@@ -158,28 +166,6 @@ describe('TimeInput', () => {
   it('can be required', () => {
     render(<TimeInput required data-testid="input" />);
     expect(screen.getByTestId('input')).toBeRequired();
-  });
-
-  describe('width variants', () => {
-    it.each([
-      ['xs', 'dsn-time-input-wrapper--width-xs'],
-      ['sm', 'dsn-time-input-wrapper--width-sm'],
-      ['md', 'dsn-time-input-wrapper--width-md'],
-      ['lg', 'dsn-time-input-wrapper--width-lg'],
-      ['xl', 'dsn-time-input-wrapper--width-xl'],
-      ['full', 'dsn-time-input-wrapper--width-full'],
-    ] as const)('applies %s width class to wrapper', (width, expectedClass) => {
-      const { container } = render(<TimeInput width={width} />);
-      expect(container.querySelector('.dsn-time-input-wrapper')).toHaveClass(
-        expectedClass
-      );
-    });
-
-    it('does not apply width class when width is not set', () => {
-      const { container } = render(<TimeInput />);
-      const wrapper = container.querySelector('.dsn-time-input-wrapper');
-      expect(wrapper?.className).toBe('dsn-time-input-wrapper');
-    });
   });
 
   describe('invalid state', () => {

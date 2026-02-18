@@ -15,10 +15,6 @@ const meta: Meta<typeof TimeInput> = {
     readOnly: { control: 'boolean' },
     invalid: { control: 'boolean' },
     required: { control: 'boolean' },
-    width: {
-      control: 'select',
-      options: [undefined, 'xs', 'sm', 'md', 'lg', 'xl', 'full'],
-    },
   },
   args: {
     disabled: false,
@@ -58,35 +54,13 @@ export const ReadOnly: Story = {
 export const Invalid: Story = {
   args: {
     invalid: true,
-    value: '99:99',
   },
-};
-
-export const Widths: Story = {
-  name: 'Width variants',
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <TimeInput width="xs" />
-      <TimeInput width="sm" />
-      <TimeInput width="md" />
-      <TimeInput width="lg" />
-      <TimeInput width="xl" />
-      <TimeInput width="full" />
-    </div>
-  ),
 };
 
 export const AllStates: Story = {
   name: 'All states',
   render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        maxWidth: '400px',
-      }}
-    >
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
       <div>
         <label
           style={{
@@ -145,7 +119,7 @@ export const AllStates: Story = {
         >
           Invalid
         </label>
-        <TimeInput invalid value="99:99" />
+        <TimeInput invalid />
       </div>
     </div>
   ),

@@ -1,17 +1,17 @@
 /**
  * TimeInput Component Styles
- * Wrapper positions the Button (subtle, small, icon-only) at inline-end inside the input.
+ * Fixed-width wrapper positions the Button (subtle, small, icon-only) at inline-end inside the input.
  * The input uses dsn-text-input base styles with extra padding-inline-end
  * to prevent typed text from overlapping the button.
  * Button hover/focus/color states come from the Button component itself.
  */
 
-/* Wrapper — positions clock button absolutely inside the input */
+/* Wrapper — fixed sm width, positions clock button absolutely inside the input */
 .dsn-time-input-wrapper {
   position: relative;
   display: block;
   inline-size: 100%;
-  max-inline-size: var(--dsn-form-control-max-inline-size);
+  max-inline-size: var(--dsn-form-control-width-sm);
 }
 
 /* Clock button — centered vertically, positioned at inline-end */
@@ -22,27 +22,29 @@
   transform: translateY(-50%);
 }
 
+/* Visually hidden button label — accessible to screen readers, invisible to sighted users */
+.dsn-time-input__button-label {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /* Input — extra padding-inline-end to make room for the clock button */
+/* Hide the native browser clock/time picker indicator */
 .dsn-time-input {
   padding-inline-end: var(--dsn-time-input-padding-inline-end-with-icon);
 }
 
-/* Width variants on the wrapper */
-.dsn-time-input-wrapper--width-xs {
-  max-inline-size: var(--dsn-form-control-width-xs);
+.dsn-time-input::-webkit-calendar-picker-indicator {
+  display: none;
 }
-.dsn-time-input-wrapper--width-sm {
-  max-inline-size: var(--dsn-form-control-width-sm);
-}
-.dsn-time-input-wrapper--width-md {
-  max-inline-size: var(--dsn-form-control-width-md);
-}
-.dsn-time-input-wrapper--width-lg {
-  max-inline-size: var(--dsn-form-control-width-lg);
-}
-.dsn-time-input-wrapper--width-xl {
-  max-inline-size: var(--dsn-form-control-width-xl);
-}
-.dsn-time-input-wrapper--width-full {
-  max-inline-size: var(--dsn-form-control-width-full);
+
+.dsn-time-input::-webkit-inner-spin-button {
+  display: none;
 }
