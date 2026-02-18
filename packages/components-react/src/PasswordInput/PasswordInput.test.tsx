@@ -27,16 +27,10 @@ describe('PasswordInput', () => {
     expect(screen.getByTestId('input')).toHaveClass('dsn-text-input');
   });
 
-  it('always has dsn-password-input class for extra padding', () => {
-    render(<PasswordInput data-testid="input" />);
-    expect(screen.getByTestId('input')).toHaveClass('dsn-password-input');
-  });
-
   it('applies custom className', () => {
     render(<PasswordInput className="custom" data-testid="input" />);
     const el = screen.getByTestId('input');
     expect(el).toHaveClass('dsn-text-input');
-    expect(el).toHaveClass('dsn-password-input');
     expect(el).toHaveClass('custom');
   });
 
@@ -50,13 +44,13 @@ describe('PasswordInput', () => {
     render(
       <PasswordInput
         id="password"
-        placeholder="Enter password"
+        placeholder="Wachtwoord"
         data-testid="input"
       />
     );
     const el = screen.getByTestId('input');
     expect(el).toHaveAttribute('id', 'password');
-    expect(el).toHaveAttribute('placeholder', 'Enter password');
+    expect(el).toHaveAttribute('placeholder', 'Wachtwoord');
   });
 
   it('accepts value prop', () => {
@@ -128,6 +122,18 @@ describe('PasswordInput', () => {
         'off'
       );
     });
+  });
+
+  describe('width variants', () => {
+    it.each(['xs', 'sm', 'md', 'lg', 'xl', 'full'] as const)(
+      'applies width class for %s',
+      (w) => {
+        render(<PasswordInput width={w} data-testid="input" />);
+        expect(screen.getByTestId('input')).toHaveClass(
+          `dsn-text-input--width-${w}`
+        );
+      }
+    );
   });
 
   describe('invalid state', () => {

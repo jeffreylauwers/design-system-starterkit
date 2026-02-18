@@ -1,6 +1,6 @@
 import React from 'react';
 import { classNames, FormControlWidth } from '@dsn/core';
-import './PasswordInput.css';
+import '../TextInput/TextInput.css';
 
 export type PasswordAutocomplete = 'current-password' | 'new-password' | 'off';
 
@@ -9,7 +9,10 @@ export interface PasswordInputProps extends Omit<
   'type'
 > {
   /**
-   * Autocomplete value for password managers
+   * Autocomplete hint for password managers
+   * - 'current-password': voor inlogformulieren (default)
+   * - 'new-password': voor registratie- en wachtwoord wijzigformulieren
+   * - 'off': autocomplete uitschakelen
    * @default 'current-password'
    */
   passwordAutocomplete?: PasswordAutocomplete;
@@ -34,7 +37,9 @@ export interface PasswordInputProps extends Omit<
 
 /**
  * Password Input component
- * Password input with extra padding for password manager icons
+ * Uses type="password" for secure text entry.
+ * Het tonen/verbergen van het wachtwoord is bewust niet ingebouwd in dit component —
+ * dat patroon wordt separaat gedefinieerd via een Button naast het invoerveld.
  *
  * @example
  * ```tsx
@@ -69,7 +74,6 @@ export const PasswordInput = React.forwardRef<
   ) => {
     const classes = classNames(
       'dsn-text-input',
-      'dsn-password-input',
       width && `dsn-text-input--width-${width}`,
       className
     );
