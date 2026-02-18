@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as TelephoneInputStories from './TelephoneInput.stories';
+import docs from './TelephoneInput.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={TelephoneInputStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={TelephoneInputStories.Default} />
+
+<Controls of={TelephoneInputStories.Default} />
+
+<Markdown>{rest}</Markdown>

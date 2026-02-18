@@ -86,6 +86,18 @@ describe('TelephoneInput', () => {
     expect(screen.getByTestId('input')).toHaveAttribute('autocomplete', 'off');
   });
 
+  describe('width variants', () => {
+    it.each(['xs', 'sm', 'md', 'lg', 'xl', 'full'] as const)(
+      'applies width class for %s',
+      (w) => {
+        render(<TelephoneInput width={w} data-testid="input" />);
+        expect(screen.getByTestId('input')).toHaveClass(
+          `dsn-text-input--width-${w}`
+        );
+      }
+    );
+  });
+
   describe('invalid state', () => {
     it('sets aria-invalid when invalid prop is true', () => {
       render(<TelephoneInput invalid data-testid="input" />);
