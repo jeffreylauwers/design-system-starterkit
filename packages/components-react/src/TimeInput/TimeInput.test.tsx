@@ -65,6 +65,30 @@ describe('TimeInput', () => {
       ).toBeInTheDocument();
     });
 
+    it('clock button is a Button component (has dsn-button class)', () => {
+      const { container } = render(<TimeInput />);
+      const button = container.querySelector('.dsn-time-input__button');
+      expect(button).toHaveClass('dsn-button');
+    });
+
+    it('clock button uses subtle variant', () => {
+      const { container } = render(<TimeInput />);
+      const button = container.querySelector('.dsn-time-input__button');
+      expect(button).toHaveClass('dsn-button--subtle');
+    });
+
+    it('clock button uses small size', () => {
+      const { container } = render(<TimeInput />);
+      const button = container.querySelector('.dsn-time-input__button');
+      expect(button).toHaveClass('dsn-button--size-small');
+    });
+
+    it('clock button uses icon-only', () => {
+      const { container } = render(<TimeInput />);
+      const button = container.querySelector('.dsn-time-input__button');
+      expect(button).toHaveClass('dsn-button--icon-only');
+    });
+
     it('clock button has tabIndex -1', () => {
       const { container } = render(<TimeInput />);
       const button = container.querySelector('.dsn-time-input__button');
@@ -104,24 +128,20 @@ describe('TimeInput', () => {
       ).not.toBeInTheDocument();
     });
 
-    it('calls showPicker on button click', async () => {
+    it('calls showPicker on button click when available', async () => {
       const user = userEvent.setup();
       const showPicker = vi.fn();
-      render(<TimeInput data-testid="input" />);
+      const { container } = render(<TimeInput data-testid="input" />);
       const input = screen.getByTestId('input') as HTMLInputElement;
-      // Mock showPicker on the input element
       Object.defineProperty(input, 'showPicker', {
         value: showPicker,
         writable: true,
       });
-      const { container } = render(<TimeInput data-testid="input2" />);
-      // We test via clicking the button directly
-      const button = document.querySelector(
+      const button = container.querySelector(
         '.dsn-time-input__button'
       ) as HTMLButtonElement;
       await user.click(button);
-      // showPicker is called if available — just verify button is clickable
-      expect(button).toBeInTheDocument();
+      expect(showPicker).toHaveBeenCalledOnce();
     });
   });
 

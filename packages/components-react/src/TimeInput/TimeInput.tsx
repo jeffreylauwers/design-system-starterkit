@@ -1,5 +1,6 @@
 import React from 'react';
 import { classNames, FormControlWidth } from '@dsn/core';
+import { Button } from '../Button';
 import { Icon } from '../Icon';
 import '../TextInput/TextInput.css';
 import './TimeInput.css';
@@ -93,8 +94,10 @@ export const TimeInput = React.forwardRef<HTMLInputElement, TimeInputProps>(
           {...props}
         />
         {!disabled && !readOnly && (
-          <button
-            type="button"
+          <Button
+            variant="subtle"
+            size="small"
+            iconOnly
             className="dsn-time-input__button"
             onClick={handleButtonClick}
             tabIndex={-1}
@@ -102,7 +105,7 @@ export const TimeInput = React.forwardRef<HTMLInputElement, TimeInputProps>(
           >
             <Icon name="clock" aria-hidden />
             <span className="dsn-visually-hidden">Tijdkiezer openen</span>
-          </button>
+          </Button>
         )}
       </div>
     );
