@@ -37,7 +37,7 @@ De TimeInput component is een gespecialiseerd invoerveld voor het invoeren van e
 Een TimeInput bestaat uit:
 
 - **Wrapper div** — regelt de breedte en positioneert de knop relatief aan het veld
-- **Klokknop** — rechts in het veld, opent de native tijdkiezer via `showPicker()`
+- **Klokknop** — `Button` component (`variant="subtle"`, `size="small"`, `iconOnly`) rechts in het veld, opent de native tijdkiezer via `showPicker()`
 - **Input element** — `type="time"` met extra padding rechts voor de knop
 
 ## States
@@ -54,10 +54,6 @@ Een TimeInput bestaat uit:
 
 | Token                                           | Beschrijving                                                          |
 | ----------------------------------------------- | --------------------------------------------------------------------- |
-| `--dsn-time-input-icon-size`                    | Grootte van het klokicoon                                             |
-| `--dsn-time-input-icon-gap`                     | Ruimte tussen icoon en tekst                                          |
-| `--dsn-time-input-icon-color`                   | Kleur van het klokicoon (action-2 default)                            |
-| `--dsn-time-input-icon-hover-color`             | Kleur van het klokicoon bij hover (action-2 hover)                    |
 | `--dsn-time-input-padding-inline-end-with-icon` | Berekende padding rechts: `icon-size + icon-gap + padding-inline-end` |
 
 TimeInput erft verder alle tokens van [TextInput](/docs/components-textinput--docs):
