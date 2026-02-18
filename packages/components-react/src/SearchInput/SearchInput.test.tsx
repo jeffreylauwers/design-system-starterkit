@@ -52,6 +52,18 @@ describe('SearchInput', () => {
     expect(el).toHaveClass('custom');
   });
 
+  describe('width variants', () => {
+    it.each(['xs', 'sm', 'md', 'lg', 'xl', 'full'] as const)(
+      'applies width class to wrapper for %s',
+      (w) => {
+        const { container } = render(<SearchInput width={w} />);
+        expect(
+          container.querySelector('.dsn-search-input-wrapper')
+        ).toHaveClass(`dsn-search-input-wrapper--width-${w}`);
+      }
+    );
+  });
+
   it('forwards ref to input element', () => {
     const ref = { current: null as HTMLInputElement | null };
     render(<SearchInput ref={ref} />);

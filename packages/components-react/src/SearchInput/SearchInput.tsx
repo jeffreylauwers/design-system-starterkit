@@ -1,6 +1,7 @@
 import React from 'react';
 import { classNames, FormControlWidth } from '@dsn/core';
 import { Icon } from '../Icon';
+import '../TextInput/TextInput.css';
 import './SearchInput.css';
 
 export interface SearchInputProps extends Omit<
@@ -27,7 +28,8 @@ export interface SearchInputProps extends Omit<
 
 /**
  * Search Input component
- * Search input with search icon on the left
+ * Search input with a non-interactive search icon positioned at inline-start.
+ * The icon has the same color as the input text (dsn-text-input-color).
  *
  * @example
  * ```tsx
@@ -51,7 +53,6 @@ export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
     const inputClasses = classNames(
       'dsn-text-input',
       'dsn-search-input',
-      width && `dsn-text-input--width-${width}`,
       className
     );
 

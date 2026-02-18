@@ -1,9 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { SearchInput } from '@dsn/components-react';
+import DocsPage from './SearchInput.docs.mdx';
 
 const meta: Meta<typeof SearchInput> = {
   title: 'Components/SearchInput',
   component: SearchInput,
+  parameters: {
+    docs: {
+      page: DocsPage,
+    },
+  },
   argTypes: {
     placeholder: { control: 'text' },
     disabled: { control: 'boolean' },
@@ -62,6 +68,20 @@ export const Invalid: Story = {
     invalid: true,
     value: 'te kort',
   },
+};
+
+export const Widths: Story = {
+  name: 'Width variants',
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <SearchInput width="xs" placeholder="xs" />
+      <SearchInput width="sm" placeholder="sm" />
+      <SearchInput width="md" placeholder="md" />
+      <SearchInput width="lg" placeholder="lg" />
+      <SearchInput width="xl" placeholder="xl" />
+      <SearchInput width="full" placeholder="full" />
+    </div>
+  ),
 };
 
 export const AllStates: Story = {
