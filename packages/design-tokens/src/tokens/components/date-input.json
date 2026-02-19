@@ -1,0 +1,21 @@
+{
+  "dsn": {
+    "date-input": {
+      "icon-size": {
+        "value": "{dsn.icon.size.md}",
+        "type": "dimension",
+        "comment": "Date input icon size"
+      },
+      "icon-gap": {
+        "value": "{dsn.space.text.md}",
+        "type": "dimension",
+        "comment": "Gap between calendar icon and input text"
+      },
+      "padding-inline-end-with-icon": {
+        "value": "calc({dsn.date-input.icon-size} + {dsn.date-input.icon-gap} + {dsn.form-control.padding-inline-end})",
+        "type": "dimension",
+        "comment": "Right padding when icon is present"
+      }
+    }
+  }
+}
