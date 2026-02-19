@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as DateInputGroupStories from './DateInputGroup.stories';
+import docs from './DateInputGroup.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={DateInputGroupStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={DateInputGroupStories.Default} />
+
+<Controls of={DateInputGroupStories.Default} />
+
+<Markdown>{rest}</Markdown>
