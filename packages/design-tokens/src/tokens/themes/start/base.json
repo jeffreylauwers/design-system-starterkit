@@ -440,29 +440,29 @@
       },
       "width": {
         "xs": {
-          "value": "8ch",
+          "value": "10ch",
           "type": "dimension",
-          "comment": "Extra small width - for short inputs (e.g., postal code, 6 characters)"
+          "comment": "Extra small width - for very short inputs (e.g., postal code, year, CVV)"
         },
         "sm": {
-          "value": "16ch",
+          "value": "14ch",
           "type": "dimension",
-          "comment": "Small width - for medium inputs (e.g., phone number, 10-12 digits)"
+          "comment": "Small width - for short inputs (e.g., time HH:MM, short codes)"
         },
         "md": {
-          "value": "32ch",
+          "value": "20ch",
           "type": "dimension",
-          "comment": "Medium width (default) - for standard inputs (e.g., email, name)"
+          "comment": "Medium width - for medium inputs (e.g., date dd/mm/yyyy, phone number)"
         },
         "lg": {
-          "value": "48ch",
+          "value": "32ch",
           "type": "dimension",
-          "comment": "Large width - for longer inputs (e.g., URL)"
+          "comment": "Large width (default) - for standard inputs (e.g., name, email)"
         },
         "xl": {
-          "value": "64ch",
+          "value": "48ch",
           "type": "dimension",
-          "comment": "Extra large width - for very long text fields"
+          "comment": "Extra large width - for longer inputs (e.g., URL)"
         },
         "full": {
           "value": "100%",

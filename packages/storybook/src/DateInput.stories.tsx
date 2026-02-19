@@ -1,53 +1,45 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TextInput } from '@dsn/components-react';
-import DocsPage from './TextInput.docs.mdx';
+import { DateInput } from '@dsn/components-react';
+import DocsPage from './DateInput.docs.mdx';
 
-const meta: Meta<typeof TextInput> = {
-  title: 'Components/TextInput',
-  component: TextInput,
+const meta: Meta<typeof DateInput> = {
+  title: 'Components/DateInput',
+  component: DateInput,
   parameters: {
     docs: {
       page: DocsPage,
     },
   },
   argTypes: {
-    width: {
-      control: 'select',
-      options: ['xs', 'sm', 'md', 'lg', 'xl', 'full', undefined],
-    },
     disabled: { control: 'boolean' },
     readOnly: { control: 'boolean' },
     invalid: { control: 'boolean' },
     required: { control: 'boolean' },
-    placeholder: { control: 'text' },
   },
   args: {
-    placeholder: 'Enter text...',
+    disabled: false,
+    readOnly: false,
+    invalid: false,
+    required: false,
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof TextInput>;
+type Story = StoryObj<typeof DateInput>;
 
 export const Default: Story = {};
 
 export const WithValue: Story = {
   name: 'With value',
   args: {
-    defaultValue: 'Sample text',
-  },
-};
-
-export const Placeholder: Story = {
-  args: {
-    placeholder: 'Type your name here...',
+    defaultValue: '2025-03-15',
   },
 };
 
 export const Disabled: Story = {
   args: {
     disabled: true,
-    value: 'Disabled text',
+    value: '2025-03-15',
   },
 };
 
@@ -55,49 +47,20 @@ export const ReadOnly: Story = {
   name: 'Read-only',
   args: {
     readOnly: true,
-    value: 'Read-only text',
+    value: '2025-03-15',
   },
 };
 
 export const Invalid: Story = {
   args: {
     invalid: true,
-    value: 'Invalid input',
   },
-};
-
-export const Required: Story = {
-  args: {
-    required: true,
-    placeholder: 'Required field',
-  },
-};
-
-export const Widths: Story = {
-  name: 'Width variants',
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <TextInput width="xs" placeholder="xs — 10ch (postcode, CVV)" />
-      <TextInput width="sm" placeholder="sm — 14ch (tijdstip, korte codes)" />
-      <TextInput width="md" placeholder="md — 20ch (datum, telefoonnummer)" />
-      <TextInput width="lg" placeholder="lg — 32ch (naam, email)" />
-      <TextInput width="xl" placeholder="xl — 48ch (URL)" />
-      <TextInput width="full" placeholder="full — 100% (responsive)" />
-    </div>
-  ),
 };
 
 export const AllStates: Story = {
   name: 'All states',
   render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        maxWidth: '400px',
-      }}
-    >
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
       <div>
         <label
           style={{
@@ -108,7 +71,7 @@ export const AllStates: Story = {
         >
           Default
         </label>
-        <TextInput placeholder="Enter text..." />
+        <DateInput />
       </div>
       <div>
         <label
@@ -120,7 +83,7 @@ export const AllStates: Story = {
         >
           With value
         </label>
-        <TextInput defaultValue="Sample text" />
+        <DateInput defaultValue="2025-03-15" />
       </div>
       <div>
         <label
@@ -132,7 +95,7 @@ export const AllStates: Story = {
         >
           Disabled
         </label>
-        <TextInput disabled value="Disabled text" />
+        <DateInput disabled value="2025-03-15" />
       </div>
       <div>
         <label
@@ -144,7 +107,7 @@ export const AllStates: Story = {
         >
           Read-only
         </label>
-        <TextInput readOnly value="Read-only text" />
+        <DateInput readOnly value="2025-03-15" />
       </div>
       <div>
         <label
@@ -156,7 +119,7 @@ export const AllStates: Story = {
         >
           Invalid
         </label>
-        <TextInput invalid value="Invalid input" />
+        <DateInput invalid />
       </div>
     </div>
   ),

@@ -23,11 +23,11 @@ De TextInput component is een gestandaardiseerd invoerveld voor single-line teks
 ## Best practices
 
 - **Kies de juiste width.** Gebruik `width` om de breedte aan te passen aan het type data:
-  - `xs` (8ch) - Korte codes (postcode, CVV)
-  - `sm` (16ch) - Medium tekst (telefoonnummer, 10-12 cijfers)
-  - `md` (32ch) - Standaard (naam, email) - **DEFAULT**
-  - `lg` (48ch) - Langere tekst (URL)
-  - `xl` (64ch) - Zeer lange tekst
+  - `xs` (10ch) - Zeer korte codes (postcode, jaar, CVV)
+  - `sm` (14ch) - Korte invoer (tijdstip, korte codes)
+  - `md` (20ch) - Medium invoer (datum, telefoonnummer)
+  - `lg` (32ch) - Standaard (naam, email) - **DEFAULT**
+  - `xl` (48ch) - Langere tekst (URL)
   - `full` (100%) - Responsive, neemt volledige breedte
 - **Gebruik het juiste type.** Gebruik native input types: `email`, `url`, `tel`, `search`, etc.
 - **Duidelijke placeholders.** Gebruik placeholders voor voorbeelden, geen instructies.
@@ -37,14 +37,14 @@ De TextInput component is een gestandaardiseerd invoerveld voor single-line teks
 
 ## Width varianten
 
-| Variant | Width | Gebruik                                          |
-| ------- | ----- | ------------------------------------------------ |
-| `xs`    | 8ch   | Zeer korte codes (postcode "1234 AB", CVV "123") |
-| `sm`    | 16ch  | Medium tekst (telefoonnummer "06-12345678")      |
-| `md`    | 32ch  | **Standaard** - naam, email, etc.                |
-| `lg`    | 48ch  | Langere tekst (URL "https://example.com")        |
-| `xl`    | 64ch  | Zeer lange tekst                                 |
-| `full`  | 100%  | Responsive, past zich aan container              |
+| Variant | Width | Gebruik                                            |
+| ------- | ----- | -------------------------------------------------- |
+| `xs`    | 10ch  | Zeer korte codes (postcode "1234 AB", CVV "123")   |
+| `sm`    | 14ch  | Korte invoer (tijdstip "14:30", korte codes)       |
+| `md`    | 20ch  | Medium invoer (datum "15-03-2025", telefoonnummer) |
+| `lg`    | 32ch  | **Standaard** - naam, email, etc.                  |
+| `xl`    | 48ch  | Langere tekst (URL "https://example.com")          |
+| `full`  | 100%  | Responsive, past zich aan container                |
 
 ## Design tokens
 
@@ -78,11 +78,11 @@ De TextInput component is een gestandaardiseerd invoerveld voor single-line teks
 | `--dsn-text-input-invalid-color`              | Invalid text color                      |
 | `--dsn-text-input-invalid-background-color`   | Invalid background color                |
 | `--dsn-text-input-invalid-border-color`       | Invalid border color                    |
-| `--dsn-form-control-width-xs`                 | Extra small width (8ch)                 |
-| `--dsn-form-control-width-sm`                 | Small width (16ch)                      |
-| `--dsn-form-control-width-md`                 | Medium width (32ch)                     |
-| `--dsn-form-control-width-lg`                 | Large width (48ch)                      |
-| `--dsn-form-control-width-xl`                 | Extra large width (64ch)                |
+| `--dsn-form-control-width-xs`                 | Extra small width (10ch)                |
+| `--dsn-form-control-width-sm`                 | Small width (14ch)                      |
+| `--dsn-form-control-width-md`                 | Medium width (20ch)                     |
+| `--dsn-form-control-width-lg`                 | Large width (32ch)                      |
+| `--dsn-form-control-width-xl`                 | Extra large width (48ch)                |
 | `--dsn-form-control-width-full`               | Full width (100%)                       |
 
 ## Accessibility

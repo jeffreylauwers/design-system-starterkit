@@ -24,6 +24,7 @@ export * from './NumberInput';
 export * from './TelephoneInput';
 export * from './SearchInput';
 export * from './TimeInput';
+export * from './DateInput';
 export * from './TextArea';
 
 // Form Options
