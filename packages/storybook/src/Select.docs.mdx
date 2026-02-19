@@ -1,0 +1,17 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as SelectStories from './Select.stories';
+import docs from './Select.docs.md?raw';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={SelectStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<Story of={SelectStories.Default} />
+
+<Controls of={SelectStories.Default} />
+
+<Markdown>{rest}</Markdown>
