@@ -44,7 +44,7 @@ export interface DateInputGroupProps extends Omit<
 
 /**
  * Date Input Group component
- * Three separate inputs for day, month and year following the GOV.UK date input pattern.
+ * Three separate inputs for day, month and year.
  * More accessible than a native date picker: works consistently across all browsers and
  * devices, and allows partial input (e.g. year only).
  *

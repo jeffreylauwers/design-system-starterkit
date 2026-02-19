@@ -1,6 +1,6 @@
 # DateInputGroup
 
-Drie losse invoervelden voor dag, maand en jaar — het GOV.UK datuminvoerpatroon.
+Drie losse invoervelden voor dag, maand en jaar.
 
 ## Doel
 
