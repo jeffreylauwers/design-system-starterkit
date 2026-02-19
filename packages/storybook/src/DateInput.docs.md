@@ -4,7 +4,7 @@ Een invoerveld voor datums met een interactieve kalenderknop aan de rechterkant.
 
 ## Doel
 
-De DateInput component is een gespecialiseerd invoerveld voor het invoeren van een datum. Een interactieve kalenderknop staat rechts in het veld (`inline-end`) en opent de native datumkiezer van de browser of het mobiele apparaat bij klikken. De `padding-inline-end` van het invoerveld wordt automatisch vergroot zodat tekst nooit achter de knop terechtkomt. Het veld heeft een vaste `sm`-breedte (16ch) — datumvelden hebben een voorspelbare inhoudsbreedte waarvoor dit altijd voldoende is.
+De DateInput component is een gespecialiseerd invoerveld voor het invoeren van een datum. Een interactieve kalenderknop staat rechts in het veld (`inline-end`) en opent de native datumkiezer van de browser of het mobiele apparaat bij klikken. De `padding-inline-end` van het invoerveld wordt automatisch vergroot zodat tekst nooit achter de knop terechtkomt. Het veld heeft een vaste `md`-breedte (20ch) — datumvelden hebben een voorspelbare inhoudsbreedte waarvoor dit altijd voldoende is.
 
 <!-- VOORBEELD -->
 

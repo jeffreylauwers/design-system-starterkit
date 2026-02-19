@@ -6,12 +6,12 @@
  * Button hover/focus/color states come from the Button component itself.
  */
 
-/* Wrapper — fixed sm width, positions calendar button absolutely inside the input */
+/* Wrapper — fixed md width (20ch), positions calendar button absolutely inside the input */
 .dsn-date-input-wrapper {
   position: relative;
   display: block;
   inline-size: 100%;
-  max-inline-size: var(--dsn-form-control-width-sm);
+  max-inline-size: var(--dsn-form-control-width-md);
 }
 
 /* Calendar button — centered vertically, positioned at inline-end */
