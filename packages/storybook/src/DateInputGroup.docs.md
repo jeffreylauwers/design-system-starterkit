@@ -23,18 +23,18 @@ Gebruik `FormFieldset` als wrapper voor een volledig formulierveld met legend, b
 
 ## Best practices
 
-- Gebruik altijd een `<FormFieldset>` + `<FormFieldLegend>` wrapper voor de groepsnaam
-- Voeg een `<FormFieldDescription>` toe met een voorbeelddatum, bijv. "Bijvoorbeeld: 15 3 1990"
+- Gebruik altijd `<FormFieldset legend="...">` als wrapper — dit geeft de groep een naam voor screenreaders
+- Geef de `description` prop mee met een voorbeelddatum, bijv. `"Bijvoorbeeld: 15 3 1990"`
 - Geef de `id` prop mee zodat de labels correct gekoppeld zijn aan de inputs
-- Gebruik `<FormFieldErrorMessage>` bij een invalid state en koppel deze via `aria-describedby` op de `DateInputGroup`
+- Geef bij een fout de `error` prop mee aan `FormFieldset` — de foutmelding verschijnt dan automatisch bóven de invoervelden
 
 ## Accessibility
 
 - Elk veld heeft een zichtbaar label ("Dag", "Maand", "Jaar") gekoppeld via `htmlFor`
 - De `id` prop genereert automatisch `{id}-dag`, `{id}-maand` en `{id}-jaar` als input-id's
 - De `invalid` prop zet `aria-invalid="true"` op alle drie de inputs
-- Gebruik `aria-describedby` op de `DateInputGroup` om de foutmelding te koppelen
-- De groepsnaam (legend) verbindt de drie velden semantisch voor screenreaders via `FormFieldset`
+- De foutmelding van `FormFieldset` is via `aria-describedby` automatisch gekoppeld aan de fieldset
+- De `legend` verbindt de drie velden semantisch voor screenreaders via het `<fieldset>` element
 
 ## States
 

@@ -4,9 +4,6 @@ import {
   DateInputGroup,
   DateInputGroupValue,
   FormFieldset,
-  FormFieldLegend,
-  FormFieldDescription,
-  FormFieldErrorMessage,
 } from '@dsn/components-react';
 import DocsPage from './DateInputGroup.docs.mdx';
 
@@ -62,9 +59,7 @@ function WithFormFieldsetStory(
     year: '',
   });
   return (
-    <FormFieldset>
-      <FormFieldLegend>Geboortedatum</FormFieldLegend>
-      <FormFieldDescription>Bijvoorbeeld: 15 3 1990</FormFieldDescription>
+    <FormFieldset legend="Geboortedatum" description="Bijvoorbeeld: 15 3 1990">
       <DateInputGroup
         {...args}
         id="geboortedatum"
@@ -82,19 +77,14 @@ function InvalidStory(args: React.ComponentProps<typeof DateInputGroup>) {
     year: '1990',
   });
   return (
-    <FormFieldset>
-      <FormFieldLegend>Geboortedatum</FormFieldLegend>
+    <FormFieldset legend="Geboortedatum" error="Voer een geldige datum in">
       <DateInputGroup
         {...args}
         id="geboortedatum"
         value={value}
         onChange={setValue}
         invalid
-        aria-describedby="geboortedatum-error"
       />
-      <FormFieldErrorMessage id="geboortedatum-error">
-        Voer een geldige datum in
-      </FormFieldErrorMessage>
     </FormFieldset>
   );
 }
@@ -117,8 +107,7 @@ export const Invalid: Story = {
 
 export const Disabled: Story = {
   render: (args) => (
-    <FormFieldset>
-      <FormFieldLegend>Geboortedatum</FormFieldLegend>
+    <FormFieldset legend="Geboortedatum">
       <DateInputGroup
         {...args}
         id="geboortedatum"
