@@ -12,9 +12,9 @@
         "comment": "Gap between calendar button and input text"
       },
       "button-inset-inline-end": {
-        "value": "{dsn.space.inline.sm}",
+        "value": "{dsn.space.inline.md}",
         "type": "dimension",
-        "comment": "Distance from the inline-end border to the calendar button (4px)"
+        "comment": "Distance from the inline-end border to the calendar button (8px)"
       },
       "padding-inline-end-with-icon": {
         "value": "calc(({dsn.button.size.small.icon-only-padding} * 2) + {dsn.date-input.icon-size} + {dsn.date-input.button-inset-inline-end} + {dsn.date-input.icon-gap})",
