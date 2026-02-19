@@ -1,0 +1,16 @@
+{
+  "dsn": {
+    "date-input-group": {
+      "gap": {
+        "value": "{dsn.space.inline.md}",
+        "type": "dimension",
+        "comment": "Gap between the day, month and year inputs"
+      },
+      "label-gap": {
+        "value": "{dsn.space.text.sm}",
+        "type": "dimension",
+        "comment": "Gap between each field label and its input"
+      }
+    }
+  }
+}

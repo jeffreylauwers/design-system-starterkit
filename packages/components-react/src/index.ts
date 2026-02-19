@@ -25,6 +25,7 @@ export * from './TelephoneInput';
 export * from './SearchInput';
 export * from './TimeInput';
 export * from './DateInput';
+export * from './DateInputGroup';
 export * from './Select';
 export * from './TextArea';
 
