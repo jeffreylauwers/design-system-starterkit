@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** February 14, 2026
+**Last Updated:** February 19, 2025
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -120,25 +120,33 @@ Components are designed to compose together:
 </FormField>
 
 // React — Checkbox group with fieldset/legend
-<FormField
-  label="Notification preferences"
-  isGroup
+<FormFieldset
+  legend="Notification preferences"
   description="Choose how you want to be notified"
 >
-  <CheckboxGroup legend="Notification preferences">
-    <CheckboxOption label="Email notifications" />
-    <CheckboxOption label="SMS notifications" />
-    <CheckboxOption label="Push notifications" />
+  <CheckboxGroup>
+    <CheckboxOption label="Email notifications" value="email" />
+    <CheckboxOption label="SMS notifications" value="sms" />
+    <CheckboxOption label="Push notifications" value="push" />
   </CheckboxGroup>
-</FormField>
+</FormFieldset>
 
 // React — Radio group
-<FormField label="Delivery method" isGroup>
-  <RadioGroup legend="Delivery method">
-    <RadioOption label="Standard shipping" name="delivery" />
-    <RadioOption label="Express shipping" name="delivery" />
+<FormFieldset legend="Delivery method">
+  <RadioGroup>
+    <RadioOption label="Standard shipping" name="delivery" value="standard" />
+    <RadioOption label="Express shipping" name="delivery" value="express" />
   </RadioGroup>
-</FormField>
+</FormFieldset>
+
+// React — Date input group
+<FormFieldset legend="Date of birth" description="For example: 15 3 1990">
+  <DateInputGroup
+    id="dob"
+    value={value}
+    onChange={setValue}
+  />
+</FormFieldset>
 ```
 
 ---
@@ -307,7 +315,7 @@ Components are designed to compose together:
 
 ## Form Components
 
-**Status:** Complete (HTML/CSS, React) - 19 components total
+**Status:** Complete (HTML/CSS, React) - 25 components total
 
 **Location:** `packages/components-{html|react}/src/`
 
@@ -383,9 +391,37 @@ Components are designed to compose together:
 
 **Tokens:** `tokens/components/time-input.json`, extends TextInput tokens
 
-**Features:** Native time picker in supported browsers
+**Features:** Wrapper with interactive clock button (`Button subtle small iconOnly`) at inline-end. `showPicker()` triggered via internal ref. No `width` prop — fixed `sm` width.
 
-**Props:** All TextInput props, type="time"
+**Props:** `invalid`, `disabled`, `readOnly`, and all native `<input type="time">` attributes
+
+**Tests:** React (9 tests)
+
+#### DateInput
+
+**Tokens:** `tokens/components/date-input.json`, extends TextInput tokens
+
+**Features:** Wrapper with interactive calendar button (`Button subtle small iconOnly`, `calendar-event` icon) at inline-end. Same pattern as TimeInput. `showPicker()` via internal ref + `handleRef` merge. Fixed width — no `width` prop.
+
+**Props:** `invalid`, `disabled`, `readOnly`, and all native `<input type="date">` attributes
+
+**Tests:** React (9 tests)
+
+#### Select
+
+**Tokens:** `tokens/components/select.json`, extends TextInput tokens
+
+**Features:** Wrapper with `chevron-down` icon at inline-end. Native browser arrow hidden via `appearance: none`. Icon disappears when `disabled`. Width variants on wrapper (same pattern as SearchInput).
+
+**Props:** `invalid`, `width`, and all native `<select>` attributes
+
+**Tests:** React (9 tests)
+
+#### DateInputGroup
+
+**Features:** Three separate `NumberInput` fields (dag xs, maand xs, jaar sm) with inline labels. `id` prop auto-generates `{id}-dag`, `{id}-maand`, `{id}-jaar`. `onChange` returns the full `{ day, month, year }` object. Wrap in `FormFieldset` for a complete accessible form field.
+
+**Props:** `value` (`{ day, month, year }`), `onChange`, `invalid`, `disabled`, `id`
 
 **Tests:** React (9 tests)
 
@@ -453,11 +489,9 @@ Components are designed to compose together:
 
 **Tokens:** `tokens/components/checkbox-group.json`
 
-**Features:** Fieldset/legend structure for accessible grouping
+**Features:** Simple div container for `CheckboxOption` items. Fieldset/legend structure lives in `FormFieldset` — always wrap `CheckboxGroup` in a `FormFieldset` for accessible grouping.
 
-**Legend tokens:** References `form-field-label` tokens (DRY principle)
-
-**Props:** `legend`, `hideLegend`, `children`
+**Props:** `children`, standard div attributes
 
 **Tests:** React (8 tests)
 
@@ -465,11 +499,9 @@ Components are designed to compose together:
 
 **Tokens:** `tokens/components/radio-group.json`
 
-**Features:** Fieldset/legend structure for accessible grouping
+**Features:** Simple div container for `RadioOption` items. Fieldset/legend structure lives in `FormFieldset` — always wrap `RadioGroup` in a `FormFieldset` for accessible grouping.
 
-**Legend tokens:** References `form-field-label` tokens (DRY principle)
-
-**Props:** `legend`, `hideLegend`, `children`
+**Props:** `children`, standard div attributes
 
 **Tests:** React (9 tests)
 
@@ -479,15 +511,25 @@ Components are designed to compose together:
 
 **Tokens:** `tokens/components/form-field.json`
 
-**Intelligent rendering:** Automatically uses fieldset/legend for groups, div/label for regular controls
-
-**Features:** Combines Label, Description, Control, Error, Status with automatic aria-describedby linking
+**Features:** div/label container for single-value inputs (TextInput, EmailInput, Select, etc.). Combines Label, Description, Control, Error, and Status with automatic aria-describedby linking.
 
 **Invalid state:** Red left border via `form-field.invalid` tokens
 
-**Props:** `label`, `htmlFor`, `labelSuffix`, `description`, `error`, `status`, `isGroup`, `hideLabel`, `children`, `invalid`
+**Props:** `label`, `htmlFor`, `labelSuffix`, `description`, `error`, `status`, `children`
 
 **Tests:** React (11 tests)
+
+#### FormFieldset
+
+**Tokens:** `tokens/components/form-fieldset.json`
+
+**Features:** fieldset/legend container for group controls (CheckboxGroup, RadioGroup, DateInputGroup). Combines FormFieldLegend, FormFieldDescription, FormFieldErrorMessage, and the group control.
+
+**Invalid state:** Red left border when `error` prop is set (same as FormField)
+
+**Props:** `legend`, `hideLegend`, `description`, `error`, `status`, `children`
+
+**Tests:** React (9 tests)
 
 #### FormFieldLabel
 
@@ -582,15 +624,15 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 26
+**Total Components:** 32
 
 **Implementations:**
 
-- **HTML/CSS:** 26 components
-- **React:** 26 components (396 tests total)
+- **HTML/CSS:** 32 components
+- **React:** 32 components (733 tests total)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
-**Test Coverage:** 396 tests across 24 test suites
+**Test Coverage:** 733 tests across 38 test suites
 
 ---
 
