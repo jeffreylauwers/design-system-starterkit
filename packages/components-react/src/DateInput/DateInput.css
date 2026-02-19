@@ -14,11 +14,11 @@
   max-inline-size: var(--dsn-form-control-width-md);
 }
 
-/* Calendar button — centered vertically, positioned at inline-end */
+/* Calendar button — centered vertically, positioned at inline-end with reduced margin */
 .dsn-date-input__button {
   position: absolute;
   inset-block-start: 50%;
-  inset-inline-end: var(--dsn-form-control-padding-inline-end);
+  inset-inline-end: var(--dsn-date-input-button-inset-inline-end);
   transform: translateY(-50%);
 }
 

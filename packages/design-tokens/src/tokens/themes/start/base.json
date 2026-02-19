@@ -440,12 +440,12 @@
       },
       "width": {
         "xs": {
-          "value": "8ch",
+          "value": "10ch",
           "type": "dimension",
           "comment": "Extra small width - for very short inputs (e.g., postal code, year, CVV)"
         },
         "sm": {
-          "value": "12ch",
+          "value": "14ch",
           "type": "dimension",
           "comment": "Small width - for short inputs (e.g., time HH:MM, short codes)"
         },

@@ -2,19 +2,24 @@
   "dsn": {
     "date-input": {
       "icon-size": {
-        "value": "{dsn.icon.size.md}",
+        "value": "{dsn.button.size.small.icon-size}",
         "type": "dimension",
-        "comment": "Date input icon size"
+        "comment": "Calendar icon size — matches the small button icon size"
       },
       "icon-gap": {
         "value": "{dsn.space.text.md}",
         "type": "dimension",
-        "comment": "Gap between calendar icon and input text"
+        "comment": "Gap between calendar button and input text"
+      },
+      "button-inset-inline-end": {
+        "value": "{dsn.space.inline.sm}",
+        "type": "dimension",
+        "comment": "Distance from the inline-end border to the calendar button (4px)"
       },
       "padding-inline-end-with-icon": {
-        "value": "calc({dsn.date-input.icon-size} + {dsn.date-input.icon-gap} + {dsn.form-control.padding-inline-end})",
+        "value": "calc(({dsn.button.size.small.icon-only-padding} * 2) + {dsn.date-input.icon-size} + {dsn.date-input.button-inset-inline-end} + {dsn.date-input.icon-gap})",
         "type": "dimension",
-        "comment": "Right padding when icon is present"
+        "comment": "Right padding when icon is present: (button-padding × 2) + icon-size + button-inset + gap"
       }
     }
   }

@@ -77,8 +77,8 @@ export const Widths: Story = {
   name: 'Width variants',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <TextInput width="xs" placeholder="xs — 8ch (postcode, CVV)" />
-      <TextInput width="sm" placeholder="sm — 12ch (tijdstip, korte codes)" />
+      <TextInput width="xs" placeholder="xs — 10ch (postcode, CVV)" />
+      <TextInput width="sm" placeholder="sm — 14ch (tijdstip, korte codes)" />
       <TextInput width="md" placeholder="md — 20ch (datum, telefoonnummer)" />
       <TextInput width="lg" placeholder="lg — 32ch (naam, email)" />
       <TextInput width="xl" placeholder="xl — 48ch (URL)" />

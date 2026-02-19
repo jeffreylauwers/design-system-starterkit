@@ -23,8 +23,8 @@ De TextInput component is een gestandaardiseerd invoerveld voor single-line teks
 ## Best practices
 
 - **Kies de juiste width.** Gebruik `width` om de breedte aan te passen aan het type data:
-  - `xs` (8ch) - Zeer korte codes (postcode, jaar, CVV)
-  - `sm` (12ch) - Korte invoer (tijdstip, korte codes)
+  - `xs` (10ch) - Zeer korte codes (postcode, jaar, CVV)
+  - `sm` (14ch) - Korte invoer (tijdstip, korte codes)
   - `md` (20ch) - Medium invoer (datum, telefoonnummer)
   - `lg` (32ch) - Standaard (naam, email) - **DEFAULT**
   - `xl` (48ch) - Langere tekst (URL)
@@ -39,8 +39,8 @@ De TextInput component is een gestandaardiseerd invoerveld voor single-line teks
 
 | Variant | Width | Gebruik                                            |
 | ------- | ----- | -------------------------------------------------- |
-| `xs`    | 8ch   | Zeer korte codes (postcode "1234 AB", CVV "123")   |
-| `sm`    | 12ch  | Korte invoer (tijdstip "14:30", korte codes)       |
+| `xs`    | 10ch  | Zeer korte codes (postcode "1234 AB", CVV "123")   |
+| `sm`    | 14ch  | Korte invoer (tijdstip "14:30", korte codes)       |
 | `md`    | 20ch  | Medium invoer (datum "15-03-2025", telefoonnummer) |
 | `lg`    | 32ch  | **Standaard** - naam, email, etc.                  |
 | `xl`    | 48ch  | Langere tekst (URL "https://example.com")          |
@@ -78,8 +78,8 @@ De TextInput component is een gestandaardiseerd invoerveld voor single-line teks
 | `--dsn-text-input-invalid-color`              | Invalid text color                      |
 | `--dsn-text-input-invalid-background-color`   | Invalid background color                |
 | `--dsn-text-input-invalid-border-color`       | Invalid border color                    |
-| `--dsn-form-control-width-xs`                 | Extra small width (8ch)                 |
-| `--dsn-form-control-width-sm`                 | Small width (12ch)                      |
+| `--dsn-form-control-width-xs`                 | Extra small width (10ch)                |
+| `--dsn-form-control-width-sm`                 | Small width (14ch)                      |
 | `--dsn-form-control-width-md`                 | Medium width (20ch)                     |
 | `--dsn-form-control-width-lg`                 | Large width (32ch)                      |
 | `--dsn-form-control-width-xl`                 | Extra large width (48ch)                |
