@@ -6,6 +6,53 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 4.4.0 (February 19, 2025)
+
+### New Components: Select, DateInput, DateInputGroup + FormFieldset fix
+
+**Select Component**
+
+- **Select component** — Dropdown select with a custom `chevron-down` icon at inline-end
+- Wrapper `dsn-select-wrapper` handles width variants (same pattern as SearchInput)
+- Native browser select arrow hidden via `appearance: none`
+- Icon disappears when `disabled`
+- Props: `invalid`, `width`, and all native `<select>` attributes
+- Storybook documentation with Default, Invalid, Disabled, Width Variants, and WithFormField stories
+
+**DateInput Component**
+
+- **DateInput component** — Date input (`type="date"`) with an interactive calendar button at inline-end
+- Same pattern as TimeInput: `<Button variant="subtle" size="small" iconOnly>` with `calendar-event` icon
+- Fixed width (no `width` prop) — date inputs have a predictable content width
+- `showPicker()` triggered via internal ref + `handleRef` merge pattern
+- Native browser calendar icon hidden via `::-webkit-calendar-picker-indicator { display: none }`
+- Button disappears when `disabled` or `readOnly`
+- Props: `invalid`, and all native date input attributes
+- Storybook documentation with Default, WithValue, Invalid, Disabled, ReadOnly, and WithFormField stories
+
+**DateInputGroup Component**
+
+- **DateInputGroup component** — Three separate NumberInputs for day, month, and year
+- More accessible than native date picker: works consistently across all browsers and allows partial input
+- Day and month fields: width `xs`; year field: width `sm`
+- Inline labels above each field using `dsn-date-input-group__label`
+- `id` prop auto-generates `{id}-dag`, `{id}-maand`, `{id}-jaar` for accessible label association
+- `onChange` always returns the full `{ day, month, year }` object
+- `invalid` prop propagates to all three NumberInputs
+- Wrap in `FormFieldset` for a complete form field with legend and error message
+- Storybook documentation with Default, Controlled, Invalid, Disabled, and WithFormFieldset stories
+
+**FormFieldset Fix**
+
+- **Red left border in invalid state** — `FormFieldset` now shows a red left border when the `error` prop is set, consistent with `FormField`
+
+**Statistics**
+
+- **32 total components** (7 content + 25 form)
+- **733 tests** across 38 test suites — all passing
+
+---
+
 ## Version 4.3.0 (February 17, 2025)
 
 ### CI/CD Fixes & Interactive Design Token Explorer
