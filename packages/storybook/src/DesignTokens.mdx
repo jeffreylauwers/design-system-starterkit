@@ -14,7 +14,7 @@ Design tokens are the single source of truth for colors, typography, spacing, bo
 
 ## Colors
 
-Each color scale provides a full set of tokens for backgrounds, borders, and text — including document, subtle, default, hover, and active states.
+Each color scale provides a full set of tokens for backgrounds, borders, and text — including document, elevated, subtle, default, hover, and active states. The **elevated** token is intended for floating UI layers (modals, popovers, dropdowns) that appear above the document surface.
 
 ### Neutral
 
@@ -22,6 +22,7 @@ Each color scale provides a full set of tokens for backgrounds, borders, and tex
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-neutral-bg-document', value: '#FCFCFC' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-neutral-bg-elevated', value: '#FCFCFC' },
     { name: 'Subtle BG', cssVar: '--dsn-color-neutral-bg-subtle', value: '#F6F6F6' },
     { name: 'Default BG', cssVar: '--dsn-color-neutral-bg-default', value: '#F1F1F1' },
     { name: 'Hover BG', cssVar: '--dsn-color-neutral-bg-hover', value: '#EBEBEB' },
@@ -44,6 +45,7 @@ Each color scale provides a full set of tokens for backgrounds, borders, and tex
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-accent-1-bg-document', value: '#FBFCFD' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-accent-1-bg-elevated', value: '#FBFCFD' },
     { name: 'Subtle BG', cssVar: '--dsn-color-accent-1-bg-subtle', value: '#F4F7FA' },
     { name: 'Default BG', cssVar: '--dsn-color-accent-1-bg-default', value: '#ECF1F7' },
     { name: 'Hover BG', cssVar: '--dsn-color-accent-1-bg-hover', value: '#E4ECF4' },
@@ -68,6 +70,7 @@ Aliases accent-1 by default. Override in your theme to differentiate.
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-accent-2-bg-document', value: 'alias → accent-1' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-accent-2-bg-elevated', value: 'alias → accent-1' },
     { name: 'Subtle BG', cssVar: '--dsn-color-accent-2-bg-subtle', value: 'alias → accent-1' },
     { name: 'Default BG', cssVar: '--dsn-color-accent-2-bg-default', value: 'alias → accent-1' },
     { name: 'Hover BG', cssVar: '--dsn-color-accent-2-bg-hover', value: 'alias → accent-1' },
@@ -92,6 +95,7 @@ Aliases accent-1 by default. Override in your theme to differentiate.
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-accent-3-bg-document', value: 'alias → accent-1' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-accent-3-bg-elevated', value: 'alias → accent-1' },
     { name: 'Subtle BG', cssVar: '--dsn-color-accent-3-bg-subtle', value: 'alias → accent-1' },
     { name: 'Default BG', cssVar: '--dsn-color-accent-3-bg-default', value: 'alias → accent-1' },
     { name: 'Hover BG', cssVar: '--dsn-color-accent-3-bg-hover', value: 'alias → accent-1' },
@@ -116,6 +120,7 @@ Used for primary interactive elements like buttons. Aliases accent-1 by default.
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-action-1-bg-document', value: 'alias → accent-1' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-action-1-bg-elevated', value: 'alias → accent-1' },
     { name: 'Subtle BG', cssVar: '--dsn-color-action-1-bg-subtle', value: 'alias → accent-1' },
     { name: 'Default BG', cssVar: '--dsn-color-action-1-bg-default', value: 'alias → accent-1' },
     { name: 'Hover BG', cssVar: '--dsn-color-action-1-bg-hover', value: 'alias → accent-1' },
@@ -140,6 +145,7 @@ Used for secondary interactive elements like links and navigation. Aliases accen
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-action-2-bg-document', value: 'alias → accent-1' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-action-2-bg-elevated', value: 'alias → accent-1' },
     { name: 'Subtle BG', cssVar: '--dsn-color-action-2-bg-subtle', value: 'alias → accent-1' },
     { name: 'Default BG', cssVar: '--dsn-color-action-2-bg-default', value: 'alias → accent-1' },
     { name: 'Hover BG', cssVar: '--dsn-color-action-2-bg-hover', value: 'alias → accent-1' },
@@ -162,6 +168,7 @@ Used for secondary interactive elements like links and navigation. Aliases accen
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-positive-bg-document', value: '#FAFDFB' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-positive-bg-elevated', value: '#FAFDFB' },
     { name: 'Subtle BG', cssVar: '--dsn-color-positive-bg-subtle', value: '#EFF9F3' },
     { name: 'Default BG', cssVar: '--dsn-color-positive-bg-default', value: '#E4F5EA' },
     { name: 'Hover BG', cssVar: '--dsn-color-positive-bg-hover', value: '#D9F1E2' },
@@ -184,6 +191,7 @@ Used for secondary interactive elements like links and navigation. Aliases accen
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-negative-bg-document', value: '#FFFBFB' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-negative-bg-elevated', value: '#FFFBFB' },
     { name: 'Subtle BG', cssVar: '--dsn-color-negative-bg-subtle', value: '#FEF4F4' },
     { name: 'Default BG', cssVar: '--dsn-color-negative-bg-default', value: '#FEEDED' },
     { name: 'Hover BG', cssVar: '--dsn-color-negative-bg-hover', value: '#FDE6E6' },
@@ -206,6 +214,7 @@ Used for secondary interactive elements like links and navigation. Aliases accen
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-warning-bg-document', value: '#FFFCF8' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-warning-bg-elevated', value: '#FFFCF8' },
     { name: 'Subtle BG', cssVar: '--dsn-color-warning-bg-subtle', value: '#FFF5EB' },
     { name: 'Default BG', cssVar: '--dsn-color-warning-bg-default', value: '#FFEEDD' },
     { name: 'Hover BG', cssVar: '--dsn-color-warning-bg-hover', value: '#FFE7D0' },
@@ -228,6 +237,7 @@ Used for secondary interactive elements like links and navigation. Aliases accen
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-info-bg-document', value: 'alias → accent-1' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-info-bg-elevated', value: 'alias → accent-1' },
     { name: 'Subtle BG', cssVar: '--dsn-color-info-bg-subtle', value: 'alias → accent-1' },
     { name: 'Default BG', cssVar: '--dsn-color-info-bg-default', value: 'alias → accent-1' },
     { name: 'Hover BG', cssVar: '--dsn-color-info-bg-hover', value: 'alias → accent-1' },
@@ -256,6 +266,7 @@ Inverse color scales are used for components on dark backgrounds (e.g. strong bu
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-neutral-inverse-bg-document', value: '#242424' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-neutral-inverse-bg-elevated', value: '#242424' },
     { name: 'Subtle BG', cssVar: '--dsn-color-neutral-inverse-bg-subtle', value: '#1B1B1B' },
     { name: 'Default BG', cssVar: '--dsn-color-neutral-inverse-bg-default', value: '#595959' },
     { name: 'Hover BG', cssVar: '--dsn-color-neutral-inverse-bg-hover', value: '#4B4B4B' },
@@ -278,6 +289,7 @@ Inverse color scales are used for components on dark backgrounds (e.g. strong bu
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-accent-1-inverse-bg-document', value: '#00234D' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-accent-1-inverse-bg-elevated', value: '#00234D' },
     { name: 'Subtle BG', cssVar: '--dsn-color-accent-1-inverse-bg-subtle', value: '#001B3C' },
     { name: 'Default BG', cssVar: '--dsn-color-accent-1-inverse-bg-default', value: '#1B59A4' },
     { name: 'Hover BG', cssVar: '--dsn-color-accent-1-inverse-bg-hover', value: '#04499A' },
@@ -300,10 +312,10 @@ All alias accent-1-inverse by default. Available CSS variables:
 
 <TokenTable
   tokens={[
-    { name: 'Accent 2 Inverse', cssVar: '--dsn-color-accent-2-inverse-*', value: 'alias → accent-1-inverse' },
-    { name: 'Accent 3 Inverse', cssVar: '--dsn-color-accent-3-inverse-*', value: 'alias → accent-1-inverse' },
-    { name: 'Action 1 Inverse', cssVar: '--dsn-color-action-1-inverse-*', value: 'alias → accent-1-inverse' },
-    { name: 'Action 2 Inverse', cssVar: '--dsn-color-action-2-inverse-*', value: 'alias → accent-1-inverse' },
+    { name: 'Accent 2 Inverse (bg-elevated)', cssVar: '--dsn-color-accent-2-inverse-bg-elevated', value: 'alias → accent-1-inverse' },
+    { name: 'Accent 3 Inverse (bg-elevated)', cssVar: '--dsn-color-accent-3-inverse-bg-elevated', value: 'alias → accent-1-inverse' },
+    { name: 'Action 1 Inverse (bg-elevated)', cssVar: '--dsn-color-action-1-inverse-bg-elevated', value: 'alias → accent-1-inverse' },
+    { name: 'Action 2 Inverse (bg-elevated)', cssVar: '--dsn-color-action-2-inverse-bg-elevated', value: 'alias → accent-1-inverse' },
   ]}
 />
 
@@ -313,6 +325,7 @@ All alias accent-1-inverse by default. Available CSS variables:
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-positive-inverse-bg-document', value: '#002B10' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-positive-inverse-bg-elevated', value: '#002B10' },
     { name: 'Subtle BG', cssVar: '--dsn-color-positive-inverse-bg-subtle', value: '#00210C' },
     { name: 'Default BG', cssVar: '--dsn-color-positive-inverse-bg-default', value: '#006827' },
     { name: 'Hover BG', cssVar: '--dsn-color-positive-inverse-bg-hover', value: '#005821' },
@@ -335,6 +348,7 @@ All alias accent-1-inverse by default. Available CSS variables:
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-negative-inverse-bg-document', value: '#510000' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-negative-inverse-bg-elevated', value: '#510000' },
     { name: 'Subtle BG', cssVar: '--dsn-color-negative-inverse-bg-subtle', value: '#410000' },
     { name: 'Default BG', cssVar: '--dsn-color-negative-inverse-bg-default', value: '#B70000' },
     { name: 'Hover BG', cssVar: '--dsn-color-negative-inverse-bg-hover', value: '#9C0000' },
@@ -357,6 +371,7 @@ All alias accent-1-inverse by default. Available CSS variables:
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-warning-inverse-bg-document', value: '#331F0D' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-warning-inverse-bg-elevated', value: '#331F0D' },
     { name: 'Subtle BG', cssVar: '--dsn-color-warning-inverse-bg-subtle', value: '#27190A' },
     { name: 'Default BG', cssVar: '--dsn-color-warning-inverse-bg-default', value: '#844C12' },
     { name: 'Hover BG', cssVar: '--dsn-color-warning-inverse-bg-hover', value: '#6F4012' },
@@ -379,6 +394,7 @@ All alias accent-1-inverse by default. Available CSS variables:
   previewType="color"
   tokens={[
     { name: 'Document BG', cssVar: '--dsn-color-info-inverse-bg-document', value: '#00234D' },
+    { name: 'Elevated BG', cssVar: '--dsn-color-info-inverse-bg-elevated', value: '#00234D' },
     { name: 'Subtle BG', cssVar: '--dsn-color-info-inverse-bg-subtle', value: '#001B3C' },
     { name: 'Default BG', cssVar: '--dsn-color-info-inverse-bg-default', value: '#1B59A4' },
     { name: 'Hover BG', cssVar: '--dsn-color-info-inverse-bg-hover', value: '#04499A' },

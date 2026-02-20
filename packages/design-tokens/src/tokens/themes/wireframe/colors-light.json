@@ -7,6 +7,11 @@
           "type": "color",
           "comment": "Document background"
         },
+        "bg-elevated": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "comment": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+        },
         "bg-subtle": {
           "value": "#FFFFFF",
           "type": "color",
@@ -78,6 +83,11 @@
           "value": "{dsn.color.neutral.bg-document}",
           "type": "color",
           "comment": "Document background"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.neutral.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background"
         },
         "bg-subtle": {
           "value": "{dsn.color.neutral.bg-subtle}",
@@ -151,6 +161,11 @@
           "type": "color",
           "comment": "Document background"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background"
+        },
         "bg-subtle": {
           "value": "{dsn.color.accent-1.bg-subtle}",
           "type": "color",
@@ -222,6 +237,11 @@
           "value": "{dsn.color.accent-1.bg-document}",
           "type": "color",
           "comment": "Document background"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background"
         },
         "bg-subtle": {
           "value": "{dsn.color.accent-1.bg-subtle}",
@@ -295,6 +315,11 @@
           "type": "color",
           "comment": "Document background"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background"
+        },
         "bg-subtle": {
           "value": "{dsn.color.accent-1.bg-subtle}",
           "type": "color",
@@ -366,6 +391,11 @@
           "value": "{dsn.color.accent-1.bg-document}",
           "type": "color",
           "comment": "Document background"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background"
         },
         "bg-subtle": {
           "value": "{dsn.color.accent-1.bg-subtle}",
@@ -439,6 +469,11 @@
           "type": "color",
           "comment": "Document background"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.neutral.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background"
+        },
         "bg-subtle": {
           "value": "{dsn.color.neutral.bg-subtle}",
           "type": "color",
@@ -510,6 +545,11 @@
           "value": "{dsn.color.neutral.bg-document}",
           "type": "color",
           "comment": "Document background"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.neutral.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background"
         },
         "bg-subtle": {
           "value": "{dsn.color.neutral.bg-subtle}",
@@ -583,6 +623,11 @@
           "type": "color",
           "comment": "Document background"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.neutral.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background"
+        },
         "bg-subtle": {
           "value": "{dsn.color.neutral.bg-subtle}",
           "type": "color",
@@ -654,6 +699,11 @@
           "value": "{dsn.color.neutral.bg-document}",
           "type": "color",
           "comment": "Document background"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.neutral.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background"
         },
         "bg-subtle": {
           "value": "{dsn.color.neutral.bg-subtle}",
@@ -727,6 +777,11 @@
           "type": "color",
           "comment": "Inverse document background"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.neutral.color-document}",
+          "type": "color",
+          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+        },
         "bg-subtle": {
           "value": "{dsn.color.neutral.color-active}",
           "type": "color",
@@ -799,6 +854,11 @@
           "type": "color",
           "comment": "Inverse document background"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.neutral-inverse.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background (inverse)"
+        },
         "bg-subtle": {
           "value": "{dsn.color.neutral-inverse.bg-subtle}",
           "type": "color",
@@ -870,6 +930,10 @@
           "value": "{dsn.color.accent-1-inverse.bg-document}",
           "type": "color"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1-inverse.bg-elevated}",
+          "type": "color"
+        },
         "bg-subtle": {
           "value": "{dsn.color.accent-1-inverse.bg-subtle}",
           "type": "color"
@@ -926,6 +990,10 @@
       "accent-3-inverse": {
         "bg-document": {
           "value": "{dsn.color.accent-1-inverse.bg-document}",
+          "type": "color"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1-inverse.bg-elevated}",
           "type": "color"
         },
         "bg-subtle": {
@@ -986,6 +1054,10 @@
           "value": "{dsn.color.accent-1-inverse.bg-document}",
           "type": "color"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1-inverse.bg-elevated}",
+          "type": "color"
+        },
         "bg-subtle": {
           "value": "{dsn.color.accent-1-inverse.bg-subtle}",
           "type": "color"
@@ -1042,6 +1114,10 @@
       "action-2-inverse": {
         "bg-document": {
           "value": "{dsn.color.accent-1-inverse.bg-document}",
+          "type": "color"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1-inverse.bg-elevated}",
           "type": "color"
         },
         "bg-subtle": {
@@ -1102,6 +1178,10 @@
           "value": "{dsn.color.neutral-inverse.bg-document}",
           "type": "color"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.neutral-inverse.bg-elevated}",
+          "type": "color"
+        },
         "bg-subtle": {
           "value": "{dsn.color.neutral-inverse.bg-subtle}",
           "type": "color"
@@ -1158,6 +1238,10 @@
       "negative-inverse": {
         "bg-document": {
           "value": "{dsn.color.neutral-inverse.bg-document}",
+          "type": "color"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.neutral-inverse.bg-elevated}",
           "type": "color"
         },
         "bg-subtle": {
@@ -1218,6 +1302,10 @@
           "value": "{dsn.color.neutral-inverse.bg-document}",
           "type": "color"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.neutral-inverse.bg-elevated}",
+          "type": "color"
+        },
         "bg-subtle": {
           "value": "{dsn.color.neutral-inverse.bg-subtle}",
           "type": "color"
@@ -1274,6 +1362,10 @@
       "info-inverse": {
         "bg-document": {
           "value": "{dsn.color.neutral-inverse.bg-document}",
+          "type": "color"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.neutral-inverse.bg-elevated}",
           "type": "color"
         },
         "bg-subtle": {

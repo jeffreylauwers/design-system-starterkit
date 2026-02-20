@@ -7,6 +7,11 @@
           "type": "color",
           "comment": "Document background"
         },
+        "bg-elevated": {
+          "value": "#111111",
+          "type": "color",
+          "comment": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+        },
         "bg-subtle": {
           "value": "#040404",
           "type": "color",
@@ -78,6 +83,11 @@
           "value": "#001126",
           "type": "color",
           "comment": "Document background"
+        },
+        "bg-elevated": {
+          "value": "#001126",
+          "type": "color",
+          "comment": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
           "value": "#000409",
@@ -151,6 +161,11 @@
           "type": "color",
           "comment": "Document background"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background"
+        },
         "bg-subtle": {
           "value": "{dsn.color.accent-1.bg-subtle}",
           "type": "color",
@@ -222,6 +237,11 @@
           "value": "{dsn.color.accent-1.bg-document}",
           "type": "color",
           "comment": "Document background"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background"
         },
         "bg-subtle": {
           "value": "{dsn.color.accent-1.bg-subtle}",
@@ -295,6 +315,11 @@
           "type": "color",
           "comment": "Document background - Primary actions (buttons)"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background - Primary actions (buttons)"
+        },
         "bg-subtle": {
           "value": "{dsn.color.accent-1.bg-subtle}",
           "type": "color",
@@ -366,6 +391,11 @@
           "value": "{dsn.color.accent-1.bg-document}",
           "type": "color",
           "comment": "Document background - Secondary actions (links, navigation)"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background - Secondary actions (links, navigation)"
         },
         "bg-subtle": {
           "value": "{dsn.color.accent-1.bg-subtle}",
@@ -439,6 +469,11 @@
           "type": "color",
           "comment": "Document background"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background"
+        },
         "bg-subtle": {
           "value": "{dsn.color.accent-1.bg-subtle}",
           "type": "color",
@@ -510,6 +545,11 @@
           "value": "#1C0000",
           "type": "color",
           "comment": "Document background"
+        },
+        "bg-elevated": {
+          "value": "#1C0000",
+          "type": "color",
+          "comment": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
           "value": "#060000",
@@ -583,6 +623,11 @@
           "type": "color",
           "comment": "Document background"
         },
+        "bg-elevated": {
+          "value": "#001509",
+          "type": "color",
+          "comment": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+        },
         "bg-subtle": {
           "value": "#000802",
           "type": "color",
@@ -654,6 +699,11 @@
           "value": "#190F04",
           "type": "color",
           "comment": "Document background"
+        },
+        "bg-elevated": {
+          "value": "#190F04",
+          "type": "color",
+          "comment": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
           "value": "#0B0501",
@@ -727,6 +777,11 @@
           "type": "color",
           "comment": "Document background (inverse)"
         },
+        "bg-elevated": {
+          "value": "#FBFBFB",
+          "type": "color",
+          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+        },
         "bg-subtle": {
           "value": "#F1F1F1",
           "type": "color",
@@ -798,6 +853,11 @@
           "value": "#DCEBF9",
           "type": "color",
           "comment": "Document background (inverse)"
+        },
+        "bg-elevated": {
+          "value": "#DCEBF9",
+          "type": "color",
+          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
           "value": "#ECF1F7",
@@ -871,6 +931,11 @@
           "type": "color",
           "comment": "Document background (inverse)"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1-inverse.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background (inverse)"
+        },
         "bg-subtle": {
           "value": "{dsn.color.accent-1-inverse.bg-subtle}",
           "type": "color",
@@ -942,6 +1007,11 @@
           "value": "{dsn.color.accent-1-inverse.bg-document}",
           "type": "color",
           "comment": "Document background (inverse)"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1-inverse.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background (inverse)"
         },
         "bg-subtle": {
           "value": "{dsn.color.accent-1-inverse.bg-subtle}",
@@ -1015,6 +1085,11 @@
           "type": "color",
           "comment": "Document background (inverse) - Primary actions (buttons)"
         },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1-inverse.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background (inverse) - Primary actions (buttons)"
+        },
         "bg-subtle": {
           "value": "{dsn.color.accent-1-inverse.bg-subtle}",
           "type": "color",
@@ -1086,6 +1161,11 @@
           "value": "{dsn.color.accent-1-inverse.bg-document}",
           "type": "color",
           "comment": "Document background (inverse) - Secondary actions (links, navigation)"
+        },
+        "bg-elevated": {
+          "value": "{dsn.color.accent-1-inverse.bg-elevated}",
+          "type": "color",
+          "comment": "Elevated background (inverse) - Secondary actions (links, navigation)"
         },
         "bg-subtle": {
           "value": "{dsn.color.accent-1-inverse.bg-subtle}",
@@ -1159,6 +1239,11 @@
           "type": "color",
           "comment": "Document background (inverse)"
         },
+        "bg-elevated": {
+          "value": "#DCEBF9",
+          "type": "color",
+          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+        },
         "bg-subtle": {
           "value": "#ECF1F7",
           "type": "color",
@@ -1230,6 +1315,11 @@
           "value": "#FCDADA",
           "type": "color",
           "comment": "Document background (inverse)"
+        },
+        "bg-elevated": {
+          "value": "#FCDADA",
+          "type": "color",
+          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
           "value": "#FEEDED",
@@ -1303,6 +1393,11 @@
           "type": "color",
           "comment": "Document background (inverse)"
         },
+        "bg-elevated": {
+          "value": "#CCE8D7",
+          "type": "color",
+          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+        },
         "bg-subtle": {
           "value": "#E4F5EA",
           "type": "color",
@@ -1374,6 +1469,11 @@
           "value": "#FFEAC6",
           "type": "color",
           "comment": "Document background (inverse)"
+        },
+        "bg-elevated": {
+          "value": "#FFEAC6",
+          "type": "color",
+          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
           "value": "#FFEEDD",
