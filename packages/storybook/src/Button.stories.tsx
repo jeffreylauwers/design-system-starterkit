@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button, Icon } from '@dsn/components-react';
 import type { IconName } from '@dsn/components-react/icon-registry.generated';
-import DocsPage from './Button.docs.mdx';
 import {
   TEKST,
   WEINIG_TEKST,
@@ -62,11 +61,6 @@ const iconOptions: (IconName | undefined)[] = [
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
-  parameters: {
-    docs: {
-      page: DocsPage,
-    },
-  },
   argTypes: {
     variant: {
       control: 'select',
