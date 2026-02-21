@@ -7,6 +7,13 @@ import {
   CheckboxOption,
 } from '@dsn/components-react';
 import DocsPage from './FormField.docs.mdx';
+import {
+  TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof FormField> = {
   title: 'Components/FormField',
@@ -29,7 +36,7 @@ const meta: Meta<typeof FormField> = {
     },
   },
   args: {
-    label: 'Label',
+    label: TEKST,
     htmlFor: 'demo-field',
   },
 };
@@ -39,192 +46,154 @@ type Story = StoryObj<typeof FormField>;
 
 export const Default: Story = {
   args: {
-    label: 'E-mailadres',
-    htmlFor: 'email',
+    label: TEKST,
+    htmlFor: 'input-1',
   },
   render: (args) => (
     <FormField {...args}>
-      <TextInput id="email" type="email" placeholder="naam@voorbeeld.nl" />
+      <TextInput id="input-1" placeholder={TEKST} />
+    </FormField>
+  ),
+};
+
+export const WithDescription: Story = {
+  name: 'With description',
+  render: (args) => (
+    <FormField {...args} label={TEKST} htmlFor="input-desc" description={TEKST}>
+      <TextInput id="input-desc" placeholder={TEKST} />
+    </FormField>
+  ),
+};
+
+export const WithError: Story = {
+  name: 'With error',
+  render: (args) => (
+    <FormField {...args} label={TEKST} htmlFor="input-err" error={TEKST}>
+      <TextInput id="input-err" invalid placeholder={TEKST} />
+    </FormField>
+  ),
+};
+
+export const WithStatus: Story = {
+  name: 'With status',
+  render: (args) => (
+    <FormField {...args} label={TEKST} htmlFor="input-status" status={TEKST}>
+      <TextInput id="input-status" placeholder={TEKST} />
     </FormField>
   ),
 };
 
 export const AllStates: Story = {
+  name: 'All states',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Basic text input</h3>
-        <FormField label="Naam" htmlFor="name">
-          <TextInput id="name" placeholder="Voer je naam in" />
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Basic</h3>
+        <FormField label={TEKST} htmlFor="s1">
+          <TextInput id="s1" placeholder={TEKST} />
         </FormField>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With description</h3>
-        <FormField
-          label="E-mailadres"
-          htmlFor="email-desc"
-          description="We gebruiken je e-mailadres alleen voor accountgerelateerde berichten."
-        >
-          <TextInput
-            id="email-desc"
-            type="email"
-            placeholder="naam@voorbeeld.nl"
-          />
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>With description</h3>
+        <FormField label={TEKST} htmlFor="s2" description={TEKST}>
+          <TextInput id="s2" placeholder={TEKST} />
         </FormField>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With optional suffix</h3>
-        <FormField
-          label="Telefoonnummer"
-          htmlFor="phone"
-          labelSuffix="(niet verplicht)"
-        >
-          <TextInput
-            id="phone"
-            type="tel"
-            placeholder="06-12345678"
-            width="sm"
-          />
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>With optional suffix</h3>
+        <FormField label={TEKST} htmlFor="s3" labelSuffix="(niet verplicht)">
+          <TextInput id="s3" placeholder={TEKST} />
         </FormField>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With error message</h3>
-        <FormField
-          label="Wachtwoord"
-          htmlFor="password-error"
-          error="Wachtwoord moet minimaal 8 tekens bevatten"
-        >
-          <TextInput
-            id="password-error"
-            type="password"
-            invalid
-            placeholder="Voer wachtwoord in"
-          />
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>With error</h3>
+        <FormField label={TEKST} htmlFor="s4" error={TEKST}>
+          <TextInput id="s4" invalid placeholder={TEKST} />
         </FormField>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          With status (default variant - character counter)
-        </h3>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>With status (positive)</h3>
         <FormField
-          label="Bio"
-          htmlFor="bio-status"
-          description="Vertel iets over jezelf"
-          status="45 van 500 karakters"
-        >
-          <TextArea
-            id="bio-status"
-            rows={4}
-            placeholder="Vertel iets over jezelf..."
-          />
-        </FormField>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          With status (positive variant)
-        </h3>
-        <FormField
-          label="Wachtwoord"
-          htmlFor="password-positive"
-          status="Wachtwoord is sterk genoeg"
+          label={TEKST}
+          htmlFor="s5"
+          status={TEKST}
           statusVariant="positive"
         >
-          <TextInput
-            id="password-positive"
-            type="password"
-            value="StrongP@ssw0rd!"
-            readOnly
-          />
+          <TextInput id="s5" placeholder={TEKST} />
         </FormField>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          With status (warning variant)
-        </h3>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>With status (warning)</h3>
         <FormField
-          label="Gebruikersnaam"
-          htmlFor="username-warning"
-          description="Kies een unieke gebruikersnaam"
-          status="Let op: dit veld is openbaar zichtbaar"
+          label={TEKST}
+          htmlFor="s6"
+          status={TEKST}
           statusVariant="warning"
         >
-          <TextInput id="username-warning" placeholder="gebruikersnaam" />
+          <TextInput id="s6" placeholder={TEKST} />
         </FormField>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          Complete example (description + error + status)
-        </h3>
-        <FormField
-          label="Nieuw wachtwoord"
-          htmlFor="password-complete"
-          description="Gebruik minimaal 8 tekens met letters, cijfers en symbolen"
-          error="Het wachtwoord moet minimaal één cijfer bevatten"
-          status="7 van 8 vereiste karakters"
-        >
-          <TextInput
-            id="password-complete"
-            type="password"
-            invalid
-            value="Weak"
-            readOnly
-          />
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>With TextArea</h3>
+        <FormField label={TEKST} htmlFor="s7" description={TEKST}>
+          <TextArea id="s7" rows={4} placeholder={TEKST} />
         </FormField>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With CheckboxGroup</h3>
-        <FormField
-          label="Interesses"
-          description="Selecteer minimaal één interesse"
-        >
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>With CheckboxGroup</h3>
+        <FormField label={TEKST} description={TEKST}>
           <CheckboxGroup>
-            <CheckboxOption label="Sport" value="sport" />
-            <CheckboxOption label="Muziek" value="music" />
-            <CheckboxOption label="Reizen" value="travel" />
+            <CheckboxOption label={TEKST} value="1" />
+            <CheckboxOption label={TEKST} value="2" />
+            <CheckboxOption label={TEKST} value="3" />
           </CheckboxGroup>
         </FormField>
       </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Different widths</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-          <FormField label="Postcode" htmlFor="postcode">
-            <TextInput id="postcode" placeholder="1234 AB" width="xs" />
-          </FormField>
-          <FormField label="Telefoonnummer" htmlFor="phone2">
-            <TextInput
-              id="phone2"
-              type="tel"
-              placeholder="06-12345678"
-              width="sm"
-            />
-          </FormField>
-          <FormField label="E-mailadres" htmlFor="email2">
-            <TextInput
-              id="email2"
-              type="email"
-              placeholder="naam@voorbeeld.nl"
-              width="md"
-            />
-          </FormField>
-          <FormField label="Website" htmlFor="website">
-            <TextInput
-              id="website"
-              type="url"
-              placeholder="https://voorbeeld.nl"
-              width="lg"
-            />
-          </FormField>
-        </div>
-      </div>
     </div>
+  ),
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  render: (args) => (
+    <FormField
+      {...args}
+      label={VEEL_TEKST}
+      htmlFor="lt-1"
+      description={VEEL_TEKST}
+    >
+      <TextInput id="lt-1" defaultValue={VEEL_TEKST} />
+    </FormField>
+  ),
+};
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: (args) => (
+    <FormField
+      {...args}
+      label={TEKST_AR}
+      htmlFor="rtl-1"
+      description={TEKST_AR}
+    >
+      <TextInput id="rtl-1" defaultValue={TEKST_AR} />
+    </FormField>
+  ),
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  render: (args) => (
+    <FormField
+      {...args}
+      label={VEEL_TEKST_AR}
+      htmlFor="rtl-2"
+      description={VEEL_TEKST_AR}
+      error={VEEL_TEKST_AR}
+    >
+      <TextInput id="rtl-2" defaultValue={VEEL_TEKST_AR} invalid />
+    </FormField>
   ),
 };

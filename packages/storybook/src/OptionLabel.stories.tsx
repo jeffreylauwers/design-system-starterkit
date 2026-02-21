@@ -1,6 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { OptionLabel } from '@dsn/components-react';
 import DocsPage from './OptionLabel.docs.mdx';
+import {
+  TEKST,
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof OptionLabel> = {
   title: 'Components/OptionLabel',
@@ -14,7 +22,7 @@ const meta: Meta<typeof OptionLabel> = {
     disabled: { control: 'boolean' },
   },
   args: {
-    children: 'Option label',
+    children: TEKST,
   },
 };
 
@@ -23,29 +31,38 @@ type Story = StoryObj<typeof OptionLabel>;
 
 export const Default: Story = {};
 
-export const AllStates: Story = {
+export const Disabled: Story = {
+  args: { disabled: true, children: TEKST },
+};
+
+export const AllVariants: Story = {
+  name: 'All variants',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Default state</h3>
-        <OptionLabel>Option label text</OptionLabel>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Disabled state</h3>
-        <OptionLabel disabled>Disabled option label</OptionLabel>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Long text</h3>
-        <div style={{ maxWidth: '400px' }}>
-          <OptionLabel>
-            This is a longer option label that demonstrates how the text wraps
-            when it exceeds the available width. The label should maintain
-            proper line height and readability.
-          </OptionLabel>
-        </div>
-      </div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <OptionLabel>{TEKST}</OptionLabel>
+      <OptionLabel disabled>{TEKST}</OptionLabel>
     </div>
   ),
+};
+
+export const ShortText: Story = {
+  name: 'Short text',
+  args: { children: WEINIG_TEKST },
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  args: { children: VEEL_TEKST },
+};
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  args: { children: TEKST_AR },
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { children: VEEL_TEKST_AR },
 };

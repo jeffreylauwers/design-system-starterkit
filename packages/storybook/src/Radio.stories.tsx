@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Radio } from '@dsn/components-react';
 import DocsPage from './Radio.docs.mdx';
+import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof Radio> = {
   title: 'Components/Radio',
@@ -26,7 +27,31 @@ type Story = StoryObj<typeof Radio>;
 
 export const Default: Story = {};
 
+export const Checked: Story = {
+  args: { checked: true, readOnly: true, name: 'r1', value: 'checked' },
+};
+
+export const Disabled: Story = {
+  args: { disabled: true, name: 'r2', value: 'disabled' },
+};
+
+export const DisabledChecked: Story = {
+  name: 'Disabled checked',
+  args: {
+    disabled: true,
+    checked: true,
+    readOnly: true,
+    name: 'r3',
+    value: 'disabled-checked',
+  },
+};
+
+export const Invalid: Story = {
+  args: { invalid: true, name: 'r4', value: 'invalid' },
+};
+
 export const AllStates: Story = {
+  name: 'All states',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <div>
@@ -62,7 +87,6 @@ export const AllStates: Story = {
           </div>
         </div>
       </div>
-
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Disabled states</h3>
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
@@ -78,7 +102,7 @@ export const AllStates: Story = {
               disabled
               aria-label="Disabled unchecked"
               name="demo-2"
-              value="disabled-unchecked"
+              value="1"
             />
             <span style={{ fontSize: '0.75rem' }}>Disabled</span>
           </div>
@@ -95,53 +119,29 @@ export const AllStates: Story = {
               disabled
               aria-label="Disabled checked"
               name="demo-2"
-              value="disabled-checked"
+              value="2"
               readOnly
             />
             <span style={{ fontSize: '0.75rem' }}>Disabled checked</span>
           </div>
         </div>
       </div>
-
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Invalid state</h3>
-        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '0.5rem',
-            }}
-          >
-            <Radio invalid aria-label="Invalid" name="demo-3" value="invalid" />
-            <span style={{ fontSize: '0.75rem' }}>Invalid</span>
-          </div>
-        </div>
+        <Radio invalid aria-label="Invalid" name="demo-3" value="invalid" />
       </div>
+    </div>
+  ),
+};
 
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Interactive</h3>
-        <p
-          style={{
-            fontSize: '0.875rem',
-            color: '#666',
-            marginBlockEnd: '1rem',
-          }}
-        >
-          Hover, focus (tab), and click to see interaction states
-        </p>
-        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <Radio
-            aria-label="Interactive option A"
-            name="demo-4"
-            value="a"
-            defaultChecked
-          />
-          <Radio aria-label="Interactive option B" name="demo-4" value="b" />
-          <Radio aria-label="Interactive option C" name="demo-4" value="c" />
-        </div>
-      </div>
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: () => (
+    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+      <Radio aria-label="Unchecked" name="rtl-1" value="a" />
+      <Radio checked aria-label="Checked" name="rtl-1" value="b" readOnly />
+      <Radio disabled aria-label="Disabled" name="rtl-1" value="c" />
     </div>
   ),
 };

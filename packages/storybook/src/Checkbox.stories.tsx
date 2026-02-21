@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Checkbox } from '@dsn/components-react';
 import DocsPage from './Checkbox.docs.mdx';
+import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Components/Checkbox',
@@ -27,7 +28,34 @@ type Story = StoryObj<typeof Checkbox>;
 
 export const Default: Story = {};
 
+export const Checked: Story = {
+  args: { checked: true, readOnly: true, 'aria-label': 'Checked' },
+};
+
+export const Indeterminate: Story = {
+  args: { indeterminate: true, 'aria-label': 'Indeterminate' },
+};
+
+export const Disabled: Story = {
+  args: { disabled: true, 'aria-label': 'Disabled' },
+};
+
+export const DisabledChecked: Story = {
+  name: 'Disabled checked',
+  args: {
+    disabled: true,
+    checked: true,
+    readOnly: true,
+    'aria-label': 'Disabled checked',
+  },
+};
+
+export const Invalid: Story = {
+  args: { invalid: true, 'aria-label': 'Invalid' },
+};
+
 export const AllStates: Story = {
+  name: 'All states',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <div>
@@ -68,7 +96,6 @@ export const AllStates: Story = {
           </div>
         </div>
       </div>
-
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Disabled states</h3>
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
@@ -111,41 +138,22 @@ export const AllStates: Story = {
           </div>
         </div>
       </div>
-
       <div>
         <h3 style={{ marginBlockEnd: '1rem' }}>Invalid state</h3>
-        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '0.5rem',
-            }}
-          >
-            <Checkbox invalid aria-label="Invalid" />
-            <span style={{ fontSize: '0.75rem' }}>Invalid</span>
-          </div>
-        </div>
+        <Checkbox invalid aria-label="Invalid" />
       </div>
+    </div>
+  ),
+};
 
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Interactive</h3>
-        <p
-          style={{
-            fontSize: '0.875rem',
-            color: '#666',
-            marginBlockEnd: '1rem',
-          }}
-        >
-          Hover, focus (tab), and click to see interaction states
-        </p>
-        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <Checkbox aria-label="Interactive unchecked" />
-          <Checkbox checked aria-label="Interactive checked" readOnly />
-          <Checkbox indeterminate aria-label="Interactive indeterminate" />
-        </div>
-      </div>
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: () => (
+    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+      <Checkbox aria-label="Unchecked" />
+      <Checkbox checked aria-label="Checked" readOnly />
+      <Checkbox disabled aria-label="Disabled" />
     </div>
   ),
 };

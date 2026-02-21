@@ -1,6 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TextInput } from '@dsn/components-react';
 import DocsPage from './TextInput.docs.mdx';
+import {
+  TEKST,
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof TextInput> = {
   title: 'Components/TextInput',
@@ -22,70 +30,62 @@ const meta: Meta<typeof TextInput> = {
     placeholder: { control: 'text' },
   },
   args: {
-    placeholder: 'Enter text...',
+    placeholder: TEKST,
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof TextInput>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
+
+// =============================================================================
+// VARIANTEN
+// =============================================================================
 
 export const WithValue: Story = {
   name: 'With value',
-  args: {
-    defaultValue: 'Sample text',
-  },
-};
-
-export const Placeholder: Story = {
-  args: {
-    placeholder: 'Type your name here...',
-  },
+  args: { defaultValue: TEKST },
 };
 
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-    value: 'Disabled text',
-  },
+  args: { disabled: true, value: TEKST },
 };
 
 export const ReadOnly: Story = {
   name: 'Read-only',
-  args: {
-    readOnly: true,
-    value: 'Read-only text',
-  },
+  args: { readOnly: true, value: TEKST },
 };
 
 export const Invalid: Story = {
-  args: {
-    invalid: true,
-    value: 'Invalid input',
-  },
+  args: { invalid: true, value: TEKST },
 };
 
 export const Required: Story = {
-  args: {
-    required: true,
-    placeholder: 'Required field',
-  },
+  args: { required: true },
 };
 
 export const Widths: Story = {
   name: 'Width variants',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <TextInput width="xs" placeholder="xs — 10ch (postcode, CVV)" />
-      <TextInput width="sm" placeholder="sm — 14ch (tijdstip, korte codes)" />
-      <TextInput width="md" placeholder="md — 20ch (datum, telefoonnummer)" />
-      <TextInput width="lg" placeholder="lg — 32ch (naam, email)" />
-      <TextInput width="xl" placeholder="xl — 48ch (URL)" />
-      <TextInput width="full" placeholder="full — 100% (responsive)" />
+      <TextInput width="xs" placeholder="xs — 10ch" />
+      <TextInput width="sm" placeholder="sm — 14ch" />
+      <TextInput width="md" placeholder="md — 20ch" />
+      <TextInput width="lg" placeholder="lg — 32ch" />
+      <TextInput width="xl" placeholder="xl — 48ch" />
+      <TextInput width="full" placeholder="full — 100%" />
     </div>
   ),
 };
+
+// =============================================================================
+// OVERZICHTSSTORIES
+// =============================================================================
 
 export const AllStates: Story = {
   name: 'All states',
@@ -108,7 +108,7 @@ export const AllStates: Story = {
         >
           Default
         </label>
-        <TextInput placeholder="Enter text..." />
+        <TextInput placeholder={TEKST} />
       </div>
       <div>
         <label
@@ -120,7 +120,7 @@ export const AllStates: Story = {
         >
           With value
         </label>
-        <TextInput defaultValue="Sample text" />
+        <TextInput defaultValue={TEKST} />
       </div>
       <div>
         <label
@@ -132,7 +132,7 @@ export const AllStates: Story = {
         >
           Disabled
         </label>
-        <TextInput disabled value="Disabled text" />
+        <TextInput disabled value={TEKST} />
       </div>
       <div>
         <label
@@ -144,7 +144,7 @@ export const AllStates: Story = {
         >
           Read-only
         </label>
-        <TextInput readOnly value="Read-only text" />
+        <TextInput readOnly value={TEKST} />
       </div>
       <div>
         <label
@@ -156,8 +156,42 @@ export const AllStates: Story = {
         >
           Invalid
         </label>
-        <TextInput invalid value="Invalid input" />
+        <TextInput invalid value={TEKST} />
       </div>
     </div>
   ),
 };
+
+// =============================================================================
+// TEKST VARIANTEN
+// =============================================================================
+
+export const ShortText: Story = {
+  name: 'Short text',
+  args: { defaultValue: WEINIG_TEKST },
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  args: { defaultValue: VEEL_TEKST },
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  args: { defaultValue: TEKST_AR },
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { defaultValue: VEEL_TEKST_AR },
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================

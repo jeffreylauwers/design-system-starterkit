@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { PasswordInput } from '@dsn/components-react';
 import DocsPage from './PasswordInput.docs.mdx';
+import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof PasswordInput> = {
   title: 'Components/PasswordInput',
@@ -38,7 +39,15 @@ const meta: Meta<typeof PasswordInput> = {
 export default meta;
 type Story = StoryObj<typeof PasswordInput>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
+
+// =============================================================================
+// VARIANTEN
+// =============================================================================
 
 export const NewPassword: Story = {
   name: 'New password (registratie)',
@@ -49,25 +58,16 @@ export const NewPassword: Story = {
 };
 
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-    value: 'geheim123',
-  },
+  args: { disabled: true, value: 'geheim123' },
 };
 
 export const ReadOnly: Story = {
   name: 'Read-only',
-  args: {
-    readOnly: true,
-    value: 'geheim123',
-  },
+  args: { readOnly: true, value: 'geheim123' },
 };
 
 export const Invalid: Story = {
-  args: {
-    invalid: true,
-    value: 'te kort',
-  },
+  args: { invalid: true, value: 'te kort' },
 };
 
 export const Widths: Story = {
@@ -83,6 +83,10 @@ export const Widths: Story = {
     </div>
   ),
 };
+
+// =============================================================================
+// OVERZICHTSSTORIES
+// =============================================================================
 
 export const AllStates: Story = {
   name: 'All states',
@@ -106,6 +110,18 @@ export const AllStates: Story = {
           Default
         </label>
         <PasswordInput placeholder="Wachtwoord" />
+      </div>
+      <div>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          With value
+        </label>
+        <PasswordInput defaultValue="geheim123" />
       </div>
       <div>
         <label
@@ -146,3 +162,21 @@ export const AllStates: Story = {
     </div>
   ),
 };
+
+// =============================================================================
+// LARGE TEXT
+// =============================================================================
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  args: { defaultValue: 'geheim123' },
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================

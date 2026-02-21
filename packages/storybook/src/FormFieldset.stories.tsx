@@ -7,6 +7,13 @@ import {
   RadioOption,
 } from '@dsn/components-react';
 import DocsPage from './FormFieldset.docs.mdx';
+import {
+  TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof FormFieldset> = {
   title: 'Components/FormFieldset',
@@ -28,7 +35,7 @@ const meta: Meta<typeof FormFieldset> = {
     },
   },
   args: {
-    legend: 'Interesses',
+    legend: TEKST,
   },
 };
 
@@ -39,203 +46,156 @@ export const Default: Story = {
   render: (args) => (
     <FormFieldset {...args}>
       <CheckboxGroup>
-        <CheckboxOption label="Sport" value="sport" />
-        <CheckboxOption label="Muziek" value="music" />
-        <CheckboxOption label="Reizen" value="travel" />
+        <CheckboxOption label={TEKST} value="1" />
+        <CheckboxOption label={TEKST} value="2" />
+        <CheckboxOption label={TEKST} value="3" />
       </CheckboxGroup>
     </FormFieldset>
   ),
 };
 
+export const WithDescription: Story = {
+  name: 'With description',
+  render: (args) => (
+    <FormFieldset {...args} legend={TEKST} description={TEKST}>
+      <CheckboxGroup>
+        <CheckboxOption label={TEKST} value="1" />
+        <CheckboxOption label={TEKST} value="2" />
+        <CheckboxOption label={TEKST} value="3" />
+      </CheckboxGroup>
+    </FormFieldset>
+  ),
+};
+
+export const WithError: Story = {
+  name: 'With error (invalid)',
+  render: (args) => (
+    <FormFieldset {...args} legend={TEKST} error={TEKST}>
+      <CheckboxGroup>
+        <CheckboxOption label={TEKST} value="1" />
+        <CheckboxOption label={TEKST} value="2" />
+        <CheckboxOption label={TEKST} value="3" />
+      </CheckboxGroup>
+    </FormFieldset>
+  ),
+};
+
+export const WithRadioGroup: Story = {
+  name: 'With RadioGroup',
+  render: (args) => (
+    <FormFieldset {...args} legend={TEKST}>
+      <RadioGroup>
+        <RadioOption name="opts" label={TEKST} value="1" />
+        <RadioOption name="opts" label={TEKST} value="2" />
+        <RadioOption name="opts" label={TEKST} value="3" />
+      </RadioGroup>
+    </FormFieldset>
+  ),
+};
+
 export const AllStates: Story = {
+  name: 'All states',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Basic checkbox group</h3>
-        <FormFieldset legend="Interesses">
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Basic</h3>
+        <FormFieldset legend={TEKST}>
           <CheckboxGroup>
-            <CheckboxOption label="Sport" value="sport" />
-            <CheckboxOption label="Muziek" value="music" />
-            <CheckboxOption label="Reizen" value="travel" />
-            <CheckboxOption label="Lezen" value="reading" />
+            <CheckboxOption label={TEKST} value="1" />
+            <CheckboxOption label={TEKST} value="2" />
           </CheckboxGroup>
         </FormFieldset>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With description</h3>
-        <FormFieldset
-          legend="Notificatie voorkeuren"
-          description="Selecteer hoe je notificaties wilt ontvangen"
-        >
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>With description</h3>
+        <FormFieldset legend={TEKST} description={TEKST}>
           <CheckboxGroup>
-            <CheckboxOption label="E-mail" value="email" defaultChecked />
-            <CheckboxOption label="SMS" value="sms" />
-            <CheckboxOption
-              label="Push notificaties"
-              value="push"
-              defaultChecked
-            />
+            <CheckboxOption label={TEKST} value="1" />
+            <CheckboxOption label={TEKST} value="2" />
           </CheckboxGroup>
         </FormFieldset>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With optional suffix</h3>
-        <FormFieldset legend="Hobby's" legendSuffix="(niet verplicht)">
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>With optional suffix</h3>
+        <FormFieldset legend={TEKST} legendSuffix="(niet verplicht)">
           <CheckboxGroup>
-            <CheckboxOption label="Fotografie" value="photography" />
-            <CheckboxOption label="Koken" value="cooking" />
-            <CheckboxOption label="Tuinieren" value="gardening" />
+            <CheckboxOption label={TEKST} value="1" />
+            <CheckboxOption label={TEKST} value="2" />
           </CheckboxGroup>
         </FormFieldset>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          With error message (invalid state)
-        </h3>
-        <FormFieldset
-          legend="Privacy instellingen"
-          legendSuffix="(verplicht)"
-          description="Accepteer minimaal één privacy instelling"
-          error="Selecteer minimaal één optie om door te gaan"
-        >
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>With error</h3>
+        <FormFieldset legend={TEKST} error={TEKST}>
           <CheckboxGroup>
-            <CheckboxOption
-              label="Functionele cookies (verplicht)"
-              value="functional"
-              disabled
-              checked
-              readOnly
-            />
-            <CheckboxOption label="Analytische cookies" value="analytics" />
-            <CheckboxOption label="Marketing cookies" value="marketing" />
+            <CheckboxOption label={TEKST} value="1" />
+            <CheckboxOption label={TEKST} value="2" />
           </CheckboxGroup>
         </FormFieldset>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Radio group</h3>
-        <FormFieldset legend="Geslacht" legendSuffix="(verplicht)">
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>With status (positive)</h3>
+        <FormFieldset legend={TEKST} status={TEKST} statusVariant="positive">
+          <CheckboxGroup>
+            <CheckboxOption label={TEKST} value="1" defaultChecked />
+            <CheckboxOption label={TEKST} value="2" defaultChecked />
+          </CheckboxGroup>
+        </FormFieldset>
+      </div>
+      <div>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>RadioGroup</h3>
+        <FormFieldset legend={TEKST} legendSuffix="(verplicht)">
           <RadioGroup>
-            <RadioOption name="gender" label="Man" value="male" />
-            <RadioOption name="gender" label="Vrouw" value="female" />
-            <RadioOption name="gender" label="Anders" value="other" />
-            <RadioOption
-              name="gender"
-              label="Wil ik niet zeggen"
-              value="prefer-not-to-say"
-            />
-          </RadioGroup>
-        </FormFieldset>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          Radio group with description and error
-        </h3>
-        <FormFieldset
-          legend="Verzendmethode"
-          description="Kies hoe je je bestelling wilt ontvangen"
-          error="Selecteer een verzendmethode"
-        >
-          <RadioGroup>
-            <RadioOption
-              name="shipping"
-              label="Standaard verzending (3-5 dagen) - Gratis"
-              value="standard"
-            />
-            <RadioOption
-              name="shipping"
-              label="Express verzending (1-2 dagen) - €5,95"
-              value="express"
-            />
-            <RadioOption
-              name="shipping"
-              label="Ophalen in winkel - Gratis"
-              value="pickup"
-            />
-          </RadioGroup>
-        </FormFieldset>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          With status (warning variant)
-        </h3>
-        <FormFieldset
-          legend="Marketingvoorkeuren"
-          description="We respecteren je privacy"
-          status="Let op: deze instellingen zijn openbaar zichtbaar"
-          statusVariant="warning"
-        >
-          <CheckboxGroup>
-            <CheckboxOption label="Nieuwsbrief ontvangen" value="newsletter" />
-            <CheckboxOption label="Product updates" value="updates" />
-            <CheckboxOption
-              label="Promoties en aanbiedingen"
-              value="promotions"
-            />
-          </CheckboxGroup>
-        </FormFieldset>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          With status (positive variant)
-        </h3>
-        <FormFieldset
-          legend="Vereiste rechten"
-          status="Alle vereiste rechten zijn geaccepteerd"
-          statusVariant="positive"
-        >
-          <CheckboxGroup>
-            <CheckboxOption
-              label="Algemene voorwaarden"
-              value="terms"
-              defaultChecked
-            />
-            <CheckboxOption
-              label="Privacybeleid"
-              value="privacy"
-              defaultChecked
-            />
-            <CheckboxOption
-              label="Cookie beleid"
-              value="cookies"
-              defaultChecked
-            />
-          </CheckboxGroup>
-        </FormFieldset>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          Complete example (all sub-components)
-        </h3>
-        <FormFieldset
-          legend="Account type"
-          legendSuffix="(verplicht)"
-          description="Kies het type account dat bij je past"
-          error="Selecteer een account type"
-          status="Prijzen zijn exclusief BTW"
-        >
-          <RadioGroup>
-            <RadioOption
-              name="account"
-              label="Gratis - Voor individueel gebruik"
-              value="free"
-            />
-            <RadioOption name="account" label="Pro - €9,99/maand" value="pro" />
-            <RadioOption
-              name="account"
-              label="Business - €29,99/maand"
-              value="business"
-            />
+            <RadioOption name="r1" label={TEKST} value="1" />
+            <RadioOption name="r1" label={TEKST} value="2" />
+            <RadioOption name="r1" label={TEKST} value="3" />
           </RadioGroup>
         </FormFieldset>
       </div>
     </div>
+  ),
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  render: (args) => (
+    <FormFieldset {...args} legend={VEEL_TEKST} description={VEEL_TEKST}>
+      <CheckboxGroup>
+        <CheckboxOption label={VEEL_TEKST} value="1" />
+        <CheckboxOption label={VEEL_TEKST} value="2" />
+      </CheckboxGroup>
+    </FormFieldset>
+  ),
+};
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: (args) => (
+    <FormFieldset {...args} legend={TEKST_AR} description={TEKST_AR}>
+      <CheckboxGroup>
+        <CheckboxOption label={TEKST_AR} value="1" />
+        <CheckboxOption label={TEKST_AR} value="2" />
+        <CheckboxOption label={TEKST_AR} value="3" />
+      </CheckboxGroup>
+    </FormFieldset>
+  ),
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  render: (args) => (
+    <FormFieldset
+      {...args}
+      legend={VEEL_TEKST_AR}
+      description={VEEL_TEKST_AR}
+      error={VEEL_TEKST_AR}
+    >
+      <CheckboxGroup>
+        <CheckboxOption label={VEEL_TEKST_AR} value="1" />
+        <CheckboxOption label={VEEL_TEKST_AR} value="2" />
+      </CheckboxGroup>
+    </FormFieldset>
   ),
 };

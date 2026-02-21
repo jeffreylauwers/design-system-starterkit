@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DateInput } from '@dsn/components-react';
 import DocsPage from './DateInput.docs.mdx';
+import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof DateInput> = {
   title: 'Components/DateInput',
@@ -27,35 +28,37 @@ const meta: Meta<typeof DateInput> = {
 export default meta;
 type Story = StoryObj<typeof DateInput>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
+
+// =============================================================================
+// VARIANTEN
+// =============================================================================
 
 export const WithValue: Story = {
   name: 'With value',
-  args: {
-    defaultValue: '2025-03-15',
-  },
+  args: { defaultValue: '2026-03-15' },
 };
 
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-    value: '2025-03-15',
-  },
+  args: { disabled: true, value: '2026-03-15' },
 };
 
 export const ReadOnly: Story = {
   name: 'Read-only',
-  args: {
-    readOnly: true,
-    value: '2025-03-15',
-  },
+  args: { readOnly: true, value: '2026-03-15' },
 };
 
 export const Invalid: Story = {
-  args: {
-    invalid: true,
-  },
+  args: { invalid: true },
 };
+
+// =============================================================================
+// OVERZICHTSSTORIES
+// =============================================================================
 
 export const AllStates: Story = {
   name: 'All states',
@@ -83,7 +86,7 @@ export const AllStates: Story = {
         >
           With value
         </label>
-        <DateInput defaultValue="2025-03-15" />
+        <DateInput defaultValue="2026-03-15" />
       </div>
       <div>
         <label
@@ -95,7 +98,7 @@ export const AllStates: Story = {
         >
           Disabled
         </label>
-        <DateInput disabled value="2025-03-15" />
+        <DateInput disabled value="2026-03-15" />
       </div>
       <div>
         <label
@@ -107,7 +110,7 @@ export const AllStates: Story = {
         >
           Read-only
         </label>
-        <DateInput readOnly value="2025-03-15" />
+        <DateInput readOnly value="2026-03-15" />
       </div>
       <div>
         <label
@@ -124,3 +127,21 @@ export const AllStates: Story = {
     </div>
   ),
 };
+
+// =============================================================================
+// LARGE TEXT
+// =============================================================================
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  args: { defaultValue: '2026-03-15' },
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================

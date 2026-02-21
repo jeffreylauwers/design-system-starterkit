@@ -1,6 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { OrderedList } from '@dsn/components-react';
 import DocsPage from './OrderedList.docs.mdx';
+import {
+  TEKST,
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof OrderedList> = {
   title: 'Components/OrderedList',
@@ -17,9 +25,9 @@ const meta: Meta<typeof OrderedList> = {
   args: {
     children: (
       <>
-        <li>First step</li>
-        <li>Second step</li>
-        <li>Third step</li>
+        <li>{TEKST}</li>
+        <li>{TEKST}</li>
+        <li>{TEKST}</li>
       </>
     ),
   },
@@ -28,97 +36,135 @@ const meta: Meta<typeof OrderedList> = {
 export default meta;
 type Story = StoryObj<typeof OrderedList>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
 
-export const Examples: Story = {
+// =============================================================================
+// VARIANTEN
+// =============================================================================
+
+export const Reversed: Story = {
+  args: { reversed: true },
+};
+
+export const StartFrom: Story = {
+  name: 'Start from number',
+  args: { start: 5 },
+};
+
+export const Nested: Story = {
+  name: 'Nested',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Simple numbered list</h3>
+    <OrderedList>
+      <li>
+        {TEKST}
         <OrderedList>
-          <li>First step</li>
-          <li>Second step</li>
-          <li>Third step</li>
+          <li>{TEKST}</li>
+          <li>{TEKST}</li>
+          <li>
+            {TEKST}
+            <OrderedList>
+              <li>{TEKST}</li>
+              <li>{TEKST}</li>
+            </OrderedList>
+          </li>
         </OrderedList>
-      </div>
+      </li>
+      <li>{TEKST}</li>
+      <li>{TEKST}</li>
+    </OrderedList>
+  ),
+};
 
+export const AllVariants: Story = {
+  name: 'All variants',
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>List with longer content</h3>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Default</h3>
         <OrderedList>
-          <li>
-            First step with a longer description that spans multiple lines to
-            demonstrate how the list handles text wrapping and line height.
-          </li>
-          <li>
-            Second step also has extended text to show consistent spacing and
-            alignment across items of varying lengths.
-          </li>
-          <li>Third step with shorter text</li>
+          <li>{TEKST}</li>
+          <li>{TEKST}</li>
+          <li>{TEKST}</li>
         </OrderedList>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          Starting from a specific number
-        </h3>
-        <OrderedList start={5}>
-          <li>Fifth step (starts at 5)</li>
-          <li>Sixth step</li>
-          <li>Seventh step</li>
-        </OrderedList>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Reversed numbering</h3>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Reversed</h3>
         <OrderedList reversed>
-          <li>Third step (shows 3)</li>
-          <li>Second step (shows 2)</li>
-          <li>First step (shows 1)</li>
+          <li>{TEKST}</li>
+          <li>{TEKST}</li>
+          <li>{TEKST}</li>
         </OrderedList>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Nested ordered lists</h3>
-        <OrderedList>
-          <li>
-            Parent step 1
-            <OrderedList>
-              <li>Substep 1.1</li>
-              <li>Substep 1.2</li>
-              <li>
-                Substep 1.3
-                <OrderedList>
-                  <li>Sub-substep 1.3.1</li>
-                  <li>Sub-substep 1.3.2</li>
-                </OrderedList>
-              </li>
-            </OrderedList>
-          </li>
-          <li>
-            Parent step 2
-            <OrderedList>
-              <li>Substep 2.1</li>
-              <li>Substep 2.2</li>
-            </OrderedList>
-          </li>
-          <li>Parent step 3</li>
-        </OrderedList>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>List with inline elements</h3>
-        <OrderedList>
-          <li>
-            Step with <strong>bold text</strong> and <em>italic text</em>
-          </li>
-          <li>
-            Step with a <a href="#">link to another page</a>
-          </li>
-          <li>
-            Step with <code>inline code</code> formatting
-          </li>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Start from 5</h3>
+        <OrderedList start={5}>
+          <li>{TEKST}</li>
+          <li>{TEKST}</li>
+          <li>{TEKST}</li>
         </OrderedList>
       </div>
     </div>
   ),
 };
+
+// =============================================================================
+// TEKST VARIANTEN
+// =============================================================================
+
+export const ShortText: Story = {
+  name: 'Short text',
+  render: () => (
+    <OrderedList>
+      <li>{WEINIG_TEKST}</li>
+      <li>{WEINIG_TEKST}</li>
+      <li>{WEINIG_TEKST}</li>
+    </OrderedList>
+  ),
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  render: () => (
+    <OrderedList>
+      <li>{VEEL_TEKST}</li>
+      <li>{VEEL_TEKST}</li>
+      <li>{VEEL_TEKST}</li>
+    </OrderedList>
+  ),
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: () => (
+    <OrderedList>
+      <li>{TEKST_AR}</li>
+      <li>{TEKST_AR}</li>
+      <li>{TEKST_AR}</li>
+    </OrderedList>
+  ),
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  render: () => (
+    <OrderedList>
+      <li>{VEEL_TEKST_AR}</li>
+      <li>{VEEL_TEKST_AR}</li>
+      <li>{VEEL_TEKST_AR}</li>
+    </OrderedList>
+  ),
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================

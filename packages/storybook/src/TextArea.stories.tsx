@@ -1,6 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TextArea } from '@dsn/components-react';
 import DocsPage from './TextArea.docs.mdx';
+import {
+  TEKST,
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof TextArea> = {
   title: 'Components/TextArea',
@@ -23,7 +31,7 @@ const meta: Meta<typeof TextArea> = {
     rows: { control: 'number' },
   },
   args: {
-    placeholder: 'Enter text...',
+    placeholder: TEKST,
     rows: 4,
   },
 };
@@ -31,170 +39,206 @@ const meta: Meta<typeof TextArea> = {
 export default meta;
 type Story = StoryObj<typeof TextArea>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
 
-export const AllStates: Story = {
+// =============================================================================
+// VARIANTEN
+// =============================================================================
+
+export const WithValue: Story = {
+  name: 'With value',
+  args: { defaultValue: TEKST, readOnly: true },
+};
+
+export const Disabled: Story = {
+  args: { disabled: true, value: TEKST },
+};
+
+export const ReadOnly: Story = {
+  name: 'Read-only',
+  args: { readOnly: true, value: TEKST },
+};
+
+export const Invalid: Story = {
+  args: { invalid: true, value: TEKST },
+};
+
+export const RowVariants: Story = {
+  name: 'Row variants',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '2rem',
+        maxWidth: '400px',
+      }}
+    >
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Default state</h3>
-        <TextArea placeholder="Enter your message..." rows={4} />
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With value</h3>
-        <TextArea
-          value="This is a sample text that spans multiple lines to demonstrate how the textarea component handles longer content."
-          rows={4}
-          readOnly
-        />
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Disabled state</h3>
-        <TextArea
-          disabled
-          placeholder="Disabled textarea"
-          value="Cannot edit this text"
-          rows={3}
-        />
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Read-only state</h3>
-        <TextArea
-          readOnly
-          value="Read-only content that cannot be modified"
-          rows={3}
-        />
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Invalid state</h3>
-        <TextArea
-          invalid
-          placeholder="Invalid textarea"
-          aria-invalid="true"
-          rows={3}
-        />
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Interactive (hover, focus)</h3>
-        <p
+        <label
           style={{
-            fontSize: '0.875rem',
-            color: '#666',
-            marginBlockEnd: '1rem',
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
           }}
         >
-          Hover over the textarea and click to focus. Notice the border changes.
-          You can resize it vertically.
-        </p>
-        <TextArea
-          placeholder="Try hovering, focusing, and resizing..."
-          rows={4}
-        />
+          2 rijen
+        </label>
+        <TextArea rows={2} placeholder={TEKST} />
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Different row heights</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBlockEnd: '0.5rem',
-                fontSize: '0.875rem',
-              }}
-            >
-              2 rows - Short message
-            </label>
-            <TextArea rows={2} placeholder="Short message" />
-          </div>
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBlockEnd: '0.5rem',
-                fontSize: '0.875rem',
-              }}
-            >
-              4 rows - Default
-            </label>
-            <TextArea rows={4} placeholder="Default message size" />
-          </div>
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBlockEnd: '0.5rem',
-                fontSize: '0.875rem',
-              }}
-            >
-              8 rows - Long message
-            </label>
-            <TextArea
-              rows={8}
-              placeholder="Long message or detailed description"
-            />
-          </div>
-        </div>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          4 rijen (default)
+        </label>
+        <TextArea rows={4} placeholder={TEKST} />
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Width variants</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBlockEnd: '0.5rem',
-                fontSize: '0.875rem',
-              }}
-            >
-              SM (16ch) - Narrow
-            </label>
-            <TextArea width="sm" placeholder="Narrow textarea" rows={3} />
-          </div>
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBlockEnd: '0.5rem',
-                fontSize: '0.875rem',
-              }}
-            >
-              MD (32ch) - Medium
-            </label>
-            <TextArea width="md" placeholder="Medium textarea" rows={3} />
-          </div>
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBlockEnd: '0.5rem',
-                fontSize: '0.875rem',
-              }}
-            >
-              LG (48ch) - Large
-            </label>
-            <TextArea width="lg" placeholder="Large textarea" rows={3} />
-          </div>
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBlockEnd: '0.5rem',
-                fontSize: '0.875rem',
-              }}
-            >
-              Full (100%) - Responsive
-            </label>
-            <TextArea width="full" placeholder="Full width textarea" rows={3} />
-          </div>
-        </div>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          8 rijen
+        </label>
+        <TextArea rows={8} placeholder={TEKST} />
       </div>
     </div>
   ),
 };
+
+export const Widths: Story = {
+  name: 'Width variants',
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <TextArea width="sm" placeholder="sm — 16ch" rows={2} />
+      <TextArea width="md" placeholder="md — 32ch" rows={2} />
+      <TextArea width="lg" placeholder="lg — 48ch" rows={2} />
+      <TextArea width="full" placeholder="full — 100%" rows={2} />
+    </div>
+  ),
+};
+
+// =============================================================================
+// OVERZICHTSSTORIES
+// =============================================================================
+
+export const AllStates: Story = {
+  name: 'All states',
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem',
+        maxWidth: '400px',
+      }}
+    >
+      <div>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Default
+        </label>
+        <TextArea placeholder={TEKST} rows={3} />
+      </div>
+      <div>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          With value
+        </label>
+        <TextArea defaultValue={TEKST} rows={3} readOnly />
+      </div>
+      <div>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Disabled
+        </label>
+        <TextArea disabled value={TEKST} rows={3} />
+      </div>
+      <div>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Read-only
+        </label>
+        <TextArea readOnly value={TEKST} rows={3} />
+      </div>
+      <div>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Invalid
+        </label>
+        <TextArea invalid value={TEKST} rows={3} />
+      </div>
+    </div>
+  ),
+};
+
+// =============================================================================
+// TEKST VARIANTEN
+// =============================================================================
+
+export const ShortText: Story = {
+  name: 'Short text',
+  args: { defaultValue: WEINIG_TEKST },
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  args: { defaultValue: VEEL_TEKST },
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  args: { defaultValue: TEKST_AR, readOnly: true },
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { defaultValue: VEEL_TEKST_AR, readOnly: true },
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================

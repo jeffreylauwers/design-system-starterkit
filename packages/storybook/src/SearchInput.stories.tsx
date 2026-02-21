@@ -1,6 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { SearchInput } from '@dsn/components-react';
 import DocsPage from './SearchInput.docs.mdx';
+import {
+  TEKST,
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof SearchInput> = {
   title: 'Components/SearchInput',
@@ -33,41 +41,32 @@ const meta: Meta<typeof SearchInput> = {
 export default meta;
 type Story = StoryObj<typeof SearchInput>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
+
+// =============================================================================
+// VARIANTEN
+// =============================================================================
 
 export const WithValue: Story = {
   name: 'With value',
-  args: {
-    defaultValue: 'zoekterm',
-  },
-};
-
-export const Placeholder: Story = {
-  args: {
-    placeholder: "Zoek producten, pagina's, documenten...",
-  },
+  args: { defaultValue: TEKST },
 };
 
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-    value: 'zoekterm',
-  },
+  args: { disabled: true, value: TEKST },
 };
 
 export const ReadOnly: Story = {
   name: 'Read-only',
-  args: {
-    readOnly: true,
-    value: 'zoekterm',
-  },
+  args: { readOnly: true, value: TEKST },
 };
 
 export const Invalid: Story = {
-  args: {
-    invalid: true,
-    value: 'te kort',
-  },
+  args: { invalid: true, value: TEKST },
 };
 
 export const Widths: Story = {
@@ -83,6 +82,10 @@ export const Widths: Story = {
     </div>
   ),
 };
+
+// =============================================================================
+// OVERZICHTSSTORIES
+// =============================================================================
 
 export const AllStates: Story = {
   name: 'All states',
@@ -117,7 +120,7 @@ export const AllStates: Story = {
         >
           With value
         </label>
-        <SearchInput defaultValue="zoekterm" />
+        <SearchInput defaultValue={TEKST} />
       </div>
       <div>
         <label
@@ -129,7 +132,7 @@ export const AllStates: Story = {
         >
           Disabled
         </label>
-        <SearchInput disabled value="zoekterm" />
+        <SearchInput disabled value={TEKST} />
       </div>
       <div>
         <label
@@ -141,7 +144,7 @@ export const AllStates: Story = {
         >
           Read-only
         </label>
-        <SearchInput readOnly value="zoekterm" />
+        <SearchInput readOnly value={TEKST} />
       </div>
       <div>
         <label
@@ -153,8 +156,42 @@ export const AllStates: Story = {
         >
           Invalid
         </label>
-        <SearchInput invalid value="te kort" />
+        <SearchInput invalid value={TEKST} />
       </div>
     </div>
   ),
 };
+
+// =============================================================================
+// TEKST VARIANTEN
+// =============================================================================
+
+export const ShortText: Story = {
+  name: 'Short text',
+  args: { defaultValue: WEINIG_TEKST },
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  args: { defaultValue: VEEL_TEKST },
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  args: { defaultValue: TEKST_AR },
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { defaultValue: VEEL_TEKST_AR },
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================

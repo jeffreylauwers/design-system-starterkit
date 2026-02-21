@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Select } from '@dsn/components-react';
 import DocsPage from './Select.docs.mdx';
+import { rtlDecorator } from './story-helpers';
 
 const OPTIONS = (
   <>
@@ -10,6 +11,17 @@ const OPTIONS = (
     <option value="de">Duitsland</option>
     <option value="fr">Frankrijk</option>
     <option value="gb">Verenigd Koninkrijk</option>
+  </>
+);
+
+const OPTIONS_AR = (
+  <>
+    <option value="">اختر خيارًا</option>
+    <option value="nl">هولندا</option>
+    <option value="be">بلجيكا</option>
+    <option value="de">ألمانيا</option>
+    <option value="fr">فرنسا</option>
+    <option value="gb">المملكة المتحدة</option>
   </>
 );
 
@@ -41,26 +53,27 @@ const meta: Meta<typeof Select> = {
 export default meta;
 type Story = StoryObj<typeof Select>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
+
+// =============================================================================
+// VARIANTEN
+// =============================================================================
 
 export const WithValue: Story = {
   name: 'With value',
-  args: {
-    defaultValue: 'nl',
-  },
+  args: { defaultValue: 'nl' },
 };
 
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-    defaultValue: 'nl',
-  },
+  args: { disabled: true, defaultValue: 'nl' },
 };
 
 export const Invalid: Story = {
-  args: {
-    invalid: true,
-  },
+  args: { invalid: true },
 };
 
 export const Widths: Story = {
@@ -76,6 +89,10 @@ export const Widths: Story = {
     </div>
   ),
 };
+
+// =============================================================================
+// OVERZICHTSSTORIES
+// =============================================================================
 
 export const AllStates: Story = {
   name: 'All states',
@@ -141,3 +158,21 @@ export const AllStates: Story = {
     </div>
   ),
 };
+
+// =============================================================================
+// LARGE TEXT
+// =============================================================================
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: () => <Select defaultValue="nl">{OPTIONS_AR}</Select>,
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================

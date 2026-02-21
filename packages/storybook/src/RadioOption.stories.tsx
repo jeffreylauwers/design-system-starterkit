@@ -1,6 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { RadioOption } from '@dsn/components-react';
 import DocsPage from './RadioOption.docs.mdx';
+import {
+  TEKST,
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof RadioOption> = {
   title: 'Components/RadioOption',
@@ -18,7 +26,7 @@ const meta: Meta<typeof RadioOption> = {
     label: { control: 'text' },
   },
   args: {
-    label: 'Radio option',
+    label: TEKST,
     name: 'demo',
   },
 };
@@ -28,107 +36,94 @@ type Story = StoryObj<typeof RadioOption>;
 
 export const Default: Story = {};
 
+export const Checked: Story = {
+  args: { checked: true, readOnly: true, label: TEKST },
+};
+
+export const Disabled: Story = {
+  args: { disabled: true, label: TEKST },
+};
+
+export const DisabledChecked: Story = {
+  name: 'Disabled checked',
+  args: { disabled: true, checked: true, readOnly: true, label: TEKST },
+};
+
+export const Invalid: Story = {
+  args: { invalid: true, label: TEKST },
+};
+
+export const ShortText: Story = {
+  name: 'Short text',
+  args: { label: WEINIG_TEKST },
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  args: { label: VEEL_TEKST },
+};
+
 export const AllStates: Story = {
+  name: 'All states',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Default states</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <RadioOption
-            label="Unchecked option"
-            name="demo-1"
-            value="unchecked"
-          />
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Default states</h3>
+        <div
+          style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}
+        >
+          <RadioOption label={TEKST} name="demo-1" value="unchecked" />
           <RadioOption
             checked
-            label="Checked option"
+            label={TEKST}
             name="demo-1"
             value="checked"
             readOnly
           />
         </div>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Disabled states</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Disabled states</h3>
+        <div
+          style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}
+        >
           <RadioOption
             disabled
-            label="Disabled unchecked"
+            label={TEKST}
             name="demo-2"
             value="disabled-unchecked"
           />
           <RadioOption
             checked
             disabled
-            label="Disabled checked"
+            label={TEKST}
             name="demo-2"
             value="disabled-checked"
             readOnly
           />
         </div>
       </div>
-
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Invalid state</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <RadioOption
-            invalid
-            label="Invalid option"
-            name="demo-3"
-            value="invalid"
-          />
-        </div>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Interactive group</h3>
-        <p
-          style={{
-            fontSize: '0.875rem',
-            color: '#666',
-            marginBlockEnd: '1rem',
-          }}
-        >
-          Click anywhere on the label or radio button to select. Only one can be
-          selected at a time.
-        </p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <RadioOption
-            label="Option A"
-            name="demo-4"
-            value="a"
-            defaultChecked
-          />
-          <RadioOption label="Option B" name="demo-4" value="b" />
-          <RadioOption label="Option C" name="demo-4" value="c" />
-        </div>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Long labels</h3>
-        <div
-          style={{
-            maxWidth: '400px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem',
-          }}
-        >
-          <RadioOption
-            label="This is a longer label that demonstrates how the radio option handles text wrapping when the label exceeds the available width. The label should maintain proper alignment with the radio button."
-            name="demo-5"
-            value="long-1"
-          />
-          <RadioOption
-            checked
-            label="Another long label that is checked to show how the checked state works with wrapped text. Notice how the radio button stays aligned at the top."
-            name="demo-5"
-            value="long-2"
-            readOnly
-          />
-        </div>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Invalid state</h3>
+        <RadioOption invalid label={TEKST} name="demo-3" value="invalid" />
       </div>
     </div>
   ),
+};
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+      <RadioOption label={TEKST_AR} name="rtl-1" value="a" />
+      <RadioOption checked label={TEKST_AR} name="rtl-1" value="b" readOnly />
+    </div>
+  ),
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { label: VEEL_TEKST_AR },
 };

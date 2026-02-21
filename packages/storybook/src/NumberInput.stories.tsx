@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { NumberInput } from '@dsn/components-react';
 import DocsPage from './NumberInput.docs.mdx';
+import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof NumberInput> = {
   title: 'Components/NumberInput',
@@ -35,50 +36,41 @@ const meta: Meta<typeof NumberInput> = {
 export default meta;
 type Story = StoryObj<typeof NumberInput>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
+
+// =============================================================================
+// VARIANTEN
+// =============================================================================
 
 export const WithDecimals: Story = {
   name: 'With decimals (allowDecimals)',
   args: {
     allowDecimals: true,
     placeholder: '0,00',
-    defaultValue: '1.234,56',
+    defaultValue: '1234',
   },
 };
 
 export const WithValue: Story = {
   name: 'With value',
-  args: {
-    defaultValue: '42',
-  },
-};
-
-export const Placeholder: Story = {
-  args: {
-    placeholder: 'Bijv. 1.234,56',
-  },
+  args: { defaultValue: '42' },
 };
 
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-    value: '1.234,56',
-  },
+  args: { disabled: true, value: '42' },
 };
 
 export const ReadOnly: Story = {
   name: 'Read-only',
-  args: {
-    readOnly: true,
-    value: '1.234,56',
-  },
+  args: { readOnly: true, value: '42' },
 };
 
 export const Invalid: Story = {
-  args: {
-    invalid: true,
-    value: 'abc',
-  },
+  args: { invalid: true, value: 'abc' },
 };
 
 export const Widths: Story = {
@@ -94,6 +86,10 @@ export const Widths: Story = {
     </div>
   ),
 };
+
+// =============================================================================
+// OVERZICHTSSTORIES
+// =============================================================================
 
 export const AllStates: Story = {
   name: 'All states',
@@ -116,7 +112,7 @@ export const AllStates: Story = {
         >
           Default
         </label>
-        <NumberInput placeholder="0,00" />
+        <NumberInput placeholder="0" />
       </div>
       <div>
         <label
@@ -128,7 +124,7 @@ export const AllStates: Story = {
         >
           With value
         </label>
-        <NumberInput defaultValue="1.234,56" />
+        <NumberInput defaultValue="42" />
       </div>
       <div>
         <label
@@ -140,7 +136,7 @@ export const AllStates: Story = {
         >
           Disabled
         </label>
-        <NumberInput disabled value="1.234,56" />
+        <NumberInput disabled value="42" />
       </div>
       <div>
         <label
@@ -152,7 +148,7 @@ export const AllStates: Story = {
         >
           Read-only
         </label>
-        <NumberInput readOnly value="1.234,56" />
+        <NumberInput readOnly value="42" />
       </div>
       <div>
         <label
@@ -169,3 +165,21 @@ export const AllStates: Story = {
     </div>
   ),
 };
+
+// =============================================================================
+// LARGE TEXT
+// =============================================================================
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  args: { defaultValue: '٤٢' },
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================

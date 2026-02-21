@@ -6,6 +6,7 @@ import {
   FormFieldset,
 } from '@dsn/components-react';
 import DocsPage from './DateInputGroup.docs.mdx';
+import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof DateInputGroup> = {
   title: 'Components/DateInputGroup',
@@ -28,6 +29,7 @@ const meta: Meta<typeof DateInputGroup> = {
 export default meta;
 type Story = StoryObj<typeof DateInputGroup>;
 
+// Helper components
 function DefaultStory(args: React.ComponentProps<typeof DateInputGroup>) {
   const [value, setValue] = useState<DateInputGroupValue>({
     day: '',
@@ -89,7 +91,15 @@ function InvalidStory(args: React.ComponentProps<typeof DateInputGroup>) {
   );
 }
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = { render: (args) => <DefaultStory {...args} /> };
+
+// =============================================================================
+// VARIANTEN
+// =============================================================================
 
 export const WithValue: Story = {
   name: 'With value',
@@ -117,3 +127,21 @@ export const Disabled: Story = {
     </FormFieldset>
   ),
 };
+
+// =============================================================================
+// LARGE TEXT
+// =============================================================================
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: (args) => <WithValueStory {...args} />,
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================
