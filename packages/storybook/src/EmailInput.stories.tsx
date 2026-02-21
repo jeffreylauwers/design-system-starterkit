@@ -1,6 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { EmailInput } from '@dsn/components-react';
 import DocsPage from './EmailInput.docs.mdx';
+import {
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+  largeTextDecorator,
+  highContrastDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof EmailInput> = {
   title: 'Components/EmailInput',
@@ -33,35 +42,32 @@ const meta: Meta<typeof EmailInput> = {
 export default meta;
 type Story = StoryObj<typeof EmailInput>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
+
+// =============================================================================
+// VARIANTEN
+// =============================================================================
 
 export const WithValue: Story = {
   name: 'With value',
-  args: {
-    defaultValue: 'jan@voorbeeld.nl',
-  },
+  args: { defaultValue: 'jan@voorbeeld.nl' },
 };
 
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-    value: 'jan@voorbeeld.nl',
-  },
+  args: { disabled: true, value: 'jan@voorbeeld.nl' },
 };
 
 export const ReadOnly: Story = {
   name: 'Read-only',
-  args: {
-    readOnly: true,
-    value: 'jan@voorbeeld.nl',
-  },
+  args: { readOnly: true, value: 'jan@voorbeeld.nl' },
 };
 
 export const Invalid: Story = {
-  args: {
-    invalid: true,
-    value: 'geen-geldig-email',
-  },
+  args: { invalid: true, value: 'geen-geldig-email' },
 };
 
 export const Widths: Story = {
@@ -77,6 +83,10 @@ export const Widths: Story = {
     </div>
   ),
 };
+
+// =============================================================================
+// OVERZICHTSSTORIES
+// =============================================================================
 
 export const AllStates: Story = {
   name: 'All states',
@@ -149,6 +159,65 @@ export const AllStates: Story = {
         </label>
         <EmailInput invalid value="geen-geldig-email" />
       </div>
+    </div>
+  ),
+};
+
+// =============================================================================
+// TEKST VARIANTEN
+// =============================================================================
+
+export const ShortText: Story = {
+  name: 'Short text',
+  args: { defaultValue: WEINIG_TEKST },
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  args: { defaultValue: VEEL_TEKST },
+};
+
+export const LargeText: Story = {
+  name: 'Large text (200%)',
+  decorators: [largeTextDecorator],
+  args: { defaultValue: 'jan@voorbeeld.nl' },
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  args: { defaultValue: TEKST_AR },
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { defaultValue: VEEL_TEKST_AR },
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================
+
+export const HighContrast: Story = {
+  name: 'High contrast',
+  decorators: [highContrastDecorator],
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem',
+        maxWidth: '400px',
+      }}
+    >
+      <EmailInput defaultValue="jan@voorbeeld.nl" />
+      <EmailInput disabled value="jan@voorbeeld.nl" />
+      <EmailInput invalid value="geen-geldig-email" />
     </div>
   ),
 };

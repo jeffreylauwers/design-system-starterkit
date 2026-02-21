@@ -1,6 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button, Icon } from '@dsn/components-react';
 import type { IconName } from '@dsn/components-react/icon-registry.generated';
+import DocsPage from './Button.docs.mdx';
+import {
+  TEKST,
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+  largeTextDecorator,
+  highContrastDecorator,
+} from './story-helpers';
 
 const iconOptions: (IconName | undefined)[] = [
   undefined,
@@ -54,6 +65,11 @@ const iconOptions: (IconName | undefined)[] = [
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
+  parameters: {
+    docs: {
+      page: DocsPage,
+    },
+  },
   argTypes: {
     variant: {
       control: 'select',
@@ -102,7 +118,7 @@ const meta: Meta<typeof Button> = {
     },
   },
   args: {
-    children: 'Button',
+    children: TEKST,
     variant: 'strong',
     size: 'default',
   },
@@ -111,35 +127,43 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
 
+// =============================================================================
+// VARIANTEN
+// =============================================================================
+
 export const Strong: Story = {
-  args: { variant: 'strong', children: 'Strong' },
+  args: { variant: 'strong', children: TEKST },
 };
 
 export const DefaultVariant: Story = {
   name: 'Default variant',
-  args: { variant: 'default', children: 'Default' },
+  args: { variant: 'default', children: TEKST },
 };
 
 export const Subtle: Story = {
-  args: { variant: 'subtle', children: 'Subtle' },
+  args: { variant: 'subtle', children: TEKST },
 };
 
 export const Link: Story = {
-  args: { variant: 'link', children: 'Link button' },
+  args: { variant: 'link', children: TEKST },
 };
 
 export const Small: Story = {
-  args: { size: 'small', children: 'Small' },
+  args: { size: 'small', children: TEKST },
 };
 
 export const Large: Story = {
-  args: { size: 'large', children: 'Large' },
+  args: { size: 'large', children: TEKST },
 };
 
 export const Loading: Story = {
-  args: { loading: true, children: 'Saving...' },
+  args: { loading: true, children: TEKST },
 };
 
 export const LoadingWithIcon: Story = {
@@ -154,13 +178,13 @@ export const LoadingWithIcon: Story = {
       }}
     >
       <Button variant="strong" loading iconStart={<Icon name="check" />}>
-        Saving...
+        {TEKST}
       </Button>
       <Button variant="default" loading iconStart={<Icon name="edit" />}>
-        Updating...
+        {TEKST}
       </Button>
       <Button variant="subtle" loading>
-        Loading...
+        {TEKST}
       </Button>
     </div>
   ),
@@ -171,90 +195,34 @@ export const LoadingSizes: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
       <Button size="small" loading>
-        Small
+        {TEKST}
       </Button>
       <Button size="default" loading>
-        Default
+        {TEKST}
       </Button>
       <Button size="large" loading>
-        Large
+        {TEKST}
       </Button>
     </div>
   ),
 };
 
 export const Disabled: Story = {
-  args: { disabled: true, children: 'Disabled' },
+  args: { disabled: true, children: TEKST },
 };
 
 export const FullWidth: Story = {
-  args: { fullWidth: true, children: 'Full width' },
+  args: { fullWidth: true, children: TEKST },
 };
 
 export const NegativeSentiment: Story = {
   name: 'Negative sentiment',
-  args: { variant: 'strong-negative', children: 'Delete' },
+  args: { variant: 'strong-negative', children: TEKST },
 };
 
 export const PositiveSentiment: Story = {
   name: 'Positive sentiment',
-  args: { variant: 'strong-positive', children: 'Confirm' },
-};
-
-export const AllVariants: Story = {
-  name: 'All variants',
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <div
-        style={{
-          display: 'flex',
-          gap: '0.5rem',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-        }}
-      >
-        <Button variant="strong">Strong</Button>
-        <Button variant="default">Default</Button>
-        <Button variant="subtle">Subtle</Button>
-        <Button variant="link">Link</Button>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          gap: '0.5rem',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-        }}
-      >
-        <Button variant="strong-negative">Strong negative</Button>
-        <Button variant="default-negative">Default negative</Button>
-        <Button variant="subtle-negative">Subtle negative</Button>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          gap: '0.5rem',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-        }}
-      >
-        <Button variant="strong-positive">Strong positive</Button>
-        <Button variant="default-positive">Default positive</Button>
-        <Button variant="subtle-positive">Subtle positive</Button>
-      </div>
-    </div>
-  ),
-};
-
-export const AllSizes: Story = {
-  name: 'All sizes',
-  render: () => (
-    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-      <Button size="small">Small</Button>
-      <Button size="default">Default</Button>
-      <Button size="large">Large</Button>
-    </div>
-  ),
+  args: { variant: 'strong-positive', children: TEKST },
 };
 
 export const WithIconStart: Story = {
@@ -269,16 +237,16 @@ export const WithIconStart: Story = {
       }}
     >
       <Button variant="strong" iconStart={<Icon name="check" />}>
-        Save
+        {TEKST}
       </Button>
       <Button variant="default" iconStart={<Icon name="edit" />}>
-        Edit
+        {TEKST}
       </Button>
       <Button variant="subtle" iconStart={<Icon name="download" />}>
-        Download
+        {TEKST}
       </Button>
       <Button variant="strong-negative" iconStart={<Icon name="trash" />}>
-        Delete
+        {TEKST}
       </Button>
     </div>
   ),
@@ -296,13 +264,13 @@ export const WithIconEnd: Story = {
       }}
     >
       <Button variant="strong" iconEnd={<Icon name="arrow-right" />}>
-        Next
+        {TEKST}
       </Button>
       <Button variant="default" iconEnd={<Icon name="arrow-right" />}>
-        Open
+        {TEKST}
       </Button>
       <Button variant="subtle" iconEnd={<Icon name="chevron-down" />}>
-        More
+        {TEKST}
       </Button>
     </div>
   ),
@@ -324,14 +292,14 @@ export const WithIconStartAndEnd: Story = {
         iconStart={<Icon name="check" />}
         iconEnd={<Icon name="arrow-right" />}
       >
-        Confirm & continue
+        {TEKST}
       </Button>
       <Button
         variant="default"
         iconStart={<Icon name="edit" />}
         iconEnd={<Icon name="chevron-down" />}
       >
-        Edit options
+        {TEKST}
       </Button>
     </div>
   ),
@@ -342,13 +310,13 @@ export const IconSizes: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
       <Button size="small" iconStart={<Icon name="check" />}>
-        Small
+        {TEKST}
       </Button>
       <Button size="default" iconStart={<Icon name="check" />}>
-        Default
+        {TEKST}
       </Button>
       <Button size="large" iconStart={<Icon name="check" />}>
-        Large
+        {TEKST}
       </Button>
     </div>
   ),
@@ -358,18 +326,168 @@ export const IconOnly: Story = {
   name: 'Icon only',
   render: () => (
     <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-      <Button variant="strong" iconOnly aria-label="Add">
+      <Button variant="strong" iconOnly aria-label="Toevoegen">
         <Icon name="plus" />
       </Button>
-      <Button variant="default" iconOnly aria-label="Settings">
+      <Button variant="default" iconOnly aria-label="Instellingen">
         <Icon name="settings" />
       </Button>
-      <Button variant="subtle" iconOnly aria-label="Close">
+      <Button variant="subtle" iconOnly aria-label="Sluiten">
         <Icon name="x" />
       </Button>
-      <Button variant="strong-negative" iconOnly aria-label="Delete">
+      <Button variant="strong-negative" iconOnly aria-label="Verwijderen">
         <Icon name="trash" />
       </Button>
+    </div>
+  ),
+};
+
+// =============================================================================
+// OVERZICHTSSTORIES
+// =============================================================================
+
+export const AllVariants: Story = {
+  name: 'All variants',
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          gap: '0.5rem',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+        }}
+      >
+        <Button variant="strong">{TEKST}</Button>
+        <Button variant="default">{TEKST}</Button>
+        <Button variant="subtle">{TEKST}</Button>
+        <Button variant="link">{TEKST}</Button>
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          gap: '0.5rem',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+        }}
+      >
+        <Button variant="strong-negative">{TEKST}</Button>
+        <Button variant="default-negative">{TEKST}</Button>
+        <Button variant="subtle-negative">{TEKST}</Button>
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          gap: '0.5rem',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+        }}
+      >
+        <Button variant="strong-positive">{TEKST}</Button>
+        <Button variant="default-positive">{TEKST}</Button>
+        <Button variant="subtle-positive">{TEKST}</Button>
+      </div>
+    </div>
+  ),
+};
+
+export const AllSizes: Story = {
+  name: 'All sizes',
+  render: () => (
+    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+      <Button size="small">{TEKST}</Button>
+      <Button size="default">{TEKST}</Button>
+      <Button size="large">{TEKST}</Button>
+    </div>
+  ),
+};
+
+export const AllStates: Story = {
+  name: 'All states',
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        gap: '0.5rem',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+      }}
+    >
+      <Button variant="strong">{TEKST}</Button>
+      <Button variant="strong" disabled>
+        {TEKST}
+      </Button>
+      <Button variant="strong" loading>
+        {TEKST}
+      </Button>
+    </div>
+  ),
+};
+
+// =============================================================================
+// TEKST VARIANTEN
+// =============================================================================
+
+export const ShortText: Story = {
+  name: 'Short text',
+  args: { children: WEINIG_TEKST },
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  args: { children: VEEL_TEKST },
+};
+
+export const LargeText: Story = {
+  name: 'Large text (200%)',
+  decorators: [largeTextDecorator],
+  args: { children: TEKST },
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: () => (
+    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+      <Button variant="strong">{TEKST_AR}</Button>
+      <Button variant="default">{TEKST_AR}</Button>
+      <Button variant="subtle">{TEKST_AR}</Button>
+      <Button variant="strong" iconStart={<Icon name="arrow-right" />}>
+        {TEKST_AR}
+      </Button>
+      <Button variant="strong" iconEnd={<Icon name="arrow-left" />}>
+        {TEKST_AR}
+      </Button>
+    </div>
+  ),
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { children: VEEL_TEKST_AR },
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================
+
+export const HighContrast: Story = {
+  name: 'High contrast',
+  decorators: [highContrastDecorator],
+  render: () => (
+    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+      <Button variant="strong">{TEKST}</Button>
+      <Button variant="default">{TEKST}</Button>
+      <Button variant="subtle">{TEKST}</Button>
+      <Button variant="strong" disabled>
+        {TEKST}
+      </Button>
+      <Button variant="strong-negative">{TEKST}</Button>
     </div>
   ),
 };

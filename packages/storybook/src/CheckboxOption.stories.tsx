@@ -1,6 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CheckboxOption } from '@dsn/components-react';
 import DocsPage from './CheckboxOption.docs.mdx';
+import {
+  TEKST,
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+  largeTextDecorator,
+  highContrastDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof CheckboxOption> = {
   title: 'Components/CheckboxOption',
@@ -19,7 +29,7 @@ const meta: Meta<typeof CheckboxOption> = {
     label: { control: 'text' },
   },
   args: {
-    label: 'Checkbox option',
+    label: TEKST,
   },
 };
 
@@ -28,75 +38,97 @@ type Story = StoryObj<typeof CheckboxOption>;
 
 export const Default: Story = {};
 
+export const Checked: Story = {
+  args: { checked: true, readOnly: true, label: TEKST },
+};
+
+export const Indeterminate: Story = {
+  args: { indeterminate: true, label: TEKST },
+};
+
+export const Disabled: Story = {
+  args: { disabled: true, label: TEKST },
+};
+
+export const Invalid: Story = {
+  args: { invalid: true, label: TEKST },
+};
+
 export const AllStates: Story = {
+  name: 'All states',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Default states</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <CheckboxOption label="Unchecked option" />
-          <CheckboxOption checked label="Checked option" readOnly />
-          <CheckboxOption indeterminate label="Indeterminate option" />
-        </div>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Disabled states</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <CheckboxOption disabled label="Disabled unchecked" />
-          <CheckboxOption checked disabled label="Disabled checked" readOnly />
-          <CheckboxOption
-            indeterminate
-            disabled
-            label="Disabled indeterminate"
-          />
-        </div>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Invalid state</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <CheckboxOption invalid label="Invalid option" />
-        </div>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Interactive</h3>
-        <p
-          style={{
-            fontSize: '0.875rem',
-            color: '#666',
-            marginBlockEnd: '1rem',
-          }}
-        >
-          Click anywhere on the label or checkbox to toggle. Hover, focus (tab),
-          and click to see interaction states.
-        </p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <CheckboxOption label="Interactive unchecked" />
-          <CheckboxOption checked label="Interactive checked" readOnly />
-          <CheckboxOption indeterminate label="Interactive indeterminate" />
-        </div>
-      </div>
-
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Long labels</h3>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Default states</h3>
         <div
-          style={{
-            maxWidth: '400px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem',
-          }}
+          style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}
         >
-          <CheckboxOption label="This is a longer label that demonstrates how the checkbox option handles text wrapping when the label exceeds the available width. The label should maintain proper alignment with the checkbox." />
-          <CheckboxOption
-            checked
-            label="Another long label that is checked to show how the checked state works with wrapped text. Notice how the checkbox stays aligned at the top."
-            readOnly
-          />
+          <CheckboxOption label={TEKST} />
+          <CheckboxOption checked label={TEKST} readOnly />
+          <CheckboxOption indeterminate label={TEKST} />
         </div>
       </div>
+      <div>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Disabled states</h3>
+        <div
+          style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}
+        >
+          <CheckboxOption disabled label={TEKST} />
+          <CheckboxOption checked disabled label={TEKST} readOnly />
+          <CheckboxOption indeterminate disabled label={TEKST} />
+        </div>
+      </div>
+      <div>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Invalid state</h3>
+        <CheckboxOption invalid label={TEKST} />
+      </div>
+    </div>
+  ),
+};
+
+export const ShortText: Story = {
+  name: 'Short text',
+  args: { label: WEINIG_TEKST },
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  args: { label: VEEL_TEKST },
+};
+
+export const LargeText: Story = {
+  name: 'Large text (200%)',
+  decorators: [largeTextDecorator],
+  args: { label: TEKST },
+};
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+      <CheckboxOption label={TEKST_AR} />
+      <CheckboxOption checked label={TEKST_AR} readOnly />
+    </div>
+  ),
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { label: VEEL_TEKST_AR },
+};
+
+export const HighContrast: Story = {
+  name: 'High contrast',
+  decorators: [highContrastDecorator],
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+      <CheckboxOption label={TEKST} />
+      <CheckboxOption checked label={TEKST} readOnly />
+      <CheckboxOption indeterminate label={TEKST} />
+      <CheckboxOption disabled label={TEKST} />
+      <CheckboxOption invalid label={TEKST} />
     </div>
   ),
 };

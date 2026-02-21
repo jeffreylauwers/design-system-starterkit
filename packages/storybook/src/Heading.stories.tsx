@@ -1,6 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Heading } from '@dsn/components-react';
 import DocsPage from './Heading.docs.mdx';
+import {
+  TEKST,
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+  largeTextDecorator,
+  highContrastDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof Heading> = {
   title: 'Components/Heading',
@@ -29,108 +39,127 @@ const meta: Meta<typeof Heading> = {
   },
   args: {
     level: 2,
-    children: 'This is a heading',
+    children: TEKST,
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof Heading>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
 
+// =============================================================================
+// VARIANTEN
+// =============================================================================
+
 export const AllLevels: Story = {
+  name: 'All levels',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      <div>
-        <Heading level={1}>Heading Level 1</Heading>
-        <p style={{ margin: 0, fontSize: '0.875rem', color: '#666' }}>
-          Font size: 3xl (40px-53px fluid), typically used once per page
-        </p>
-      </div>
-
-      <div>
-        <Heading level={2}>Heading Level 2</Heading>
-        <p style={{ margin: 0, fontSize: '0.875rem', color: '#666' }}>
-          Font size: 2xl (32px-41px fluid), for major sections
-        </p>
-      </div>
-
-      <div>
-        <Heading level={3}>Heading Level 3</Heading>
-        <p style={{ margin: 0, fontSize: '0.875rem', color: '#666' }}>
-          Font size: xl (24px-31px fluid), for subsections
-        </p>
-      </div>
-
-      <div>
-        <Heading level={4}>Heading Level 4</Heading>
-        <p style={{ margin: 0, fontSize: '0.875rem', color: '#666' }}>
-          Font size: lg (20px-24.5px fluid), for smaller sections
-        </p>
-      </div>
-
-      <div>
-        <Heading level={5}>Heading Level 5</Heading>
-        <p style={{ margin: 0, fontSize: '0.875rem', color: '#666' }}>
-          Font size: md (16px-20.5px fluid), for minor headings
-        </p>
-      </div>
-
-      <div>
-        <Heading level={6}>Heading Level 6</Heading>
-        <p style={{ margin: 0, fontSize: '0.875rem', color: '#666' }}>
-          Font size: sm (14px-17px fluid), for the smallest headings
-        </p>
-      </div>
+      <Heading level={1}>{TEKST}</Heading>
+      <Heading level={2}>{TEKST}</Heading>
+      <Heading level={3}>{TEKST}</Heading>
+      <Heading level={4}>{TEKST}</Heading>
+      <Heading level={5}>{TEKST}</Heading>
+      <Heading level={6}>{TEKST}</Heading>
     </div>
   ),
 };
 
 export const SemanticVsVisual: Story = {
+  name: 'Semantic vs visual',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <div>
         <p
           style={{
-            marginBlockEnd: '1rem',
+            marginBlockEnd: '0.5rem',
             fontSize: '0.875rem',
             color: '#666',
           }}
         >
-          Semantic h2, visual heading-1 (larger appearance):
+          Semantisch h2, visueel heading-1:
         </p>
         <Heading level={2} appearance="heading-1">
-          This is an h2 that looks like h1
+          {TEKST}
         </Heading>
       </div>
-
       <div>
         <p
           style={{
-            marginBlockEnd: '1rem',
+            marginBlockEnd: '0.5rem',
             fontSize: '0.875rem',
             color: '#666',
           }}
         >
-          Semantic h3, visual heading-5 (smaller appearance):
+          Semantisch h3, visueel heading-5:
         </p>
         <Heading level={3} appearance="heading-5">
-          This is an h3 that looks like h5
+          {TEKST}
         </Heading>
       </div>
+    </div>
+  ),
+};
 
-      <div>
-        <p
-          style={{
-            marginBlockEnd: '1rem',
-            fontSize: '0.875rem',
-            color: '#666',
-          }}
-        >
-          Use this pattern to maintain document structure while achieving
-          desired visual hierarchy.
-        </p>
-      </div>
+// =============================================================================
+// TEKST VARIANTEN
+// =============================================================================
+
+export const ShortText: Story = {
+  name: 'Short text',
+  args: { children: WEINIG_TEKST },
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  args: { children: VEEL_TEKST },
+};
+
+export const LargeText: Story = {
+  name: 'Large text (200%)',
+  decorators: [largeTextDecorator],
+  args: { children: TEKST },
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <Heading level={1}>{TEKST_AR}</Heading>
+      <Heading level={2}>{TEKST_AR}</Heading>
+      <Heading level={3}>{TEKST_AR}</Heading>
+    </div>
+  ),
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { children: VEEL_TEKST_AR },
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================
+
+export const HighContrast: Story = {
+  name: 'High contrast',
+  decorators: [highContrastDecorator],
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <Heading level={1}>{TEKST}</Heading>
+      <Heading level={2}>{TEKST}</Heading>
+      <Heading level={3}>{TEKST}</Heading>
     </div>
   ),
 };

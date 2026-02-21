@@ -1,6 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FormFieldLabel } from '@dsn/components-react';
 import DocsPage from './FormFieldLabel.docs.mdx';
+import {
+  TEKST,
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+  largeTextDecorator,
+  highContrastDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof FormFieldLabel> = {
   title: 'Components/FormFieldLabel',
@@ -15,7 +25,7 @@ const meta: Meta<typeof FormFieldLabel> = {
     htmlFor: { control: 'text' },
   },
   args: {
-    children: 'Label text',
+    children: TEKST,
   },
 };
 
@@ -24,78 +34,68 @@ type Story = StoryObj<typeof FormFieldLabel>;
 
 export const Default: Story = {};
 
-export const AllStates: Story = {
+export const WithOptionalSuffix: Story = {
+  name: 'With optional suffix',
+  args: { children: TEKST, suffix: '(niet verplicht)' },
+};
+
+export const WithRequiredSuffix: Story = {
+  name: 'With required suffix',
+  args: { children: TEKST, suffix: '(verplicht)' },
+};
+
+export const AllVariants: Story = {
+  name: 'All variants',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Default (no suffix)</h3>
-        <FormFieldLabel htmlFor="name">Naam</FormFieldLabel>
-      </div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <FormFieldLabel htmlFor="a">{TEKST}</FormFieldLabel>
+      <FormFieldLabel htmlFor="b" suffix="(niet verplicht)">
+        {TEKST}
+      </FormFieldLabel>
+      <FormFieldLabel htmlFor="c" suffix="(verplicht)">
+        {TEKST}
+      </FormFieldLabel>
+    </div>
+  ),
+};
 
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          With &ldquo;(niet verplicht)&rdquo; suffix
-        </h3>
-        <p
-          style={{
-            fontSize: '0.875rem',
-            color: '#666',
-            marginBlockEnd: '1rem',
-          }}
-        >
-          Gebruik dit wanneer de meeste velden verplicht zijn en je de enkele
-          optionele velden wilt markeren.
-        </p>
-        <FormFieldLabel htmlFor="middlename" suffix="(niet verplicht)">
-          Tussenvoegsel
-        </FormFieldLabel>
-      </div>
+export const ShortText: Story = {
+  name: 'Short text',
+  args: { children: WEINIG_TEKST },
+};
 
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          With &ldquo;(verplicht)&rdquo; suffix
-        </h3>
-        <p
-          style={{
-            fontSize: '0.875rem',
-            color: '#666',
-            marginBlockEnd: '1rem',
-          }}
-        >
-          Gebruik dit wanneer de meeste velden optioneel zijn en je de
-          verplichte velden wilt markeren.
-        </p>
-        <FormFieldLabel htmlFor="email" suffix="(verplicht)">
-          E-mailadres
-        </FormFieldLabel>
-      </div>
+export const LongText: Story = {
+  name: 'Long text',
+  args: { children: VEEL_TEKST },
+};
 
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>
-          Examples with different content
-        </h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <FormFieldLabel htmlFor="firstname">Voornaam</FormFieldLabel>
-          <FormFieldLabel htmlFor="lastname">Achternaam</FormFieldLabel>
-          <FormFieldLabel htmlFor="phone" suffix="(niet verplicht)">
-            Telefoonnummer
-          </FormFieldLabel>
-          <FormFieldLabel htmlFor="company" suffix="(niet verplicht)">
-            Bedrijfsnaam
-          </FormFieldLabel>
-          <FormFieldLabel htmlFor="message">Bericht</FormFieldLabel>
-        </div>
-      </div>
+export const LargeText: Story = {
+  name: 'Large text (200%)',
+  decorators: [largeTextDecorator],
+  args: { children: TEKST, suffix: '(niet verplicht)' },
+};
 
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Long label text</h3>
-        <div style={{ maxWidth: '400px' }}>
-          <FormFieldLabel htmlFor="long" suffix="(niet verplicht)">
-            Dit is een langere label tekst die demonstreert hoe het label en de
-            suffix zich gedragen wanneer de tekst over meerdere regels loopt
-          </FormFieldLabel>
-        </div>
-      </div>
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  args: { children: TEKST_AR },
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { children: VEEL_TEKST_AR },
+};
+
+export const HighContrast: Story = {
+  name: 'High contrast',
+  decorators: [highContrastDecorator],
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <FormFieldLabel htmlFor="a">{TEKST}</FormFieldLabel>
+      <FormFieldLabel htmlFor="b" suffix="(niet verplicht)">
+        {TEKST}
+      </FormFieldLabel>
     </div>
   ),
 };

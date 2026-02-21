@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Icon } from '@dsn/components-react';
 import type { IconName } from '@dsn/components-react/icon-registry.generated';
 import DocsPage from './Icon.docs.mdx';
+import { highContrastDecorator } from './story-helpers';
 
 const meta: Meta<typeof Icon> = {
   title: 'Components/Icon',
@@ -80,85 +81,23 @@ type Story = StoryObj<typeof Icon>;
 export const Default: Story = {};
 
 export const AllSizes: Story = {
+  name: 'All sizes',
   render: () => (
     <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-        }}
-      >
-        <Icon name="check" size="sm" />
-        <span style={{ fontSize: '0.75rem' }}>sm</span>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-        }}
-      >
-        <Icon name="check" size="md" />
-        <span style={{ fontSize: '0.75rem' }}>md</span>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-        }}
-      >
-        <Icon name="check" size="lg" />
-        <span style={{ fontSize: '0.75rem' }}>lg</span>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-        }}
-      >
-        <Icon name="check" size="xl" />
-        <span style={{ fontSize: '0.75rem' }}>xl</span>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-        }}
-      >
-        <Icon name="check" size="2xl" />
-        <span style={{ fontSize: '0.75rem' }}>2xl</span>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-        }}
-      >
-        <Icon name="check" size="3xl" />
-        <span style={{ fontSize: '0.75rem' }}>3xl</span>
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-        }}
-      >
-        <Icon name="check" size="4xl" />
-        <span style={{ fontSize: '0.75rem' }}>4xl</span>
-      </div>
+      {(['sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'] as const).map((size) => (
+        <div
+          key={size}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '0.5rem',
+          }}
+        >
+          <Icon name="check" size={size} />
+          <span style={{ fontSize: '0.75rem' }}>{size}</span>
+        </div>
+      ))}
     </div>
   ),
 };
@@ -232,6 +171,29 @@ export const AllIcons: Story = {
           <span style={{ fontSize: '0.75rem', textAlign: 'center' }}>
             {iconName}
           </span>
+        </div>
+      ))}
+    </div>
+  ),
+};
+
+export const HighContrast: Story = {
+  name: 'High contrast',
+  decorators: [highContrastDecorator],
+  render: () => (
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+      {(['sm', 'md', 'lg', 'xl', '2xl'] as const).map((size) => (
+        <div
+          key={size}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '0.5rem',
+          }}
+        >
+          <Icon name="check" size={size} />
+          <span style={{ fontSize: '0.75rem' }}>{size}</span>
         </div>
       ))}
     </div>

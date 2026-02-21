@@ -2,6 +2,16 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Link, Icon } from '@dsn/components-react';
 import type { IconName } from '@dsn/components-react/icon-registry.generated';
 import DocsPage from './Link.docs.mdx';
+import {
+  TEKST,
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+  largeTextDecorator,
+  highContrastDecorator,
+} from './story-helpers';
 
 const iconOptions: (IconName | undefined)[] = [
   undefined,
@@ -93,115 +103,182 @@ const meta: Meta<typeof Link> = {
   },
   args: {
     href: '#',
-    children: 'This is a link',
+    children: TEKST,
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof Link>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
 
+// =============================================================================
+// VARIANTEN
+// =============================================================================
+
 export const AllSizes: Story = {
+  name: 'All sizes',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <Link href="#" size="small">
+        {TEKST}
+      </Link>
+      <Link href="#" size="default">
+        {TEKST}
+      </Link>
+      <Link href="#" size="large">
+        {TEKST}
+      </Link>
+    </div>
+  ),
+};
+
+export const Disabled: Story = {
+  args: { disabled: true, children: TEKST },
+};
+
+export const Current: Story = {
+  args: { current: true, children: TEKST },
+};
+
+export const External: Story = {
+  args: { href: 'https://example.com', external: true, children: TEKST },
+};
+
+export const WithIconStart: Story = {
+  name: 'With icon start',
+  args: { iconStart: <Icon name="download" />, children: TEKST },
+};
+
+export const WithIconEnd: Story = {
+  name: 'With icon end',
+  args: { iconEnd: <Icon name="arrow-right" />, children: TEKST },
+};
+
+// =============================================================================
+// OVERZICHTSSTORIES
+// =============================================================================
+
+export const AllStates: Story = {
+  name: 'All states',
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <div>
-        <Link href="#" size="small">
-          Small link
-        </Link>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Default</h3>
+        <div
+          style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}
+        >
+          <Link href="#">{TEKST}</Link>
+          <Link href="#" current>
+            {TEKST} (current)
+          </Link>
+          <Link href="#" disabled>
+            {TEKST} (disabled)
+          </Link>
+          <Link href="https://example.com" external>
+            {TEKST} (external)
+          </Link>
+        </div>
       </div>
       <div>
-        <Link href="#" size="default">
-          Default link
-        </Link>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Met iconen</h3>
+        <div
+          style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}
+        >
+          <Link href="#" iconStart={<Icon name="download" />}>
+            {TEKST}
+          </Link>
+          <Link href="#" iconEnd={<Icon name="arrow-right" />}>
+            {TEKST}
+          </Link>
+        </div>
       </div>
       <div>
-        <Link href="#" size="large">
-          Large link
-        </Link>
-      </div>
-      <div>
-        <p style={{ margin: 0 }}>
-          Link without explicit size:{' '}
-          <Link href="#">inherits surrounding font size</Link> seamlessly.
-        </p>
+        <h3 style={{ marginBlockEnd: '0.5rem' }}>Alle maten</h3>
+        <div
+          style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}
+        >
+          <Link href="#" size="small">
+            {TEKST} (small)
+          </Link>
+          <Link href="#" size="default">
+            {TEKST} (default)
+          </Link>
+          <Link href="#" size="large">
+            {TEKST} (large)
+          </Link>
+        </div>
       </div>
     </div>
   ),
 };
 
-export const AllStates: Story = {
+// =============================================================================
+// TEKST VARIANTEN
+// =============================================================================
+
+export const ShortText: Story = {
+  name: 'Short text',
+  args: { children: WEINIG_TEKST },
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  args: { children: VEEL_TEKST },
+};
+
+export const LargeText: Story = {
+  name: 'Large text (200%)',
+  decorators: [largeTextDecorator],
+  args: { children: TEKST },
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Default states</h3>
-        <div
-          style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}
-        >
-          <Link href="#">Normal link (hover to see effect)</Link>
-          <Link href="#" current>
-            Current page link
-          </Link>
-          <Link href="#" disabled>
-            Disabled link
-          </Link>
-        </div>
-      </div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <Link href="#">{TEKST_AR}</Link>
+      <Link href="#" iconStart={<Icon name="arrow-left" />}>
+        {TEKST_AR}
+      </Link>
+      <Link href="#" iconEnd={<Icon name="arrow-right" />}>
+        {TEKST_AR}
+      </Link>
+    </div>
+  ),
+};
 
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>External link</h3>
-        <Link href="https://example.com" external>
-          External site
-        </Link>
-        <p
-          style={{
-            fontSize: '0.875rem',
-            color: '#666',
-            marginBlockStart: '0.5rem',
-          }}
-        >
-          Automatically adds target=&ldquo;_blank&rdquo; and &ldquo;(opens in
-          new tab)&rdquo; text
-        </p>
-      </div>
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { children: VEEL_TEKST_AR },
+};
 
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>With icons</h3>
-        <div
-          style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}
-        >
-          <Link href="#" iconStart={<Icon name="download" />}>
-            Download file
-          </Link>
-          <Link href="#" iconEnd={<Icon name="arrow-right" />}>
-            Next page
-          </Link>
-          <Link
-            href="#"
-            iconStart={<Icon name="external-link" />}
-            iconEnd={<Icon name="arrow-right" />}
-          >
-            With both icons
-          </Link>
-        </div>
-      </div>
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================
 
-      <div>
-        <h3 style={{ marginBlockEnd: '1rem' }}>Icon sizes per link size</h3>
-        <div
-          style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}
-        >
-          <Link href="#" size="small" iconStart={<Icon name="check" />}>
-            Small link with icon
-          </Link>
-          <Link href="#" size="default" iconStart={<Icon name="check" />}>
-            Default link with icon
-          </Link>
-          <Link href="#" size="large" iconStart={<Icon name="check" />}>
-            Large link with icon
-          </Link>
-        </div>
-      </div>
+export const HighContrast: Story = {
+  name: 'High contrast',
+  decorators: [highContrastDecorator],
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <Link href="#">{TEKST}</Link>
+      <Link href="#" disabled>
+        {TEKST} (disabled)
+      </Link>
+      <Link href="https://example.com" external>
+        {TEKST} (external)
+      </Link>
     </div>
   ),
 };

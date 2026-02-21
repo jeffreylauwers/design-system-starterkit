@@ -6,6 +6,11 @@ import {
   FormFieldset,
 } from '@dsn/components-react';
 import DocsPage from './DateInputGroup.docs.mdx';
+import {
+  rtlDecorator,
+  largeTextDecorator,
+  highContrastDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof DateInputGroup> = {
   title: 'Components/DateInputGroup',
@@ -28,6 +33,7 @@ const meta: Meta<typeof DateInputGroup> = {
 export default meta;
 type Story = StoryObj<typeof DateInputGroup>;
 
+// Helper components
 function DefaultStory(args: React.ComponentProps<typeof DateInputGroup>) {
   const [value, setValue] = useState<DateInputGroupValue>({
     day: '',
@@ -89,7 +95,15 @@ function InvalidStory(args: React.ComponentProps<typeof DateInputGroup>) {
   );
 }
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = { render: (args) => <DefaultStory {...args} /> };
+
+// =============================================================================
+// VARIANTEN
+// =============================================================================
 
 export const WithValue: Story = {
   name: 'With value',
@@ -115,5 +129,39 @@ export const Disabled: Story = {
         disabled
       />
     </FormFieldset>
+  ),
+};
+
+// =============================================================================
+// LARGE TEXT
+// =============================================================================
+
+export const LargeText: Story = {
+  name: 'Large text (200%)',
+  decorators: [largeTextDecorator],
+  render: (args) => <WithValueStory {...args} />,
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: (args) => <WithValueStory {...args} />,
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================
+
+export const HighContrast: Story = {
+  name: 'High contrast',
+  decorators: [highContrastDecorator],
+  render: (args) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <WithValueStory {...args} />
+    </div>
   ),
 };

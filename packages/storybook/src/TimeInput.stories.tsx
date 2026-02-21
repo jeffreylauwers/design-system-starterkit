@@ -1,6 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TimeInput } from '@dsn/components-react';
 import DocsPage from './TimeInput.docs.mdx';
+import {
+  rtlDecorator,
+  largeTextDecorator,
+  highContrastDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof TimeInput> = {
   title: 'Components/TimeInput',
@@ -27,35 +32,37 @@ const meta: Meta<typeof TimeInput> = {
 export default meta;
 type Story = StoryObj<typeof TimeInput>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
+
+// =============================================================================
+// VARIANTEN
+// =============================================================================
 
 export const WithValue: Story = {
   name: 'With value',
-  args: {
-    defaultValue: '14:30',
-  },
+  args: { defaultValue: '14:30' },
 };
 
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-    value: '09:00',
-  },
+  args: { disabled: true, value: '14:30' },
 };
 
 export const ReadOnly: Story = {
   name: 'Read-only',
-  args: {
-    readOnly: true,
-    value: '09:00',
-  },
+  args: { readOnly: true, value: '14:30' },
 };
 
 export const Invalid: Story = {
-  args: {
-    invalid: true,
-  },
+  args: { invalid: true },
 };
+
+// =============================================================================
+// OVERZICHTSSTORIES
+// =============================================================================
 
 export const AllStates: Story = {
   name: 'All states',
@@ -95,7 +102,7 @@ export const AllStates: Story = {
         >
           Disabled
         </label>
-        <TimeInput disabled value="09:00" />
+        <TimeInput disabled value="14:30" />
       </div>
       <div>
         <label
@@ -107,7 +114,7 @@ export const AllStates: Story = {
         >
           Read-only
         </label>
-        <TimeInput readOnly value="09:00" />
+        <TimeInput readOnly value="14:30" />
       </div>
       <div>
         <label
@@ -121,6 +128,42 @@ export const AllStates: Story = {
         </label>
         <TimeInput invalid />
       </div>
+    </div>
+  ),
+};
+
+// =============================================================================
+// LARGE TEXT
+// =============================================================================
+
+export const LargeText: Story = {
+  name: 'Large text (200%)',
+  decorators: [largeTextDecorator],
+  args: { defaultValue: '14:30' },
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  args: { defaultValue: '14:30' },
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================
+
+export const HighContrast: Story = {
+  name: 'High contrast',
+  decorators: [highContrastDecorator],
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <TimeInput defaultValue="14:30" />
+      <TimeInput disabled value="14:30" />
+      <TimeInput invalid />
     </div>
   ),
 };

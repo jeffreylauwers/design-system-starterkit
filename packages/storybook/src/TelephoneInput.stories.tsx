@@ -1,6 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TelephoneInput } from '@dsn/components-react';
 import DocsPage from './TelephoneInput.docs.mdx';
+import {
+  WEINIG_TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+  largeTextDecorator,
+  highContrastDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof TelephoneInput> = {
   title: 'Components/TelephoneInput',
@@ -33,43 +42,37 @@ const meta: Meta<typeof TelephoneInput> = {
 export default meta;
 type Story = StoryObj<typeof TelephoneInput>;
 
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
 export const Default: Story = {};
+
+// =============================================================================
+// VARIANTEN
+// =============================================================================
 
 export const WithValue: Story = {
   name: 'With value',
-  args: {
-    defaultValue: '06 12345678',
-  },
+  args: { defaultValue: '06 12345678' },
 };
 
 export const International: Story = {
   name: 'International format',
-  args: {
-    defaultValue: '+31 6 12345678',
-    placeholder: '+31 6 12345678',
-  },
+  args: { defaultValue: '+31 6 12345678', placeholder: '+31 6 12345678' },
 };
 
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-    value: '06 12345678',
-  },
+  args: { disabled: true, value: '06 12345678' },
 };
 
 export const ReadOnly: Story = {
   name: 'Read-only',
-  args: {
-    readOnly: true,
-    value: '06 12345678',
-  },
+  args: { readOnly: true, value: '06 12345678' },
 };
 
 export const Invalid: Story = {
-  args: {
-    invalid: true,
-    value: 'geen nummer',
-  },
+  args: { invalid: true, value: 'geen nummer' },
 };
 
 export const Widths: Story = {
@@ -85,6 +88,10 @@ export const Widths: Story = {
     </div>
   ),
 };
+
+// =============================================================================
+// OVERZICHTSSTORIES
+// =============================================================================
 
 export const AllStates: Story = {
   name: 'All states',
@@ -157,6 +164,65 @@ export const AllStates: Story = {
         </label>
         <TelephoneInput invalid value="geen nummer" />
       </div>
+    </div>
+  ),
+};
+
+// =============================================================================
+// TEKST VARIANTEN
+// =============================================================================
+
+export const ShortText: Story = {
+  name: 'Short text',
+  args: { defaultValue: WEINIG_TEKST },
+};
+
+export const LongText: Story = {
+  name: 'Long text',
+  args: { defaultValue: VEEL_TEKST },
+};
+
+export const LargeText: Story = {
+  name: 'Large text (200%)',
+  decorators: [largeTextDecorator],
+  args: { defaultValue: '06 12345678' },
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  args: { defaultValue: TEKST_AR },
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { defaultValue: VEEL_TEKST_AR },
+};
+
+// =============================================================================
+// HIGH CONTRAST
+// =============================================================================
+
+export const HighContrast: Story = {
+  name: 'High contrast',
+  decorators: [highContrastDecorator],
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem',
+        maxWidth: '400px',
+      }}
+    >
+      <TelephoneInput defaultValue="06 12345678" />
+      <TelephoneInput disabled value="06 12345678" />
+      <TelephoneInput invalid value="geen nummer" />
     </div>
   ),
 };
