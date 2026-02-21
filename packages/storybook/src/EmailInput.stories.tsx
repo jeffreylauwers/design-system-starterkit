@@ -5,6 +5,7 @@ import {
   WEINIG_TEKST,
   VEEL_TEKST,
   TEKST_AR,
+  VEEL_TEKST_AR,
   rtlDecorator,
 } from './story-helpers';
 

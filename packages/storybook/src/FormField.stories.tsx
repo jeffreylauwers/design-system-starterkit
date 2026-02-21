@@ -7,7 +7,13 @@ import {
   CheckboxOption,
 } from '@dsn/components-react';
 import DocsPage from './FormField.docs.mdx';
-import { TEKST, VEEL_TEKST, TEKST_AR, rtlDecorator } from './story-helpers';
+import {
+  TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+} from './story-helpers';
 
 const meta: Meta<typeof FormField> = {
   title: 'Components/FormField',
