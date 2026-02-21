@@ -8,8 +8,6 @@ import {
   TEKST_AR,
   VEEL_TEKST_AR,
   rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
 } from './story-helpers';
 
 const meta: Meta<typeof UnorderedList> = {
@@ -94,18 +92,6 @@ export const LongText: Story = {
   ),
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  render: () => (
-    <UnorderedList>
-      <li>{TEKST}</li>
-      <li>{TEKST}</li>
-      <li>{TEKST}</li>
-    </UnorderedList>
-  ),
-};
-
 // =============================================================================
 // RTL
 // =============================================================================
@@ -137,15 +123,3 @@ export const RTLLongText: Story = {
 // =============================================================================
 // HIGH CONTRAST
 // =============================================================================
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <UnorderedList>
-      <li>{TEKST}</li>
-      <li>{TEKST}</li>
-      <li>{TEKST}</li>
-    </UnorderedList>
-  ),
-};

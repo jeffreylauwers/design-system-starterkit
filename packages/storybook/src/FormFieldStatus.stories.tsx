@@ -8,8 +8,6 @@ import {
   TEKST_AR,
   VEEL_TEKST_AR,
   rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
 } from './story-helpers';
 
 const meta: Meta<typeof FormFieldStatus> = {
@@ -74,12 +72,6 @@ export const LongText: Story = {
   args: { children: VEEL_TEKST },
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  args: { children: TEKST },
-};
-
 export const RTL: Story = {
   name: 'RTL',
   decorators: [rtlDecorator],
@@ -90,16 +82,4 @@ export const RTLLongText: Story = {
   name: 'RTL long text',
   decorators: [rtlDecorator],
   args: { children: VEEL_TEKST_AR },
-};
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <FormFieldStatus variant="default">{TEKST}</FormFieldStatus>
-      <FormFieldStatus variant="positive">{TEKST}</FormFieldStatus>
-      <FormFieldStatus variant="warning">{TEKST}</FormFieldStatus>
-    </div>
-  ),
 };

@@ -7,10 +7,7 @@ import {
   WEINIG_TEKST,
   VEEL_TEKST,
   TEKST_AR,
-  VEEL_TEKST_AR,
   rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
 } from './story-helpers';
 
 const iconOptions: (IconName | undefined)[] = [
@@ -438,12 +435,6 @@ export const LongText: Story = {
   args: { children: VEEL_TEKST },
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  args: { children: TEKST },
-};
-
 // =============================================================================
 // RTL
 // =============================================================================
@@ -475,19 +466,3 @@ export const RTLLongText: Story = {
 // =============================================================================
 // HIGH CONTRAST
 // =============================================================================
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-      <Button variant="strong">{TEKST}</Button>
-      <Button variant="default">{TEKST}</Button>
-      <Button variant="subtle">{TEKST}</Button>
-      <Button variant="strong" disabled>
-        {TEKST}
-      </Button>
-      <Button variant="strong-negative">{TEKST}</Button>
-    </div>
-  ),
-};

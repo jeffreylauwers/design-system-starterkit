@@ -1,13 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CheckboxGroup, CheckboxOption } from '@dsn/components-react';
 import DocsPage from './CheckboxGroup.docs.mdx';
-import {
-  TEKST,
-  TEKST_AR,
-  rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
-} from './story-helpers';
+import { TEKST, TEKST_AR, rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof CheckboxGroup> = {
   title: 'Components/CheckboxGroup',
@@ -57,18 +51,6 @@ export const AllStates: Story = {
   ),
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  render: () => (
-    <CheckboxGroup>
-      <CheckboxOption label={TEKST} value="1" />
-      <CheckboxOption label={TEKST} value="2" checked readOnly />
-      <CheckboxOption label={TEKST} value="3" />
-    </CheckboxGroup>
-  ),
-};
-
 export const RTL: Story = {
   name: 'RTL',
   decorators: [rtlDecorator],
@@ -77,19 +59,6 @@ export const RTL: Story = {
       <CheckboxOption label={TEKST_AR} value="1" />
       <CheckboxOption label={TEKST_AR} value="2" checked readOnly />
       <CheckboxOption label={TEKST_AR} value="3" />
-    </CheckboxGroup>
-  ),
-};
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <CheckboxGroup>
-      <CheckboxOption label={TEKST} value="1" />
-      <CheckboxOption label={TEKST} value="2" checked readOnly />
-      <CheckboxOption label={TEKST} value="3" indeterminate />
-      <CheckboxOption label={TEKST} value="4" disabled />
     </CheckboxGroup>
   ),
 };

@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { NumberInput } from '@dsn/components-react';
 import DocsPage from './NumberInput.docs.mdx';
-import {
-  rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
-} from './story-helpers';
+import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof NumberInput> = {
   title: 'Components/NumberInput',
@@ -174,12 +170,6 @@ export const AllStates: Story = {
 // LARGE TEXT
 // =============================================================================
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  args: { defaultValue: '42' },
-};
-
 // =============================================================================
 // RTL
 // =============================================================================
@@ -193,22 +183,3 @@ export const RTL: Story = {
 // =============================================================================
 // HIGH CONTRAST
 // =============================================================================
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        maxWidth: '400px',
-      }}
-    >
-      <NumberInput defaultValue="42" />
-      <NumberInput disabled value="42" />
-      <NumberInput invalid value="abc" />
-    </div>
-  ),
-};

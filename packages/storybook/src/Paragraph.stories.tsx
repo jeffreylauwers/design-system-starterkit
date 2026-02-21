@@ -8,8 +8,6 @@ import {
   TEKST_AR,
   VEEL_TEKST_AR,
   rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
 } from './story-helpers';
 
 const meta: Meta<typeof Paragraph> = {
@@ -99,12 +97,6 @@ export const LongTextAllVariants: Story = {
   ),
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  args: { children: TEKST },
-};
-
 // =============================================================================
 // RTL
 // =============================================================================
@@ -130,15 +122,3 @@ export const RTLLongText: Story = {
 // =============================================================================
 // HIGH CONTRAST
 // =============================================================================
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <Paragraph variant="lead">{TEKST}</Paragraph>
-      <Paragraph variant="default">{TEKST}</Paragraph>
-      <Paragraph variant="small-print">{TEKST}</Paragraph>
-    </div>
-  ),
-};

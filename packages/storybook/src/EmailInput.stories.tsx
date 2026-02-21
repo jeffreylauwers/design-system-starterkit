@@ -5,10 +5,7 @@ import {
   WEINIG_TEKST,
   VEEL_TEKST,
   TEKST_AR,
-  VEEL_TEKST_AR,
   rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
 } from './story-helpers';
 
 const meta: Meta<typeof EmailInput> = {
@@ -177,12 +174,6 @@ export const LongText: Story = {
   args: { defaultValue: VEEL_TEKST },
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  args: { defaultValue: 'jan@voorbeeld.nl' },
-};
-
 // =============================================================================
 // RTL
 // =============================================================================
@@ -202,22 +193,3 @@ export const RTLLongText: Story = {
 // =============================================================================
 // HIGH CONTRAST
 // =============================================================================
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        maxWidth: '400px',
-      }}
-    >
-      <EmailInput defaultValue="jan@voorbeeld.nl" />
-      <EmailInput disabled value="jan@voorbeeld.nl" />
-      <EmailInput invalid value="geen-geldig-email" />
-    </div>
-  ),
-};

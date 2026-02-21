@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Select } from '@dsn/components-react';
 import DocsPage from './Select.docs.mdx';
-import {
-  rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
-} from './story-helpers';
+import { rtlDecorator } from './story-helpers';
 
 const OPTIONS = (
   <>
@@ -167,12 +163,6 @@ export const AllStates: Story = {
 // LARGE TEXT
 // =============================================================================
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  args: { defaultValue: 'nl' },
-};
-
 // =============================================================================
 // RTL
 // =============================================================================
@@ -186,24 +176,3 @@ export const RTL: Story = {
 // =============================================================================
 // HIGH CONTRAST
 // =============================================================================
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        maxWidth: '400px',
-      }}
-    >
-      <Select defaultValue="nl">{OPTIONS}</Select>
-      <Select disabled defaultValue="nl">
-        {OPTIONS}
-      </Select>
-      <Select invalid>{OPTIONS}</Select>
-    </div>
-  ),
-};

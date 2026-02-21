@@ -8,8 +8,6 @@ import {
   TEKST_AR,
   VEEL_TEKST_AR,
   rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
 } from './story-helpers';
 
 const meta: Meta<typeof RadioOption> = {
@@ -113,12 +111,6 @@ export const AllStates: Story = {
   ),
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  args: { label: TEKST },
-};
-
 export const RTL: Story = {
   name: 'RTL',
   decorators: [rtlDecorator],
@@ -134,17 +126,4 @@ export const RTLLongText: Story = {
   name: 'RTL long text',
   decorators: [rtlDecorator],
   args: { label: VEEL_TEKST_AR },
-};
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-      <RadioOption label={TEKST} name="hc-1" value="unchecked" />
-      <RadioOption checked label={TEKST} name="hc-1" value="checked" readOnly />
-      <RadioOption disabled label={TEKST} name="hc-1" value="disabled" />
-      <RadioOption invalid label={TEKST} name="hc-1" value="invalid" />
-    </div>
-  ),
 };

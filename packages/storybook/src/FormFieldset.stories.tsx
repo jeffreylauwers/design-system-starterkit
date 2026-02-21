@@ -13,8 +13,6 @@ import {
   TEKST_AR,
   VEEL_TEKST_AR,
   rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
 } from './story-helpers';
 
 const meta: Meta<typeof FormFieldset> = {
@@ -170,19 +168,6 @@ export const LongText: Story = {
   ),
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  render: (args) => (
-    <FormFieldset {...args} legend={TEKST} description={TEKST}>
-      <CheckboxGroup>
-        <CheckboxOption label={TEKST} value="1" />
-        <CheckboxOption label={TEKST} value="2" />
-      </CheckboxGroup>
-    </FormFieldset>
-  ),
-};
-
 export const RTL: Story = {
   name: 'RTL',
   decorators: [rtlDecorator],
@@ -212,26 +197,5 @@ export const RTLLongText: Story = {
         <CheckboxOption label={VEEL_TEKST_AR} value="2" />
       </CheckboxGroup>
     </FormFieldset>
-  ),
-};
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      <FormFieldset legend={TEKST}>
-        <CheckboxGroup>
-          <CheckboxOption label={TEKST} value="1" />
-          <CheckboxOption label={TEKST} value="2" />
-        </CheckboxGroup>
-      </FormFieldset>
-      <FormFieldset legend={TEKST} error={TEKST}>
-        <CheckboxGroup>
-          <CheckboxOption label={TEKST} value="1" />
-          <CheckboxOption label={TEKST} value="2" />
-        </CheckboxGroup>
-      </FormFieldset>
-    </div>
   ),
 };

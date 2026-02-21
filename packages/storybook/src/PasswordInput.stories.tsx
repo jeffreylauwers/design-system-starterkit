@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { PasswordInput } from '@dsn/components-react';
 import DocsPage from './PasswordInput.docs.mdx';
-import {
-  rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
-} from './story-helpers';
+import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof PasswordInput> = {
   title: 'Components/PasswordInput',
@@ -171,12 +167,6 @@ export const AllStates: Story = {
 // LARGE TEXT
 // =============================================================================
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  args: { defaultValue: 'geheim123' },
-};
-
 // =============================================================================
 // RTL
 // =============================================================================
@@ -190,22 +180,3 @@ export const RTL: Story = {
 // =============================================================================
 // HIGH CONTRAST
 // =============================================================================
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        maxWidth: '400px',
-      }}
-    >
-      <PasswordInput defaultValue="geheim123" />
-      <PasswordInput disabled value="geheim123" />
-      <PasswordInput invalid value="te kort" />
-    </div>
-  ),
-};

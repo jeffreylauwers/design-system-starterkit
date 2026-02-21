@@ -7,7 +7,6 @@ import type { Preview } from '@storybook/react';
 // Core styles (layout, resets, etc. - NOT tokens)
 import '../../core/dist/core.css';
 import './preview-body.css';
-import '../src/high-contrast-preview.css';
 
 // =============================================================================
 // TOKEN CONFIGURATION LOADER

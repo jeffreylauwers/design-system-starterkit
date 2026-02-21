@@ -6,10 +6,7 @@ import {
   WEINIG_TEKST,
   VEEL_TEKST,
   TEKST_AR,
-  VEEL_TEKST_AR,
   rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
 } from './story-helpers';
 
 const meta: Meta<typeof CheckboxOption> = {
@@ -96,12 +93,6 @@ export const LongText: Story = {
   args: { label: VEEL_TEKST },
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  args: { label: TEKST },
-};
-
 export const RTL: Story = {
   name: 'RTL',
   decorators: [rtlDecorator],
@@ -117,18 +108,4 @@ export const RTLLongText: Story = {
   name: 'RTL long text',
   decorators: [rtlDecorator],
   args: { label: VEEL_TEKST_AR },
-};
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-      <CheckboxOption label={TEKST} />
-      <CheckboxOption checked label={TEKST} readOnly />
-      <CheckboxOption indeterminate label={TEKST} />
-      <CheckboxOption disabled label={TEKST} />
-      <CheckboxOption invalid label={TEKST} />
-    </div>
-  ),
 };

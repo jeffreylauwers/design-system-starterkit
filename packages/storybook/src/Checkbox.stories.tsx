@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Checkbox } from '@dsn/components-react';
 import DocsPage from './Checkbox.docs.mdx';
-import {
-  rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
-} from './story-helpers';
+import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Components/Checkbox',
@@ -150,17 +146,6 @@ export const AllStates: Story = {
   ),
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  render: () => (
-    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-      <Checkbox aria-label="Unchecked" />
-      <Checkbox checked aria-label="Checked" readOnly />
-    </div>
-  ),
-};
-
 export const RTL: Story = {
   name: 'RTL',
   decorators: [rtlDecorator],
@@ -169,20 +154,6 @@ export const RTL: Story = {
       <Checkbox aria-label="Unchecked" />
       <Checkbox checked aria-label="Checked" readOnly />
       <Checkbox disabled aria-label="Disabled" />
-    </div>
-  ),
-};
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-      <Checkbox aria-label="Unchecked" />
-      <Checkbox checked aria-label="Checked" readOnly />
-      <Checkbox indeterminate aria-label="Indeterminate" />
-      <Checkbox disabled aria-label="Disabled" />
-      <Checkbox invalid aria-label="Invalid" />
     </div>
   ),
 };

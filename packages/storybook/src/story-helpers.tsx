@@ -30,26 +30,3 @@ export const rtlDecorator = (Story: StoryFn) => (
     <Story />
   </div>
 );
-
-/**
- * Simuleert vergroot tekstformaat (200% font-size).
- * Nabootsing van een eindgebruiker die in de browser de tekstgrootte heeft vergroot.
- * Voeg toe aan een story via: decorators: [largeTextDecorator]
- */
-export const largeTextDecorator = (Story: StoryFn) => (
-  <div style={{ fontSize: '200%' }}>
-    <Story />
-  </div>
-);
-
-/**
- * Simuleert Windows High Contrast modus.
- * Gebruikt forced-colors achtige stijlen om te laten zien hoe het component
- * eruitziet wanneer de gebruiker hoog contrast heeft ingesteld.
- * Voeg toe aan een story via: decorators: [highContrastDecorator]
- */
-export const highContrastDecorator = (Story: StoryFn) => (
-  <div className="dsn-story-high-contrast">
-    <Story />
-  </div>
-);

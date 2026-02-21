@@ -7,8 +7,6 @@ import {
   TEKST_AR,
   VEEL_TEKST_AR,
   rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
 } from './story-helpers';
 
 const meta: Meta<typeof TelephoneInput> = {
@@ -182,12 +180,6 @@ export const LongText: Story = {
   args: { defaultValue: VEEL_TEKST },
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  args: { defaultValue: '06 12345678' },
-};
-
 // =============================================================================
 // RTL
 // =============================================================================
@@ -207,22 +199,3 @@ export const RTLLongText: Story = {
 // =============================================================================
 // HIGH CONTRAST
 // =============================================================================
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        maxWidth: '400px',
-      }}
-    >
-      <TelephoneInput defaultValue="06 12345678" />
-      <TelephoneInput disabled value="06 12345678" />
-      <TelephoneInput invalid value="geen nummer" />
-    </div>
-  ),
-};

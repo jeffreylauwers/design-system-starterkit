@@ -8,8 +8,6 @@ import {
   TEKST_AR,
   VEEL_TEKST_AR,
   rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
 } from './story-helpers';
 
 const meta: Meta<typeof TextInput> = {
@@ -178,12 +176,6 @@ export const LongText: Story = {
   args: { defaultValue: VEEL_TEKST },
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  args: { defaultValue: TEKST },
-};
-
 // =============================================================================
 // RTL
 // =============================================================================
@@ -203,22 +195,3 @@ export const RTLLongText: Story = {
 // =============================================================================
 // HIGH CONTRAST
 // =============================================================================
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        maxWidth: '400px',
-      }}
-    >
-      <TextInput defaultValue={TEKST} />
-      <TextInput disabled value={TEKST} />
-      <TextInput invalid value={TEKST} />
-    </div>
-  ),
-};

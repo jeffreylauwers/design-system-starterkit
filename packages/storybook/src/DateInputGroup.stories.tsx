@@ -6,11 +6,7 @@ import {
   FormFieldset,
 } from '@dsn/components-react';
 import DocsPage from './DateInputGroup.docs.mdx';
-import {
-  rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
-} from './story-helpers';
+import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof DateInputGroup> = {
   title: 'Components/DateInputGroup',
@@ -136,12 +132,6 @@ export const Disabled: Story = {
 // LARGE TEXT
 // =============================================================================
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  render: (args) => <WithValueStory {...args} />,
-};
-
 // =============================================================================
 // RTL
 // =============================================================================
@@ -155,13 +145,3 @@ export const RTL: Story = {
 // =============================================================================
 // HIGH CONTRAST
 // =============================================================================
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: (args) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <WithValueStory {...args} />
-    </div>
-  ),
-};

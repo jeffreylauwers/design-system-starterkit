@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Radio } from '@dsn/components-react';
 import DocsPage from './Radio.docs.mdx';
-import {
-  rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
-} from './story-helpers';
+import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof Radio> = {
   title: 'Components/Radio',
@@ -138,17 +134,6 @@ export const AllStates: Story = {
   ),
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  render: () => (
-    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-      <Radio aria-label="Unchecked" name="large-1" value="a" />
-      <Radio checked aria-label="Checked" name="large-1" value="b" readOnly />
-    </div>
-  ),
-};
-
 export const RTL: Story = {
   name: 'RTL',
   decorators: [rtlDecorator],
@@ -157,19 +142,6 @@ export const RTL: Story = {
       <Radio aria-label="Unchecked" name="rtl-1" value="a" />
       <Radio checked aria-label="Checked" name="rtl-1" value="b" readOnly />
       <Radio disabled aria-label="Disabled" name="rtl-1" value="c" />
-    </div>
-  ),
-};
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-      <Radio aria-label="Unchecked" name="hc-1" value="a" />
-      <Radio checked aria-label="Checked" name="hc-1" value="b" readOnly />
-      <Radio disabled aria-label="Disabled" name="hc-1" value="c" />
-      <Radio invalid aria-label="Invalid" name="hc-1" value="d" />
     </div>
   ),
 };

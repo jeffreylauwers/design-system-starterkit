@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DateInput } from '@dsn/components-react';
 import DocsPage from './DateInput.docs.mdx';
-import {
-  rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
-} from './story-helpers';
+import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof DateInput> = {
   title: 'Components/DateInput',
@@ -136,12 +132,6 @@ export const AllStates: Story = {
 // LARGE TEXT
 // =============================================================================
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  args: { defaultValue: '2026-03-15' },
-};
-
 // =============================================================================
 // RTL
 // =============================================================================
@@ -155,15 +145,3 @@ export const RTL: Story = {
 // =============================================================================
 // HIGH CONTRAST
 // =============================================================================
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <DateInput defaultValue="2026-03-15" />
-      <DateInput disabled value="2026-03-15" />
-      <DateInput invalid />
-    </div>
-  ),
-};

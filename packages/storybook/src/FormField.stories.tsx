@@ -7,15 +7,7 @@ import {
   CheckboxOption,
 } from '@dsn/components-react';
 import DocsPage from './FormField.docs.mdx';
-import {
-  TEKST,
-  VEEL_TEKST,
-  TEKST_AR,
-  VEEL_TEKST_AR,
-  rtlDecorator,
-  largeTextDecorator,
-  highContrastDecorator,
-} from './story-helpers';
+import { TEKST, VEEL_TEKST, TEKST_AR, rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof FormField> = {
   title: 'Components/FormField',
@@ -169,16 +161,6 @@ export const LongText: Story = {
   ),
 };
 
-export const LargeText: Story = {
-  name: 'Large text (200%)',
-  decorators: [largeTextDecorator],
-  render: (args) => (
-    <FormField {...args} label={TEKST} htmlFor="la-1" description={TEKST}>
-      <TextInput id="la-1" placeholder={TEKST} />
-    </FormField>
-  ),
-};
-
 export const RTL: Story = {
   name: 'RTL',
   decorators: [rtlDecorator],
@@ -207,20 +189,5 @@ export const RTLLongText: Story = {
     >
       <TextInput id="rtl-2" defaultValue={VEEL_TEKST_AR} invalid />
     </FormField>
-  ),
-};
-
-export const HighContrast: Story = {
-  name: 'High contrast',
-  decorators: [highContrastDecorator],
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      <FormField label={TEKST} htmlFor="hc-1">
-        <TextInput id="hc-1" placeholder={TEKST} />
-      </FormField>
-      <FormField label={TEKST} htmlFor="hc-2" error={TEKST}>
-        <TextInput id="hc-2" invalid placeholder={TEKST} />
-      </FormField>
-    </div>
   ),
 };
