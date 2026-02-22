@@ -21,7 +21,7 @@ De NumberInput component is een gespecialiseerd invoerveld voor het invoeren van
 
 ## Best practices
 
-- **Gebruik een duidelijke placeholder.** Geef aan wat de verwachte invoer is (bijv. `0` voor gehele getallen, `0,00` voor bedragen).
+- **Gebruik FormFieldDescription voor formaathints.** Als je wilt toelichten wat de verwachte invoer is (bijv. "Voer een bedrag in, gebruik een komma voor decimalen"), gebruik dan [FormFieldDescription](/docs/components-formfielddescription--docs) — niet een placeholder. Placeholder tekst verdwijnt bij typen en is daarna niet meer zichtbaar.
 - **Gebruik `allowDecimals` voor bedragen.** Dit schakelt `inputmode="decimal"` in zodat ook een kommatoets beschikbaar is op mobiel.
 - **Combineer met FormField.** Gebruik altijd een label via `FormField` of `FormFieldLabel` voor toegankelijkheid.
 - **Geef validatie feedback.** Gebruik de `invalid` prop in combinatie met `aria-invalid` en een `FormFieldErrorMessage`.

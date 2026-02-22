@@ -21,7 +21,7 @@ De SearchInput component is een gespecialiseerd invoerveld voor zoekfunctionalit
 
 ## Best practices
 
-- **Gebruik een duidelijke placeholder.** Geef aan wat gebruikers kunnen zoeken (bijv. `Zoek producten...`, `Zoek in artikelen...`).
+- **Gebruik een zichtbaar label of `aria-label`.** Voeg altijd een label toe via `FormField` of `FormFieldLabel`, of gebruik `aria-label` als het visuele design geen zichtbaar label toestaat (bijv. een zoekveld in de siteheader). Een placeholder is niet verplicht en verdwijnt bij typen — gebruik het optioneel alleen als extra context over de zoekscope nuttig is (bijv. `Zoek in producten...`).
 - **Gebruik `role="search"` op een wrapper element.** Dit helpt screen readers de zoekfunctionaliteit te identificeren.
 - **Implementeer live search of debouncing.** Update resultaten tijdens het typen, maar niet bij elke toetsaanslag.
 - **Geef feedback bij geen resultaten.** Toon een melding als er geen resultaten zijn gevonden.

@@ -30,7 +30,7 @@ De TextInput component is een gestandaardiseerd invoerveld voor single-line teks
   - `xl` (48ch) - Langere tekst (URL)
   - `full` (100%) - Responsive, neemt volledige breedte
 - **Gebruik het juiste type.** Gebruik native input types: `email`, `url`, `tel`, `search`, etc.
-- **Duidelijke placeholders.** Gebruik placeholders voor voorbeelden, geen instructies.
+- **Vermijd placeholders.** Placeholder tekst verdwijnt zodra de gebruiker begint te typen — daarna is de informatie niet meer zichtbaar. Bovendien kan de lage contrast van placeholders het veld er ingevuld laten uitzien. Gebruik [FormFieldDescription](/docs/components-formfielddescription--docs) voor hints over het verwachte formaat of type data.
 - **Labels zijn verplicht.** Wrap in FormField met FormFieldLabel voor accessibility.
 - **Invalid state alleen na interactie.** Toon invalid state alleen na blur of submit, niet direct.
 - **Disabled vs read-only.** Gebruik `disabled` als veld niet beschikbaar is, `readOnly` als waarde niet aangepast mag worden.
@@ -91,5 +91,5 @@ De TextInput component is een gestandaardiseerd invoerveld voor single-line teks
 - Invalid state wordt gecommuniceerd via `aria-invalid="true"`.
 - Gebruik `aria-describedby` om error messages te koppelen.
 - Focus state is duidelijk zichtbaar met border highlight.
-- Placeholder tekst is niet voldoende als label (verdwijnt bij typen).
+- Gebruik nooit een placeholder als vervanging van een label — placeholder tekst is niet zichtbaar zodra de gebruiker typt, en wordt slecht ondersteund door oudere screenreaders.
 - Minimum touch target size van 24x24px volgens WCAG 2.5.5.

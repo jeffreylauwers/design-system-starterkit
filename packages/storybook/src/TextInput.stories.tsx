@@ -29,9 +29,7 @@ const meta: Meta<typeof TextInput> = {
     required: { control: 'boolean' },
     placeholder: { control: 'text' },
   },
-  args: {
-    placeholder: TEKST,
-  },
+  args: {},
 };
 
 export default meta;
@@ -50,6 +48,11 @@ export const Default: Story = {};
 export const WithValue: Story = {
   name: 'With value',
   args: { defaultValue: TEKST },
+};
+
+export const WithPlaceholder: Story = {
+  name: 'With placeholder',
+  args: { placeholder: TEKST },
 };
 
 export const Disabled: Story = {
@@ -72,13 +75,21 @@ export const Required: Story = {
 export const Widths: Story = {
   name: 'Width variants',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <TextInput width="xs" placeholder="xs — 10ch" />
-      <TextInput width="sm" placeholder="sm — 14ch" />
-      <TextInput width="md" placeholder="md — 20ch" />
-      <TextInput width="lg" placeholder="lg — 32ch" />
-      <TextInput width="xl" placeholder="xl — 48ch" />
-      <TextInput width="full" placeholder="full — 100%" />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      {(['xs', 'sm', 'md', 'lg', 'xl', 'full'] as const).map((w) => (
+        <div key={w}>
+          <p
+            style={{
+              margin: '0 0 0.25rem',
+              fontWeight: 'bold',
+              fontSize: '0.875rem',
+            }}
+          >
+            {w}
+          </p>
+          <TextInput width={w} />
+        </div>
+      ))}
     </div>
   ),
 };
@@ -108,7 +119,7 @@ export const AllStates: Story = {
         >
           Default
         </label>
-        <TextInput placeholder={TEKST} />
+        <TextInput />
       </div>
       <div>
         <label

@@ -29,7 +29,6 @@ const meta: Meta<typeof EmailInput> = {
     },
   },
   args: {
-    placeholder: 'naam@voorbeeld.nl',
     disabled: false,
     readOnly: false,
     invalid: false,
@@ -55,6 +54,11 @@ export const WithValue: Story = {
   args: { defaultValue: 'jan@voorbeeld.nl' },
 };
 
+export const WithPlaceholder: Story = {
+  name: 'With placeholder',
+  args: { placeholder: 'naam@voorbeeld.nl' },
+};
+
 export const Disabled: Story = {
   args: { disabled: true, value: 'jan@voorbeeld.nl' },
 };
@@ -71,13 +75,21 @@ export const Invalid: Story = {
 export const Widths: Story = {
   name: 'Width variants',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <EmailInput width="xs" placeholder="xs" />
-      <EmailInput width="sm" placeholder="sm" />
-      <EmailInput width="md" placeholder="md" />
-      <EmailInput width="lg" placeholder="lg" />
-      <EmailInput width="xl" placeholder="xl" />
-      <EmailInput width="full" placeholder="full" />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      {(['xs', 'sm', 'md', 'lg', 'xl', 'full'] as const).map((w) => (
+        <div key={w}>
+          <p
+            style={{
+              margin: '0 0 0.25rem',
+              fontWeight: 'bold',
+              fontSize: '0.875rem',
+            }}
+          >
+            {w}
+          </p>
+          <EmailInput width={w} />
+        </div>
+      ))}
     </div>
   ),
 };
@@ -107,7 +119,7 @@ export const AllStates: Story = {
         >
           Default
         </label>
-        <EmailInput placeholder="naam@voorbeeld.nl" />
+        <EmailInput />
       </div>
       <div>
         <label

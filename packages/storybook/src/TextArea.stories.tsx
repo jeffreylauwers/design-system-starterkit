@@ -31,7 +31,6 @@ const meta: Meta<typeof TextArea> = {
     rows: { control: 'number' },
   },
   args: {
-    placeholder: TEKST,
     rows: 4,
   },
 };
@@ -52,6 +51,11 @@ export const Default: Story = {};
 export const WithValue: Story = {
   name: 'With value',
   args: { defaultValue: TEKST, readOnly: true },
+};
+
+export const WithPlaceholder: Story = {
+  name: 'With placeholder',
+  args: { placeholder: TEKST },
 };
 
 export const Disabled: Story = {
@@ -88,7 +92,7 @@ export const RowVariants: Story = {
         >
           2 rijen
         </label>
-        <TextArea rows={2} placeholder={TEKST} />
+        <TextArea rows={2} />
       </div>
       <div>
         <label
@@ -100,7 +104,7 @@ export const RowVariants: Story = {
         >
           4 rijen (default)
         </label>
-        <TextArea rows={4} placeholder={TEKST} />
+        <TextArea rows={4} />
       </div>
       <div>
         <label
@@ -112,7 +116,7 @@ export const RowVariants: Story = {
         >
           8 rijen
         </label>
-        <TextArea rows={8} placeholder={TEKST} />
+        <TextArea rows={8} />
       </div>
     </div>
   ),
@@ -121,11 +125,21 @@ export const RowVariants: Story = {
 export const Widths: Story = {
   name: 'Width variants',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <TextArea width="sm" placeholder="sm — 16ch" rows={2} />
-      <TextArea width="md" placeholder="md — 32ch" rows={2} />
-      <TextArea width="lg" placeholder="lg — 48ch" rows={2} />
-      <TextArea width="full" placeholder="full — 100%" rows={2} />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      {(['sm', 'md', 'lg', 'full'] as const).map((w) => (
+        <div key={w}>
+          <p
+            style={{
+              margin: '0 0 0.25rem',
+              fontWeight: 'bold',
+              fontSize: '0.875rem',
+            }}
+          >
+            {w}
+          </p>
+          <TextArea width={w} rows={2} />
+        </div>
+      ))}
     </div>
   ),
 };
@@ -155,7 +169,7 @@ export const AllStates: Story = {
         >
           Default
         </label>
-        <TextArea placeholder={TEKST} rows={3} />
+        <TextArea rows={3} />
       </div>
       <div>
         <label

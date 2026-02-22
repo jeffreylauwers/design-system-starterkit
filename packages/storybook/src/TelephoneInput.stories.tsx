@@ -29,7 +29,6 @@ const meta: Meta<typeof TelephoneInput> = {
     },
   },
   args: {
-    placeholder: '06 12345678',
     disabled: false,
     readOnly: false,
     invalid: false,
@@ -57,7 +56,12 @@ export const WithValue: Story = {
 
 export const International: Story = {
   name: 'International format',
-  args: { defaultValue: '+31 6 12345678', placeholder: '+31 6 12345678' },
+  args: { defaultValue: '+31 6 12345678' },
+};
+
+export const WithPlaceholder: Story = {
+  name: 'With placeholder',
+  args: { placeholder: '06 12345678' },
 };
 
 export const Disabled: Story = {
@@ -76,13 +80,21 @@ export const Invalid: Story = {
 export const Widths: Story = {
   name: 'Width variants',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <TelephoneInput width="xs" placeholder="xs" />
-      <TelephoneInput width="sm" placeholder="sm" />
-      <TelephoneInput width="md" placeholder="md" />
-      <TelephoneInput width="lg" placeholder="lg" />
-      <TelephoneInput width="xl" placeholder="xl" />
-      <TelephoneInput width="full" placeholder="full" />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      {(['xs', 'sm', 'md', 'lg', 'xl', 'full'] as const).map((w) => (
+        <div key={w}>
+          <p
+            style={{
+              margin: '0 0 0.25rem',
+              fontWeight: 'bold',
+              fontSize: '0.875rem',
+            }}
+          >
+            {w}
+          </p>
+          <TelephoneInput width={w} />
+        </div>
+      ))}
     </div>
   ),
 };
@@ -112,7 +124,7 @@ export const AllStates: Story = {
         >
           Default
         </label>
-        <TelephoneInput placeholder="06 12345678" />
+        <TelephoneInput />
       </div>
       <div>
         <label

@@ -34,7 +34,7 @@ De TextArea component is een gestandaardiseerd invoerveld voor multi-line tekst.
 - **Labels zijn verplicht.** Wrap in FormField met FormFieldLabel voor accessibility.
 - **Resize gedrag.** Standaard vertical resizing, automatisch disabled bij disabled state.
 - **Invalid state alleen na interactie.** Toon invalid state alleen na blur of submit.
-- **Duidelijke placeholders.** Gebruik placeholders voor voorbeelden, geen instructies.
+- **Vermijd placeholders.** Placeholder tekst verdwijnt zodra de gebruiker begint te typen — daarna is de informatie niet meer zichtbaar. Bovendien kan de lage contrast van placeholders het veld er ingevuld laten uitzien. Gebruik [FormFieldDescription](/docs/components-formfielddescription--docs) voor hints over het verwachte formaat of inhoud.
 - **Character/word limits.** Overweeg een character counter te tonen bij lange teksten.
 
 ## Row height richtlijnen
@@ -100,6 +100,6 @@ De TextArea component is een gestandaardiseerd invoerveld voor multi-line tekst.
 - Invalid state wordt gecommuniceerd via `aria-invalid="true"`.
 - Gebruik `aria-describedby` om error messages te koppelen.
 - Focus state is duidelijk zichtbaar met border highlight.
-- Placeholder tekst is niet voldoende als label (verdwijnt bij typen).
+- Gebruik nooit een placeholder als vervanging van een label — placeholder tekst is niet zichtbaar zodra de gebruiker typt, en wordt slecht ondersteund door oudere screenreaders.
 - Resize handles zijn keyboard toegankelijk in moderne browsers.
 - Minimum touch target size van 24x24px volgens WCAG 2.5.5.

@@ -24,7 +24,6 @@ const meta: Meta<typeof NumberInput> = {
     },
   },
   args: {
-    placeholder: '0',
     disabled: false,
     readOnly: false,
     invalid: false,
@@ -50,9 +49,13 @@ export const WithDecimals: Story = {
   name: 'With decimals (allowDecimals)',
   args: {
     allowDecimals: true,
-    placeholder: '0,00',
     defaultValue: '1234',
   },
+};
+
+export const WithPlaceholder: Story = {
+  name: 'With placeholder',
+  args: { placeholder: '0' },
 };
 
 export const WithValue: Story = {
@@ -76,13 +79,21 @@ export const Invalid: Story = {
 export const Widths: Story = {
   name: 'Width variants',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <NumberInput width="xs" placeholder="xs" />
-      <NumberInput width="sm" placeholder="sm" />
-      <NumberInput width="md" placeholder="md" />
-      <NumberInput width="lg" placeholder="lg" />
-      <NumberInput width="xl" placeholder="xl" />
-      <NumberInput width="full" placeholder="full" />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      {(['xs', 'sm', 'md', 'lg', 'xl', 'full'] as const).map((w) => (
+        <div key={w}>
+          <p
+            style={{
+              margin: '0 0 0.25rem',
+              fontWeight: 'bold',
+              fontSize: '0.875rem',
+            }}
+          >
+            {w}
+          </p>
+          <NumberInput width={w} />
+        </div>
+      ))}
     </div>
   ),
 };
@@ -112,7 +123,7 @@ export const AllStates: Story = {
         >
           Default
         </label>
-        <NumberInput placeholder="0" />
+        <NumberInput />
       </div>
       <div>
         <label
