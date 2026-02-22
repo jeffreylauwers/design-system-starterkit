@@ -51,7 +51,7 @@ export const Default: Story = {
   },
   render: (args) => (
     <FormField {...args}>
-      <TextInput id="input-1" placeholder={TEKST} />
+      <TextInput id="input-1" />
     </FormField>
   ),
 };
@@ -60,7 +60,7 @@ export const WithDescription: Story = {
   name: 'With description',
   render: (args) => (
     <FormField {...args} label={TEKST} htmlFor="input-desc" description={TEKST}>
-      <TextInput id="input-desc" placeholder={TEKST} />
+      <TextInput id="input-desc" />
     </FormField>
   ),
 };
@@ -69,7 +69,7 @@ export const WithError: Story = {
   name: 'With error',
   render: (args) => (
     <FormField {...args} label={TEKST} htmlFor="input-err" error={TEKST}>
-      <TextInput id="input-err" invalid placeholder={TEKST} />
+      <TextInput id="input-err" invalid />
     </FormField>
   ),
 };
@@ -78,7 +78,7 @@ export const WithStatus: Story = {
   name: 'With status',
   render: (args) => (
     <FormField {...args} label={TEKST} htmlFor="input-status" status={TEKST}>
-      <TextInput id="input-status" placeholder={TEKST} />
+      <TextInput id="input-status" />
     </FormField>
   ),
 };
@@ -90,25 +90,25 @@ export const AllStates: Story = {
       <div>
         <h3 style={{ marginBlockEnd: '0.5rem' }}>Basic</h3>
         <FormField label={TEKST} htmlFor="s1">
-          <TextInput id="s1" placeholder={TEKST} />
+          <TextInput id="s1" />
         </FormField>
       </div>
       <div>
         <h3 style={{ marginBlockEnd: '0.5rem' }}>With description</h3>
         <FormField label={TEKST} htmlFor="s2" description={TEKST}>
-          <TextInput id="s2" placeholder={TEKST} />
+          <TextInput id="s2" />
         </FormField>
       </div>
       <div>
         <h3 style={{ marginBlockEnd: '0.5rem' }}>With optional suffix</h3>
         <FormField label={TEKST} htmlFor="s3" labelSuffix="(niet verplicht)">
-          <TextInput id="s3" placeholder={TEKST} />
+          <TextInput id="s3" />
         </FormField>
       </div>
       <div>
         <h3 style={{ marginBlockEnd: '0.5rem' }}>With error</h3>
         <FormField label={TEKST} htmlFor="s4" error={TEKST}>
-          <TextInput id="s4" invalid placeholder={TEKST} />
+          <TextInput id="s4" invalid />
         </FormField>
       </div>
       <div>
@@ -119,7 +119,7 @@ export const AllStates: Story = {
           status={TEKST}
           statusVariant="positive"
         >
-          <TextInput id="s5" placeholder={TEKST} />
+          <TextInput id="s5" />
         </FormField>
       </div>
       <div>
@@ -130,13 +130,13 @@ export const AllStates: Story = {
           status={TEKST}
           statusVariant="warning"
         >
-          <TextInput id="s6" placeholder={TEKST} />
+          <TextInput id="s6" />
         </FormField>
       </div>
       <div>
         <h3 style={{ marginBlockEnd: '0.5rem' }}>With TextArea</h3>
         <FormField label={TEKST} htmlFor="s7" description={TEKST}>
-          <TextArea id="s7" rows={4} placeholder={TEKST} />
+          <TextArea id="s7" rows={4} />
         </FormField>
       </div>
       <div>

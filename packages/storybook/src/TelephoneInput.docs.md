@@ -20,7 +20,7 @@ De TelephoneInput component is een gespecialiseerd invoerveld voor telefoonnumme
 
 ## Best practices
 
-- **Gebruik een duidelijke placeholder.** Geef een voorbeeld in het verwachte formaat (bijv. `06 12345678` of `+31 6 12345678`).
+- **Gebruik FormFieldDescription voor formaathints.** Als je het verwachte formaat wilt toelichten (bijv. `06 12345678` of `+31 6 12345678`), gebruik dan [FormFieldDescription](/docs/components-formfielddescription--docs) — niet een placeholder. Placeholder tekst verdwijnt bij typen en is daarna niet meer zichtbaar.
 - **Dwing geen specifiek formaat af.** Gebruikers typen telefoonnummers op verschillende manieren. Valideer lengte en tekens, maar accepteer variaties in opmaak.
 - **Laat browser-autocomplete aan.** De standaard `autocomplete="tel"` helpt gebruikers snel invullen.
 - **Combineer met FormField.** Gebruik altijd een label via `FormField` of `FormFieldLabel` voor toegankelijkheid.
