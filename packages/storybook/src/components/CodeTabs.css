@@ -1,0 +1,12 @@
+/**
+ * CodeTabs — override Storybook's Source block default styles.
+ *
+ * Storybook's .docblock-source element has margin (25px 0 40px) and border-radius (4px)
+ * that create visual gaps and rounding inside our wrapper. We remove these so the code
+ * block connects seamlessly with the tab bar above and the wrapper border below.
+ */
+.dsn-code-tabs .docblock-source {
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
