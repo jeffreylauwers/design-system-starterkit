@@ -22,19 +22,6 @@
   transform: translateY(-50%);
 }
 
-/* Visually hidden button label — accessible to screen readers, invisible to sighted users */
-.dsn-date-input__button-label {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
 /* Input — extra padding-inline-end to make room for the calendar button */
 /* Hide the native browser calendar/date picker indicator */
 .dsn-date-input {

@@ -28,7 +28,7 @@ De Button component biedt een consistente, toegankelijke manier om acties te tri
 - **Gebruik duidelijke, actieve labels.** Schrijf labels als werkwoorden: "Opslaan", "Verwijderen", "Volgende". Vermijd vage labels als "OK" of "Klik hier".
 - **Gebruik sentiment-varianten bewust.** Reserveer `strong-negative` voor destructieve acties (verwijderen, annuleren) en `strong-positive` voor bevestigende acties (goedkeuren, voltooien).
 - **Iconen verduidelijken, niet versieren.** Voeg alleen een icoon toe als het de betekenis van de actie versterkt. Gebruik `iconStart` voor acties (bijv. prullenbak + "Verwijderen") en `iconEnd` voor richtingen (bijv. "Volgende" + pijl).
-- **Icon-only buttons vereisen een `aria-label`.** Zonder zichtbare tekst moet een toegankelijk label aanwezig zijn.
+- **Icon-only buttons vereisen een toegankelijke tekstlabel.** Geef de tekst mee als `children` — de button verbergt dit visueel via `dsn-button__label`, maar schermlezers lezen het voor. Gebruik `iconStart` of `iconEnd` voor het icoon. Gebruik geen `aria-label` op de button — dit wordt niet vertaald door browser-vertaaltools.
 - **Gebruik `loading` voor asynchrone acties.** Toon de loading state wanneer de actie tijd kost (bijv. formulier versturen). De button wordt automatisch `disabled` tijdens loading.
 - **Respecteer minimale aanraakdoelen.** De button garandeert een minimale touch target van 48×48px (WCAG 2.5.5).
 

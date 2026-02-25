@@ -116,9 +116,7 @@ describe('DateInput', () => {
 
     it('calendar button has visually hidden label text', () => {
       const { container } = render(<DateInput />);
-      const hiddenLabel = container.querySelector(
-        '.dsn-date-input__button-label'
-      );
+      const hiddenLabel = container.querySelector('.dsn-button__label');
       expect(hiddenLabel).toBeInTheDocument();
       expect(hiddenLabel).toHaveTextContent('Datumkiezer openen');
     });
