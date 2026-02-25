@@ -89,15 +89,13 @@ export const TimeInput = React.forwardRef<HTMLInputElement, TimeInputProps>(
             variant="subtle"
             size="small"
             iconOnly
+            iconStart={<Icon name="clock" aria-hidden />}
             className="dsn-time-input__button"
             onClick={handleButtonClick}
             tabIndex={-1}
             aria-hidden="true"
           >
-            <Icon name="clock" aria-hidden />
-            <span className="dsn-time-input__button-label">
-              Tijdkiezer openen
-            </span>
+            Tijdkiezer openen
           </Button>
         )}
       </div>

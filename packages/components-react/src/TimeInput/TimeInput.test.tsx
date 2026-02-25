@@ -115,9 +115,7 @@ describe('TimeInput', () => {
 
     it('clock button has visually hidden label text', () => {
       const { container } = render(<TimeInput />);
-      const hiddenLabel = container.querySelector(
-        '.dsn-time-input__button-label'
-      );
+      const hiddenLabel = container.querySelector('.dsn-button__label');
       expect(hiddenLabel).toBeInTheDocument();
       expect(hiddenLabel).toHaveTextContent('Tijdkiezer openen');
     });

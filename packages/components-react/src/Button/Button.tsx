@@ -91,9 +91,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
  *   Confirm
  * </Button>
  *
- * // Icon only
- * <Button variant="subtle" iconOnly aria-label="Close">
- *   <Icon name="x" />
+ * // Icon only — children is the accessible text label, icon via iconStart
+ * <Button variant="subtle" iconOnly iconStart={<Icon name="x" />}>
+ *   Sluiten
  * </Button>
  *
  * // Loading state
@@ -151,7 +151,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {loading ? loaderIcon : iconStart}
-        {children}
+        {children !== undefined && children !== null && (
+          <span className="dsn-button__label">{children}</span>
+        )}
         {iconEnd}
       </button>
     );

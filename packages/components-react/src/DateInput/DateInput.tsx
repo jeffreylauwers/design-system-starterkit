@@ -89,15 +89,13 @@ export const DateInput = React.forwardRef<HTMLInputElement, DateInputProps>(
             variant="subtle"
             size="small"
             iconOnly
+            iconStart={<Icon name="calendar-event" aria-hidden />}
             className="dsn-date-input__button"
             onClick={handleButtonClick}
             tabIndex={-1}
             aria-hidden="true"
           >
-            <Icon name="calendar-event" aria-hidden />
-            <span className="dsn-date-input__button-label">
-              Datumkiezer openen
-            </span>
+            Datumkiezer openen
           </Button>
         )}
       </div>

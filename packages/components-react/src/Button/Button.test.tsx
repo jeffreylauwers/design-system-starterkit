@@ -61,11 +61,20 @@ describe('Button', () => {
 
   it('applies icon-only class', () => {
     render(
-      <Button iconOnly aria-label="Close">
-        X
+      <Button
+        iconOnly
+        iconStart={
+          <span data-testid="icon" aria-hidden="true">
+            ★
+          </span>
+        }
+      >
+        Sluiten
       </Button>
     );
-    expect(screen.getByRole('button')).toHaveClass('dsn-button--icon-only');
+    expect(screen.getByRole('button', { name: 'Sluiten' })).toHaveClass(
+      'dsn-button--icon-only'
+    );
   });
 
   it('is disabled when disabled prop is set', () => {
@@ -147,9 +156,12 @@ describe('Button', () => {
     );
     const button = screen.getByRole('button');
     const iconStart = button.querySelector('[data-testid="icon-start"]');
+    const label = button.querySelector('.dsn-button__label');
     expect(iconStart).toBeInTheDocument();
-    // Icon should come before text
+    expect(label).toBeInTheDocument();
+    // Icon should come before label
     expect(button.firstChild).toBe(iconStart);
+    expect(button.lastChild).toBe(label);
   });
 
   it('renders iconEnd after children', () => {
@@ -158,8 +170,11 @@ describe('Button', () => {
     );
     const button = screen.getByRole('button');
     const iconEnd = button.querySelector('[data-testid="icon-end"]');
+    const label = button.querySelector('.dsn-button__label');
     expect(iconEnd).toBeInTheDocument();
-    // Icon should come after text
+    expect(label).toBeInTheDocument();
+    // Icon should come after label
+    expect(button.firstChild).toBe(label);
     expect(button.lastChild).toBe(iconEnd);
   });
 
@@ -175,16 +190,42 @@ describe('Button', () => {
     const button = screen.getByRole('button');
     const iconStart = button.querySelector('[data-testid="icon-start"]');
     const iconEnd = button.querySelector('[data-testid="icon-end"]');
+    const label = button.querySelector('.dsn-button__label');
     expect(iconStart).toBeInTheDocument();
     expect(iconEnd).toBeInTheDocument();
+    expect(label).toBeInTheDocument();
     expect(button.firstChild).toBe(iconStart);
     expect(button.lastChild).toBe(iconEnd);
   });
 
-  it('renders without icon props (backward-compatible)', () => {
+  it('wraps children in dsn-button__label span', () => {
     render(<Button>No icons</Button>);
     const button = screen.getByRole('button', { name: 'No icons' });
+    const label = button.querySelector('.dsn-button__label');
+    expect(label).toBeInTheDocument();
+    expect(label).toHaveTextContent('No icons');
     expect(button.childNodes).toHaveLength(1);
+  });
+
+  it('renders no dsn-button__label when children is absent', () => {
+    render(<Button iconStart={<span>★</span>} />);
+    const button = screen.getByRole('button');
+    expect(button.querySelector('.dsn-button__label')).not.toBeInTheDocument();
+  });
+
+  it('icon-only button label is accessible to screen readers', () => {
+    render(
+      <Button iconOnly iconStart={<span aria-hidden="true">★</span>}>
+        Sluiten
+      </Button>
+    );
+    // The button is accessible by its text content (inside dsn-button__label)
+    expect(screen.getByRole('button', { name: 'Sluiten' })).toBeInTheDocument();
+    // The label span is present in the DOM
+    const button = screen.getByRole('button', { name: 'Sluiten' });
+    expect(button.querySelector('.dsn-button__label')).toHaveTextContent(
+      'Sluiten'
+    );
   });
 
   it('shows loader icon instead of iconStart when loading', () => {
