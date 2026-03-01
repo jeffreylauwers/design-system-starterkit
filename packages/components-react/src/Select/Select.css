@@ -29,6 +29,7 @@
 /* Select — reset browser defaults, hide native arrow, add padding for custom icon */
 /* Also override :read-only styles from dsn-text-input, because browsers consider
    <select> as :read-only (non-typeable), which incorrectly triggers those styles. */
+/* max-inline-size is set to none so the wrapper controls the width, not the select itself. */
 .dsn-select {
   appearance: none;
   background-color: var(--dsn-text-input-background-color);
@@ -36,6 +37,7 @@
     var(--dsn-text-input-border-color);
   color: var(--dsn-text-input-color);
   cursor: pointer;
+  max-inline-size: none;
   padding-inline-end: var(--dsn-select-padding-inline-end-with-icon);
 }
 
