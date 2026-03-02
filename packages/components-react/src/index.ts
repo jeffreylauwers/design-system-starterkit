@@ -38,6 +38,9 @@ export * from './RadioGroup';
 export * from './RadioOption';
 export * from './OptionLabel';
 
+// Display & Feedback Components
+export * from './StatusBadge';
+
 // Form Field Components
 export * from './FormField';
 export * from './FormFieldLabel';
