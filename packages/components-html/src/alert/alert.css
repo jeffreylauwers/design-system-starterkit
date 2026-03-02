@@ -90,8 +90,7 @@
   padding-block: var(--dsn-alert-padding-block);
   padding-inline: var(--dsn-alert-padding-inline);
   border-radius: var(--dsn-alert-border-radius);
-  border-inline-start: var(--dsn-alert-border-width) solid
-    var(--dsn-alert-border-color);
+  border: var(--dsn-alert-border-width) solid var(--dsn-alert-border-color);
   background-color: var(--dsn-alert-background-color);
   color: var(--dsn-alert-color);
 }
