@@ -1,0 +1,81 @@
+/**
+ * Status Badge Component
+ * Compact label that communicates status with a signal color and optional icon.
+ *
+ * Usage:
+ * <!-- Neutral (default), without icon -->
+ * <strong class="dsn-status-badge">Actief</strong>
+ *
+ * <!-- Info variant (with icon) -->
+ * <strong class="dsn-status-badge dsn-status-badge--info">
+ *   <svg class="dsn-icon dsn-icon--sm" aria-hidden="true"><!-- info-circle --></svg>
+ *   Nieuw
+ * </strong>
+ *
+ * <!-- Positive variant (with icon) -->
+ * <strong class="dsn-status-badge dsn-status-badge--positive">
+ *   <svg class="dsn-icon dsn-icon--sm" aria-hidden="true"><!-- circle-check --></svg>
+ *   Goedgekeurd
+ * </strong>
+ *
+ * <!-- Negative variant (with icon) -->
+ * <strong class="dsn-status-badge dsn-status-badge--negative">
+ *   <svg class="dsn-icon dsn-icon--sm" aria-hidden="true"><!-- exclamation-circle --></svg>
+ *   Afgewezen
+ * </strong>
+ *
+ * <!-- Warning variant (with icon) -->
+ * <strong class="dsn-status-badge dsn-status-badge--warning">
+ *   <svg class="dsn-icon dsn-icon--sm" aria-hidden="true"><!-- alert-triangle --></svg>
+ *   Let op
+ * </strong>
+ */
+
+.dsn-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--dsn-status-badge-gap);
+  font-family: inherit;
+  font-size: var(--dsn-status-badge-font-size);
+  line-height: var(--dsn-status-badge-line-height);
+  text-transform: var(--dsn-status-badge-text-transform);
+  color: var(--dsn-status-badge-neutral-color);
+  background-color: var(--dsn-status-badge-neutral-background-color);
+  border-radius: var(--dsn-status-badge-border-radius);
+  border: var(--dsn-status-badge-border-width) solid
+    var(--dsn-status-badge-border-color);
+  padding-block: var(--dsn-status-badge-padding-block);
+  padding-inline: var(--dsn-status-badge-padding-inline);
+}
+
+/* Info variant */
+.dsn-status-badge--info {
+  color: var(--dsn-status-badge-info-color);
+  background-color: var(--dsn-status-badge-info-background-color);
+}
+
+/* Positive variant */
+.dsn-status-badge--positive {
+  color: var(--dsn-status-badge-positive-color);
+  background-color: var(--dsn-status-badge-positive-background-color);
+}
+
+/* Negative variant */
+.dsn-status-badge--negative {
+  color: var(--dsn-status-badge-negative-color);
+  background-color: var(--dsn-status-badge-negative-background-color);
+}
+
+/* Warning variant */
+.dsn-status-badge--warning {
+  color: var(--dsn-status-badge-warning-color);
+  background-color: var(--dsn-status-badge-warning-background-color);
+}
+
+/* Icon sizing — inherits text color via color: inherit */
+.dsn-status-badge > .dsn-icon {
+  flex-shrink: 0;
+  width: var(--dsn-icon-size-sm);
+  height: var(--dsn-icon-size-sm);
+  color: inherit;
+}
