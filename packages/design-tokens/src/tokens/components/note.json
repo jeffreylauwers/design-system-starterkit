@@ -1,0 +1,36 @@
+{
+  "dsn": {
+    "note": {
+      "border-inline-start-width": {
+        "value": "{dsn.border.width.medium}",
+        "type": "dimension",
+        "comment": "Note left border width"
+      },
+      "column-gap": {
+        "value": "{dsn.space.inline.md}",
+        "type": "dimension",
+        "comment": "Gap between icon and content"
+      },
+      "row-gap": {
+        "value": "{dsn.space.row.xs}",
+        "type": "dimension",
+        "comment": "Gap between heading and body"
+      },
+      "padding-block": {
+        "value": "{dsn.space.block.lg}",
+        "type": "dimension",
+        "comment": "Vertical padding"
+      },
+      "padding-inline-start": {
+        "value": "{dsn.space.inline.xl}",
+        "type": "dimension",
+        "comment": "Horizontal padding inline-start (after the border)"
+      },
+      "padding-inline-end": {
+        "value": "{dsn.space.inline.xl}",
+        "type": "dimension",
+        "comment": "Horizontal padding inline-end"
+      }
+    }
+  }
+}
