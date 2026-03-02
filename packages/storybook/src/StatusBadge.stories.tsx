@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Icon, StatusBadge } from '@dsn/components-react';
+import type { IconName } from '@dsn/components-react/icon-registry.generated';
 import DocsPage from './StatusBadge.docs.mdx';
 import {
   TEKST,
@@ -9,6 +10,55 @@ import {
   VEEL_TEKST_AR,
   rtlDecorator,
 } from './story-helpers';
+
+const iconOptions: (IconName | undefined)[] = [
+  undefined,
+  'alert-triangle',
+  'archive',
+  'arrow-down',
+  'arrow-left',
+  'arrow-narrow-down',
+  'arrow-narrow-up',
+  'arrow-right',
+  'arrow-up',
+  'bell',
+  'calendar-event',
+  'check',
+  'chevron-down',
+  'chevron-left',
+  'chevron-right',
+  'chevron-up',
+  'circle-check',
+  'clock',
+  'dots-vertical',
+  'download',
+  'edit',
+  'exclamation-circle',
+  'external-link',
+  'eye',
+  'file-description',
+  'folder',
+  'heart-filled',
+  'heart',
+  'home',
+  'info-circle',
+  'loader',
+  'mail',
+  'menu',
+  'message-circle',
+  'minus',
+  'paperclip',
+  'plus',
+  'search',
+  'selector',
+  'settings',
+  'star-filled',
+  'star',
+  'trash',
+  'upload',
+  'user',
+  'x',
+];
 
 const meta: Meta<typeof StatusBadge> = {
   title: 'Components/StatusBadge',
@@ -25,15 +75,12 @@ const meta: Meta<typeof StatusBadge> = {
         ]
           .filter(Boolean)
           .join(' ');
-        const iconMap: Record<string, string> = {
-          info: 'info-circle',
-          positive: 'circle-check',
-          negative: 'exclamation-circle',
-          warning: 'alert-triangle',
-        };
-        const iconName = iconMap[variant];
-        const hasIcon = args.iconStart !== undefined && iconName;
-        const icon = hasIcon
+        // args.iconStart is the raw string (icon name) before Storybook applies the mapping
+        const iconName =
+          args.iconStart && args.iconStart !== 'undefined'
+            ? args.iconStart
+            : null;
+        const icon = iconName
           ? `\n  <svg class="dsn-icon dsn-icon--sm" aria-hidden="true"><!-- ${iconName} --></svg>`
           : '';
         const label = args.children ?? TEKST;
@@ -46,7 +93,19 @@ const meta: Meta<typeof StatusBadge> = {
       control: 'select',
       options: ['neutral', 'positive', 'negative', 'warning', 'info'],
     },
-    iconStart: { control: false },
+    iconStart: {
+      control: 'select',
+      options: iconOptions,
+      mapping: iconOptions.reduce(
+        (acc, icon) => {
+          acc[icon ?? 'undefined'] = icon ? (
+            <Icon name={icon} size="sm" aria-hidden />
+          ) : undefined;
+          return acc;
+        },
+        {} as Record<string, React.ReactNode>
+      ),
+    },
     children: { control: 'text' },
   },
   args: {
@@ -63,28 +122,28 @@ export const Default: Story = {};
 export const Info: Story = {
   args: {
     variant: 'info',
-    iconStart: <Icon name="info-circle" size="sm" aria-hidden />,
+    iconStart: 'info-circle',
   },
 };
 
 export const Positive: Story = {
   args: {
     variant: 'positive',
-    iconStart: <Icon name="circle-check" size="sm" aria-hidden />,
+    iconStart: 'circle-check',
   },
 };
 
 export const Negative: Story = {
   args: {
     variant: 'negative',
-    iconStart: <Icon name="exclamation-circle" size="sm" aria-hidden />,
+    iconStart: 'exclamation-circle',
   },
 };
 
 export const Warning: Story = {
   args: {
     variant: 'warning',
-    iconStart: <Icon name="alert-triangle" size="sm" aria-hidden />,
+    iconStart: 'alert-triangle',
   },
 };
 
