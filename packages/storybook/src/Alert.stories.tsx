@@ -96,8 +96,10 @@ const meta: Meta<typeof Alert> = {
           : '';
 
         const heading = args.heading ?? 'Heading';
+        const childrenText =
+          typeof args.children === 'string' ? args.children : TEKST;
         const children = args.children
-          ? `\n  <div class="dsn-alert__content">\n    <p class="dsn-paragraph">${args.children}</p>\n  </div>`
+          ? `\n  <div class="dsn-alert__content">\n    <p class="dsn-paragraph">${childrenText}</p>\n  </div>`
           : '';
 
         return `<div class="${cls}" role="alert">${icon}\n  <strong class="dsn-alert__heading dsn-heading dsn-heading--3">${heading}</strong>${children}\n</div>`;
@@ -129,12 +131,12 @@ const meta: Meta<typeof Alert> = {
         ),
       },
     },
-    children: { control: 'text' },
+    children: { control: false },
   },
   args: {
     heading: 'Heading',
     variant: 'info',
-    children: TEKST,
+    children: <Paragraph>{TEKST}</Paragraph>,
   },
 };
 
@@ -212,10 +214,11 @@ export const NoIcon: Story = {
 
 export const LongText: Story = {
   name: 'Long text',
-  args: {
-    heading: 'Heading bij lange inhoud',
-    children: VEEL_TEKST,
-  },
+  render: () => (
+    <Alert heading="Heading bij lange inhoud">
+      <Paragraph>{VEEL_TEKST}</Paragraph>
+    </Alert>
+  ),
 };
 
 export const RTL: Story = {
@@ -224,7 +227,7 @@ export const RTL: Story = {
   render: () => (
     <div dir="rtl" lang="ar">
       <Alert variant="info" heading={TEKST_AR}>
-        {TEKST_AR}
+        <Paragraph>{TEKST_AR}</Paragraph>
       </Alert>
     </div>
   ),
@@ -233,8 +236,11 @@ export const RTL: Story = {
 export const RTLLongText: Story = {
   name: 'RTL long text',
   decorators: [rtlDecorator],
-  args: {
-    heading: TEKST_AR,
-    children: VEEL_TEKST_AR,
-  },
+  render: () => (
+    <div dir="rtl" lang="ar">
+      <Alert variant="info" heading={TEKST_AR}>
+        <Paragraph>{VEEL_TEKST_AR}</Paragraph>
+      </Alert>
+    </div>
+  ),
 };

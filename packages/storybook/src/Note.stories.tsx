@@ -106,8 +106,10 @@ const meta: Meta<typeof Note> = {
         const heading = args.heading
           ? `\n  <strong class="dsn-heading dsn-heading--3 dsn-note__heading">${args.heading}</strong>`
           : '';
+        const childrenText =
+          typeof args.children === 'string' ? args.children : TEKST;
         const children = args.children
-          ? `\n  <div class="dsn-note__content">\n    <p class="dsn-paragraph">${args.children}</p>\n  </div>`
+          ? `\n  <div class="dsn-note__content">\n    <p class="dsn-paragraph">${childrenText}</p>\n  </div>`
           : '';
 
         const as = args.as ?? 'div';
@@ -144,12 +146,12 @@ const meta: Meta<typeof Note> = {
         ),
       },
     },
-    children: { control: 'text' },
+    children: { control: false },
   },
   args: {
     heading: 'Heading',
     variant: 'neutral',
-    children: TEKST,
+    children: <Paragraph>{TEKST}</Paragraph>,
   },
 };
 
@@ -254,10 +256,11 @@ export const AsNav: Story = {
 
 export const LongText: Story = {
   name: 'Long text',
-  args: {
-    heading: 'Heading bij lange inhoud',
-    children: VEEL_TEKST,
-  },
+  render: () => (
+    <Note heading="Heading bij lange inhoud">
+      <Paragraph>{VEEL_TEKST}</Paragraph>
+    </Note>
+  ),
 };
 
 export const RTL: Story = {
@@ -266,7 +269,7 @@ export const RTL: Story = {
   render: () => (
     <div dir="rtl" lang="ar">
       <Note variant="info" heading={TEKST_AR}>
-        {TEKST_AR}
+        <Paragraph>{TEKST_AR}</Paragraph>
       </Note>
     </div>
   ),
@@ -275,8 +278,11 @@ export const RTL: Story = {
 export const RTLLongText: Story = {
   name: 'RTL long text',
   decorators: [rtlDecorator],
-  args: {
-    heading: TEKST_AR,
-    children: VEEL_TEKST_AR,
-  },
+  render: () => (
+    <div dir="rtl" lang="ar">
+      <Note variant="info" heading={TEKST_AR}>
+        <Paragraph>{VEEL_TEKST_AR}</Paragraph>
+      </Note>
+    </div>
+  ),
 };

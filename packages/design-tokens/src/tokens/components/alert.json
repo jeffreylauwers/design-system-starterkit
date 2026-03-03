@@ -17,7 +17,7 @@
         "comment": "Gap between icon and content"
       },
       "row-gap": {
-        "value": "{dsn.space.row.xs}",
+        "value": "{dsn.space.row.md}",
         "type": "dimension",
         "comment": "Gap between heading and body"
       },
