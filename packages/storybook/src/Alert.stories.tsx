@@ -124,7 +124,9 @@ const meta: Meta<typeof Alert> = {
         null: null,
         ...iconOptions.filter(Boolean).reduce(
           (acc, icon) => {
-            acc[icon as string] = <Icon name={icon as IconName} aria-hidden />;
+            acc[icon as string] = (
+              <Icon name={icon as IconName} size="xl" aria-hidden />
+            );
             return acc;
           },
           {} as Record<string, React.ReactNode>
