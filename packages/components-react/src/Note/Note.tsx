@@ -120,6 +120,7 @@ export const Note = React.forwardRef<HTMLElement, NoteProps>(
       iconStart === undefined ? (
         <Icon
           name={PREFERRED_ICONS[variant] as Parameters<typeof Icon>[0]['name']}
+          size="xl"
           aria-hidden
         />
       ) : (

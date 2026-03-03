@@ -17,7 +17,7 @@
         "comment": "Gap between heading and body"
       },
       "padding-block": {
-        "value": "{dsn.space.block.lg}",
+        "value": "{dsn.space.block.xl}",
         "type": "dimension",
         "comment": "Vertical padding"
       },

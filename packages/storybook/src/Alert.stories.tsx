@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon, Alert } from '@dsn/components-react';
+import { Icon, Alert, Paragraph, UnorderedList } from '@dsn/components-react';
 import type { IconName } from '@dsn/components-react/icon-registry.generated';
 import DocsPage from './Alert.docs.mdx';
 import {
@@ -97,7 +97,7 @@ const meta: Meta<typeof Alert> = {
 
         const heading = args.heading ?? 'Heading';
         const children = args.children
-          ? `\n  <div class="dsn-alert__content">\n    <p>${args.children}</p>\n  </div>`
+          ? `\n  <div class="dsn-alert__content">\n    <p class="dsn-paragraph">${args.children}</p>\n  </div>`
           : '';
 
         return `<div class="${cls}" role="alert">${icon}\n  <strong class="dsn-alert__heading dsn-heading dsn-heading--3">${heading}</strong>${children}\n</div>`;
@@ -172,16 +172,16 @@ export const AllStates: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
       <Alert variant="info" heading="Informatief bericht">
-        {TEKST}
+        <Paragraph>{TEKST}</Paragraph>
       </Alert>
       <Alert variant="positive" heading="Gelukt">
-        {TEKST}
+        <Paragraph>{TEKST}</Paragraph>
       </Alert>
       <Alert variant="negative" heading="Er is een fout opgetreden">
-        {TEKST}
+        <Paragraph>{TEKST}</Paragraph>
       </Alert>
       <Alert variant="warning" heading="Let op">
-        {TEKST}
+        <Paragraph>{TEKST}</Paragraph>
       </Alert>
     </div>
   ),
@@ -194,11 +194,11 @@ export const WithList: Story = {
       variant="negative"
       heading="Er zijn fouten opgetreden. Controleer de volgende velden:"
     >
-      <ul>
+      <UnorderedList>
         <li>Voornaam is verplicht</li>
         <li>E-mailadres is ongeldig</li>
         <li>Telefoonnummer ontbreekt</li>
-      </ul>
+      </UnorderedList>
     </Alert>
   ),
 };

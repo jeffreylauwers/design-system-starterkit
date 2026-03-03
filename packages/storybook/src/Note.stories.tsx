@@ -1,5 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon, Note, Link, UnorderedList } from '@dsn/components-react';
+import {
+  Icon,
+  Note,
+  Paragraph,
+  Link,
+  UnorderedList,
+} from '@dsn/components-react';
 import type { IconName } from '@dsn/components-react/icon-registry.generated';
 import DocsPage from './Note.docs.mdx';
 import {
@@ -101,7 +107,7 @@ const meta: Meta<typeof Note> = {
           ? `\n  <strong class="dsn-heading dsn-heading--3 dsn-note__heading">${args.heading}</strong>`
           : '';
         const children = args.children
-          ? `\n  <div class="dsn-note__content">\n    <p>${args.children}</p>\n  </div>`
+          ? `\n  <div class="dsn-note__content">\n    <p class="dsn-paragraph">${args.children}</p>\n  </div>`
           : '';
 
         const as = args.as ?? 'div';
@@ -189,19 +195,19 @@ export const AllStates: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
       <Note variant="neutral" heading="Neutral">
-        {TEKST}
+        <Paragraph>{TEKST}</Paragraph>
       </Note>
       <Note variant="info" heading="Info">
-        {TEKST}
+        <Paragraph>{TEKST}</Paragraph>
       </Note>
       <Note variant="positive" heading="Positive">
-        {TEKST}
+        <Paragraph>{TEKST}</Paragraph>
       </Note>
       <Note variant="negative" heading="Negative">
-        {TEKST}
+        <Paragraph>{TEKST}</Paragraph>
       </Note>
       <Note variant="warning" heading="Warning">
-        {TEKST}
+        <Paragraph>{TEKST}</Paragraph>
       </Note>
     </div>
   ),
