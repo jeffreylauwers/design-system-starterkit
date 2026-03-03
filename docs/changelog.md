@@ -6,6 +6,69 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 4.7.0 (March 3, 2026)
+
+### Note component + Alert/Note polish
+
+**Note component (PR #48)**
+
+- **Note component** — Visueel uitgelicht bericht voor aanvullende of belangrijke informatie; passieve tegenhanger van Alert (geen `role="alert"`, geen live region)
+- 5 varianten: `neutral` (default), `info`, `positive`, `negative`, `warning` — elk met eigen signaalkleur en icoon
+- CSS grid layout identiek aan Alert: icoon + heading in rij 1, content in rij 2
+- `border-inline-start` (niet rondom zoals Alert) als visuele markering
+- `dsn-note--no-heading` modifier: icoon overspant beide rijen (`grid-row: 1 / span 2`)
+- `as` prop: `div` (default), `aside`, `nav`, `section` — semantiek losgekoppeld van stijl
+- Automatische `aria-labelledby` voor landmark-elementen (`nav`, `aside`, `section`) met heading via `useId()`
+- `iconStart` prop: `undefined` = voorkeurspicoon per variant, `null` = geen icoon, `ReactNode` = aangepast icoon
+- Storybook: Default, Info, Positive, Negative, Warning, All states, Without heading, With list, As nav, Long text, RTL, RTL long text
+
+**Paragraph refactoring**
+
+- `dsn-paragraph--default` alias volledig verwijderd — geen backward compatibility meer nodig
+- Default-stijlen zitten nu direct op `.dsn-paragraph` base class
+- `class="dsn-paragraph"` is voldoende; geen modifier class voor de standaard variant
+- React component: `dsn-paragraph--${variant}` alleen toegevoegd voor `lead` en `small-print`
+- Web Component: zelfde logica in `_updateClasses()`
+- Tests bijgewerkt in beide packages
+
+**Alert & Note design polish**
+
+- `padding-block` token: `space.block.lg` → `space.block.xl` (meer ademruimte)
+- `row-gap` token: `space.row.xs` → `space.row.md` (heading heeft geen margin-block-end meer)
+- `Icon size="xl"` toegevoegd — ontbrak bij handmatig opgegeven `iconStart` via argTypes mapping
+- `<Paragraph>` in alle stories — geen kale tekst-strings meer als `children`
+- `children` argType: `control: false` (React node, niet stuurbaar via tekstveld)
+- Semantische heading tags in HTML-templates: `<strong>` vervangen door `<h2>` (Alert) en `<h3>` (Note)
+- `htmlTemplate` dynamisch op `headingLevel` — HTML-tab past mee als Controls panel wijzigt
+
+---
+
+## Version 4.6.0 (March 2, 2026)
+
+### StatusBadge & Alert components
+
+**StatusBadge component (PR #46)**
+
+- **StatusBadge component** — Compact label dat een status communiceert met een signaalkleur
+- 5 varianten: `neutral`, `info`, `positive`, `negative`, `warning`
+- Optioneel `iconStart` prop voor een icoon vóór het label
+- Storybook: Default, alle varianten, All states, With icon, RTL
+
+**Alert component (PR #47)**
+
+- **Alert component** — Belangrijk bericht dat de gebruiker informeert over de huidige activiteit of toestand
+- 4 varianten: `info` (default), `positive`, `negative`, `warning`
+- CSS grid layout: icoon + heading naast elkaar in rij 1, content in rij 2 (`grid-template-columns: icon-size 1fr`)
+- `role="alert"` voor live region — schermlezer kondigt wijzigingen automatisch aan
+- Voorkeurspicoon per variant; overschrijfbaar via `iconStart` prop (`null` = geen icoon)
+- `heading` (verplicht) + optionele `children` voor body content
+- `headingLevel` prop voor semantisch heading-niveau (default `h2`, visueel als `heading-3`)
+- Volledige border rondom (niet alleen inline-start)
+- `@import` fix: React CSS haalt stijlen op via `components-html`
+- Storybook: Default, Positive, Negative, Warning, All states, With list (validation), No icon, Long text, RTL, RTL long text
+
+---
+
 ## Version 4.5.0 (February 24, 2026)
 
 ### Storybook: Dynamic Code Tabs & PreviewFrame

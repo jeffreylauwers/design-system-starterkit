@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** February 19, 2025
+**Last Updated:** March 3, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -10,8 +10,9 @@ Complete component specifications and guidelines for the Design System Starter K
 
 1. [Component Guidelines](#component-guidelines)
 2. [Content Components](#content-components)
-3. [Form Components](#form-components)
-4. [Web Components Registration](#web-components-registration)
+3. [Display & Feedback Components](#display--feedback-components)
+4. [Form Components](#form-components)
+5. [Web Components Registration](#web-components-registration)
 
 ---
 
@@ -313,9 +314,140 @@ Components are designed to compose together:
 
 ---
 
+## Display & Feedback Components
+
+**Status:** Complete (HTML/CSS, React) — 3 components total
+
+### StatusBadge
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/StatusBadge/`
+
+**Tokens:** `tokens/components/status-badge.json`
+
+**Variants (5 total):** `neutral`, `info`, `positive`, `negative`, `warning`
+
+**Props:** `variant`, `iconStart`, `children`
+
+**Features:**
+
+- Compact inline label met signaalkleur
+- Optioneel `iconStart` prop voor een icoon vóór het label
+- Geen eigen afmeting — schaalt mee met de omgevende typografie
+
+**Tests:** React (10 tests)
+
+### Alert
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/Alert/`
+
+**Tokens:** `tokens/components/alert.json`
+
+**Variants (4 total):** `info` (default), `positive`, `negative`, `warning`
+
+**Props:** `variant`, `heading`, `headingLevel`, `iconStart`, `children`
+
+**Features:**
+
+- `role="alert"` live region — schermlezer kondigt wijzigingen automatisch aan
+- CSS grid layout: icoon + heading naast elkaar (rij 1), body content eronder (rij 2)
+- `grid-template-columns: var(--dsn-icon-size-xl) 1fr`
+- Voorkeurspicoon per variant; overschrijfbaar via `iconStart` (`null` = geen icoon)
+- `heading` verplicht; `headingLevel` default `2` (visueel als `heading-3`)
+- Volledige border rondom (niet alleen inline-start)
+- Body content via `children` — gebruik `<Paragraph>` voor tekst, `<UnorderedList>` voor lijsten
+
+**HTML/CSS:**
+
+```html
+<div class="dsn-alert" role="alert">
+  <span class="dsn-alert__icon" aria-hidden="true">
+    <svg class="dsn-icon" aria-hidden="true"><!-- info-circle --></svg>
+  </span>
+  <h2 class="dsn-alert__heading dsn-heading dsn-heading--3">Heading</h2>
+  <div class="dsn-alert__content">
+    <p class="dsn-paragraph">Body content.</p>
+  </div>
+</div>
+
+<!-- Varianten: dsn-alert--positive / dsn-alert--negative / dsn-alert--warning -->
+<!-- Geen icoon: dsn-alert--no-icon (klasse op root, span weglaten) -->
+```
+
+**Tests:** React (15 tests)
+
+### Note
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/Note/`
+
+**Tokens:** `tokens/components/note.json`
+
+**Variants (5 total):** `neutral` (default), `info`, `positive`, `negative`, `warning`
+
+**Props:** `as`, `variant`, `heading`, `headingLevel`, `iconStart`, `children`
+
+**Features:**
+
+- Passieve tegenhanger van Alert — geen `role="alert"`, geen live region
+- Schermlezer leest Note alleen bij navigatie, niet spontaan
+- `border-inline-start` als visuele markering (niet rondom zoals Alert)
+- CSS grid layout identiek aan Alert
+- `dsn-note--no-heading` modifier: icoon overspant beide rijen (`grid-row: 1 / span 2`)
+- `as` prop: `div` (default), `aside`, `nav`, `section` — semantiek losgekoppeld van visuele stijl
+- Automatische `aria-labelledby` via `useId()` voor landmark-elementen met heading
+- `heading` optioneel (Alert: verplicht); `headingLevel` default `3`
+
+**HTML/CSS:**
+
+```html
+<div class="dsn-note">
+  <span class="dsn-note__icon" aria-hidden="true">
+    <svg class="dsn-icon" aria-hidden="true"><!-- info-circle --></svg>
+  </span>
+  <h3 class="dsn-heading dsn-heading--3 dsn-note__heading">Heading</h3>
+  <div class="dsn-note__content">
+    <p class="dsn-paragraph">Body content.</p>
+  </div>
+</div>
+
+<!-- Varianten: dsn-note--info / dsn-note--positive / dsn-note--negative / dsn-note--warning -->
+<!-- Zonder heading: dsn-note--no-heading -->
+<!-- Landmark: <aside>, <nav>, <section> i.p.v. <div> -->
+```
+
+**React:**
+
+```tsx
+// Standaard note met heading
+<Note heading="Let op" variant="warning">
+  <Paragraph>Dit heeft gevolgen voor uw aanvraag.</Paragraph>
+</Note>
+
+// Zonder heading — icoon overspant beide rijen
+<Note variant="info">
+  <Paragraph>Extra context zonder titel.</Paragraph>
+</Note>
+
+// Als inhoudsopgave (nav landmark)
+<Note as="nav" variant="neutral" heading="Op deze pagina" headingLevel={2}>
+  <UnorderedList>
+    <li><Link href="#sectie-1">Sectie 1</Link></li>
+  </UnorderedList>
+</Note>
+```
+
+**Tests:** React (18 tests)
+
+---
+
 ## Form Components
 
-**Status:** Complete (HTML/CSS, React) - 25 components total
+**Status:** Complete (HTML/CSS, React) — 25 components total
 
 **Location:** `packages/components-{html|react}/src/`
 
@@ -624,15 +756,15 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 32
+**Total Components:** 35
 
 **Implementations:**
 
-- **HTML/CSS:** 32 components
-- **React:** 32 components (733 tests total)
+- **HTML/CSS:** 35 components
+- **React:** 35 components (824 tests total)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
-**Test Coverage:** 733 tests across 38 test suites
+**Test Coverage:** 824 tests across 41 test suites
 
 ---
 
