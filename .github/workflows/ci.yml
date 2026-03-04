@@ -71,7 +71,7 @@ jobs:
         run: pnpm build
 
       - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
+        run: pnpm --filter @dsn/storybook exec playwright install --with-deps chromium
 
       - name: Serve Storybook
         run: npx http-server packages/storybook/dist --port 6006 --silent &
