@@ -10,6 +10,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
+    },
+    "./icon-registry.generated": {
+      "types": "./dist/Icon/icon-registry.generated.d.ts",
+      "import": "./dist/Icon/icon-registry.generated.js",
+      "default": "./dist/Icon/icon-registry.generated.js"
     }
   },
   "files": [
