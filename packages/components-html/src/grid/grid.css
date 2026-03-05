@@ -1,0 +1,238 @@
+/**
+ * Grid Layout Component
+ * 12-column CSS Grid layout system met gutter, margin en optionele max-width.
+ *
+ * Breakpoints (zie ook --dsn-breakpoint-* tokens):
+ *   sm: 36em (~576px)
+ *   md: 44em (~704px)
+ *   lg: 64em (~1024px)
+ *   xl: 74em (~1184px) — contained grid bereikt max-width
+ *
+ * Usage:
+ * <!-- Standaard grid -->
+ * <div class="dsn-grid">
+ *   <div class="dsn-col-8">Hoofdinhoud</div>
+ *   <div class="dsn-col-4">Sidebar</div>
+ * </div>
+ *
+ * <!-- Contained grid met max-width -->
+ * <div class="dsn-grid dsn-grid--contained">
+ *   <div class="dsn-col-12">Full-width inhoud</div>
+ * </div>
+ *
+ * <!-- Full-bleed item dat uitbreekt tot de container-rand -->
+ * <div class="dsn-grid dsn-grid--contained">
+ *   <div class="dsn-col-8">Normale content</div>
+ *   <div class="dsn-full-bleed">Breekt uit tot randen</div>
+ * </div>
+ *
+ * <!-- Responsive kolommen -->
+ * <div class="dsn-grid dsn-grid--contained">
+ *   <div class="dsn-col-12 dsn-col-md-6 dsn-col-lg-4">Item</div>
+ * </div>
+ */
+
+/* ============================================================
+   GRID CONTAINER
+   ============================================================ */
+
+.dsn-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--dsn-grid-gutter);
+  padding-inline: var(--dsn-grid-margin);
+}
+
+/* Max-width variant — gecentreerd met margin-inline: auto */
+.dsn-grid--contained {
+  max-inline-size: var(--dsn-grid-max-width);
+  margin-inline: auto;
+}
+
+/* Default: directe children beslaan de volledige breedte.
+   :where() heeft nul-specificiteit zodat dsn-col-* klassen altijd winnen. */
+:where(.dsn-grid) > * {
+  grid-column: 1 / -1;
+}
+
+/* ============================================================
+   FULL-BLEED
+   Breekt visueel uit tot de buitenrand van de grid container.
+   Werkt alleen als directe child van .dsn-grid.
+   ============================================================ */
+
+.dsn-full-bleed {
+  grid-column: 1 / -1;
+  margin-inline: calc(-1 * var(--dsn-grid-margin));
+}
+
+/* ============================================================
+   COLUMN SPAN UTILITIES — dsn-col-{1-12}
+   Standaard (geen breakpoint-prefix): altijd van toepassing.
+   ============================================================ */
+
+.dsn-col-1 {
+  grid-column: span 1;
+}
+.dsn-col-2 {
+  grid-column: span 2;
+}
+.dsn-col-3 {
+  grid-column: span 3;
+}
+.dsn-col-4 {
+  grid-column: span 4;
+}
+.dsn-col-5 {
+  grid-column: span 5;
+}
+.dsn-col-6 {
+  grid-column: span 6;
+}
+.dsn-col-7 {
+  grid-column: span 7;
+}
+.dsn-col-8 {
+  grid-column: span 8;
+}
+.dsn-col-9 {
+  grid-column: span 9;
+}
+.dsn-col-10 {
+  grid-column: span 10;
+}
+.dsn-col-11 {
+  grid-column: span 11;
+}
+.dsn-col-12 {
+  grid-column: span 12;
+}
+
+/* ============================================================
+   RESPONSIVE COLUMN VARIANTS — sm (36em ~576px)
+   ============================================================ */
+
+@media (min-width: 36em) {
+  .dsn-col-sm-1 {
+    grid-column: span 1;
+  }
+  .dsn-col-sm-2 {
+    grid-column: span 2;
+  }
+  .dsn-col-sm-3 {
+    grid-column: span 3;
+  }
+  .dsn-col-sm-4 {
+    grid-column: span 4;
+  }
+  .dsn-col-sm-5 {
+    grid-column: span 5;
+  }
+  .dsn-col-sm-6 {
+    grid-column: span 6;
+  }
+  .dsn-col-sm-7 {
+    grid-column: span 7;
+  }
+  .dsn-col-sm-8 {
+    grid-column: span 8;
+  }
+  .dsn-col-sm-9 {
+    grid-column: span 9;
+  }
+  .dsn-col-sm-10 {
+    grid-column: span 10;
+  }
+  .dsn-col-sm-11 {
+    grid-column: span 11;
+  }
+  .dsn-col-sm-12 {
+    grid-column: span 12;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE COLUMN VARIANTS — md (44em ~704px)
+   ============================================================ */
+
+@media (min-width: 44em) {
+  .dsn-col-md-1 {
+    grid-column: span 1;
+  }
+  .dsn-col-md-2 {
+    grid-column: span 2;
+  }
+  .dsn-col-md-3 {
+    grid-column: span 3;
+  }
+  .dsn-col-md-4 {
+    grid-column: span 4;
+  }
+  .dsn-col-md-5 {
+    grid-column: span 5;
+  }
+  .dsn-col-md-6 {
+    grid-column: span 6;
+  }
+  .dsn-col-md-7 {
+    grid-column: span 7;
+  }
+  .dsn-col-md-8 {
+    grid-column: span 8;
+  }
+  .dsn-col-md-9 {
+    grid-column: span 9;
+  }
+  .dsn-col-md-10 {
+    grid-column: span 10;
+  }
+  .dsn-col-md-11 {
+    grid-column: span 11;
+  }
+  .dsn-col-md-12 {
+    grid-column: span 12;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE COLUMN VARIANTS — lg (64em ~1024px)
+   ============================================================ */
+
+@media (min-width: 64em) {
+  .dsn-col-lg-1 {
+    grid-column: span 1;
+  }
+  .dsn-col-lg-2 {
+    grid-column: span 2;
+  }
+  .dsn-col-lg-3 {
+    grid-column: span 3;
+  }
+  .dsn-col-lg-4 {
+    grid-column: span 4;
+  }
+  .dsn-col-lg-5 {
+    grid-column: span 5;
+  }
+  .dsn-col-lg-6 {
+    grid-column: span 6;
+  }
+  .dsn-col-lg-7 {
+    grid-column: span 7;
+  }
+  .dsn-col-lg-8 {
+    grid-column: span 8;
+  }
+  .dsn-col-lg-9 {
+    grid-column: span 9;
+  }
+  .dsn-col-lg-10 {
+    grid-column: span 10;
+  }
+  .dsn-col-lg-11 {
+    grid-column: span 11;
+  }
+  .dsn-col-lg-12 {
+    grid-column: span 12;
+  }
+}
