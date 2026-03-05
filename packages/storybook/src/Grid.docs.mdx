@@ -1,0 +1,28 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as GridStories from './Grid.stories';
+import docs from './Grid.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={GridStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={GridStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={GridStories.Default}
+  html={`<div class="dsn-grid">
+  <div class="dsn-col-8">Hoofdinhoud</div>
+  <div class="dsn-col-4">Sidebar</div>
+</div>`}
+/>
+
+<Controls of={GridStories.Default} />
+
+<Markdown>{rest}</Markdown>
