@@ -1,6 +1,6 @@
 # Design Tokens Reference
 
-**Last Updated:** February 14, 2026
+**Last Updated:** March 5, 2026
 
 Complete reference for all design tokens in the Design System Starter Kit.
 
@@ -310,11 +310,11 @@ Focus indicators use a dual-outline technique: a primary `outline` for the main 
 
 ## Token Statistics
 
-**Total Tokens (as of v4.0.0):**
+**Total Tokens (as of v4.9.0):**
 
 - Semantic tokens: ~400 per configuration
-- Component tokens: ~650 (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList + 19 form components)
-- **Total: ~1050+ tokens per full configuration**
+- Component tokens: ~700 (30 component JSON files — 9 content + 3 display/feedback + 25 form, incl. variant kleur-tokens Alert/Note/StatusBadge)
+- **Total: ~1100+ tokens per full configuration**
 - **Total configurations: 8** (2 themes × 2 modes × 2 project types)
 
 ---
