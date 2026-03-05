@@ -37,7 +37,7 @@ const meta: Meta<typeof Stack> = {
   argTypes: {
     space: {
       control: 'select',
-      options: ['sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
+      options: ['sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl'],
     },
     children: { control: false },
   },
@@ -59,7 +59,17 @@ export const Default: Story = {
   ),
 };
 
-const SPACE_VARIANTS = ['sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'] as const;
+const SPACE_VARIANTS = [
+  'sm',
+  'md',
+  'lg',
+  'xl',
+  '2xl',
+  '3xl',
+  '4xl',
+  '5xl',
+  '6xl',
+] as const;
 
 const SPACE_LABELS: Record<string, string> = {
   sm: 'sm — 4px',
@@ -69,6 +79,8 @@ const SPACE_LABELS: Record<string, string> = {
   '2xl': '2xl — 20px',
   '3xl': '3xl — 24px',
   '4xl': '4xl — 32px',
+  '5xl': '5xl — 64px',
+  '6xl': '6xl — 160px',
 };
 
 export const AllSpaces: Story = {

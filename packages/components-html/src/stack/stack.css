@@ -44,3 +44,9 @@
 .dsn-stack--space-4xl {
   --dsn-stack-space: var(--dsn-space-row-4xl);
 }
+.dsn-stack--space-5xl {
+  --dsn-stack-space: var(--dsn-space-row-5xl);
+}
+.dsn-stack--space-6xl {
+  --dsn-stack-space: var(--dsn-space-row-6xl);
+}

@@ -6,7 +6,7 @@ Layout primitief dat consistente verticale ruimte aanbrengt tussen gestapelde el
 
 Stack past automatisch verticale ruimte toe tussen alle directe child-elementen via `display: flex; flex-direction: column; gap`. Je schrijft nooit zelf `margin` of `padding` voor tussenruimte — de Stack regelt dat.
 
-Zeven space-varianten — gebaseerd op de globale `--dsn-space-row-*` tokens — geven je controle over hoe ver de elementen uit elkaar staan.
+Negen space-varianten — gebaseerd op de globale `--dsn-space-row-*` tokens — geven je controle over hoe ver de elementen uit elkaar staan.
 
 <!-- VOORBEELD -->
 
@@ -24,7 +24,7 @@ Zeven space-varianten — gebaseerd op de globale `--dsn-space-row-*` tokens —
 
 ## Best practices
 
-- **Kies de kleinst passende variant**: voor formuliervelden `sm`–`md`, voor secties op een pagina `3xl`–`4xl`.
+- **Kies de kleinst passende variant**: voor formuliervelden `sm`–`md`, voor secties op een pagina `3xl`–`4xl`, voor grote paginaovergangen `5xl`–`6xl`.
 - **Nest Stack-componenten** voor complexe layouts: een buitenste Stack met `4xl` voor paginasecties, binnenste Stacks met `md` voor formuliervelden.
 - **Gebruik Stack niet als vervanging voor semantische HTML**: de Stack rendert altijd als `<div>`. Geef children de juiste semantische elementen mee.
 
@@ -44,3 +44,5 @@ Stack is een puur visueel layout-hulpmiddel. Het voegt geen ARIA-rollen, labels 
 | `--dsn-space-row-2xl` | 20px — gebruikt door `.dsn-stack--space-2xl`                                    |
 | `--dsn-space-row-3xl` | 24px — gebruikt door `.dsn-stack--space-3xl`                                    |
 | `--dsn-space-row-4xl` | 32px — gebruikt door `.dsn-stack--space-4xl`                                    |
+| `--dsn-space-row-5xl` | 64px — gebruikt door `.dsn-stack--space-5xl`                                    |
+| `--dsn-space-row-6xl` | 160px — gebruikt door `.dsn-stack--space-6xl`                                   |

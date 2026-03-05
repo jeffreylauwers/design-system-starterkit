@@ -2,7 +2,16 @@ import React from 'react';
 import { classNames } from '@dsn/core';
 import './Stack.css';
 
-export type StackSpace = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+export type StackSpace =
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | '4xl'
+  | '5xl'
+  | '6xl';
 
 export interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
