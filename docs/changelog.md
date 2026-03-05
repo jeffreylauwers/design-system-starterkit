@@ -6,6 +6,89 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 4.9.0 (March 5, 2026)
+
+### Component-level tokens: kleur-tokens Alert en Note gepubliceerd (PR #68, issue #67)
+
+- **Alert:** 16 nieuwe component-level kleur-tokens toegevoegd aan `alert.json` — 4 varianten (info, negative, positive, warning) × 4 eigenschappen (background-color, border-color, color, icon-color)
+- **Note:** 20 nieuwe component-level kleur-tokens toegevoegd aan `note.json` — 5 varianten (info, negative, neutral, positive, warning) × 4 eigenschappen (background-color, border-inline-start-color, color, icon-color)
+- `alert.css` en `note.css`: intermediate lokale CSS properties verwijzen nu naar de gepubliceerde JSON token variabelen in plaats van rechtstreeks naar semantische tokens
+- `Alert.docs.md` en `Note.docs.md`: twee tabellen (layout + kleur) samengevoegd tot één uniforme tokentabel conform StatusBadge patroon; disclaimer "lokale CSS custom properties" verwijderd
+- Variant kleur-tokens zijn nu overschrijfbaar per thema via CSS custom properties
+
+---
+
+## Version 4.8.0 (March 4, 2026)
+
+### Component-level tokens: Button, FormFieldStatus, Alert, Note, StatusBadge (PR #66, issue #65)
+
+**Toegevoegde tokens Button**
+
+- `dsn.button.border-radius` → `{dsn.border.radius.md}`
+- `dsn.button.border-width` → `{dsn.border.width.thin}`
+- `dsn.button.font-family` → `{dsn.text.font-family.default}`
+- `dsn.button.font-weight` → `{dsn.text.font-weight.bold}`
+- `dsn.button.line-height` → `{dsn.text.line-height.md}`
+- `dsn.button.min-block-size` → `{dsn.pointer-target.min-block-size}`
+- `dsn.button.min-inline-size` → `{dsn.pointer-target.min-inline-size}`
+- `dsn.button.size.small.min-block-size` → `2.5rem` (kleinere touch target voor small variant)
+- `button.css`: 7 semantische tokens + 1 hardcoded waarde vervangen door component-level tokens
+
+**Toegevoegde tokens FormFieldStatus**
+
+- `dsn.form-field-status.gap` → `{dsn.space.text.sm}`
+- `dsn.form-field-status.icon-size` → `{dsn.icon.size.md}`
+- `dsn.form-field-status.positive-color` → `{dsn.color.positive.color-default}`
+- `dsn.form-field-status.warning-color` → `{dsn.color.warning.color-default}`
+
+**Toegevoegde icon-size tokens (Alert, Note, StatusBadge)**
+
+- `dsn.alert.icon-size` → `{dsn.icon.size.xl}` (ook breedte eerste grid-kolom)
+- `dsn.note.icon-size` → `{dsn.icon.size.xl}` (ook breedte eerste grid-kolom)
+- `dsn.status-badge.icon-size` → `{dsn.icon.size.sm}`
+
+**Docs**
+
+- `Button.docs.md`: 7 verouderde semantische token-rijen vervangen door 8 component-level token-rijen
+- `Button.docs.md`: 9 verouderde `--dsn-button-link-*` tokens verwijderd (link-variant bestaat niet meer; vervangen door LinkButton component)
+- `FormFieldStatus.docs.md`, `Alert.docs.md`, `Note.docs.md`, `StatusBadge.docs.md`: tokentabellen bijgewerkt
+
+---
+
+**Session 8 werk (PR's #43–#64)**
+
+### LinkButton en ButtonLink componenten (PR #43, issue #41 / PR #44, issue #42)
+
+**LinkButton**
+
+- **LinkButton component** — semantisch `<button>`, visueel als een Link — voor JS-acties met lage attentiewaarde
+- CSS: erft `dsn-link` en `dsn-link-button` klassen
+- `disabled`: native `<button disabled>` + CSS `.dsn-link.dsn-link-button:disabled`
+- `font: inherit` bewust weggelaten uit `dsn-link-button` — `dsn-link` zet dit al; herhalen overschrijft `font-size` van size-klassen
+- Storybook: Default, Disabled, All states, alle size-varianten, Long text, RTL
+
+**ButtonLink**
+
+- **ButtonLink component** — semantisch `<a>`, visueel als een Button — voor navigatieacties met hoge attentiewaarde
+- CSS: `dsn-button dsn-button--{variant} dsn-button--size-{size} dsn-button-link`
+- `disabled`: `aria-disabled="true"` + `tabIndex={-1}` + `pointer-events: none` (`:disabled` pseudo-class werkt niet op `<a>`)
+- `external`: auto `target="_blank"` + `rel="noopener noreferrer"` + zichtbare "(opent nieuw tabblad)" tekst
+- `children` altijd gewrapt in `<span class="dsn-button__label">` — zelfde patroon als Button
+- Storybook: Default, alle varianten, Disabled, External, Long text, RTL
+
+### Storybook TypeScript fixes (PR's #51, #52, #53)
+
+- `#51` — Ambient module declaration toegevoegd voor `*.mdx` imports (TypeScript kende het type niet)
+- `#52` — Subpath export geconfigureerd voor `icon-registry.generated` in `components-react`
+- `#53` — `TS7053` opgelost voor `globalThis` string-index in `preview.ts`
+
+### Token key ordering (PR #57, issue #56 / PR #64, issue #63)
+
+- `#56` — Consistente sleutelvolgorde doorgevoerd in alle token JSON bestanden: depth-first, alphabetisch, states → variants → sub-componenten
+- `#63` — Follow-up: tokenvolgorde ook doorgevoerd in alle `.docs.md` tabellen in Storybook
+
+---
+
 ## Version 4.7.0 (March 3, 2026)
 
 ### Note component + Alert/Note polish

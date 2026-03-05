@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** March 3, 2026
+**Last Updated:** March 5, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -181,9 +181,9 @@ Components are designed to compose together:
 
 **Component Tokens:** 90+ tokens in `tokens/components/button.json`
 
-**Variants (10 total):**
+**Variants (9 total):**
 
-- Base: `strong`, `default`, `subtle`, `link`
+- Base: `strong`, `default`, `subtle`
 - Negative: `strong-negative`, `default-negative`, `subtle-negative`
 - Positive: `strong-positive`, `default-positive`, `subtle-positive`
 
@@ -311,6 +311,92 @@ Components are designed to compose together:
 - `marker-color` — accent color for number markers
 
 **Tests:** React (8 tests), Web Component (11 tests)
+
+### LinkButton Component
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/LinkButton/`
+
+**Component Tokens:** Erft van `tokens/components/link.json` — geen eigen token namespace
+
+**Features:**
+
+- Semantisch `<button>`, visueel als een `Link` — voor JS-acties met lage attentiewaarde
+- CSS: `dsn-link dsn-link-button` — erft alle Link-stijlen
+- `disabled`: native `<button disabled>` + CSS selector `.dsn-link.dsn-link-button:disabled`
+- `font: inherit` bewust weggelaten uit `dsn-link-button` — `dsn-link` regelt dit al; herhalen overschrijft `font-size` van size-klassen
+- Zie ook: [De drie-weg keuze (Architecture)](./01-architecture.md)
+
+**Drie-weg keuze:**
+
+| Situatie                                | Component                                  |
+| --------------------------------------- | ------------------------------------------ |
+| Navigeert naar URL, hoge attentiewaarde | `ButtonLink` — `<a>` visueel als Button    |
+| Navigeert naar URL, lage attentiewaarde | `Link` — `<a>` visueel als Link            |
+| JS-actie, lage attentiewaarde           | `LinkButton` — `<button>` visueel als Link |
+| JS-actie, hoge attentiewaarde           | `Button` — `<button>` visueel als Button   |
+
+**HTML/CSS:**
+
+```html
+<button type="button" class="dsn-link dsn-link-button">Label</button>
+<button type="button" class="dsn-link dsn-link-button" disabled>
+  Uitgeschakeld
+</button>
+```
+
+**React:**
+
+```tsx
+<LinkButton onClick={handleAction}>Actie uitvoeren</LinkButton>
+<LinkButton disabled>Uitgeschakeld</LinkButton>
+```
+
+**Tests:** React (11 tests)
+
+### ButtonLink Component
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/ButtonLink/`
+
+**Component Tokens:** Erft van `tokens/components/button.json` — geen eigen token namespace
+
+**Features:**
+
+- Semantisch `<a>`, visueel als een `Button` — voor navigatieacties met hoge attentiewaarde
+- CSS: `dsn-button dsn-button--{variant} dsn-button--size-{size} dsn-button-link`
+- `disabled`: `aria-disabled="true"` + `tabIndex={-1}` + `pointer-events: none` (`:disabled` pseudo-class werkt niet op `<a>`)
+- `external`: auto `target="_blank"` + `rel="noopener noreferrer"` + zichtbare "(opent nieuw tabblad)" tekst
+- `children` altijd gewrapt in `<span class="dsn-button__label">` — zelfde patroon als Button
+
+**HTML/CSS:**
+
+```html
+<a href="/pagina" class="dsn-button dsn-button--strong dsn-button-link">
+  <span class="dsn-button__label">Navigeer naar pagina</span>
+</a>
+
+<!-- Disabled -->
+<a
+  class="dsn-button dsn-button--strong dsn-button-link"
+  aria-disabled="true"
+  tabindex="-1"
+>
+  <span class="dsn-button__label">Niet beschikbaar</span>
+</a>
+```
+
+**React:**
+
+```tsx
+<ButtonLink href="/pagina" variant="strong">Navigeer naar pagina</ButtonLink>
+<ButtonLink href="https://example.com" external>Externe link</ButtonLink>
+<ButtonLink href="/pagina" disabled>Niet beschikbaar</ButtonLink>
+```
+
+**Tests:** React (20 tests)
 
 ---
 
@@ -756,15 +842,15 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 35
+**Total Components:** 37
 
 **Implementations:**
 
-- **HTML/CSS:** 35 components
-- **React:** 35 components (824 tests total)
+- **HTML/CSS:** 37 components
+- **React:** 37 components (880 tests total)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
-**Test Coverage:** 824 tests across 41 test suites
+**Test Coverage:** 880 tests across 43 test suites
 
 ---
 

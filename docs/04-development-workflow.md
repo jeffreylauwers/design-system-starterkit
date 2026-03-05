@@ -1,6 +1,6 @@
 # Development Workflow
 
-**Last Updated:** February 14, 2026
+**Last Updated:** March 5, 2026
 
 Guidelines and workflows for developing and contributing to the Design System Starter Kit.
 
@@ -36,7 +36,7 @@ pnpm --filter @dsn/design-tokens watch
 # Start Storybook in development mode
 pnpm dev
 
-# Run tests (628 tests across 35 test suites)
+# Run tests (880 tests across 43 test suites)
 pnpm test
 
 # Run tests in watch mode
@@ -459,7 +459,7 @@ import '@dsn/core/css'; // Includes reset + utilities
 
 ### Test Coverage
 
-- **Total tests:** 628 across 35 test suites
+- **Total tests:** 880 across 43 test suites
 - **Frameworks:** Vitest + React Testing Library
 - **Coverage areas:** React components, Web Components, utilities
 

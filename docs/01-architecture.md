@@ -1,6 +1,6 @@
 # Architecture
 
-**Last Updated:** February 14, 2026
+**Last Updated:** March 5, 2026
 
 This document describes the architecture of the Design System Starter Kit, including the token system, configuration model, and repository structure.
 
@@ -70,20 +70,23 @@ design-system-starter-kit/
 │   │           │   └── information-dense/
 │   │           │       └── typography.json    # Fixed font-sizes
 │   │           └── components/
+│   │               ├── alert.json
 │   │               ├── button.json
 │   │               ├── checkbox.json
 │   │               ├── checkbox-group.json
 │   │               ├── checkbox-option.json
-│   │               ├── email-input.json
-│   │               ├── form-control.json
+│   │               ├── date-input.json
+│   │               ├── date-input-group.json
 │   │               ├── form-field.json
 │   │               ├── form-field-description.json
 │   │               ├── form-field-error-message.json
 │   │               ├── form-field-label.json
+│   │               ├── form-field-label-suffix.json
 │   │               ├── form-field-status.json
 │   │               ├── heading.json
 │   │               ├── link.json
-│   │               ├── number-input.json
+│   │               ├── note.json
+│   │               ├── option-label.json
 │   │               ├── ordered-list.json
 │   │               ├── paragraph.json
 │   │               ├── password-input.json
@@ -91,7 +94,8 @@ design-system-starter-kit/
 │   │               ├── radio-group.json
 │   │               ├── radio-option.json
 │   │               ├── search-input.json
-│   │               ├── telephone-input.json
+│   │               ├── select.json
+│   │               ├── status-badge.json
 │   │               ├── text-area.json
 │   │               ├── text-input.json
 │   │               ├── time-input.json
