@@ -6,6 +6,37 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.3.0 (March 6, 2026)
+
+### Container layout component (PR #75, issue #74)
+
+- **Container component** (`dsn-container`) — Visueel kader voor het groeperen van gerelateerde content
+- `elevated` variant via `--dsn-container-elevated-box-shadow` → `box-shadow.sm` (kaarten, panelen, demo-wrappers)
+- `as` prop: `div` (default), `section`, `article`, `aside` — semantiek losgekoppeld van stijl
+- 9 component tokens: `background-color`, `border-color`, `border-radius`, `border-width`, `box-shadow`, `color`, `padding-block`, `padding-inline`, `elevated.box-shadow`
+- React `forwardRef` met `as`-prop casting via `React.Ref<HTMLDivElement>`
+- Storybook: Default, Elevated, ElevatedWithContent, AllStates stories
+- Stack en Grid stories: placeholder `Box` component vervangen door `Container` als inhoud-items
+- HTML/CSS export toegevoegd aan `components-html/package.json`
+
+---
+
+## Version 5.2.0 (March 6, 2026)
+
+### Elevatie box-shadow tokens: sm, md, lg (PR #73, issue #72)
+
+- **Drie semantische schaduw-niveaus**: `sm` (cards), `md` (dropdowns/tooltips), `lg` (modals)
+- Elke shadow bestaat uit 3 lagen: directe schaduw + ambient schaduw + spread-only outline (highlight)
+- **Kleurtokens** in `colors-light.json` / `colors-dark.json`: `dsn.color.shadow.{direct,ambient,highlight}`
+- **Shorthand tokens** in `base.json`: `dsn.box-shadow.{sm,md,lg}` als string met embedded SD-referenties
+- SD v3 aanpak: `outputReferences: true` resolvet embedded `{dsn.color.shadow.*}` naar `var(--dsn-color-shadow-*)` in CSS-output
+- Light mode: `highlight: transparent` (no-op); Dark mode: `highlight: color-mix(in srgb, white 8%, transparent)`
+- Dark mode: `direct` 60%, `ambient` 40% (zwart) — schaduwen bewust minder prominent
+- Wireframe thema: `box-shadow.sm/md/lg: none` (alles flat)
+- Storybook `TokenTable`: `previewType="shadow"` toont kaartje met shadow, reageert op theme/mode wisseling
+
+---
+
 ## Version 5.1.0 (March 5, 2026)
 
 ### Grid en GridItem layout componenten met 12 kolommen (PR #71, issue #21)

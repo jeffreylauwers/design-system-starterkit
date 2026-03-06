@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** March 5, 2026
+**Last Updated:** March 6, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -155,7 +155,61 @@ Components are designed to compose together:
 
 ## Layout Components
 
-Layout components bieden structuur voor paginalayouts zonder eigen visuele stijl. Ze zijn pure CSS-utilities.
+Layout components bieden structuur voor paginalayouts. Container heeft een visuele stijl; Grid en Stack zijn pure CSS-utilities.
+
+### Container
+
+Visueel kader voor het groeperen van gerelateerde content. Voegt achtergrond, border, border-radius en padding toe. De `elevated` variant voegt een lichte `box-shadow.sm` schaduw toe voor kaarten en panelen.
+
+**HTML/CSS:**
+
+```html
+<!-- Standaard container -->
+<div class="dsn-container">
+  <p class="dsn-paragraph">Inhoud van de container.</p>
+</div>
+
+<!-- Elevated container (kaart, paneel) -->
+<div class="dsn-container dsn-container--elevated">
+  <p class="dsn-paragraph">Elevated container.</p>
+</div>
+
+<!-- Als semantisch article -->
+<article class="dsn-container">
+  <p class="dsn-paragraph">Artikel-inhoud.</p>
+</article>
+```
+
+**React:**
+
+```tsx
+// Standaard
+<Container>
+  <Paragraph>Inhoud van de container.</Paragraph>
+</Container>
+
+// Elevated
+<Container elevated>
+  <Paragraph>Elevated container.</Paragraph>
+</Container>
+
+// Met semantisch element
+<Container as="article">
+  <Paragraph>Artikel-inhoud.</Paragraph>
+</Container>
+
+// Als kader rondom Grid-items
+<Grid contained>
+  <GridItem colSpan={8}><Container>Hoofdinhoud</Container></GridItem>
+  <GridItem colSpan={4}><Container>Sidebar</Container></GridItem>
+</Grid>
+```
+
+**Props:** `as` (`div` | `section` | `article` | `aside`, default `div`), `elevated` (boolean, default `false`).
+
+**Design tokens:** `--dsn-container-background-color`, `--dsn-container-border-color`, `--dsn-container-border-radius`, `--dsn-container-border-width`, `--dsn-container-box-shadow`, `--dsn-container-color`, `--dsn-container-padding-block`, `--dsn-container-padding-inline`, `--dsn-container-elevated-box-shadow`.
+
+---
 
 ### Grid
 
@@ -950,12 +1004,12 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 40
+**Total Components:** 41
 
 **Implementations:**
 
-- **HTML/CSS:** 40 components
-- **React:** 40 components (962 tests total)
+- **HTML/CSS:** 41 components
+- **React:** 41 components (962 tests total)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
 **Test Coverage:** 962 tests across 46 test suites

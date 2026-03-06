@@ -162,13 +162,14 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 
 ### Current Components
 
-**Layout Components (3)**
+**Layout Components (4)**
 
-| Component    | HTML/CSS | React | Web Component |
-| ------------ | -------- | ----- | ------------- |
-| **Grid**     | Yes      | Yes   | —             |
-| **GridItem** | Yes      | Yes   | —             |
-| **Stack**    | Yes      | Yes   | —             |
+| Component     | HTML/CSS | React | Web Component |
+| ------------- | -------- | ----- | ------------- |
+| **Container** | Yes      | Yes   | —             |
+| **Grid**      | Yes      | Yes   | —             |
+| **GridItem**  | Yes      | Yes   | —             |
+| **Stack**     | Yes      | Yes   | —             |
 
 **Content Components (9)**
 
@@ -227,6 +228,27 @@ See the [Documentation](./docs/) for full component details and specifications.
 ### Component Composition
 
 Components are designed to compose together:
+
+**Layout Components**
+
+```jsx
+// React — Container als visueel kader voor gerelateerde content
+<Container>
+  <Heading level={2}>Sectie</Heading>
+  <Paragraph>Inhoud van de container.</Paragraph>
+</Container>
+
+// React — Elevated container met schaduw (bijv. kaart)
+<Container elevated as="article">
+  <Paragraph>Dit is een elevated container.</Paragraph>
+</Container>
+
+// React — Grid met Containers als items
+<Grid contained>
+  <GridItem colSpan={8}><Container>Hoofdinhoud</Container></GridItem>
+  <GridItem colSpan={4}><Container>Sidebar</Container></GridItem>
+</Grid>
+```
 
 **Content Components**
 

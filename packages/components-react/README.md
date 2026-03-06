@@ -45,15 +45,30 @@ function App() {
 
 ## Available Components
 
+### Layout Components
+
+- **Container** - Visueel kader voor het groeperen van gerelateerde content (achtergrond, border, padding, optionele schaduw)
+- **Grid** - 12-koloms CSS Grid container met gutter, outer margin en optionele max-width
+- **GridItem** - Grid child met colSpan (1–12), responsive varianten en fullBleed prop
+- **Stack** - Verticale stapeling met consistente ruimte via flexbox + gap (9 space-varianten)
+
 ### Content Components
 
 - **Button** - Primary action component with variants and sizes
+- **ButtonLink** - Semantisch `<a>`, visueel als Button (navigatie met hoge attentiewaarde)
 - **Heading** - Semantic heading component (h1-h6)
 - **Icon** - SVG icon component with 45+ icons
 - **Link** - Anchor element with external link support
+- **LinkButton** - Semantisch `<button>`, visueel als Link (JS-acties met lage attentiewaarde)
 - **OrderedList** - Numbered list component
 - **Paragraph** - Text paragraph component
 - **UnorderedList** - Bulleted list component
+
+### Display & Feedback Components
+
+- **Alert** - Belangrijk bericht met `role="alert"` (4 varianten: info, positive, negative, warning)
+- **Note** - Passieve notitie zonder live region (5 varianten incl. neutral)
+- **StatusBadge** - Compact inline label met signaalkleur (5 varianten)
 
 ### Form Components
 
