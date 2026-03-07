@@ -49,6 +49,7 @@ export * from './OptionLabel';
 export * from './StatusBadge';
 export * from './Alert';
 export * from './Note';
+export * from './Table';
 
 // Form Field Components
 export * from './FormField';

@@ -1,0 +1,100 @@
+{
+  "dsn": {
+    "table": {
+      "caption": {
+        "color": {
+          "value": "{dsn.color.neutral.color-document}",
+          "type": "color"
+        },
+        "font-family": {
+          "value": "{dsn.heading.font-family}",
+          "type": "fontFamily"
+        },
+        "font-size": { "value": "{dsn.text.font-size.xl}", "type": "fontSize" },
+        "font-weight": {
+          "value": "{dsn.heading.font-weight}",
+          "type": "fontWeight"
+        },
+        "line-height": {
+          "value": "{dsn.text.line-height.xl}",
+          "type": "lineHeight"
+        }
+      },
+      "cell": {
+        "padding-block-end": {
+          "value": "{dsn.space.block.lg}",
+          "type": "dimension"
+        },
+        "padding-block-start": {
+          "value": "{dsn.space.block.lg}",
+          "type": "dimension"
+        },
+        "padding-inline-end": {
+          "value": "{dsn.space.inline.xl}",
+          "type": "dimension"
+        },
+        "padding-inline-start": {
+          "value": "{dsn.space.inline.xl}",
+          "type": "dimension"
+        }
+      },
+      "header": {
+        "background-color": { "value": "transparent", "type": "color" },
+        "border-block-end-color": {
+          "value": "{dsn.color.neutral.border-subtle}",
+          "type": "color"
+        },
+        "border-block-end-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension"
+        },
+        "color": {
+          "value": "{dsn.color.neutral.color-document}",
+          "type": "color"
+        }
+      },
+      "header-cell": {
+        "font-weight": {
+          "value": "{dsn.text.font-weight.bold}",
+          "type": "fontWeight"
+        }
+      },
+      "row": {
+        "border-block-end-color": {
+          "value": "{dsn.color.neutral.border-subtle}",
+          "type": "color"
+        },
+        "border-block-end-width": {
+          "value": "{dsn.border.width.thin}",
+          "type": "dimension"
+        }
+      },
+      "footer": {
+        "background-color": { "value": "transparent", "type": "color" },
+        "border-block-start-color": {
+          "value": "{dsn.color.neutral.border-subtle}",
+          "type": "color"
+        },
+        "border-block-start-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension"
+        },
+        "color": {
+          "value": "{dsn.color.neutral.color-document}",
+          "type": "color"
+        },
+        "font-weight": {
+          "value": "{dsn.text.font-weight.bold}",
+          "type": "fontWeight"
+        }
+      },
+      "wrapper": {
+        "background-color": {
+          "value": "{dsn.color.neutral.bg-document}",
+          "type": "color",
+          "comment": "Achtergrondkleur van de scroll-wrapper — moet overeenkomen met de pagina-achtergrond voor de scroll-schaduw techniek"
+        }
+      }
+    }
+  }
+}

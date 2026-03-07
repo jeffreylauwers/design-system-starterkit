@@ -1,0 +1,194 @@
+/* ===== Scroll-wrapper ===== */
+/*
+ * Scroll-affordance schaduw (Lea Verou techniek):
+ * - Dekkende overlagen (background-attachment: local) scrollen mee met de content
+ *   en verbergen de schaduwen wanneer je aan het begin of einde bent.
+ * - Schaduw-overlagen (background-attachment: scroll) blijven gefixeerd aan de viewport
+ *   van de wrapper en zijn altijd aanwezig.
+ * - Resultaat: schaduw is zichtbaar zodra er content is om naartoe te scrollen,
+ *   en verdwijnt automatisch als je de rand bereikt.
+ *
+ * ⚠️ Vereist dat --dsn-table-wrapper-background-color overeenkomt met de omringende
+ * pagina-achtergrond. Overschrijf dit token als de tabel op een gekleurde achtergrond staat.
+ * De schaduwkleur is niet getoken (shadow.direct bestaat niet in alle thema's);
+ * overschrijf --dsn-table-wrapper-scroll-shadow-color als je een andere schaduwkleur wilt.
+ */
+
+.dsn-table-wrapper {
+  /* Lokale variabelen zodat de waarden maar één keer herhaald hoeven te worden.
+   * Fallbacks zorgen ervoor dat de schaduwen werken ook zonder gebouwde design tokens. */
+  --_bg: var(
+    --dsn-table-wrapper-background-color,
+    var(--dsn-color-neutral-bg-document, #fcfcfc)
+  );
+  --_shadow: var(--dsn-table-wrapper-scroll-shadow-color, rgba(0, 0, 0, 0.1));
+
+  overflow-x: auto;
+  background-color: var(--_bg);
+  background-image:
+    /* Start-cover (local): verbergt de startschaduw als je helemaal links bent */
+    linear-gradient(to right, var(--_bg) 0%, transparent 100%),
+    /* Einde-cover (local): verbergt de eindschaduw als je helemaal rechts bent */
+    linear-gradient(to left, var(--_bg) 0%, transparent 100%),
+    /* Startschaduw (scroll): altijd aanwezig, gedekt door de start-cover zolang je links bent */
+    linear-gradient(to right, var(--_shadow) 0%, transparent 100%),
+    /* Eindschaduw (scroll): altijd aanwezig, gedekt door de einde-cover zolang je rechts bent */
+    linear-gradient(to left, var(--_shadow) 0%, transparent 100%);
+  background-repeat: no-repeat;
+  /* Cover (3rem) is breder dan de schaduw (1.5rem) zodat hij volledig dekt bij rust */
+  background-size:
+    3rem 100%,
+    3rem 100%,
+    1.5rem 100%,
+    1.5rem 100%;
+  background-position: left, right, left, right;
+  background-attachment: local, local, scroll, scroll;
+}
+
+/* ===== Tabel basis ===== */
+
+.dsn-table {
+  border-collapse: collapse;
+  inline-size: 100%;
+  font-size: inherit;
+}
+
+/* ===== Caption ===== */
+
+.dsn-table__caption {
+  caption-side: top;
+  text-align: start;
+  padding-block-end: var(--dsn-table-cell-padding-block-end);
+  color: var(--dsn-table-caption-color);
+  font-family: var(--dsn-table-caption-font-family);
+  font-size: var(--dsn-table-caption-font-size);
+  font-weight: var(--dsn-table-caption-font-weight);
+  line-height: var(--dsn-table-caption-line-height);
+}
+
+/* ===== Header (thead) ===== */
+
+.dsn-table thead {
+  background-color: var(--dsn-table-header-background-color);
+  color: var(--dsn-table-header-color);
+}
+
+.dsn-table thead tr {
+  border-block-end: var(--dsn-table-header-border-block-end-width) solid
+    var(--dsn-table-header-border-block-end-color);
+}
+
+.dsn-table thead th {
+  padding-block-start: var(--dsn-table-cell-padding-block-start);
+  padding-block-end: var(--dsn-table-cell-padding-block-end);
+  padding-inline-start: var(--dsn-table-cell-padding-inline-start);
+  padding-inline-end: var(--dsn-table-cell-padding-inline-end);
+  font-weight: var(--dsn-table-header-cell-font-weight);
+  text-align: start;
+  /* middle i.p.v. bottom: zorgt voor consistente uitlijning tussen
+   * kolomkoppen met én zonder sorteerknop */
+  vertical-align: middle;
+}
+
+/* ===== Body (tbody) ===== */
+
+.dsn-table tbody tr {
+  border-block-end: var(--dsn-table-row-border-block-end-width) solid
+    var(--dsn-table-row-border-block-end-color);
+}
+
+.dsn-table tbody td,
+.dsn-table tbody th {
+  padding-block-start: var(--dsn-table-cell-padding-block-start);
+  padding-block-end: var(--dsn-table-cell-padding-block-end);
+  padding-inline-start: var(--dsn-table-cell-padding-inline-start);
+  padding-inline-end: var(--dsn-table-cell-padding-inline-end);
+  text-align: start;
+  vertical-align: top;
+}
+
+/* Rijkoppen (th scope="row") krijgen hetzelfde gewicht als kolomkoppen */
+.dsn-table tbody th {
+  font-weight: var(--dsn-table-header-cell-font-weight);
+}
+
+/* ===== Footer (tfoot) ===== */
+
+.dsn-table tfoot {
+  background-color: var(--dsn-table-footer-background-color);
+  color: var(--dsn-table-footer-color);
+}
+
+.dsn-table tfoot tr {
+  border-block-start: var(--dsn-table-footer-border-block-start-width) solid
+    var(--dsn-table-footer-border-block-start-color);
+}
+
+.dsn-table tfoot td,
+.dsn-table tfoot th {
+  padding-block-start: var(--dsn-table-cell-padding-block-start);
+  padding-block-end: var(--dsn-table-cell-padding-block-end);
+  padding-inline-start: var(--dsn-table-cell-padding-inline-start);
+  padding-inline-end: var(--dsn-table-cell-padding-inline-end);
+  font-weight: var(--dsn-table-footer-font-weight);
+  text-align: start;
+  vertical-align: top;
+}
+
+/* ===== Kolomhoofd-inhoud (sorteerbaar) ===== */
+/*
+ * Flexbox-wrapper binnenin een sorteerbare <th>.
+ * Plaatst de kolomtekst links en de icon-only sorteerknop rechts naast elkaar.
+ *
+ * HTML-patroon:
+ * <th scope="col" aria-sort="ascending">
+ *   <span class="dsn-table__header-content">
+ *     Naam
+ *     <button
+ *       class="dsn-button dsn-button--size-small dsn-button--subtle dsn-button--icon-only dsn-table__sort-button"
+ *       type="button"
+ *       aria-label="Sorteer op Naam"
+ *     >
+ *       <svg class="dsn-icon dsn-table__sort-icon--none" aria-hidden="true">...</svg>
+ *       <svg class="dsn-icon dsn-table__sort-icon--ascending" aria-hidden="true">...</svg>
+ *       <svg class="dsn-icon dsn-table__sort-icon--descending" aria-hidden="true">...</svg>
+ *     </button>
+ *   </span>
+ * </th>
+ */
+
+.dsn-table__header-content {
+  display: flex;
+  align-items: center;
+  gap: var(--dsn-space-inline-sm);
+}
+
+/* ===== Sorteerknop ===== */
+/*
+ * Aanvullende klasse op dsn-button dsn-button--size-small dsn-button--subtle dsn-button--icon-only.
+ * Voorkomt dat de knop inkrimpt in smalle kolommen.
+ */
+
+.dsn-table__sort-button {
+  flex-shrink: 0;
+}
+
+/* ===== Sorteericoon — drie staten via aria-sort op de th ===== */
+
+.dsn-table__sort-icon--none,
+.dsn-table__sort-icon--ascending,
+.dsn-table__sort-icon--descending {
+  display: none;
+}
+
+[aria-sort='none'] .dsn-table__sort-icon--none {
+  display: inline-flex;
+}
+
+[aria-sort='ascending'] .dsn-table__sort-icon--ascending {
+  display: inline-flex;
+}
+
+[aria-sort='descending'] .dsn-table__sort-icon--descending {
+  display: inline-flex;
+}
