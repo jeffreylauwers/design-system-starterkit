@@ -1,0 +1,46 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as TableStories from './Table.stories';
+import docs from './Table.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={TableStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={TableStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={TableStories.Default}
+  html={`<table class="dsn-table">
+  <caption class="dsn-table__caption">Productoverzicht</caption>
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Prijs</th>
+      <th scope="col">Voorraad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Laptop</td>
+      <td>€999</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>Muis</td>
+      <td>€29</td>
+      <td>84</td>
+    </tr>
+  </tbody>
+</table>`}
+/>
+
+<Controls of={TableStories.Default} />
+
+<Markdown>{rest}</Markdown>
