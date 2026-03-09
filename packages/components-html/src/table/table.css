@@ -198,11 +198,29 @@
  * Gebruik op <th> en <td> voor kolommen met cijfers of geldbedragen.
  * Tabular-nums zorgt voor consistente cijferbreedte zodat komma's en
  * decimalen netjes uitlijnen bij vergelijking.
+ *
+ * ⚠️ Dubbele klasse-selector (.dsn-table .dsn-table__cell--numeric) is nodig
+ * om de text-align: start op .dsn-table tbody td (specificiteit 0,1,2) te
+ * overwinnen. Deze selector heeft specificiteit 0,2,0 en wint daarmee.
  */
 
-.dsn-table__cell--numeric {
+.dsn-table .dsn-table__cell--numeric {
   text-align: end;
   font-variant-numeric: tabular-nums;
+}
+
+/* ===== Inline-componenten in tabelcellen ===== */
+/*
+ * Inline-flex elementen (zoals .dsn-checkbox) gebruiken baseline-uitlijning
+ * binnen de inline formatting context van een tabelcel. Dit veroorzaakt een
+ * kleine verticale offset ondanks vertical-align: middle op de <td>/<th>.
+ * Door vertical-align: middle ook op het element zelf te zetten, wordt het
+ * uitgelijnd op de helft van de x-hoogte van de cel — wat visueel klopt.
+ */
+
+.dsn-table td .dsn-checkbox,
+.dsn-table th .dsn-checkbox {
+  vertical-align: middle;
 }
 
 /* ===== Selecteerbare rijen ===== */
