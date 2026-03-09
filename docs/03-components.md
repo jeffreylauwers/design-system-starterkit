@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** March 6, 2026
+**Last Updated:** March 9, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -564,7 +564,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 ## Display & Feedback Components
 
-**Status:** Complete (HTML/CSS, React) — 3 components total
+**Status:** Complete (HTML/CSS, React) — 4 components total
 
 ### StatusBadge
 
@@ -690,6 +690,128 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 ```
 
 **Tests:** React (18 tests)
+
+### Table
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/Table/`
+
+**Tokens:** `tokens/components/table.json`
+
+**Props:** `caption`, `captionId`, `scrollable`, `children`
+
+**Features:**
+
+- `<caption>` verplicht — zichtbaar bijschrift en toegankelijke naam voor schermlezers
+- `scrollable` prop: wikkelt de tabel in een `<div role="region" aria-labelledby="..." tabindex="0">` voor horizontale scrollbaarheid en toetsenbordtoegang
+- `<tfoot>` via children — automatisch gestijld met vetgedrukte tekst en sterkere bovenborder
+- Sorteerfunctionaliteit via `aria-sort` op `<th>` + CSS-gestuurde iconen (`dsn-table__sort-icon--{none,ascending,descending}`)
+- Numerieke kolommen via `dsn-table__cell--numeric` — rechts uitgelijnde tekst + tabular nums
+- Selecteerbare rijen via `aria-selected="true"` op `<tr>` — achtergrondkleur via `dsn.color.neutral.bg-active`
+- Checkbox- en actiepatronen voor rijselectie en rijacties via standaard Button klassen
+
+**HTML/CSS:**
+
+```html
+<!-- Basisstructuur -->
+<table class="dsn-table">
+  <caption id="caption-id" class="dsn-table__caption">
+    Tabelonderschrift
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Kolom A</th>
+      <th scope="col" class="dsn-table__cell--numeric">Bedrag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Rij 1</th>
+      <td class="dsn-table__cell--numeric">€99</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row">Totaal</th>
+      <td class="dsn-table__cell--numeric">€99</td>
+    </tr>
+  </tfoot>
+</table>
+
+<!-- Scrollable wrapper -->
+<div
+  class="dsn-table-wrapper"
+  role="region"
+  aria-labelledby="caption-id"
+  tabindex="0"
+>
+  <table class="dsn-table">
+    ...
+  </table>
+</div>
+
+<!-- Selecteerbare rij -->
+<tr aria-selected="true">
+  <td>
+    <input type="checkbox" class="dsn-checkbox" id="select-1" checked />
+    <label for="select-1" class="dsn-visually-hidden"
+      >Selecteer Product A</label
+    >
+  </td>
+  <th scope="row">Product A</th>
+  <td>...</td>
+</tr>
+
+<!-- Sorteerbare kolomkop -->
+<th scope="col" aria-sort="ascending">
+  <span class="dsn-table__header-content">
+    Naam
+    <button
+      class="dsn-button dsn-button--size-small dsn-button--subtle dsn-button--icon-only dsn-table__sort-button"
+      type="button"
+    >
+      <svg class="dsn-icon dsn-table__sort-icon--none" aria-hidden="true">
+        <!-- arrows-sort -->
+      </svg>
+      <svg class="dsn-icon dsn-table__sort-icon--ascending" aria-hidden="true">
+        <!-- sort-ascending -->
+      </svg>
+      <svg class="dsn-icon dsn-table__sort-icon--descending" aria-hidden="true">
+        <!-- sort-descending -->
+      </svg>
+      <span class="dsn-button__label">Sorteer op Naam</span>
+    </button>
+  </span>
+</th>
+```
+
+**React:**
+
+```tsx
+// Basisgebruik
+<Table caption="Productoverzicht">
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col" className="dsn-table__cell--numeric">Prijs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Laptop Pro</th>
+      <td className="dsn-table__cell--numeric">€999</td>
+    </tr>
+  </tbody>
+</Table>
+
+// Scrollable
+<Table caption="Brede tabel" scrollable>
+  ...
+</Table>
+```
+
+**Tests:** React (22 tests)
 
 ---
 

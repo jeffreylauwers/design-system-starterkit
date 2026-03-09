@@ -6,6 +6,37 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.5.0 (March 9, 2026)
+
+### Table-uitbreidingen: selecteerbare rijen, acties en fixes (PR #78, issue #79 + bugfixes)
+
+- **Selecteerbare rijen** — `aria-selected="true"` op `<tr>` toont een achtergrondmarkering via `dsn-table tbody tr[aria-selected='true']`; gebruik in combinatie met een Checkbox in de eerste kolom en een visueel verborgen label
+- **Checkbox-uitlijning in cellen** — `vertical-align: middle` op `.dsn-table td .dsn-checkbox` en `.dsn-table th .dsn-checkbox` — corrigeert de baseline-offset van inline-flex elementen in tabelcellen
+- **Actiekolom (verwijder)** — `dsn-button--subtle-negative dsn-button--size-small` met icoon en `dsn-button__label` met rij-context via `dsn-visually-hidden`
+- **Actiekolom (actiemenu)** — `dsn-button--subtle dsn-button--size-small dsn-button--icon-only` met `dots-vertical` icoon en `dsn-button__label` met rij-context via `dsn-visually-hidden`
+- **Numerieke kolomkop rechts uitgelijnd** — `dsn-table__header-content` in een `dsn-table__cell--numeric` kolomkop krijgt `justify-content: flex-end` zodat kolomtitel en sorteerknopje uitlijnen met de data eronder
+- **Specificiteitsfix numerieke cellen** — `.dsn-table .dsn-table__cell--numeric` (specificiteit 0,2,0) overschrijft de body-cell text-align regel (specificiteit 0,1,2) correct
+- **Tokenfix wireframe thema** — `dsn.color.shadow.scroll` toegevoegd aan wireframe `colors-light.json` en `colors-dark.json` zodat de scroll-affordance schaduw van scrollbare tabellen ook in het wireframe thema werkt
+- **21 nieuwe tests** — totaal 983 tests, 47 test suites
+
+---
+
+## Version 5.4.0 (March 7, 2026)
+
+### Table component: toegankelijke datatable (PR #77, issue #76)
+
+- **Table component** (`dsn-table`) — Toegankelijke datatable voor tweedimensionale tabeldata met kolomkoppen, optionele rijkoppen, voettekst en sorteerfunctionaliteit
+- `caption` prop verplicht — zichtbaar bijschrift dat ook als toegankelijke naam dient voor schermlezers
+- `scrollable` prop — wikkelt de tabel in een `<div role="region" aria-labelledby="..." tabindex="0">` voor horizontale scrollbaarheid en toetsenbordtoegang
+- `<tfoot>` via children — automatisch vetgedrukt en met sterkere bovenborder via CSS
+- **Sorteericonen** — drie SVG-iconen per sorteerbare kolomkop, CSS toont het juiste icoon op basis van `aria-sort` waarde op `<th>` (`none`, `ascending`, `descending`)
+- **Scroll-affordance schaduw** — Lea Verou techniek met `background-attachment: local/scroll` om scrollbaarheid visueel te tonen
+- **React component** — `React.forwardRef<HTMLTableElement>` met `useId()` voor automatische caption-ID; spreidt alle native tabel-attributen door via `...props`
+- 21 component tokens in `tokens/components/table.json`
+- Storybook: Default, WithFooter, Sortable, Scrollable, SelectableRows, WithLink, WithDeleteAction, WithActionsMenu, AllTogether
+
+---
+
 ## Version 5.3.0 (March 6, 2026)
 
 ### Container layout component (PR #75, issue #74)

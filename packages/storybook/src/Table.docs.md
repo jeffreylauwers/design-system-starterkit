@@ -92,6 +92,92 @@ Voeg de klasse `dsn-table__cell--numeric` toe aan `<th>` en `<td>` voor kolommen
 <td class="dsn-table__cell--numeric">€999</td>
 ```
 
+### Selecteerbare rijen
+
+Zet `aria-selected="true"` op `<tr>` om een rij als geselecteerd te markeren. Gebruik altijd een Checkbox in de eerste kolom zodat de selectie ook bediend kan worden met het toetsenbord. Het label van de checkbox is visueel verborgen maar leesbaar voor schermlezers.
+
+De kolomkop van de selecteerkolom bevat een "selecteer alles" checkbox; gebruik `indeterminate` state wanneer een deel van de rijen geselecteerd is.
+
+```html
+<table class="dsn-table">
+  <caption class="dsn-table__caption">
+    Productoverzicht — selecteerbare rijen
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">
+        <input type="checkbox" class="dsn-checkbox" id="select-all" />
+        <label for="select-all" class="dsn-visually-hidden"
+          >Selecteer alle rijen</label
+        >
+      </th>
+      <th scope="col">Product</th>
+      <th scope="col" class="dsn-table__cell--numeric">Prijs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr aria-selected="true">
+      <td>
+        <input type="checkbox" class="dsn-checkbox" id="select-1" checked />
+        <label for="select-1" class="dsn-visually-hidden"
+          >Selecteer Laptop Pro</label
+        >
+      </td>
+      <th scope="row">Laptop Pro</th>
+      <td class="dsn-table__cell--numeric">€999</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" class="dsn-checkbox" id="select-2" />
+        <label for="select-2" class="dsn-visually-hidden"
+          >Selecteer Muis Ergonomisch</label
+        >
+      </td>
+      <th scope="row">Muis Ergonomisch</th>
+      <td class="dsn-table__cell--numeric">€79</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+### Actiekolom
+
+Gebruik een actiekolom voor acties die op een specifieke rij uitgevoerd worden. Geef elke actieknop rij-context mee via een `dsn-visually-hidden` span binnen `dsn-button__label`, zodat schermlezers onderscheid kunnen maken tussen acties in verschillende rijen.
+
+**Eén actie (bijv. verwijder):**
+
+```html
+<td>
+  <button
+    type="button"
+    class="dsn-button dsn-button--subtle-negative dsn-button--size-small"
+  >
+    <svg class="dsn-icon" aria-hidden="true"><!-- trash --></svg>
+    <span class="dsn-button__label">
+      Verwijder
+      <span class="dsn-visually-hidden"> Laptop Pro</span>
+    </span>
+  </button>
+</td>
+```
+
+**Actiemenu (meerdere acties via dropdown):**
+
+```html
+<td>
+  <button
+    type="button"
+    class="dsn-button dsn-button--subtle dsn-button--size-small dsn-button--icon-only"
+  >
+    <svg class="dsn-icon" aria-hidden="true"><!-- dots-vertical --></svg>
+    <span class="dsn-button__label">
+      Toon acties
+      <span class="dsn-visually-hidden"> voor Laptop Pro</span>
+    </span>
+  </button>
+</td>
+```
+
 ## Design tokens
 
 | Token                                         | Beschrijving                                   |
