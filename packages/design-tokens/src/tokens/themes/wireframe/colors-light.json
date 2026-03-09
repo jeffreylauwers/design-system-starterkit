@@ -1425,6 +1425,13 @@
         "value": "transparent",
         "type": "color",
         "comment": "Fully transparent - for invisible backgrounds and borders"
+      },
+      "shadow": {
+        "scroll": {
+          "value": "rgba(0, 0, 0, 0.15)",
+          "type": "color",
+          "comment": "Scroll-affordance schaduw voor horizontaal scrollbare tabellen"
+        }
       }
     },
     "heading": {
