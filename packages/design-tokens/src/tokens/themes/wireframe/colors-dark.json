@@ -1425,6 +1425,13 @@
         "value": "transparent",
         "type": "color",
         "comment": "Fully transparent - for invisible backgrounds and borders"
+      },
+      "shadow": {
+        "scroll": {
+          "value": "rgba(255, 255, 255, 0.12)",
+          "type": "color",
+          "comment": "Scroll-affordance schaduw — lichte kleur voor zichtbaarheid op donkere achtergrond"
+        }
       }
     },
     "heading": {
