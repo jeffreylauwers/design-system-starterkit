@@ -115,7 +115,8 @@
    =========================== */
 .dsn-details__content {
   margin-inline-start: calc(
-    var(--dsn-details-icon-size) + var(--dsn-details-summary-gap)
+    var(--dsn-details-icon-size) / 2 -
+      var(--dsn-details-content-border-inline-start-width) / 2
   );
   background-color: var(--dsn-details-content-background-color);
   border-inline-start: var(--dsn-details-content-border-inline-start-width)
