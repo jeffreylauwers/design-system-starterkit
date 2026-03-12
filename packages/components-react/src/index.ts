@@ -50,6 +50,7 @@ export * from './StatusBadge';
 export * from './Alert';
 export * from './Note';
 export * from './Table';
+export * from './Details';
 
 // Form Field Components
 export * from './FormField';

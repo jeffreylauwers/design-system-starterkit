@@ -1,0 +1,33 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as DetailsStories from './Details.stories';
+import docs from './Details.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={DetailsStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={DetailsStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={DetailsStories.Default}
+  html={`<details class="dsn-details">
+  <summary class="dsn-details__summary">
+    <svg class="dsn-icon dsn-details__icon" aria-hidden="true"><!-- chevron-down --></svg>
+    <span class="dsn-details__summary-label">Label</span>
+  </summary>
+  <div class="dsn-details__content">
+    <p class="dsn-paragraph">Tekst</p>
+  </div>
+</details>`}
+/>
+
+<Controls of={DetailsStories.Default} />
+
+<Markdown>{rest}</Markdown>

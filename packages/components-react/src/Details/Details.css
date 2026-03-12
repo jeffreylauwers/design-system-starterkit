@@ -1,0 +1,6 @@
+/**
+ * Details component styles for React
+ * Re-exports the base Details styles from components-html
+ */
+
+@import '../../../components-html/src/details/details.css';
