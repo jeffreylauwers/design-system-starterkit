@@ -79,12 +79,19 @@
 }
 
 /* ===========================
-   Summary focus state
+   Summary focus state — consistent met Link component
    =========================== */
 .dsn-details__summary:focus-visible {
-  outline: var(--dsn-focus-outline-width) solid var(--dsn-focus-outline-color);
+  background-color: var(--dsn-focus-background-color);
+  color: var(--dsn-focus-color);
+  text-decoration: none;
+  outline: var(--dsn-focus-outline-width) var(--dsn-focus-outline-style)
+    var(--dsn-focus-outline-color);
   outline-offset: var(--dsn-focus-outline-offset);
-  border-radius: var(--dsn-focus-border-radius);
+  box-shadow: 0 0 0
+    calc(var(--dsn-focus-outline-offset) + var(--dsn-focus-outline-width))
+    var(--dsn-focus-inverse-outline-color);
+  box-decoration-break: clone;
 }
 
 /* ===========================
