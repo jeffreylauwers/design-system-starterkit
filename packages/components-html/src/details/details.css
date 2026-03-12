@@ -1,0 +1,115 @@
+/**
+ * Details Component
+ * Expandable disclosure widget based on the native <details>/<summary> element.
+ *
+ * Usage:
+ * <!-- Default (closed) -->
+ * <details class="dsn-details">
+ *   <summary class="dsn-details__summary">
+ *     <svg class="dsn-icon dsn-details__icon" aria-hidden="true"><!-- chevron-down --></svg>
+ *     <span class="dsn-details__summary-label">Label</span>
+ *   </summary>
+ *   <div class="dsn-details__content">
+ *     <p class="dsn-paragraph">Aanvullende informatie.</p>
+ *   </div>
+ * </details>
+ *
+ * <!-- Default open -->
+ * <details class="dsn-details" open>
+ *   <summary class="dsn-details__summary">
+ *     <svg class="dsn-icon dsn-details__icon" aria-hidden="true"><!-- chevron-down --></svg>
+ *     <span class="dsn-details__summary-label">Label</span>
+ *   </summary>
+ *   <div class="dsn-details__content">
+ *     <p class="dsn-paragraph">Inhoud is standaard zichtbaar.</p>
+ *   </div>
+ * </details>
+ */
+
+/* ===========================
+   Base layout
+   =========================== */
+.dsn-details {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--dsn-details-row-gap);
+}
+
+/* ===========================
+   Summary (toggle trigger)
+   =========================== */
+.dsn-details__summary {
+  display: flex;
+  align-items: center;
+  gap: var(--dsn-details-summary-gap);
+  list-style: none;
+  cursor: pointer;
+}
+
+/* Hide native browser disclosure marker (WebKit) */
+.dsn-details__summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ===========================
+   Summary label
+   =========================== */
+.dsn-details__summary-label {
+  color: var(--dsn-details-summary-color);
+  text-decoration-line: var(--dsn-details-summary-text-decoration-line);
+  text-underline-offset: var(--dsn-details-summary-text-underline-offset);
+  text-decoration-thickness: var(
+    --dsn-details-summary-text-decoration-thickness
+  );
+}
+
+/* ===========================
+   Summary hover state
+   =========================== */
+.dsn-details__summary:hover .dsn-details__summary-label {
+  color: var(--dsn-details-summary-hover-color);
+  text-decoration-line: var(--dsn-details-summary-hover-text-decoration-line);
+}
+
+/* ===========================
+   Summary active state
+   =========================== */
+.dsn-details__summary:active .dsn-details__summary-label {
+  color: var(--dsn-details-summary-active-color);
+}
+
+/* ===========================
+   Summary focus state
+   =========================== */
+.dsn-details__summary:focus-visible {
+  outline: var(--dsn-focus-outline-width) solid var(--dsn-focus-outline-color);
+  outline-offset: var(--dsn-focus-outline-offset);
+  border-radius: var(--dsn-focus-border-radius);
+}
+
+/* ===========================
+   Icon — rotates 180° when open
+   =========================== */
+.dsn-details__icon {
+  flex-shrink: 0;
+  width: var(--dsn-details-icon-size);
+  height: var(--dsn-details-icon-size);
+  color: var(--dsn-details-summary-color);
+  transition: transform 0.2s ease;
+}
+
+.dsn-details[open] .dsn-details__icon {
+  transform: rotate(180deg);
+}
+
+/* ===========================
+   Content area
+   =========================== */
+.dsn-details__content {
+  background-color: var(--dsn-details-content-background-color);
+  border-inline-start: var(--dsn-details-content-border-inline-start-width)
+    solid var(--dsn-details-content-border-color);
+  padding-inline-start: var(--dsn-details-content-padding-inline-start);
+  padding-inline-end: var(--dsn-details-content-padding-inline-end);
+  padding-block: var(--dsn-details-content-padding-block);
+}

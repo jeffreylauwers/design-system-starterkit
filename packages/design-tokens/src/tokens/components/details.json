@@ -1,0 +1,96 @@
+{
+  "dsn": {
+    "details": {
+      "row-gap": {
+        "value": "{dsn.space.row.md}",
+        "type": "dimension",
+        "comment": "Vertical gap between summary and content"
+      },
+      "summary": {
+        "color": {
+          "value": "{dsn.color.action-2.color-default}",
+          "type": "color",
+          "comment": "Summary label color (follows Link via action-2)"
+        },
+        "gap": {
+          "value": "{dsn.space.text.sm}",
+          "type": "dimension",
+          "comment": "Gap between chevron icon and label text"
+        },
+        "text-decoration-line": {
+          "value": "none",
+          "type": "other",
+          "comment": "No underline by default; appears on hover"
+        },
+        "text-underline-offset": {
+          "value": "4px",
+          "type": "dimension",
+          "comment": "Underline offset for hover state"
+        },
+        "text-decoration-thickness": {
+          "value": "auto",
+          "type": "other",
+          "comment": "Underline thickness for hover state"
+        },
+        "hover": {
+          "color": {
+            "value": "{dsn.color.action-2.color-hover}",
+            "type": "color",
+            "comment": "Summary label color on hover"
+          },
+          "text-decoration-line": {
+            "value": "underline",
+            "type": "other",
+            "comment": "Underline appears on hover"
+          }
+        },
+        "active": {
+          "color": {
+            "value": "{dsn.color.action-2.color-active}",
+            "type": "color",
+            "comment": "Summary label color on active"
+          }
+        }
+      },
+      "icon": {
+        "size": {
+          "value": "{dsn.icon.size.md}",
+          "type": "dimension",
+          "comment": "Chevron icon size"
+        }
+      },
+      "content": {
+        "background-color": {
+          "value": "transparent",
+          "type": "color",
+          "comment": "Content area background"
+        },
+        "border-color": {
+          "value": "{dsn.color.neutral.border-subtle}",
+          "type": "color",
+          "comment": "Left border color for visual grouping"
+        },
+        "border-inline-start-width": {
+          "value": "{dsn.border.width.medium}",
+          "type": "dimension",
+          "comment": "Left border width"
+        },
+        "padding-inline-start": {
+          "value": "{dsn.space.inline.xl}",
+          "type": "dimension",
+          "comment": "Left padding — aligns content with label text"
+        },
+        "padding-inline-end": {
+          "value": "{dsn.space.inline.xl}",
+          "type": "dimension",
+          "comment": "Right padding"
+        },
+        "padding-block": {
+          "value": "{dsn.space.block.xl}",
+          "type": "dimension",
+          "comment": "Top and bottom padding"
+        }
+      }
+    }
+  }
+}
