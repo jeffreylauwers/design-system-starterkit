@@ -564,7 +564,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 ## Display & Feedback Components
 
-**Status:** Complete (HTML/CSS, React) — 4 components total
+**Status:** Complete (HTML/CSS, React) — 5 components total
 
 ### StatusBadge
 
@@ -812,6 +812,77 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 ```
 
 **Tests:** React (22 tests)
+
+### Details
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/Details/`
+
+**Tokens:** `tokens/components/details.json`
+
+**Props:** `summary`, `defaultOpen`, `onToggle`, `children`
+
+**Features:**
+
+- Gebaseerd op native `<details>`/`<summary>` HTML-elementen — geen JavaScript nodig voor toggle
+- `summary` prop: tekst van het klikbare summarylabel
+- `defaultOpen` prop: startwaarde voor open/dicht (default: `false`)
+- `onToggle` callback: ontvangt `(open: boolean)` bij elke toggle
+- Chevron-icoon roteert 180° via CSS bij open staat (`details[open] .dsn-details__icon`)
+- Summarylabel volgt Link-stijlen (`action-2` kleurenserie) — hover underline, focus met geel/zwart ring
+- Contentborder (`border-inline-start`) gecentreerd op het icoon via `calc(icon-size / 2 - border-width / 2)`
+- `width: fit-content` op summary — klikgebied beperkt tot tekst + icoon
+- Impliciete ARIA-rol `group` — geen extra `role` attribuut nodig
+
+**HTML/CSS:**
+
+```html
+<!-- Standaard (dicht) -->
+<details class="dsn-details">
+  <summary class="dsn-details__summary">
+    <svg class="dsn-icon dsn-details__icon" aria-hidden="true">
+      <!-- chevron-down -->
+    </svg>
+    <span class="dsn-details__summary-label">Label</span>
+  </summary>
+  <div class="dsn-details__content">
+    <p class="dsn-paragraph">Aanvullende informatie.</p>
+  </div>
+</details>
+
+<!-- Standaard open -->
+<details class="dsn-details" open>
+  <summary class="dsn-details__summary">
+    <svg class="dsn-icon dsn-details__icon" aria-hidden="true">
+      <!-- chevron-down -->
+    </svg>
+    <span class="dsn-details__summary-label">Label</span>
+  </summary>
+  <div class="dsn-details__content">
+    <p class="dsn-paragraph">Inhoud is standaard zichtbaar.</p>
+  </div>
+</details>
+```
+
+**React:**
+
+```tsx
+// Standaard
+<Details summary="Welke documenten heb ik nodig?">
+  <UnorderedList>
+    <li>Geldig identiteitsbewijs</li>
+    <li>Bankafschrift van de afgelopen 3 maanden</li>
+  </UnorderedList>
+</Details>
+
+// Standaard open met toggle callback
+<Details summary="Uitgebreide toelichting" defaultOpen onToggle={(open) => console.log(open)}>
+  <Paragraph>Zichtbare inhoud bij laden.</Paragraph>
+</Details>
+```
+
+**Tests:** React (19 tests)
 
 ---
 
@@ -1126,12 +1197,12 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 41
+**Total Components:** 42
 
 **Implementations:**
 
-- **HTML/CSS:** 41 components
-- **React:** 41 components (962 tests total)
+- **HTML/CSS:** 42 components
+- **React:** 42 components (1002 tests total, 48 test suites)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
 **Test Coverage:** 962 tests across 46 test suites

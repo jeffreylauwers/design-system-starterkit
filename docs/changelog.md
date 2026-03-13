@@ -6,6 +6,23 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.6.0 (March 12, 2026)
+
+### Details component: uitvouwbare inhoudsaanwijzer (PR #82, issue #80)
+
+- **Details component** (`dsn-details`) — Uitvouwbare sectie op basis van native `<details>`/`<summary>` HTML-elementen
+- CSS-only chevron-rotatie via `details[open] .dsn-details__icon` — geen JavaScript nodig
+- `summary` prop: tekst van het klikbare summarylabel
+- `defaultOpen` prop: startwaarde voor open/dicht (default: `false`)
+- `onToggle` callback: ontvangt `(open: boolean)` bij elke toggle
+- Summarylabel volgt Link-stijlen (`action-2` kleurenserie) — hover underline, focus met geel/zwart ring
+- Contentborder gecentreerd op icoon via `calc(icon-size / 2 - border-width / 2)` — robuust bij fluid icon-size of gewijzigde border-width token
+- `width: fit-content` op summary — klikgebied beperkt tot tekst + icoon
+- Focus state consistent met Link component: `background-color`, `box-shadow` (dubbele ring), `box-decoration-break: clone`
+- **19 nieuwe tests** — totaal 1002 tests, 48 test suites
+
+---
+
 ## Version 5.5.0 (March 9, 2026)
 
 ### Table-uitbreidingen: selecteerbare rijen, acties en fixes (PR #78, issue #79 + bugfixes)
