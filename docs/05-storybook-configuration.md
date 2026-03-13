@@ -1,6 +1,6 @@
 # Storybook Configuration
 
-**Last Updated:** February 24, 2026
+**Last Updated:** March 13, 2026
 
 Documentation for the Storybook setup, runtime theme switching, UI components, and documentation structure.
 
@@ -109,7 +109,7 @@ export default config;
 **Key features:**
 
 - Toolbar controls for Theme, Mode, Density
-- Decorator for dynamic token loading
+- Decorator for dynamic token loading — also applies `dsn-body` to `document.body` so all story previews inherit document-level base styles
 - Story sorting
 
 ```ts

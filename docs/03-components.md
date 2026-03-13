@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** March 9, 2026
+**Last Updated:** March 13, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -155,7 +155,33 @@ Components are designed to compose together:
 
 ## Layout Components
 
-Layout components bieden structuur voor paginalayouts. Container heeft een visuele stijl; Grid en Stack zijn pure CSS-utilities.
+Layout components bieden structuur voor paginalayouts. Body stelt document-level cascade stijlen in; Container heeft een visuele stijl; Grid en Stack zijn pure CSS-utilities.
+
+### Body
+
+Stelt document-level CSS stijlen in zodat alle child-elementen via de CSS cascade automatisch de juiste typografie, kleur en achtergrond erven.
+
+**HTML/CSS:**
+
+```html
+<body class="dsn-body">
+  <!-- paginainhoud -->
+</body>
+```
+
+**React:**
+
+```tsx
+<Body>{/* paginainhoud */}</Body>
+```
+
+**Props:** Geen custom props — `Body` accepteert alle standaard `HTMLDivElement` attributen.
+
+**Gebruik:** Zet `dsn-body` op het `<body>` element in je HTML template, of gebruik de React `<Body>` component als root-wrapper. In Storybook is `dsn-body` via de global decorator automatisch op alle stories van toepassing.
+
+**Design tokens:** Geen component tokens — verwijst rechtstreeks naar globale tokens: `--dsn-color-neutral-bg-document`, `--dsn-color-neutral-color-document`, `--dsn-text-font-family-default`, `--dsn-text-font-size-md`, `--dsn-text-line-height-md`, `--dsn-text-font-weight-default`.
+
+---
 
 ### Container
 

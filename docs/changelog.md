@@ -6,6 +6,19 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.7.0 (March 13, 2026)
+
+### Body component: document-level cascade basisstijlen (PR #84, issue #83)
+
+- **Body component** (`dsn-body`) — stelt zes document-level CSS properties in via globale design tokens: `background-color`, `color`, `font-family`, `font-size`, `line-height`, `font-weight`
+- Geen component tokens — `dsn-body` verwijst rechtstreeks naar globale semantische tokens (`--dsn-color-neutral-bg-document`, `--dsn-color-neutral-color-document`, `--dsn-text-font-family-default`, `--dsn-text-font-size-md`, `--dsn-text-line-height-md`, `--dsn-text-font-weight-default`)
+- React `<Body>` component rendert als `<div class="dsn-body">` — zelfde patroon als alle andere componenten
+- Storybook global decorator: `dsn-body` toegevoegd aan `document.body.className` zodat alle story-previews en 'Voorbeeld'-secties automatisch de juiste omgevingsstijlen erven
+- Storybook story onder `Foundations/Body` met volledige documentatie (drie bestanden)
+- **6 nieuwe tests** — totaal 1008 tests, 49 test suites
+
+---
+
 ## Version 5.6.0 (March 12, 2026)
 
 ### Details component: uitvouwbare inhoudsaanwijzer (PR #82, issue #80)
