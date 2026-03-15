@@ -71,7 +71,7 @@ function SpacingPreview({ cssVar }: { cssVar: string }) {
         minWidth: 2,
         maxWidth: 200,
         borderRadius: 2,
-        background: 'var(--dsn-color-action-1-bg-default, #3366cc)',
+        background: 'var(--dsn-color-accent-1-inverse-bg-default, #3366cc)',
       }}
     />
   );
@@ -98,8 +98,9 @@ function BorderRadiusPreview({ cssVar }: { cssVar: string }) {
         width: 40,
         height: 40,
         borderRadius: `var(${cssVar})`,
-        border: '2px solid var(--dsn-color-action-1-border-default, #3366cc)',
-        background: 'var(--dsn-color-action-1-bg-default, #e8eef5)',
+        border:
+          '2px solid var(--dsn-color-accent-1-inverse-bg-default, #3366cc)',
+        background: 'var(--dsn-color-accent-1-bg-subtle, #e8eef5)',
       }}
     />
   );
