@@ -1,6 +1,6 @@
 # Design Tokens Reference
 
-**Last Updated:** March 5, 2026
+**Last Updated:** March 15, 2026
 
 Complete reference for all design tokens in the Design System Starter Kit.
 
@@ -14,6 +14,7 @@ Complete reference for all design tokens in the Design System Starter Kit.
 4. [Colors](#colors)
 5. [Borders](#borders)
 6. [Focus States](#focus-states)
+7. [Motion](#motion)
 
 ---
 
@@ -305,6 +306,50 @@ Focus indicators use a dual-outline technique: a primary `outline` for the main 
 - `outline-offset`: 2px
 - `outline-style`: solid
 - `outline-width`: 2px
+
+---
+
+## Motion
+
+### Transition Duration
+
+Five semantic durations for UI transitions. All are set to `0ms` under `@media (prefers-reduced-motion: reduce)`.
+
+| Token   | CSS Variable                        | Value |
+| ------- | ----------------------------------- | ----- |
+| instant | `--dsn-transition-duration-instant` | 0ms   |
+| fast    | `--dsn-transition-duration-fast`    | 100ms |
+| normal  | `--dsn-transition-duration-normal`  | 200ms |
+| slow    | `--dsn-transition-duration-slow`    | 350ms |
+| slower  | `--dsn-transition-duration-slower`  | 500ms |
+
+### Transition Easing
+
+Five semantic easing curves for consistent motion feel.
+
+| Token   | CSS Variable                      | Value                              |
+| ------- | --------------------------------- | ---------------------------------- |
+| default | `--dsn-transition-easing-default` | `cubic-bezier(0.25, 0.1, 0.25, 1)` |
+| enter   | `--dsn-transition-easing-enter`   | `cubic-bezier(0, 0, 0.2, 1)`       |
+| exit    | `--dsn-transition-easing-exit`    | `cubic-bezier(0.4, 0, 1, 1)`       |
+| move    | `--dsn-transition-easing-move`    | `cubic-bezier(0.4, 0, 0.2, 1)`     |
+| linear  | `--dsn-transition-easing-linear`  | `linear`                           |
+
+**Usage in components:**
+
+```css
+.dsn-button {
+  transition:
+    background-color var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    color var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    border-color var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default);
+}
+```
+
+**Reduced motion:** All duration tokens resolve to `0ms` via a central `@media (prefers-reduced-motion: reduce)` block appended to every full CSS configuration — no component-level media queries needed.
 
 ---
 

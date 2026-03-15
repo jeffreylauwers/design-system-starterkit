@@ -1,6 +1,8 @@
 import { Meta } from '@storybook/blocks';
 import { TokenTable } from './components/TokenTable';
 import { TokenControls } from './components/TokenControls';
+import { OrderedList } from '@dsn/components-react';
+import { TocLink } from './components/TocLink';
 
 <Meta title="Foundations/Design Tokens" />
 
@@ -9,6 +11,21 @@ import { TokenControls } from './components/TokenControls';
 Design tokens are the single source of truth for colors, typography, spacing, borders, and other visual properties. All tokens are available as CSS custom properties and respond to theme switching.
 
 <TokenControls />
+
+---
+
+<OrderedList>
+  <li><TocLink targetId="colors">Colors</TocLink></li>
+  <li><TocLink targetId="inverse-colors">Inverse Colors</TocLink></li>
+  <li><TocLink targetId="typography">Typography</TocLink></li>
+  <li><TocLink targetId="spacing">Spacing</TocLink></li>
+  <li><TocLink targetId="borders">Borders</TocLink></li>
+  <li><TocLink targetId="focus-indicators">Focus Indicators</TocLink></li>
+  <li><TocLink targetId="icon-sizes">Icon Sizes</TocLink></li>
+  <li><TocLink targetId="pointer-target-sizing">Pointer Target Sizing</TocLink></li>
+  <li><TocLink targetId="box-shadows">Box Shadows</TocLink></li>
+  <li><TocLink targetId="motion">Motion</TocLink></li>
+</OrderedList>
 
 ---
 
@@ -673,5 +690,39 @@ The three primitives that power all elevation shadows. In light mode `highlight`
     { name: 'sm — Cards, chips', cssVar: '--dsn-box-shadow-sm' },
     { name: 'md — Dropdowns, tooltips', cssVar: '--dsn-box-shadow-md' },
     { name: 'lg — Modals, dialogs', cssVar: '--dsn-box-shadow-lg' },
+  ]}
+/>
+
+---
+
+## Motion
+
+Motion tokens beheren timing en easing op één centrale plek. Alle componenten gebruiken deze tokens — waardoor `prefers-reduced-motion` automatisch en consistent wordt gerespecteerd.
+
+Bij `prefers-reduced-motion: reduce` worden alle duration-tokens naar `0ms` gezet via een centrale media query in het theme CSS-bestand. Componenten hoeven zelf geen media query te implementeren.
+
+### Transition Duration
+
+<TokenTable
+  previewType="transition-duration"
+  tokens={[
+    { name: 'Instant', cssVar: '--dsn-transition-duration-instant', value: '0ms' },
+    { name: 'Fast', cssVar: '--dsn-transition-duration-fast', value: '100ms' },
+    { name: 'Normal', cssVar: '--dsn-transition-duration-normal', value: '200ms' },
+    { name: 'Slow', cssVar: '--dsn-transition-duration-slow', value: '350ms' },
+    { name: 'Slower', cssVar: '--dsn-transition-duration-slower', value: '500ms' },
+  ]}
+/>
+
+### Transition Easing
+
+<TokenTable
+  previewType="transition-easing"
+  tokens={[
+    { name: 'Default', cssVar: '--dsn-transition-easing-default', value: 'cubic-bezier(0.25, 0.1, 0.25, 1)' },
+    { name: 'Enter', cssVar: '--dsn-transition-easing-enter', value: 'cubic-bezier(0, 0, 0.2, 1)' },
+    { name: 'Exit', cssVar: '--dsn-transition-easing-exit', value: 'cubic-bezier(0.4, 0, 1, 1)' },
+    { name: 'Move', cssVar: '--dsn-transition-easing-move', value: 'cubic-bezier(0.4, 0, 0.2, 1)' },
+    { name: 'Linear', cssVar: '--dsn-transition-easing-linear', value: 'linear' },
   ]}
 />
