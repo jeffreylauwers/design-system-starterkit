@@ -675,3 +675,37 @@ The three primitives that power all elevation shadows. In light mode `highlight`
     { name: 'lg — Modals, dialogs', cssVar: '--dsn-box-shadow-lg' },
   ]}
 />
+
+---
+
+## Motion
+
+Motion tokens beheren timing en easing op één centrale plek. Alle componenten gebruiken deze tokens — waardoor `prefers-reduced-motion` automatisch en consistent wordt gerespecteerd.
+
+Bij `prefers-reduced-motion: reduce` worden alle duration-tokens naar `0ms` gezet via een centrale media query in het theme CSS-bestand. Componenten hoeven zelf geen media query te implementeren.
+
+### Transition Duration
+
+<TokenTable
+  previewType="transition-duration"
+  tokens={[
+    { name: 'Instant', cssVar: '--dsn-transition-duration-instant', value: '0ms' },
+    { name: 'Fast', cssVar: '--dsn-transition-duration-fast', value: '100ms' },
+    { name: 'Normal', cssVar: '--dsn-transition-duration-normal', value: '200ms' },
+    { name: 'Slow', cssVar: '--dsn-transition-duration-slow', value: '350ms' },
+    { name: 'Slower', cssVar: '--dsn-transition-duration-slower', value: '500ms' },
+  ]}
+/>
+
+### Transition Easing
+
+<TokenTable
+  previewType="transition-easing"
+  tokens={[
+    { name: 'Default', cssVar: '--dsn-transition-easing-default', value: 'cubic-bezier(0.25, 0.1, 0.25, 1)' },
+    { name: 'Enter', cssVar: '--dsn-transition-easing-enter', value: 'cubic-bezier(0, 0, 0.2, 1)' },
+    { name: 'Exit', cssVar: '--dsn-transition-easing-exit', value: 'cubic-bezier(0.4, 0, 1, 1)' },
+    { name: 'Move', cssVar: '--dsn-transition-easing-move', value: 'cubic-bezier(0.4, 0, 0.2, 1)' },
+    { name: 'Linear', cssVar: '--dsn-transition-easing-linear', value: 'linear' },
+  ]}
+/>
