@@ -1,6 +1,8 @@
 import { Meta } from '@storybook/blocks';
 import { TokenTable } from './components/TokenTable';
 import { TokenControls } from './components/TokenControls';
+import { OrderedList } from '@dsn/components-react';
+import { TocLink } from './components/TocLink';
 
 <Meta title="Foundations/Design Tokens" />
 
@@ -9,6 +11,21 @@ import { TokenControls } from './components/TokenControls';
 Design tokens are the single source of truth for colors, typography, spacing, borders, and other visual properties. All tokens are available as CSS custom properties and respond to theme switching.
 
 <TokenControls />
+
+---
+
+<OrderedList>
+  <li><TocLink targetId="colors">Colors</TocLink></li>
+  <li><TocLink targetId="inverse-colors">Inverse Colors</TocLink></li>
+  <li><TocLink targetId="typography">Typography</TocLink></li>
+  <li><TocLink targetId="spacing">Spacing</TocLink></li>
+  <li><TocLink targetId="borders">Borders</TocLink></li>
+  <li><TocLink targetId="focus-indicators">Focus Indicators</TocLink></li>
+  <li><TocLink targetId="icon-sizes">Icon Sizes</TocLink></li>
+  <li><TocLink targetId="pointer-target-sizing">Pointer Target Sizing</TocLink></li>
+  <li><TocLink targetId="box-shadows">Box Shadows</TocLink></li>
+  <li><TocLink targetId="motion">Motion</TocLink></li>
+</OrderedList>
 
 ---
 

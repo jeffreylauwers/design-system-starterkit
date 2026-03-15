@@ -98,9 +98,7 @@ function BorderRadiusPreview({ cssVar }: { cssVar: string }) {
         width: 40,
         height: 40,
         borderRadius: `var(${cssVar})`,
-        border:
-          '2px solid var(--dsn-color-accent-1-inverse-bg-default, #3366cc)',
-        background: 'var(--dsn-color-accent-1-bg-subtle, #e8eef5)',
+        background: 'var(--dsn-color-accent-1-inverse-bg-default, #3366cc)',
       }}
     />
   );

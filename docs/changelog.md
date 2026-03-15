@@ -6,6 +6,20 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.8.0 (March 15, 2026)
+
+### Motion tokens: transition duration & easing (PR #85)
+
+- **10 nieuwe design tokens** — 5 duration (`instant/fast/normal/slow/slower`) en 5 easing (`default/enter/exit/move/linear`) in `base.json` van het Start-thema
+- **Centrale `prefers-reduced-motion` media query** — toegevoegd via `build.js` post-processing aan alle 8 volledige CSS-configuraties; alle duration tokens worden `0ms`; geen component-level media queries nodig
+- **5 component CSS-bestanden bijgewerkt** — hardcoded `0.2s ease` vervangen door `var(--dsn-transition-duration-normal)` en `var(--dsn-transition-easing-default)` in `button.css`, `link.css`, `text-input.css`, `text-area.css`, `details.css`
+- **Storybook Design Tokens pagina uitgebreid** — Motion-sectie toegevoegd onderaan met `## Motion`, `### Transition Duration` en `### Transition Easing` tabellen
+- **`TokenTable` nieuwe `previewType` waarden** — `transition-duration` (animated sweep bar) en `transition-easing` (dot op track) tonen live animatie-previews in de documentatie
+- **Navigatie-index** toegevoegd aan de Design Tokens pagina — genummerde `OrderedList` met `TocLink` componenten (gebruikt `scrollIntoView` i.p.v. URL-navigatie zodat de Storybook sidebar intact blijft)
+- **Preview kleuren** geüniformeerd — spacing, border-radius en motion previews gebruiken allemaal `--dsn-color-accent-1-inverse-bg-default`
+
+---
+
 ## Version 5.7.0 (March 13, 2026)
 
 ### Body component: document-level cascade basisstijlen (PR #84, issue #83)

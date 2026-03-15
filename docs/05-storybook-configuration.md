@@ -1,6 +1,6 @@
 # Storybook Configuration
 
-**Last Updated:** March 13, 2026
+**Last Updated:** March 15, 2026
 
 Documentation for the Storybook setup, runtime theme switching, UI components, and documentation structure.
 
@@ -396,6 +396,49 @@ const meta: Meta<typeof Button> = {
     { name: 'Text Color', cssVar: '--dsn-button-strong-color' },
   ]}
 />
+```
+
+### TokenTable
+
+**Location:** `packages/storybook/src/components/TokenTable.tsx`
+
+**Purpose:** Renders a table of design tokens with optional live preview visuals and computed CSS values.
+
+**Props:**
+
+| Prop            | Type          | Default  | Description                         |
+| --------------- | ------------- | -------- | ----------------------------------- |
+| `tokens`        | `Token[]`     | —        | Array of `{ name, cssVar, value? }` |
+| `previewType`   | `PreviewType` | `'none'` | Visual preview type                 |
+| `showLiveValue` | `boolean`     | `true`   | Show computed CSS value             |
+
+**`previewType` values:**
+
+| Value                   | Preview                                                       |
+| ----------------------- | ------------------------------------------------------------- |
+| `'color'`               | Gekleurd vlak 32×32px                                         |
+| `'spacing'`             | Horizontale balk (breedte = tokenwaarde)                      |
+| `'typography-size'`     | "Aa" in de tokengrootte                                       |
+| `'border-radius'`       | Gevuld vlak 40×40px met border-radius toegepast               |
+| `'shadow'`              | Kaartje met `box-shadow` toegepast                            |
+| `'transition-duration'` | Animerende sweep-balk (animationDuration = token)             |
+| `'transition-easing'`   | Stip op track (animationTimingFunction = token, vaste 1200ms) |
+| `'none'`                | Geen preview kolom                                            |
+
+Alle kleur-previews gebruiken `--dsn-color-accent-1-inverse-bg-default` als accentkleur.
+
+### TocLink
+
+**Location:** `packages/storybook/src/components/TocLink.tsx`
+
+**Purpose:** Anchor-navigatie binnen een Storybook docs-pagina zonder de Storybook URL te breken.
+
+Storybook gebruikt `?path=`-gebaseerde URL-routing. Een gewone `<a href="#section">` vervangt de hele URL en laat de sidebar verdwijnen. `TocLink` onderschept de klik via `e.preventDefault()` en roept `document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' })` aan.
+
+```tsx
+<TocLink targetId="colors">Colors</TocLink>
+// rendert als: <a class="dsn-link" href="#colors">Colors</a>
+// klik: scrollt naar element met id="colors", geen URL-verandering
 ```
 
 ---
