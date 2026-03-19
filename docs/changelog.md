@@ -6,6 +6,24 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.8.1 (March 19, 2026)
+
+### Token-architectuur: hardcoded waarden vervangen door token-referenties
+
+#### Focus outline in reset.css (PR #89, issue #87)
+
+- `reset.css` `:focus-visible` gebruikt nu `var(--dsn-focus-outline-width)`, `var(--dsn-focus-outline-style)`, `var(--dsn-focus-outline-color)` en `var(--dsn-focus-outline-offset)` in plaats van hardcoded `2px solid currentColor` / `outline-offset: 2px`
+- De tokens definiëren `dashed`, `0px offset` en de juiste outline-kleur — de reset volgt nu dezelfde bron van waarheid als de componenten zelf
+- `colors-dark.json` bevat al een expliciete `focus`-sectie met eigen dark mode waarden (`outline-color: #f4f4f4`, inverse `#0b0c0c`) — geen wijzigingen nodig
+
+#### Scroll-affordance schaduw in table.css (PR #90, issue #86)
+
+- `--_bg` in `.dsn-table-wrapper` gebruikt nu `var(--dsn-color-neutral-bg-document)` zonder hardcoded `#fcfcfc` fallback
+- `--_shadow` gebruikt nu `var(--dsn-color-shadow-scroll)` in plaats van hardcoded `rgba(0, 0, 0, 0.15)` — dark mode krijgt automatisch `rgba(255, 255, 255, 0.12)` (lichte schaduw op donkere achtergrond)
+- `dsn.color.shadow.scroll` bestond al in beide thema's; alleen de CSS-referentie ontbrak
+
+---
+
 ## Version 5.8.0 (March 15, 2026)
 
 ### Motion tokens: transition duration & easing (PR #85)
