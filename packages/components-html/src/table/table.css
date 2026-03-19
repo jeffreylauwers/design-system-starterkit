@@ -10,18 +10,19 @@
  *
  * ⚠️ Vereist dat --dsn-table-wrapper-background-color overeenkomt met de omringende
  * pagina-achtergrond. Overschrijf dit token als de tabel op een gekleurde achtergrond staat.
- * De schaduwkleur is niet getoken (shadow.direct bestaat niet in alle thema's);
- * overschrijf --dsn-table-wrapper-scroll-shadow-color als je een andere schaduwkleur wilt.
+ * Overschrijf --dsn-table-wrapper-scroll-shadow-color als je een andere schaduwkleur wilt.
  */
 
 .dsn-table-wrapper {
-  /* Lokale variabelen zodat de waarden maar één keer herhaald hoeven te worden.
-   * Fallbacks zorgen ervoor dat de schaduwen werken ook zonder gebouwde design tokens. */
+  /* Lokale variabelen zodat de waarden maar één keer herhaald hoeven te worden. */
   --_bg: var(
     --dsn-table-wrapper-background-color,
-    var(--dsn-color-neutral-bg-document, #fcfcfc)
+    var(--dsn-color-neutral-bg-document)
   );
-  --_shadow: var(--dsn-table-wrapper-scroll-shadow-color, rgba(0, 0, 0, 0.15));
+  --_shadow: var(
+    --dsn-table-wrapper-scroll-shadow-color,
+    var(--dsn-color-shadow-scroll)
+  );
 
   overflow-x: auto;
   background-color: var(--_bg);
