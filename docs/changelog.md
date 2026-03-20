@@ -6,6 +6,31 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.10.0 (March 20, 2026)
+
+### ActionGroup component (issue #40)
+
+#### Added
+
+- **ActionGroup** component — lay-outprimitief dat gerelateerde Buttons en Links groepeert en de onderlinge spacing en richting verzorgt (PR #93)
+- Horizontale richting (default): `display: flex; flex-direction: row; flex-wrap: wrap; align-items: center` — wraps automatisch bij te weinig ruimte
+- Verticale richting via `dsn-action-group--vertical` modifier / `direction="vertical"` prop: `flex-direction: column; align-items: flex-start`
+- Componenttokens: `--dsn-action-group-column-gap` (`--dsn-space-inline-lg`, 12px) en `--dsn-action-group-row-gap` (`--dsn-space-row-sm`, 4px)
+- Storybook stories: Default, With Link, Vertical, Wrapping, Single action, Short text, Long text, RTL
+- 10 nieuwe React tests
+
+---
+
+## Version 5.9.1 (March 20, 2026)
+
+### BreadcrumbNavigation fix (PR #92)
+
+#### Fixed
+
+- **BreadcrumbNavigation items** — `min-block-size` verwijderd van `.dsn-breadcrumb-navigation__item`; items hadden onbedoeld een minimale hoogte waardoor de verticale uitlijning afweek van reguliere links
+
+---
+
 ## Version 5.9.0 (March 19, 2026)
 
 ### BreadcrumbNavigation component (issue #81)

@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** March 19, 2026
+**Last Updated:** March 20, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -156,7 +156,59 @@ Components are designed to compose together:
 
 ## Layout Components
 
-Layout components bieden structuur voor paginalayouts. Body stelt document-level cascade stijlen in; Container heeft een visuele stijl; Grid en Stack zijn pure CSS-utilities.
+Layout components bieden structuur voor paginalayouts. ActionGroup groepeert gerelateerde acties; Body stelt document-level cascade stijlen in; Container heeft een visuele stijl; Grid en Stack zijn pure CSS-utilities.
+
+### ActionGroup
+
+Groepeert gerelateerde acties en verzorgt de lay-out van Buttons en Links. Horizontale richting (default) wraps automatisch bij smalle viewports; verticale richting via modifier.
+
+**HTML/CSS:**
+
+```html
+<!-- Horizontaal (default) -->
+<div class="dsn-action-group">
+  <button class="dsn-button dsn-button--strong dsn-button--size-default">
+    <span class="dsn-button__label">Opslaan</span>
+  </button>
+  <button class="dsn-button dsn-button--subtle dsn-button--size-default">
+    <span class="dsn-button__label">Annuleren</span>
+  </button>
+</div>
+
+<!-- Verticaal -->
+<div class="dsn-action-group dsn-action-group--vertical">
+  <button class="dsn-button dsn-button--strong dsn-button--size-default">
+    <span class="dsn-button__label">Primaire actie</span>
+  </button>
+  <button class="dsn-button dsn-button--subtle dsn-button--size-default">
+    <span class="dsn-button__label">Secundaire actie</span>
+  </button>
+</div>
+```
+
+**React:**
+
+```tsx
+// Horizontaal (default)
+<ActionGroup>
+  <Button variant="strong">Opslaan</Button>
+  <Button variant="subtle">Annuleren</Button>
+</ActionGroup>
+
+// Verticaal
+<ActionGroup direction="vertical">
+  <Button variant="strong">Primaire actie</Button>
+  <Button variant="subtle">Secundaire actie</Button>
+</ActionGroup>
+```
+
+**Props:** `direction` (`'horizontal'` | `'vertical'`, default `'horizontal'`), `children`.
+
+**Location:** `packages/components-{html|react}/src/ActionGroup/`
+
+**Design tokens:** `--dsn-action-group-column-gap` (12px — horizontale ruimte tussen acties), `--dsn-action-group-row-gap` (4px — ruimte tussen gewrapte rijen).
+
+---
 
 ### Body
 
@@ -1322,12 +1374,12 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 44
+**Total Components:** 45
 
 **Implementations:**
 
-- **HTML/CSS:** 44 components
-- **React:** 44 components (1033 tests total, 50 test suites)
+- **HTML/CSS:** 45 components
+- **React:** 45 components (1043 tests total, 51 test suites)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
 **Test Coverage:** 1033 tests across 50 test suites
