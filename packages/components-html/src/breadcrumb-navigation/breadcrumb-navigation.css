@@ -60,7 +60,6 @@
 .dsn-breadcrumb-navigation__item {
   display: flex;
   align-items: center;
-  min-block-size: var(--dsn-breadcrumb-navigation-item-min-block-size);
   padding-block: var(--dsn-breadcrumb-navigation-item-padding-block);
   padding-inline: var(--dsn-breadcrumb-navigation-item-padding-inline);
   gap: var(--dsn-breadcrumb-navigation-column-gap);
