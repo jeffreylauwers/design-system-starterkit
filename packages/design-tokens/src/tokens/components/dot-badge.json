@@ -17,13 +17,13 @@
         "comment": "Horizontale offset — dot steekt rechts buiten de parent uit"
       },
       "pulse-duration": {
-        "value": "500ms",
+        "value": "{dsn.transition.duration.slower}",
         "type": "duration",
-        "comment": "Duur van de pulse-animatie (gelijk aan dsn.transition.duration.slower)"
+        "comment": "Duur van de pulse-animatie"
       },
       "pulse-easing": {
-        "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-        "comment": "Easing van de pulse-animatie (gelijk aan dsn.transition.easing.default)"
+        "value": "{dsn.transition.easing.default}",
+        "comment": "Easing van de pulse-animatie"
       }
     }
   }
