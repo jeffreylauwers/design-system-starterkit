@@ -7,7 +7,7 @@
         "comment": "Horizontal gap between actions in horizontal direction"
       },
       "row-gap": {
-        "value": "{dsn.space.row.sm}",
+        "value": "{dsn.space.row.lg}",
         "type": "dimension",
         "comment": "Vertical gap between wrapped rows in horizontal direction"
       }
