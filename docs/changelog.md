@@ -6,6 +6,20 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.10.1 (March 20, 2026)
+
+### ActionGroup fixes & story
+
+#### Fixed
+
+- **ActionGroup row-gap** — `--dsn-action-group-row-gap` verhoogd van `--dsn-space-row-sm` (4px) naar `--dsn-space-row-lg` (12px) voor meer verticale lucht tussen gewrapte rijen (commit f4a41e5)
+
+#### Added
+
+- **WithLinkButton story** — nieuwe Storybook story die een `Button strong` combineert met twee `LinkButton` componenten: "Volgende stap", "Opslaan en later verder" en "Stoppen met formulier" (commit 593e580)
+
+---
+
 ## Version 5.10.0 (March 20, 2026)
 
 ### ActionGroup component (issue #40)
