@@ -65,7 +65,7 @@ pnpm --filter @dsn/design-tokens watch
 # Start Storybook in development mode
 pnpm dev
 
-# Run tests (1057 tests across 52 test suites)
+# Run tests (1082 tests across 53 test suites)
 pnpm test
 
 # Run tests in watch mode
@@ -172,7 +172,7 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 | **GridItem**  | Yes      | Yes   | —             |
 | **Stack**     | Yes      | Yes   | —             |
 
-**Content Components (9)**
+**Content Components (10)**
 
 | Component         | HTML/CSS | React | Web Component |
 | ----------------- | -------- | ----- | ------------- |
@@ -180,6 +180,7 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 | **ButtonLink**    | Yes      | Yes   | —             |
 | **Heading**       | Yes      | Yes   | Yes           |
 | **Icon**          | Yes      | Yes   | Yes           |
+| **Image**         | Yes      | Yes   | —             |
 | **Link**          | Yes      | Yes   | Yes           |
 | **LinkButton**    | Yes      | Yes   | —             |
 | **OrderedList**   | Yes      | Yes   | Yes           |
@@ -370,7 +371,7 @@ Comprehensive documentation is available in the `/docs` folder:
 
 - **Pre-commit hooks** via Husky + lint-staged (ESLint + Prettier)
 - **Type checking** across all packages (`pnpm type-check`)
-- **1043 tests** covering React components, Web Components, and utilities
+- **1082 tests** covering React components, Web Components, and utilities
 - **CI/CD** via GitHub Actions (lint, type-check, test, build)
 
 ## Tech Stack
