@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** March 20, 2026
+**Last Updated:** March 21, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -505,6 +505,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 - Heading component tokens with full set per level (font-family, font-weight, color, font-size, line-height, margin-block-end)
 - Token namespace `dsn.heading.level-{1-6}.*` — avoids collision with core `dsn.heading.*` tokens
 - Font-size scale shifted one level down: heading-1 = 3xl, heading-2 = 2xl, ... heading-6 = sm
+- `text-wrap: balance` op de heading-basis-klasse — verdeelt regeleinden evenwichtig voor meerdere korte regels
 
 **Tests:** React (13 tests), Web Component (24 tests)
 
@@ -638,6 +639,123 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 ```
 
 **Tests:** React (20 tests)
+
+### Image Component
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/image/` / `packages/components-react/src/Image/`
+
+**Component Tokens:** `tokens/components/image.json`
+
+**Features:**
+
+- Semantische `<figure>` + `<img>` structuur — altijd correct HTML
+- Verplichte `width` en `height` props — browser reserveert ruimte vooraf, voorkomt CLS
+- `loading="lazy"` + `decoding="async"` standaard — laadt afbeeldingen buiten de viewport pas wanneer nodig
+- `priority` prop — `loading="eager"` + `fetchpriority="high"` voor de primaire LCP-afbeelding (max. één per pagina)
+- `ratio` prop — CSS `aspect-ratio` met drie opties: `16:9`, `4:3`, `1:1`
+- `objectFit` prop — `cover` (default, bijsnijden) of `contain` (volledig zichtbaar)
+- `caption` prop — optioneel `<figcaption>` bijschrift
+- `srcSet` / `sizes` pass-through — voor responsive afbeeldingen
+- `alt=""` activeert automatisch `aria-hidden="true"` op de `<figure>` voor decoratieve afbeeldingen
+
+**CSS klassen:**
+
+| Klasse                          | Beschrijving                         |
+| ------------------------------- | ------------------------------------ |
+| `dsn-image`                     | Root `<figure>` container            |
+| `dsn-image__img`                | Native `<img>` element               |
+| `dsn-image__caption`            | `<figcaption>` bijschrift            |
+| `dsn-image--ratio-16-9`         | Beeldverhouding 16:9                 |
+| `dsn-image--ratio-4-3`          | Beeldverhouding 4:3                  |
+| `dsn-image--ratio-1-1`          | Beeldverhouding 1:1 (vierkant)       |
+| `dsn-image--object-fit-contain` | Volledig zichtbaar zonder bijsnijden |
+
+**HTML/CSS:**
+
+```html
+<!-- Basis -->
+<figure class="dsn-image">
+  <img
+    class="dsn-image__img"
+    src="foto.jpg"
+    alt="Beschrijving"
+    width="800"
+    height="600"
+    loading="lazy"
+    decoding="async"
+  />
+</figure>
+
+<!-- Met vaste beeldverhouding -->
+<figure class="dsn-image dsn-image--ratio-16-9">
+  <img
+    class="dsn-image__img"
+    src="hero.jpg"
+    alt="Hero"
+    width="1600"
+    height="900"
+    loading="lazy"
+    decoding="async"
+  />
+</figure>
+
+<!-- LCP-afbeelding -->
+<figure class="dsn-image dsn-image--ratio-16-9">
+  <img
+    class="dsn-image__img"
+    src="hero.jpg"
+    alt="Pagina hero"
+    width="1600"
+    height="900"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  />
+</figure>
+
+<!-- Met bijschrift -->
+<figure class="dsn-image">
+  <img
+    class="dsn-image__img"
+    src="foto.jpg"
+    alt="Beschrijving"
+    width="800"
+    height="600"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption class="dsn-image__caption">
+    Bijschrift bij de afbeelding
+  </figcaption>
+</figure>
+
+<!-- Decoratief -->
+<figure class="dsn-image" aria-hidden="true">
+  <img
+    class="dsn-image__img"
+    src="decoratief.jpg"
+    alt=""
+    width="800"
+    height="600"
+    loading="lazy"
+    decoding="async"
+  />
+</figure>
+```
+
+**React:**
+
+```tsx
+<Image src="foto.jpg" alt="Beschrijving" width={800} height={600} />
+<Image src="hero.jpg" alt="Hero" width={1600} height={900} ratio="16:9" />
+<Image src="hero.jpg" alt="Pagina hero" width={1600} height={900} ratio="16:9" priority />
+<Image src="foto.jpg" alt="Beschrijving" width={800} height={600} caption="Bijschrift" />
+<Image src="decoratief.jpg" alt="" width={800} height={600} />
+```
+
+**Tests:** React (27 tests)
 
 ---
 

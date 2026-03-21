@@ -6,6 +6,45 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.12.0 (March 21, 2026)
+
+### Image component (issue #96)
+
+#### Added
+
+- **Image** component — performante, toegankelijke wrapper rond het native `<img>` element (PR #105)
+- `<figure class="dsn-image">` + `<img class="dsn-image__img">` + optionele `<figcaption class="dsn-image__caption">`
+- Verplichte `width` en `height` props — browser reserveert ruimte vooraf en voorkomt CLS (Cumulative Layout Shift)
+- Standaard `loading="lazy"` + `decoding="async"` — afbeeldingen buiten de viewport laden pas wanneer nodig
+- `priority` prop — `loading="eager"` + `fetchpriority="high"` voor de primaire LCP-afbeelding; gebruik maximaal één keer per pagina
+- `ratio` prop — vaste beeldverhoudingen via CSS `aspect-ratio`: `16:9`, `4:3`, `1:1`
+- `objectFit` prop — `cover` (default, bijsnijden) of `contain` (volledig zichtbaar)
+- `caption` prop — optioneel bijschrift als `<figcaption>`
+- `srcSet` / `sizes` pass-through — voor responsive afbeeldingen met meerdere resoluties
+- `alt=""` activeert automatisch `aria-hidden="true"` op de `<figure>` voor decoratieve afbeeldingen
+- Componenttokens: `--dsn-image-border-radius`, `--dsn-image-caption-color`, `--dsn-image-caption-font-size`, `--dsn-image-caption-line-height`, `--dsn-image-caption-margin-block-start`
+- 27 nieuwe React tests
+
+---
+
+## Version 5.11.1 (March 21, 2026)
+
+### Heading, Radio en FormField — verbeteringen en fixes
+
+#### Changed
+
+- **Heading text-wrap: balance** — `text-wrap: balance` toegevoegd aan de Heading-basisklasse, waardoor regeleinden bij meerdere korte regels evenwichtiger worden verdeeld (PR #103)
+
+#### Fixed
+
+- **Radio inner circle bij checked + focus** — visueel ontbrekende inner circle toegevoegd aan de Radio-component bij de gecombineerde `checked` + `focus-visible` toestand (PR #101)
+
+#### Removed
+
+- **FormField "With CheckboxGroup" story** — verwijderd uit Storybook; de story representeerde een niet-aanbevolen compositie-patroon (PR #102)
+
+---
+
 ## Version 5.11.0 (March 20, 2026)
 
 ### DotBadge component (issue #39)
