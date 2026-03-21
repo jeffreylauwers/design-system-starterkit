@@ -1,0 +1,6 @@
+/**
+ * Image component styles for React
+ * Re-exports the base Image styles from components-html
+ */
+
+@import '../../../components-html/src/image/image.css';

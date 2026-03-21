@@ -1,0 +1,117 @@
+/**
+ * Image Component
+ * Performante, toegankelijke wrapper rond het native <img> element.
+ * Ondersteunt vaste beeldverhoudingen, lazy loading en optioneel bijschrift.
+ *
+ * Usage:
+ * <!-- Basis -->
+ * <figure class="dsn-image">
+ *   <img
+ *     class="dsn-image__img"
+ *     src="afbeelding.jpg"
+ *     alt="Beschrijving van de afbeelding"
+ *     width="800"
+ *     height="600"
+ *     loading="lazy"
+ *     decoding="async"
+ *   />
+ * </figure>
+ *
+ * <!-- Met vaste beeldverhouding -->
+ * <figure class="dsn-image dsn-image--ratio-16-9">
+ *   <img
+ *     class="dsn-image__img"
+ *     src="hero.jpg"
+ *     alt="Beschrijving"
+ *     width="1600"
+ *     height="900"
+ *     loading="lazy"
+ *     decoding="async"
+ *   />
+ * </figure>
+ *
+ * <!-- Met bijschrift -->
+ * <figure class="dsn-image">
+ *   <img
+ *     class="dsn-image__img"
+ *     src="foto.jpg"
+ *     alt="Beschrijving van de foto"
+ *     width="800"
+ *     height="600"
+ *     loading="lazy"
+ *     decoding="async"
+ *   />
+ *   <figcaption class="dsn-image__caption">Bijschrift bij de afbeelding</figcaption>
+ * </figure>
+ *
+ * <!-- Decoratief (aria-hidden op figure) -->
+ * <figure class="dsn-image" aria-hidden="true">
+ *   <img
+ *     class="dsn-image__img"
+ *     src="decoratief.jpg"
+ *     alt=""
+ *     width="800"
+ *     height="600"
+ *     loading="lazy"
+ *     decoding="async"
+ *   />
+ * </figure>
+ */
+
+/* ===========================
+   Root container
+   =========================== */
+.dsn-image {
+  display: block;
+  margin: 0;
+}
+
+/* ===========================
+   Image element
+   =========================== */
+.dsn-image__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--dsn-image-border-radius);
+}
+
+/* ===========================
+   Aspect ratio modifiers
+   Aspect-ratio forceert de weergaveverhouding;
+   object-fit: cover snijdt de rest bij.
+   =========================== */
+.dsn-image--ratio-16-9 .dsn-image__img {
+  aspect-ratio: 16 / 9;
+  height: 100%;
+}
+
+.dsn-image--ratio-4-3 .dsn-image__img {
+  aspect-ratio: 4 / 3;
+  height: 100%;
+}
+
+.dsn-image--ratio-1-1 .dsn-image__img {
+  aspect-ratio: 1 / 1;
+  height: 100%;
+}
+
+/* ===========================
+   Object-fit: contain modifier
+   Toont de volledige afbeelding zonder bijsnijden.
+   =========================== */
+.dsn-image--object-fit-contain .dsn-image__img {
+  object-fit: contain;
+}
+
+/* ===========================
+   Caption
+   =========================== */
+.dsn-image__caption {
+  display: block;
+  margin-block-start: var(--dsn-image-caption-margin-block-start);
+  color: var(--dsn-image-caption-color);
+  font-size: var(--dsn-image-caption-font-size);
+  line-height: var(--dsn-image-caption-line-height);
+}
