@@ -66,3 +66,5 @@ export * from './FormFieldErrorMessage';
 export * from './FormFieldStatus';
 export * from './FormFieldset';
 export * from './FormFieldLegend';
+
+export * from './Image';

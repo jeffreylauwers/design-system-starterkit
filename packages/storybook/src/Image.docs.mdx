@@ -1,0 +1,35 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as ImageStories from './Image.stories';
+import docs from './Image.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={ImageStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={ImageStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={ImageStories.Default}
+  html={`<figure class="dsn-image">
+  <img
+    class="dsn-image__img"
+    src="afbeelding.jpg"
+    alt="Beschrijving van de afbeelding"
+    width="800"
+    height="600"
+    loading="lazy"
+    decoding="async"
+  />
+</figure>`}
+/>
+
+<Controls of={ImageStories.Default} />
+
+<Markdown>{rest}</Markdown>
