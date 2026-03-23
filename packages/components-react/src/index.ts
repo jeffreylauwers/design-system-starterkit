@@ -68,3 +68,4 @@ export * from './FormFieldset';
 export * from './FormFieldLegend';
 
 export * from './Image';
+export * from './Card';

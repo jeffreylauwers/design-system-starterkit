@@ -6,6 +6,25 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.13.0 (March 23, 2026)
+
+### Card component (issue #107)
+
+#### Added
+
+- **Card** component — configureerbare container voor gestructureerde content met stretched-link techniek (PR #108)
+- Sub-componenten: `Card`, `CardHeader`, `CardBody`, `CardHeading`, `CardFooter`, `CardGroup`
+- `<article class="dsn-card">` root — semantisch zelfstandig inhoudsblok, navigeerbaar via schermlezer-sneltoets
+- `dsn-card__image-placeholder` — automatische placeholder bij `CardHeader` zonder children (`aspect-ratio: 16 / 9`, `aria-hidden="true"`)
+- Stretched-link techniek: `dsn-card-heading__link::before` met `position: absolute; inset: 0; z-index: 1` dekt de volledige card
+- `CardHeading` ontvangt `href` automatisch via React context van parent `Card`
+- `CardGroup` als `<ul role="list">` (standaard) of `<div>` via `as` prop — gelijke hoogte via `flex: 1 1 var(--dsn-card-group-item-min-width)`
+- Hover/focus-stijlen via CSS `:has(.dsn-card-heading__link:hover/focus-visible)` — focus-ring rondom de gehele card
+- Componenttokens: `--dsn-card-background`, `--dsn-card-border-*`, `--dsn-card-box-shadow`, `--dsn-card-box-shadow-hover`, `--dsn-card-body-padding-*`, `--dsn-card-footer-padding-*`, `--dsn-card-image-placeholder-*`, `--dsn-card-heading-*`, `--dsn-card-group-*`
+- 43 nieuwe React tests
+
+---
+
 ## Version 5.12.0 (March 21, 2026)
 
 ### Image component (issue #96)

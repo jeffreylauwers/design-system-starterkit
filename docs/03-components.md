@@ -761,7 +761,142 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 ## Display & Feedback Components
 
-**Status:** Complete (HTML/CSS, React) — 6 components total
+**Status:** Complete (HTML/CSS, React) — 7 components total
+
+### Card
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/card/` / `packages/components-react/src/Card/`
+
+**Tokens:** `tokens/components/card.json`
+
+**Sub-components:** `Card`, `CardHeader`, `CardBody`, `CardHeading`, `CardFooter`, `CardGroup`
+
+**Features:**
+
+- Root is `<article>` — semantisch zelfstandig inhoudsblok, navigeerbaar via schermlezer-sneltoets
+- Stretched-link techniek: `::before` pseudo-element van `dsn-card-heading__link` dekt de volledige card (`position: absolute; inset: 0; z-index: 1`)
+- `CardHeader` toont automatisch een afbeeldingsplaceholder (`dsn-card__image-placeholder`) wanneer geen children aanwezig zijn
+- `CardBody` groeit via `flex: 1` — footer uitlijnt altijd onderaan
+- `CardHeading` ontvangt `href` via React context van parent `Card` en wraps children in een `<a class="dsn-card-heading__link">`
+- Footer-kinderen staan boven de stretched link via `z-index: 2` in CSS
+- `CardGroup` rendert als `<ul role="list">` (standaard) of `<div>` via `as` prop
+- Hover: box-shadow verhoogd naar `md`; focus: focus-ring rondom de gehele card via CSS `:has()`
+- Alle spacing via component-tokens (`dsn.card.body.padding-*`, `dsn.card.footer.padding-*`)
+- Dark mode: `background: bg-elevated` zorgt voor correct elevatie-contrast
+
+**CSS klassen:**
+
+| Klasse                        | Element          | Beschrijving                                                                         |
+| ----------------------------- | ---------------- | ------------------------------------------------------------------------------------ |
+| `dsn-card`                    | `<article>`      | Root container; `position: relative`, `display: flex; flex-direction: column`        |
+| `dsn-card__header`            | `<div>`          | Header-sectie; geen padding, afbeelding edge-to-edge                                 |
+| `dsn-card__body`              | `<div>`          | Body-sectie; `flex: 1` zodat body groeit en footer onderaan blijft                   |
+| `dsn-card__footer`            | `<div>`          | Footer-sectie; directe kinderen krijgen `position: relative; z-index: 2`             |
+| `dsn-card__image-placeholder` | `<div>`          | Decoratieve placeholder met `aspect-ratio: 16 / 9`; altijd `aria-hidden="true"`      |
+| `dsn-card-heading`            | `<h2>`–`<h4>`    | Heading sub-component; typography via eigen tokens                                   |
+| `dsn-card-heading__link`      | `<a>`            | Stretched link; `::before` met `position: absolute; inset: 0; z-index: 1`            |
+| `dsn-card-group`              | `<ul>` / `<div>` | Flexbox wrapper; gelijke hoogte via `flex: 1 1 var(--dsn-card-group-item-min-width)` |
+
+**HTML/CSS:**
+
+```html
+<!-- Basis — card met afbeelding en stretched link -->
+<article class="dsn-card">
+  <div class="dsn-card__header">
+    <figure class="dsn-image dsn-image--ratio-16-9" aria-hidden="true">
+      <img
+        class="dsn-image__img"
+        src="/foto.jpg"
+        alt=""
+        width="800"
+        height="450"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+  </div>
+  <div class="dsn-card__body">
+    <h2 class="dsn-card-heading">
+      <a href="/artikel/slug" class="dsn-card-heading__link">Artikeltitel</a>
+    </h2>
+    <p class="dsn-paragraph">Korte beschrijving.</p>
+  </div>
+  <div class="dsn-card__footer">
+    <a href="/artikel/slug" class="dsn-link" aria-hidden="true" tabindex="-1"
+      >Lees meer</a
+    >
+  </div>
+</article>
+
+<!-- Card zonder afbeelding — placeholder via lege header -->
+<article class="dsn-card">
+  <div class="dsn-card__header">
+    <div class="dsn-card__image-placeholder" aria-hidden="true"></div>
+  </div>
+  <!-- ... -->
+</article>
+
+<!-- CardGroup -->
+<ul class="dsn-card-group" role="list">
+  <li>
+    <article class="dsn-card"><!-- ... --></article>
+  </li>
+  <li>
+    <article class="dsn-card"><!-- ... --></article>
+  </li>
+</ul>
+```
+
+**React:**
+
+```tsx
+// Basis
+<Card href="/artikel/slug">
+  <CardHeader>
+    <Image src="/foto.jpg" alt="" width={800} height={450} ratio="16:9" />
+  </CardHeader>
+  <CardBody>
+    <CardHeading level={2}>Artikeltitel</CardHeading>
+    <Paragraph>Korte beschrijving.</Paragraph>
+  </CardBody>
+  <CardFooter>
+    <Link href="/artikel/slug" aria-hidden tabIndex={-1}>Lees meer</Link>
+  </CardFooter>
+</Card>
+
+// Zonder afbeelding — lege CardHeader toont automatisch placeholder
+<Card href="/artikel/slug">
+  <CardHeader />
+  <CardBody>
+    <CardHeading level={2}>Artikeltitel</CardHeading>
+    <Paragraph>Beschrijving.</Paragraph>
+  </CardBody>
+  <CardFooter>
+    <Link href="/artikel/slug" aria-hidden tabIndex={-1}>Lees meer</Link>
+  </CardFooter>
+</Card>
+
+// CardGroup
+<CardGroup>
+  <li><Card href="/1"><!-- ... --></Card></li>
+  <li><Card href="/2"><!-- ... --></Card></li>
+</CardGroup>
+```
+
+**Props:**
+
+| Component     | Prop       | Type            | Default | Beschrijving                                                          |
+| ------------- | ---------- | --------------- | ------- | --------------------------------------------------------------------- |
+| `Card`        | `href`     | `string`        | —       | URL voor de stretched link; doorgegeven via context aan `CardHeading` |
+| `CardHeader`  | `children` | `ReactNode`     | —       | Afbeelding; zonder children → placeholder                             |
+| `CardHeading` | `level`    | `2 \| 3 \| 4`   | `2`     | Semantisch heading-niveau                                             |
+| `CardGroup`   | `as`       | `'ul' \| 'div'` | `'ul'`  | Container-element; `ul` rendert `role="list"`                         |
+
+**Tests:** React (43 tests)
+
+---
 
 ### DotBadge
 
@@ -1524,15 +1659,15 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 45
+**Total Components:** 46
 
 **Implementations:**
 
-- **HTML/CSS:** 45 components
-- **React:** 45 components (1043 tests total, 51 test suites)
+- **HTML/CSS:** 46 components
+- **React:** 46 components (1125 tests total, 54 test suites)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
-**Test Coverage:** 1033 tests across 50 test suites
+**Test Coverage:** 1125 tests across 54 test suites
 
 ---
 
