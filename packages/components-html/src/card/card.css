@@ -23,10 +23,14 @@
   box-shadow: var(--dsn-card-box-shadow-hover);
 }
 
-/* Focus: focus-ring rondom de gehele card */
+/* Focus: focus-ring rondom de gehele card — zelfde tokens als Button en Link */
 .dsn-card:has(.dsn-card-heading__link:focus-visible) {
-  outline: 2px solid var(--dsn-color-action-1-color-default);
-  outline-offset: 2px;
+  outline: var(--dsn-focus-outline-width) var(--dsn-focus-outline-style)
+    var(--dsn-focus-outline-color);
+  outline-offset: var(--dsn-focus-outline-offset);
+  box-shadow: 0 0 0
+    calc(var(--dsn-focus-outline-offset) + var(--dsn-focus-outline-width))
+    var(--dsn-focus-inverse-outline-color);
 }
 
 /* Card header — geen padding; afbeelding gaat edge-to-edge */
@@ -35,7 +39,7 @@
 }
 
 /* Afbeelding in header: bovenste hoeken volgen card border-radius, onderkant recht */
-.dsn-card__header > .dsn-image {
+.dsn-card__header > .dsn-image .dsn-image__img {
   border-start-start-radius: var(--dsn-card-border-radius);
   border-start-end-radius: var(--dsn-card-border-radius);
   border-end-start-radius: 0;
@@ -141,4 +145,9 @@
 .dsn-card-group > * {
   flex: 1 1 var(--dsn-card-group-item-min-width);
   min-width: 0;
+  display: flex;
+}
+
+.dsn-card-group > * > .dsn-card {
+  flex: 1;
 }
