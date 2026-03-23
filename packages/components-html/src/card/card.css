@@ -34,9 +34,12 @@
   flex-shrink: 0;
 }
 
-/* Clipping van afbeelding naar card border-radius (alleen boven) */
+/* Afbeelding in header: bovenste hoeken volgen card border-radius, onderkant recht */
 .dsn-card__header > .dsn-image {
-  border-radius: 0;
+  border-start-start-radius: var(--dsn-card-border-radius);
+  border-start-end-radius: var(--dsn-card-border-radius);
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
 }
 
 /* Card body — groeit zodat footer altijd onderaan blijft */
