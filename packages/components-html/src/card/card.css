@@ -1,0 +1,159 @@
+/* =============================================================================
+   Card
+   Configureerbare container voor gestructureerde content met header, body en footer.
+   Stretched-link techniek: ::before pseudo-element van de CardHeading link dekt de
+   volledige card — screenreaders lezen alleen de heading-tekst als linknaam.
+   ============================================================================= */
+
+/* Card — root container */
+.dsn-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dsn-card-background);
+  border: var(--dsn-card-border-width) solid var(--dsn-card-border-color);
+  border-radius: var(--dsn-card-border-radius);
+  box-shadow: var(--dsn-card-box-shadow);
+  overflow: hidden;
+  margin-block-start: 0;
+  transition:
+    background-color var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    box-shadow var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default);
+}
+
+/* Hover: verhoogde achtergrond en schaduw benadrukken interactiviteit */
+.dsn-card:has(.dsn-card-heading__link:hover) {
+  background-color: var(--dsn-card-background-hover);
+  box-shadow: var(--dsn-card-box-shadow-hover);
+}
+
+/* Focus: focus-ring rondom de gehele card — zelfde tokens als Button en Link */
+.dsn-card:has(.dsn-card-heading__link:focus-visible) {
+  outline: var(--dsn-focus-outline-width) var(--dsn-focus-outline-style)
+    var(--dsn-focus-outline-color);
+  outline-offset: var(--dsn-focus-outline-offset);
+  box-shadow: 0 0 0
+    calc(var(--dsn-focus-outline-offset) + var(--dsn-focus-outline-width))
+    var(--dsn-focus-inverse-outline-color);
+}
+
+/* Card header — geen padding; afbeelding gaat edge-to-edge */
+.dsn-card__header {
+  flex-shrink: 0;
+}
+
+/* Afbeelding in header: bovenste hoeken volgen card border-radius, onderkant recht */
+.dsn-card__header > .dsn-image .dsn-image__img {
+  border-start-start-radius: var(--dsn-card-border-radius);
+  border-start-end-radius: var(--dsn-card-border-radius);
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
+}
+
+/* Card body — groeit zodat footer altijd onderaan blijft */
+.dsn-card__body {
+  flex: 1;
+  padding-block: var(--dsn-card-body-padding-block);
+  padding-inline: var(--dsn-card-body-padding-inline);
+}
+
+/* Card footer — uitgelijnde onderkant */
+.dsn-card__footer {
+  padding-block-end: var(--dsn-card-footer-padding-block-end);
+  padding-inline: var(--dsn-card-footer-padding-inline);
+}
+
+/* Directe kinderen van footer staan boven de stretched link (z-index: 1 van ::before) */
+.dsn-card__footer > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Afbeeldingsplaceholder — visuele consistentie wanneer geen afbeelding beschikbaar */
+.dsn-card__image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background-color: var(--dsn-card-image-placeholder-background);
+  color: var(--dsn-card-image-placeholder-color);
+}
+
+/* Placeholder icoon via SVG background-image */
+.dsn-card__image-placeholder::before {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: currentColor;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'/%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'/%3E%3Cpolyline points='21 15 16 10 5 21'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  opacity: 0.4;
+}
+
+/* =============================================================================
+   CardHeading — sub-component
+   Heading met stretched link die de volledige card klikbaar maakt.
+   ============================================================================= */
+
+.dsn-card-heading {
+  font-family: var(--dsn-card-heading-font-family);
+  font-size: var(--dsn-card-heading-font-size);
+  font-weight: var(--dsn-card-heading-font-weight);
+  line-height: var(--dsn-card-heading-line-height);
+  color: var(--dsn-card-heading-color);
+  text-wrap: balance;
+  margin-block-start: 0;
+  margin-block-end: var(--dsn-card-heading-margin-block-end);
+}
+
+/* Link in de heading — erft kleur en maakt de card klikbaar via stretched link */
+.dsn-card-heading__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dsn-card-heading__link:hover {
+  text-decoration: underline;
+}
+
+/* Stretched link: ::before dekt de volledige card */
+.dsn-card-heading__link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Eigen focus-outline uitschakelen — card toont de focus-ring */
+.dsn-card-heading__link:focus-visible {
+  outline: none;
+}
+
+/* =============================================================================
+   CardGroup — layout wrapper
+   Flexbox met gelijke hoogte en automatische kolommen via auto-fill.
+   ============================================================================= */
+
+.dsn-card-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--dsn-card-group-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dsn-card-group > * {
+  flex: 1 1 var(--dsn-card-group-item-min-width);
+  min-width: 0;
+  display: flex;
+}
+
+.dsn-card-group > * > .dsn-card {
+  flex: 1;
+}

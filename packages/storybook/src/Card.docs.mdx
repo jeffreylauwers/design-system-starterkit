@@ -1,0 +1,48 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as CardStories from './Card.stories';
+import docs from './Card.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={CardStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={CardStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={CardStories.Default}
+  html={`<article class="dsn-card">
+  <div class="dsn-card__header">
+    <figure class="dsn-image dsn-image--ratio-16-9" aria-hidden="true">
+      <img
+        class="dsn-image__img"
+        src="https://picsum.photos/800/450"
+        alt=""
+        width="800"
+        height="450"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+  </div>
+  <div class="dsn-card__body">
+    <h2 class="dsn-card-heading">
+      <a href="/artikel/slug" class="dsn-card-heading__link">Artikeltitel</a>
+    </h2>
+    <p class="dsn-paragraph">Korte beschrijving van het artikel die aanvullende context biedt.</p>
+  </div>
+  <div class="dsn-card__footer">
+    <a href="/artikel/slug" class="dsn-link" aria-hidden="true" tabindex="-1">Lees meer</a>
+  </div>
+</article>`}
+/>
+
+<Controls of={CardStories.Default} />
+
+<Markdown>{rest}</Markdown>
