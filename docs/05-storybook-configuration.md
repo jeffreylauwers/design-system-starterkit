@@ -286,7 +286,7 @@ Custom React components voor Storybook documentation, gelocaliseerd in `packages
 
 **Features:**
 
-- Token-based achtergrond (`--dsn-color-neutral-bg-document`) — reageert op dark mode en themaswitch
+- `dsn-body` class op de wrapper div — zorgt voor correcte typography tokens (`font-size`, `font-family`, `line-height`, `font-weight`) en achtergrondkleur (`--dsn-color-neutral-bg-document`); gedrag identiek aan de afzonderlijke story-canvassen
 - Subtiele border (`--dsn-color-neutral-border-subtle`) en border-radius bovenaan
 - Geen onderkant border — verbindt visueel met de CodeTabs eronder als één geheel
 

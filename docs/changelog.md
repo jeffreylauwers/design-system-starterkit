@@ -6,6 +6,17 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.14.1 (March 25, 2026)
+
+### Storybook: dsn-body op PreviewFrame visuele voorbeelden (PR #119)
+
+#### Fixed
+
+- **PreviewFrame** — `dsn-body` class toegevoegd aan de wrapper div zodat typography tokens (`font-size`, `font-family`, `line-height`, `font-weight`) correct worden geërvd in het visuele voorbeeldblok op Docs-pagina's. Voorheen weken de stijlen af van de afzonderlijke story-canvassen, omdat Storybook's eigen docs-CSS de typografie kon overschrijven.
+- Redundante inline `background`-style verwijderd — `dsn-body` dekt de achtergrondkleur nu zelf af via `--dsn-color-neutral-bg-document`.
+
+---
+
 ## Version 5.14.0 (March 25, 2026)
 
 ### Backdrop component (issue #113)
