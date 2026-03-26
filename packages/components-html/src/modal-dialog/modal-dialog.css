@@ -189,7 +189,7 @@
   flex-shrink: 0;
 
   padding-block-start: var(--dsn-modal-dialog-footer-padding-block);
-  padding-block-end: var(--dsn-modal-dialog-header-padding-block-start);
+  padding-block-end: var(--dsn-modal-dialog-footer-padding-block-end);
   padding-inline: var(--dsn-modal-dialog-footer-padding-inline);
 
   /* Scheidingslijn boven de footer */

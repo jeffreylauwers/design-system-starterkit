@@ -74,13 +74,14 @@ Het ModalDialog component toont een tijdelijk overlay-venster dat de achtergrond
 | `--dsn-modal-dialog-heading-font-size`          | Tekstgrootte van de heading                |
 | `--dsn-modal-dialog-heading-line-height`        | Regelafstand van de heading                |
 | `--dsn-modal-dialog-heading-color`              | Kleur van de heading                       |
-| `--dsn-modal-dialog-header-padding-block-start` | Bovenkant padding van de header (24px)     |
+| `--dsn-modal-dialog-header-padding-block-start` | Bovenkant padding van de header (16px)     |
 | `--dsn-modal-dialog-header-padding-block-end`   | Onderkant padding van de header (16px)     |
-| `--dsn-modal-dialog-header-padding-inline`      | Horizontale padding van de header (24px)   |
-| `--dsn-modal-dialog-body-padding-block`         | Verticale padding van de body (16px)       |
-| `--dsn-modal-dialog-body-padding-inline`        | Horizontale padding van de body (24px)     |
-| `--dsn-modal-dialog-footer-padding-block`       | Verticale padding van de footer (16px)     |
-| `--dsn-modal-dialog-footer-padding-inline`      | Horizontale padding van de footer (24px)   |
+| `--dsn-modal-dialog-header-padding-inline`      | Horizontale padding van de header (16px)   |
+| `--dsn-modal-dialog-body-padding-block`         | Verticale padding van de body (24px)       |
+| `--dsn-modal-dialog-body-padding-inline`        | Horizontale padding van de body (16px)     |
+| `--dsn-modal-dialog-footer-padding-block`       | Bovenkant padding van de footer (16px)     |
+| `--dsn-modal-dialog-footer-padding-block-end`   | Onderkant padding van de footer (16px)     |
+| `--dsn-modal-dialog-footer-padding-inline`      | Horizontale padding van de footer (16px)   |
 
 ## Accessibility
 

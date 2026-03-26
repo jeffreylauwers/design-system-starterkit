@@ -60,9 +60,9 @@
       },
       "header": {
         "padding-block-start": {
-          "value": "{dsn.space.block.3xl}",
+          "value": "{dsn.space.block.xl}",
           "type": "spacing",
-          "comment": "Bovenkant padding van de header (24px)"
+          "comment": "Bovenkant padding van de header (16px)"
         },
         "padding-block-end": {
           "value": "{dsn.space.block.xl}",
@@ -70,33 +70,38 @@
           "comment": "Onderkant padding van de header (16px)"
         },
         "padding-inline": {
-          "value": "{dsn.space.inline.3xl}",
+          "value": "{dsn.space.inline.xl}",
           "type": "spacing",
-          "comment": "Horizontale padding van de header (24px)"
+          "comment": "Horizontale padding van de header (16px)"
         }
       },
       "body": {
         "padding-block": {
-          "value": "{dsn.space.block.xl}",
+          "value": "{dsn.space.block.3xl}",
           "type": "spacing",
-          "comment": "Verticale padding van de body (16px)"
+          "comment": "Verticale padding van de body (24px)"
         },
         "padding-inline": {
-          "value": "{dsn.space.inline.3xl}",
+          "value": "{dsn.space.inline.xl}",
           "type": "spacing",
-          "comment": "Horizontale padding van de body (24px)"
+          "comment": "Horizontale padding van de body (16px)"
         }
       },
       "footer": {
         "padding-block": {
           "value": "{dsn.space.block.xl}",
           "type": "spacing",
-          "comment": "Verticale padding van de footer (16px)"
+          "comment": "Bovenkant padding van de footer (16px)"
+        },
+        "padding-block-end": {
+          "value": "{dsn.space.block.xl}",
+          "type": "spacing",
+          "comment": "Onderkant padding van de footer (16px)"
         },
         "padding-inline": {
-          "value": "{dsn.space.inline.3xl}",
+          "value": "{dsn.space.inline.xl}",
           "type": "spacing",
-          "comment": "Horizontale padding van de footer (24px)"
+          "comment": "Horizontale padding van de footer (16px)"
         }
       }
     }
