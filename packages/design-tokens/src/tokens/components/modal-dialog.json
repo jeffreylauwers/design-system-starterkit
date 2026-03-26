@@ -88,7 +88,7 @@
         }
       },
       "footer": {
-        "padding-block": {
+        "padding-block-start": {
           "value": "{dsn.space.block.xl}",
           "type": "spacing",
           "comment": "Bovenkant padding van de footer (16px)"

@@ -188,7 +188,7 @@
 .dsn-modal-dialog__footer {
   flex-shrink: 0;
 
-  padding-block-start: var(--dsn-modal-dialog-footer-padding-block);
+  padding-block-start: var(--dsn-modal-dialog-footer-padding-block-start);
   padding-block-end: var(--dsn-modal-dialog-footer-padding-block-end);
   padding-inline: var(--dsn-modal-dialog-footer-padding-inline);
 
