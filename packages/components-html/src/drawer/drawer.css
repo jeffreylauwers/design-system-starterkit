@@ -1,0 +1,257 @@
+/* ===== Drawer ===== */
+
+/*
+ * dsn-drawer — Zijpaneel dat vanuit links of rechts de viewport inschuift
+ *
+ * Gebaseerd op het native <dialog> element.
+ * Modaal (modal prop): openen via .showModal() — natieve focus-trap + ::backdrop.
+ * Non-modaal:          openen via .show()      — achtergrond blijft interactief.
+ *
+ * HTML-structuur:
+ *
+ * <dialog class="dsn-drawer dsn-drawer--side-right" aria-labelledby="drawer-title">
+ *   <div class="dsn-drawer__header">
+ *     <h2 class="dsn-drawer-heading" id="drawer-title">Titel</h2>
+ *     <button type="button" class="dsn-button dsn-button--subtle dsn-button--size-small dsn-button--icon-only">
+ *       <svg class="dsn-icon" aria-hidden="true"><!-- x --></svg>
+ *       <span class="dsn-button__label">Sluiten</span>
+ *     </button>
+ *   </div>
+ *   <div class="dsn-drawer__body">
+ *     <!-- inhoud -->
+ *   </div>
+ *   <div class="dsn-drawer__footer">
+ *     <div class="dsn-action-group">
+ *       <!-- knoppen -->
+ *     </div>
+ *   </div>
+ * </dialog>
+ */
+
+.dsn-drawer {
+  /* Reset native <dialog> styling */
+  border: none;
+  box-shadow: var(--dsn-drawer-box-shadow);
+  background: var(--dsn-drawer-background);
+  padding: 0;
+
+  /* Grootte */
+  inline-size: min(
+    var(--dsn-drawer-max-width),
+    calc(100svw - var(--dsn-drawer-min-gap))
+  );
+  block-size: 100svh;
+  max-block-size: 100svh;
+
+  /* Positionering — override UA's auto-centrering voor zowel modal als non-modal */
+  position: fixed;
+  inset-block: 0;
+  margin-block: 0;
+
+  /* Altijd flex-direction column, ook tijdens sluitanimatie */
+  flex-direction: column;
+
+  /* Animatietransitie (ook voor sluitanimatie) */
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    transform var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    display var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default) allow-discrete,
+    overlay var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default) allow-discrete;
+}
+
+/*
+ * Flexbox layout alleen bij open staat.
+ * Gebruik [open] zodat de UA-stylesheet's display:none van kracht blijft
+ * wanneer de drawer gesloten is — anders overschrijft display:flex de UA.
+ */
+.dsn-drawer[open] {
+  display: flex;
+}
+
+/* Animatie uitschakelen bij prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .dsn-drawer {
+    transition: none;
+  }
+}
+
+/* ===== Side: Right (standaard) ===== */
+
+.dsn-drawer--side-right {
+  right: 0;
+  left: auto;
+
+  /* Alleen de rand aan de kant van de pagina (links) */
+  border-inline-start: var(--dsn-drawer-border-width) solid
+    var(--dsn-drawer-border-color);
+}
+
+/* Openingsanimatie rechts: start buiten beeld rechts */
+@starting-style {
+  .dsn-drawer--side-right[open] {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* Native backdrop (alleen bij .showModal()) */
+.dsn-drawer--side-right::backdrop {
+  background: var(--dsn-backdrop-background, rgba(0, 0, 0, 0.5));
+  backdrop-filter: var(--dsn-backdrop-blur, blur(2px));
+  opacity: 1;
+  transition:
+    opacity var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    display var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default) allow-discrete,
+    overlay var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default) allow-discrete;
+}
+
+@starting-style {
+  .dsn-drawer--side-right[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dsn-drawer--side-right::backdrop {
+    transition: none;
+  }
+}
+
+/* ===== Side: Left ===== */
+
+.dsn-drawer--side-left {
+  left: 0;
+  right: auto;
+
+  /* Alleen de rand aan de kant van de pagina (rechts) */
+  border-inline-end: var(--dsn-drawer-border-width) solid
+    var(--dsn-drawer-border-color);
+}
+
+/* Openingsanimatie links: start buiten beeld links */
+@starting-style {
+  .dsn-drawer--side-left[open] {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+/* Native backdrop (alleen bij .showModal()) */
+.dsn-drawer--side-left::backdrop {
+  background: var(--dsn-backdrop-background, rgba(0, 0, 0, 0.5));
+  backdrop-filter: var(--dsn-backdrop-blur, blur(2px));
+  opacity: 1;
+  transition:
+    opacity var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    display var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default) allow-discrete,
+    overlay var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default) allow-discrete;
+}
+
+@starting-style {
+  .dsn-drawer--side-left[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dsn-drawer--side-left::backdrop {
+    transition: none;
+  }
+}
+
+/* ===== Header ===== */
+
+.dsn-drawer__header {
+  display: flex;
+  align-items: center;
+  gap: var(--dsn-space-inline-xl);
+  flex-shrink: 0;
+
+  padding-block-start: var(--dsn-drawer-header-padding-block-start);
+  padding-block-end: var(--dsn-drawer-header-padding-block-end);
+  padding-inline: var(--dsn-drawer-header-padding-inline);
+
+  /* Scheidingslijn onder de header */
+  border-block-end: var(--dsn-drawer-border-width) solid
+    var(--dsn-drawer-border-color);
+}
+
+/* ===== Heading ===== */
+
+.dsn-drawer-heading {
+  flex: 1;
+  margin: 0;
+
+  font-family: var(--dsn-drawer-heading-font-family);
+  font-weight: var(--dsn-drawer-heading-font-weight);
+  font-size: var(--dsn-drawer-heading-font-size);
+  line-height: var(--dsn-drawer-heading-line-height);
+  color: var(--dsn-drawer-heading-color);
+}
+
+/* ===== Body met scroll-affordance ===== */
+/*
+ * Scroll-affordance schaduw (Lea Verou techniek — verticale variant):
+ * - Dekkende overlagen (background-attachment: local) scrollen mee met de content
+ *   en verbergen de schaduwen wanneer je aan het begin of einde bent.
+ * - Schaduw-overlagen (background-attachment: scroll) blijven gefixeerd.
+ * - Resultaat: schaduw is zichtbaar zodra er content is om naartoe te scrollen.
+ *
+ * ⚠️ Vereist dat de achtergrondkleur overeenkomt met de drawer-achtergrond.
+ */
+
+.dsn-drawer__body {
+  --_bg: var(--dsn-drawer-background);
+  --_shadow: var(--dsn-color-shadow-scroll, rgba(0, 0, 0, 0.12));
+
+  flex: 1;
+  overflow-y: auto;
+
+  padding-block: var(--dsn-drawer-body-padding-block);
+  padding-inline: var(--dsn-drawer-body-padding-inline);
+
+  background-color: var(--_bg);
+  background-image:
+    /* Top-cover (local): verbergt de bovenschaduw als je helemaal boven bent */
+    linear-gradient(to bottom, var(--_bg) 0%, transparent 100%),
+    /* Onder-cover (local): verbergt de onderschaduw als je helemaal onder bent */
+    linear-gradient(to top, var(--_bg) 0%, transparent 100%),
+    /* Bovenschaduw (scroll): altijd aanwezig */
+    linear-gradient(to bottom, var(--_shadow) 0%, transparent 100%),
+    /* Onderschaduw (scroll): altijd aanwezig */
+    linear-gradient(to top, var(--_shadow) 0%, transparent 100%);
+  background-repeat: no-repeat;
+  background-size:
+    100% 4rem,
+    100% 4rem,
+    100% 2rem,
+    100% 2rem;
+  background-position: top, bottom, top, bottom;
+  background-attachment: local, local, scroll, scroll;
+}
+
+/* ===== Footer ===== */
+
+.dsn-drawer__footer {
+  flex-shrink: 0;
+
+  padding-block-start: var(--dsn-drawer-footer-padding-block-start);
+  padding-block-end: var(--dsn-drawer-footer-padding-block-end);
+  padding-inline: var(--dsn-drawer-footer-padding-inline);
+
+  /* Scheidingslijn boven de footer */
+  border-block-start: var(--dsn-drawer-border-width) solid
+    var(--dsn-drawer-border-color);
+}

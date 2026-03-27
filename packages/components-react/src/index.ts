@@ -71,3 +71,4 @@ export * from './FormFieldLegend';
 export * from './Image';
 export * from './Card';
 export * from './ModalDialog';
+export * from './Drawer';

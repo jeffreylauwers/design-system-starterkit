@@ -183,6 +183,7 @@ Het [ComponentName] component wordt gebruikt voor:
 
 - [ ] `[ComponentName]` component met [props opsomming]
 - [ ] `React.forwardRef<HTML[Element]Element>`
+- [ ] `index.ts` barrel file aangemaakt in de componentdirectory (exporteert component + prop types)
 - [ ] Export toegevoegd aan `packages/components-react/src/index.ts`
 
 ### Storybook
