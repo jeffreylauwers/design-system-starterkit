@@ -16,7 +16,7 @@
         "comment": "NumberBadge font weight — bold voor leesbaarheid op kleine afmeting"
       },
       "padding-block": {
-        "value": "{dsn.space.block.xs}",
+        "value": "0px",
         "type": "dimension",
         "comment": "Verticale padding"
       },
