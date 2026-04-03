@@ -1,0 +1,187 @@
+/**
+ * MenuLink Component
+ * Navigatielink met niveau-hiërarchie, actieve staat en uitklapbare subnavigatie.
+ * Semantisch een `<a>`, visueel consistent met MenuButton.
+ *
+ * Structuur:
+ * <li class="dsn-menu-link">
+ *   <a class="dsn-menu-link__link" href="/pagina">
+ *     <svg class="dsn-icon" aria-hidden="true"><!-- icoon-start --></svg>
+ *     <span class="dsn-menu-link__label">Pagina</span>
+ *     <span class="dsn-number-badge dsn-number-badge--negative" aria-hidden="true">5</span>
+ *     <svg class="dsn-icon" aria-hidden="true"><!-- icoon-end --></svg>
+ *   </a>
+ *   <!-- optioneel: scheidingslijn + uitklapknop -->
+ *   <span class="dsn-menu-link__divider" aria-hidden="true"></span>
+ *   <button type="button" class="dsn-button dsn-button--subtle dsn-button--size-small dsn-button--icon-only dsn-menu-link__expand-button" aria-expanded="false">
+ *     <svg class="dsn-icon" aria-hidden="true"><!-- chevron-right --></svg>
+ *     <span class="dsn-button__label">
+ *       Uitklappen
+ *       <span class="dsn-visually-hidden"> voor Pagina</span>
+ *     </span>
+ *   </button>
+ * </li>
+ *
+ * Niveau-varianten (op het <li>-element):
+ *   dsn-menu-link--level-2   (1× level-indent via margin-inline-start)
+ *   dsn-menu-link--level-3   (2× level-indent via margin-inline-start)
+ *   dsn-menu-link--level-4   (3× level-indent via margin-inline-start)
+ *
+ * Actieve pagina — border-inline-start indicator op de <a>:
+ *   aria-current="page" op het <a>-element → current-kleuren + indicator
+ *
+ * Uitklapbaar:
+ *   aria-expanded="true/false" op dsn-menu-link__expand-button
+ */
+
+/* =============================================================================
+   List item
+   ============================================================================= */
+
+.dsn-menu-link {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  /* Ruimte tussen de link, de scheiding en de uitklapknop */
+  column-gap: var(--dsn-space-inline-sm);
+}
+
+/* =============================================================================
+   Link
+   ============================================================================= */
+
+.dsn-menu-link__link {
+  display: inline-flex;
+  align-items: center;
+  flex: 1;
+  gap: var(--dsn-menu-link-gap);
+  padding-block: var(--dsn-menu-link-padding-block);
+  padding-inline: var(--dsn-menu-link-padding-inline);
+  font-family: inherit;
+  font-size: var(--dsn-menu-link-font-size);
+  font-weight: var(--dsn-menu-link-font-weight);
+  line-height: var(--dsn-menu-link-line-height);
+  text-decoration: none;
+  color: var(--dsn-menu-link-color);
+  background-color: var(--dsn-menu-link-background-color);
+  transition:
+    background-color var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    color var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default);
+}
+
+.dsn-menu-link__link > .dsn-icon {
+  width: var(--dsn-menu-link-icon-size);
+  height: var(--dsn-menu-link-icon-size);
+  flex-shrink: 0;
+}
+
+.dsn-menu-link__label {
+  /* Geen flex: 1 — badge en iconEnd staan direct achter de tekst.
+     De <a> zelf is flex: 1 en vult de volledige breedte. */
+}
+
+/* =============================================================================
+   States
+   ============================================================================= */
+
+.dsn-menu-link__link:hover {
+  color: var(--dsn-menu-link-hover-color);
+  background-color: var(--dsn-menu-link-hover-background-color);
+}
+
+.dsn-menu-link__link:active {
+  color: var(--dsn-menu-link-active-color);
+  background-color: var(--dsn-menu-link-active-background-color);
+}
+
+.dsn-menu-link__link:focus-visible {
+  background-color: var(--dsn-focus-background-color);
+  color: var(--dsn-focus-color);
+  outline: var(--dsn-focus-outline-width) var(--dsn-focus-outline-style)
+    var(--dsn-focus-outline-color);
+  outline-offset: var(--dsn-focus-outline-offset);
+  box-shadow: 0 0 0
+    calc(var(--dsn-focus-outline-offset) + var(--dsn-focus-outline-width))
+    var(--dsn-focus-inverse-outline-color);
+}
+
+/* =============================================================================
+   Current (actieve pagina) — border-inline-start indicator
+   ============================================================================= */
+
+.dsn-menu-link__link[aria-current='page'] {
+  color: var(--dsn-menu-link-current-color);
+  background-color: var(--dsn-menu-link-current-background-color);
+  border-inline-start: var(--dsn-menu-link-current-indicator-width) solid
+    var(--dsn-menu-link-current-indicator-color);
+  /* Compenseer de indicator-breedte zodat de tekst horizontaal uitlijnt met niet-actieve items */
+  padding-inline-start: calc(
+    var(--dsn-menu-link-padding-inline) -
+      var(--dsn-menu-link-current-indicator-width)
+  );
+}
+
+.dsn-menu-link__link[aria-current='page']:hover {
+  color: var(--dsn-menu-link-current-hover-color);
+  background-color: var(--dsn-menu-link-current-hover-background-color);
+}
+
+.dsn-menu-link__link[aria-current='page']:active {
+  color: var(--dsn-menu-link-current-active-color);
+  background-color: var(--dsn-menu-link-current-active-background-color);
+}
+
+/* =============================================================================
+   Niveau-inspringing (level-indent) — via margin-inline-start
+   Zodat de border-inline-start indicator dicht bij de tekst blijft.
+   ============================================================================= */
+
+.dsn-menu-link--level-2 .dsn-menu-link__link {
+  margin-inline-start: var(--dsn-menu-link-level-indent);
+}
+
+.dsn-menu-link--level-3 .dsn-menu-link__link {
+  margin-inline-start: calc(2 * var(--dsn-menu-link-level-indent));
+}
+
+.dsn-menu-link--level-4 .dsn-menu-link__link {
+  margin-inline-start: calc(3 * var(--dsn-menu-link-level-indent));
+}
+
+/* =============================================================================
+   Scheidingslijn (divider) — losse <span> tussen link en uitklapknop
+   ============================================================================= */
+
+.dsn-menu-link__divider {
+  display: block;
+  flex-shrink: 0;
+  inline-size: 1px;
+  align-self: stretch;
+  background-color: var(--dsn-color-neutral-border-subtle);
+}
+
+/* =============================================================================
+   Uitklapknop (expand button)
+   ============================================================================= */
+
+.dsn-menu-link__expand-button {
+  flex-shrink: 0;
+}
+
+/* Chevron (chevron-down) — 180° rotatie wanneer uitgevouwen, zelfde als Details */
+.dsn-menu-link__expand-button > .dsn-icon {
+  transition: transform var(--dsn-transition-duration-normal)
+    var(--dsn-transition-easing-default);
+}
+
+.dsn-menu-link__expand-button[aria-expanded='false'] > .dsn-icon {
+  transform: rotate(0deg);
+}
+
+.dsn-menu-link__expand-button[aria-expanded='true'] > .dsn-icon {
+  transform: rotate(180deg);
+}
