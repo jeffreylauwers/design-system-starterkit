@@ -76,6 +76,11 @@
         }
       },
       "current": {
+        "font-weight": {
+          "value": "{dsn.text.font-weight.bold}",
+          "type": "fontWeight",
+          "comment": "Font weight voor de actieve/huidige pagina — bold voor visuele nadruk"
+        },
         "color": {
           "value": "{dsn.color.action-2.color-default}",
           "type": "color",

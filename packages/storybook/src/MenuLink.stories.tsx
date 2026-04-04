@@ -1,6 +1,92 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Icon, MenuLink, NumberBadge } from '@dsn/components-react';
+import type { IconName } from '@dsn/components-react/icon-registry.generated';
 import DocsPage from './MenuLink.docs.mdx';
+import {
+  TEKST,
+  VEEL_TEKST,
+  TEKST_AR,
+  VEEL_TEKST_AR,
+  rtlDecorator,
+} from './story-helpers';
+
+// =============================================================================
+// ICON OPTIONS (zelfde lijst als Link/Button stories)
+// =============================================================================
+
+const iconOptions: (IconName | undefined)[] = [
+  undefined,
+  'alert-triangle',
+  'archive',
+  'arrow-down',
+  'arrow-left',
+  'arrow-narrow-down',
+  'arrow-narrow-up',
+  'arrow-right',
+  'arrow-up',
+  'bell',
+  'calendar-event',
+  'check',
+  'chevron-down',
+  'chevron-left',
+  'chevron-right',
+  'chevron-up',
+  'circle-check',
+  'clock',
+  'dots-vertical',
+  'download',
+  'edit',
+  'exclamation-circle',
+  'external-link',
+  'eye',
+  'file-description',
+  'folder',
+  'heart-filled',
+  'heart',
+  'home',
+  'info-circle',
+  'loader',
+  'mail',
+  'menu',
+  'message-circle',
+  'minus',
+  'paperclip',
+  'plus',
+  'search',
+  'selector',
+  'settings',
+  'star-filled',
+  'star',
+  'trash',
+  'upload',
+  'user',
+  'x',
+];
+
+const iconMapping = iconOptions.reduce(
+  (acc, icon) => {
+    acc[icon ?? 'undefined'] = icon ? (
+      <Icon name={icon} aria-hidden />
+    ) : undefined;
+    return acc;
+  },
+  {} as Record<string, React.ReactNode>
+);
+
+// =============================================================================
+// NUMBER BADGE OPTIONS
+// =============================================================================
+
+const badgeOptions: Record<string, React.ReactNode> = {
+  '(geen)': undefined,
+  '5 (negative)': <NumberBadge variant="negative">5</NumberBadge>,
+  '12 (negative)': <NumberBadge variant="negative">12</NumberBadge>,
+  '99 (neutral)': <NumberBadge variant="neutral">99</NumberBadge>,
+};
+
+// =============================================================================
+// META
+// =============================================================================
 
 const meta: Meta<typeof MenuLink> = {
   title: 'Components/MenuLink',
@@ -28,10 +114,25 @@ const meta: Meta<typeof MenuLink> = {
     subItems: { control: 'boolean' },
     expanded: { control: 'boolean' },
     children: { control: 'text' },
+    iconStart: {
+      control: 'select',
+      options: iconOptions,
+      mapping: iconMapping,
+    },
+    iconEnd: {
+      control: 'select',
+      options: iconOptions,
+      mapping: iconMapping,
+    },
+    numberBadge: {
+      control: 'select',
+      options: Object.keys(badgeOptions),
+      mapping: badgeOptions,
+    },
   },
   args: {
     href: '/dashboard',
-    children: 'Dashboard',
+    children: TEKST,
     level: 1,
     current: false,
     subItems: false,
@@ -42,47 +143,45 @@ const meta: Meta<typeof MenuLink> = {
 export default meta;
 type Story = StoryObj<typeof MenuLink>;
 
+// Helper: wikkelt een enkel MenuLink in een semantisch correcte <ul>
+const renderSingle = (args: React.ComponentProps<typeof MenuLink>) => (
+  <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+    <MenuLink {...args} />
+  </ul>
+);
+
 // =============================================================================
 // DEFAULT
 // =============================================================================
 
 export const Default: Story = {
-  render: (args) => (
-    <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-      <MenuLink {...args} />
-    </ul>
-  ),
+  render: renderSingle,
 };
 
 // =============================================================================
-// CURRENT (ACTIEVE PAGINA)
+// VARIANTEN
 // =============================================================================
 
 export const Current: Story = {
   name: 'Current (actieve pagina)',
-  args: { current: true, children: 'Rapporten' },
-  render: (args) => (
-    <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-      <MenuLink {...args} />
-    </ul>
-  ),
+  args: { current: true },
+  render: renderSingle,
 };
 
-// =============================================================================
-// MET ICOON
-// =============================================================================
-
 export const WithIconStart: Story = {
-  name: 'Met icoon (iconStart)',
+  name: 'Met icoon start',
   args: {
     iconStart: <Icon name="home" aria-hidden />,
-    children: 'Dashboard',
   },
-  render: (args) => (
-    <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-      <MenuLink {...args} />
-    </ul>
-  ),
+  render: renderSingle,
+};
+
+export const WithIconEnd: Story = {
+  name: 'Met icoon end',
+  args: {
+    iconEnd: <Icon name="arrow-right" aria-hidden />,
+  },
+  render: renderSingle,
 };
 
 export const WithNumberBadge: Story = {
@@ -93,15 +192,32 @@ export const WithNumberBadge: Story = {
     numberBadge: <NumberBadge variant="negative">5</NumberBadge>,
     children: 'Inbox',
   },
-  render: (args) => (
-    <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-      <MenuLink {...args} />
-    </ul>
-  ),
+  render: renderSingle,
+};
+
+export const WithExpandButton: Story = {
+  name: 'Met uitklapknop (subItems)',
+  args: {
+    href: '/rapporten',
+    children: 'Rapporten',
+    subItems: true,
+    expanded: false,
+  },
+  render: renderSingle,
 };
 
 // =============================================================================
-// NIVEAU-HIËRARCHIE
+// TEKST VARIANTEN
+// =============================================================================
+
+export const LongText: Story = {
+  name: 'Long text',
+  args: { children: VEEL_TEKST },
+  render: renderSingle,
+};
+
+// =============================================================================
+// OVERZICHTSSTORIES
 // =============================================================================
 
 export const Levels: Story = {
@@ -120,25 +236,6 @@ export const Levels: Story = {
       <MenuLink href="/rapporten/maandelijks/januari/week-1" level={4}>
         Week 1
       </MenuLink>
-    </ul>
-  ),
-};
-
-// =============================================================================
-// UITKLAPBAAR
-// =============================================================================
-
-export const WithExpandButton: Story = {
-  name: 'Met uitklapknop (subItems)',
-  args: {
-    href: '/rapporten',
-    children: 'Rapporten',
-    subItems: true,
-    expanded: false,
-  },
-  render: (args) => (
-    <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-      <MenuLink {...args} />
     </ul>
   ),
 };
@@ -167,10 +264,6 @@ export const ExpandedWithSubItems: Story = {
     </ul>
   ),
 };
-
-// =============================================================================
-// VOLLEDIG NAVIGATIEMENU
-// =============================================================================
 
 export const FullNavigation: Story = {
   name: 'Volledig navigatiemenu',
@@ -221,10 +314,6 @@ export const FullNavigation: Story = {
   ),
 };
 
-// =============================================================================
-// ALLE VARIANTEN
-// =============================================================================
-
 export const AllStates: Story = {
   name: 'Alle staten',
   render: () => (
@@ -234,7 +323,13 @@ export const AllStates: Story = {
         Actief (current)
       </MenuLink>
       <MenuLink href="/icoon" iconStart={<Icon name="home" aria-hidden />}>
-        Met icoon
+        Met icoon start
+      </MenuLink>
+      <MenuLink
+        href="/icoon-end"
+        iconEnd={<Icon name="arrow-right" aria-hidden />}
+      >
+        Met icoon end
       </MenuLink>
       <MenuLink
         href="/badge"
@@ -257,4 +352,41 @@ export const AllStates: Story = {
       </MenuLink>
     </ul>
   ),
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  render: () => (
+    <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+      <MenuLink href="/pagina">{TEKST_AR}</MenuLink>
+      <MenuLink href="/pagina" iconStart={<Icon name="home" aria-hidden />}>
+        {TEKST_AR}
+      </MenuLink>
+      <MenuLink href="/pagina" iconEnd={<Icon name="arrow-left" aria-hidden />}>
+        {TEKST_AR}
+      </MenuLink>
+      <MenuLink href="/pagina" current>
+        {TEKST_AR}
+      </MenuLink>
+      <MenuLink
+        href="/pagina"
+        iconStart={<Icon name="mail" aria-hidden />}
+        numberBadge={<NumberBadge variant="negative">5</NumberBadge>}
+      >
+        {TEKST_AR}
+      </MenuLink>
+    </ul>
+  ),
+};
+
+export const RTLLongText: Story = {
+  name: 'RTL long text',
+  decorators: [rtlDecorator],
+  args: { children: VEEL_TEKST_AR },
+  render: renderSingle,
 };
