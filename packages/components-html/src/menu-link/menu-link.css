@@ -114,6 +114,7 @@
    ============================================================================= */
 
 .dsn-menu-link__link[aria-current='page'] {
+  font-weight: var(--dsn-menu-link-current-font-weight);
   color: var(--dsn-menu-link-current-color);
   background-color: var(--dsn-menu-link-current-background-color);
   border-inline-start: var(--dsn-menu-link-current-indicator-width) solid
