@@ -57,6 +57,9 @@ export * from './Note';
 export * from './Table';
 export * from './Details';
 
+// Branding Components
+export * from './Logo';
+
 // Navigation Components
 export * from './BreadcrumbNavigation';
 export * from './Menu';

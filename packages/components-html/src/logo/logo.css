@@ -1,0 +1,32 @@
+/**
+ * Logo Component
+ * Theme-aware SVG logo component met design token kleuren.
+ *
+ * De twee kleurlagen — primaire merkkleur en labelkleur — zijn gekoppeld aan
+ * design tokens zodat het logo zich automatisch aanpast aan elk thema en elke kleurmodus.
+ *
+ * Standalone gebruik (met accessible title):
+ * <svg class="dsn-logo" xmlns="http://www.w3.org/2000/svg" width="186" height="48"
+ *      viewBox="0 0 186 48" fill="none" role="img" aria-labelledby="logo-title">
+ *   <title id="logo-title">Starter Kit</title>
+ *   <path class="dsn-logo__primary" d="M0 0h185.491v48H0z"/>
+ *   <path class="dsn-logo__label" d="M8 8h169.491v32H8z"/>
+ *   <!-- letterpaden met dsn-logo__primary -->
+ * </svg>
+ *
+ * Decoratief gebruik (in een link):
+ * <a href="/">
+ *   <svg class="dsn-logo" aria-hidden="true" ...>
+ *     <!-- geen <title> — link levert de accessible name -->
+ *   </svg>
+ *   <span class="dsn-visually-hidden">Starter Kit — terug naar homepage</span>
+ * </a>
+ */
+
+.dsn-logo__primary {
+  fill: var(--dsn-logo-color-primary);
+}
+
+.dsn-logo__label {
+  fill: var(--dsn-logo-color-label);
+}
