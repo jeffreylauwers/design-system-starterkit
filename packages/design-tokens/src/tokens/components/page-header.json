@@ -1,0 +1,60 @@
+{
+  "dsn": {
+    "page-header": {
+      "background-color": {
+        "value": "{dsn.color.neutral.bg-document}",
+        "type": "color",
+        "comment": "Achtergrondkleur van de PageHeader — zelfde als pagina-achtergrond; de border-block-end doet het visuele scheidingswerk"
+      },
+      "border-block-end-width": {
+        "value": "{dsn.border.width.thick}",
+        "type": "dimension",
+        "comment": "Breedte van de onderkantrand (4px) — duidelijke visuele scheiding in lijn met overheids design system-patronen"
+      },
+      "border-block-end-color": {
+        "value": "{dsn.color.accent-1.color-default}",
+        "type": "color",
+        "comment": "Kleur van de onderkantrand — merkkleur die de header verankert aan het accent-1 palet"
+      },
+      "padding-block": {
+        "value": "{dsn.space.block.md}",
+        "type": "spacing",
+        "comment": "Verticale padding van de header-binnenbalk"
+      },
+      "padding-inline": {
+        "value": "{dsn.space.row.md}",
+        "type": "spacing",
+        "comment": "Horizontale padding van de header-binnenbalk"
+      },
+      "z-index": {
+        "value": "300",
+        "type": "number",
+        "comment": "Z-index voor sticky/auto-hide gedrag — bewust lager dan backdrop (400) zodat Drawer/Modal-backdrop over de header schuift"
+      },
+      "logo": {
+        "max-block-size": {
+          "value": "2rem",
+          "type": "dimension",
+          "comment": "Maximale hoogte van het logo in de PageHeader op mobile (32px). Breedte schaalt automatisch via inline-size: auto. White-label: overschrijf dit token per thema voor andere logo-proporties."
+        }
+      },
+      "search-panel": {
+        "background-color": {
+          "value": "{dsn.color.accent-1.bg-default}",
+          "type": "color",
+          "comment": "Achtergrondkleur van het zoekpaneel — merkkleur voor branding"
+        },
+        "padding-block": {
+          "value": "{dsn.space.block.md}",
+          "type": "spacing",
+          "comment": "Verticale padding van het zoekpaneel"
+        },
+        "padding-inline": {
+          "value": "{dsn.space.inline.xl}",
+          "type": "spacing",
+          "comment": "Horizontale padding van het zoekpaneel"
+        }
+      }
+    }
+  }
+}

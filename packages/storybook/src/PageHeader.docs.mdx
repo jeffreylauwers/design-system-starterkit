@@ -1,0 +1,58 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as PageHeaderStories from './PageHeader.stories';
+import docs from './PageHeader.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={PageHeaderStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={PageHeaderStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={PageHeaderStories.Default}
+  html={`<header class="dsn-page-header">
+  <div class="dsn-page-header__inner">
+    <div class="dsn-page-header__start">
+      <button type="button" class="dsn-button dsn-button--subtle">
+        <svg class="dsn-icon" aria-hidden="true"><!-- menu icon --></svg>
+        <span class="dsn-button__label">Menu</span>
+      </button>
+    </div>
+    <div class="dsn-page-header__logo">
+      <a href="/">
+        <svg class="dsn-logo" aria-hidden="true"><!-- logo paden --></svg>
+        <span class="dsn-visually-hidden">Naam organisatie — terug naar homepage</span>
+      </a>
+    </div>
+    <div class="dsn-page-header__end">
+      <button type="button" class="dsn-button dsn-button--subtle"
+              aria-expanded="false" aria-controls="search-panel">
+        <svg class="dsn-icon" aria-hidden="true"><!-- search icon --></svg>
+        <span class="dsn-button__label">Zoeken</span>
+      </button>
+    </div>
+  </div>
+  <div class="dsn-page-header__search-panel" id="search-panel" hidden>
+    <div class="dsn-page-header__search-inner">
+      <div class="dsn-search-input-wrapper">
+        <input type="search" class="dsn-text-input dsn-search-input"
+               placeholder="Zoeken…" aria-label="Zoekopdracht" />
+      </div>
+      <button type="button" class="dsn-button dsn-button--strong">
+        <span class="dsn-button__label">Zoeken</span>
+      </button>
+    </div>
+  </div>
+</header>`}
+/>
+
+<Controls of={PageHeaderStories.Default} />
+
+<Markdown>{rest}</Markdown>

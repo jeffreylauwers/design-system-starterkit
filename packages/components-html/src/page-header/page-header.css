@@ -1,0 +1,154 @@
+/**
+ * PageHeader Component
+ * Primaire navigatieheader voor een pagina. Mobile-first: menuknop (inline-start),
+ * gecentreerd logo, zoekknop (inline-end). Navigatie via Drawer; zoekpaneel inline.
+ *
+ * Structuur:
+ * <header class="dsn-page-header">
+ *   <div class="dsn-page-header__inner">
+ *     <div class="dsn-page-header__start">
+ *       <!-- Menuknop -->
+ *     </div>
+ *     <div class="dsn-page-header__logo">
+ *       <!-- Logo (svg, img, of <a> wrapper) -->
+ *     </div>
+ *     <div class="dsn-page-header__end">
+ *       <!-- Zoekknop -->
+ *     </div>
+ *   </div>
+ *   <div class="dsn-page-header__search-panel" id="..." hidden>
+ *     <div class="dsn-page-header__search-inner">
+ *       <!-- SearchInput + zoekknop -->
+ *     </div>
+ *   </div>
+ * </header>
+ */
+
+/* =============================================================================
+   Base
+   ============================================================================= */
+
+.dsn-page-header {
+  background-color: var(--dsn-page-header-background-color);
+  border-block-end: var(--dsn-page-header-border-block-end-width) solid
+    var(--dsn-page-header-border-block-end-color);
+}
+
+/* =============================================================================
+   Sticky gedrag
+   ============================================================================= */
+
+.dsn-page-header--sticky {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--dsn-page-header-z-index);
+}
+
+/* =============================================================================
+   Auto-hide (sticky + CSS-transitie)
+   JS toggle via data-hidden attribuut: scroll-down → "true", scroll-up → "false"
+   ============================================================================= */
+
+.dsn-page-header--auto-hide {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--dsn-page-header-z-index);
+  transition: transform var(--dsn-transition-duration-normal)
+    var(--dsn-transition-easing-default);
+}
+
+.dsn-page-header--auto-hide[data-hidden='true'] {
+  transform: translateY(-100%);
+}
+
+/* =============================================================================
+   Inner — CSS-grid centreert logo onafhankelijk van knopbreedte
+   ============================================================================= */
+
+.dsn-page-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding-block: var(--dsn-page-header-padding-block);
+  padding-inline: var(--dsn-page-header-padding-inline);
+}
+
+/* =============================================================================
+   Start-slot (inline-start — menuknop)
+   ============================================================================= */
+
+.dsn-page-header__start {
+  display: flex;
+  align-items: center;
+}
+
+/* =============================================================================
+   Logo-slot (gecentreerd via middelste grid-kolom)
+   De SVG/img zelf krijgt de max-block-size — niet de wrapper.
+   SVG-attributen width/height worden overschreven door CSS block-size + inline-size: auto.
+   ============================================================================= */
+
+.dsn-page-header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dsn-page-header__logo svg,
+.dsn-page-header__logo img {
+  display: block;
+  block-size: var(--dsn-page-header-logo-max-block-size);
+  inline-size: auto;
+}
+
+/* =============================================================================
+   Knoppen in de header krijgen compacte inline padding
+   ============================================================================= */
+
+.dsn-page-header__inner .dsn-button {
+  padding-inline: var(--dsn-space-row-md);
+}
+
+/* =============================================================================
+   End-slot (inline-end — zoekknop)
+   ============================================================================= */
+
+.dsn-page-header__end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* =============================================================================
+   Zoekpaneel (standaard verborgen via [hidden])
+   ============================================================================= */
+
+.dsn-page-header__search-panel {
+  background-color: var(--dsn-page-header-search-panel-background-color);
+  padding-block: var(--dsn-page-header-search-panel-padding-block);
+  padding-inline: var(--dsn-page-header-search-panel-padding-inline);
+}
+
+.dsn-page-header__search-inner {
+  display: flex;
+  gap: var(--dsn-space-inline-md);
+  align-items: flex-start;
+}
+
+/* SearchInput wrapper vult beschikbare ruimte volledig — overschrijft de standaard
+   form-control max-inline-size zodat het veld de volledige breedte pakt */
+.dsn-page-header__search-inner .dsn-search-input-wrapper {
+  flex: 1;
+  min-inline-size: 0;
+  max-inline-size: none;
+}
+
+/* Input op gelijke hoogte als de Zoeken-knop: padding-block terugbrengen naar
+   8px zodat padding + line-height < min-block-size (48px) — en min-block-size
+   de hoogte bepaalt, net als bij de button */
+.dsn-page-header__search-inner .dsn-text-input {
+  max-inline-size: none;
+  inline-size: 100%;
+  --dsn-text-input-padding-block-start: var(--dsn-space-block-md);
+  --dsn-text-input-padding-block-end: var(--dsn-space-block-md);
+}

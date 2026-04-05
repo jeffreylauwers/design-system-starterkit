@@ -65,6 +65,7 @@ export * from './BreadcrumbNavigation';
 export * from './Menu';
 export * from './MenuButton';
 export * from './MenuLink';
+export * from './PageHeader';
 
 // Form Field Components
 export * from './FormField';
