@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** April 4, 2026
+**Last Updated:** April 5, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -13,8 +13,9 @@ Complete component specifications and guidelines for the Design System Starter K
 3. [Content Components](#content-components)
 4. [Display & Feedback Components](#display--feedback-components)
 5. [Navigation Components](#navigation-components)
-6. [Form Components](#form-components)
-7. [Web Components Registration](#web-components-registration)
+6. [Branding Components](#branding-components)
+7. [Form Components](#form-components)
+8. [Web Components Registration](#web-components-registration)
 
 ---
 
@@ -1824,6 +1825,90 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 ---
 
+## Branding Components
+
+**Status:** Complete (HTML/CSS, React) — 1 component total
+
+### Logo
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/logo/` / `Logo/`
+
+**Tokens:** `tokens/components/logo.json`
+
+**Props:** `title`, `aria-hidden`, `className` + alle `React.SVGProps<SVGSVGElement>` attributen
+
+**Features:**
+
+- Rendert het Starter Kit-logo als inline SVG — CSS-klassen op paden werken hierdoor correct
+- Twee kleurlagen via design tokens: `dsn-logo__primary` (achtergrond + letterpaden) en `dsn-logo__label` (binnenste rechthoek)
+- Tokens refereren naar thema-kleuren → past automatisch mee bij thema- en moduswisseling
+- Standalone gebruik: `role="img"` + `<title id>` + `aria-labelledby` koppeling
+- Decoratief gebruik: `aria-hidden={true}` → geen `<title>`, geen `role`, geen `aria-labelledby`
+- `useId()` (React 18+) garandeert unieke title-ids bij meerdere instanties op één pagina
+- `React.forwardRef<SVGSVGElement>`
+
+**CSS-klassen:**
+
+| Klasse              | Element  | Beschrijving                                                                    |
+| ------------------- | -------- | ------------------------------------------------------------------------------- |
+| `dsn-logo`          | `<svg>`  | Basisklasse voor het logocomponent                                              |
+| `dsn-logo__primary` | `<path>` | Achtergrondrechthoek + alle letterpaden — `fill: var(--dsn-logo-color-primary)` |
+| `dsn-logo__label`   | `<path>` | Binnenste rechthoek — `fill: var(--dsn-logo-color-label)`                       |
+
+**Design Tokens:**
+
+| Token                      | Waarde                                    | Beschrijving                                  |
+| -------------------------- | ----------------------------------------- | --------------------------------------------- |
+| `--dsn-logo-color-primary` | `{dsn.color.accent-1-inverse.bg-default}` | Merkkleur — blauw (Start) / zwart (Wireframe) |
+| `--dsn-logo-color-label`   | `{dsn.color.neutral.bg-document}`         | Documentachtergrond — doorkijkje-effect       |
+
+**Usage:**
+
+```html
+<!-- HTML/CSS — standalone -->
+<svg
+  class="dsn-logo"
+  xmlns="http://www.w3.org/2000/svg"
+  width="186"
+  height="48"
+  viewBox="0 0 186 48"
+  fill="none"
+  role="img"
+  aria-labelledby="logo-title"
+>
+  <title id="logo-title">Starter Kit</title>
+  <path class="dsn-logo__primary" d="M0 0h185.491v48H0z" />
+  <path class="dsn-logo__label" d="M8 8h169.491v32H8z" />
+  <!-- letterpaden met dsn-logo__primary -->
+</svg>
+
+<!-- HTML/CSS — decoratief (in een link) -->
+<a href="/">
+  <svg class="dsn-logo" aria-hidden="true" ...><!-- paden --></svg>
+  <span class="dsn-visually-hidden">Starter Kit — terug naar homepage</span>
+</a>
+```
+
+```tsx
+// React — standalone
+<Logo />
+
+// React — decoratief
+<a href="/">
+  <Logo aria-hidden={true} />
+  <span className="dsn-visually-hidden">Starter Kit — terug naar homepage</span>
+</a>
+
+// React — custom title
+<Logo title="Mijn Organisatie" />
+```
+
+**Tests:** React (14 tests)
+
+---
+
 ## Form Components
 
 **Status:** Complete (HTML/CSS, React) — 25 components total
@@ -2135,15 +2220,15 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 47
+**Total Components:** 48
 
 **Implementations:**
 
-- **HTML/CSS:** 47 components
-- **React:** 47 components (1149 tests total, 56 test suites)
+- **HTML/CSS:** 48 components
+- **React:** 48 components (1248 tests total, 62 test suites)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
-**Test Coverage:** 1149 tests across 56 test suites
+**Test Coverage:** 1248 tests across 62 test suites
 
 ---
 

@@ -6,6 +6,23 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.20.0 (April 5, 2026)
+
+### Logo component (issue #126)
+
+#### Added
+
+- **Logo** component — theme-aware inline SVG logo met twee kleurlagen gekoppeld aan design tokens (PR #139)
+- `--dsn-logo-color-primary` token → `{dsn.color.accent-1-inverse.bg-default}` (merkkleur per actief thema)
+- `--dsn-logo-color-label` token → `{dsn.color.neutral.bg-document}` (documentachtergrond, doorkijkje-effect)
+- Standalone gebruik: `role="img"` + `<title>` + `aria-labelledby`; decoratief gebruik: `aria-hidden={true}`
+- `useId()` voor unieke title-ids bij meerdere instanties op één pagina
+- `title` prop (default: `"Starter Kit"`) en volledige spread van `React.SVGProps<SVGSVGElement>`
+- 14 React tests
+- Referentie-SVG (`logo_starter-kit.svg`) verplaatst van project root naar `packages/components-html/src/logo/`
+
+---
+
 ## Version 5.18.0 (April 4, 2026)
 
 ### MenuButton component + gedeelde menu-item tokens
