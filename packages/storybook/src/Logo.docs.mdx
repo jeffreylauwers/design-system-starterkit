@@ -1,0 +1,30 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as LogoStories from './Logo.stories';
+import docs from './Logo.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={LogoStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={LogoStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={LogoStories.Default}
+  html={`<svg class="dsn-logo" xmlns="http://www.w3.org/2000/svg" width="186" height="48" viewBox="0 0 186 48" fill="none" role="img" aria-labelledby="dsn-logo-title">
+  <title id="dsn-logo-title">Starter Kit</title>
+  <path class="dsn-logo__primary" d="M0 0h185.491v48H0z"/>
+  <path class="dsn-logo__label" d="M8 8h169.491v32H8z"/>
+  <!-- letterpaden met dsn-logo__primary -->
+</svg>`}
+/>
+
+<Controls of={LogoStories.Default} />
+
+<Markdown>{rest}</Markdown>
