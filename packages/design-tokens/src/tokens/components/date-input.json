@@ -2,9 +2,9 @@
   "dsn": {
     "date-input": {
       "button-inset-inline-end": {
-        "value": "{dsn.space.inline.md}",
+        "value": "{dsn.space.inline.sm}",
         "type": "dimension",
-        "comment": "Distance from the inline-end border to the calendar button (8px)"
+        "comment": "Distance from the inline-end border to the calendar button (4px)"
       },
       "icon-gap": {
         "value": "{dsn.space.text.md}",

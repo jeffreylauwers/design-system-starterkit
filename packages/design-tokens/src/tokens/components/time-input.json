@@ -2,9 +2,9 @@
   "dsn": {
     "time-input": {
       "button-inset-inline-end": {
-        "value": "{dsn.space.inline.md}",
+        "value": "{dsn.space.inline.sm}",
         "type": "dimension",
-        "comment": "Distance from the inline-end border to the clock button (8px)"
+        "comment": "Distance from the inline-end border to the clock button (4px)"
       },
       "icon-color": {
         "value": "{dsn.color.action-2.color-default}",
