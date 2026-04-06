@@ -38,6 +38,42 @@
           "comment": "Maximale hoogte van het logo in de PageHeader op mobile (32px). Breedte schaalt automatisch via inline-size: auto. White-label: overschrijf dit token per thema voor andere logo-proporties."
         }
       },
+      "masthead": {
+        "background-color": {
+          "value": "{dsn.color.neutral.bg-document}",
+          "type": "color",
+          "comment": "Masthead achtergrond — zelfde neutrale kleur als pagina-achtergrond"
+        },
+        "padding-block": {
+          "value": "{dsn.space.block.xl}",
+          "type": "spacing",
+          "comment": "Verticale ademruimte in de masthead"
+        },
+        "padding-inline": {
+          "value": "{dsn.space.inline.xl}",
+          "type": "spacing",
+          "comment": "Horizontale padding masthead — zelfde als navbar"
+        }
+      },
+      "navbar": {
+        "background-color": {
+          "value": "{dsn.color.accent-1.bg-default}",
+          "type": "color",
+          "comment": "Navigatiebalk achtergrond — merkkleur accent-1"
+        },
+        "padding-inline": {
+          "value": "{dsn.space.inline.xl}",
+          "type": "spacing",
+          "comment": "Horizontale padding navigatiebalk — zelfde als masthead"
+        }
+      },
+      "secondary-nav": {
+        "gap": {
+          "value": "{dsn.space.column.3xl}",
+          "type": "spacing",
+          "comment": "Witruimte tussen servicemenu (Menu) en zoekveld in de masthead"
+        }
+      },
       "search-panel": {
         "background-color": {
           "value": "{dsn.color.accent-1.bg-default}",

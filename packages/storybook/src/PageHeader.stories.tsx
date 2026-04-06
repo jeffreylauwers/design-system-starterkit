@@ -1,6 +1,13 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Logo, Menu, MenuLink, PageHeader } from '@dsn/components-react';
+import {
+  Button,
+  Logo,
+  Menu,
+  MenuLink,
+  PageHeader,
+  SearchInput,
+} from '@dsn/components-react';
 import DocsPage from './PageHeader.docs.mdx';
 
 // =============================================================================
@@ -139,6 +146,46 @@ const secondaryNavigation = (
   </Menu>
 );
 
+/** Large viewport: horizontale servicemenu zonder verticale hiërarchie */
+const secondaryNavigationLarge = (
+  <Menu orientation="horizontal">
+    <MenuLink href="/contact" level={1}>
+      Contact
+    </MenuLink>
+    <MenuLink href="/english" level={1}>
+      English
+    </MenuLink>
+    <MenuLink href="/mijn-omgeving" level={1}>
+      Mijn omgeving
+    </MenuLink>
+  </Menu>
+);
+
+/** Large viewport: alleen Level 1 items horizontaal, geen sub-items toggle */
+const primaryNavigationLarge = (
+  <Menu orientation="horizontal">
+    <MenuLink href="/level-1a" level={1} current>
+      Level 1a
+    </MenuLink>
+    <MenuLink href="/level-1b" level={1}>
+      Level 1b
+    </MenuLink>
+    <MenuLink href="/level-1c" level={1}>
+      Level 1c
+    </MenuLink>
+    <MenuLink href="/level-1d" level={1}>
+      Level 1d
+    </MenuLink>
+  </Menu>
+);
+
+const searchSlot = (
+  <>
+    <SearchInput placeholder="Zoeken…" aria-label="Zoekopdracht" />
+    <Button variant="strong">Zoeken</Button>
+  </>
+);
+
 const meta: Meta<typeof PageHeader> = {
   title: 'Components/PageHeader',
   component: PageHeader,
@@ -193,7 +240,10 @@ const meta: Meta<typeof PageHeader> = {
     sticky: 'none',
     logoSlot,
     primaryNavigation: <PrimaryNavigation />,
+    primaryNavigationLarge,
     secondaryNavigation,
+    secondaryNavigationLarge,
+    searchSlot,
   },
 };
 
@@ -278,6 +328,19 @@ export const WithMenuOpen: Story = {
 // OVERZICHTSSTORIES
 // =============================================================================
 
+export const LargeViewport: Story = {
+  name: 'Large viewport',
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'Op viewports ≥ 64em toont de header twee horizontale banden: een Masthead (neutrale achtergrond) met logo, servicemenu en inline zoekveld, en een Navigatiebalk (accent-1 achtergrond) met de primaire navigatie. De mobile layout is verborgen via `display: none`.',
+      },
+    },
+  },
+};
+
 export const AllStates: Story = {
   name: 'All states',
   render: () => (
@@ -295,7 +358,10 @@ export const AllStates: Story = {
         <PageHeader
           logoSlot={logoSlot}
           primaryNavigation={<PrimaryNavigation />}
+          primaryNavigationLarge={primaryNavigationLarge}
           secondaryNavigation={secondaryNavigation}
+          secondaryNavigationLarge={secondaryNavigationLarge}
+          searchSlot={searchSlot}
         />
       </div>
     </div>

@@ -18,7 +18,7 @@ De navigatie-inhoud (primair en service) wordt via props doorgegeven en in de `D
 
 ## Don't use when
 
-- De navigatie permanent zichtbaar is op de huidige viewport (large viewport) — gebruik in dat geval de nog te bouwen large-viewport variant.
+- Je enkel een large viewport layout nodig hebt zonder mobile fallback — `PageHeader` is altijd responsive en toont altijd beide layouts op de juiste viewport.
 
 ## Best practices
 
@@ -74,7 +74,97 @@ De navigatielade is een `<Drawer side="left">` die altijd in de DOM aanwezig is.
 />
 ```
 
-### Zoekpaneel
+### Large viewport layout
+
+Boven `64em` (~1024px) toont de header automatisch een tweebandige layout via CSS `display: none`:
+
+- **Masthead** — neutrale achtergrond met logo (inline-start), servicemenu en inline zoekveld (inline-end)
+- **Navigatiebalk** — accent-1 achtergrond met de primaire navigatie
+
+De mobile layout (hamburger + drawer) valt via `display: none` volledig uit de accessibility tree.
+
+```html
+<header class="dsn-page-header">
+  <!-- Small viewport (verborgen boven 64em) -->
+  <div class="dsn-page-header__small-layout">
+    <!-- bestaande mobile markup -->
+  </div>
+
+  <!-- Large viewport (zichtbaar boven 64em) -->
+  <div class="dsn-page-header__large-layout">
+    <div class="dsn-page-header__masthead">
+      <div class="dsn-page-header__masthead-inner">
+        <div class="dsn-page-header__logo">
+          <a href="/"><!-- Logo --></a>
+        </div>
+        <div class="dsn-page-header__secondary-nav">
+          <nav aria-labelledby="service-menu-id">
+            <h2 id="service-menu-id" class="dsn-visually-hidden">
+              Servicemenu
+            </h2>
+            <ul class="dsn-menu dsn-menu--horizontal">
+              <li><a class="dsn-menu-link" href="/contact">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="dsn-page-header__searchbox">
+            <!-- SearchInput + Zoeken-knop -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dsn-page-header__navbar">
+      <div class="dsn-page-header__navbar-inner">
+        <nav aria-labelledby="primary-nav-id">
+          <h2 id="primary-nav-id" class="dsn-visually-hidden">Hoofdmenu</h2>
+          <ul class="dsn-menu dsn-menu--horizontal">
+            <li><a class="dsn-menu-link" href="/home">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+```
+
+```tsx
+<PageHeader
+  logoSlot={
+    <a href="/">
+      <Logo aria-hidden={true} />
+      <span className="dsn-visually-hidden">Terug naar homepage</span>
+    </a>
+  }
+  primaryNavigation={
+    <Menu orientation="horizontal">
+      <MenuLink href="/home" level={1}>
+        Home
+      </MenuLink>
+    </Menu>
+  }
+  secondaryNavigation={
+    <Menu orientation="horizontal">
+      <MenuLink href="/contact" level={1}>
+        Contact
+      </MenuLink>
+    </Menu>
+  }
+  searchSlot={
+    <>
+      <SearchInput placeholder="Zoeken…" aria-label="Zoekopdracht" />
+      <Button variant="strong">Zoeken</Button>
+    </>
+  }
+/>
+```
+
+**Tab-volgorde op large viewport** (visuele leesvolgorde = DOM-volgorde = focus-volgorde):
+
+1. Logo (link naar homepage)
+2. Servicemenu items
+3. Inline zoekveld + Zoeken-knop
+4. Primaire navigatie items
+
+### Zoekpaneel (small viewport)
 
 Het zoekpaneel verschijnt direct onder de header-binnenbalk. Het paneel bevat een `SearchInput` en een zoekknop:
 
@@ -107,9 +197,15 @@ Het zoekpaneel verschijnt direct onder de header-binnenbalk. Het paneel bevat ee
 | `--dsn-page-header-padding-inline`                | `{dsn.space.inline.xl}`              | Horizontale padding binnenbalk             |
 | `--dsn-page-header-z-index`                       | `300`                                | Z-index voor sticky — onder backdrop (400) |
 | `--dsn-page-header-logo-max-block-size`           | `2rem`                               | Maximale hoogte logo (32px)                |
-| `--dsn-page-header-search-panel-background-color` | `{dsn.color.neutral.bg-subtle}`      | Achtergrond zoekpaneel                     |
-| `--dsn-page-header-search-panel-padding-block`    | `{dsn.space.block.md}`               | Verticale padding zoekpaneel               |
-| `--dsn-page-header-search-panel-padding-inline`   | `{dsn.space.inline.xl}`              | Horizontale padding zoekpaneel             |
+| `--dsn-page-header-search-panel-background-color` | `{dsn.color.neutral.bg-subtle}`      | Achtergrond zoekpaneel (small)             |
+| `--dsn-page-header-search-panel-padding-block`    | `{dsn.space.block.md}`               | Verticale padding zoekpaneel (small)       |
+| `--dsn-page-header-search-panel-padding-inline`   | `{dsn.space.inline.xl}`              | Horizontale padding zoekpaneel (small)     |
+| `--dsn-page-header-masthead-background-color`     | `{dsn.color.neutral.bg-document}`    | Masthead achtergrond (large)               |
+| `--dsn-page-header-masthead-padding-block`        | `{dsn.space.block.xl}`               | Verticale padding masthead (large)         |
+| `--dsn-page-header-masthead-padding-inline`       | `{dsn.space.inline.xl}`              | Horizontale padding masthead (large)       |
+| `--dsn-page-header-navbar-background-color`       | `{dsn.color.accent-1.bg-default}`    | Navigatiebalk achtergrond (large)          |
+| `--dsn-page-header-navbar-padding-inline`         | `{dsn.space.inline.xl}`              | Horizontale padding navigatiebalk (large)  |
+| `--dsn-page-header-secondary-nav-gap`             | `{dsn.space.column.3xl}`             | Gap servicemenu ↔ zoekveld (large)         |
 
 ## Accessibility
 
@@ -120,3 +216,5 @@ Het zoekpaneel verschijnt direct onder de header-binnenbalk. Het paneel bevat ee
 - Bij sluiten zoekpaneel: focus keert terug naar de zoek-/sluitknop.
 - Elke `<nav>` in de Drawer heeft een unieke toegankelijke naam via `aria-labelledby` + visueel verborgen `<h3>`.
 - Drawer-focusbeheer wordt verzorgd door het bestaande `Drawer`-component.
+- Op large viewport: `dsn-page-header__small-layout` en `dsn-page-header__large-layout` worden geswitcht met `display: none` — de inactieve sectie valt automatisch uit de accessibility tree.
+- Op large viewport: beide `<nav>` elementen gebruiken `<h2>` met `aria-labelledby` ("Servicemenu", "Hoofdmenu") — unieke IDs gegenereerd via `useId()`.
