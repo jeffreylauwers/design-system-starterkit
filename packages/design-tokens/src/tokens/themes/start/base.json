@@ -404,14 +404,14 @@
         "comment": "Form control line height"
       },
       "padding-block-start": {
-        "value": "{dsn.space.block.lg}",
+        "value": "{dsn.space.block.md}",
         "type": "dimension",
-        "comment": "Form control top padding"
+        "comment": "Form control top padding — 8px zodat min-block-size (48px) de hoogte bepaalt, gelijk aan de button"
       },
       "padding-block-end": {
-        "value": "{dsn.space.block.lg}",
+        "value": "{dsn.space.block.md}",
         "type": "dimension",
-        "comment": "Form control bottom padding"
+        "comment": "Form control bottom padding — 8px zodat min-block-size (48px) de hoogte bepaalt, gelijk aan de button"
       },
       "padding-inline-start": {
         "value": "{dsn.space.inline.lg}",
