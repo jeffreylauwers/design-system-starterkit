@@ -29,14 +29,34 @@ export interface PageHeaderProps extends Omit<
   sticky?: PageHeaderSticky;
 
   /**
-   * Primaire navigatie-inhoud in de Drawer — doorgaans een `<Menu>` met `<MenuLink>`-items.
+   * Primaire navigatie-inhoud in de Drawer (small viewport) — doorgaans een verticale `<Menu>` met
+   * `<MenuLink>`-items inclusief uitklapmogelijkheden voor sub-niveaus.
    */
   primaryNavigation?: React.ReactNode;
 
   /**
-   * Servicemenu-inhoud in de Drawer — bijv. Contact, taalwissel, Mijn omgeving.
+   * Primaire navigatie-inhoud in de Navigatiebalk (large viewport) — doorgaans een horizontale
+   * `<Menu>` met alleen Level 1 `<MenuLink>`-items. Als niet meegegeven valt de component
+   * terug op `primaryNavigation`.
+   */
+  primaryNavigationLarge?: React.ReactNode;
+
+  /**
+   * Servicemenu-inhoud in de Drawer (small viewport) — doorgaans een verticale `<Menu>`.
    */
   secondaryNavigation?: React.ReactNode;
+
+  /**
+   * Servicemenu-inhoud in de Masthead (large viewport) — doorgaans een horizontale `<Menu>`.
+   * Als niet meegegeven valt de component terug op `secondaryNavigation`.
+   */
+  secondaryNavigationLarge?: React.ReactNode;
+
+  /**
+   * Inline zoekveld voor de Masthead op large viewport (SearchInput + zoekknop).
+   * Optioneel — toont geen zoekveld als weggelaten.
+   */
+  searchSlot?: React.ReactNode;
 
   /**
    * Callback wanneer de navigatielade opent.
@@ -100,7 +120,10 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
       logoSlot,
       sticky = 'none',
       primaryNavigation,
+      primaryNavigationLarge,
       secondaryNavigation,
+      secondaryNavigationLarge,
+      searchSlot,
       onMenuOpen,
       onMenuClose,
       onSearchOpen,
@@ -122,6 +145,8 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
     const searchPanelId = React.useId();
     const primaryNavId = React.useId();
     const serviceNavId = React.useId();
+    const primaryNavLargeId = React.useId();
+    const serviceNavLargeId = React.useId();
 
     // Auto-hide: detecteer scrollrichting en toggle data-hidden attribuut
     React.useEffect(() => {
@@ -190,52 +215,102 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
           {...(sticky === 'auto-hide' ? { 'data-hidden': 'false' } : {})}
           {...props}
         >
-          <div className="dsn-page-header__inner">
-            {/* Inline-start: menuknop */}
-            <div className="dsn-page-header__start">
-              <Button
-                ref={menuButtonRef}
-                variant="subtle"
-                onClick={handleMenuOpen}
-                iconStart={<Icon name="menu" aria-hidden />}
-              >
-                Menu
-              </Button>
+          {/* ----------------------------------------------------------------
+              Small viewport layout (verborgen boven 64em via CSS display:none)
+              ---------------------------------------------------------------- */}
+          <div className="dsn-page-header__small-layout">
+            <div className="dsn-page-header__inner">
+              {/* Inline-start: menuknop */}
+              <div className="dsn-page-header__start">
+                <Button
+                  ref={menuButtonRef}
+                  variant="subtle"
+                  onClick={handleMenuOpen}
+                  iconStart={<Icon name="menu" aria-hidden />}
+                >
+                  Menu
+                </Button>
+              </div>
+
+              {/* Gecentreerd logo */}
+              <div className="dsn-page-header__logo">{logoSlot}</div>
+
+              {/* Inline-end: zoekknop / sluitknop */}
+              <div className="dsn-page-header__end">
+                <Button
+                  ref={searchButtonRef}
+                  variant="subtle"
+                  aria-expanded={isSearchOpen}
+                  aria-controls={searchPanelId}
+                  onClick={handleSearchToggle}
+                  iconStart={
+                    <Icon name={isSearchOpen ? 'x' : 'search'} aria-hidden />
+                  }
+                >
+                  {isSearchOpen ? 'Sluiten' : 'Zoeken'}
+                </Button>
+              </div>
             </div>
 
-            {/* Gecentreerd logo */}
-            <div className="dsn-page-header__logo">{logoSlot}</div>
-
-            {/* Inline-end: zoekknop / sluitknop */}
-            <div className="dsn-page-header__end">
-              <Button
-                ref={searchButtonRef}
-                variant="subtle"
-                aria-expanded={isSearchOpen}
-                aria-controls={searchPanelId}
-                onClick={handleSearchToggle}
-                iconStart={
-                  <Icon name={isSearchOpen ? 'x' : 'search'} aria-hidden />
-                }
-              >
-                {isSearchOpen ? 'Sluiten' : 'Zoeken'}
-              </Button>
+            {/* Zoekpaneel */}
+            <div
+              id={searchPanelId}
+              className="dsn-page-header__search-panel"
+              hidden={!isSearchOpen}
+            >
+              <div className="dsn-page-header__search-inner">
+                <SearchInput
+                  ref={searchInputRef}
+                  placeholder="Zoeken…"
+                  aria-label="Zoekopdracht"
+                />
+                <Button variant="strong">Zoeken</Button>
+              </div>
             </div>
           </div>
 
-          {/* Zoekpaneel */}
-          <div
-            id={searchPanelId}
-            className="dsn-page-header__search-panel"
-            hidden={!isSearchOpen}
-          >
-            <div className="dsn-page-header__search-inner">
-              <SearchInput
-                ref={searchInputRef}
-                placeholder="Zoeken…"
-                aria-label="Zoekopdracht"
-              />
-              <Button variant="strong">Zoeken</Button>
+          {/* ----------------------------------------------------------------
+              Large viewport layout (zichtbaar boven 64em via CSS display:block)
+              ---------------------------------------------------------------- */}
+          <div className="dsn-page-header__large-layout">
+            {/* Masthead: neutrale achtergrond — logo + servicemenu + zoek */}
+            <div className="dsn-page-header__masthead">
+              <div className="dsn-page-header__masthead-inner">
+                <div className="dsn-page-header__logo">{logoSlot}</div>
+
+                <div className="dsn-page-header__secondary-nav">
+                  {(secondaryNavigationLarge ?? secondaryNavigation) && (
+                    <nav aria-labelledby={serviceNavLargeId}>
+                      <h2
+                        id={serviceNavLargeId}
+                        className="dsn-visually-hidden"
+                      >
+                        Servicemenu
+                      </h2>
+                      {secondaryNavigationLarge ?? secondaryNavigation}
+                    </nav>
+                  )}
+                  {searchSlot && (
+                    <div className="dsn-page-header__searchbox">
+                      {searchSlot}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Navigatiebalk: accent-1 achtergrond — primaire navigatie (large viewport) */}
+            <div className="dsn-page-header__navbar">
+              <div className="dsn-page-header__navbar-inner">
+                {(primaryNavigationLarge ?? primaryNavigation) && (
+                  <nav aria-labelledby={primaryNavLargeId}>
+                    <h2 id={primaryNavLargeId} className="dsn-visually-hidden">
+                      Hoofdmenu
+                    </h2>
+                    {primaryNavigationLarge ?? primaryNavigation}
+                  </nav>
+                )}
+              </div>
             </div>
           </div>
         </header>

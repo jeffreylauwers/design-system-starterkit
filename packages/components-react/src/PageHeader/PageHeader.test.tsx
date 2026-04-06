@@ -28,6 +28,20 @@ describe('PageHeader', () => {
     expect(container.querySelector('.dsn-page-header__inner')).toBeTruthy();
   });
 
+  it('rendert dsn-page-header__small-layout', () => {
+    const { container } = render(<PageHeader logoSlot={defaultLogo} />);
+    expect(
+      container.querySelector('.dsn-page-header__small-layout')
+    ).toBeTruthy();
+  });
+
+  it('rendert dsn-page-header__large-layout', () => {
+    const { container } = render(<PageHeader logoSlot={defaultLogo} />);
+    expect(
+      container.querySelector('.dsn-page-header__large-layout')
+    ).toBeTruthy();
+  });
+
   it('rendert het logo in dsn-page-header__logo', () => {
     const { container } = render(<PageHeader logoSlot={defaultLogo} />);
     const logoSlot = container.querySelector('.dsn-page-header__logo');
@@ -115,7 +129,7 @@ describe('PageHeader', () => {
   });
 
   it('rendert primaire navigatie in de drawer', () => {
-    render(
+    const { container } = render(
       <PageHeader
         logoSlot={defaultLogo}
         primaryNavigation={
@@ -125,11 +139,14 @@ describe('PageHeader', () => {
         }
       />
     );
-    expect(screen.getByText('Home')).toBeTruthy();
+    // Navigatie verschijnt in de Drawer (small layout) én in de navbar (large layout)
+    expect(container.querySelector('.dsn-drawer')?.textContent).toContain(
+      'Home'
+    );
   });
 
   it('rendert service-navigatie in de drawer', () => {
-    render(
+    const { container } = render(
       <PageHeader
         logoSlot={defaultLogo}
         secondaryNavigation={
@@ -139,7 +156,94 @@ describe('PageHeader', () => {
         }
       />
     );
-    expect(screen.getByText('Contact')).toBeTruthy();
+    // Navigatie verschijnt in de Drawer (small layout) én in de masthead (large layout)
+    expect(container.querySelector('.dsn-drawer')?.textContent).toContain(
+      'Contact'
+    );
+  });
+
+  // ---------------------------------------------------------------------------
+  // Large viewport layout
+  // ---------------------------------------------------------------------------
+
+  it('rendert masthead in large layout', () => {
+    const { container } = render(<PageHeader logoSlot={defaultLogo} />);
+    expect(container.querySelector('.dsn-page-header__masthead')).toBeTruthy();
+  });
+
+  it('rendert navbar in large layout', () => {
+    const { container } = render(<PageHeader logoSlot={defaultLogo} />);
+    expect(container.querySelector('.dsn-page-header__navbar')).toBeTruthy();
+  });
+
+  it('rendert primaire navigatie in de navbar', () => {
+    const { container } = render(
+      <PageHeader
+        logoSlot={defaultLogo}
+        primaryNavigation={
+          <ul>
+            <li>Home</li>
+          </ul>
+        }
+      />
+    );
+    const navbar = container.querySelector('.dsn-page-header__navbar');
+    expect(navbar?.textContent).toContain('Home');
+  });
+
+  it('rendert servicemenu in de masthead', () => {
+    const { container } = render(
+      <PageHeader
+        logoSlot={defaultLogo}
+        secondaryNavigation={
+          <ul>
+            <li>Contact</li>
+          </ul>
+        }
+      />
+    );
+    const masthead = container.querySelector('.dsn-page-header__masthead');
+    expect(masthead?.textContent).toContain('Contact');
+  });
+
+  it('rendert searchSlot in dsn-page-header__searchbox', () => {
+    const { container } = render(
+      <PageHeader
+        logoSlot={defaultLogo}
+        searchSlot={<button type="button">Zoekknop</button>}
+      />
+    );
+    const searchbox = container.querySelector('.dsn-page-header__searchbox');
+    expect(searchbox).toBeTruthy();
+    expect(searchbox?.querySelector('button')).toBeTruthy();
+  });
+
+  it('toont geen dsn-page-header__searchbox zonder searchSlot', () => {
+    const { container } = render(<PageHeader logoSlot={defaultLogo} />);
+    expect(container.querySelector('.dsn-page-header__searchbox')).toBeNull();
+  });
+
+  it('masthead heeft uniek aria-labelledby voor servicemenu', () => {
+    const { container } = render(
+      <PageHeader
+        logoSlot={defaultLogo}
+        secondaryNavigation={<span>nav</span>}
+      />
+    );
+    const nav = container.querySelector('.dsn-page-header__masthead nav');
+    const headingId = nav?.getAttribute('aria-labelledby');
+    expect(headingId).toBeTruthy();
+    expect(container.querySelector(`#${CSS.escape(headingId!)}`)).toBeTruthy();
+  });
+
+  it('navbar heeft uniek aria-labelledby voor hoofdmenu', () => {
+    const { container } = render(
+      <PageHeader logoSlot={defaultLogo} primaryNavigation={<span>nav</span>} />
+    );
+    const nav = container.querySelector('.dsn-page-header__navbar nav');
+    const headingId = nav?.getAttribute('aria-labelledby');
+    expect(headingId).toBeTruthy();
+    expect(container.querySelector(`#${CSS.escape(headingId!)}`)).toBeTruthy();
   });
 
   // ---------------------------------------------------------------------------

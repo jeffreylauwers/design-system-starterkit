@@ -35,6 +35,78 @@
 }
 
 /* =============================================================================
+   Responsive layout-switcher
+   Small viewport (< 64em): mobile bar zichtbaar, large layout verborgen
+   Large viewport (≥ 64em): large layout zichtbaar, mobile bar verborgen
+   display: none verwijdert de sectie uit de accessibility tree.
+   ============================================================================= */
+
+.dsn-page-header__large-layout {
+  display: none;
+}
+
+@media (min-width: 64em) {
+  .dsn-page-header__small-layout {
+    display: none;
+  }
+
+  .dsn-page-header__large-layout {
+    display: block;
+  }
+
+  /* border-block-end onderdrukt op large viewport — de navbar heeft zelf al
+     een accent-1 achtergrond die het visuele scheidingswerk overneemt */
+  .dsn-page-header {
+    border-block-end: none;
+  }
+}
+
+/* =============================================================================
+   Masthead (large viewport) — neutrale achtergrond, logo + servicemenu + zoek
+   ============================================================================= */
+
+.dsn-page-header__masthead {
+  background-color: var(--dsn-page-header-masthead-background-color);
+  padding-block: var(--dsn-page-header-masthead-padding-block);
+  padding-inline: var(--dsn-page-header-masthead-padding-inline);
+}
+
+.dsn-page-header__masthead-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =============================================================================
+   Secondary nav (large viewport) — flex-container: servicemenu + zoekveld
+   ============================================================================= */
+
+.dsn-page-header__secondary-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--dsn-page-header-secondary-nav-gap);
+}
+
+/* =============================================================================
+   Searchbox (large viewport) — inline zoekveld + zoekknop naast elkaar
+   ============================================================================= */
+
+.dsn-page-header__searchbox {
+  display: flex;
+  align-items: center;
+  gap: var(--dsn-space-inline-md);
+}
+
+/* =============================================================================
+   Navbar (large viewport) — accent-1 achtergrond, primaire navigatie
+   ============================================================================= */
+
+.dsn-page-header__navbar {
+  background-color: var(--dsn-page-header-navbar-background-color);
+  padding-inline: var(--dsn-page-header-navbar-padding-inline);
+}
+
+/* =============================================================================
    Sticky gedrag
    ============================================================================= */
 
