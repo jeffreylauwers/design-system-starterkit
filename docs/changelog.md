@@ -6,6 +6,41 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.21.1 (April 6, 2026)
+
+### Fix: PageHeader large viewport verfijningen (PR #146)
+
+#### Fixed
+
+- **Zoekknop padding** in de masthead (large viewport): `SearchInput` wrapper krijgt `flex: 1` + `max-inline-size: none` zodat de Zoeken-knop zijn natuurlijke breedte en padding behoudt — zelfde patroon als het mobile zoekpaneel
+- **Token gecorrigeerd**: `--dsn-page-header-padding-inline` van `{dsn.space.row.md}` naar `{dsn.space.inline.xl}` — nu consistent met masthead en navbar padding
+- **Docs gecorrigeerd**: `--dsn-page-header-search-panel-background-color` was gedocumenteerd als `{dsn.color.neutral.bg-subtle}`, is `{dsn.color.accent-1.bg-default}`
+
+#### Changed
+
+- **Navbar MenuLink-hoogte en padding**: `min-block-size: 4rem` en `padding-inline: var(--dsn-space-inline-xl)` via token-overschrijving op `.dsn-page-header__navbar`; de `calc()`-compensatie voor de current-indicator werkt automatisch mee
+- **Storybook controls opgeschoond**: circulaire `DocsPage`-import verwijderd (loste crash op), `argTypes` geherstructureerd in drie categorieën: **Gedrag** / **Slots** / **Events**
+
+---
+
+## Version 5.21.0 (April 6, 2026)
+
+### PageHeader large viewport layout (PR #142)
+
+#### Added
+
+- **Large viewport layout** (≥ 64em) voor `PageHeader` — tweebandig ontwerp boven `64em` via `display: none` switch:
+  - **Masthead** (`dsn-page-header__masthead`) — neutrale achtergrond met logo (inline-start), servicemenu en inline zoekveld (inline-end)
+  - **Navigatiebalk** (`dsn-page-header__navbar`) — accent-1 achtergrond met primaire navigatie
+- `primaryNavigationLarge` prop — aparte navigatie-inhoud voor de navigatiebalk op large viewport; valt terug op `primaryNavigation` wanneer weggelaten
+- `secondaryNavigationLarge` prop — aparte servicemenu-inhoud voor de masthead; valt terug op `secondaryNavigation` wanneer weggelaten
+- `searchSlot` prop — inline zoekveld (SearchInput + zoekknop) in de masthead rechts van het servicemenu
+- CSS-klassen: `dsn-page-header__large-layout`, `dsn-page-header__small-layout`, `dsn-page-header__masthead`, `dsn-page-header__masthead-inner`, `dsn-page-header__secondary-nav`, `dsn-page-header__searchbox`, `dsn-page-header__navbar`
+- 6 nieuwe design tokens: `masthead-background-color`, `masthead-padding-block`, `masthead-padding-inline`, `navbar-background-color`, `navbar-padding-inline`, `secondary-nav-gap`
+- 38 React tests
+
+---
+
 ## Version 5.20.0 (April 5, 2026)
 
 ### Logo component (issue #126)
