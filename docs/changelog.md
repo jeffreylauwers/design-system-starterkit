@@ -23,6 +23,41 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.19.1 (April 6, 2026)
+
+### Fix: gelijke hoogte voor input fields en buttons (issue #141, PR #143)
+
+#### Fixed
+
+- `dsn.form-control.padding-block-start/end` verlaagd van `{dsn.space.block.lg}` (12px) naar `{dsn.space.block.md}` (8px) — `min-block-size` (48px) bepaalt nu de hoogte van alle form controls, gelijk aan de button
+- Cascadeert automatisch naar **TextInput**, **TextArea**, **Select**, **SearchInput**, **DateInput** en **TimeInput**
+- Tijdelijke token-override in `page-header.css` (`.dsn-page-header__search-inner .dsn-text-input`) verwijderd
+
+#### Changed
+
+- `dsn.date-input.button-inset-inline-end` en `dsn.time-input.button-inset-inline-end`: van `{dsn.space.inline.md}` (8px) naar `{dsn.space.inline.sm}` (4px) — icoonknop staat compacter tegen de border
+
+---
+
+## Version 5.19.0 (April 4, 2026)
+
+### Menu component (issue #129, PR #136)
+
+#### Added
+
+- **Menu** component — containercomponent voor `MenuLink`- en `MenuButton`-items
+- Rendert een `<ul>` met `list-style: none`; verantwoordelijkheid voor de `<nav>`-wrapper ligt bij de ouder
+- `orientation` prop: `vertical` (standaard, `flex-direction: column`) of `horizontal` (`flex-direction: row`)
+- Horizontale current-indicator via `border-block-end` (i.p.v. `border-inline-start` in verticale oriëntatie) — context-override in `menu-link.css`
+- 2 design tokens: `dsn.menu.gap.vertical` (`{dsn.space.block.xs}`, 2px) en `dsn.menu.gap.horizontal` (`{dsn.space.inline.sm}`, 4px)
+- 9 React tests
+
+#### Changed
+
+- `dsn.menu-item.min-block-size` → `{dsn.pointer-target.min-block-size}` (48px) — MenuLink en MenuButton voldoen nu altijd aan WCAG touch target
+
+---
+
 ## Version 5.18.0 (April 4, 2026)
 
 ### MenuButton component + gedeelde menu-item tokens

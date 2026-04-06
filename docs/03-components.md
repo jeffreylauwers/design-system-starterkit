@@ -1587,7 +1587,81 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 ## Navigation Components
 
-**Status:** Complete (HTML/CSS, React) — 3 components total
+**Status:** Complete (HTML/CSS, React) — 4 components total
+
+### Menu
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/Menu/`
+
+**Tokens:** `tokens/components/menu.json`
+
+**Props:** `orientation` (`'vertical'` | `'horizontal'`), `children`, `className` + alle native `<ul>` attributen
+
+**Features:**
+
+- Containercomponent voor `MenuLink`- en `MenuButton`-items — rendert een `<ul>` met `list-style: none`
+- `orientation="vertical"` (standaard): `flex-direction: column`, items op volledige breedte
+- `orientation="horizontal"`: `flex-direction: row`, items naast elkaar op inhoudsbreedte
+- Horizontale current-staat gebruikt `border-block-end` (i.p.v. `border-inline-start`) — context-override via `.dsn-menu--horizontal` in `menu-link.css`
+- De `<nav>`-wrapper is de verantwoordelijkheid van de ouder
+
+**CSS-klassen:**
+
+| Klasse                 | Element | Beschrijving                               |
+| ---------------------- | ------- | ------------------------------------------ |
+| `dsn-menu`             | `<ul>`  | Basiscomponent — altijd aanwezig           |
+| `dsn-menu--horizontal` | `<ul>`  | Horizontale oriëntatie: items naast elkaar |
+
+**Design tokens:**
+
+| Token                       | Waarde                        | Beschrijving                                  |
+| --------------------------- | ----------------------------- | --------------------------------------------- |
+| `--dsn-menu-gap-vertical`   | `{dsn.space.block.xs}` (2px)  | Ruimte tussen items in verticale oriëntatie   |
+| `--dsn-menu-gap-horizontal` | `{dsn.space.inline.sm}` (4px) | Ruimte tussen items in horizontale oriëntatie |
+
+**Usage:**
+
+```html
+<!-- HTML/CSS — verticaal (standaard) -->
+<nav aria-label="Hoofdnavigatie">
+  <ul class="dsn-menu">
+    <li class="dsn-menu-link">...</li>
+    <li class="dsn-menu-button">...</li>
+  </ul>
+</nav>
+
+<!-- HTML/CSS — horizontaal -->
+<nav aria-label="Paginanavigatie">
+  <ul class="dsn-menu dsn-menu--horizontal">
+    <li class="dsn-menu-link">...</li>
+    <li class="dsn-menu-link">...</li>
+  </ul>
+</nav>
+```
+
+```tsx
+// React — verticaal (standaard)
+<nav aria-label="Hoofdnavigatie">
+  <Menu>
+    <MenuLink href="/home">Home</MenuLink>
+    <MenuButton onClick={handleLogout}>Uitloggen</MenuButton>
+  </Menu>
+</nav>
+
+// React — horizontaal
+<nav aria-label="Paginanavigatie">
+  <Menu orientation="horizontal">
+    <MenuLink href="/home" current>Home</MenuLink>
+    <MenuLink href="/over">Over ons</MenuLink>
+  </Menu>
+</nav>
+```
+
+**Tests:** React (9 tests)
+
+---
 
 ### BreadcrumbNavigation
 
