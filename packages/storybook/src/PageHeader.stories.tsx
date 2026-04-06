@@ -8,7 +8,6 @@ import {
   PageHeader,
   SearchInput,
 } from '@dsn/components-react';
-import DocsPage from './PageHeader.docs.mdx';
 
 // =============================================================================
 // META
@@ -190,7 +189,6 @@ const meta: Meta<typeof PageHeader> = {
   title: 'Components/PageHeader',
   component: PageHeader,
   parameters: {
-    docs: { page: DocsPage },
     layout: 'fullscreen',
     dsn: {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -231,9 +229,53 @@ const meta: Meta<typeof PageHeader> = {
     },
   },
   argTypes: {
+    // ── Gedrag ──────────────────────────────────────────────────────────────
     sticky: {
       control: 'select',
       options: ['none', 'sticky', 'auto-hide'],
+      table: { category: 'Gedrag' },
+    },
+    // ── Slots — ReactNode, niet bewerkbaar via controls ──────────────────────
+    logoSlot: {
+      control: false,
+      table: { category: 'Slots' },
+    },
+    searchSlot: {
+      control: false,
+      table: { category: 'Slots' },
+    },
+    primaryNavigation: {
+      control: false,
+      table: { category: 'Slots' },
+    },
+    primaryNavigationLarge: {
+      control: false,
+      table: { category: 'Slots' },
+    },
+    secondaryNavigation: {
+      control: false,
+      table: { category: 'Slots' },
+    },
+    secondaryNavigationLarge: {
+      control: false,
+      table: { category: 'Slots' },
+    },
+    // ── Events ───────────────────────────────────────────────────────────────
+    onMenuOpen: {
+      control: false,
+      table: { category: 'Events' },
+    },
+    onMenuClose: {
+      control: false,
+      table: { category: 'Events' },
+    },
+    onSearchOpen: {
+      control: false,
+      table: { category: 'Events' },
+    },
+    onSearchClose: {
+      control: false,
+      table: { category: 'Events' },
     },
   },
   args: {

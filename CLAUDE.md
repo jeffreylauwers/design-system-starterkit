@@ -94,7 +94,26 @@ Kernregels:
 - Geen geneste element-namen: `dsn-alert__content__text` ❌
 - HTML-toestanden via pseudo-klassen: `.dsn-button:disabled` ✅
 
-### 4. TypeScript moet volledig schoon zijn
+### 4. Token-hiërarchie — altijd op de juiste laag aanpassen
+
+Tokens zijn gelaagd: `base.json` (gedeelde primitieven) → component-token JSON → CSS custom property → component CSS. Pas altijd aan op de **hoogste laag die de waarde definieert**, zodat de delegatieketen intact blijft.
+
+```json
+// ❌ Omzeilen van de delegatieketen in text-input.json
+"padding-block-start": { "value": "{dsn.space.block.md}" }
+
+// ✅ Aanpassen op de juiste laag — in base.json onder form-control
+"padding-block-start": { "value": "{dsn.space.block.md}" }
+// text-input.json blijft delegeren naar {dsn.form-control.padding-block-start}
+```
+
+**Werkwijze bij een token-wijziging:**
+
+1. Zoek via `Grep` welk token de waarde _uiteindelijk_ definieert (vaak in `base.json` of een theme-bestand)
+2. Pas dáár de waarde aan
+3. Controleer of de delegatieketen in component-JSONs ongewijzigd blijft
+
+### 5. TypeScript moet volledig schoon zijn
 
 `pnpm --filter storybook exec tsc --noEmit` geeft **0 fouten en 0 warnings**. Nieuwe code mag geen nieuwe fouten of warnings introduceren.
 

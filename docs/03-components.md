@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** April 5, 2026
+**Last Updated:** April 6, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -1587,7 +1587,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 ## Navigation Components
 
-**Status:** Complete (HTML/CSS, React) — 4 components total
+**Status:** Complete (HTML/CSS, React) — 5 components total
 
 ### Menu
 
@@ -1896,6 +1896,223 @@ const [isOpen, setIsOpen] = React.useState(false);
 ```
 
 **Tests:** React (13 tests)
+
+---
+
+### PageHeader
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/PageHeader/`
+
+**Tokens:** `tokens/components/page-header.json`
+
+**Props:** `logoSlot`, `sticky` (`'none'` | `'sticky'` | `'auto-hide'`), `primaryNavigation`, `primaryNavigationLarge`, `secondaryNavigation`, `secondaryNavigationLarge`, `searchSlot`, `onMenuOpen`, `onMenuClose`, `onSearchOpen`, `onSearchClose`, `className`
+
+**Features:**
+
+- Mobile-first: hamburgerknop (inline-start) opent een `Drawer`, gecentreerd logo (CSS-grid `1fr auto 1fr`), zoekknop (inline-end) ontvouwt zoekpaneel direct onder de header
+- Boven `64em` (~1024px): tweebandig large viewport layout via `display: none` switch
+  - **Masthead** — neutrale achtergrond met logo (inline-start), servicemenu en inline zoekveld (inline-end)
+  - **Navigatiebalk** — accent-1 achtergrond met primaire navigatie; MenuLink-items krijgen `min-block-size: 4rem` en `padding-inline: var(--dsn-space-inline-xl)` via token-overschrijving op de container
+- `primaryNavigationLarge` / `secondaryNavigationLarge` — aparte slots voor large viewport; valt terug op de mobile variant wanneer weggelaten
+- `sticky='sticky'`: `position: sticky; inset-block-start: 0`
+- `sticky='auto-hide'`: sticky + verbergt bij scroll-down via JS `scroll`-eventlistener (`data-hidden` attribuut), CSS-transitie animeert de beweging
+- Focus management: openen zoekpaneel → focus naar `<input>`; sluiten → focus terug naar zoekknop
+- Unieke IDs via `useId()` voor `aria-controls` (zoekpaneel) en `aria-labelledby` (nav-elementen)
+- De `Drawer` is altijd in de DOM (niet `hidden`) zodat focus management correct werkt
+
+**CSS-klassen:**
+
+| Klasse                            | Element    | Beschrijving                                          |
+| --------------------------------- | ---------- | ----------------------------------------------------- |
+| `dsn-page-header`                 | `<header>` | Basiscomponent                                        |
+| `dsn-page-header--sticky`         | `<header>` | Sticky gedrag: `position: sticky`                     |
+| `dsn-page-header--auto-hide`      | `<header>` | Auto-hide sticky: CSS-transitie op `data-hidden`      |
+| `dsn-page-header__small-layout`   | `<div>`    | Zichtbaar op small viewport (`< 64em`)                |
+| `dsn-page-header__large-layout`   | `<div>`    | Zichtbaar op large viewport (`≥ 64em`)                |
+| `dsn-page-header__inner`          | `<div>`    | CSS-grid (`1fr auto 1fr`) voor gecentreerd logo       |
+| `dsn-page-header__start`          | `<div>`    | Inline-start slot (hamburgerknop)                     |
+| `dsn-page-header__logo`           | `<div>`    | Logo-slot; `max-block-size` op directe child          |
+| `dsn-page-header__end`            | `<div>`    | Inline-end slot (zoekknop)                            |
+| `dsn-page-header__search-panel`   | `<div>`    | Zoekpaneel (small viewport); verborgen via `[hidden]` |
+| `dsn-page-header__search-inner`   | `<div>`    | Flex-container: zoekveld + zoekknop                   |
+| `dsn-page-header__masthead`       | `<div>`    | Bovenste band large viewport (neutrale achtergrond)   |
+| `dsn-page-header__masthead-inner` | `<div>`    | Flex-container: logo ↔ secondary-nav                  |
+| `dsn-page-header__secondary-nav`  | `<div>`    | Servicemenu + zoekveld naast elkaar (inline-end)      |
+| `dsn-page-header__searchbox`      | `<div>`    | Inline zoekveld + zoekknop in masthead                |
+| `dsn-page-header__navbar`         | `<div>`    | Onderste band large viewport (accent-1 achtergrond)   |
+
+**Design tokens:**
+
+| Token                                             | Waarde                               | Beschrijving                                |
+| ------------------------------------------------- | ------------------------------------ | ------------------------------------------- |
+| `--dsn-page-header-background-color`              | `{dsn.color.neutral.bg-document}`    | Achtergrondkleur header                     |
+| `--dsn-page-header-border-block-end-width`        | `{dsn.border.width.thick}`           | Breedte onderkantrand (4px, small viewport) |
+| `--dsn-page-header-border-block-end-color`        | `{dsn.color.accent-1.color-default}` | Kleur onderkantrand (merkkleur)             |
+| `--dsn-page-header-padding-block`                 | `{dsn.space.block.md}`               | Verticale padding mobile binnenbalk         |
+| `--dsn-page-header-padding-inline`                | `{dsn.space.inline.xl}`              | Horizontale padding mobile binnenbalk       |
+| `--dsn-page-header-z-index`                       | `300`                                | Z-index sticky — onder backdrop (400)       |
+| `--dsn-page-header-logo-max-block-size`           | `2rem`                               | Maximale hoogte logo (32px)                 |
+| `--dsn-page-header-search-panel-background-color` | `{dsn.color.accent-1.bg-default}`    | Achtergrond zoekpaneel (small viewport)     |
+| `--dsn-page-header-search-panel-padding-block`    | `{dsn.space.block.md}`               | Verticale padding zoekpaneel                |
+| `--dsn-page-header-search-panel-padding-inline`   | `{dsn.space.inline.xl}`              | Horizontale padding zoekpaneel              |
+| `--dsn-page-header-masthead-background-color`     | `{dsn.color.neutral.bg-document}`    | Masthead achtergrond (large viewport)       |
+| `--dsn-page-header-masthead-padding-block`        | `{dsn.space.block.xl}`               | Verticale padding masthead                  |
+| `--dsn-page-header-masthead-padding-inline`       | `{dsn.space.inline.xl}`              | Horizontale padding masthead                |
+| `--dsn-page-header-navbar-background-color`       | `{dsn.color.accent-1.bg-default}`    | Navigatiebalk achtergrond                   |
+| `--dsn-page-header-navbar-padding-inline`         | `{dsn.space.inline.xl}`              | Horizontale padding navigatiebalk           |
+| `--dsn-page-header-secondary-nav-gap`             | `{dsn.space.column.3xl}`             | Gap servicemenu ↔ zoekveld in masthead      |
+
+**Usage:**
+
+```html
+<!-- HTML/CSS — small viewport -->
+<header class="dsn-page-header">
+  <div class="dsn-page-header__small-layout">
+    <div class="dsn-page-header__inner">
+      <div class="dsn-page-header__start">
+        <button
+          type="button"
+          class="dsn-button dsn-button--subtle"
+          aria-expanded="false"
+          aria-controls="nav-drawer"
+        >
+          <svg class="dsn-icon" aria-hidden="true"><!-- menu --></svg>
+          <span class="dsn-button__label">Menu</span>
+        </button>
+      </div>
+      <div class="dsn-page-header__logo">
+        <a href="/">
+          <svg class="dsn-logo" aria-hidden="true"><!-- logo --></svg>
+          <span class="dsn-visually-hidden"
+            >Naam organisatie — terug naar homepage</span
+          >
+        </a>
+      </div>
+      <div class="dsn-page-header__end">
+        <button
+          type="button"
+          class="dsn-button dsn-button--subtle"
+          aria-expanded="false"
+          aria-controls="search-panel"
+        >
+          <svg class="dsn-icon" aria-hidden="true"><!-- search --></svg>
+          <span class="dsn-button__label">Zoeken</span>
+        </button>
+      </div>
+    </div>
+    <div class="dsn-page-header__search-panel" id="search-panel" hidden>
+      <div class="dsn-page-header__search-inner">
+        <div class="dsn-search-input-wrapper">
+          <input
+            type="search"
+            class="dsn-text-input"
+            placeholder="Zoeken…"
+            aria-label="Zoekopdracht"
+          />
+        </div>
+        <button type="button" class="dsn-button dsn-button--strong">
+          <span class="dsn-button__label">Zoeken</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Large viewport (zichtbaar boven 64em) -->
+  <div class="dsn-page-header__large-layout">
+    <div class="dsn-page-header__masthead">
+      <div class="dsn-page-header__masthead-inner">
+        <div class="dsn-page-header__logo">
+          <a href="/"
+            ><svg class="dsn-logo" aria-hidden="true"><!-- logo --></svg></a
+          >
+        </div>
+        <div class="dsn-page-header__secondary-nav">
+          <nav aria-labelledby="service-nav-id">
+            <h2 id="service-nav-id" class="dsn-visually-hidden">Servicemenu</h2>
+            <ul class="dsn-menu dsn-menu--horizontal">
+              <!-- MenuLink items -->
+            </ul>
+          </nav>
+          <div class="dsn-page-header__searchbox">
+            <div class="dsn-search-input-wrapper">
+              <input
+                type="search"
+                class="dsn-text-input"
+                placeholder="Zoeken…"
+                aria-label="Zoekopdracht"
+              />
+            </div>
+            <button type="button" class="dsn-button dsn-button--strong">
+              <span class="dsn-button__label">Zoeken</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dsn-page-header__navbar">
+      <nav aria-labelledby="primary-nav-id">
+        <h2 id="primary-nav-id" class="dsn-visually-hidden">Hoofdmenu</h2>
+        <ul class="dsn-menu dsn-menu--horizontal">
+          <!-- MenuLink items -->
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+```
+
+```tsx
+// React
+<PageHeader
+  logoSlot={
+    <a href="/">
+      <Logo aria-hidden={true} />
+      <span className="dsn-visually-hidden">
+        Naam organisatie — terug naar homepage
+      </span>
+    </a>
+  }
+  primaryNavigation={
+    <Menu orientation="vertical">
+      <MenuLink href="/home" level={1}>
+        Home
+      </MenuLink>
+    </Menu>
+  }
+  primaryNavigationLarge={
+    <Menu orientation="horizontal">
+      <MenuLink href="/home" level={1} current>
+        Home
+      </MenuLink>
+    </Menu>
+  }
+  secondaryNavigation={
+    <Menu orientation="vertical">
+      <MenuLink href="/contact" level={1}>
+        Contact
+      </MenuLink>
+    </Menu>
+  }
+  secondaryNavigationLarge={
+    <Menu orientation="horizontal">
+      <MenuLink href="/contact" level={1}>
+        Contact
+      </MenuLink>
+    </Menu>
+  }
+  searchSlot={
+    <>
+      <SearchInput placeholder="Zoeken…" aria-label="Zoekopdracht" />
+      <Button variant="strong">Zoeken</Button>
+    </>
+  }
+  sticky="auto-hide"
+/>
+```
+
+**Tests:** React (38 tests)
 
 ---
 
@@ -2294,15 +2511,15 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 48
+**Total Components:** 49
 
 **Implementations:**
 
-- **HTML/CSS:** 48 components
-- **React:** 48 components (1248 tests total, 62 test suites)
+- **HTML/CSS:** 49 components
+- **React:** 49 components (1282 tests total, 63 test suites)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
-**Test Coverage:** 1248 tests across 62 test suites
+**Test Coverage:** 1282 tests across 63 test suites
 
 ---
 
