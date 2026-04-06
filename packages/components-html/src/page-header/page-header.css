@@ -97,6 +97,19 @@
   gap: var(--dsn-space-inline-md);
 }
 
+/* SearchInput wrapper vult beschikbare ruimte — button behoudt zijn natuurlijke
+   breedte en padding. Zelfde patroon als dsn-page-header__search-inner. */
+.dsn-page-header__searchbox .dsn-search-input-wrapper {
+  flex: 1;
+  min-inline-size: 0;
+  max-inline-size: none;
+}
+
+.dsn-page-header__searchbox .dsn-text-input {
+  max-inline-size: none;
+  inline-size: 100%;
+}
+
 /* =============================================================================
    Navbar (large viewport) — accent-1 achtergrond, primaire navigatie
    ============================================================================= */
@@ -104,6 +117,12 @@
 .dsn-page-header__navbar {
   background-color: var(--dsn-page-header-navbar-background-color);
   padding-inline: var(--dsn-page-header-navbar-padding-inline);
+
+  /* MenuLink-items in de navbar krijgen een grotere min-block-size en ruimere
+     padding-inline. Door de tokens te overschrijven op de container werkt de
+     calc()-compensatie voor de current-indicator automatisch mee. */
+  --dsn-menu-item-min-block-size: 4rem;
+  --dsn-menu-item-padding-inline: var(--dsn-space-inline-xl);
 }
 
 /* =============================================================================

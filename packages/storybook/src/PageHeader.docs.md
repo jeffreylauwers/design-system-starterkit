@@ -197,7 +197,7 @@ Het zoekpaneel verschijnt direct onder de header-binnenbalk. Het paneel bevat ee
 | `--dsn-page-header-padding-inline`                | `{dsn.space.inline.xl}`              | Horizontale padding binnenbalk             |
 | `--dsn-page-header-z-index`                       | `300`                                | Z-index voor sticky — onder backdrop (400) |
 | `--dsn-page-header-logo-max-block-size`           | `2rem`                               | Maximale hoogte logo (32px)                |
-| `--dsn-page-header-search-panel-background-color` | `{dsn.color.neutral.bg-subtle}`      | Achtergrond zoekpaneel (small)             |
+| `--dsn-page-header-search-panel-background-color` | `{dsn.color.accent-1.bg-default}`    | Achtergrond zoekpaneel (small)             |
 | `--dsn-page-header-search-panel-padding-block`    | `{dsn.space.block.md}`               | Verticale padding zoekpaneel (small)       |
 | `--dsn-page-header-search-panel-padding-inline`   | `{dsn.space.inline.xl}`              | Horizontale padding zoekpaneel (small)     |
 | `--dsn-page-header-masthead-background-color`     | `{dsn.color.neutral.bg-document}`    | Masthead achtergrond (large)               |

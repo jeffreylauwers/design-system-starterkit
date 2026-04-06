@@ -22,9 +22,9 @@
         "comment": "Verticale padding van de header-binnenbalk"
       },
       "padding-inline": {
-        "value": "{dsn.space.row.md}",
+        "value": "{dsn.space.inline.xl}",
         "type": "spacing",
-        "comment": "Horizontale padding van de header-binnenbalk"
+        "comment": "Horizontale padding van de header-binnenbalk — zelfde schaal als masthead en navbar"
       },
       "z-index": {
         "value": "300",
