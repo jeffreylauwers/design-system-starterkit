@@ -6,6 +6,23 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.22.0 (April 9, 2026)
+
+### SkipLink component (issue #148, PR #149)
+
+#### Added
+
+- **SkipLink** component — toegankelijkheidskoppeling als eerste focusbaar element op de pagina (PR #149)
+- Standaard verborgen via `clip-path: inset(50%)`; zichtbaar bij `:focus-visible` in de hoek van het viewport
+- Voldoet aan WCAG 2.1 succescriterium 2.4.1 (Bypass Blocks, Level A)
+- `href` prop (verplicht), `children` prop (default: `"Ga direct naar de hoofdinhoud"`), `React.forwardRef<HTMLAnchorElement>`
+- 6 design tokens: `z-index: 600`, padding-block/inline, border-radius, offset-block/inline-start
+- Z-index 500 toegevoegd aan `modal-dialog.json` en `drawer.json`
+- `backdrop.json` comment bijgewerkt met volledige z-index schaal: backdrop (400) → modal-dialog/drawer (500) → skip-link (600)
+- 10 React tests
+
+---
+
 ## Version 5.21.1 (April 6, 2026)
 
 ### Fix: PageHeader large viewport verfijningen (PR #146)
