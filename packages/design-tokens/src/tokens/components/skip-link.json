@@ -1,0 +1,36 @@
+{
+  "dsn": {
+    "skip-link": {
+      "z-index": {
+        "value": "600",
+        "type": "number",
+        "comment": "Hoogste z-index — boven modals (500) en backdrop (400), zodat de skip-link altijd zichtbaar is bij focus"
+      },
+      "padding-block": {
+        "value": "{dsn.space.block.md}",
+        "type": "spacing",
+        "comment": "Verticale padding van de skip-link"
+      },
+      "padding-inline": {
+        "value": "{dsn.space.inline.lg}",
+        "type": "spacing",
+        "comment": "Horizontale padding van de skip-link"
+      },
+      "border-radius": {
+        "value": "{dsn.border.radius.md}",
+        "type": "dimension",
+        "comment": "Afgeronde hoeken van de skip-link"
+      },
+      "offset-block-start": {
+        "value": "{dsn.space.block.md}",
+        "type": "spacing",
+        "comment": "Afstand van de bovenkant van het viewport bij focus"
+      },
+      "offset-inline-start": {
+        "value": "{dsn.space.inline.md}",
+        "type": "spacing",
+        "comment": "Afstand van de linkerkant (of rechterkant in RTL) van het viewport bij focus"
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+/**
+ * SkipLink Component Styles for React
+ * Re-exports the base SkipLink styles from components-html
+ */
+
+@import '../../../components-html/src/skip-link/skip-link.css';

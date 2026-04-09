@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** April 6, 2026
+**Last Updated:** April 9, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -14,8 +14,9 @@ Complete component specifications and guidelines for the Design System Starter K
 4. [Display & Feedback Components](#display--feedback-components)
 5. [Navigation Components](#navigation-components)
 6. [Branding Components](#branding-components)
-7. [Form Components](#form-components)
-8. [Web Components Registration](#web-components-registration)
+7. [Accessibility Components](#accessibility-components)
+8. [Form Components](#form-components)
+9. [Web Components Registration](#web-components-registration)
 
 ---
 
@@ -2200,6 +2201,66 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 ---
 
+## Accessibility Components
+
+**Status:** Complete (HTML/CSS, React) — 1 component total
+
+### SkipLink
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/skip-link/` / `SkipLink/`
+
+**Tokens:** `tokens/components/skip-link.json`
+
+**Props:** `href` (required), `children` (default: `"Ga direct naar de hoofdinhoud"`), `className` + alle `React.AnchorHTMLAttributes<HTMLAnchorElement>` attributen
+
+**Features:**
+
+- Eerste focusbaar element op de pagina — plaatsen vóór `<header>` en `<nav>` in de DOM
+- Standaard verborgen via `clip-path: inset(50%)` — blijft in de accessibility tree (screenreaders kunnen het vinden)
+- Zichtbaar bij `:focus-visible` — gepositioneerd in de hoek van het viewport met focus-stijlen
+- Z-index 600 — boven modals (500), drawer (500) en backdrop (400)
+- Voldoet aan WCAG 2.1 succescriterium 2.4.1 (Bypass Blocks, Level A)
+- `React.forwardRef<HTMLAnchorElement>`
+
+**CSS-klassen:**
+
+| Klasse          | Element | Beschrijving                                       |
+| --------------- | ------- | -------------------------------------------------- |
+| `dsn-skip-link` | `<a>`   | Verbergt de link; onthult hem bij `:focus-visible` |
+
+**Design Tokens:**
+
+| Token                                 | Waarde                   | Beschrijving                                         |
+| ------------------------------------- | ------------------------ | ---------------------------------------------------- |
+| `--dsn-skip-link-z-index`             | `600`                    | Boven modals en backdrop                             |
+| `--dsn-skip-link-padding-block`       | `{dsn.space.block.md}`   | Verticale padding bij focus                          |
+| `--dsn-skip-link-padding-inline`      | `{dsn.space.inline.lg}`  | Horizontale padding bij focus                        |
+| `--dsn-skip-link-border-radius`       | `{dsn.border.radius.md}` | Afgeronde hoeken bij focus                           |
+| `--dsn-skip-link-offset-block-start`  | `{dsn.space.block.md}`   | Afstand van boven het viewport bij focus             |
+| `--dsn-skip-link-offset-inline-start` | `{dsn.space.inline.md}`  | Afstand van de linkerkant van het viewport bij focus |
+
+**Usage:**
+
+```html
+<!-- HTML/CSS — altijd als eerste element in <body> -->
+<a href="#main-content" class="dsn-skip-link">Ga direct naar de hoofdinhoud</a>
+<header>...</header>
+<main id="main-content" tabindex="-1">...</main>
+```
+
+```tsx
+// React
+<SkipLink href="#main-content">Ga direct naar de hoofdinhoud</SkipLink>
+<header>...</header>
+<main id="main-content" tabIndex={-1}>...</main>
+```
+
+**Tests:** React (10 tests)
+
+---
+
 ## Form Components
 
 **Status:** Complete (HTML/CSS, React) — 25 components total
@@ -2511,15 +2572,15 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 49
+**Total Components:** 50
 
 **Implementations:**
 
-- **HTML/CSS:** 49 components
-- **React:** 49 components (1282 tests total, 63 test suites)
+- **HTML/CSS:** 50 components
+- **React:** 50 components (1292 tests total, 64 test suites)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
-**Test Coverage:** 1282 tests across 63 test suites
+**Test Coverage:** 1292 tests across 64 test suites
 
 ---
 

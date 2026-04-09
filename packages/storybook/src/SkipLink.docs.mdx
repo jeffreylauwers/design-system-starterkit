@@ -1,0 +1,25 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as SkipLinkStories from './SkipLink.stories';
+import docs from './SkipLink.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={SkipLinkStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={SkipLinkStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={SkipLinkStories.Default}
+  html={`<a href="#main-content" class="dsn-skip-link">Ga direct naar de hoofdinhoud</a>`}
+/>
+
+<Controls of={SkipLinkStories.Default} />
+
+<Markdown>{rest}</Markdown>
