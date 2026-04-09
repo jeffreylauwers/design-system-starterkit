@@ -14,7 +14,7 @@
       "z-index": {
         "value": "400",
         "type": "number",
-        "comment": "Moet lager zijn dan Modal/Drawer z-index — afstemmen zodra die componenten gedefinieerd worden"
+        "comment": "Z-index schaal: backdrop (400) → modal-dialog/drawer (500) → skip-link (600)"
       }
     }
   }

@@ -60,6 +60,9 @@ export * from './Details';
 // Branding Components
 export * from './Logo';
 
+// Accessibility Components
+export * from './SkipLink';
+
 // Navigation Components
 export * from './BreadcrumbNavigation';
 export * from './Menu';

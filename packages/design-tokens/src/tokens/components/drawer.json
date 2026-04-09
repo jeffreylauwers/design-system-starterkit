@@ -1,6 +1,11 @@
 {
   "dsn": {
     "drawer": {
+      "z-index": {
+        "value": "500",
+        "type": "number",
+        "comment": "Positionering boven de backdrop (400) en onder de skip-link (600)"
+      },
       "background": {
         "value": "{dsn.color.neutral.bg-elevated}",
         "type": "color",

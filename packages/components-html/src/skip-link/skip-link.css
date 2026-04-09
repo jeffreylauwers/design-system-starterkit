@@ -1,0 +1,52 @@
+/**
+ * SkipLink Component
+ * Accessibility component — eerste focusbare element op de pagina.
+ * Verborgen totdat de gebruiker er met Tab op focust.
+ */
+
+.dsn-skip-link {
+  /* Verborgen standaard — zelfde patroon als dsn-visually-hidden */
+  position: absolute;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+
+  /* Hoge z-index zodat de link altijd boven andere elementen staat bij focus */
+  z-index: var(--dsn-skip-link-z-index);
+
+  /* Structuur */
+  display: inline-block;
+
+  /* Spacing */
+  padding-block: var(--dsn-skip-link-padding-block);
+  padding-inline: var(--dsn-skip-link-padding-inline);
+
+  /* Afronding */
+  border-radius: var(--dsn-skip-link-border-radius);
+
+  /* Typografie */
+  font: inherit;
+  text-decoration: none;
+}
+
+/* Focus state — link wordt zichtbaar en gepositioneerd */
+.dsn-skip-link:focus-visible {
+  /* Clip verwijderen zodat de link zichtbaar wordt */
+  clip-path: none;
+  overflow: visible;
+  white-space: normal;
+
+  /* Positionering in de hoek van het viewport */
+  inset-block-start: var(--dsn-skip-link-offset-block-start);
+  inset-inline-start: var(--dsn-skip-link-offset-inline-start);
+
+  /* Focus stijl — consistent met dsn-link focus */
+  background-color: var(--dsn-focus-background-color);
+  color: var(--dsn-focus-color);
+  outline: var(--dsn-focus-outline-width) var(--dsn-focus-outline-style)
+    var(--dsn-focus-outline-color);
+  outline-offset: var(--dsn-focus-outline-offset);
+  box-shadow: 0 0 0
+    calc(var(--dsn-focus-outline-offset) + var(--dsn-focus-outline-width))
+    var(--dsn-focus-inverse-outline-color);
+}
