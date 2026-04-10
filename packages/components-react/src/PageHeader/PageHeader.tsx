@@ -182,11 +182,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
     const searchPanelId = React.useId();
     const primaryNavId = React.useId();
     const serviceNavId = React.useId();
-    const primaryNavLargeId = React.useId();
-    const serviceNavLargeId = React.useId();
     const compactSearchPanelId = React.useId();
-    const compactPrimaryNavId = React.useId();
-    const compactServiceNavId = React.useId();
 
     // Auto-hide: detecteer scrollrichting en toggle data-hidden attribuut
     React.useEffect(() => {
@@ -344,13 +340,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
 
                   <div className="dsn-page-header__secondary-nav">
                     {(secondaryNavigationLarge ?? secondaryNavigation) && (
-                      <nav aria-labelledby={serviceNavLargeId}>
-                        <h2
-                          id={serviceNavLargeId}
-                          className="dsn-visually-hidden"
-                        >
-                          Servicemenu
-                        </h2>
+                      <nav aria-label="Servicemenu">
                         {secondaryNavigationLarge ?? secondaryNavigation}
                       </nav>
                     )}
@@ -367,13 +357,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
               <div className="dsn-page-header__navbar">
                 <div className="dsn-page-header__navbar-inner">
                   {(primaryNavigationLarge ?? primaryNavigation) && (
-                    <nav aria-labelledby={primaryNavLargeId}>
-                      <h2
-                        id={primaryNavLargeId}
-                        className="dsn-visually-hidden"
-                      >
-                        Hoofdmenu
-                      </h2>
+                    <nav aria-label="Hoofdmenu">
                       {primaryNavigationLarge ?? primaryNavigation}
                     </nav>
                   )}
@@ -397,13 +381,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
                     Dit garandeert dat de Drawer altijd de verticale variant ontvangt. */}
                 <div className="dsn-page-header__compact-primary-nav">
                   {(primaryNavigationLarge ?? primaryNavigation) && (
-                    <nav aria-labelledby={compactPrimaryNavId}>
-                      <h2
-                        id={compactPrimaryNavId}
-                        className="dsn-visually-hidden"
-                      >
-                        Hoofdmenu
-                      </h2>
+                    <nav aria-label="Hoofdmenu">
                       {primaryNavigationLarge ?? primaryNavigation}
                     </nav>
                   )}
@@ -412,13 +390,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
                 {/* Servicemenu + zoekknop (icon-only) — inline-end (derde gridkolom) */}
                 <div className="dsn-page-header__compact-secondary">
                   {(secondaryNavigationLarge ?? secondaryNavigation) && (
-                    <nav aria-labelledby={compactServiceNavId}>
-                      <h2
-                        id={compactServiceNavId}
-                        className="dsn-visually-hidden"
-                      >
-                        Servicemenu
-                      </h2>
+                    <nav aria-label="Servicemenu">
                       {secondaryNavigationLarge ?? secondaryNavigation}
                     </nav>
                   )}
