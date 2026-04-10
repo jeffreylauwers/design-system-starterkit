@@ -98,10 +98,7 @@ De mobile layout (hamburger + drawer) valt via `display: none` volledig uit de a
           <a href="/"><!-- Logo --></a>
         </div>
         <div class="dsn-page-header__secondary-nav">
-          <nav aria-labelledby="service-menu-id">
-            <h2 id="service-menu-id" class="dsn-visually-hidden">
-              Servicemenu
-            </h2>
+          <nav aria-label="Servicemenu">
             <ul class="dsn-menu dsn-menu--horizontal">
               <li><a class="dsn-menu-link" href="/contact">Contact</a></li>
             </ul>
@@ -114,8 +111,7 @@ De mobile layout (hamburger + drawer) valt via `display: none` volledig uit de a
     </div>
     <div class="dsn-page-header__navbar">
       <div class="dsn-page-header__navbar-inner">
-        <nav aria-labelledby="primary-nav-id">
-          <h2 id="primary-nav-id" class="dsn-visually-hidden">Hoofdmenu</h2>
+        <nav aria-label="Hoofdmenu">
           <ul class="dsn-menu dsn-menu--horizontal">
             <li><a class="dsn-menu-link" href="/home">Home</a></li>
           </ul>
@@ -181,8 +177,7 @@ De `layout="compact"` variant plaatst logo, primaire navigatie en servicemenu in
         <a href="/"><!-- Logo --></a>
       </div>
       <div class="dsn-page-header__compact-primary-nav">
-        <nav aria-labelledby="primary-nav-id">
-          <h2 id="primary-nav-id" class="dsn-visually-hidden">Hoofdmenu</h2>
+        <nav aria-label="Hoofdmenu">
           <!-- horizontale Menu met MenuLink items -->
         </nav>
       </div>
@@ -319,4 +314,4 @@ Het zoekpaneel verschijnt direct onder de header-binnenbalk. Het paneel bevat ee
 - Elke `<nav>` in de Drawer heeft een unieke toegankelijke naam via `aria-labelledby` + visueel verborgen `<h3>`.
 - Drawer-focusbeheer wordt verzorgd door het bestaande `Drawer`-component.
 - Op large viewport: `dsn-page-header__small-layout` en `dsn-page-header__large-layout` worden geswitcht met `display: none` — de inactieve sectie valt automatisch uit de accessibility tree.
-- Op large viewport: beide `<nav>` elementen gebruiken `<h2>` met `aria-labelledby` ("Servicemenu", "Hoofdmenu") — unieke IDs gegenereerd via `useId()`.
+- Op large viewport: beide `<nav>` elementen gebruiken `aria-label` ("Servicemenu", "Hoofdmenu") — geen verborgen headings, zodat de heading-hiërarchie van de pagina niet vervuild wordt vóór de `<h1>`.

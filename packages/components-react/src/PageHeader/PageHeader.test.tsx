@@ -223,7 +223,7 @@ describe('PageHeader', () => {
     expect(container.querySelector('.dsn-page-header__searchbox')).toBeNull();
   });
 
-  it('masthead heeft uniek aria-labelledby voor servicemenu', () => {
+  it('masthead nav heeft aria-label="Servicemenu"', () => {
     const { container } = render(
       <PageHeader
         logoSlot={defaultLogo}
@@ -231,19 +231,15 @@ describe('PageHeader', () => {
       />
     );
     const nav = container.querySelector('.dsn-page-header__masthead nav');
-    const headingId = nav?.getAttribute('aria-labelledby');
-    expect(headingId).toBeTruthy();
-    expect(container.querySelector(`#${CSS.escape(headingId!)}`)).toBeTruthy();
+    expect(nav).toHaveAttribute('aria-label', 'Servicemenu');
   });
 
-  it('navbar heeft uniek aria-labelledby voor hoofdmenu', () => {
+  it('navbar nav heeft aria-label="Hoofdmenu"', () => {
     const { container } = render(
       <PageHeader logoSlot={defaultLogo} primaryNavigation={<span>nav</span>} />
     );
     const nav = container.querySelector('.dsn-page-header__navbar nav');
-    const headingId = nav?.getAttribute('aria-labelledby');
-    expect(headingId).toBeTruthy();
-    expect(container.querySelector(`#${CSS.escape(headingId!)}`)).toBeTruthy();
+    expect(nav).toHaveAttribute('aria-label', 'Hoofdmenu');
   });
 
   // ---------------------------------------------------------------------------
@@ -398,7 +394,7 @@ describe('PageHeader', () => {
     expect(compactLayout?.textContent).toContain('Contact');
   });
 
-  it('compact layout heeft aria-labelledby op primaire navigatie', () => {
+  it('compact layout primaire nav heeft aria-label="Hoofdmenu"', () => {
     const { container } = render(
       <PageHeader
         logoSlot={defaultLogo}
@@ -409,12 +405,10 @@ describe('PageHeader', () => {
     const nav = container.querySelector(
       '.dsn-page-header__compact-primary-nav nav'
     );
-    const headingId = nav?.getAttribute('aria-labelledby');
-    expect(headingId).toBeTruthy();
-    expect(container.querySelector(`#${CSS.escape(headingId!)}`)).toBeTruthy();
+    expect(nav).toHaveAttribute('aria-label', 'Hoofdmenu');
   });
 
-  it('compact layout heeft aria-labelledby op servicemenu', () => {
+  it('compact layout servicemenu nav heeft aria-label="Servicemenu"', () => {
     const { container } = render(
       <PageHeader
         logoSlot={defaultLogo}
@@ -425,9 +419,7 @@ describe('PageHeader', () => {
     const nav = container.querySelector(
       '.dsn-page-header__compact-secondary nav'
     );
-    const headingId = nav?.getAttribute('aria-labelledby');
-    expect(headingId).toBeTruthy();
-    expect(container.querySelector(`#${CSS.escape(headingId!)}`)).toBeTruthy();
+    expect(nav).toHaveAttribute('aria-label', 'Servicemenu');
   });
 
   it('compact layout heeft een zoekpaneel', () => {
