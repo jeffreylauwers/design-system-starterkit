@@ -9,6 +9,7 @@ import './PageHeader.css';
 
 export type PageHeaderSticky = 'none' | 'sticky' | 'auto-hide';
 export type PageHeaderLayout = 'default' | 'compact';
+export type PageHeaderColorScheme = 'default' | 'inverse';
 
 export interface PageHeaderProps extends Omit<
   React.HTMLAttributes<HTMLElement>,
@@ -40,6 +41,16 @@ export interface PageHeaderProps extends Omit<
    * @default 'default'
    */
   layout?: PageHeaderLayout;
+
+  /**
+   * Kleurschema van de header.
+   * - `default`: neutrale achtergrond met accent-1 navbar
+   * - `inverse`: sterke accent-1-inverse achtergrond op navbar en compact balk
+   *   voor prominente branding. Het masthead blijft altijd neutraal.
+   *   Logo-kleuren passen zich automatisch aan via CSS context overrides.
+   * @default 'default'
+   */
+  colorScheme?: PageHeaderColorScheme;
 
   /**
    * Initiële open-staat van het zoekpaneel (small viewport).
@@ -141,6 +152,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
       logoSlot,
       sticky = 'none',
       layout = 'default',
+      colorScheme = 'default',
       initialSearchOpen = false,
       primaryNavigation,
       primaryNavigationLarge,
@@ -254,6 +266,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
       sticky === 'sticky' && 'dsn-page-header--sticky',
       sticky === 'auto-hide' && 'dsn-page-header--auto-hide',
       layout === 'compact' && 'dsn-page-header--compact',
+      colorScheme === 'inverse' && 'dsn-page-header--inverse',
       className
     );
 

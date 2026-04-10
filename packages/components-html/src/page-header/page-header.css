@@ -307,3 +307,111 @@
   --dsn-text-input-padding-block-start: var(--dsn-space-block-md);
   --dsn-text-input-padding-block-end: var(--dsn-space-block-md);
 }
+
+/* =============================================================================
+   Inverse kleurvariant — accent-1-inverse achtergrond voor prominente branding
+   Navbar + compact bar: accent-1-inverse.bg-default
+   Zoekpaneel: accent-1-inverse.bg-document (iets donkerder voor visuele scheiding)
+   Masthead: ongewijzigd (neutral.bg-document)
+   Logo-kleuren passen zich automatisch aan via CSS custom property overrides.
+   ============================================================================= */
+
+.dsn-page-header--inverse {
+  /* Small viewport: header-balk en border krijgen de inverse achtergrondkleur */
+  --dsn-page-header-background-color: var(
+    --dsn-color-accent-1-inverse-bg-default
+  );
+  --dsn-page-header-border-block-end-color: var(
+    --dsn-color-accent-1-inverse-bg-default
+  );
+  /* Navbar (large default layout) */
+  --dsn-page-header-navbar-background-color: var(
+    --dsn-color-accent-1-inverse-bg-default
+  );
+  /* Zoekpaneel: bg-document is donkerder dan bg-default — visuele scheiding */
+  --dsn-page-header-search-panel-background-color: var(
+    --dsn-color-accent-1-inverse-bg-document
+  );
+  /* Compact layout balk */
+  --dsn-page-header-compact-background-color: var(
+    --dsn-color-accent-1-inverse-bg-default
+  );
+  /* Logo: primaire kleur en label omdraaien voor donkere achtergrond */
+  --dsn-logo-color-primary: var(--dsn-color-accent-1-inverse-color-default);
+  --dsn-logo-color-label: var(--dsn-color-accent-1-inverse-bg-default);
+}
+
+/* Masthead blijft op neutrale achtergrond — logo kleuren resetten naar standaard */
+.dsn-page-header--inverse .dsn-page-header__masthead {
+  --dsn-logo-color-primary: var(--dsn-color-accent-1-inverse-bg-default);
+  --dsn-logo-color-label: var(--dsn-color-neutral-bg-document);
+}
+
+/* Buttons in de header-balk (small viewport: menu + zoekknop) op inverse achtergrond */
+.dsn-page-header--inverse .dsn-page-header__small-layout {
+  --dsn-button-subtle-color: var(--dsn-color-accent-1-inverse-color-default);
+  --dsn-button-subtle-hover-background-color: var(
+    --dsn-color-accent-1-inverse-bg-hover
+  );
+  --dsn-button-subtle-hover-color: var(
+    --dsn-color-accent-1-inverse-color-hover
+  );
+  --dsn-button-subtle-active-background-color: var(
+    --dsn-color-accent-1-inverse-bg-active
+  );
+  --dsn-button-subtle-active-color: var(
+    --dsn-color-accent-1-inverse-color-active
+  );
+}
+
+/* Menu-items + expand-buttons + zoekknop in de inverse navbar en compacte navigatie */
+.dsn-page-header--inverse .dsn-page-header__navbar,
+.dsn-page-header--inverse .dsn-page-header__compact-primary-nav,
+.dsn-page-header--inverse .dsn-page-header__compact-secondary {
+  /* Menu-item kleuren: tekst en interactiestaten */
+  --dsn-menu-item-color: var(--dsn-color-accent-1-inverse-color-default);
+  --dsn-menu-item-hover-color: var(--dsn-color-accent-1-inverse-color-hover);
+  --dsn-menu-item-hover-background-color: var(
+    --dsn-color-accent-1-inverse-bg-hover
+  );
+  --dsn-menu-item-active-color: var(--dsn-color-accent-1-inverse-color-active);
+  --dsn-menu-item-active-background-color: var(
+    --dsn-color-accent-1-inverse-bg-active
+  );
+  /* MenuLink current (actieve pagina) */
+  --dsn-menu-link-current-color: var(
+    --dsn-color-accent-1-inverse-color-default
+  );
+  --dsn-menu-link-current-background-color: var(
+    --dsn-color-accent-1-inverse-bg-active
+  );
+  --dsn-menu-link-current-indicator-color: var(
+    --dsn-color-accent-1-inverse-color-default
+  );
+  --dsn-menu-link-current-hover-color: var(
+    --dsn-color-accent-1-inverse-color-hover
+  );
+  --dsn-menu-link-current-hover-background-color: var(
+    --dsn-color-accent-1-inverse-bg-active
+  );
+  --dsn-menu-link-current-active-color: var(
+    --dsn-color-accent-1-inverse-color-active
+  );
+  --dsn-menu-link-current-active-background-color: var(
+    --dsn-color-accent-1-inverse-bg-active
+  );
+  /* Subtle buttons: uitklapknop in MenuLink + icon-only zoekknop */
+  --dsn-button-subtle-color: var(--dsn-color-accent-1-inverse-color-default);
+  --dsn-button-subtle-hover-background-color: var(
+    --dsn-color-accent-1-inverse-bg-hover
+  );
+  --dsn-button-subtle-hover-color: var(
+    --dsn-color-accent-1-inverse-color-hover
+  );
+  --dsn-button-subtle-active-background-color: var(
+    --dsn-color-accent-1-inverse-bg-active
+  );
+  --dsn-button-subtle-active-color: var(
+    --dsn-color-accent-1-inverse-color-active
+  );
+}
