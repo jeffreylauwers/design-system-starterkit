@@ -8,6 +8,7 @@ import {
   PageHeader,
   SearchInput,
 } from '@dsn/components-react';
+import { rtlDecorator } from './story-helpers';
 
 // =============================================================================
 // META
@@ -133,9 +134,6 @@ function PrimaryNavigation() {
 
 const secondaryNavigation = (
   <Menu orientation="vertical">
-    <MenuLink href="/contact" level={1}>
-      Contact
-    </MenuLink>
     <MenuLink href="/english" level={1}>
       English
     </MenuLink>
@@ -148,9 +146,6 @@ const secondaryNavigation = (
 /** Large viewport: horizontale servicemenu zonder verticale hiërarchie */
 const secondaryNavigationLarge = (
   <Menu orientation="horizontal">
-    <MenuLink href="/contact" level={1}>
-      Contact
-    </MenuLink>
     <MenuLink href="/english" level={1}>
       English
     </MenuLink>
@@ -182,6 +177,82 @@ const searchSlot = (
   <>
     <SearchInput placeholder="Zoeken…" aria-label="Zoekopdracht" />
     <Button variant="strong">Zoeken</Button>
+  </>
+);
+
+// =============================================================================
+// ARABISCHE CONTENT (voor RTL stories)
+// =============================================================================
+
+const logoSlotAR = (
+  <a href="/">
+    <Logo aria-hidden={true} />
+    <span className="dsn-visually-hidden">
+      Starter Kit — العودة إلى الصفحة الرئيسية
+    </span>
+  </a>
+);
+
+const primaryNavigationAR = (
+  <Menu orientation="vertical">
+    <MenuLink href="/home" level={1} current>
+      الرئيسية
+    </MenuLink>
+    <MenuLink href="/about" level={1}>
+      عن الشركة
+    </MenuLink>
+    <MenuLink href="/services" level={1}>
+      الخدمات
+    </MenuLink>
+    <MenuLink href="/news" level={1}>
+      أخبار
+    </MenuLink>
+  </Menu>
+);
+
+const primaryNavigationLargeAR = (
+  <Menu orientation="horizontal">
+    <MenuLink href="/home" level={1} current>
+      الرئيسية
+    </MenuLink>
+    <MenuLink href="/about" level={1}>
+      عن الشركة
+    </MenuLink>
+    <MenuLink href="/services" level={1}>
+      الخدمات
+    </MenuLink>
+    <MenuLink href="/news" level={1}>
+      أخبار
+    </MenuLink>
+  </Menu>
+);
+
+const secondaryNavigationAR = (
+  <Menu orientation="vertical">
+    <MenuLink href="/english" level={1}>
+      English
+    </MenuLink>
+    <MenuLink href="/my-env" level={1}>
+      بيئتي
+    </MenuLink>
+  </Menu>
+);
+
+const secondaryNavigationLargeAR = (
+  <Menu orientation="horizontal">
+    <MenuLink href="/english" level={1}>
+      English
+    </MenuLink>
+    <MenuLink href="/my-env" level={1}>
+      بيئتي
+    </MenuLink>
+  </Menu>
+);
+
+const searchSlotAR = (
+  <>
+    <SearchInput placeholder="بحث…" aria-label="مصطلح البحث" />
+    <Button variant="strong">بحث</Button>
   </>
 );
 
@@ -233,6 +304,15 @@ const meta: Meta<typeof PageHeader> = {
     sticky: {
       control: 'select',
       options: ['none', 'sticky', 'auto-hide'],
+      table: { category: 'Gedrag' },
+    },
+    layout: {
+      control: 'select',
+      options: ['default', 'compact'],
+      table: { category: 'Gedrag' },
+    },
+    initialSearchOpen: {
+      control: 'boolean',
       table: { category: 'Gedrag' },
     },
     // ── Slots — ReactNode, niet bewerkbaar via controls ──────────────────────
@@ -292,6 +372,24 @@ const meta: Meta<typeof PageHeader> = {
 export default meta;
 type Story = StoryObj<typeof PageHeader>;
 
+// Helper: wat paginacontent zodat scroll-gedrag testbaar is
+function PageContent() {
+  return (
+    <main style={{ padding: '2rem', maxWidth: '60rem', margin: '0 auto' }}>
+      {Array.from({ length: 8 }, (_, i) => (
+        <p key={i} style={{ marginBlockEnd: '1rem', lineHeight: '1.6' }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+        </p>
+      ))}
+    </main>
+  );
+}
+
 // =============================================================================
 // DEFAULT
 // =============================================================================
@@ -307,6 +405,12 @@ export const WithStickyHeader: Story = {
   args: {
     sticky: 'sticky',
   },
+  render: (args) => (
+    <>
+      <PageHeader {...args} />
+      <PageContent />
+    </>
+  ),
   parameters: {
     docs: {
       description: {
@@ -322,11 +426,17 @@ export const WithAutoHide: Story = {
   args: {
     sticky: 'auto-hide',
   },
+  render: (args) => (
+    <>
+      <PageHeader {...args} />
+      <PageContent />
+    </>
+  ),
   parameters: {
     docs: {
       description: {
         story:
-          'Sticky header die verbergt bij scroll-down en terugkomt bij scroll-up. JS beheert `data-hidden` attribuut; CSS-transitie verzorgt de animatie.',
+          'Sticky header die verbergt bij scroll-down en terugkomt bij scroll-up. Scroll omlaag om de header te verbergen; scroll omhoog om hem terug te brengen.',
       },
     },
   },
@@ -334,21 +444,14 @@ export const WithAutoHide: Story = {
 
 export const WithSearchOpen: Story = {
   name: 'With search open',
-  render: (args) => {
-    return (
-      <PageHeader
-        {...args}
-        onSearchOpen={() => {
-          /* search panel opens via internal state */
-        }}
-      />
-    );
+  args: {
+    initialSearchOpen: true,
   },
   parameters: {
     docs: {
       description: {
         story:
-          'Klik op de zoekknop om het zoekpaneel te openen. Focus verplaatst automatisch naar het zoekveld.',
+          'Het zoekpaneel is standaard open (`initialSearchOpen={true}`). Focus verplaatst automatisch naar het zoekveld.',
       },
     },
   },
@@ -369,6 +472,91 @@ export const WithMenuOpen: Story = {
 // =============================================================================
 // OVERZICHTSSTORIES
 // =============================================================================
+
+export const CompactLayout: Story = {
+  name: 'Compact layout',
+  args: {
+    layout: 'compact',
+  },
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'Op viewports ≥ 64em toont de compact variant één enkele rij: logo (inline-start), primaire navigatie (optisch gecentreerd via CSS-grid `1fr auto 1fr`), en servicemenu + zoek-iconknop (inline-end). Gebruikt `primaryNavigationLarge` voor de compacte balk en `primaryNavigation` (verticaal) voor de Drawer op small viewport.',
+      },
+    },
+  },
+};
+
+// =============================================================================
+// RTL
+// =============================================================================
+
+export const RTL: Story = {
+  name: 'RTL',
+  decorators: [rtlDecorator],
+  args: {
+    logoSlot: logoSlotAR,
+    primaryNavigation: primaryNavigationAR,
+    primaryNavigationLarge: primaryNavigationLargeAR,
+    secondaryNavigation: secondaryNavigationAR,
+    secondaryNavigationLarge: secondaryNavigationLargeAR,
+    searchSlot: searchSlotAR,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Right-to-left layout (Arabisch) op small viewport. Logo staat inline-end, menuknop inline-start. CSS logische eigenschappen spiegelen automatisch.',
+      },
+    },
+  },
+};
+
+export const RTLLargeViewport: Story = {
+  name: 'RTL large viewport',
+  decorators: [rtlDecorator],
+  args: {
+    logoSlot: logoSlotAR,
+    primaryNavigation: primaryNavigationAR,
+    primaryNavigationLarge: primaryNavigationLargeAR,
+    secondaryNavigation: secondaryNavigationAR,
+    secondaryNavigationLarge: secondaryNavigationLargeAR,
+    searchSlot: searchSlotAR,
+  },
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'RTL op large viewport — masthead (logo rechts, servicemenu links) en navbar gespiegeld.',
+      },
+    },
+  },
+};
+
+export const RTLCompact: Story = {
+  name: 'RTL compact layout',
+  decorators: [rtlDecorator],
+  args: {
+    layout: 'compact',
+    logoSlot: logoSlotAR,
+    primaryNavigation: primaryNavigationAR,
+    primaryNavigationLarge: primaryNavigationLargeAR,
+    secondaryNavigation: secondaryNavigationAR,
+    secondaryNavigationLarge: secondaryNavigationLargeAR,
+  },
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'RTL compact layout — logo inline-end, primaire navigatie gecentreerd, servicemenu + zoekknop inline-start.',
+      },
+    },
+  },
+};
 
 export const LargeViewport: Story = {
   name: 'Large viewport',
