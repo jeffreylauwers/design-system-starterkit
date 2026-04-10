@@ -307,6 +307,165 @@ describe('PageHeader', () => {
   });
 
   // ---------------------------------------------------------------------------
+  // initialSearchOpen
+  // ---------------------------------------------------------------------------
+
+  it('zoekpaneel is open bij initialSearchOpen={true}', () => {
+    const { container } = render(
+      <PageHeader logoSlot={defaultLogo} initialSearchOpen={true} />
+    );
+    const panel = container.querySelector('.dsn-page-header__search-panel');
+    expect(panel).not.toHaveAttribute('hidden');
+  });
+
+  it('zoekknop heeft aria-expanded="true" bij initialSearchOpen={true}', () => {
+    render(<PageHeader logoSlot={defaultLogo} initialSearchOpen={true} />);
+    const searchButton = screen.getByRole('button', { name: /sluiten/i });
+    expect(searchButton).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  // ---------------------------------------------------------------------------
+  // Compact layout
+  // ---------------------------------------------------------------------------
+
+  it('heeft geen dsn-page-header--compact bij layout="default"', () => {
+    const { container } = render(
+      <PageHeader logoSlot={defaultLogo} layout="default" />
+    );
+    expect(container.querySelector('header')).not.toHaveClass(
+      'dsn-page-header--compact'
+    );
+  });
+
+  it('heeft dsn-page-header--compact bij layout="compact"', () => {
+    const { container } = render(
+      <PageHeader logoSlot={defaultLogo} layout="compact" />
+    );
+    expect(container.querySelector('header')).toHaveClass(
+      'dsn-page-header--compact'
+    );
+  });
+
+  it('rendert dsn-page-header__compact-layout bij layout="compact"', () => {
+    const { container } = render(
+      <PageHeader logoSlot={defaultLogo} layout="compact" />
+    );
+    expect(
+      container.querySelector('.dsn-page-header__compact-layout')
+    ).toBeTruthy();
+  });
+
+  it('rendert geen dsn-page-header__compact-layout bij layout="default"', () => {
+    const { container } = render(<PageHeader logoSlot={defaultLogo} />);
+    expect(
+      container.querySelector('.dsn-page-header__compact-layout')
+    ).toBeNull();
+  });
+
+  it('compact layout rendert primaire navigatie', () => {
+    const { container } = render(
+      <PageHeader
+        logoSlot={defaultLogo}
+        layout="compact"
+        primaryNavigation={
+          <ul>
+            <li>Home</li>
+          </ul>
+        }
+      />
+    );
+    const compactLayout = container.querySelector(
+      '.dsn-page-header__compact-layout'
+    );
+    expect(compactLayout?.textContent).toContain('Home');
+  });
+
+  it('compact layout rendert servicemenu', () => {
+    const { container } = render(
+      <PageHeader
+        logoSlot={defaultLogo}
+        layout="compact"
+        secondaryNavigation={
+          <ul>
+            <li>Contact</li>
+          </ul>
+        }
+      />
+    );
+    const compactLayout = container.querySelector(
+      '.dsn-page-header__compact-layout'
+    );
+    expect(compactLayout?.textContent).toContain('Contact');
+  });
+
+  it('compact layout heeft aria-labelledby op primaire navigatie', () => {
+    const { container } = render(
+      <PageHeader
+        logoSlot={defaultLogo}
+        layout="compact"
+        primaryNavigation={<span>nav</span>}
+      />
+    );
+    const nav = container.querySelector(
+      '.dsn-page-header__compact-primary-nav nav'
+    );
+    const headingId = nav?.getAttribute('aria-labelledby');
+    expect(headingId).toBeTruthy();
+    expect(container.querySelector(`#${CSS.escape(headingId!)}`)).toBeTruthy();
+  });
+
+  it('compact layout heeft aria-labelledby op servicemenu', () => {
+    const { container } = render(
+      <PageHeader
+        logoSlot={defaultLogo}
+        layout="compact"
+        secondaryNavigation={<span>nav</span>}
+      />
+    );
+    const nav = container.querySelector(
+      '.dsn-page-header__compact-secondary nav'
+    );
+    const headingId = nav?.getAttribute('aria-labelledby');
+    expect(headingId).toBeTruthy();
+    expect(container.querySelector(`#${CSS.escape(headingId!)}`)).toBeTruthy();
+  });
+
+  it('compact layout heeft een zoekpaneel', () => {
+    const { container } = render(
+      <PageHeader logoSlot={defaultLogo} layout="compact" />
+    );
+    const compactLayout = container.querySelector(
+      '.dsn-page-header__compact-layout'
+    );
+    expect(
+      compactLayout?.querySelector('.dsn-page-header__search-panel')
+    ).toBeTruthy();
+  });
+
+  it('compact zoekpaneel is standaard verborgen', () => {
+    const { container } = render(
+      <PageHeader logoSlot={defaultLogo} layout="compact" />
+    );
+    const compactLayout = container.querySelector(
+      '.dsn-page-header__compact-layout'
+    );
+    const panel = compactLayout?.querySelector(
+      '.dsn-page-header__search-panel'
+    );
+    expect(panel).toHaveAttribute('hidden');
+  });
+
+  it('compact layout rendert het logo', () => {
+    const { container } = render(
+      <PageHeader logoSlot={defaultLogo} layout="compact" />
+    );
+    const compactLayout = container.querySelector(
+      '.dsn-page-header__compact-layout'
+    );
+    expect(compactLayout?.querySelector('.dsn-page-header__logo')).toBeTruthy();
+  });
+
+  // ---------------------------------------------------------------------------
   // className en ref
   // ---------------------------------------------------------------------------
 

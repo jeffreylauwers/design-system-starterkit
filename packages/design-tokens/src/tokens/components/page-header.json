@@ -90,6 +90,23 @@
           "type": "spacing",
           "comment": "Horizontale padding van het zoekpaneel"
         }
+      },
+      "compact": {
+        "background-color": {
+          "value": "{dsn.color.neutral.bg-document}",
+          "type": "color",
+          "comment": "Achtergrond van de compacte balk — zelfde neutrale kleur als masthead; de primaire navigatie staat hier direct naast het logo zonder aparte navbar"
+        },
+        "padding-block": {
+          "value": "{dsn.space.block.xl}",
+          "type": "spacing",
+          "comment": "Verticale ademruimte in de compacte balk — zelfde schaal als masthead"
+        },
+        "padding-inline": {
+          "value": "{dsn.space.inline.xl}",
+          "type": "spacing",
+          "comment": "Horizontale padding van de compacte balk — zelfde schaal als masthead en navbar"
+        }
       }
     }
   }
