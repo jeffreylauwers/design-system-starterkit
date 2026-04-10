@@ -6,6 +6,45 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.24.0 (April 10, 2026)
+
+### PageHeader: inverse kleurvariant (issue #151)
+
+#### Added
+
+- **`colorScheme` prop** op `PageHeader` — `'default'` (standaard) | `'inverse'` — activeert de `dsn-page-header--inverse` modifier
+- **Inverse kleurvariant** (`colorScheme="inverse"`): accent-1-inverse achtergronden op navbar en compact balk voor prominente branding
+  - Navbar (large default layout): `accent-1-inverse.bg-default`
+  - Compact balk (large compact layout): `accent-1-inverse.bg-default`
+  - Zoekpaneel: `accent-1-inverse.bg-document` (iets donkerder voor visuele scheiding)
+  - Small viewport header-balk: `accent-1-inverse.bg-default`
+  - Masthead blijft ongewijzigd op `neutral.bg-document`
+- **Logo-kleuren passen zich automatisch aan** via CSS custom property overrides op `.dsn-page-header--inverse`: `--dsn-logo-color-primary` en `--dsn-logo-color-label` omgedraaid voor donkere achtergrond; reset in masthead-context
+- **Menu-items en buttons zichtbaar** op inverse achtergrond via context-gebonden token-overrides: `--dsn-menu-item-color`, `--dsn-menu-link-current-*` en `--dsn-button-subtle-color` → wit (`accent-1-inverse.color-default`) op alle inverse vlakken
+- Orthogonaal modifier — combineerbaar met alle andere props: `layout="compact" colorScheme="inverse"` werkt correct
+- 2 nieuwe Storybook stories: `Inverse color scheme` en `Inverse compact layout`
+
+---
+
+## Version 5.23.0 (April 9, 2026)
+
+### PageHeader: compact layout (issue #147, PR #147)
+
+#### Added
+
+- **`layout` prop** op `PageHeader` — `'default'` (standaard) | `'compact'` — activeert de `dsn-page-header--compact` modifier
+- **Compact layout** (large viewport ≥ 64em): één enkele rij via CSS-grid `1fr auto 1fr`:
+  - Logo (inline-start, eerste kolom)
+  - Primaire navigatie (optisch gecentreerd, middelste kolom)
+  - Servicemenu + icon-only zoekknop (inline-end, derde kolom)
+- `primaryNavigationLarge` / `secondaryNavigationLarge` worden ook in de compacte balk gebruikt (Drawer ontvangt altijd de verticale variant)
+- Zoekpaneel (`dsn-page-header__search-panel`) ook beschikbaar in compact layout, getriggerd via icon-only zoekknop
+- CSS-klassen: `dsn-page-header--compact`, `dsn-page-header__compact-layout`, `dsn-page-header__compact-inner`, `dsn-page-header__compact-primary-nav`, `dsn-page-header__compact-secondary`
+- 3 nieuwe design tokens: `compact.background-color` (`{dsn.color.neutral.bg-document}`), `compact.padding-block` (`{dsn.space.block.xl}`), `compact.padding-inline` (`{dsn.space.inline.xl}`)
+- 3 nieuwe Storybook stories: `Compact layout`, `RTL compact layout` en `AllStates`
+
+---
+
 ## Version 5.22.0 (April 9, 2026)
 
 ### SkipLink component (issue #148, PR #149)

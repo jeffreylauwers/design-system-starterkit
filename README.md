@@ -65,7 +65,7 @@ pnpm --filter @dsn/design-tokens watch
 # Start Storybook in development mode
 pnpm dev
 
-# Run tests (1292 tests across 64 test suites)
+# Run tests (1305 tests across 64 test suites)
 pnpm test
 
 # Run tests in watch mode
