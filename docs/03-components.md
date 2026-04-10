@@ -1908,14 +1908,16 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Tokens:** `tokens/components/page-header.json`
 
-**Props:** `logoSlot`, `sticky` (`'none'` | `'sticky'` | `'auto-hide'`), `primaryNavigation`, `primaryNavigationLarge`, `secondaryNavigation`, `secondaryNavigationLarge`, `searchSlot`, `onMenuOpen`, `onMenuClose`, `onSearchOpen`, `onSearchClose`, `className`
+**Props:** `logoSlot`, `sticky` (`'none'` | `'sticky'` | `'auto-hide'`), `layout` (`'default'` | `'compact'`), `colorScheme` (`'default'` | `'inverse'`), `initialSearchOpen`, `primaryNavigation`, `primaryNavigationLarge`, `secondaryNavigation`, `secondaryNavigationLarge`, `searchSlot`, `onMenuOpen`, `onMenuClose`, `onSearchOpen`, `onSearchClose`, `className`
 
 **Features:**
 
 - Mobile-first: hamburgerknop (inline-start) opent een `Drawer`, gecentreerd logo (CSS-grid `1fr auto 1fr`), zoekknop (inline-end) ontvouwt zoekpaneel direct onder de header
-- Boven `64em` (~1024px): tweebandig large viewport layout via `display: none` switch
+- Boven `64em` (~1024px): tweebandig large viewport layout via `display: none` switch (`layout="default"`, standaard)
   - **Masthead** — neutrale achtergrond met logo (inline-start), servicemenu en inline zoekveld (inline-end)
   - **Navigatiebalk** — accent-1 achtergrond met primaire navigatie; MenuLink-items krijgen `min-block-size: 4rem` en `padding-inline: var(--dsn-space-inline-xl)` via token-overschrijving op de container
+- `layout="compact"` — één rij op large viewport: logo (inline-start) | primaire navigatie (gecentreerd, CSS-grid `1fr auto 1fr`) | servicemenu + icon-only zoekknop (inline-end)
+- `colorScheme="inverse"` — accent-1-inverse achtergrond op navbar, compact balk en zoekpaneel; masthead blijft neutraal; logo en menu-items passen kleuren automatisch aan via CSS custom property overrides
 - `primaryNavigationLarge` / `secondaryNavigationLarge` — aparte slots voor large viewport; valt terug op de mobile variant wanneer weggelaten
 - `sticky='sticky'`: `position: sticky; inset-block-start: 0`
 - `sticky='auto-hide'`: sticky + verbergt bij scroll-down via JS `scroll`-eventlistener (`data-hidden` attribuut), CSS-transitie animeert de beweging
@@ -1925,24 +1927,30 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **CSS-klassen:**
 
-| Klasse                            | Element    | Beschrijving                                          |
-| --------------------------------- | ---------- | ----------------------------------------------------- |
-| `dsn-page-header`                 | `<header>` | Basiscomponent                                        |
-| `dsn-page-header--sticky`         | `<header>` | Sticky gedrag: `position: sticky`                     |
-| `dsn-page-header--auto-hide`      | `<header>` | Auto-hide sticky: CSS-transitie op `data-hidden`      |
-| `dsn-page-header__small-layout`   | `<div>`    | Zichtbaar op small viewport (`< 64em`)                |
-| `dsn-page-header__large-layout`   | `<div>`    | Zichtbaar op large viewport (`≥ 64em`)                |
-| `dsn-page-header__inner`          | `<div>`    | CSS-grid (`1fr auto 1fr`) voor gecentreerd logo       |
-| `dsn-page-header__start`          | `<div>`    | Inline-start slot (hamburgerknop)                     |
-| `dsn-page-header__logo`           | `<div>`    | Logo-slot; `max-block-size` op directe child          |
-| `dsn-page-header__end`            | `<div>`    | Inline-end slot (zoekknop)                            |
-| `dsn-page-header__search-panel`   | `<div>`    | Zoekpaneel (small viewport); verborgen via `[hidden]` |
-| `dsn-page-header__search-inner`   | `<div>`    | Flex-container: zoekveld + zoekknop                   |
-| `dsn-page-header__masthead`       | `<div>`    | Bovenste band large viewport (neutrale achtergrond)   |
-| `dsn-page-header__masthead-inner` | `<div>`    | Flex-container: logo ↔ secondary-nav                  |
-| `dsn-page-header__secondary-nav`  | `<div>`    | Servicemenu + zoekveld naast elkaar (inline-end)      |
-| `dsn-page-header__searchbox`      | `<div>`    | Inline zoekveld + zoekknop in masthead                |
-| `dsn-page-header__navbar`         | `<div>`    | Onderste band large viewport (accent-1 achtergrond)   |
+| Klasse                                 | Element    | Beschrijving                                                    |
+| -------------------------------------- | ---------- | --------------------------------------------------------------- |
+| `dsn-page-header`                      | `<header>` | Basiscomponent                                                  |
+| `dsn-page-header--sticky`              | `<header>` | Sticky gedrag: `position: sticky`                               |
+| `dsn-page-header--auto-hide`           | `<header>` | Auto-hide sticky: CSS-transitie op `data-hidden`                |
+| `dsn-page-header--compact`             | `<header>` | Compact layout: één rij op large viewport                       |
+| `dsn-page-header--inverse`             | `<header>` | Inverse kleurvariant: accent-1-inverse achtergronden            |
+| `dsn-page-header__small-layout`        | `<div>`    | Zichtbaar op small viewport (`< 64em`)                          |
+| `dsn-page-header__large-layout`        | `<div>`    | Zichtbaar op large viewport (`≥ 64em`, default layout)          |
+| `dsn-page-header__compact-layout`      | `<div>`    | Zichtbaar op large viewport (`≥ 64em`, compact layout)          |
+| `dsn-page-header__inner`               | `<div>`    | CSS-grid (`1fr auto 1fr`) voor gecentreerd logo                 |
+| `dsn-page-header__start`               | `<div>`    | Inline-start slot (hamburgerknop)                               |
+| `dsn-page-header__logo`                | `<div>`    | Logo-slot; `max-block-size` op directe child                    |
+| `dsn-page-header__end`                 | `<div>`    | Inline-end slot (zoekknop)                                      |
+| `dsn-page-header__search-panel`        | `<div>`    | Zoekpaneel (small + compact viewport); verborgen via `[hidden]` |
+| `dsn-page-header__search-inner`        | `<div>`    | Flex-container: zoekveld + zoekknop                             |
+| `dsn-page-header__masthead`            | `<div>`    | Bovenste band large viewport (neutrale achtergrond)             |
+| `dsn-page-header__masthead-inner`      | `<div>`    | Flex-container: logo ↔ secondary-nav                            |
+| `dsn-page-header__secondary-nav`       | `<div>`    | Servicemenu + zoekveld naast elkaar (inline-end)                |
+| `dsn-page-header__searchbox`           | `<div>`    | Inline zoekveld + zoekknop in masthead                          |
+| `dsn-page-header__navbar`              | `<div>`    | Onderste band large viewport (accent-1 achtergrond)             |
+| `dsn-page-header__compact-inner`       | `<div>`    | CSS-grid (`1fr auto 1fr`) compact balk                          |
+| `dsn-page-header__compact-primary-nav` | `<div>`    | Primaire nav gecentreerd in compact balk                        |
+| `dsn-page-header__compact-secondary`   | `<div>`    | Servicemenu + zoekknop (inline-end) in compact balk             |
 
 **Design tokens:**
 
@@ -1964,6 +1972,9 @@ const [isOpen, setIsOpen] = React.useState(false);
 | `--dsn-page-header-navbar-background-color`       | `{dsn.color.accent-1.bg-default}`    | Navigatiebalk achtergrond                   |
 | `--dsn-page-header-navbar-padding-inline`         | `{dsn.space.inline.xl}`              | Horizontale padding navigatiebalk           |
 | `--dsn-page-header-secondary-nav-gap`             | `{dsn.space.column.3xl}`             | Gap servicemenu ↔ zoekveld in masthead      |
+| `--dsn-page-header-compact-background-color`      | `{dsn.color.neutral.bg-document}`    | Achtergrond compact balk (large viewport)   |
+| `--dsn-page-header-compact-padding-block`         | `{dsn.space.block.xl}`               | Verticale padding compact balk              |
+| `--dsn-page-header-compact-padding-inline`        | `{dsn.space.inline.xl}`              | Horizontale padding compact balk            |
 
 **Usage:**
 

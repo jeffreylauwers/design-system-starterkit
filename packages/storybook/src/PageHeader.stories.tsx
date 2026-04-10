@@ -311,6 +311,11 @@ const meta: Meta<typeof PageHeader> = {
       options: ['default', 'compact'],
       table: { category: 'Gedrag' },
     },
+    colorScheme: {
+      control: 'select',
+      options: ['default', 'inverse'],
+      table: { category: 'Gedrag' },
+    },
     initialSearchOpen: {
       control: 'boolean',
       table: { category: 'Gedrag' },
@@ -484,6 +489,43 @@ export const CompactLayout: Story = {
       description: {
         story:
           'Op viewports ≥ 64em toont de compact variant één enkele rij: logo (inline-start), primaire navigatie (optisch gecentreerd via CSS-grid `1fr auto 1fr`), en servicemenu + zoek-iconknop (inline-end). Gebruikt `primaryNavigationLarge` voor de compacte balk en `primaryNavigation` (verticaal) voor de Drawer op small viewport.',
+      },
+    },
+  },
+};
+
+// =============================================================================
+// INVERSE KLEURVARIANT
+// =============================================================================
+
+export const InverseColorScheme: Story = {
+  name: 'Inverse color scheme',
+  args: {
+    colorScheme: 'inverse',
+  },
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'De inverse kleurvariant (`colorScheme="inverse"`) gebruikt `accent-1-inverse` achtergronden op de navbar en het zoekpaneel voor prominente branding. Het masthead blijft neutraal. Het logo past zijn kleuren automatisch aan via CSS context overrides.',
+      },
+    },
+  },
+};
+
+export const InverseCompactLayout: Story = {
+  name: 'Inverse compact layout',
+  args: {
+    layout: 'compact',
+    colorScheme: 'inverse',
+  },
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'Combinatie van `layout="compact"` en `colorScheme="inverse"`: de compacte balk (logo, primaire navigatie, servicemenu) heeft een `accent-1-inverse` achtergrond. Het zoekpaneel gebruikt `accent-1-inverse.bg-document` voor visuele scheiding.',
       },
     },
   },

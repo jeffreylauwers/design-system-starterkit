@@ -164,6 +164,105 @@ De mobile layout (hamburger + drawer) valt via `display: none` volledig uit de a
 3. Inline zoekveld + Zoeken-knop
 4. Primaire navigatie items
 
+### Compact layout (large viewport)
+
+De `layout="compact"` variant plaatst logo, primaire navigatie en servicemenu in één enkele rij via CSS-grid `1fr auto 1fr`. Gebruik dit wanneer de primaire navigatie maar één niveau heeft en de branding compacter mag:
+
+```html
+<!-- HTML/CSS — compact layout modifier -->
+<header class="dsn-page-header dsn-page-header--compact">
+  <!-- Small viewport layout (ongewijzigd) -->
+  <div class="dsn-page-header__small-layout">...</div>
+
+  <!-- Compact balk (zichtbaar boven 64em) -->
+  <div class="dsn-page-header__compact-layout">
+    <div class="dsn-page-header__compact-inner">
+      <div class="dsn-page-header__logo">
+        <a href="/"><!-- Logo --></a>
+      </div>
+      <div class="dsn-page-header__compact-primary-nav">
+        <nav aria-labelledby="primary-nav-id">
+          <h2 id="primary-nav-id" class="dsn-visually-hidden">Hoofdmenu</h2>
+          <!-- horizontale Menu met MenuLink items -->
+        </nav>
+      </div>
+      <div class="dsn-page-header__compact-secondary">
+        <!-- horizontale Menu met servicemenu items -->
+        <button
+          type="button"
+          class="dsn-button dsn-button--subtle dsn-button--icon-only"
+          aria-expanded="false"
+          aria-controls="compact-search-panel"
+        >
+          <svg class="dsn-icon" aria-hidden="true"><!-- search --></svg>
+          <span class="dsn-button__label">Zoeken</span>
+        </button>
+      </div>
+    </div>
+    <div class="dsn-page-header__search-panel" id="compact-search-panel" hidden>
+      <!-- zoekveld + zoekknop -->
+    </div>
+  </div>
+</header>
+```
+
+```tsx
+<PageHeader
+  layout="compact"
+  logoSlot={
+    <a href="/">
+      <Logo aria-hidden={true} />
+    </a>
+  }
+  primaryNavigationLarge={
+    <Menu orientation="horizontal">
+      <MenuLink href="/home" level={1} current>
+        Home
+      </MenuLink>
+    </Menu>
+  }
+  secondaryNavigationLarge={
+    <Menu orientation="horizontal">
+      <MenuLink href="/contact" level={1}>
+        Contact
+      </MenuLink>
+    </Menu>
+  }
+/>
+```
+
+### Inverse kleurvariant
+
+De `colorScheme="inverse"` variant gebruikt `accent-1-inverse` achtergronden op de navbar en compact balk voor prominente branding. Het masthead blijft altijd neutraal (`neutral.bg-document`). Logo-kleuren en menu-items passen zich automatisch aan via CSS context overrides — geen extra klassen nodig.
+
+```html
+<!-- HTML/CSS — inverse modifier (combineerbaar met andere modifiers) -->
+<header class="dsn-page-header dsn-page-header--inverse">...</header>
+
+<!-- Combinatie met compact layout -->
+<header
+  class="dsn-page-header dsn-page-header--compact dsn-page-header--inverse"
+>
+  ...
+</header>
+```
+
+```tsx
+<PageHeader colorScheme="inverse" logoSlot={...} ... />
+
+{/* Combinatie */}
+<PageHeader layout="compact" colorScheme="inverse" logoSlot={...} ... />
+```
+
+De inverse modifier overschrijft via CSS custom properties:
+
+- `--dsn-page-header-background-color` → `accent-1-inverse.bg-default` (small viewport balk)
+- `--dsn-page-header-navbar-background-color` → `accent-1-inverse.bg-default`
+- `--dsn-page-header-compact-background-color` → `accent-1-inverse.bg-default`
+- `--dsn-page-header-search-panel-background-color` → `accent-1-inverse.bg-document`
+- `--dsn-logo-color-primary` / `--dsn-logo-color-label` → wit / achtergrondkleur (reset in masthead)
+- `--dsn-menu-item-color` en `--dsn-button-subtle-color` → wit op alle inverse vlakken
+
 ### Zoekpaneel (small viewport)
 
 Het zoekpaneel verschijnt direct onder de header-binnenbalk. Het paneel bevat een `SearchInput` en een zoekknop:
@@ -206,6 +305,9 @@ Het zoekpaneel verschijnt direct onder de header-binnenbalk. Het paneel bevat ee
 | `--dsn-page-header-navbar-background-color`       | `{dsn.color.accent-1.bg-default}`    | Navigatiebalk achtergrond (large)          |
 | `--dsn-page-header-navbar-padding-inline`         | `{dsn.space.inline.xl}`              | Horizontale padding navigatiebalk (large)  |
 | `--dsn-page-header-secondary-nav-gap`             | `{dsn.space.column.3xl}`             | Gap servicemenu ↔ zoekveld (large)         |
+| `--dsn-page-header-compact-background-color`      | `{dsn.color.neutral.bg-document}`    | Compact balk achtergrond                   |
+| `--dsn-page-header-compact-padding-block`         | `{dsn.space.block.xl}`               | Verticale padding compact balk             |
+| `--dsn-page-header-compact-padding-inline`        | `{dsn.space.inline.xl}`              | Horizontale padding compact balk           |
 
 ## Accessibility
 
