@@ -763,7 +763,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 ## Display & Feedback Components
 
-**Status:** Complete (HTML/CSS, React) — 11 components total
+**Status:** Complete (HTML/CSS, React) — 12 components total
 
 ### Backdrop
 
@@ -1583,6 +1583,115 @@ const [isOpen, setIsOpen] = React.useState(false);
 ```
 
 **Tests:** React (20 tests)
+
+### Popover
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/popover/` / `packages/components-react/src/Popover/`
+
+**Tokens:** `tokens/components/popover.json`
+
+**Sub-components:** `Popover`, `PopoverHeader`, `PopoverHeading`, `PopoverBody`, `PopoverFooter`
+
+**Features:**
+
+- Gebaseerd op de HTML Popover API (`popover="auto"`) — ingebakken light-dismiss en top-layer gedrag zonder extra JavaScript voor stacking context
+- Positionering via JavaScript (`getBoundingClientRect` + `offsetWidth`/`offsetHeight`) — RTL-bewust, automatisch viewport-clamping (8px marge)
+- CSS `max-inline-size: min(var(--dsn-popover-max-width), calc(100vw - 1rem))` — nooit breder dan het viewport op smalle schermen
+- Compound component patroon met React Context — `headingId` en `onClose` automatisch doorgegeven aan sub-componenten
+- `aria-labelledby` automatisch gekoppeld aan `PopoverHeading` via `React.useId()` (popovers met heading); `aria-label` via `label` prop (popovers zonder heading, bijv. contextmenu)
+- `aria-expanded` op het triggerelement — synchroon bijgehouden via `triggerRef` prop
+- Sluitknop (`dsn-button--icon-only`) automatisch geïnjecteerd in `PopoverHeader`
+- Open/sluitanimatie via `@starting-style`, `opacity`, `transform: scale` en `allow-discrete` voor `display` en `overlay`
+- `flex-direction: column` op de basis-selector — voorkomt layout-glitch tijdens sluitanimatie
+- Fallback light-dismiss via `pointerdown` op `document` (voor iframe-grenzen en oudere browsers)
+- `placement` prop: `'bottom'` (default), `'top'`, `'end'`, `'start'` — `end`/`start` zijn RTL-bewust
+- `role="dialog"` + `aria-modal="false"` — niet-modaal, geen focus-trap, achtergrond blijft interactief
+- Focus springt bij openen naar het eerste interactieve element in de popover
+- `level` prop op `PopoverHeading` (1–6, default `2`) — visueel uiterlijk altijd gelijk
+- Reduceer-motie-ondersteuning via `prefers-reduced-motion: reduce`
+
+**CSS klassen:**
+
+| Klasse                          | Element | Beschrijving                                                  |
+| ------------------------------- | ------- | ------------------------------------------------------------- |
+| `dsn-popover-wrapper`           | `<div>` | Relatief-gepositioneerde container voor CSS-only gebruik      |
+| `dsn-popover`                   | `<div>` | Root — `popover="auto"`; `role="dialog"`; animaties en stijl  |
+| `dsn-popover--placement-bottom` | `<div>` | CSS-only plaatsing onder de trigger (default)                 |
+| `dsn-popover--placement-top`    | `<div>` | CSS-only plaatsing boven de trigger                           |
+| `dsn-popover--placement-end`    | `<div>` | CSS-only plaatsing rechts (LTR) / links (RTL)                 |
+| `dsn-popover--placement-start`  | `<div>` | CSS-only plaatsing links (LTR) / rechts (RTL)                 |
+| `dsn-popover__header`           | `<div>` | Flexbox header met heading + sluitknop; border-block-end      |
+| `dsn-popover-heading`           | `<h2>`  | Heading sub-component; `flex: 1`; typografie via eigen tokens |
+| `dsn-popover__body`             | `<div>` | Inhoudssectie; padding via tokens                             |
+| `dsn-popover__footer`           | `<div>` | Actiesectie; border-block-start; `flex-shrink: 0`             |
+
+**Props (React — Popover):**
+
+| Prop         | Type                                    | Default    | Beschrijving                                                          |
+| ------------ | --------------------------------------- | ---------- | --------------------------------------------------------------------- |
+| `isOpen`     | `boolean`                               | —          | Bepaalt of de popover getoond wordt                                   |
+| `onClose`    | `() => void`                            | —          | Callback bij sluiten (Escape, klik buiten, sluitknop in header)       |
+| `triggerRef` | `React.RefObject<HTMLElement>`          | —          | Referentie naar het triggerelement voor positionering + focus-herstel |
+| `placement`  | `'top' \| 'bottom' \| 'start' \| 'end'` | `'bottom'` | Gewenste plaatsing relatief aan het triggerelement                    |
+| `label`      | `string`                                | —          | `aria-label` voor popovers zonder `PopoverHeading`                    |
+| `children`   | `React.ReactNode`                       | —          | Sub-componenten: `PopoverHeader`, `PopoverBody`, `PopoverFooter`      |
+
+**HTML/CSS:**
+
+```html
+<div class="dsn-popover-wrapper">
+  <button
+    type="button"
+    class="dsn-button dsn-button--subtle dsn-button--size-medium"
+    popovertarget="popover-demo"
+    aria-expanded="false"
+  >
+    <span class="dsn-button__label">Acties</span>
+  </button>
+
+  <div
+    id="popover-demo"
+    popover="auto"
+    class="dsn-popover dsn-popover--placement-bottom"
+    role="dialog"
+    aria-modal="false"
+    aria-label="Acties"
+  >
+    <div class="dsn-popover__body">
+      <ul class="dsn-menu" role="list">
+        <li>
+          <button type="button" class="dsn-menu-button">
+            <span class="dsn-menu-item__label">Bewerken</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+**React:**
+
+```tsx
+const triggerRef = React.useRef<HTMLButtonElement>(null);
+const [isOpen, setIsOpen] = React.useState(false);
+
+<Button ref={triggerRef} variant="subtle" onClick={() => setIsOpen((prev) => !prev)}>
+  Acties
+</Button>
+<Popover isOpen={isOpen} onClose={() => setIsOpen(false)} triggerRef={triggerRef} label="Acties">
+  <PopoverBody>
+    <Menu>
+      <MenuButton onClick={() => setIsOpen(false)}>Bewerken</MenuButton>
+      <MenuButton onClick={() => setIsOpen(false)}>Verwijderen</MenuButton>
+    </Menu>
+  </PopoverBody>
+</Popover>
+```
+
+**Tests:** React (37 tests)
 
 ---
 
@@ -2583,15 +2692,15 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 50
+**Total Components:** 51
 
 **Implementations:**
 
-- **HTML/CSS:** 50 components
-- **React:** 50 components (1292 tests total, 64 test suites)
+- **HTML/CSS:** 51 components
+- **React:** 51 components (1329 tests total, 65 test suites)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
-**Test Coverage:** 1292 tests across 64 test suites
+**Test Coverage:** 1329 tests across 65 test suites
 
 ---
 

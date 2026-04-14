@@ -75,11 +75,11 @@ Het triggerelement (bijv. `Button`) krijgt automatisch `aria-expanded="true/fals
 | `--dsn-popover-heading-font-size`          | `{dsn.text.font-size.md}`           | Tekstgrootte heading              |
 | `--dsn-popover-heading-line-height`        | `{dsn.text.line-height.md}`         | Regelafstand heading              |
 | `--dsn-popover-header-padding-block-start` | `{dsn.space.block.xl}`              | Boven-padding header (16px)       |
-| `--dsn-popover-header-padding-block-end`   | `{dsn.space.block.md}`              | Onder-padding header (8px)        |
+| `--dsn-popover-header-padding-block-end`   | `{dsn.space.block.xl}`              | Onder-padding header (16px)       |
 | `--dsn-popover-header-padding-inline`      | `{dsn.space.inline.xl}`             | Horizontale padding header (16px) |
-| `--dsn-popover-body-padding-block`         | `{dsn.space.block.md}`              | Verticale padding body (8px)      |
-| `--dsn-popover-body-padding-inline`        | `{dsn.space.inline.md}`             | Horizontale padding body (8px)    |
-| `--dsn-popover-footer-padding-block-start` | `{dsn.space.block.md}`              | Boven-padding footer (8px)        |
+| `--dsn-popover-body-padding-block`         | `{dsn.space.block.xl}`              | Verticale padding body (16px)     |
+| `--dsn-popover-body-padding-inline`        | `{dsn.space.inline.xl}`             | Horizontale padding body (16px)   |
+| `--dsn-popover-footer-padding-block-start` | `{dsn.space.block.xl}`              | Boven-padding footer (16px)       |
 | `--dsn-popover-footer-padding-block-end`   | `{dsn.space.block.xl}`              | Onder-padding footer (16px)       |
 | `--dsn-popover-footer-padding-inline`      | `{dsn.space.inline.xl}`             | Horizontale padding footer (16px) |
 

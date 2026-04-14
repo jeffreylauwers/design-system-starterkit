@@ -6,6 +6,28 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.25.0 (April 14, 2026)
+
+### Popover component (issue #155, PR #156)
+
+#### Added
+
+- **Popover** component — lichtgewicht, contextgebonden overlay verankerd aan een triggerelement (PR #156)
+- Gebaseerd op de HTML Popover API (`popover="auto"`) voor ingebakken light-dismiss en top-layer gedrag
+- Compound component patroon: `PopoverHeader`, `PopoverHeading`, `PopoverBody`, `PopoverFooter`
+- `placement` prop: `'bottom'` (default), `'top'`, `'end'`, `'start'` — RTL-bewust
+- JavaScript-positionering via `getBoundingClientRect` + `offsetWidth`/`offsetHeight` met viewport-clamping (8px marge)
+- `max-inline-size: min(var(--dsn-popover-max-width), calc(100vw - 1rem))` — nooit breder dan het viewport op smalle schermen
+- `aria-labelledby` automatisch via `PopoverHeading` + React Context; `aria-label` via `label` prop voor headerloze popovers
+- `aria-expanded` synchroon bijgehouden op het triggerelement via `triggerRef` prop
+- Open/sluitanimatie via `@starting-style`, `opacity`, `transform: scale` en `allow-discrete`
+- Fallback light-dismiss via `pointerdown` op `document` (iframe-grenzen, oudere browsers)
+- 14 design tokens (`--dsn-popover-*`) in `tokens/components/popover.json`
+- 10 Storybook stories incl. plaatsing-overzicht en RTL-variant
+- 37 tests
+
+---
+
 ## Version 5.24.0 (April 10, 2026)
 
 ### PageHeader: inverse kleurvariant (issue #151)
