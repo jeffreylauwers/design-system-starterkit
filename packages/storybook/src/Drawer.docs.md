@@ -65,7 +65,7 @@ Het Drawer component toont een zijpaneel dat over de pagina-inhoud schuift. In t
 
 | Token                                     | Beschrijving                                            |
 | ----------------------------------------- | ------------------------------------------------------- |
-| `--dsn-drawer-background`                 | Achtergrondkleur (bg-elevated)                          |
+| `--dsn-drawer-background-color`           | Achtergrondkleur (bg-elevated)                          |
 | `--dsn-drawer-border-width`               | Randbreedte van de scheidingslijn met de pagina         |
 | `--dsn-drawer-border-color`               | Randkleur van de scheidingslijn (neutral.border-subtle) |
 | `--dsn-drawer-box-shadow`                 | Schaduw (box-shadow.lg — hoogste elevatie)              |

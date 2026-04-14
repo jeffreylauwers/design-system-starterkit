@@ -1,12 +1,12 @@
 {
   "dsn": {
     "card": {
-      "background": {
+      "background-color": {
         "value": "{dsn.color.neutral.bg-document}",
         "type": "color",
         "comment": "Card achtergrondkleur standaard — zelfde als paginaachtergrond"
       },
-      "background-hover": {
+      "background-color-hover": {
         "value": "{dsn.color.neutral.bg-elevated}",
         "type": "color",
         "comment": "Card achtergrondkleur bij hover — bg-elevated benadrukt elevatie"
@@ -66,7 +66,7 @@
         }
       },
       "image-placeholder": {
-        "background": {
+        "background-color": {
           "value": "{dsn.color.neutral.bg-subtle}",
           "type": "color",
           "comment": "Achtergrondkleur van de afbeeldingsplaceholder"

@@ -1,0 +1,232 @@
+/* ===== Popover ===== */
+
+/*
+ * dsn-popover — Contextgebonden overlay verankerd aan een triggerelement
+ *
+ * Gebruik de HTML Popover API (popover="auto") voor light-dismiss en top-layer gedrag.
+ * Positionering vereist JavaScript (getBoundingClientRect) of CSS Anchor Positioning.
+ *
+ * Toegankelijkheid:
+ * - role="dialog" aria-modal="false" — niet-modaal: achtergrond blijft interactief
+ * - aria-labelledby → .dsn-popover-heading id (via PopoverHeading + context)
+ * - aria-label → via `label` prop (popovers zonder heading)
+ * - aria-expanded op het triggerelement — synchroon met open-staat
+ *
+ * HTML-structuur (volledig — met header en footer):
+ *
+ * <div class="dsn-popover-wrapper">
+ *   <button
+ *     type="button"
+ *     class="dsn-button dsn-button--subtle dsn-button--size-small dsn-button--icon-only"
+ *     popovertarget="popover-id"
+ *     aria-expanded="false"
+ *   >
+ *     <svg class="dsn-icon" aria-hidden="true"><!-- dots-vertical --></svg>
+ *     <span class="dsn-button__label">Acties</span>
+ *   </button>
+ *
+ *   <div
+ *     id="popover-id"
+ *     popover="auto"
+ *     class="dsn-popover dsn-popover--placement-bottom"
+ *     role="dialog"
+ *     aria-modal="false"
+ *     aria-labelledby="popover-heading-id"
+ *   >
+ *     <div class="dsn-popover__header">
+ *       <h2 class="dsn-popover-heading" id="popover-heading-id">Titel</h2>
+ *       <button type="button" class="dsn-button dsn-button--subtle dsn-button--size-small dsn-button--icon-only">
+ *         <svg class="dsn-icon" aria-hidden="true"><!-- x --></svg>
+ *         <span class="dsn-button__label">Sluiten</span>
+ *       </button>
+ *     </div>
+ *     <div class="dsn-popover__body">
+ *       <!-- slot content -->
+ *     </div>
+ *     <div class="dsn-popover__footer">
+ *       <!-- acties -->
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * HTML-structuur (minimaal — alleen body, bijv. voor Menu):
+ *
+ * <div class="dsn-popover-wrapper">
+ *   <button popovertarget="popover-id" ...>...</button>
+ *   <div id="popover-id" popover="auto" class="dsn-popover dsn-popover--placement-bottom"
+ *        role="dialog" aria-modal="false" aria-label="Acties">
+ *     <div class="dsn-popover__body">
+ *       <!-- Menu component -->
+ *     </div>
+ *   </div>
+ * </div>
+ */
+
+/* ===== Wrapper ===== */
+
+/*
+ * Relatief gepositioneerde container voor CSS-only gebruik.
+ * In de React-implementatie wordt positionering via JS afgehandeld.
+ */
+.dsn-popover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* ===== Popover panel ===== */
+
+.dsn-popover {
+  /* Reset UA popover-stijlen */
+  margin: 0;
+  padding: 0;
+  color: inherit;
+
+  /* Visuele stijlen */
+  background: var(--dsn-popover-background-color);
+  border: var(--dsn-popover-border-width) solid var(--dsn-popover-border-color);
+  border-radius: var(--dsn-popover-border-radius);
+  box-shadow: var(--dsn-popover-box-shadow);
+
+  /* Grootte */
+  min-inline-size: var(--dsn-popover-min-width);
+  max-inline-size: min(var(--dsn-popover-max-width), calc(100vw - 1rem));
+  inline-size: max-content;
+
+  /*
+   * flex-direction altijd op de base class — ook tijdens de sluitanimatie.
+   * allow-discrete houdt display:flex vast, maar flex-direction valt anders
+   * terug naar de default 'row', wat het zichtbare verspringen veroorzaakt.
+   */
+  flex-direction: column;
+
+  /* Animatietransitie (ook voor sluitanimatie via allow-discrete) */
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition:
+    opacity var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    transform var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    display var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default) allow-discrete,
+    overlay var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default) allow-discrete;
+}
+
+/*
+ * Layout en positionering uitsluitend op :popover-open.
+ *
+ * - display: flex — UA-stylesheet's display:none geldt wanneer de selector wegvalt.
+ *   De `display allow-discrete` transitie houdt display:flex tijdens de sluitanimatie,
+ *   zodat de layout niet instort vóór opacity/transform klaar zijn.
+ * - position: fixed — géén position in de base class. De `overlay allow-discrete`
+ *   transitie houdt het element in de top-layer (en daarmee position:fixed) tijdens
+ *   de sluitanimatie. Zo verspringt de positie niet halverwege de animatie.
+ * - z-index — geëxpliciteerd zodat gestapelde popovers correct geordend zijn.
+ */
+.dsn-popover:popover-open {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: var(--dsn-popover-z-index);
+}
+
+/* Openingsanimatie: startwaarden voor de :popover-open staat */
+@starting-style {
+  .dsn-popover:popover-open {
+    opacity: 0;
+    transform: scale(0.97) translateY(-0.25rem);
+  }
+}
+
+/* Animatie uitschakelen bij prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .dsn-popover {
+    transition: none;
+  }
+}
+
+/* ===== Placement modifiers (CSS-only / wrapper-based positionering) ===== */
+
+/*
+ * Voor CSS-only gebruik: de .dsn-popover-wrapper is relatief gepositioneerd en
+ * de popover gebruikt position: absolute (niet de Popover API top-layer).
+ * De React-implementatie gebruikt JS-positionering via inline styles (top/left).
+ *
+ * Let op: deze modifiers werken alleen zonder de Popover API (bijv. pure HTML demo).
+ * Met popover="auto" staat het element in de top-layer (position: fixed via JS).
+ */
+.dsn-popover-wrapper .dsn-popover--placement-bottom {
+  position: absolute;
+  inset-block-start: calc(100% + 0.25rem);
+  inset-inline-start: 0;
+}
+
+.dsn-popover-wrapper .dsn-popover--placement-top {
+  position: absolute;
+  inset-block-end: calc(100% + 0.25rem);
+  inset-inline-start: 0;
+}
+
+.dsn-popover-wrapper .dsn-popover--placement-end {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: calc(100% + 0.25rem);
+}
+
+.dsn-popover-wrapper .dsn-popover--placement-start {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: calc(100% + 0.25rem);
+}
+
+/* ===== Header ===== */
+
+.dsn-popover__header {
+  display: flex;
+  align-items: center;
+  gap: var(--dsn-space-inline-xl);
+  flex-shrink: 0;
+
+  padding-block-start: var(--dsn-popover-header-padding-block-start);
+  padding-block-end: var(--dsn-popover-header-padding-block-end);
+  padding-inline: var(--dsn-popover-header-padding-inline);
+
+  /* Scheidingslijn onder de header */
+  border-block-end: var(--dsn-popover-border-width) solid
+    var(--dsn-popover-border-color);
+}
+
+/* ===== Heading ===== */
+
+.dsn-popover-heading {
+  flex: 1;
+  margin: 0;
+
+  font-family: var(--dsn-popover-heading-font-family);
+  font-weight: var(--dsn-popover-heading-font-weight);
+  font-size: var(--dsn-popover-heading-font-size);
+  line-height: var(--dsn-popover-heading-line-height);
+  color: var(--dsn-popover-heading-color);
+}
+
+/* ===== Body ===== */
+
+.dsn-popover__body {
+  padding-block: var(--dsn-popover-body-padding-block);
+  padding-inline: var(--dsn-popover-body-padding-inline);
+}
+
+/* ===== Footer ===== */
+
+.dsn-popover__footer {
+  flex-shrink: 0;
+
+  padding-block-start: var(--dsn-popover-footer-padding-block-start);
+  padding-block-end: var(--dsn-popover-footer-padding-block-end);
+  padding-inline: var(--dsn-popover-footer-padding-inline);
+
+  /* Scheidingslijn boven de footer */
+  border-block-start: var(--dsn-popover-border-width) solid
+    var(--dsn-popover-border-color);
+}

@@ -1,0 +1,58 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as PopoverStories from './Popover.stories';
+import docs from './Popover.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={PopoverStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={PopoverStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={PopoverStories.Default}
+  html={`<div class="dsn-popover-wrapper">
+  <button
+    type="button"
+    class="dsn-button dsn-button--subtle dsn-button--size-medium"
+    popovertarget="popover-acties"
+    aria-expanded="false"
+  >
+    <span class="dsn-button__label">Acties</span>
+  </button>
+
+  <div
+    id="popover-acties"
+    popover="auto"
+    class="dsn-popover dsn-popover--placement-bottom"
+    role="dialog"
+    aria-modal="false"
+    aria-label="Acties"
+  >
+    <div class="dsn-popover__body">
+      <ul class="dsn-menu" role="list">
+        <li>
+          <button type="button" class="dsn-menu-button">
+            <span class="dsn-menu-item__label">Bewerken</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dsn-menu-button">
+            <span class="dsn-menu-item__label">Verwijderen</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>`}
+/>
+
+<Controls of={PopoverStories.Default} />
+
+<Markdown>{rest}</Markdown>
