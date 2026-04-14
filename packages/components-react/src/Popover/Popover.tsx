@@ -239,8 +239,12 @@ export const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       };
     }, [isOpen, triggerRef]);
 
-    // Verwerk het toggle-event van de Popover API (Escape / klik buiten)
+    // Verwerk het toggle-event van de Popover API (Escape / klik buiten binnen hetzelfde document)
     // onToggle is niet beschikbaar als JSX-prop op div in React 18 — gebruik addEventListener.
+    // Gebruik een ref voor onClose zodat de listener stabiel blijft en nooit stale is.
+    const onCloseRef = React.useRef(onClose);
+    onCloseRef.current = onClose;
+
     React.useEffect(() => {
       const el = popoverRef.current;
       if (!el) return;
@@ -248,7 +252,7 @@ export const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       const handleToggle = (event: Event) => {
         const toggleEvent = event as Event & { newState?: string };
         if (toggleEvent.newState === 'closed') {
-          onClose?.();
+          onCloseRef.current?.();
           triggerRef.current?.focus();
         }
       };
@@ -257,7 +261,29 @@ export const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
       return () => {
         el.removeEventListener('toggle', handleToggle);
       };
-    }, [onClose, triggerRef, popoverRef]);
+    }, [triggerRef, popoverRef]);
+
+    // Fallback light-dismiss via pointerdown — vangt klikken buiten het popover op
+    // in contexten waar de Popover API's native light-dismiss niet bereikbaar is
+    // (bijv. iframe-grenzen, of oudere browsers zonder Popover API).
+    React.useEffect(() => {
+      if (!isOpen) return;
+      const el = popoverRef.current;
+      if (!el) return;
+
+      const handlePointerDown = (event: PointerEvent) => {
+        const target = event.target as Node;
+        // Sluit niet als er op de popover zelf of het triggerelement geklikt wordt
+        if (el.contains(target) || triggerRef.current?.contains(target)) return;
+        onCloseRef.current?.();
+        triggerRef.current?.focus();
+      };
+
+      document.addEventListener('pointerdown', handlePointerDown);
+      return () => {
+        document.removeEventListener('pointerdown', handlePointerDown);
+      };
+    }, [isOpen, triggerRef, popoverRef]);
 
     const classes = classNames(
       'dsn-popover',

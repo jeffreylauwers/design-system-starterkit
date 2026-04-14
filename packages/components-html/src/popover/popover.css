@@ -92,14 +92,6 @@
   max-inline-size: var(--dsn-popover-max-width);
   inline-size: max-content;
 
-  /* Layout */
-  display: flex;
-  flex-direction: column;
-
-  /* Positionering — z-index voor CSS-only gebruik (niet in top-layer) */
-  position: absolute;
-  z-index: var(--dsn-popover-z-index);
-
   /* Animatietransitie (ook voor sluitanimatie via allow-discrete) */
   opacity: 1;
   transform: scale(1) translateY(0);
@@ -115,11 +107,19 @@
 }
 
 /*
- * Popover API: in de top-layer is position: absolute niet effectief.
- * Gebruik position: fixed voor top-layer popovers (gepositioneerd via JS).
+ * Layout en positionering alleen bij open staat.
+ *
+ * Gebruik :popover-open zodat de UA-stylesheet's display:none van kracht blijft
+ * wanneer de popover gesloten is — anders overschrijft display:flex de UA
+ * (zelfde patroon als .dsn-modal-dialog[open]).
+ *
+ * position: fixed voor top-layer popovers (gepositioneerd via JS).
  */
 .dsn-popover:popover-open {
+  display: flex;
+  flex-direction: column;
   position: fixed;
+  z-index: var(--dsn-popover-z-index);
 }
 
 /* Openingsanimatie: startwaarden voor de open staat */
@@ -140,25 +140,33 @@
 /* ===== Placement modifiers (CSS-only / wrapper-based positionering) ===== */
 
 /*
- * Voor CSS-only gebruik (position: absolute binnen .dsn-popover-wrapper).
- * De React-implementatie overschrijft deze waarden via inline styles.
+ * Voor CSS-only gebruik: de .dsn-popover-wrapper is relatief gepositioneerd en
+ * de popover gebruikt position: absolute (niet de Popover API top-layer).
+ * De React-implementatie gebruikt JS-positionering via inline styles (top/left).
+ *
+ * Let op: deze modifiers werken alleen zonder de Popover API (bijv. pure HTML demo).
+ * Met popover="auto" staat het element in de top-layer (position: fixed via JS).
  */
-.dsn-popover--placement-bottom {
+.dsn-popover-wrapper .dsn-popover--placement-bottom {
+  position: absolute;
   inset-block-start: calc(100% + 0.25rem);
   inset-inline-start: 0;
 }
 
-.dsn-popover--placement-top {
+.dsn-popover-wrapper .dsn-popover--placement-top {
+  position: absolute;
   inset-block-end: calc(100% + 0.25rem);
   inset-inline-start: 0;
 }
 
-.dsn-popover--placement-end {
+.dsn-popover-wrapper .dsn-popover--placement-end {
+  position: absolute;
   inset-block-start: 0;
   inset-inline-start: calc(100% + 0.25rem);
 }
 
-.dsn-popover--placement-start {
+.dsn-popover-wrapper .dsn-popover--placement-start {
+  position: absolute;
   inset-block-start: 0;
   inset-inline-end: calc(100% + 0.25rem);
 }

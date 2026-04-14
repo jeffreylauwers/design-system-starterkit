@@ -70,48 +70,48 @@
       },
       "header": {
         "padding-block-start": {
-          "value": "{dsn.space.block.md}",
+          "value": "{dsn.space.block.xl}",
           "type": "spacing",
-          "comment": "Bovenkant padding van de header"
+          "comment": "Bovenkant padding van de header (16px)"
         },
         "padding-block-end": {
-          "value": "{dsn.space.block.sm}",
+          "value": "{dsn.space.block.md}",
           "type": "spacing",
-          "comment": "Onderkant padding van de header (iets kleiner — visuele scheiding vóór body)"
+          "comment": "Onderkant padding van de header — iets kleiner dan block-start, scheiding vóór body (8px)"
         },
         "padding-inline": {
-          "value": "{dsn.space.inline.md}",
+          "value": "{dsn.space.inline.xl}",
           "type": "spacing",
-          "comment": "Horizontale padding van de header"
+          "comment": "Horizontale padding van de header (16px)"
         }
       },
       "body": {
         "padding-block": {
           "value": "{dsn.space.block.md}",
           "type": "spacing",
-          "comment": "Verticale padding van de body"
+          "comment": "Verticale padding van de body (8px) — compact, passend voor Menu en korte content"
         },
         "padding-inline": {
           "value": "{dsn.space.inline.md}",
           "type": "spacing",
-          "comment": "Horizontale padding van de body"
+          "comment": "Horizontale padding van de body (8px)"
         }
       },
       "footer": {
         "padding-block-start": {
-          "value": "{dsn.space.block.sm}",
-          "type": "spacing",
-          "comment": "Bovenkant padding van de footer (iets kleiner — visuele scheiding ná body)"
-        },
-        "padding-block-end": {
           "value": "{dsn.space.block.md}",
           "type": "spacing",
-          "comment": "Onderkant padding van de footer"
+          "comment": "Bovenkant padding van de footer — scheiding ná body (8px)"
+        },
+        "padding-block-end": {
+          "value": "{dsn.space.block.xl}",
+          "type": "spacing",
+          "comment": "Onderkant padding van de footer (16px)"
         },
         "padding-inline": {
-          "value": "{dsn.space.inline.md}",
+          "value": "{dsn.space.inline.xl}",
           "type": "spacing",
-          "comment": "Horizontale padding van de footer"
+          "comment": "Horizontale padding van de footer (16px)"
         }
       }
     }
