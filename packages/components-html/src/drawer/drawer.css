@@ -32,7 +32,7 @@
   /* Reset native <dialog> styling */
   border: none;
   box-shadow: var(--dsn-drawer-box-shadow);
-  background: var(--dsn-drawer-background);
+  background: var(--dsn-drawer-background-color);
   padding: 0;
 
   /* Grootte */
@@ -213,7 +213,7 @@
  */
 
 .dsn-drawer__body {
-  --_bg: var(--dsn-drawer-background);
+  --_bg: var(--dsn-drawer-background-color);
   --_shadow: var(--dsn-color-shadow-scroll, rgba(0, 0, 0, 0.12));
 
   flex: 1;

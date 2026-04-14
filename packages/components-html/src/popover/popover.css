@@ -82,7 +82,7 @@
   color: inherit;
 
   /* Visuele stijlen */
-  background: var(--dsn-popover-background);
+  background: var(--dsn-popover-background-color);
   border: var(--dsn-popover-border-width) solid var(--dsn-popover-border-color);
   border-radius: var(--dsn-popover-border-radius);
   box-shadow: var(--dsn-popover-box-shadow);

@@ -37,7 +37,7 @@
     var(--dsn-modal-dialog-border-color);
   border-radius: var(--dsn-modal-dialog-border-radius);
   box-shadow: var(--dsn-modal-dialog-box-shadow);
-  background: var(--dsn-modal-dialog-background);
+  background: var(--dsn-modal-dialog-background-color);
   padding: 0;
 
   /* Grootte en positionering */
@@ -154,7 +154,7 @@
  */
 
 .dsn-modal-dialog__body {
-  --_bg: var(--dsn-modal-dialog-background);
+  --_bg: var(--dsn-modal-dialog-background-color);
   --_shadow: var(--dsn-color-shadow-scroll, rgba(0, 0, 0, 0.12));
 
   flex: 1;

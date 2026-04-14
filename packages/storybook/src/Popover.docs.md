@@ -61,7 +61,7 @@ Het triggerelement (bijv. `Button`) krijgt automatisch `aria-expanded="true/fals
 
 | Token                                      | Standaardwaarde                     | Beschrijving                      |
 | ------------------------------------------ | ----------------------------------- | --------------------------------- |
-| `--dsn-popover-background`                 | `{dsn.color.neutral.bg-elevated}`   | Achtergrondkleur                  |
+| `--dsn-popover-background-color`           | `{dsn.color.neutral.bg-elevated}`   | Achtergrondkleur                  |
 | `--dsn-popover-border-width`               | `{dsn.border.width.thin}`           | Randbreedte                       |
 | `--dsn-popover-border-color`               | `{dsn.color.neutral.border-subtle}` | Randkleur                         |
 | `--dsn-popover-border-radius`              | `{dsn.border.radius.md}`            | Hoekafronding                     |

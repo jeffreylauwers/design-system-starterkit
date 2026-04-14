@@ -6,7 +6,7 @@
         "type": "number",
         "comment": "Positionering boven de backdrop (400) en onder de skip-link (600)"
       },
-      "background": {
+      "background-color": {
         "value": "{dsn.color.neutral.bg-elevated}",
         "type": "color",
         "comment": "Achtergrondkleur van het zijpaneel — bg-elevated benadrukt elevatie boven de pagina"

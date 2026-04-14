@@ -63,7 +63,7 @@ Het ModalDialog component toont een tijdelijk overlay-venster dat de achtergrond
 
 | Token                                           | Beschrijving                               |
 | ----------------------------------------------- | ------------------------------------------ |
-| `--dsn-modal-dialog-background`                 | Achtergrondkleur (bg-elevated)             |
+| `--dsn-modal-dialog-background-color`           | Achtergrondkleur (bg-elevated)             |
 | `--dsn-modal-dialog-border-radius`              | Afgeronde hoeken (12px)                    |
 | `--dsn-modal-dialog-border-width`               | Randbreedte                                |
 | `--dsn-modal-dialog-border-color`               | Randkleur (neutral.border-subtle)          |

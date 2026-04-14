@@ -10,7 +10,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: var(--dsn-card-background);
+  background-color: var(--dsn-card-background-color);
   border: var(--dsn-card-border-width) solid var(--dsn-card-border-color);
   border-radius: var(--dsn-card-border-radius);
   box-shadow: var(--dsn-card-box-shadow);
@@ -25,7 +25,7 @@
 
 /* Hover: verhoogde achtergrond en schaduw benadrukken interactiviteit */
 .dsn-card:has(.dsn-card-heading__link:hover) {
-  background-color: var(--dsn-card-background-hover);
+  background-color: var(--dsn-card-background-color-hover);
   box-shadow: var(--dsn-card-box-shadow-hover);
 }
 
@@ -86,7 +86,7 @@
   align-items: center;
   justify-content: center;
   aspect-ratio: 16 / 9;
-  background-color: var(--dsn-card-image-placeholder-background);
+  background-color: var(--dsn-card-image-placeholder-background-color);
   color: var(--dsn-card-image-placeholder-color);
 }
 
