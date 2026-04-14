@@ -120,7 +120,7 @@ export const Default: Story = {
 // =============================================================================
 
 export const WithHeader: Story = {
-  name: 'Met header',
+  name: 'With Header',
   render: () => {
     function Demo() {
       const triggerRef = React.useRef<HTMLButtonElement>(null);
@@ -156,7 +156,7 @@ export const WithHeader: Story = {
 };
 
 export const WithHeaderAndFooter: Story = {
-  name: 'Met header en footer',
+  name: 'With Header and Footer',
   render: () => {
     function Demo() {
       const triggerRef = React.useRef<HTMLButtonElement>(null);
@@ -248,22 +248,22 @@ function PlacementDemo({
 }
 
 export const PlacementBottom: Story = {
-  name: 'Plaatsing: bottom (standaard)',
+  name: 'Placement: Bottom (default)',
   render: () => <PlacementDemo placement="bottom" />,
 };
 
 export const PlacementTop: Story = {
-  name: 'Plaatsing: top',
+  name: 'Placement: Top',
   render: () => <PlacementDemo placement="top" />,
 };
 
 export const PlacementEnd: Story = {
-  name: 'Plaatsing: end (rechts in LTR)',
+  name: 'Placement: End (right in LTR)',
   render: () => <PlacementDemo placement="end" />,
 };
 
 export const PlacementStart: Story = {
-  name: 'Plaatsing: start (links in LTR)',
+  name: 'Placement: Start (left in LTR)',
   render: () => <PlacementDemo placement="start" />,
 };
 
@@ -272,7 +272,7 @@ export const PlacementStart: Story = {
 // =============================================================================
 
 export const AllPlacements: Story = {
-  name: 'Alle plaatsingen',
+  name: 'All Placements',
   render: () => (
     <div
       style={{
@@ -295,7 +295,7 @@ export const AllPlacements: Story = {
 // =============================================================================
 
 export const ShortText: Story = {
-  name: 'Korte content',
+  name: 'Short Content',
   render: () => {
     function Demo() {
       const triggerRef = React.useRef<HTMLButtonElement>(null);
@@ -329,7 +329,7 @@ export const ShortText: Story = {
 };
 
 export const LongText: Story = {
-  name: 'Lange content',
+  name: 'Long Content',
   render: () => {
     function Demo() {
       const triggerRef = React.useRef<HTMLButtonElement>(null);
@@ -374,7 +374,7 @@ export const LongText: Story = {
 // =============================================================================
 
 export const RTL: Story = {
-  name: 'RTL (plaatsing start/end gespiegeld)',
+  name: 'RTL (start/end placement mirrored)',
   decorators: [rtlDecorator],
   render: () => {
     function Demo() {
