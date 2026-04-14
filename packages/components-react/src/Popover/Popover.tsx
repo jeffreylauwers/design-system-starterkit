@@ -46,7 +46,11 @@ function positionPopover(
   placement: Placement
 ): void {
   const triggerRect = trigger.getBoundingClientRect();
-  const popoverRect = popover.getBoundingClientRect();
+  // offsetWidth/offsetHeight — onaangepast door CSS transforms (zoals @starting-style scale).
+  // getBoundingClientRect geeft de getransformeerde afmetingen, wat leidt tot onjuiste clamping.
+  const popoverWidth = popover.offsetWidth;
+  const popoverHeight = popover.offsetHeight;
+  const popoverRect = { width: popoverWidth, height: popoverHeight };
   const isRTL =
     document.documentElement.dir === 'rtl' ||
     getComputedStyle(trigger).direction === 'rtl';

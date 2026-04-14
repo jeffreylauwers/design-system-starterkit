@@ -89,7 +89,7 @@
 
   /* Grootte */
   min-inline-size: var(--dsn-popover-min-width);
-  max-inline-size: var(--dsn-popover-max-width);
+  max-inline-size: min(var(--dsn-popover-max-width), calc(100vw - 1rem));
   inline-size: max-content;
 
   /*
