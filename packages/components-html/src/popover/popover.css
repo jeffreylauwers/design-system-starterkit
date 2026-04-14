@@ -107,13 +107,15 @@
 }
 
 /*
- * Layout en positionering alleen bij open staat.
+ * Layout en positionering uitsluitend op :popover-open.
  *
- * Gebruik :popover-open zodat de UA-stylesheet's display:none van kracht blijft
- * wanneer de popover gesloten is — anders overschrijft display:flex de UA
- * (zelfde patroon als .dsn-modal-dialog[open]).
- *
- * position: fixed voor top-layer popovers (gepositioneerd via JS).
+ * - display: flex — UA-stylesheet's display:none geldt wanneer de selector wegvalt.
+ *   De `display allow-discrete` transitie houdt display:flex tijdens de sluitanimatie,
+ *   zodat de layout niet instort vóór opacity/transform klaar zijn.
+ * - position: fixed — géén position in de base class. De `overlay allow-discrete`
+ *   transitie houdt het element in de top-layer (en daarmee position:fixed) tijdens
+ *   de sluitanimatie. Zo verspringt de positie niet halverwege de animatie.
+ * - z-index — geëxpliciteerd zodat gestapelde popovers correct geordend zijn.
  */
 .dsn-popover:popover-open {
   display: flex;
@@ -122,7 +124,7 @@
   z-index: var(--dsn-popover-z-index);
 }
 
-/* Openingsanimatie: startwaarden voor de open staat */
+/* Openingsanimatie: startwaarden voor de :popover-open staat */
 @starting-style {
   .dsn-popover:popover-open {
     opacity: 0;

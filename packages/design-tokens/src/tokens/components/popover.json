@@ -75,9 +75,9 @@
           "comment": "Bovenkant padding van de header (16px)"
         },
         "padding-block-end": {
-          "value": "{dsn.space.block.md}",
+          "value": "{dsn.space.block.xl}",
           "type": "spacing",
-          "comment": "Onderkant padding van de header — iets kleiner dan block-start, scheiding vóór body (8px)"
+          "comment": "Onderkant padding van de header (16px)"
         },
         "padding-inline": {
           "value": "{dsn.space.inline.xl}",
@@ -87,21 +87,21 @@
       },
       "body": {
         "padding-block": {
-          "value": "{dsn.space.block.md}",
+          "value": "{dsn.space.block.xl}",
           "type": "spacing",
-          "comment": "Verticale padding van de body (8px) — compact, passend voor Menu en korte content"
+          "comment": "Verticale padding van de body (16px)"
         },
         "padding-inline": {
-          "value": "{dsn.space.inline.md}",
+          "value": "{dsn.space.inline.xl}",
           "type": "spacing",
-          "comment": "Horizontale padding van de body (8px)"
+          "comment": "Horizontale padding van de body (16px)"
         }
       },
       "footer": {
         "padding-block-start": {
-          "value": "{dsn.space.block.md}",
+          "value": "{dsn.space.block.xl}",
           "type": "spacing",
-          "comment": "Bovenkant padding van de footer — scheiding ná body (8px)"
+          "comment": "Bovenkant padding van de footer (16px)"
         },
         "padding-block-end": {
           "value": "{dsn.space.block.xl}",
