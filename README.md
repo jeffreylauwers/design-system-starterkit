@@ -166,23 +166,23 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 
 | Component     | HTML/CSS | React | Web Component |
 | ------------- | -------- | ----- | ------------- |
-| **Body**      | Yes      | Yes   | :             |
-| **Container** | Yes      | Yes   | :             |
-| **Grid**      | Yes      | Yes   | :             |
-| **GridItem**  | Yes      | Yes   | :             |
-| **Stack**     | Yes      | Yes   | :             |
+| **Body**      | Yes      | Yes   | No            |
+| **Container** | Yes      | Yes   | No            |
+| **Grid**      | Yes      | Yes   | No            |
+| **GridItem**  | Yes      | Yes   | No            |
+| **Stack**     | Yes      | Yes   | No            |
 
 **Content Components (10)**
 
 | Component         | HTML/CSS | React | Web Component |
 | ----------------- | -------- | ----- | ------------- |
 | **Button**        | Yes      | Yes   | Yes           |
-| **ButtonLink**    | Yes      | Yes   | :             |
+| **ButtonLink**    | Yes      | Yes   | No            |
 | **Heading**       | Yes      | Yes   | Yes           |
 | **Icon**          | Yes      | Yes   | Yes           |
-| **Image**         | Yes      | Yes   | :             |
+| **Image**         | Yes      | Yes   | No            |
 | **Link**          | Yes      | Yes   | Yes           |
-| **LinkButton**    | Yes      | Yes   | :             |
+| **LinkButton**    | Yes      | Yes   | No            |
 | **OrderedList**   | Yes      | Yes   | Yes           |
 | **Paragraph**     | Yes      | Yes   | Yes           |
 | **UnorderedList** | Yes      | Yes   | Yes           |
@@ -191,62 +191,62 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 
 | Component       | HTML/CSS | React | Web Component |
 | --------------- | -------- | ----- | ------------- |
-| **Alert**       | Yes      | Yes   | :             |
-| **Backdrop**    | Yes      | Yes   | :             |
-| **Card**        | Yes      | Yes   | :             |
-| **Details**     | Yes      | Yes   | :             |
-| **DotBadge**    | Yes      | Yes   | :             |
-| **Note**        | Yes      | Yes   | :             |
-| **NumberBadge** | Yes      | Yes   | :             |
-| **Popover**     | Yes      | Yes   | :             |
-| **StatusBadge** | Yes      | Yes   | :             |
-| **Table**       | Yes      | Yes   | :             |
+| **Alert**       | Yes      | Yes   | No            |
+| **Backdrop**    | Yes      | Yes   | No            |
+| **Card**        | Yes      | Yes   | No            |
+| **Details**     | Yes      | Yes   | No            |
+| **DotBadge**    | Yes      | Yes   | No            |
+| **Note**        | Yes      | Yes   | No            |
+| **NumberBadge** | Yes      | Yes   | No            |
+| **Popover**     | Yes      | Yes   | No            |
+| **StatusBadge** | Yes      | Yes   | No            |
+| **Table**       | Yes      | Yes   | No            |
 
 **Navigation Components (5)**
 
 | Component                | HTML/CSS | React | Web Component |
 | ------------------------ | -------- | ----- | ------------- |
-| **BreadcrumbNavigation** | Yes      | Yes   | :             |
-| **Menu**                 | Yes      | Yes   | :             |
-| **MenuButton**           | Yes      | Yes   | :             |
-| **MenuLink**             | Yes      | Yes   | :             |
-| **PageHeader**           | Yes      | Yes   | :             |
+| **BreadcrumbNavigation** | Yes      | Yes   | No            |
+| **Menu**                 | Yes      | Yes   | No            |
+| **MenuButton**           | Yes      | Yes   | No            |
+| **MenuLink**             | Yes      | Yes   | No            |
+| **PageHeader**           | Yes      | Yes   | No            |
 
 **Accessibility Components (1)**
 
 | Component    | HTML/CSS | React | Web Component |
 | ------------ | -------- | ----- | ------------- |
-| **SkipLink** | Yes      | Yes   | :             |
+| **SkipLink** | Yes      | Yes   | No            |
 
 **Form Components (25)**
 
 | Component                 | HTML/CSS | React | Web Component |
 | ------------------------- | -------- | ----- | ------------- |
-| **Checkbox**              | Yes      | Yes   | :             |
-| **CheckboxGroup**         | Yes      | Yes   | :             |
-| **CheckboxOption**        | Yes      | Yes   | :             |
-| **DateInput**             | Yes      | Yes   | :             |
-| **DateInputGroup**        | Yes      | Yes   | :             |
-| **EmailInput**            | Yes      | Yes   | :             |
-| **FormField**             | Yes      | Yes   | :             |
-| **FormFieldDescription**  | Yes      | Yes   | :             |
-| **FormFieldErrorMessage** | Yes      | Yes   | :             |
-| **FormFieldLabel**        | Yes      | Yes   | :             |
-| **FormFieldLegend**       | Yes      | Yes   | :             |
-| **FormFieldset**          | Yes      | Yes   | :             |
-| **FormFieldStatus**       | Yes      | Yes   | :             |
-| **NumberInput**           | Yes      | Yes   | :             |
-| **OptionLabel**           | Yes      | Yes   | :             |
-| **PasswordInput**         | Yes      | Yes   | :             |
-| **Radio**                 | Yes      | Yes   | :             |
-| **RadioGroup**            | Yes      | Yes   | :             |
-| **RadioOption**           | Yes      | Yes   | :             |
-| **SearchInput**           | Yes      | Yes   | :             |
-| **Select**                | Yes      | Yes   | :             |
-| **TelephoneInput**        | Yes      | Yes   | :             |
-| **TextArea**              | Yes      | Yes   | :             |
-| **TextInput**             | Yes      | Yes   | :             |
-| **TimeInput**             | Yes      | Yes   | :             |
+| **Checkbox**              | Yes      | Yes   | No            |
+| **CheckboxGroup**         | Yes      | Yes   | No            |
+| **CheckboxOption**        | Yes      | Yes   | No            |
+| **DateInput**             | Yes      | Yes   | No            |
+| **DateInputGroup**        | Yes      | Yes   | No            |
+| **EmailInput**            | Yes      | Yes   | No            |
+| **FormField**             | Yes      | Yes   | No            |
+| **FormFieldDescription**  | Yes      | Yes   | No            |
+| **FormFieldErrorMessage** | Yes      | Yes   | No            |
+| **FormFieldLabel**        | Yes      | Yes   | No            |
+| **FormFieldLegend**       | Yes      | Yes   | No            |
+| **FormFieldset**          | Yes      | Yes   | No            |
+| **FormFieldStatus**       | Yes      | Yes   | No            |
+| **NumberInput**           | Yes      | Yes   | No            |
+| **OptionLabel**           | Yes      | Yes   | No            |
+| **PasswordInput**         | Yes      | Yes   | No            |
+| **Radio**                 | Yes      | Yes   | No            |
+| **RadioGroup**            | Yes      | Yes   | No            |
+| **RadioOption**           | Yes      | Yes   | No            |
+| **SearchInput**           | Yes      | Yes   | No            |
+| **Select**                | Yes      | Yes   | No            |
+| **TelephoneInput**        | Yes      | Yes   | No            |
+| **TextArea**              | Yes      | Yes   | No            |
+| **TextInput**             | Yes      | Yes   | No            |
+| **TimeInput**             | Yes      | Yes   | No            |
 
 See the [Documentation](./docs/) for full component details and specifications.
 

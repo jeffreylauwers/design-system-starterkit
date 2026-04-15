@@ -409,7 +409,7 @@ const meta: Meta<typeof Button> = {
 
 | Prop            | Type          | Default  | Description                         |
 | --------------- | ------------- | -------- | ----------------------------------- |
-| `tokens`        | `Token[]`     | :        | Array of `{ name, cssVar, value? }` |
+| `tokens`        | `Token[]`     | -        | Array of `{ name, cssVar, value? }` |
 | `previewType`   | `PreviewType` | `'none'` | Visual preview type                 |
 | `showLiveValue` | `boolean`     | `true`   | Show computed CSS value             |
 
