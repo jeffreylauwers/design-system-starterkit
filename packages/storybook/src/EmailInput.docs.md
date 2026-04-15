@@ -15,12 +15,12 @@ De EmailInput component is een gespecialiseerd invoerveld voor e-mailadressen. H
 
 ## Don't use when
 
-- Je meerdere e-mailadressen wilt invoeren — overweeg dan een TagInput of tekstinvoer met eigen validatie.
-- Het om een vrij tekstveld gaat — gebruik dan [TextInput](/docs/components-textinput--docs).
+- Je meerdere e-mailadressen wilt invoeren: overweeg dan een TagInput of tekstinvoer met eigen validatie.
+- Het om een vrij tekstveld gaat: gebruik dan [TextInput](/docs/components-textinput--docs).
 
 ## Best practices
 
-- **Gebruik FormFieldDescription voor formaathints.** Als het e-mailadresformaat toelichting behoeft, gebruik dan [FormFieldDescription](/docs/components-formfielddescription--docs) — niet een placeholder. Placeholder tekst verdwijnt bij typen en is daarna niet meer zichtbaar.
+- **Gebruik FormFieldDescription voor formaathints.** Als het e-mailadresformaat toelichting behoeft, gebruik dan [FormFieldDescription](/docs/components-formfielddescription--docs): niet een placeholder. Placeholder tekst verdwijnt bij typen en is daarna niet meer zichtbaar.
 - **Laat browser-autocomplete aan.** De standaard `autocomplete="email"` helpt gebruikers snel invullen. Zet alleen op `off` als daar een goede reden voor is.
 - **Combineer met FormField.** Gebruik altijd een label via `FormField` of `FormFieldLabel` voor toegankelijkheid.
 - **Geef validatie feedback.** Gebruik de `invalid` prop in combinatie met `aria-invalid` en een `FormFieldErrorMessage`.

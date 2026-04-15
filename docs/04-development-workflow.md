@@ -114,7 +114,7 @@ All token JSON files follow a consistent structure. These rules apply to primiti
 
 #### Key ordering (in order of priority)
 
-1. **Nesting depth first** — shallower tokens come before deeper ones
+1. **Nesting depth first**: shallower tokens come before deeper ones
 2. **At the same level: states first, then variants, then sub-components**
    - States appear in this fixed order:
      1. `active`
@@ -133,14 +133,14 @@ All token JSON files follow a consistent structure. These rules apply to primiti
 
 #### Naming convention
 
-Always use **kebab-case** — never camelCase:
+Always use **kebab-case**: never camelCase:
 
 ```
 ✅ border-color, padding-inline-start, background-color
 ❌ borderColor, paddingInlineStart, backgroundColor
 ```
 
-#### Example — Button component tokens
+#### Example: Button component tokens
 
 ```json
 {
@@ -178,10 +178,10 @@ Always use **kebab-case** — never camelCase:
 
 **Why this order?**
 
-- Base properties describe the default state — they come first
-- States are variations on the base — they come right after
-- Variants are alternative versions (e.g. primary vs secondary) — after states
-- Sub-components are internal parts (e.g. icon inside a button) — last
+- Base properties describe the default state: they come first
+- States are variations on the base: they come right after
+- Variants are alternative versions (e.g. primary vs secondary): after states
+- Sub-components are internal parts (e.g. icon inside a button): last
 
 This makes each token file readable top-to-bottom: first what a thing looks like normally, then how it changes, then which variants exist.
 
@@ -391,9 +391,9 @@ import '@dsn/core/css'; // Includes reset + utilities
 .dsn-button__icon {
 } /* Element */
 .dsn-button--strong {
-} /* Modifier — variant */
+} /* Modifier: variant */
 .dsn-button--size-small {
-} /* Modifier — grootte */
+} /* Modifier: grootte */
 ```
 
 - Enkelvoudige koppeltekens scheiden woorden binnen een naam

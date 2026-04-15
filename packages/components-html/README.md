@@ -1,6 +1,6 @@
 # @dsn/components-html
 
-Pure HTML/CSS components for the design system — no JavaScript required.
+Pure HTML/CSS components for the design system: no JavaScript required.
 
 Use these components in static HTML pages, server-rendered templates, or any project that doesn't use a JavaScript framework.
 

@@ -1,6 +1,6 @@
 # @dsn/design-tokens
 
-Design tokens for the design system — the single source of truth for colors, typography, spacing, sizing, borders, shadows, and more.
+Design tokens for the design system: the single source of truth for colors, typography, spacing, sizing, borders, shadows, and more.
 
 ## Architecture
 
@@ -57,23 +57,23 @@ src/tokens/
 
 ### In Theme Base (`themes/*/base.json`)
 
-- **Typography** — Font families, weights, line heights
-- **Spacing** — 5 concepts (block, inline, text, column, row)
-- **Sizing** — Icon sizes (coupled to typography)
-- **Borders** — Radius and width values
-- **Focus States** — Accessible focus indicators
-- **Form Controls** — Structural tokens (spacing, borders)
+- **Typography**: Font families, weights, line heights
+- **Spacing**: 5 concepts (block, inline, text, column, row)
+- **Sizing**: Icon sizes (coupled to typography)
+- **Borders**: Radius and width values
+- **Focus States**: Accessible focus indicators
+- **Form Controls**: Structural tokens (spacing, borders)
 
 ### In Theme Colors (`themes/*/colors-*.json`)
 
-- **Colors** — 10 semantic color sets with full state coverage
+- **Colors**: 10 semantic color sets with full state coverage
   - Neutral, Accent 1-3, Action 1-2, Positive, Negative, Warning, Info
   - Each with: bg, border, color × document, subtle, default, hover, active
   - Plus inverse variants for dark backgrounds
 
 ### In Project Type (`project-types/*/typography.json`)
 
-- **Font Sizes** — sm, md, lg, xl, 2xl, 3xl, 4xl
+- **Font Sizes**: sm, md, lg, xl, 2xl, 3xl, 4xl
   - `default`: Fluid sizes using `clamp()` for responsive scaling
   - `information-dense`: Fixed rem sizes for data-heavy UIs
 
@@ -250,8 +250,8 @@ For existing consumers, these aliases are maintained:
 ### Wireframe Theme
 
 - **Font**: System UI stack (system-ui, -apple-system, etc.)
-- **Border radius**: 2px (sm), 4px (md), 8px (lg) — more minimal
-- **Colors**: Grayscale only — all semantic colors alias to neutral/accent-1
+- **Border radius**: 2px (sm), 4px (md), 8px (lg): more minimal
+- **Colors**: Grayscale only: all semantic colors alias to neutral/accent-1
 - **Focus**: Blue outline (standard browser style)
 
 ### Default vs Information-Dense

@@ -349,7 +349,7 @@ Five semantic easing curves for consistent motion feel.
 }
 ```
 
-**Reduced motion:** All duration tokens resolve to `0ms` via a central `@media (prefers-reduced-motion: reduce)` block appended to every full CSS configuration — no component-level media queries needed.
+**Reduced motion:** All duration tokens resolve to `0ms` via a central `@media (prefers-reduced-motion: reduce)` block appended to every full CSS configuration: no component-level media queries needed.
 
 ---
 
@@ -358,7 +358,7 @@ Five semantic easing curves for consistent motion feel.
 **Total Tokens (as of v4.9.0):**
 
 - Semantic tokens: ~400 per configuration
-- Component tokens: ~700 (30 component JSON files — 9 content + 3 display/feedback + 25 form, incl. variant kleur-tokens Alert/Note/StatusBadge)
+- Component tokens: ~700 (30 component JSON files: 9 content + 3 display/feedback + 25 form, incl. variant kleur-tokens Alert/Note/StatusBadge)
 - **Total: ~1100+ tokens per full configuration**
 - **Total configurations: 8** (2 themes × 2 modes × 2 project types)
 

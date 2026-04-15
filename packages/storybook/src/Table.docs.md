@@ -17,9 +17,9 @@ De Table component structureert tabeldata semantisch correct zodat schermlezers 
 
 ## Don't use when
 
-- De data één-dimensionaal is — gebruik een lijst (`UnorderedList`, `OrderedList`).
-- Je paginalayout wilt opbouwen — gebruik `Grid` of `Stack`.
-- Er slechts één kolom is zonder relationele data — gebruik een lijst of `Paragraph`.
+- De data één-dimensionaal is: gebruik een lijst (`UnorderedList`, `OrderedList`).
+- Je paginalayout wilt opbouwen: gebruik `Grid` of `Stack`.
+- Er slechts één kolom is zonder relationele data: gebruik een lijst of `Paragraph`.
 
 ## Best practices
 
@@ -29,11 +29,11 @@ De `caption` prop is verplicht. Het bijschrift is zichtbaar boven de tabel en di
 
 ### Kolomkoppen en rijkoppen
 
-Gebruik altijd `<th scope="col">` voor kolomkoppen en `<th scope="row">` voor rijkoppen. Gebruik nooit een gestylede `<td>` als vervanging — `scope` is essentieel voor schermlezersnavigatie.
+Gebruik altijd `<th scope="col">` voor kolomkoppen en `<th scope="row">` voor rijkoppen. Gebruik nooit een gestylede `<td>` als vervanging: `scope` is essentieel voor schermlezersnavigatie.
 
 ### Voettekst (`<tfoot>`)
 
-Voeg `<tfoot>` toe als children voor een totaal- of samenvattingsrij. De stijl (vetgedrukte tekst, sterkere bovenborder) wordt automatisch via CSS toegepast — geen aparte prop nodig.
+Voeg `<tfoot>` toe als children voor een totaal- of samenvattingsrij. De stijl (vetgedrukte tekst, sterkere bovenborder) wordt automatisch via CSS toegepast: geen aparte prop nodig.
 
 ```html
 <tfoot>
@@ -56,8 +56,8 @@ Sorteerfunctionaliteit (state management, data manipulatie) valt buiten de scope
 - Voeg `aria-sort="ascending"`, `aria-sort="descending"` of `aria-sort="none"` toe aan `<th>` elementen die sorteerbaar zijn.
 - Laat `aria-sort` weg op niet-sorteerbare kolommen.
 - Gebruik `dsn-button dsn-button--size-small dsn-button--subtle dsn-button--icon-only dsn-table__sort-button` als klasse op de knop.
-- Geef de knop een toegankelijke naam via `dsn-button__label` — gebruik geen `aria-label`.
-- Voeg drie sorteericonen toe in de knop — de CSS toont het juiste icoon op basis van `aria-sort`:
+- Geef de knop een toegankelijke naam via `dsn-button__label`: gebruik geen `aria-label`.
+- Voeg drie sorteericonen toe in de knop: de CSS toont het juiste icoon op basis van `aria-sort`:
 
 ```html
 <th scope="col" aria-sort="ascending">
@@ -101,7 +101,7 @@ De kolomkop van de selecteerkolom bevat een "selecteer alles" checkbox; gebruik 
 ```html
 <table class="dsn-table">
   <caption class="dsn-table__caption">
-    Productoverzicht — selecteerbare rijen
+    Productoverzicht: selecteerbare rijen
   </caption>
   <thead>
     <tr>
@@ -207,10 +207,10 @@ Gebruik een actiekolom voor acties die op een specifieke rij uitgevoerd worden. 
 
 ## Accessibility
 
-- Gebruik **altijd** `scope="col"` op kolomkoppen en `scope="row"` op rijkoppen — dit is de kern van toegankelijke tabellen. Zonder `scope` kunnen schermlezers de relatie tussen cellen en koppen niet vaststellen.
+- Gebruik **altijd** `scope="col"` op kolomkoppen en `scope="row"` op rijkoppen: dit is de kern van toegankelijke tabellen. Zonder `scope` kunnen schermlezers de relatie tussen cellen en koppen niet vaststellen.
 - De `<caption>` staat altijd als eerste kind van `<table>` en is zowel zichtbaar als machine-leesbaar.
 - Bij `scrollable`: de wrapper krijgt `role="region"` en `aria-labelledby` zodat schermlezers de scrollbare regio kunnen herkennen en benoemen.
-- Sorteericonen zijn **altijd** decoratief (`aria-hidden="true"`). De sorteerknop heeft een toegankelijke naam via `dsn-button__label` — bijv. `"Sorteer op Naam"`. Gebruik geen `aria-label`. De `aria-sort` waarde op `<th>` communiceert de sorteerrichting; de richting hoef je niet te herhalen in de `dsn-button__label`.
-- Gebruik **nooit** `display: grid` of `display: flex` op tabel-elementen — dit verwijdert de ingebouwde toegankelijkheidssemantiek van de browser.
+- Sorteericonen zijn **altijd** decoratief (`aria-hidden="true"`). De sorteerknop heeft een toegankelijke naam via `dsn-button__label`: bijv. `"Sorteer op Naam"`. Gebruik geen `aria-label`. De `aria-sort` waarde op `<th>` communiceert de sorteerrichting; de richting hoef je niet te herhalen in de `dsn-button__label`.
+- Gebruik **nooit** `display: grid` of `display: flex` op tabel-elementen: dit verwijdert de ingebouwde toegankelijkheidssemantiek van de browser.
 - Schermlezers (NVDA, JAWS) navigeren door tabellen met `Ctrl+Alt+pijltjestoetsen`. Bij elke cel wordt de bijbehorende kolomkop en/of rijkop automatisch voorgelezen.
-- Maak individuele cellen (`<td>`, `<th>`) nooit focusbaar via `tabindex` — dit belemmert de standaard schermlezernavigatie.
+- Maak individuele cellen (`<td>`, `<th>`) nooit focusbaar via `tabindex`: dit belemmert de standaard schermlezernavigatie.

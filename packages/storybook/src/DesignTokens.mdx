@@ -31,7 +31,7 @@ Design tokens are the single source of truth for colors, typography, spacing, bo
 
 ## Colors
 
-Each color scale provides a full set of tokens for backgrounds, borders, and text — including document, elevated, subtle, default, hover, and active states. The **elevated** token is intended for floating UI layers (modals, popovers, dropdowns) that appear above the document surface.
+Each color scale provides a full set of tokens for backgrounds, borders, and text: including document, elevated, subtle, default, hover, and active states. The **elevated** token is intended for floating UI layers (modals, popovers, dropdowns) that appear above the document surface.
 
 ### Neutral
 
@@ -634,7 +634,7 @@ Accessible focus indicators for keyboard navigation, following WCAG 2.4.7.
 
 ## Icon Sizes
 
-Icon sizes are fluid and coupled to typography — calculated as `font-size * line-height` to ensure optical alignment with adjacent text.
+Icon sizes are fluid and coupled to typography: calculated as `font-size * line-height` to ensure optical alignment with adjacent text.
 
 <TokenTable
   previewType="spacing"
@@ -667,7 +667,7 @@ Minimum touch/click target sizes following WCAG 2.5.5 Target Size.
 
 ## Box Shadows
 
-Elevation shadows communicate depth — which surface floats above another. Each shadow is composed of two drop shadow layers (direct + ambient) and a spread-only outline layer (highlight). Only the color tokens differ between light and dark mode; the shadow structure is identical.
+Elevation shadows communicate depth: which surface floats above another. Each shadow is composed of two drop shadow layers (direct + ambient) and a spread-only outline layer (highlight). Only the color tokens differ between light and dark mode; the shadow structure is identical.
 
 ### Shadow Colors
 
@@ -687,9 +687,9 @@ The three primitives that power all elevation shadows. In light mode `highlight`
 <TokenTable
   previewType="shadow"
   tokens={[
-    { name: 'sm — Cards, chips', cssVar: '--dsn-box-shadow-sm' },
-    { name: 'md — Dropdowns, tooltips', cssVar: '--dsn-box-shadow-md' },
-    { name: 'lg — Modals, dialogs', cssVar: '--dsn-box-shadow-lg' },
+    { name: 'sm: Cards, chips', cssVar: '--dsn-box-shadow-sm' },
+    { name: 'md: Dropdowns, tooltips', cssVar: '--dsn-box-shadow-md' },
+    { name: 'lg: Modals, dialogs', cssVar: '--dsn-box-shadow-lg' },
   ]}
 />
 
@@ -697,7 +697,7 @@ The three primitives that power all elevation shadows. In light mode `highlight`
 
 ## Motion
 
-Motion tokens beheren timing en easing op één centrale plek. Alle componenten gebruiken deze tokens — waardoor `prefers-reduced-motion` automatisch en consistent wordt gerespecteerd.
+Motion tokens beheren timing en easing op één centrale plek. Alle componenten gebruiken deze tokens: waardoor `prefers-reduced-motion` automatisch en consistent wordt gerespecteerd.
 
 Bij `prefers-reduced-motion: reduce` worden alle duration-tokens naar `0ms` gezet via een centrale media query in het theme CSS-bestand. Componenten hoeven zelf geen media query te implementeren.
 

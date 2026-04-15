@@ -4,7 +4,7 @@ Configureerbare container voor gestructureerde content met een optionele header 
 
 ## Doel
 
-Het Card component presenteert een zelfstandig inhoudsblok — doorgaans een afbeelding, heading, beschrijving en call-to-action — compact en visueel afgebakend. De gehele card is klikbaar via een stretched-link techniek: het `::before` pseudo-element van de link in `CardHeading` dekt de volledige card, terwijl screenreaders alleen de heading-tekst als linknaam voorlezen. Gebruik `CardGroup` voor groepen van cards waarbij gelijke hoogte en uitgelijnde footers vereist zijn.
+Het Card component presenteert een zelfstandig inhoudsblok: doorgaans een afbeelding, heading, beschrijving en call-to-action: compact en visueel afgebakend. De gehele card is klikbaar via een stretched-link techniek: het `::before` pseudo-element van de link in `CardHeading` dekt de volledige card, terwijl screenreaders alleen de heading-tekst als linknaam voorlezen. Gebruik `CardGroup` voor groepen van cards waarbij gelijke hoogte en uitgelijnde footers vereist zijn.
 
 <!-- VOORBEELD -->
 
@@ -18,15 +18,15 @@ Het Card component presenteert een zelfstandig inhoudsblok — doorgaans een afb
 
 ## Don't use when
 
-- De inhoud geen navigatie-actie heeft — gebruik dan **Note** of **Alert**.
+- De inhoud geen navigatie-actie heeft: gebruik dan **Note** of **Alert**.
 - Het gaat om losse KPI-statistieken zonder navigatie-actie.
-- Een eenvoudige container zonder gestructureerde secties vereist is — gebruik dan een `<div>` met padding.
+- Een eenvoudige container zonder gestructureerde secties vereist is: gebruik dan een `<div>` met padding.
 
 ## Best practices
 
 ### Afbeelding en placeholder
 
-- Geef `alt=""` mee aan de afbeelding in `CardHeader` — de afbeelding is decoratief bij een stretched-link-card. De heading-tekst is de toegankelijke naam.
+- Geef `alt=""` mee aan de afbeelding in `CardHeader`: de afbeelding is decoratief bij een stretched-link-card. De heading-tekst is de toegankelijke naam.
 - Gebruik de `Image` component met `ratio="16:9"` voor consistente beeldverhoudingen in een groep.
 - Wanneer `CardHeader` zonder children wordt gerenderd, toont het component automatisch een afbeeldingsplaceholder met `aria-hidden="true"`.
 
@@ -44,7 +44,7 @@ Het Card component presenteert een zelfstandig inhoudsblok — doorgaans een afb
 
 ### CardGroup
 
-- Gebruik `CardGroup` met `as="ul"` (standaard) voor cards die een lijst van gelijksoortige items vormen — geeft schermlezergebruikers de context "Lijst, [n] items".
+- Gebruik `CardGroup` met `as="ul"` (standaard) voor cards die een lijst van gelijksoortige items vormen: geeft schermlezergebruikers de context "Lijst, [n] items".
 - Gebruik `as="div"` wanneer cards geen lijst-context hebben (bijv. featured cards op een homepage).
 
 ## Design tokens
@@ -75,10 +75,10 @@ Het Card component presenteert een zelfstandig inhoudsblok — doorgaans een afb
 
 ## Accessibility
 
-- De card root is `<article>` — een semantisch zelfstandig inhoudsblok, navigeerbaar via schermlezer-sneltoets (bijv. `A`-toets in NVDA/JAWS).
-- De afbeelding in de header is decoratief bij de stretched-link-variant: gebruik `alt=""` op de `Image` component — dit activeert automatisch `aria-hidden="true"` op de `<figure>`.
-- De `dsn-card__image-placeholder` heeft `aria-hidden="true"` — puur decoratief.
+- De card root is `<article>`: een semantisch zelfstandig inhoudsblok, navigeerbaar via schermlezer-sneltoets (bijv. `A`-toets in NVDA/JAWS).
+- De afbeelding in de header is decoratief bij de stretched-link-variant: gebruik `alt=""` op de `Image` component: dit activeert automatisch `aria-hidden="true"` op de `<figure>`.
+- De `dsn-card__image-placeholder` heeft `aria-hidden="true"`: puur decoratief.
 - `CardGroup` als `<ul role="list">` geeft schermlezergebruikers de context "Lijst, [n] items". `role="list"` is nodig omdat veel CSS-resets de lijstsemantiek van `<ul>` verwijderen.
-- Aankondiging door screenreaders: "[Artikeltitel], link" — alleen de heading-tekst, niet de volledige card-inhoud.
+- Aankondiging door screenreaders: "[Artikeltitel], link": alleen de heading-tekst, niet de volledige card-inhoud.
 - Focus-ring: `:has(.dsn-card-heading__link:focus-visible)` toont een focus-ring rondom de gehele card. De link zelf heeft geen eigen outline wanneer de card-focusstaat actief is.
 - CSS `:has()` is vereist voor de hover- en focusstaten (baseline 2023, breed ondersteund).

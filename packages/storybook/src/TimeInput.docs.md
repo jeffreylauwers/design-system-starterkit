@@ -4,7 +4,7 @@ Een invoerveld voor tijden met een interactieve klokknop aan de rechterkant.
 
 ## Doel
 
-De TimeInput component is een gespecialiseerd invoerveld voor het invoeren van een tijdstip. Een interactieve klokknop staat rechts in het veld (`inline-end`) en opent de native tijdkiezer van de browser of het mobiele apparaat bij klikken. De `padding-inline-end` van het invoerveld wordt automatisch vergroot zodat tekst nooit achter de knop terechtkomt. Het veld heeft een vaste `sm`-breedte (14ch) — tijdvelden hebben een voorspelbare inhoudsbreedte waarvoor dit altijd voldoende is.
+De TimeInput component is een gespecialiseerd invoerveld voor het invoeren van een tijdstip. Een interactieve klokknop staat rechts in het veld (`inline-end`) en opent de native tijdkiezer van de browser of het mobiele apparaat bij klikken. De `padding-inline-end` van het invoerveld wordt automatisch vergroot zodat tekst nooit achter de knop terechtkomt. Het veld heeft een vaste `sm`-breedte (14ch): tijdvelden hebben een voorspelbare inhoudsbreedte waarvoor dit altijd voldoende is.
 
 <!-- VOORBEELD -->
 
@@ -16,8 +16,8 @@ De TimeInput component is een gespecialiseerd invoerveld voor het invoeren van e
 
 ## Don't use when
 
-- Je een datumveld nodig hebt — gebruik dan een DateInput.
-- Je datum én tijd tegelijk wilt invoeren — gebruik dan een datetime-local input.
+- Je een datumveld nodig hebt: gebruik dan een DateInput.
+- Je datum én tijd tegelijk wilt invoeren: gebruik dan een datetime-local input.
 
 ## Best practices
 
@@ -35,9 +35,9 @@ De TimeInput component is een gespecialiseerd invoerveld voor het invoeren van e
 
 Een TimeInput bestaat uit:
 
-- **Wrapper div** — regelt de breedte en positioneert de knop relatief aan het veld
-- **Klokknop** — `Button` component (`variant="subtle"`, `size="small"`, `iconOnly`) rechts in het veld, opent de native tijdkiezer via `showPicker()`
-- **Input element** — `type="time"` met extra padding rechts voor de knop
+- **Wrapper div**: regelt de breedte en positioneert de knop relatief aan het veld
+- **Klokknop**: `Button` component (`variant="subtle"`, `size="small"`, `iconOnly`) rechts in het veld, opent de native tijdkiezer via `showPicker()`
+- **Input element**: `type="time"` met extra padding rechts voor de knop
 
 ## States
 

@@ -18,7 +18,7 @@ De navigatie-inhoud (primair en service) wordt via props doorgegeven en in de `D
 
 ## Don't use when
 
-- Je enkel een large viewport layout nodig hebt zonder mobile fallback — `PageHeader` is altijd responsive en toont altijd beide layouts op de juiste viewport.
+- Je enkel een large viewport layout nodig hebt zonder mobile fallback: `PageHeader` is altijd responsive en toont altijd beide layouts op de juiste viewport.
 
 ## Best practices
 
@@ -27,12 +27,12 @@ De navigatie-inhoud (primair en service) wordt via props doorgegeven en in de `D
 Het `logoSlot` accepteert vrije inhoud: een `<svg>`, een `<img>`, of een `<a>` die een logo omhult. De CSS past `max-block-size` toe op de directe child via `.dsn-page-header__logo > *`:
 
 ```html
-<!-- <a> met logo (aanbevolen — navigatielink naar homepage) -->
+<!-- <a> met logo (aanbevolen: navigatielink naar homepage) -->
 <div class="dsn-page-header__logo">
   <a href="/">
     <svg class="dsn-logo" aria-hidden="true"><!-- paden --></svg>
     <span class="dsn-visually-hidden"
-      >Naam organisatie — terug naar homepage</span
+      >Naam organisatie: terug naar homepage</span
     >
   </a>
 </div>
@@ -78,8 +78,8 @@ De navigatielade is een `<Drawer side="left">` die altijd in de DOM aanwezig is.
 
 Boven `64em` (~1024px) toont de header automatisch een tweebandige layout via CSS `display: none`:
 
-- **Masthead** — neutrale achtergrond met logo (inline-start), servicemenu en inline zoekveld (inline-end)
-- **Navigatiebalk** — accent-1 achtergrond met de primaire navigatie
+- **Masthead**: neutrale achtergrond met logo (inline-start), servicemenu en inline zoekveld (inline-end)
+- **Navigatiebalk**: accent-1 achtergrond met de primaire navigatie
 
 De mobile layout (hamburger + drawer) valt via `display: none` volledig uit de accessibility tree.
 
@@ -165,7 +165,7 @@ De mobile layout (hamburger + drawer) valt via `display: none` volledig uit de a
 De `layout="compact"` variant plaatst logo, primaire navigatie en servicemenu in één enkele rij via CSS-grid `1fr auto 1fr`. Gebruik dit wanneer de primaire navigatie maar één niveau heeft en de branding compacter mag:
 
 ```html
-<!-- HTML/CSS — compact layout modifier -->
+<!-- HTML/CSS: compact layout modifier -->
 <header class="dsn-page-header dsn-page-header--compact">
   <!-- Small viewport layout (ongewijzigd) -->
   <div class="dsn-page-header__small-layout">...</div>
@@ -228,10 +228,10 @@ De `layout="compact"` variant plaatst logo, primaire navigatie en servicemenu in
 
 ### Inverse kleurvariant
 
-De `colorScheme="inverse"` variant gebruikt `accent-1-inverse` achtergronden op de navbar en compact balk voor prominente branding. Het masthead blijft altijd neutraal (`neutral.bg-document`). Logo-kleuren en menu-items passen zich automatisch aan via CSS context overrides — geen extra klassen nodig.
+De `colorScheme="inverse"` variant gebruikt `accent-1-inverse` achtergronden op de navbar en compact balk voor prominente branding. Het masthead blijft altijd neutraal (`neutral.bg-document`). Logo-kleuren en menu-items passen zich automatisch aan via CSS context overrides: geen extra klassen nodig.
 
 ```html
-<!-- HTML/CSS — inverse modifier (combineerbaar met andere modifiers) -->
+<!-- HTML/CSS: inverse modifier (combineerbaar met andere modifiers) -->
 <header class="dsn-page-header dsn-page-header--inverse">...</header>
 
 <!-- Combinatie met compact layout -->
@@ -282,36 +282,36 @@ Het zoekpaneel verschijnt direct onder de header-binnenbalk. Het paneel bevat ee
 
 ## Design tokens
 
-| Token                                             | Standaard                            | Omschrijving                               |
-| ------------------------------------------------- | ------------------------------------ | ------------------------------------------ |
-| `--dsn-page-header-background-color`              | `{dsn.color.neutral.bg-document}`    | Achtergrondkleur                           |
-| `--dsn-page-header-border-block-end-width`        | `{dsn.border.width.thick}`           | Breedte onderkantrand (4px)                |
-| `--dsn-page-header-border-block-end-color`        | `{dsn.color.accent-1.color-default}` | Kleur onderkantrand (merkkleur)            |
-| `--dsn-page-header-padding-block`                 | `{dsn.space.block.md}`               | Verticale padding binnenbalk               |
-| `--dsn-page-header-padding-inline`                | `{dsn.space.inline.xl}`              | Horizontale padding binnenbalk             |
-| `--dsn-page-header-z-index`                       | `300`                                | Z-index voor sticky — onder backdrop (400) |
-| `--dsn-page-header-logo-max-block-size`           | `2rem`                               | Maximale hoogte logo (32px)                |
-| `--dsn-page-header-search-panel-background-color` | `{dsn.color.accent-1.bg-default}`    | Achtergrond zoekpaneel (small)             |
-| `--dsn-page-header-search-panel-padding-block`    | `{dsn.space.block.md}`               | Verticale padding zoekpaneel (small)       |
-| `--dsn-page-header-search-panel-padding-inline`   | `{dsn.space.inline.xl}`              | Horizontale padding zoekpaneel (small)     |
-| `--dsn-page-header-masthead-background-color`     | `{dsn.color.neutral.bg-document}`    | Masthead achtergrond (large)               |
-| `--dsn-page-header-masthead-padding-block`        | `{dsn.space.block.xl}`               | Verticale padding masthead (large)         |
-| `--dsn-page-header-masthead-padding-inline`       | `{dsn.space.inline.xl}`              | Horizontale padding masthead (large)       |
-| `--dsn-page-header-navbar-background-color`       | `{dsn.color.accent-1.bg-default}`    | Navigatiebalk achtergrond (large)          |
-| `--dsn-page-header-navbar-padding-inline`         | `{dsn.space.inline.xl}`              | Horizontale padding navigatiebalk (large)  |
-| `--dsn-page-header-secondary-nav-gap`             | `{dsn.space.column.3xl}`             | Gap servicemenu ↔ zoekveld (large)         |
-| `--dsn-page-header-compact-background-color`      | `{dsn.color.neutral.bg-document}`    | Compact balk achtergrond                   |
-| `--dsn-page-header-compact-padding-block`         | `{dsn.space.block.xl}`               | Verticale padding compact balk             |
-| `--dsn-page-header-compact-padding-inline`        | `{dsn.space.inline.xl}`              | Horizontale padding compact balk           |
+| Token                                             | Standaard                            | Omschrijving                              |
+| ------------------------------------------------- | ------------------------------------ | ----------------------------------------- |
+| `--dsn-page-header-background-color`              | `{dsn.color.neutral.bg-document}`    | Achtergrondkleur                          |
+| `--dsn-page-header-border-block-end-width`        | `{dsn.border.width.thick}`           | Breedte onderkantrand (4px)               |
+| `--dsn-page-header-border-block-end-color`        | `{dsn.color.accent-1.color-default}` | Kleur onderkantrand (merkkleur)           |
+| `--dsn-page-header-padding-block`                 | `{dsn.space.block.md}`               | Verticale padding binnenbalk              |
+| `--dsn-page-header-padding-inline`                | `{dsn.space.inline.xl}`              | Horizontale padding binnenbalk            |
+| `--dsn-page-header-z-index`                       | `300`                                | Z-index voor sticky: onder backdrop (400) |
+| `--dsn-page-header-logo-max-block-size`           | `2rem`                               | Maximale hoogte logo (32px)               |
+| `--dsn-page-header-search-panel-background-color` | `{dsn.color.accent-1.bg-default}`    | Achtergrond zoekpaneel (small)            |
+| `--dsn-page-header-search-panel-padding-block`    | `{dsn.space.block.md}`               | Verticale padding zoekpaneel (small)      |
+| `--dsn-page-header-search-panel-padding-inline`   | `{dsn.space.inline.xl}`              | Horizontale padding zoekpaneel (small)    |
+| `--dsn-page-header-masthead-background-color`     | `{dsn.color.neutral.bg-document}`    | Masthead achtergrond (large)              |
+| `--dsn-page-header-masthead-padding-block`        | `{dsn.space.block.xl}`               | Verticale padding masthead (large)        |
+| `--dsn-page-header-masthead-padding-inline`       | `{dsn.space.inline.xl}`              | Horizontale padding masthead (large)      |
+| `--dsn-page-header-navbar-background-color`       | `{dsn.color.accent-1.bg-default}`    | Navigatiebalk achtergrond (large)         |
+| `--dsn-page-header-navbar-padding-inline`         | `{dsn.space.inline.xl}`              | Horizontale padding navigatiebalk (large) |
+| `--dsn-page-header-secondary-nav-gap`             | `{dsn.space.column.3xl}`             | Gap servicemenu ↔ zoekveld (large)        |
+| `--dsn-page-header-compact-background-color`      | `{dsn.color.neutral.bg-document}`    | Compact balk achtergrond                  |
+| `--dsn-page-header-compact-padding-block`         | `{dsn.space.block.xl}`               | Verticale padding compact balk            |
+| `--dsn-page-header-compact-padding-inline`        | `{dsn.space.inline.xl}`              | Horizontale padding compact balk          |
 
 ## Accessibility
 
-- `<header>` heeft impliciete `role="banner"` — geen extra ARIA nodig.
-- De menuknop en zoekknop gebruiken altijd een `dsn-button__label` span voor de toegankelijke naam — nooit `aria-label`.
+- `<header>` heeft impliciete `role="banner"`: geen extra ARIA nodig.
+- De menuknop en zoekknop gebruiken altijd een `dsn-button__label` span voor de toegankelijke naam: nooit `aria-label`.
 - Zoekknop heeft `aria-expanded` (false/true) en `aria-controls` gericht op het zoekpaneel-ID.
 - Bij openen zoekpaneel: focus verplaatst automatisch naar het `<input>` van de `SearchInput`.
 - Bij sluiten zoekpaneel: focus keert terug naar de zoek-/sluitknop.
 - Elke `<nav>` in de Drawer heeft een unieke toegankelijke naam via `aria-labelledby` + visueel verborgen `<h3>`.
 - Drawer-focusbeheer wordt verzorgd door het bestaande `Drawer`-component.
-- Op large viewport: `dsn-page-header__small-layout` en `dsn-page-header__large-layout` worden geswitcht met `display: none` — de inactieve sectie valt automatisch uit de accessibility tree.
-- Op large viewport: beide `<nav>` elementen gebruiken `aria-label` ("Servicemenu", "Hoofdmenu") — geen verborgen headings, zodat de heading-hiërarchie van de pagina niet vervuild wordt vóór de `<h1>`.
+- Op large viewport: `dsn-page-header__small-layout` en `dsn-page-header__large-layout` worden geswitcht met `display: none`: de inactieve sectie valt automatisch uit de accessibility tree.
+- Op large viewport: beide `<nav>` elementen gebruiken `aria-label` ("Servicemenu", "Hoofdmenu"): geen verborgen headings, zodat de heading-hiërarchie van de pagina niet vervuild wordt vóór de `<h1>`.

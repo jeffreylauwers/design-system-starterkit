@@ -17,8 +17,8 @@ De OrderedList component biedt een consistente, toegankelijke manier om lijsten 
 
 ## Don't use when
 
-- De volgorde van items niet uitmaakt — gebruik dan de [Unordered List](/docs/components-unorderedlist--docs) component.
-- Je maar één enkel item hebt — gebruik dan gewoon tekst of een paragraph.
+- De volgorde van items niet uitmaakt: gebruik dan de [Unordered List](/docs/components-unorderedlist--docs) component.
+- Je maar één enkel item hebt: gebruik dan gewoon tekst of een paragraph.
 - De items geen opeenvolgende stappen zijn maar losse punten.
 
 ## Best practices
@@ -57,4 +57,4 @@ De OrderedList component ondersteunt standaard HTML `<ol>` attributen:
 
 - **start**: Startnummer voor de lijst (bijv. `start={5}` begint bij 5)
 - **reversed**: Omgekeerde nummering (van hoog naar laag)
-- **type**: Nummeringstijl ("1", "A", "a", "I", "i") — standaard is "1" (decimaal)
+- **type**: Nummeringstijl ("1", "A", "a", "I", "i"): standaard is "1" (decimaal)

@@ -17,7 +17,7 @@ De Image component biedt een semantisch correcte afbeeldingcontainer op basis va
 
 ## Don't use when
 
-- Decoratieve SVG-iconen of UI-iconen — gebruik daarvoor het **Icon** component.
+- Decoratieve SVG-iconen of UI-iconen: gebruik daarvoor het **Icon** component.
 - Afbeeldingen die via CSS als achtergrond gezet worden (`background-image`).
 
 ## Best practices
@@ -25,14 +25,14 @@ De Image component biedt een semantisch correcte afbeeldingcontainer op basis va
 ### Alt-tekst
 
 - Schrijf beschrijvende alt-tekst die de betekenis van de afbeelding overbrengt, niet de inhoud letterlijk beschrijft.
-- Gebruik `alt=""` (lege string) voor puur decoratieve afbeeldingen — de React-component voegt dan automatisch `aria-hidden="true"` toe aan de `<figure>`.
-- Laat `alt` nooit weg — een ontbrekend `alt` attribuut is een WCAG 2.2 SC 1.1.1 overtreding.
+- Gebruik `alt=""` (lege string) voor puur decoratieve afbeeldingen: de React-component voegt dan automatisch `aria-hidden="true"` toe aan de `<figure>`.
+- Laat `alt` nooit weg: een ontbrekend `alt` attribuut is een WCAG 2.2 SC 1.1.1 overtreding.
 
 ### Breedte en hoogte
 
 - Geef altijd `width` en `height` mee met de intrinsieke pixelafmetingen van de afbeelding.
 - De browser reserveert daardoor de ruimte vooraf en voorkomt layout shift (CLS).
-- De werkelijke weergavegrootte wordt bepaald door CSS — de attributen zijn alleen een hint voor de browser.
+- De werkelijke weergavegrootte wordt bepaald door CSS: de attributen zijn alleen een hint voor de browser.
 
 ### Beeldverhoudingen
 
@@ -49,12 +49,12 @@ De Image component biedt een semantisch correcte afbeeldingcontainer op basis va
 ### Bijschrift
 
 - Gebruik `caption` voor tekst die de afbeelding toelicht of van bron voorziet.
-- De `<figcaption>` is semantisch gelinkt aan de `<figure>` — geen extra `aria-labelledby` nodig.
+- De `<figcaption>` is semantisch gelinkt aan de `<figure>`: geen extra `aria-labelledby` nodig.
 
 ### srcSet en sizes
 
 - Gebruik `srcSet` en `sizes` voor responsieve afbeeldingen met meerdere formaten.
-- Het component berekent deze waarden niet intern — dit is afhankelijk van de asset pipeline van de applicatie (Next.js, Cloudinary, etc.).
+- Het component berekent deze waarden niet intern: dit is afhankelijk van de asset pipeline van de applicatie (Next.js, Cloudinary, etc.).
 
 ## Design tokens
 
@@ -69,9 +69,9 @@ De Image component biedt een semantisch correcte afbeeldingcontainer op basis va
 ## Accessibility
 
 - `alt` is altijd verplicht aanwezig als attribuut. Een ontbrekend `alt` is een WCAG 2.2 SC 1.1.1 overtreding.
-- `alt=""` (lege string) is correct voor decoratieve afbeeldingen — de React-component voegt automatisch `aria-hidden="true"` toe aan de `<figure>`.
-- Gebruik **nooit** `role="presentation"` in combinatie met `alt=""` — dit is een HTML-validatiefout.
-- `<figure>` heeft de impliciete ARIA-rol `figure` — geen extra `role` attribuut nodig.
-- `<figcaption>` is semantisch gelinkt aan de `<figure>` — geen extra `aria-labelledby` nodig.
+- `alt=""` (lege string) is correct voor decoratieve afbeeldingen: de React-component voegt automatisch `aria-hidden="true"` toe aan de `<figure>`.
+- Gebruik **nooit** `role="presentation"` in combinatie met `alt=""`: dit is een HTML-validatiefout.
+- `<figure>` heeft de impliciete ARIA-rol `figure`: geen extra `role` attribuut nodig.
+- `<figcaption>` is semantisch gelinkt aan de `<figure>`: geen extra `aria-labelledby` nodig.
 - `<figure>` en `<img>` zijn niet focusbaar. Als de afbeelding klikbaar moet zijn, wrap dan met `Link` of `ButtonLink` buiten dit component.
 - `decoding="async"` wordt altijd toegepast om de hoofdthread niet te blokkeren.

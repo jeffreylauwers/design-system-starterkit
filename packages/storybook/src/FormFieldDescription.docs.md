@@ -17,10 +17,10 @@ De FormFieldDescription component toont aanvullende informatie of instructies vo
 
 ## Don't use when
 
-- Je een foutmelding wilt tonen — gebruik [FormFieldErrorMessage](/docs/components-formfielderrormessage--docs).
-- Je status feedback wilt geven — gebruik [FormFieldStatus](/docs/components-formfieldstatus--docs).
-- De informatie essentieel is — voeg het toe aan het label zelf.
-- Je een label nodig hebt — gebruik [FormFieldLabel](/docs/components-formfieldlabel--docs).
+- Je een foutmelding wilt tonen: gebruik [FormFieldErrorMessage](/docs/components-formfielderrormessage--docs).
+- Je status feedback wilt geven: gebruik [FormFieldStatus](/docs/components-formfieldstatus--docs).
+- De informatie essentieel is: voeg het toe aan het label zelf.
+- Je een label nodig hebt: gebruik [FormFieldLabel](/docs/components-formfieldlabel--docs).
 
 ## Best practices
 

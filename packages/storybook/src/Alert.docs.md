@@ -4,7 +4,7 @@ Belangrijk bericht dat de gebruiker informeert over de huidige activiteit of toe
 
 ## Doel
 
-De Alert component toont een prominent bericht op de pagina — bij een succesvolle actie, een foutmelding, een waarschuwing of een informatief bericht. Vier varianten — **info**, **positive**, **negative** en **warning** — geven elk een eigen signaalkleur, linkerborder en achtergrond. Een decoratief icoon versterkt de status visueel, maar de heading draagt altijd de betekenis.
+De Alert component toont een prominent bericht op de pagina: bij een succesvolle actie, een foutmelding, een waarschuwing of een informatief bericht. Vier varianten: **info**, **positive**, **negative** en **warning**: geven elk een eigen signaalkleur, linkerborder en achtergrond. Een decoratief icoon versterkt de status visueel, maar de heading draagt altijd de betekenis.
 
 <!-- VOORBEELD -->
 
@@ -17,22 +17,22 @@ De Alert component toont een prominent bericht op de pagina — bij een succesvo
 
 ## Don't use when
 
-- De informatie één regel tekst is zonder heading — gebruik een **StatusBadge** of **FormFieldStatus**.
-- Het bericht interactief is (bijv. een link of knop vereist) — gebruik een **Alert** met `children` die een link bevatten, of een **Button** als de actie centraal staat.
-- Je een klein inline statuslabel wilt — gebruik een **StatusBadge**.
-- Het bericht tijdelijk is en na enkele seconden verdwijnt — gebruik een toast/snackbar patroon (nog niet beschikbaar).
-- De content redactioneel of contextgevend is zonder dat het systeem een toestand meldt — gebruik een **Note**.
+- De informatie één regel tekst is zonder heading: gebruik een **StatusBadge** of **FormFieldStatus**.
+- Het bericht interactief is (bijv. een link of knop vereist): gebruik een **Alert** met `children` die een link bevatten, of een **Button** als de actie centraal staat.
+- Je een klein inline statuslabel wilt: gebruik een **StatusBadge**.
+- Het bericht tijdelijk is en na enkele seconden verdwijnt: gebruik een toast/snackbar patroon (nog niet beschikbaar).
+- De content redactioneel of contextgevend is zonder dat het systeem een toestand meldt: gebruik een **Note**.
 
 ## Best practices
 
 ### Variantkeuze
 
-Een Alert communiceert altijd een toestand die het systeem heeft vastgesteld. Elke variant draagt daarmee een expliciet semantisch signaal: iets is gelukt, mislukt, in behandeling of vereist aandacht. Een neutrale variant ontbreekt bewust — als het systeem iets te melden heeft, is er altijd een toon. Zonder toon is er geen reden voor een Alert.
+Een Alert communiceert altijd een toestand die het systeem heeft vastgesteld. Elke variant draagt daarmee een expliciet semantisch signaal: iets is gelukt, mislukt, in behandeling of vereist aandacht. Een neutrale variant ontbreekt bewust: als het systeem iets te melden heeft, is er altijd een toon. Zonder toon is er geen reden voor een Alert.
 
-- **Info** — standaard, voor informatieve berichten zonder urgentie (`"Uw aanvraag wordt verwerkt"`).
-- **Positive** — succesberichten na een geslaagde actie (`"Uw gegevens zijn opgeslagen"`).
-- **Negative** — fout- of validatieberichten (`"Er zijn fouten opgetreden"`).
-- **Warning** — waarschuwingen die aandacht vragen maar niet blokkerend zijn (`"Uw sessie verloopt binnenkort"`).
+- **Info**: standaard, voor informatieve berichten zonder urgentie (`"Uw aanvraag wordt verwerkt"`).
+- **Positive**: succesberichten na een geslaagde actie (`"Uw gegevens zijn opgeslagen"`).
+- **Negative**: fout- of validatieberichten (`"Er zijn fouten opgetreden"`).
+- **Warning**: waarschuwingen die aandacht vragen maar niet blokkerend zijn (`"Uw sessie verloopt binnenkort"`).
 
 ### Icoon
 
@@ -41,12 +41,12 @@ Een Alert communiceert altijd een toestand die het systeem heeft vastgesteld. El
   - **positive** → `circle-check`
   - **negative** → `exclamation-circle`
   - **warning** → `alert-triangle`
-- Het icoon is altijd decoratief (`aria-hidden="true"`) — de heading draagt de betekenis.
+- Het icoon is altijd decoratief (`aria-hidden="true"`): de heading draagt de betekenis.
 - Gebruik `iconStart={null}` om het icoon te onderdrukken bij compacte weergave.
 
 ### Heading
 
-- De heading is verplicht — het is de primaire informatiedrager.
+- De heading is verplicht: het is de primaire informatiedrager.
 - Houd de heading beknopt: één zin die de kern van het bericht weergeeft.
 - Pas `headingLevel` aan op de documentstructuur (standaard `h2`).
 
@@ -54,13 +54,13 @@ Een Alert communiceert altijd een toestand die het systeem heeft vastgesteld. El
 
 - Body content (`children`) is optioneel. Gebruik het voor aanvullende uitleg, een opsomming van validatiefouten of een link.
 - Bij een lijst met validatiefouten: gebruik een `<ul>` in `children` met één fout per `<li>`.
-- Zet geen interactieve elementen in de heading — gebruik `children` voor links of acties.
+- Zet geen interactieve elementen in de heading: gebruik `children` voor links of acties.
 
 ### Live regions
 
-- `role="alert"` is altijd aanwezig — het is een assertieve live region.
+- `role="alert"` is altijd aanwezig: het is een assertieve live region.
 - Gebruik Alert **alleen voor dynamisch toegevoegde berichten** die verschijnen na een gebruikersactie. Bij statische inhoud (al aanwezig bij paginalading) voegt `role="alert"` geen waarde toe.
-- Omsluit de Alert met `aria-live="polite"` als je minder urgente meldingen wilt (experimenteel — heeft voorrang op `role="alert"`).
+- Omsluit de Alert met `aria-live="polite"` als je minder urgente meldingen wilt (experimenteel: heeft voorrang op `role="alert"`).
 
 ## Design tokens
 
@@ -92,8 +92,8 @@ Een Alert communiceert altijd een toestand die het systeem heeft vastgesteld. El
 
 ## Accessibility
 
-- `role="alert"` maakt de component een assertieve live region — screenreaders lezen het voor zodra het in de DOM verschijnt.
-- Het icoon heeft altijd `aria-hidden="true"` — de heading is de informatiedrager.
+- `role="alert"` maakt de component een assertieve live region: screenreaders lezen het voor zodra het in de DOM verschijnt.
+- Het icoon heeft altijd `aria-hidden="true"`: de heading is de informatiedrager.
 - De heading (`<strong class="dsn-alert__heading">`) geeft semantisch gewicht aan het bericht.
 - Pas `headingLevel` aan op de documenthiërarchie zodat de heading in de juiste nesting valt.
-- Alert is niet klikbaar — voor interactieve alertberichten: voeg links of knoppen toe via `children`.
+- Alert is niet klikbaar: voor interactieve alertberichten: voeg links of knoppen toe via `children`.

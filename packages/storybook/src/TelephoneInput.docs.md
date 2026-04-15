@@ -4,7 +4,7 @@ Een invoerveld specifiek voor telefoonnummers.
 
 ## Doel
 
-De TelephoneInput component is een gespecialiseerd invoerveld voor telefoonnummers. Het gebruikt `type="tel"` voor een geoptimaliseerd toetsenbord op mobiel (met cijfers en koppeltekens direct beschikbaar) en `autocomplete="tel"` zodat de browser opgeslagen telefoonnummers kan aanbieden. Er wordt geen format-validatie afgedwongen — gebruikers kunnen zowel nationale (06 12345678) als internationale (+31 6 12345678) nummers invoeren.
+De TelephoneInput component is een gespecialiseerd invoerveld voor telefoonnummers. Het gebruikt `type="tel"` voor een geoptimaliseerd toetsenbord op mobiel (met cijfers en koppeltekens direct beschikbaar) en `autocomplete="tel"` zodat de browser opgeslagen telefoonnummers kan aanbieden. Er wordt geen format-validatie afgedwongen: gebruikers kunnen zowel nationale (06 12345678) als internationale (+31 6 12345678) nummers invoeren.
 
 <!-- VOORBEELD -->
 
@@ -15,12 +15,12 @@ De TelephoneInput component is een gespecialiseerd invoerveld voor telefoonnumme
 
 ## Don't use when
 
-- Het om een vrij tekstveld gaat — gebruik dan [TextInput](/docs/components-textinput--docs).
-- Je strikte format-validatie wilt afdwingen — doe dit via formuliervalidatie, niet via het inputtype.
+- Het om een vrij tekstveld gaat: gebruik dan [TextInput](/docs/components-textinput--docs).
+- Je strikte format-validatie wilt afdwingen: doe dit via formuliervalidatie, niet via het inputtype.
 
 ## Best practices
 
-- **Gebruik FormFieldDescription voor formaathints.** Als je het verwachte formaat wilt toelichten (bijv. `06 12345678` of `+31 6 12345678`), gebruik dan [FormFieldDescription](/docs/components-formfielddescription--docs) — niet een placeholder. Placeholder tekst verdwijnt bij typen en is daarna niet meer zichtbaar.
+- **Gebruik FormFieldDescription voor formaathints.** Als je het verwachte formaat wilt toelichten (bijv. `06 12345678` of `+31 6 12345678`), gebruik dan [FormFieldDescription](/docs/components-formfielddescription--docs): niet een placeholder. Placeholder tekst verdwijnt bij typen en is daarna niet meer zichtbaar.
 - **Dwing geen specifiek formaat af.** Gebruikers typen telefoonnummers op verschillende manieren. Valideer lengte en tekens, maar accepteer variaties in opmaak.
 - **Laat browser-autocomplete aan.** De standaard `autocomplete="tel"` helpt gebruikers snel invullen.
 - **Combineer met FormField.** Gebruik altijd een label via `FormField` of `FormFieldLabel` voor toegankelijkheid.
@@ -30,7 +30,7 @@ De TelephoneInput component is een gespecialiseerd invoerveld voor telefoonnumme
 
 - `type="tel"` geeft op mobiel een toetsenbord met cijfers, koppeltekens en plusteken.
 - `autocomplete="tel"` maakt het voor gebruikers eenvoudig om hun telefoonnummer in te vullen.
-- Er wordt geen native browservalidatie afgedwongen — valideer zelf in het formulier.
+- Er wordt geen native browservalidatie afgedwongen: valideer zelf in het formulier.
 
 ## States
 

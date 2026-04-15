@@ -6,9 +6,9 @@ Lichtgewicht, contextgebonden overlay verankerd aan een triggerelement.
 
 ## Doel
 
-Het Popover component toont een zwevend paneel dat verankerd is aan een triggerelement. In tegenstelling tot `ModalDialog` en `Drawer` blokkeert een Popover de rest van de pagina niet — de gebruiker kan op de achtergrond blijven interacteren. De overlay sluit automatisch bij klik buiten de overlay (light-dismiss) of bij Escape.
+Het Popover component toont een zwevend paneel dat verankerd is aan een triggerelement. In tegenstelling tot `ModalDialog` en `Drawer` blokkeert een Popover de rest van de pagina niet: de gebruiker kan op de achtergrond blijven interacteren. De overlay sluit automatisch bij klik buiten de overlay (light-dismiss) of bij Escape.
 
-Het component ondersteunt een composable structuur met `PopoverHeader`, `PopoverBody` en `PopoverFooter`, waardoor willekeurige content — waaronder het `Menu`-component — als slot kan worden meegegeven.
+Het component ondersteunt een composable structuur met `PopoverHeader`, `PopoverBody` en `PopoverFooter`, waardoor willekeurige content: waaronder het `Menu`-component: als slot kan worden meegegeven.
 
 **Implementatiekeuze:** De React-implementatie gebruikt de HTML Popover API (`popover="auto"`) voor ingebakken light-dismiss en top-layer gedrag. Positionering vindt plaats via JavaScript (`getBoundingClientRect`).
 
@@ -21,9 +21,9 @@ Het component ondersteunt een composable structuur met `PopoverHeader`, `Popover
 
 ## Don't use when
 
-- De content de volledige aandacht van de gebruiker vereist of interactie met de achtergrond niet toegestaan mag zijn — gebruik dan **ModalDialog**.
-- De gebruiker de achtergrondpagina voor context nodig heeft terwijl hij een uitgebreid formulier invult — gebruik dan **Drawer**.
-- De content een volwaardige werkstroom is die een eigen URL rechtvaardigt — gebruik dan een aparte pagina.
+- De content de volledige aandacht van de gebruiker vereist of interactie met de achtergrond niet toegestaan mag zijn: gebruik dan **ModalDialog**.
+- De gebruiker de achtergrondpagina voor context nodig heeft terwijl hij een uitgebreid formulier invult: gebruik dan **Drawer**.
+- De content een volwaardige werkstroom is die een eigen URL rechtvaardigt: gebruik dan een aparte pagina.
 
 ## Best practices
 
@@ -40,16 +40,16 @@ Het component ondersteunt een composable structuur met `PopoverHeader`, `Popover
 
 - Gebruik `PopoverHeading` + `PopoverHeader` wanneer de popover een duidelijke titel heeft (bijv. "Filters"). De `aria-labelledby` koppeling verloopt automatisch via de context.
 - Gebruik de `label` prop wanneer de popover geen visuele heading heeft (bijv. een acties-menu). Dit stelt `aria-label` op de popover container.
-- **Nooit** beide tegelijk gebruiken — kies één van de twee patronen.
+- **Nooit** beide tegelijk gebruiken: kies één van de twee patronen.
 
 ### Plaatsing
 
 Kies de plaatsing (`placement`) op basis van de beschikbare ruimte:
 
-- `bottom` (standaard) — meest gebruikelijk, de popover opent onder de trigger.
-- `top` — gebruik wanneer de trigger laag op de pagina staat.
-- `end` — rechts van de trigger (of links in RTL).
-- `start` — links van de trigger (of rechts in RTL).
+- `bottom` (standaard): meest gebruikelijk, de popover opent onder de trigger.
+- `top`: gebruik wanneer de trigger laag op de pagina staat.
+- `end`: rechts van de trigger (of links in RTL).
+- `start`: links van de trigger (of rechts in RTL).
 
 De React-implementatie klampt de popover automatisch binnen het viewport bij overschrijding van de randen.
 
@@ -87,7 +87,7 @@ Het triggerelement (bijv. `Button`) krijgt automatisch `aria-expanded="true/fals
 
 ### Structuur
 
-- De popover container heeft `role="dialog"` en `aria-modal="false"` — niet-modaal: de achtergrond blijft interactief en er is geen focus-trap.
+- De popover container heeft `role="dialog"` en `aria-modal="false"`: niet-modaal: de achtergrond blijft interactief en er is geen focus-trap.
 - Popovers met `PopoverHeader`/`PopoverHeading` gebruiken `aria-labelledby` naar de heading-ID (via context, identiek aan het `ModalDialog`-patroon).
 - Popovers zonder heading gebruiken `aria-label` op de popover container (via de `label` prop).
 - Het triggerelement krijgt `aria-expanded="true/false"` die synchroon loopt met de open-staat.
@@ -97,9 +97,9 @@ Het triggerelement (bijv. `Button`) krijgt automatisch `aria-expanded="true/fals
 - `Escape` sluit de popover en zet focus terug op het triggerelement.
 - Klik buiten de popover (light-dismiss via Popover API) sluit de popover.
 - Bij openen: focus springt naar het eerste interactieve element in de popover.
-- Tab-volgorde blijft lineair — focus mag buiten de popover bewegen (geen focus-trap).
+- Tab-volgorde blijft lineair: focus mag buiten de popover bewegen (geen focus-trap).
 
 ### Schermlezers
 
 - Schermlezers kondigen de dialoogrol aan bij openen: bijv. "Acties, dialoog".
-- De sluitknop in `PopoverHeader` gebruikt altijd een `dsn-button__label` span — nooit `aria-label` op de button zelf.
+- De sluitknop in `PopoverHeader` gebruikt altijd een `dsn-button__label` span: nooit `aria-label` op de button zelf.

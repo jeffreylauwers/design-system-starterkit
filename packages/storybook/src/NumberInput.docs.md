@@ -4,7 +4,7 @@ Een invoerveld voor numerieke waarden, geoptimaliseerd voor zowel desktop als mo
 
 ## Doel
 
-De NumberInput component is een gespecialiseerd invoerveld voor het invoeren van getallen. Het gebruikt `type="text"` met `inputmode="numeric"` en `pattern="[0-9]*"` — het GOV.UK-patroon — zodat mobiele gebruikers een cijfertoetsenbord krijgen zonder de nadelen van `type="number"` (zoals ongewenste scroll-interactie en stille validatiefouten). Voor decimale getallen (bijv. bedragen) kan `allowDecimals` worden ingesteld.
+De NumberInput component is een gespecialiseerd invoerveld voor het invoeren van getallen. Het gebruikt `type="text"` met `inputmode="numeric"` en `pattern="[0-9]*"`: het GOV.UK-patroon: zodat mobiele gebruikers een cijfertoetsenbord krijgen zonder de nadelen van `type="number"` (zoals ongewenste scroll-interactie en stille validatiefouten). Voor decimale getallen (bijv. bedragen) kan `allowDecimals` worden ingesteld.
 
 <!-- VOORBEELD -->
 
@@ -16,12 +16,12 @@ De NumberInput component is een gespecialiseerd invoerveld voor het invoeren van
 
 ## Don't use when
 
-- Het om vrije tekst gaat — gebruik dan [TextInput](/docs/components-textinput--docs).
-- Je een datum- of tijdinvoer nodig hebt — gebruik dan DateInput of [TimeInput](/docs/components-timeinput--docs).
+- Het om vrije tekst gaat: gebruik dan [TextInput](/docs/components-textinput--docs).
+- Je een datum- of tijdinvoer nodig hebt: gebruik dan DateInput of [TimeInput](/docs/components-timeinput--docs).
 
 ## Best practices
 
-- **Gebruik FormFieldDescription voor formaathints.** Als je wilt toelichten wat de verwachte invoer is (bijv. "Voer een bedrag in, gebruik een komma voor decimalen"), gebruik dan [FormFieldDescription](/docs/components-formfielddescription--docs) — niet een placeholder. Placeholder tekst verdwijnt bij typen en is daarna niet meer zichtbaar.
+- **Gebruik FormFieldDescription voor formaathints.** Als je wilt toelichten wat de verwachte invoer is (bijv. "Voer een bedrag in, gebruik een komma voor decimalen"), gebruik dan [FormFieldDescription](/docs/components-formfielddescription--docs): niet een placeholder. Placeholder tekst verdwijnt bij typen en is daarna niet meer zichtbaar.
 - **Gebruik `allowDecimals` voor bedragen.** Dit schakelt `inputmode="decimal"` in zodat ook een kommatoets beschikbaar is op mobiel.
 - **Combineer met FormField.** Gebruik altijd een label via `FormField` of `FormFieldLabel` voor toegankelijkheid.
 - **Geef validatie feedback.** Gebruik de `invalid` prop in combinatie met `aria-invalid` en een `FormFieldErrorMessage`.

@@ -19,8 +19,8 @@ In Storybook is `dsn-body` als global decorator toegepast op alle stories en 'Vo
 
 ## Don't use when
 
-- Je de stijlen voor een specifieke sectie wilt overschrijven — gebruik dan component-specifieke klassen of CSS custom properties.
-- Je een ander thema of een andere modus per sectie wilt toepassen — dit is een document-level wrapper, geen theming-component.
+- Je de stijlen voor een specifieke sectie wilt overschrijven: gebruik dan component-specifieke klassen of CSS custom properties.
+- Je een ander thema of een andere modus per sectie wilt toepassen: dit is een document-level wrapper, geen theming-component.
 
 ## Best practices
 
@@ -30,7 +30,7 @@ In Storybook is `dsn-body` als global decorator toegepast op alle stories en 'Vo
 
 ## Accessibility
 
-Body heeft geen directe invloed op toegankelijkheid. De tokens die het instelt — met name kleur en achtergrond — zijn afgestemd op een voldoende contrastverhouding volgens WCAG 2.1 AA.
+Body heeft geen directe invloed op toegankelijkheid. De tokens die het instelt: met name kleur en achtergrond: zijn afgestemd op een voldoende contrastverhouding volgens WCAG 2.1 AA.
 
 ## Design tokens
 

@@ -6,7 +6,7 @@ Een container voor meerdere CheckboxOption componenten.
 
 De CheckboxGroup component is een simpele container die meerdere CheckboxOption componenten groepeert met consistente spacing. Het is puur een presentationele lijst zonder semantische form field markup (geen fieldset/legend). Voor een volledige form field met label en beschrijving wrap je de CheckboxGroup in een FormFieldset component. De gap tussen opties is geoptimaliseerd voor leesbaarheid en touch targets.
 
-> **Codevoorbeeld met context**: De HTML/CSS tab toont `CheckboxOption` componenten als representatieve children. `CheckboxGroup` is puur een lijst-container — de children bepalen de daadwerkelijke functionaliteit.
+> **Codevoorbeeld met context**: De HTML/CSS tab toont `CheckboxOption` componenten als representatieve children. `CheckboxGroup` is puur een lijst-container: de children bepalen de daadwerkelijke functionaliteit.
 
 <!-- VOORBEELD -->
 
@@ -18,9 +18,9 @@ De CheckboxGroup component is een simpele container die meerdere CheckboxOption 
 
 ## Don't use when
 
-- Je een complete form field met label nodig hebt — wrap dan CheckboxGroup in [FormFieldset](/docs/components-formfieldset--docs).
-- Je maar één checkbox hebt — gebruik dan gewoon [CheckboxOption](/docs/components-checkboxoption--docs).
-- Je geen gerelateerde opties hebt — gebruik losse CheckboxOptions.
+- Je een complete form field met label nodig hebt: wrap dan CheckboxGroup in [FormFieldset](/docs/components-formfieldset--docs).
+- Je maar één checkbox hebt: gebruik dan gewoon [CheckboxOption](/docs/components-checkboxoption--docs).
+- Je geen gerelateerde opties hebt: gebruik losse CheckboxOptions.
 
 ## Best practices
 

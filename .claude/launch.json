@@ -3,15 +3,10 @@
   "configurations": [
     {
       "name": "storybook",
-      "runtimeExecutable": "pnpm",
+      "runtimeExecutable": "/bin/sh",
       "runtimeArgs": [
-        "--filter",
-        "storybook",
-        "exec",
-        "storybook",
-        "dev",
-        "-p",
-        "6007"
+        "-c",
+        "export PATH=/usr/local/bin:$PATH && pnpm --filter storybook exec storybook dev -p 6007"
       ],
       "port": 6007
     }

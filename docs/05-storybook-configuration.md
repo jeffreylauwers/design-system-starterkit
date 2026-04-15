@@ -109,7 +109,7 @@ export default config;
 **Key features:**
 
 - Toolbar controls for Theme, Mode, Density
-- Decorator for dynamic token loading — also applies `dsn-body` to `document.body` so all story previews inherit document-level base styles
+- Decorator for dynamic token loading: also applies `dsn-body` to `document.body` so all story previews inherit document-level base styles
 - Story sorting
 
 ```ts
@@ -243,11 +243,11 @@ body {
 
 ### Why This Architecture?
 
-1. **Static imports cause cascade issues** — Vite/webpack bundles CSS imports, which may load after dynamically injected styles
-2. **`:root:root` selector** — Higher specificity ensures dynamic tokens override bundled ones
-3. **MutationObserver** — New styles added by HMR or components don't break theming
-4. **URL parameter parsing** — Storybook encodes globals in URL (`?globals=mode:dark`)
-5. **Works for Stories AND Docs** — Unlike decorators, the script runs for all iframe content
+1. **Static imports cause cascade issues**: Vite/webpack bundles CSS imports, which may load after dynamically injected styles
+2. **`:root:root` selector**: Higher specificity ensures dynamic tokens override bundled ones
+3. **MutationObserver**: New styles added by HMR or components don't break theming
+4. **URL parameter parsing**: Storybook encodes globals in URL (`?globals=mode:dark`)
+5. **Works for Stories AND Docs**: Unlike decorators, the script runs for all iframe content
 
 ### How It Works
 
@@ -286,10 +286,10 @@ Custom React components voor Storybook documentation, gelocaliseerd in `packages
 
 **Features:**
 
-- `dsn-body` class op de wrapper div — zorgt voor correcte typography tokens (`font-size`, `font-family`, `line-height`, `font-weight`) en achtergrondkleur (`--dsn-color-neutral-bg-document`); gedrag identiek aan de afzonderlijke story-canvassen
-- `sb-unstyled` class op de wrapper div — sluit de PreviewFrame en al zijn kind-elementen uit van Storybook's docs-pagina CSS-reset (`.css-qa4clq :where(div:not(.sb-unstyled, ...))`), die anders `font-size: 16px` zou opleggen en de token-waarde overschrijven
+- `dsn-body` class op de wrapper div: zorgt voor correcte typography tokens (`font-size`, `font-family`, `line-height`, `font-weight`) en achtergrondkleur (`--dsn-color-neutral-bg-document`); gedrag identiek aan de afzonderlijke story-canvassen
+- `sb-unstyled` class op de wrapper div: sluit de PreviewFrame en al zijn kind-elementen uit van Storybook's docs-pagina CSS-reset (`.css-qa4clq :where(div:not(.sb-unstyled, ...))`), die anders `font-size: 16px` zou opleggen en de token-waarde overschrijven
 - Subtiele border (`--dsn-color-neutral-border-subtle`) en border-radius bovenaan
-- Geen onderkant border — verbindt visueel met de CodeTabs eronder als één geheel
+- Geen onderkant border: verbindt visueel met de CodeTabs eronder als één geheel
 
 **Usage in docs.mdx:**
 
@@ -316,8 +316,8 @@ import { PreviewFrame, CodeTabs } from './components';
 
 **Hoe de tabs werken:**
 
-- **React tab** — `Source of={story}` subscribet automatisch op `STORY_ARGS_UPDATED`. Storybook genereert de React code live op basis van de huidige args.
-- **HTML/CSS tab** — `Source of={story} transform={...}` intercepteert de code-output. Als `parameters.dsn.htmlTemplate` aanwezig is in de story, roept de transform die functie aan met de live args. Anders valt het terug op de statische `html` prop.
+- **React tab**: `Source of={story}` subscribet automatisch op `STORY_ARGS_UPDATED`. Storybook genereert de React code live op basis van de huidige args.
+- **HTML/CSS tab**: `Source of={story} transform={...}` intercepteert de code-output. Als `parameters.dsn.htmlTemplate` aanwezig is in de story, roept de transform die functie aan met de live args. Anders valt het terug op de statische `html` prop.
 
 **Usage in docs.mdx:**
 
@@ -330,7 +330,7 @@ import { PreviewFrame, CodeTabs } from './components';
 
 **Visuele samenhang:**
 
-- Geen top border — sluit naadloos aan op de PreviewFrame erboven
+- Geen top border: sluit naadloos aan op de PreviewFrame erboven
 - Border-radius alleen onderaan
 - Tab bar met token-based achtergrond en active tab kleur via `--dsn-link-color`
 
@@ -366,13 +366,13 @@ const meta: Meta<typeof Button> = {
 };
 ```
 
-**Uitzonderingen — geen `htmlTemplate`:**
+**Uitzonderingen: geen `htmlTemplate`:**
 
 | Component      | Reden                                                             |
 | -------------- | ----------------------------------------------------------------- |
-| CheckboxGroup  | Wrapper component met custom render — toont statische `html` prop |
-| RadioGroup     | Wrapper component met custom render — toont statische `html` prop |
-| DateInputGroup | Wrapper component met custom render — toont statische `html` prop |
+| CheckboxGroup  | Wrapper component met custom render: toont statische `html` prop  |
+| RadioGroup     | Wrapper component met custom render: toont statische `html` prop  |
+| DateInputGroup | Wrapper component met custom render: toont statische `html` prop  |
 | UnorderedList  | Geen zinvolle Controls beschikbaar om HTML dynamisch te genereren |
 
 ### TokenControls
@@ -409,7 +409,7 @@ const meta: Meta<typeof Button> = {
 
 | Prop            | Type          | Default  | Description                         |
 | --------------- | ------------- | -------- | ----------------------------------- |
-| `tokens`        | `Token[]`     | —        | Array of `{ name, cssVar, value? }` |
+| `tokens`        | `Token[]`     | :        | Array of `{ name, cssVar, value? }` |
 | `previewType`   | `PreviewType` | `'none'` | Visual preview type                 |
 | `showLiveValue` | `boolean`     | `true`   | Show computed CSS value             |
 
@@ -450,9 +450,9 @@ Storybook gebruikt `?path=`-gebaseerde URL-routing. Een gewone `<a href="#sectio
 
 Each component has **three files**:
 
-1. **Stories file** (`.stories.tsx`) — Interactive examples + argTypes + DocsPage import + `htmlTemplate`
-2. **MDX file** (`.docs.mdx`) — Documentation wrapper met PreviewFrame, CodeTabs, Controls
-3. **Markdown file** (`.docs.md`) — Dutch content (Doel, Use when, Best practices, etc.)
+1. **Stories file** (`.stories.tsx`): Interactive examples + argTypes + DocsPage import + `htmlTemplate`
+2. **MDX file** (`.docs.mdx`): Documentation wrapper met PreviewFrame, CodeTabs, Controls
+3. **Markdown file** (`.docs.md`): Dutch content (Doel, Use when, Best practices, etc.)
 
 ### Stories File Pattern
 
@@ -496,7 +496,7 @@ export const Disabled: Story = {
 };
 ```
 
-**Opmerking:** `Button.stories.tsx` importeert **geen** DocsPage en heeft **geen** `parameters.docs.page` — `Button.docs.mdx` importeert `ButtonStories` terug, wat een circulaire import geeft die Storybook laat crashen.
+**Opmerking:** `Button.stories.tsx` importeert **geen** DocsPage en heeft **geen** `parameters.docs.page`: `Button.docs.mdx` importeert `ButtonStories` terug, wat een circulaire import geeft die Storybook laat crashen.
 
 **Story volgorde (standaard):**
 
@@ -508,8 +508,8 @@ export const Disabled: Story = {
 
 **Niet toevoegen:**
 
-- ❌ `HighContrast` stories — CSS-simulatie geeft onrealistisch beeld
-- ❌ `LargeText` stories — form inputs gebruiken `clamp()` met rem-waarden; een wrapper div heeft geen effect
+- ❌ `HighContrast` stories: CSS-simulatie geeft onrealistisch beeld
+- ❌ `LargeText` stories: form inputs gebruiken `clamp()` met rem-waarden; een wrapper div heeft geen effect
 
 ### MDX File Pattern
 
@@ -651,18 +651,18 @@ pnpm --filter @dsn/storybook build
 
 ### Adding Documentation for a New Component
 
-1. **Create stories file** — `ComponentName.stories.tsx`
+1. **Create stories file**: `ComponentName.stories.tsx`
    - Import `DocsPage` from `.docs.mdx`
    - Add `parameters.docs.page: DocsPage`
    - Add `parameters.dsn.htmlTemplate` met een functie die HTML genereert
    - Import text constants from `story-helpers.tsx`
-2. **Create MDX file** — `ComponentName.docs.mdx`
+2. **Create MDX file**: `ComponentName.docs.mdx`
    - Wrap story in `<PreviewFrame>`
    - Add `<CodeTabs of={} html="..." />`
-3. **Create markdown file** — `ComponentName.docs.md`
+3. **Create markdown file**: `ComponentName.docs.md`
    - Follow the standard section structure
-4. **Test theme switching** — Verify all themes/modes work
-5. **Verify both tabs** — Check that React and HTML/CSS tabs show correct, dynamic code
+4. **Test theme switching**: Verify all themes/modes work
+5. **Verify both tabs**: Check that React and HTML/CSS tabs show correct, dynamic code
 
 ### TypeScript Import Check
 
@@ -678,17 +678,17 @@ pnpm --filter storybook exec tsc --noEmit 2>&1 | grep "TS2304\|TS6133"
 
 ### Toolbar Controls
 
-- **Theme** — Switch between themes (start, wireframe)
-- **Mode** — Switch between light/dark modes
-- **Density** — Switch between fluid/fixed typography
+- **Theme**: Switch between themes (start, wireframe)
+- **Mode**: Switch between light/dark modes
+- **Density**: Switch between fluid/fixed typography
 
 ### Addons
 
-- `@storybook/addon-links` — Navigation between stories
-- `@storybook/addon-essentials` — Core Storybook features
-- `@storybook/addon-interactions` — Testing interactions
-- `@storybook/addon-a11y` — Accessibility testing
-- `storybook-multilevel-sort` — Sidebar ordering
+- `@storybook/addon-links`: Navigation between stories
+- `@storybook/addon-essentials`: Core Storybook features
+- `@storybook/addon-interactions`: Testing interactions
+- `@storybook/addon-a11y`: Accessibility testing
+- `storybook-multilevel-sort`: Sidebar ordering
 
 ### Accessibility Testing
 

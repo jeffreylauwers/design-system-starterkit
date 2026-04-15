@@ -4,7 +4,7 @@ Theme-aware SVG logo component dat zich automatisch aanpast aan het actieve them
 
 ## Doel
 
-Logo rendert het Starter Kit-logo als inline SVG. De twee kleurlagen — de primaire merkkleur (achtergrondrechthoek + letterpaden) en de labelkleur (binnenste rechthoek) — zijn gekoppeld aan design tokens die per thema gedefinieerd worden. Hierdoor past het logo zich automatisch aan bij elk thema en elke kleurmodus, zonder componentcode aan te raken.
+Logo rendert het Starter Kit-logo als inline SVG. De twee kleurlagen: de primaire merkkleur (achtergrondrechthoek + letterpaden) en de labelkleur (binnenste rechthoek): zijn gekoppeld aan design tokens die per thema gedefinieerd worden. Hierdoor past het logo zich automatisch aan bij elk thema en elke kleurmodus, zonder componentcode aan te raken.
 
 Het component is bedoeld als bouwsteen voor de toekomstige `PageHeader`- en `PageFooter`-componenten.
 
@@ -18,7 +18,7 @@ Het component is bedoeld als bouwsteen voor de toekomstige `PageHeader`- en `Pag
 
 ## Don't use when
 
-- Je een extern organisatielogo wil tonen dat buiten de token-structuur valt — gebruik dan een `<img>` element met een passend `alt`-attribuut.
+- Je een extern organisatielogo wil tonen dat buiten de token-structuur valt: gebruik dan een `<img>` element met een passend `alt`-attribuut.
 
 ## Best practices
 
@@ -26,7 +26,7 @@ Het component is bedoeld als bouwsteen voor de toekomstige `PageHeader`- en `Pag
 
 Het Logo heeft twee toegankelijkheidspatronen:
 
-**Standalone** — het logo staat op zichzelf en levert zijn eigen accessible name via een `<title>`:
+**Standalone**: het logo staat op zichzelf en levert zijn eigen accessible name via een `<title>`:
 
 ```html
 <svg
@@ -46,7 +46,7 @@ Het Logo heeft twee toegankelijkheidspatronen:
 </svg>
 ```
 
-**Decoratief** — het logo staat in een link of naast tekst die de accessible name al levert:
+**Decoratief**: het logo staat in een link of naast tekst die de accessible name al levert:
 
 ```html
 <a href="/">
@@ -59,12 +59,12 @@ Het Logo heeft twee toegankelijkheidspatronen:
     fill="none"
     aria-hidden="true"
   >
-    <!-- geen <title> — de link levert de accessible name -->
+    <!-- geen <title>: de link levert de accessible name -->
     <path class="dsn-logo__primary" d="M0 0h185.491v48H0z" />
     <path class="dsn-logo__label" d="M8 8h169.491v32H8z" />
     <!-- letterpaden... -->
   </svg>
-  <span class="dsn-visually-hidden">Starter Kit — terug naar homepage</span>
+  <span class="dsn-visually-hidden">Starter Kit: terug naar homepage</span>
 </a>
 ```
 
@@ -76,19 +76,19 @@ Het Logo heeft een intrinsieke afmeting van 186×48px (ratio ≈ 3.875:1). Afmet
 
 Het logo reageert automatisch op thema- en moduswisselingen via design tokens:
 
-- `--dsn-logo-color-primary` — merkkleur van het actieve thema (blauw in Start, zwart in Wireframe)
-- `--dsn-logo-color-label` — documentachtergrondkleur (creëert het doorkijkje-effect)
+- `--dsn-logo-color-primary`: merkkleur van het actieve thema (blauw in Start, zwart in Wireframe)
+- `--dsn-logo-color-label`: documentachtergrondkleur (creëert het doorkijkje-effect)
 
 ## Design tokens
 
-| Token                      | Beschrijving                                                                      |
-| -------------------------- | --------------------------------------------------------------------------------- |
-| `--dsn-logo-color-primary` | Achtergrondrechthoek en letterpaden — merkkleur van het actieve thema             |
-| `--dsn-logo-color-label`   | Binnenste rechthoek — zelfde kleur als de documentachtergrond (doorkijkje-effect) |
+| Token                      | Beschrijving                                                                     |
+| -------------------------- | -------------------------------------------------------------------------------- |
+| `--dsn-logo-color-primary` | Achtergrondrechthoek en letterpaden: merkkleur van het actieve thema             |
+| `--dsn-logo-color-label`   | Binnenste rechthoek: zelfde kleur als de documentachtergrond (doorkijkje-effect) |
 
 ## Accessibility
 
-- **Standalone**: `role="img"` + `<title>` binnenin + `aria-labelledby`-koppeling op `<svg>` — geeft de beste cross-browser/screenreader ondersteuning.
+- **Standalone**: `role="img"` + `<title>` binnenin + `aria-labelledby`-koppeling op `<svg>`: geeft de beste cross-browser/screenreader ondersteuning.
 - **Decoratief (in link of met omringende tekst)**: `aria-hidden="true"` op `<svg>`, géén `<title>`.
 - De combinatie van `role="img"` + `<title>` + `aria-labelledby` is robuuster dan `aria-label` alleen.
 - Bij meerdere Logo-instanties op één pagina garandeert `useId()` (React 18+) dat elke `<title>` een uniek id heeft.

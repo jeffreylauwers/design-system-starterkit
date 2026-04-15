@@ -1,11 +1,11 @@
-# Design System Starter Kit — Claude Instructions
+# Design System Starter Kit: Claude Instructions
 
 Dit bestand wordt automatisch gelezen aan het begin van elke Claude-sessie.
 Het bevat de projectregels, architectuurpatronen en navigatiekaart naar de volledige documentatie.
 
 ---
 
-## Documentatie — waar staat wat?
+## Documentatie: waar staat wat?
 
 | Vraag                                              | Lees dit                             |
 | -------------------------------------------------- | ------------------------------------ |
@@ -21,14 +21,14 @@ Het bevat de projectregels, architectuurpatronen en navigatiekaart naar de volle
 
 ---
 
-## Twee-lagen implementatiepatroon — ALTIJD
+## Twee-lagen implementatiepatroon: ALTIJD
 
 Elk component in dit design system heeft **altijd twee lagen**. Geen uitzonderingen.
 
-| Laag         | Wat                                        | Voorbeeld                                     |
-| ------------ | ------------------------------------------ | --------------------------------------------- |
-| **HTML/CSS** | De kern — layout en stijllogica            | `<div class="dsn-stack dsn-stack--space-md">` |
-| **React**    | De wrapper — genereert de HTML/CSS klassen | `<Stack space="md">`                          |
+| Laag         | Wat                                       | Voorbeeld                                     |
+| ------------ | ----------------------------------------- | --------------------------------------------- |
+| **HTML/CSS** | De kern: layout en stijllogica            | `<div class="dsn-stack dsn-stack--space-md">` |
+| **React**    | De wrapper: genereert de HTML/CSS klassen | `<Stack space="md">`                          |
 
 - De CSS-klassen zijn de bron van waarheid
 - React is gemak bovenop de HTML/CSS-laag
@@ -37,9 +37,9 @@ Elk component in dit design system heeft **altijd twee lagen**. Geen uitzonderin
 
 ---
 
-## Kritieke regels — nooit overtreden
+## Kritieke regels: nooit overtreden
 
-### 1. Button accessible naming — NOOIT `aria-label`
+### 1. Button accessible naming: NOOIT `aria-label`
 
 Gebruik **altijd** een `dsn-button__label` span. `dsn-button--icon-only` verbergt hem visueel maar houdt hem beschikbaar voor screenreaders.
 
@@ -69,7 +69,7 @@ Gebruik **altijd** een `dsn-button__label` span. `dsn-button--icon-only` verberg
 <button aria-label="Instellingen">...</button>
 ```
 
-### 2. Tokens — nooit hardcoded waarden in CSS
+### 2. Tokens: nooit hardcoded waarden in CSS
 
 ```css
 /* ❌ */
@@ -84,7 +84,7 @@ transition: var(--dsn-transition-duration-normal)
   var(--dsn-transition-easing-default);
 ```
 
-### 3. BEM naming — zie `docs/06-css-naming-conventions.md`
+### 3. BEM naming: zie `docs/06-css-naming-conventions.md`
 
 Kernregels:
 
@@ -94,7 +94,7 @@ Kernregels:
 - Geen geneste element-namen: `dsn-alert__content__text` ❌
 - HTML-toestanden via pseudo-klassen: `.dsn-button:disabled` ✅
 
-### 4. Token-hiërarchie — altijd op de juiste laag aanpassen
+### 4. Token-hiërarchie: altijd op de juiste laag aanpassen
 
 Tokens zijn gelaagd: `base.json` (gedeelde primitieven) → component-token JSON → CSS custom property → component CSS. Pas altijd aan op de **hoogste laag die de waarde definieert**, zodat de delegatieketen intact blijft.
 
@@ -102,7 +102,7 @@ Tokens zijn gelaagd: `base.json` (gedeelde primitieven) → component-token JSON
 // ❌ Omzeilen van de delegatieketen in text-input.json
 "padding-block-start": { "value": "{dsn.space.block.md}" }
 
-// ✅ Aanpassen op de juiste laag — in base.json onder form-control
+// ✅ Aanpassen op de juiste laag: in base.json onder form-control
 "padding-block-start": { "value": "{dsn.space.block.md}" }
 // text-input.json blijft delegeren naar {dsn.form-control.padding-block-start}
 ```
@@ -119,7 +119,7 @@ Tokens zijn gelaagd: `base.json` (gedeelde primitieven) → component-token JSON
 
 ---
 
-## Nieuw component bouwen — checklist
+## Nieuw component bouwen: checklist
 
 ### Bestanden aanmaken
 
@@ -142,8 +142,8 @@ packages/storybook/src/
 
 ### Exports en registraties
 
-- `packages/components-react/src/index.ts` — export toevoegen
-- `packages/storybook/src/Introduction.mdx` — datum updaten + component in de lijst
+- `packages/components-react/src/index.ts`: export toevoegen
+- `packages/storybook/src/Introduction.mdx`: datum updaten + component in de lijst
 
 ### Token-bestanden (indien nieuwe tokens nodig)
 
@@ -169,12 +169,12 @@ pnpm lint                                        # 0 lint-fouten
 Elk component heeft een `.docs.md` met vaste secties in deze volgorde:
 
 1. **Titel + korte beschrijving** (één zin)
-2. **Doel** — wat doet het component en wanneer gebruik je het?
-3. **Use when** — bulletlijst
-4. **Don't use when** — bulletlijst
-5. **Best practices** — subsecties per onderwerp
-6. **Design tokens** — tabel met alle `--dsn-{component}-*` tokens
-7. **Accessibility** — toegankelijkheidsaandachtspunten
+2. **Doel**: wat doet het component en wanneer gebruik je het?
+3. **Use when**: bulletlijst
+4. **Don't use when**: bulletlijst
+5. **Best practices**: subsecties per onderwerp
+6. **Design tokens**: tabel met alle `--dsn-{component}-*` tokens
+7. **Accessibility**: toegankelijkheidsaandachtspunten
 
 Bekijk `packages/storybook/src/Button.docs.md` als referentie voor toon en opmaak.
 
@@ -196,6 +196,6 @@ Commit-prefixes: `feat` / `fix` / `docs` / `chore` / `refactor` / `test`
 
 ---
 
-## Huidige staat — zie MEMORY.md
+## Huidige staat: zie MEMORY.md
 
 De actuele staat van het project (welke componenten af zijn, recente PRs, openstaande issues) staat in MEMORY.md. CLAUDE.md bevat de permanente projectregels; MEMORY.md bevat de actuele sessie-context.

@@ -9,7 +9,7 @@ Consistente naamgeving maakt CSS en tokens voorspelbaar: je kunt de naam van een
 ## Table of Contents
 
 1. [Namespace prefix `dsn-`](#namespace-prefix-dsn-)
-2. [CSS-klassen — BEM](#css-klassen--bem)
+2. [CSS-klassen: BEM](#css-klassen--bem)
    - [Block](#block)
    - [Element](#element)
    - [Modifier](#modifier)
@@ -17,8 +17,8 @@ Consistente naamgeving maakt CSS en tokens voorspelbaar: je kunt de naam van een
 3. [CSS Custom Properties](#css-custom-properties)
    - [Globale design tokens](#globale-design-tokens)
    - [Component tokens](#component-tokens)
-   - [Lokale alias — scoping-patroon](#lokale-alias--scoping-patroon)
-4. [Design token namen — JSON](#design-token-namen--json)
+   - [Lokale alias: scoping-patroon](#lokale-alias--scoping-patroon)
+4. [Design token namen: JSON](#design-token-namen--json)
 5. [Utility-klassen](#utility-klassen)
 6. [Bestandsstructuur CSS](#bestandsstructuur-css)
 7. [Snelle referentie](#snelle-referentie)
@@ -35,14 +35,14 @@ Alle CSS-klassen en CSS custom properties beginnen met het prefix `dsn-` (Design
 .dsn-button { }
 --dsn-color-neutral-bg-default
 
-/* ❌ fout — geen prefix */
+/* ❌ fout: geen prefix */
 .button { }
 --color-neutral-bg-default
 ```
 
 ---
 
-## CSS-klassen — BEM
+## CSS-klassen: BEM
 
 We gebruiken [BEM](https://getbem.com/) (Block Element Modifier) als naamgevingsconventie. BEM maakt de relatie tussen HTML-elementen en hun stijlregels expliciet leesbaar zonder de DOM-structuur te kennen.
 
@@ -76,7 +76,7 @@ Een block is een zelfstandig, herbruikbaar component. De blocknaam is gelijk aan
 
 ### Element
 
-Een element is een onderdeel van een block dat geen zelfstandige betekenis heeft buiten dat block. Elementen worden altijd geschreven als `block__element` — nooit als geneste namen (`block__element__sub-element`).
+Een element is een onderdeel van een block dat geen zelfstandige betekenis heeft buiten dat block. Elementen worden altijd geschreven als `block__element`: nooit als geneste namen (`block__element__sub-element`).
 
 ```css
 .dsn-button__label {
@@ -90,14 +90,14 @@ Een element is een onderdeel van een block dat geen zelfstandige betekenis heeft
 ```
 
 ```html
-<!-- ✅ Correct — één niveau diep -->
+<!-- ✅ Correct: één niveau diep -->
 <div class="dsn-alert">
   <span class="dsn-alert__icon">...</span>
   <strong class="dsn-alert__heading">Fout</strong>
   <div class="dsn-alert__content">...</div>
 </div>
 
-<!-- ❌ Fout — geneste element-naam -->
+<!-- ❌ Fout: geneste element-naam -->
 <div class="dsn-alert">
   <div class="dsn-alert__content">
     <p class="dsn-alert__content__text">...</p>
@@ -111,10 +111,10 @@ Een element is een onderdeel van een block dat geen zelfstandige betekenis heeft
 Een modifier past het uiterlijk of gedrag van een block of element aan. Modifiers staan **altijd naast** de basis-klasse, nooit alleen.
 
 ```html
-<!-- ✅ Correct — modifier naast basis-klasse -->
+<!-- ✅ Correct: modifier naast basis-klasse -->
 <button class="dsn-button dsn-button--strong">Label</button>
 
-<!-- ❌ Fout — modifier zonder basis-klasse -->
+<!-- ❌ Fout: modifier zonder basis-klasse -->
 <button class="dsn-button--strong">Label</button>
 ```
 
@@ -141,9 +141,9 @@ Altijd geschreven als `--size-{naam}`.
 .dsn-button--size-small {
 } /* ✅ */
 .dsn-button--small {
-} /* ❌ — ontbreekt 'size-' prefix */
+} /* ❌: ontbreekt 'size-' prefix */
 .dsn-button--sm {
-} /* ❌ — afkorting, niet leesbaar */
+} /* ❌: afkorting, niet leesbaar */
 ```
 
 #### Toestandsmodifiers
@@ -161,10 +161,10 @@ Beschrijven een specifieke visuele toestand van een component.
 
 ### Toestandsklassen
 
-HTML-attributen als `disabled`, `aria-invalid` en `aria-expanded` worden direct als CSS-selector gebruikt voor interactieve toestandsstijlen — niet als BEM-modifier:
+HTML-attributen als `disabled`, `aria-invalid` en `aria-expanded` worden direct als CSS-selector gebruikt voor interactieve toestandsstijlen: niet als BEM-modifier:
 
 ```css
-/* ✅ — via HTML-attribuut of pseudo-klasse */
+/* ✅: via HTML-attribuut of pseudo-klasse */
 .dsn-button:disabled {
 }
 .dsn-button:hover {
@@ -174,7 +174,7 @@ HTML-attributen als `disabled`, `aria-invalid` en `aria-expanded` worden direct 
 .dsn-text-input[aria-invalid='true'] {
 }
 
-/* ❌ — HTML-toestand als BEM-modifier herhalen is overbodig */
+/* ❌: HTML-toestand als BEM-modifier herhalen is overbodig */
 .dsn-button--disabled {
 }
 ```
@@ -216,32 +216,32 @@ Component tokens geven toegang tot component-specifieke waarden die thema's kunn
 --dsn-alert-padding-block
 ```
 
-### Lokale alias — scoping-patroon
+### Lokale alias: scoping-patroon
 
 Binnen een component-CSS-bestand worden lokale custom properties gebruikt als runtime-alias. Dit maakt variant-switching mogelijk zonder specificiteitsproblemen en houdt stijlregels voor states compact.
 
-**Patroon — vier stappen:**
+**Patroon: vier stappen:**
 
 ```css
-/* Stap 1 — definieer de lokale alias op het block, wijs standaardvariant toe */
+/* Stap 1: definieer de lokale alias op het block, wijs standaardvariant toe */
 .dsn-button {
   --dsn-button-background-color: var(--dsn-button-default-background-color);
   --dsn-button-color: var(--dsn-button-default-color);
 }
 
-/* Stap 2 — overschrijf de alias per variant-modifier */
+/* Stap 2: overschrijf de alias per variant-modifier */
 .dsn-button--strong {
   --dsn-button-background-color: var(--dsn-button-strong-background-color);
   --dsn-button-color: var(--dsn-button-strong-color);
 }
 
-/* Stap 3 — gebruik uitsluitend de lokale alias in de stijlregels */
+/* Stap 3: gebruik uitsluitend de lokale alias in de stijlregels */
 .dsn-button {
   background-color: var(--dsn-button-background-color);
   color: var(--dsn-button-color);
 }
 
-/* Stap 4 — hover/focus updaten enkel de alias, niet de volledige stijlregel */
+/* Stap 4: hover/focus updaten enkel de alias, niet de volledige stijlregel */
 .dsn-button:hover {
   --dsn-button-background-color: var(
     --dsn-button-default-background-color-hover
@@ -251,7 +251,7 @@ Binnen een component-CSS-bestand worden lokale custom properties gebruikt als ru
 
 **Voordelen:**
 
-- Eén set stijlregels voor alle varianten — geen gedupliceerde `background-color`-declaraties per modifier.
+- Eén set stijlregels voor alle varianten: geen gedupliceerde `background-color`-declaraties per modifier.
 - States (`:hover`, `:focus`, `:disabled`) overschrijven enkel de alias, niet de volledige stijlregel.
 - Thema-overrides hoeven alleen de component-token aan te passen, niet de component-CSS.
 
@@ -259,7 +259,7 @@ Binnen een component-CSS-bestand worden lokale custom properties gebruikt als ru
 
 ---
 
-## Design token namen — JSON
+## Design token namen: JSON
 
 Token-namen in JSON volgen een gelaagde structuur van algemeen naar specifiek:
 
@@ -367,7 +367,7 @@ Elk component-CSS-bestand volgt dezelfde vaste sectievolgorde, gescheiden door e
 .dsn-form-field__label__icon {
 }
 
-/* ✅ — vlak, element van het block */
+/* ✅: vlak, element van het block */
 .dsn-form-field__label-icon {
 }
 ```
@@ -425,11 +425,11 @@ Elk component-CSS-bestand volgt dezelfde vaste sectievolgorde, gescheiden door e
 ### HTML-toestand als BEM-modifier
 
 ```css
-/* ❌ — attribuut en klasse zijn dubbel */
+/* ❌: attribuut en klasse zijn dubbel */
 .dsn-button--disabled {
 }
 
-/* ✅ — volg het HTML-attribuut */
+/* ✅: volg het HTML-attribuut */
 .dsn-button:disabled {
 }
 ```
@@ -438,6 +438,6 @@ Elk component-CSS-bestand volgt dezelfde vaste sectievolgorde, gescheiden door e
 
 ## Gerelateerde documentatie
 
-- **[Architecture](./01-architecture.md)** — Token-architectuur, drie-tier structuur
-- **[Design Tokens Reference](./02-design-tokens-reference.md)** — Alle tokenwaarden en schalen
-- **[Development Workflow](./04-development-workflow.md)** — Token-updateproces, CSS best practices
+- **[Architecture](./01-architecture.md)**: Token-architectuur, drie-tier structuur
+- **[Design Tokens Reference](./02-design-tokens-reference.md)**: Alle tokenwaarden en schalen
+- **[Development Workflow](./04-development-workflow.md)**: Token-updateproces, CSS best practices

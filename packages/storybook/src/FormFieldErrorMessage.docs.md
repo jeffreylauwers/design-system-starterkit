@@ -16,9 +16,9 @@ De FormFieldErrorMessage component toont validatie foutmeldingen bij form fields
 
 ## Don't use when
 
-- Je algemene help tekst wilt tonen — gebruik [FormFieldDescription](/docs/components-formfielddescription--docs).
-- Je status feedback wilt geven (success, info, warning) — gebruik [FormFieldStatus](/docs/components-formfieldstatus--docs).
-- Voor preventieve feedback — toon errors alleen na interactie (blur) of submit.
+- Je algemene help tekst wilt tonen: gebruik [FormFieldDescription](/docs/components-formfielddescription--docs).
+- Je status feedback wilt geven (success, info, warning): gebruik [FormFieldStatus](/docs/components-formfieldstatus--docs).
+- Voor preventieve feedback: toon errors alleen na interactie (blur) of submit.
 
 ## Best practices
 
@@ -62,5 +62,5 @@ De FormFieldErrorMessage component toont validatie foutmeldingen bij form fields
 - Zet `aria-invalid="true"` op de form control zelf (niet op de error message).
 - Screenreaders kondigen errors aan wanneer de gebruiker naar het veld navigeert.
 - Het icoon heeft `aria-hidden="true"` omdat de tekst zelf al voldoende context geeft.
-- Error kleur alleen is niet voldoende — het icoon helpt ook bij kleurenblindheid.
+- Error kleur alleen is niet voldoende: het icoon helpt ook bij kleurenblindheid.
 - Zorg voor voldoende kleurcontrast (error red moet goed leesbaar zijn).

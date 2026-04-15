@@ -4,7 +4,7 @@ Navigatieknop voor JavaScript-acties met icoon- en badge-ondersteuning.
 
 ## Doel
 
-MenuButton is een navigatie-item dat semantisch een `<button>`-element is en visueel consistent is met MenuLink. Het wordt gebruikt wanneer een actie in het navigatiemenu geen URL-navigatie is maar een JavaScript-handeling triggert — zoals uitloggen, een modal openen of een instellingenpaneel tonen.
+MenuButton is een navigatie-item dat semantisch een `<button>`-element is en visueel consistent is met MenuLink. Het wordt gebruikt wanneer een actie in het navigatiemenu geen URL-navigatie is maar een JavaScript-handeling triggert: zoals uitloggen, een modal openen of een instellingenpaneel tonen.
 
 <!-- VOORBEELD -->
 
@@ -16,8 +16,8 @@ MenuButton is een navigatie-item dat semantisch een `<button>`-element is en vis
 
 ## Don't use when
 
-- De actie naar een URL navigeert — gebruik dan `MenuLink`.
-- Je buiten een nav-context werkt — gebruik dan een reguliere `Button` of `LinkButton`.
+- De actie naar een URL navigeert: gebruik dan `MenuLink`.
+- Je buiten een nav-context werkt: gebruik dan een reguliere `Button` of `LinkButton`.
 
 ## Best practices
 
@@ -76,7 +76,7 @@ Gebruik `iconStart` voor contextuele iconen links van het label. Gebruik `iconEn
 
 ## Design tokens
 
-MenuButton gebruikt uitsluitend de gedeelde `--dsn-menu-item-*` tokens. Deze tokens zijn ook van toepassing op `MenuLink` — wijzigingen hier gelden voor beide componenten.
+MenuButton gebruikt uitsluitend de gedeelde `--dsn-menu-item-*` tokens. Deze tokens zijn ook van toepassing op `MenuLink`: wijzigingen hier gelden voor beide componenten.
 
 | Token                                     | Beschrijving                 |
 | ----------------------------------------- | ---------------------------- |
@@ -97,8 +97,8 @@ MenuButton gebruikt uitsluitend de gedeelde `--dsn-menu-item-*` tokens. Deze tok
 
 ## Accessibility
 
-- MenuButton is semantisch een `<button type="button">` — screenreaders kondigen het aan als knop.
-- Het icoon heeft altijd `aria-hidden="true"` — de toegankelijke naam komt van de knoptekst.
-- Wanneer `dotBadge` betekenis draagt (bijv. ongelezen berichten), voeg dan context toe via `dsn-visually-hidden` in het label — de `DotBadge` zelf heeft altijd `aria-hidden="true"`.
-- Gebruik nooit `aria-label` op de knop — gebruik altijd zichtbare tekst in `dsn-menu-button__label`.
+- MenuButton is semantisch een `<button type="button">`: screenreaders kondigen het aan als knop.
+- Het icoon heeft altijd `aria-hidden="true"`: de toegankelijke naam komt van de knoptekst.
+- Wanneer `dotBadge` betekenis draagt (bijv. ongelezen berichten), voeg dan context toe via `dsn-visually-hidden` in het label: de `DotBadge` zelf heeft altijd `aria-hidden="true"`.
+- Gebruik nooit `aria-label` op de knop: gebruik altijd zichtbare tekst in `dsn-menu-button__label`.
 - Zorg dat de omliggende `<ul>` in een `<nav>` staat met een beschrijvende `aria-label`.

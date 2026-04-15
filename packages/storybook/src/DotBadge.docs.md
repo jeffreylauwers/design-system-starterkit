@@ -4,7 +4,7 @@ Kleine gekleurde stip die bij een Button of Link wordt geplaatst om zonder label
 
 ## Doel
 
-DotBadge is een puur visueel indicator-component. Het trekt de aandacht op een discrete statuswijziging — zoals ongelezen berichten bij een inbox-icoon of nieuwe updates achter een navigatielink — zonder dat er een getal of label voor nodig is. Via de `pulse`-modifier kan de stip pulseren voor extra urgentie.
+DotBadge is een puur visueel indicator-component. Het trekt de aandacht op een discrete statuswijziging: zoals ongelezen berichten bij een inbox-icoon of nieuwe updates achter een navigatielink: zonder dat er een getal of label voor nodig is. Via de `pulse`-modifier kan de stip pulseren voor extra urgentie.
 
 De component heeft bewust geen eigen toegankelijkheidsmechanisme. De verantwoordelijkheid voor toegankelijke context ligt bij de implementerende code via `dsn-visually-hidden`.
 
@@ -19,19 +19,19 @@ De component heeft bewust geen eigen toegankelijkheidsmechanisme. De verantwoord
 
 ## Don't use when
 
-- Je een getal wilt tonen (bijv. "3 ongelezen") — gebruik dan een **StatusBadge** of een badge met getal.
-- Je een statustoestand wilt communiceren met een label — gebruik **StatusBadge**.
-- De dot op zichzelf staat zonder parent Button of Link — de dot heeft altijd context nodig.
+- Je een getal wilt tonen (bijv. "3 ongelezen"): gebruik dan een **StatusBadge** of een badge met getal.
+- Je een statustoestand wilt communiceren met een label: gebruik **StatusBadge**.
+- De dot op zichzelf staat zonder parent Button of Link: de dot heeft altijd context nodig.
 
 ## Best practices
 
 ### Variantkeuze
 
-- **Negative** — standaard, voor foutmeldingen en ongelezen berichten.
-- **Positive** — voor succesvolle statuswijzigingen.
-- **Warning** — voor waarschuwingen die aandacht vragen.
-- **Info** — voor informatieve updates.
-- **Neutral** — voor neutrale statuswijzigingen.
+- **Negative**: standaard, voor foutmeldingen en ongelezen berichten.
+- **Positive**: voor succesvolle statuswijzigingen.
+- **Warning**: voor waarschuwingen die aandacht vragen.
+- **Info**: voor informatieve updates.
+- **Neutral**: voor neutrale statuswijzigingen.
 
 ### Parent-wrapper
 
@@ -46,7 +46,7 @@ DotBadge is `position: absolute`. De parent-wrapper heeft altijd `position: rela
 
 ### Toegankelijkheid
 
-DotBadge heeft altijd `aria-hidden="true"` — screenreaders negeren de dot volledig. Voeg altijd een `dsn-visually-hidden` span toe in de parent Button of Link om de context te beschrijven:
+DotBadge heeft altijd `aria-hidden="true"`: screenreaders negeren de dot volledig. Voeg altijd een `dsn-visually-hidden` span toe in de parent Button of Link om de context te beschrijven:
 
 ```html
 <!-- Icon-only button met inbox-dot -->
@@ -66,7 +66,7 @@ DotBadge heeft altijd `aria-hidden="true"` — screenreaders negeren de dot voll
 
 ### Pulse-effect
 
-Gebruik de `pulse`-modifier alleen voor urgente, tijdkritische statuswijzigingen. De animatie respecteert `prefers-reduced-motion: reduce` — bij verminderde bewegingsvoorkeur vervalt de animatie maar blijft de dot zichtbaar.
+Gebruik de `pulse`-modifier alleen voor urgente, tijdkritische statuswijzigingen. De animatie respecteert `prefers-reduced-motion: reduce`: bij verminderde bewegingsvoorkeur vervalt de animatie maar blijft de dot zichtbaar.
 
 ```html
 <span
@@ -84,7 +84,7 @@ Bij dynamisch bijwerken van de dot (bijv. nieuwe berichten binnenkomen): voeg `a
 | Token                               | Beschrijving                                      |
 | ----------------------------------- | ------------------------------------------------- |
 | `--dsn-dot-badge-size`              | Diameter van de dot (8px)                         |
-| `--dsn-dot-badge-color`             | Achtergrondkleur — wordt per variant ingesteld    |
+| `--dsn-dot-badge-color`             | Achtergrondkleur: wordt per variant ingesteld     |
 | `--dsn-dot-badge-inset-block-start` | Verticale offset t.o.v. rechterbovenhoek parent   |
 | `--dsn-dot-badge-inset-inline-end`  | Horizontale offset t.o.v. rechterbovenhoek parent |
 | `--dsn-dot-badge-pulse-duration`    | Duur van de pulse-animatie                        |
@@ -92,8 +92,8 @@ Bij dynamisch bijwerken van de dot (bijv. nieuwe berichten binnenkomen): voeg `a
 
 ## Accessibility
 
-- DotBadge heeft altijd `aria-hidden="true"` — geen semantische betekenis op zichzelf.
-- Context via `dsn-visually-hidden` span in de parent Button of Link — **verplicht**.
+- DotBadge heeft altijd `aria-hidden="true"`: geen semantische betekenis op zichzelf.
+- Context via `dsn-visually-hidden` span in de parent Button of Link: **verplicht**.
 - Gebruik nooit `aria-label` op DotBadge zelf.
 - Bij dynamisch bijwerken: voeg `aria-live="polite"` toe op een hoger niveau.
-- Pulse-animatie respecteert `prefers-reduced-motion: reduce` — animatie vervalt, dot blijft zichtbaar.
+- Pulse-animatie respecteert `prefers-reduced-motion: reduce`: animatie vervalt, dot blijft zichtbaar.
