@@ -17,6 +17,54 @@ export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
 
 <CodeTabs
   of={PageHeaderStories.Default}
+  react={`<PageHeader
+  logoSlot={
+    <a href="/">
+      <Logo aria-hidden={true} />
+      <span className="dsn-visually-hidden">
+        Starter Kit: terug naar homepage
+      </span>
+    </a>
+  }
+  primaryNavigation={
+    <Menu orientation="vertical">
+      <MenuLink href="/level-1a" level={1} current>
+        Level 1a
+      </MenuLink>
+      <MenuLink href="/level-1b" level={1}>
+        Level 1b
+      </MenuLink>
+    </Menu>
+  }
+  primaryNavigationLarge={
+    <Menu orientation="horizontal">
+      <MenuLink href="/level-1a" level={1} current>
+        Level 1a
+      </MenuLink>
+      <MenuLink href="/level-1b" level={1}>
+        Level 1b
+      </MenuLink>
+    </Menu>
+  }
+  secondaryNavigation={
+    <Menu orientation="vertical">
+      <MenuLink href="/english" level={1}>English</MenuLink>
+      <MenuLink href="/mijn-omgeving" level={1}>Mijn omgeving</MenuLink>
+    </Menu>
+  }
+  secondaryNavigationLarge={
+    <Menu orientation="horizontal">
+      <MenuLink href="/english" level={1}>English</MenuLink>
+      <MenuLink href="/mijn-omgeving" level={1}>Mijn omgeving</MenuLink>
+    </Menu>
+  }
+  searchSlot={
+    <>
+      <SearchInput placeholder="Zoeken…" aria-label="Zoekopdracht" />
+      <Button variant="strong">Zoeken</Button>
+    </>
+  }
+/>`}
   html={`<header class="dsn-page-header">
   <div class="dsn-page-header__inner">
     <div class="dsn-page-header__start">

@@ -2,10 +2,16 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   Button,
+  DotBadge,
+  Icon,
   Logo,
   Menu,
+  MenuButton,
   MenuLink,
+  NumberBadge,
   PageHeader,
+  Popover,
+  PopoverBody,
   SearchInput,
 } from '@dsn/components-react';
 import { rtlDecorator } from './story-helpers';
@@ -256,6 +262,196 @@ const searchSlotAR = (
   </>
 );
 
+// =============================================================================
+// INGELOGDE GEBRUIKER — helper-componenten
+// =============================================================================
+
+function LoggedInServiceMenuLarge() {
+  const triggerRef = React.useRef<HTMLButtonElement>(null);
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <>
+      <Menu orientation="horizontal">
+        <MenuLink href="/english" level={1}>
+          English
+        </MenuLink>
+        <MenuButton
+          ref={triggerRef}
+          iconEnd={<Icon name="chevron-down" aria-hidden />}
+          onClick={() => setIsOpen((v) => !v)}
+        >
+          J. van Drouwen
+        </MenuButton>
+      </Menu>
+      <Popover
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        triggerRef={triggerRef}
+        label="Mijn omgeving"
+        placement="bottom"
+      >
+        <PopoverBody>
+          <Menu orientation="vertical">
+            <MenuLink href="/overzicht" level={1}>
+              Overzicht
+            </MenuLink>
+            <MenuLink href="/berichten" level={1}>
+              Berichten
+            </MenuLink>
+            <MenuLink href="/gegevens" level={1}>
+              Gegevens
+            </MenuLink>
+            <MenuLink href="/uitloggen" level={1}>
+              Uitloggen
+            </MenuLink>
+          </Menu>
+        </PopoverBody>
+      </Popover>
+    </>
+  );
+}
+
+function LoggedInServiceMenuSmall() {
+  const [expanded, setExpanded] = React.useState(false);
+
+  return (
+    <Menu orientation="vertical">
+      <MenuLink href="/english" level={1}>
+        English
+      </MenuLink>
+      <MenuLink
+        href="/mijn-omgeving"
+        level={1}
+        subItems
+        expanded={expanded}
+        onExpandToggle={() => setExpanded((v) => !v)}
+      >
+        J. van Drouwen
+      </MenuLink>
+      {expanded && (
+        <>
+          <MenuLink href="/overzicht" level={2}>
+            Overzicht
+          </MenuLink>
+          <MenuLink href="/berichten" level={2}>
+            Berichten
+          </MenuLink>
+          <MenuLink href="/gegevens" level={2}>
+            Gegevens
+          </MenuLink>
+          <MenuLink href="/uitloggen" level={2}>
+            Uitloggen
+          </MenuLink>
+        </>
+      )}
+    </Menu>
+  );
+}
+
+function NewMessageServiceMenuLarge() {
+  const triggerRef = React.useRef<HTMLButtonElement>(null);
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <>
+      <Menu orientation="horizontal">
+        <MenuLink href="/english" level={1}>
+          English
+        </MenuLink>
+        <MenuButton
+          ref={triggerRef}
+          iconEnd={<Icon name="chevron-down" aria-hidden />}
+          dotBadge={<DotBadge variant="negative" pulse />}
+          onClick={() => setIsOpen((v) => !v)}
+        >
+          J. van Drouwen
+          <span className="dsn-visually-hidden">, 2 nieuwe berichten</span>
+        </MenuButton>
+      </Menu>
+      <Popover
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        triggerRef={triggerRef}
+        label="Mijn omgeving"
+        placement="bottom"
+      >
+        <PopoverBody>
+          <Menu orientation="vertical">
+            <MenuLink href="/overzicht" level={1}>
+              Overzicht
+            </MenuLink>
+            <MenuLink
+              href="/berichten"
+              level={1}
+              numberBadge={
+                <NumberBadge variant="negative" aria-hidden>
+                  2
+                </NumberBadge>
+              }
+            >
+              Berichten
+              <span className="dsn-visually-hidden"> (2 ongelezen)</span>
+            </MenuLink>
+            <MenuLink href="/gegevens" level={1}>
+              Gegevens
+            </MenuLink>
+            <MenuLink href="/uitloggen" level={1}>
+              Uitloggen
+            </MenuLink>
+          </Menu>
+        </PopoverBody>
+      </Popover>
+    </>
+  );
+}
+
+function NewMessageServiceMenuSmall() {
+  const [expanded, setExpanded] = React.useState(false);
+
+  return (
+    <Menu orientation="vertical">
+      <MenuLink href="/english" level={1}>
+        English
+      </MenuLink>
+      <MenuLink
+        href="/mijn-omgeving"
+        level={1}
+        subItems
+        expanded={expanded}
+        onExpandToggle={() => setExpanded((v) => !v)}
+      >
+        J. van Drouwen
+      </MenuLink>
+      {expanded && (
+        <>
+          <MenuLink href="/overzicht" level={2}>
+            Overzicht
+          </MenuLink>
+          <MenuLink
+            href="/berichten"
+            level={2}
+            numberBadge={
+              <NumberBadge variant="negative" aria-hidden>
+                2
+              </NumberBadge>
+            }
+          >
+            Berichten
+            <span className="dsn-visually-hidden"> (2 ongelezen)</span>
+          </MenuLink>
+          <MenuLink href="/gegevens" level={2}>
+            Gegevens
+          </MenuLink>
+          <MenuLink href="/uitloggen" level={2}>
+            Uitloggen
+          </MenuLink>
+        </>
+      )}
+    </Menu>
+  );
+}
+
 const meta: Meta<typeof PageHeader> = {
   title: 'Components/PageHeader',
   component: PageHeader,
@@ -396,38 +592,187 @@ function PageContent() {
 }
 
 // =============================================================================
-// DEFAULT
+// COMPACT
 // =============================================================================
 
-export const Default: Story = {};
-
-// =============================================================================
-// VARIANTEN
-// =============================================================================
-
-export const WithStickyHeader: Story = {
-  name: 'With sticky header',
+export const Compact: Story = {
+  name: 'Compact',
   args: {
-    sticky: 'sticky',
+    layout: 'compact',
   },
-  render: (args) => (
-    <>
-      <PageHeader {...args} />
-      <PageContent />
-    </>
-  ),
   parameters: {
+    viewport: { defaultViewport: 'large' },
     docs: {
       description: {
         story:
-          'De header blijft bovenaan de viewport vastgeplakt bij het scrollen. `position: sticky; inset-block-start: 0`.',
+          'Op viewports ≥ 64em toont de compact variant één enkele rij: logo (inline-start), primaire navigatie (optisch gecentreerd via CSS-grid `1fr auto 1fr`), en servicemenu + zoek-iconknop (inline-end). Gebruikt `primaryNavigationLarge` voor de compacte balk en `primaryNavigation` (verticaal) voor de Drawer op small viewport.',
       },
     },
   },
 };
 
-export const WithAutoHide: Story = {
-  name: 'With auto-hide',
+export const CompactInverse: Story = {
+  name: 'Compact: Inverse',
+  args: {
+    layout: 'compact',
+    colorScheme: 'inverse',
+  },
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'Combinatie van `layout="compact"` en `colorScheme="inverse"`: de compacte balk (logo, primaire navigatie, servicemenu) heeft een `accent-1-inverse` achtergrond. Het zoekpaneel gebruikt `accent-1-inverse.bg-document` voor visuele scheiding.',
+      },
+    },
+  },
+};
+
+export const CompactLoggedIn: Story = {
+  name: 'Compact: Logged In',
+  args: {
+    layout: 'compact',
+    secondaryNavigation: <LoggedInServiceMenuSmall />,
+    secondaryNavigationLarge: <LoggedInServiceMenuLarge />,
+  },
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'Ingelogde gebruiker met de compact layout op large viewport. De gebruikersnaam met Popover staat in de compacte balk inline-end. Op small viewport valt de layout terug op de Drawer met uitklapbare accountnavigatie.',
+      },
+    },
+  },
+};
+
+export const CompactNewMessage: Story = {
+  name: 'Compact: New message',
+  args: {
+    layout: 'compact',
+    menuButtonBadge: <DotBadge variant="negative" pulse />,
+    menuButtonBadgeLabel: '2 nieuwe berichten',
+    secondaryNavigation: <NewMessageServiceMenuSmall />,
+    secondaryNavigationLarge: <NewMessageServiceMenuLarge />,
+  },
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'Ingelogde gebruiker met ongelezen berichten, compact layout. Op large viewport toont de MenuButton een pulserende DotBadge; in de Popover heeft "Berichten" een NumberBadge. Op small viewport toont de Menu-knop een DotBadge en draagt de MenuLink "Berichten" een NumberBadge in de Drawer.',
+      },
+    },
+  },
+};
+
+export const CompactRTL: Story = {
+  name: 'Compact: RTL',
+  decorators: [rtlDecorator],
+  args: {
+    layout: 'compact',
+    logoSlot: logoSlotAR,
+    primaryNavigation: primaryNavigationAR,
+    primaryNavigationLarge: primaryNavigationLargeAR,
+    secondaryNavigation: secondaryNavigationAR,
+    secondaryNavigationLarge: secondaryNavigationLargeAR,
+  },
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'RTL compact layout: logo inline-end, primaire navigatie gecentreerd, servicemenu + zoekknop inline-start.',
+      },
+    },
+  },
+};
+
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
+export const Default: Story = {};
+
+export const DefaultInverse: Story = {
+  name: 'Default: Inverse',
+  args: {
+    colorScheme: 'inverse',
+  },
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'De inverse kleurvariant (`colorScheme="inverse"`) gebruikt `accent-1-inverse` achtergronden op de navbar en het zoekpaneel voor prominente branding. Het masthead blijft neutraal. Het logo past zijn kleuren automatisch aan via CSS context overrides.',
+      },
+    },
+  },
+};
+
+export const DefaultLoggedIn: Story = {
+  name: 'Default: Logged In',
+  args: {
+    secondaryNavigation: <LoggedInServiceMenuSmall />,
+    secondaryNavigationLarge: <LoggedInServiceMenuLarge />,
+  },
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'Ingelogde gebruiker op large viewport. De "Mijn omgeving" link in het servicemenu is vervangen door een MenuButton met de naam van de gebruiker en een chevron-down icoon. Bij klikken opent een Popover met accountnavigatie: Overzicht, Berichten, Gegevens en Uitloggen.',
+      },
+    },
+  },
+};
+
+export const DefaultNewMessage: Story = {
+  name: 'Default: New message',
+  args: {
+    menuButtonBadge: <DotBadge variant="negative" pulse />,
+    menuButtonBadgeLabel: '2 nieuwe berichten',
+    secondaryNavigation: <NewMessageServiceMenuSmall />,
+    secondaryNavigationLarge: <NewMessageServiceMenuLarge />,
+  },
+  parameters: {
+    viewport: { defaultViewport: 'large' },
+    docs: {
+      description: {
+        story:
+          'Ingelogde gebruiker met ongelezen berichten, default layout. Op large viewport toont de MenuButton een pulserende DotBadge; in de Popover heeft "Berichten" een NumberBadge. Op small viewport toont de Menu-knop een DotBadge en draagt de MenuLink "Berichten" een NumberBadge in de Drawer.',
+      },
+    },
+  },
+};
+
+export const DefaultRTL: Story = {
+  name: 'Default: RTL',
+  decorators: [rtlDecorator],
+  args: {
+    logoSlot: logoSlotAR,
+    primaryNavigation: primaryNavigationAR,
+    primaryNavigationLarge: primaryNavigationLargeAR,
+    secondaryNavigation: secondaryNavigationAR,
+    secondaryNavigationLarge: secondaryNavigationLargeAR,
+    searchSlot: searchSlotAR,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Right-to-left layout (Arabisch). Logo staat inline-end, menuknop inline-start. CSS logische eigenschappen spiegelen automatisch.',
+      },
+    },
+  },
+};
+
+// =============================================================================
+// SCROLL
+// =============================================================================
+
+export const ScrollAutoHide: Story = {
+  name: 'Scroll: auto-hide',
   args: {
     sticky: 'auto-hide',
   },
@@ -447,195 +792,23 @@ export const WithAutoHide: Story = {
   },
 };
 
-export const WithSearchOpen: Story = {
-  name: 'With search open',
+export const ScrollSticky: Story = {
+  name: 'Scroll: sticky',
   args: {
-    initialSearchOpen: true,
+    sticky: 'sticky',
   },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Het zoekpaneel is standaard open (`initialSearchOpen={true}`). Focus verplaatst automatisch naar het zoekveld.',
-      },
-    },
-  },
-};
-
-export const WithMenuOpen: Story = {
-  name: 'With menu open',
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Klik op de menuknop om de navigatielade te openen. De Drawer schuift in vanuit links.',
-      },
-    },
-  },
-};
-
-// =============================================================================
-// OVERZICHTSSTORIES
-// =============================================================================
-
-export const CompactLayout: Story = {
-  name: 'Compact layout',
-  args: {
-    layout: 'compact',
-  },
-  parameters: {
-    viewport: { defaultViewport: 'large' },
-    docs: {
-      description: {
-        story:
-          'Op viewports ≥ 64em toont de compact variant één enkele rij: logo (inline-start), primaire navigatie (optisch gecentreerd via CSS-grid `1fr auto 1fr`), en servicemenu + zoek-iconknop (inline-end). Gebruikt `primaryNavigationLarge` voor de compacte balk en `primaryNavigation` (verticaal) voor de Drawer op small viewport.',
-      },
-    },
-  },
-};
-
-// =============================================================================
-// INVERSE KLEURVARIANT
-// =============================================================================
-
-export const InverseColorScheme: Story = {
-  name: 'Inverse color scheme',
-  args: {
-    colorScheme: 'inverse',
-  },
-  parameters: {
-    viewport: { defaultViewport: 'large' },
-    docs: {
-      description: {
-        story:
-          'De inverse kleurvariant (`colorScheme="inverse"`) gebruikt `accent-1-inverse` achtergronden op de navbar en het zoekpaneel voor prominente branding. Het masthead blijft neutraal. Het logo past zijn kleuren automatisch aan via CSS context overrides.',
-      },
-    },
-  },
-};
-
-export const InverseCompactLayout: Story = {
-  name: 'Inverse compact layout',
-  args: {
-    layout: 'compact',
-    colorScheme: 'inverse',
-  },
-  parameters: {
-    viewport: { defaultViewport: 'large' },
-    docs: {
-      description: {
-        story:
-          'Combinatie van `layout="compact"` en `colorScheme="inverse"`: de compacte balk (logo, primaire navigatie, servicemenu) heeft een `accent-1-inverse` achtergrond. Het zoekpaneel gebruikt `accent-1-inverse.bg-document` voor visuele scheiding.',
-      },
-    },
-  },
-};
-
-// =============================================================================
-// RTL
-// =============================================================================
-
-export const RTL: Story = {
-  name: 'RTL',
-  decorators: [rtlDecorator],
-  args: {
-    logoSlot: logoSlotAR,
-    primaryNavigation: primaryNavigationAR,
-    primaryNavigationLarge: primaryNavigationLargeAR,
-    secondaryNavigation: secondaryNavigationAR,
-    secondaryNavigationLarge: secondaryNavigationLargeAR,
-    searchSlot: searchSlotAR,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Right-to-left layout (Arabisch) op small viewport. Logo staat inline-end, menuknop inline-start. CSS logische eigenschappen spiegelen automatisch.',
-      },
-    },
-  },
-};
-
-export const RTLLargeViewport: Story = {
-  name: 'RTL large viewport',
-  decorators: [rtlDecorator],
-  args: {
-    logoSlot: logoSlotAR,
-    primaryNavigation: primaryNavigationAR,
-    primaryNavigationLarge: primaryNavigationLargeAR,
-    secondaryNavigation: secondaryNavigationAR,
-    secondaryNavigationLarge: secondaryNavigationLargeAR,
-    searchSlot: searchSlotAR,
-  },
-  parameters: {
-    viewport: { defaultViewport: 'large' },
-    docs: {
-      description: {
-        story:
-          'RTL op large viewport — masthead (logo rechts, servicemenu links) en navbar gespiegeld.',
-      },
-    },
-  },
-};
-
-export const RTLCompact: Story = {
-  name: 'RTL compact layout',
-  decorators: [rtlDecorator],
-  args: {
-    layout: 'compact',
-    logoSlot: logoSlotAR,
-    primaryNavigation: primaryNavigationAR,
-    primaryNavigationLarge: primaryNavigationLargeAR,
-    secondaryNavigation: secondaryNavigationAR,
-    secondaryNavigationLarge: secondaryNavigationLargeAR,
-  },
-  parameters: {
-    viewport: { defaultViewport: 'large' },
-    docs: {
-      description: {
-        story:
-          'RTL compact layout — logo inline-end, primaire navigatie gecentreerd, servicemenu + zoekknop inline-start.',
-      },
-    },
-  },
-};
-
-export const LargeViewport: Story = {
-  name: 'Large viewport',
-  parameters: {
-    viewport: { defaultViewport: 'large' },
-    docs: {
-      description: {
-        story:
-          'Op viewports ≥ 64em toont de header twee horizontale banden: een Masthead (neutrale achtergrond) met logo, servicemenu en inline zoekveld, en een Navigatiebalk (accent-1 achtergrond) met de primaire navigatie. De mobile layout is verborgen via `display: none`.',
-      },
-    },
-  },
-};
-
-export const AllStates: Story = {
-  name: 'All states',
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      <div>
-        <p
-          style={{
-            marginBottom: '0.5rem',
-            fontWeight: 'bold',
-            fontSize: '0.875rem',
-          }}
-        >
-          Default (zoekpaneel gesloten)
-        </p>
-        <PageHeader
-          logoSlot={logoSlot}
-          primaryNavigation={<PrimaryNavigation />}
-          primaryNavigationLarge={primaryNavigationLarge}
-          secondaryNavigation={secondaryNavigation}
-          secondaryNavigationLarge={secondaryNavigationLarge}
-          searchSlot={searchSlot}
-        />
-      </div>
-    </div>
+  render: (args) => (
+    <>
+      <PageHeader {...args} />
+      <PageContent />
+    </>
   ),
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'De header blijft bovenaan de viewport vastgeplakt bij het scrollen. `position: sticky; inset-block-start: 0`.',
+      },
+    },
+  },
 };

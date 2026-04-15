@@ -91,6 +91,21 @@ export interface PageHeaderProps extends Omit<
   searchSlot?: React.ReactNode;
 
   /**
+   * Visuele badge-indicator bij de menuknop (small viewport), doorgaans een `<DotBadge>`.
+   * Gebruik dit om ongelezen meldingen te signaleren. De badge is altijd `aria-hidden` —
+   * geef de toegankelijke tekst mee via `menuButtonBadgeLabel`.
+   */
+  menuButtonBadge?: React.ReactNode;
+
+  /**
+   * Toegankelijke tekst die wordt toegevoegd aan het label van de menuknop als er een badge
+   * aanwezig is, bijvoorbeeld `"2 nieuwe berichten"`. Wordt visueel verborgen getoond zodat
+   * screenreadergebruikers de melding horen: "Menu, 2 nieuwe berichten".
+   * Vereist als `menuButtonBadge` is meegegeven.
+   */
+  menuButtonBadgeLabel?: string;
+
+  /**
    * Callback wanneer de navigatielade opent.
    */
   onMenuOpen?: () => void;
@@ -159,6 +174,8 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
       secondaryNavigation,
       secondaryNavigationLarge,
       searchSlot,
+      menuButtonBadge,
+      menuButtonBadgeLabel,
       onMenuOpen,
       onMenuClose,
       onSearchOpen,
@@ -288,6 +305,12 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
                   iconStart={<Icon name="menu" aria-hidden />}
                 >
                   Menu
+                  {menuButtonBadgeLabel && (
+                    <span className="dsn-visually-hidden">
+                      , {menuButtonBadgeLabel}
+                    </span>
+                  )}
+                  {menuButtonBadge}
                 </Button>
               </div>
 

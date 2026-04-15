@@ -36,6 +36,7 @@
   background: none;
   border: 0;
   cursor: pointer;
+  position: relative; /* Ankerpunt voor DotBadge */
 
   /* Layout */
   display: inline-flex;
@@ -73,11 +74,9 @@
 
 .dsn-menu-button__label {
   /* De <button> zelf is full-width via width: 100%.
-     Het label vult de resterende ruimte zodat iconEnd rechts uitlijnt.
-     position: relative zodat de dotBadge zich absoluut rechtsboven de tekst positioneert. */
+     Het label vult de resterende ruimte zodat iconEnd rechts uitlijnt. */
   flex: 1;
   text-align: start;
-  position: relative;
 }
 
 /* =============================================================================

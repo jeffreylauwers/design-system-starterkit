@@ -8,6 +8,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative; /* Ankerpunt voor DotBadge */
 
   /* Typography */
   font-family: var(--dsn-button-font-family);
