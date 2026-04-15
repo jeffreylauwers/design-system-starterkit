@@ -37,25 +37,29 @@
   inset-inline-end: var(--dsn-dot-badge-inset-inline-end);
 }
 
-/* Variant kleuren */
+/* Variant kleuren — inverse-bg-default: de gevulde dot is een achtergrond-element,
+   geen tekst. inverse-bg-default is de vivid kleur die zowel op lichte als donkere
+   achtergronden leesbaar is als dot. In een inverse context (zie page-header.css)
+   wordt overgeschakeld naar bg-default (lichte pastelkleur) voor hoog contrast op
+   donkere achtergronden. */
 .dsn-dot-badge--negative {
-  --dsn-dot-badge-color: var(--dsn-color-negative-color-default);
+  --dsn-dot-badge-color: var(--dsn-color-negative-inverse-bg-default);
 }
 
 .dsn-dot-badge--positive {
-  --dsn-dot-badge-color: var(--dsn-color-positive-color-default);
+  --dsn-dot-badge-color: var(--dsn-color-positive-inverse-bg-default);
 }
 
 .dsn-dot-badge--warning {
-  --dsn-dot-badge-color: var(--dsn-color-warning-color-default);
+  --dsn-dot-badge-color: var(--dsn-color-warning-inverse-bg-default);
 }
 
 .dsn-dot-badge--info {
-  --dsn-dot-badge-color: var(--dsn-color-info-color-default);
+  --dsn-dot-badge-color: var(--dsn-color-info-inverse-bg-default);
 }
 
 .dsn-dot-badge--neutral {
-  --dsn-dot-badge-color: var(--dsn-color-neutral-color-default);
+  --dsn-dot-badge-color: var(--dsn-color-neutral-inverse-bg-default);
 }
 
 /* Pulse-effect via ::before pseudo-element — geen extra DOM-nodes nodig */

@@ -341,6 +341,56 @@
   --dsn-logo-color-label: var(--dsn-color-accent-1-inverse-bg-default);
 }
 
+/* DotBadge op een inverse achtergrond: omschakelen naar lichte bg-default kleuren
+   voor hoog contrast op de donkere achtergrond.
+   Scoped op de donkere vlakken (small-layout, navbar, compact-inner) — de masthead
+   blijft op neutrale achtergrond en heeft de standaard inverse-bg-default kleuren. */
+.dsn-page-header--inverse
+  .dsn-page-header__small-layout
+  .dsn-dot-badge--negative,
+.dsn-page-header--inverse .dsn-page-header__navbar .dsn-dot-badge--negative,
+.dsn-page-header--inverse
+  .dsn-page-header__compact-inner
+  .dsn-dot-badge--negative {
+  --dsn-dot-badge-color: var(--dsn-color-negative-bg-default);
+}
+
+.dsn-page-header--inverse
+  .dsn-page-header__small-layout
+  .dsn-dot-badge--positive,
+.dsn-page-header--inverse .dsn-page-header__navbar .dsn-dot-badge--positive,
+.dsn-page-header--inverse
+  .dsn-page-header__compact-inner
+  .dsn-dot-badge--positive {
+  --dsn-dot-badge-color: var(--dsn-color-positive-bg-default);
+}
+
+.dsn-page-header--inverse
+  .dsn-page-header__small-layout
+  .dsn-dot-badge--warning,
+.dsn-page-header--inverse .dsn-page-header__navbar .dsn-dot-badge--warning,
+.dsn-page-header--inverse
+  .dsn-page-header__compact-inner
+  .dsn-dot-badge--warning {
+  --dsn-dot-badge-color: var(--dsn-color-warning-bg-default);
+}
+
+.dsn-page-header--inverse .dsn-page-header__small-layout .dsn-dot-badge--info,
+.dsn-page-header--inverse .dsn-page-header__navbar .dsn-dot-badge--info,
+.dsn-page-header--inverse .dsn-page-header__compact-inner .dsn-dot-badge--info {
+  --dsn-dot-badge-color: var(--dsn-color-info-bg-default);
+}
+
+.dsn-page-header--inverse
+  .dsn-page-header__small-layout
+  .dsn-dot-badge--neutral,
+.dsn-page-header--inverse .dsn-page-header__navbar .dsn-dot-badge--neutral,
+.dsn-page-header--inverse
+  .dsn-page-header__compact-inner
+  .dsn-dot-badge--neutral {
+  --dsn-dot-badge-color: var(--dsn-color-neutral-bg-default);
+}
+
 /* Masthead blijft op neutrale achtergrond — logo kleuren resetten naar standaard */
 .dsn-page-header--inverse .dsn-page-header__masthead {
   --dsn-logo-color-primary: var(--dsn-color-accent-1-inverse-bg-default);
@@ -361,6 +411,38 @@
   );
   --dsn-button-subtle-active-color: var(
     --dsn-color-accent-1-inverse-color-active
+  );
+}
+
+/* Menu-items en knoppen in een Popover erven de inverse kleuren via CSS-cascading.
+   De Popover heeft altijd een lichte achtergrond — reset naar standaard component-kleuren. */
+.dsn-page-header--inverse .dsn-popover {
+  --dsn-menu-item-color: var(--dsn-color-action-2-color-default);
+  --dsn-menu-item-hover-color: var(--dsn-color-action-2-color-hover);
+  --dsn-menu-item-hover-background-color: var(--dsn-color-action-2-bg-hover);
+  --dsn-menu-item-active-color: var(--dsn-color-action-2-color-active);
+  --dsn-menu-item-active-background-color: var(--dsn-color-action-2-bg-active);
+  --dsn-menu-link-current-color: var(--dsn-color-action-2-color-default);
+  --dsn-menu-link-current-background-color: var(--dsn-color-action-2-bg-active);
+  --dsn-menu-link-current-indicator-color: var(
+    --dsn-color-action-2-color-default
+  );
+  --dsn-menu-link-current-hover-color: var(--dsn-color-action-2-color-default);
+  --dsn-menu-link-current-hover-background-color: var(
+    --dsn-color-action-2-bg-active
+  );
+  --dsn-menu-link-current-active-color: var(--dsn-color-action-2-color-default);
+  --dsn-menu-link-current-active-background-color: var(
+    --dsn-color-action-2-bg-active
+  );
+  --dsn-button-subtle-color: var(--dsn-color-action-1-color-default);
+  --dsn-button-subtle-hover-color: var(--dsn-color-action-1-color-hover);
+  --dsn-button-subtle-hover-background-color: var(
+    --dsn-color-action-1-bg-hover
+  );
+  --dsn-button-subtle-active-color: var(--dsn-color-action-1-color-active);
+  --dsn-button-subtle-active-background-color: var(
+    --dsn-color-action-1-bg-active
   );
 }
 
