@@ -17,10 +17,10 @@ De Radio component is een standalone radio button zonder label - alleen het rond
 
 ## Don't use when
 
-- Je een radio button met label nodig hebt — gebruik dan [RadioOption](/docs/components-radiooption--docs).
-- Je een groep gerelateerde radio buttons hebt — gebruik dan [RadioGroup](/docs/components-radiogroup--docs).
-- Je meerdere opties tegelijk wilt selecteren — gebruik dan [Checkbox](/docs/components-checkbox--docs).
-- Je een aan/uit toggle nodig hebt — overweeg een toggle/switch (indien beschikbaar).
+- Je een radio button met label nodig hebt: gebruik dan [RadioOption](/docs/components-radiooption--docs).
+- Je een groep gerelateerde radio buttons hebt: gebruik dan [RadioGroup](/docs/components-radiogroup--docs).
+- Je meerdere opties tegelijk wilt selecteren: gebruik dan [Checkbox](/docs/components-checkbox--docs).
+- Je een aan/uit toggle nodig hebt: overweeg een toggle/switch (indien beschikbaar).
 
 ## Best practices
 

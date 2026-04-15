@@ -21,14 +21,14 @@ Gebruik `FormFieldset` als wrapper voor een volledig formulierveld met legend, b
 ## Don't use when
 
 - De gebruiker een datum uit een kalender moet kiezen (gebruik dan `DateInput`)
-- Het om een datum in de nabije toekomst gaat die makkelijk te selecteren is — een datumkiezer is dan handiger
+- Het om een datum in de nabije toekomst gaat die makkelijk te selecteren is: een datumkiezer is dan handiger
 
 ## Best practices
 
-- Gebruik altijd `<FormFieldset legend="...">` als wrapper — dit geeft de groep een naam voor screenreaders
+- Gebruik altijd `<FormFieldset legend="...">` als wrapper: dit geeft de groep een naam voor screenreaders
 - Geef de `description` prop mee met een voorbeelddatum, bijv. `"Bijvoorbeeld: 15 3 1990"`
 - Geef de `id` prop mee zodat de labels correct gekoppeld zijn aan de inputs
-- Geef bij een fout de `error` prop mee aan `FormFieldset` — de foutmelding verschijnt dan automatisch bóven de invoervelden
+- Geef bij een fout de `error` prop mee aan `FormFieldset`: de foutmelding verschijnt dan automatisch bóven de invoervelden
 
 ## Accessibility
 
@@ -40,10 +40,10 @@ Gebruik `FormFieldset` als wrapper voor een volledig formulierveld met legend, b
 
 ## States
 
-- **Default** — lege velden
-- **With value** — datum ingevuld
-- **Invalid** — alle drie de velden tonen een foutstate, gebruik samen met foutmelding
-- **Disabled** — alle velden niet bewerkbaar
+- **Default**: lege velden
+- **With value**: datum ingevuld
+- **Invalid**: alle drie de velden tonen een foutstate, gebruik samen met foutmelding
+- **Disabled**: alle velden niet bewerkbaar
 
 ## Design tokens
 

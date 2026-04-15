@@ -8,7 +8,7 @@ Optionele context die meegegeven kan worden (gebruik $ARGUMENTS als startpunt):
 
 ---
 
-## Stap 1 — Begrijp wat er veranderd is
+## Stap 1: Begrijp wat er veranderd is
 
 Voer uit:
 
@@ -29,24 +29,24 @@ Dit bepaalt welke bestanden daadwerkelijk updated moeten worden. Niet elk bestan
 
 ---
 
-## Stap 2 — Root `README.md`
+## Stap 2: Root `README.md`
 
 Controleer en update waar nodig:
 
-- **Componenttelling** — tel de werkelijke componenten in de codebase en vergelijk
-- **Testaantal** — haal het actuele getal op via: `pnpm test run 2>&1 | tail -5`
-- **Component tabel** — alle componenten vermeld? HTML/CSS + React + Web Component status correct?
-- **Scripts sectie** — zijn er nieuwe scripts bijgekomen in `package.json`?
-- **Tech stack** — zijn er versie-wijzigingen (bijv. Storybook, Vitest, TypeScript)?
+- **Componenttelling**: tel de werkelijke componenten in de codebase en vergelijk
+- **Testaantal**: haal het actuele getal op via: `pnpm test run 2>&1 | tail -5`
+- **Component tabel**: alle componenten vermeld? HTML/CSS + React + Web Component status correct?
+- **Scripts sectie**: zijn er nieuwe scripts bijgekomen in `package.json`?
+- **Tech stack**: zijn er versie-wijzigingen (bijv. Storybook, Vitest, TypeScript)?
 
 ---
 
-## Stap 3 — `docs/` bestanden
+## Stap 3: `docs/` bestanden
 
 ### `docs/README.md`
 
 - Componenttelling en statistieken up-to-date?
-- Links naar andere docs — alle 5 nummers aanwezig?
+- Links naar andere docs: alle 5 nummers aanwezig?
 
 ### `docs/01-architecture.md`
 
@@ -90,7 +90,7 @@ Updaten bij: nieuwe addons, nieuwe story-types, gewijzigde Storybook config, nie
 Voeg een nieuwe entry toe voor commits die nog niet gedocumenteerd zijn. Formaat:
 
 ```markdown
-## [versie] — YYYY-MM-DD
+## [versie]: YYYY-MM-DD
 
 ### Added
 
@@ -113,7 +113,7 @@ Gebruik commit messages en PR-nummers als bron. Sla het over als alle recente co
 
 ---
 
-## Stap 4 — Storybook `packages/storybook/src/*.docs.md`
+## Stap 4: Storybook `packages/storybook/src/*.docs.md`
 
 **Voor elk nieuw component** dat nog geen `.docs.md` heeft:
 Maak een nieuw bestand aan in hetzelfde formaat als bestaande bestanden. Kijk naar een bestaand bestand in dezelfde categorie als voorbeeld. Secties:
@@ -132,7 +132,7 @@ Maak een nieuw bestand aan in hetzelfde formaat als bestaande bestanden. Kijk na
 
 ---
 
-## Stap 5 — Commit
+## Stap 5: Commit
 
 Zijn er bestanden gewijzigd? Commit ze dan met een beschrijvend bericht:
 
@@ -143,15 +143,15 @@ git commit -m "docs: ..."
 
 Gebruik de `docs:` prefix. Noem in de commit message welke versie(s) gedocumenteerd zijn en wat er is toegevoegd of bijgewerkt.
 
-Vraag daarna aan de gebruiker of de commit rechtstreeks naar main gepusht moet worden, of via een PR. Doe dit **niet automatisch** — wacht op expliciete bevestiging.
+Vraag daarna aan de gebruiker of de commit rechtstreeks naar main gepusht moet worden, of via een PR. Doe dit **niet automatisch**: wacht op expliciete bevestiging.
 
 ---
 
 ## Regels
 
 - Wijzig **nooit** code-bestanden (`.ts`, `.tsx`, `.css`, `.json` tokens, Storybook stories)
-- Wijzig **nooit** `MEMORY.md` of bestanden in `.claude/` — dat is Claude's eigen domein
-- Voeg **geen** verzonnen statistieken toe — haal testaantal en componenttelling altijd uit de werkelijke codebase
+- Wijzig **nooit** `MEMORY.md` of bestanden in `.claude/`: dat is Claude's eigen domein
+- Voeg **geen** verzonnen statistieken toe: haal testaantal en componenttelling altijd uit de werkelijke codebase
 - Houd de **bestaande schrijfstijl** aan: toon, taal (Nederlands of Engels per bestand), opmaak, sectienamen
-- Update **alleen wat daadwerkelijk veranderd is** — niet elk bestand hoeft bij elke sessie te wijzigen
+- Update **alleen wat daadwerkelijk veranderd is**: niet elk bestand hoeft bij elke sessie te wijzigen
 - Als iets onduidelijk is: vraag eerst, update daarna

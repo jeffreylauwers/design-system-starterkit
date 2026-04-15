@@ -6,7 +6,7 @@ Containercomponent voor `MenuLink`- en `MenuButton`-items in een verticale of ho
 
 `Menu` groepeert navigatie-items in een semantisch correcte `<ul>`-lijst. Het biedt via de `orientation`-prop keuze tussen een verticale (standaard) en horizontale oriëntatie. Bij verticale oriëntatie pakken items de volledige breedte; bij horizontaal zijn ze zo breed als hun inhoud.
 
-`Menu` is bewust eenvoudig gehouden — het beheert geen expand/collapse logica voor sub-navigatie. Dat is een verantwoordelijkheid van de applicatielaag.
+`Menu` is bewust eenvoudig gehouden: het beheert geen expand/collapse logica voor sub-navigatie. Dat is een verantwoordelijkheid van de applicatielaag.
 
 <!-- VOORBEELD -->
 
@@ -18,8 +18,8 @@ Containercomponent voor `MenuLink`- en `MenuButton`-items in een verticale of ho
 
 ## Don't use when
 
-- Je slechts één enkel navigatie-item wilt tonen — gebruik dan `Link` of `Button` direct.
-- Je `<li>`-elementen wilt tonen zonder navigatiecontext — `MenuLink` en `MenuButton` zijn `<li>`-elementen en vereisen altijd een omliggend `<ul>`.
+- Je slechts één enkel navigatie-item wilt tonen: gebruik dan `Link` of `Button` direct.
+- Je `<li>`-elementen wilt tonen zonder navigatiecontext: `MenuLink` en `MenuButton` zijn `<li>`-elementen en vereisen altijd een omliggend `<ul>`.
 
 ## Best practices
 
@@ -41,12 +41,12 @@ Containercomponent voor `MenuLink`- en `MenuButton`-items in een verticale of ho
 Kies de oriëntatie op basis van de context:
 
 ```html
-<!-- Verticaal (standaard) — zijbalk of sub-navigatie -->
+<!-- Verticaal (standaard): zijbalk of sub-navigatie -->
 <ul class="dsn-menu">
   <li class="dsn-menu-link">...</li>
 </ul>
 
-<!-- Horizontaal — Page Header of tab-navigatie -->
+<!-- Horizontaal: Page Header of tab-navigatie -->
 <ul class="dsn-menu dsn-menu--horizontal">
   <li class="dsn-menu-link">...</li>
 </ul>
@@ -75,14 +75,14 @@ Kies de oriëntatie op basis van de context:
 
 ## Design tokens
 
-| Token                       | Beschrijving                                                                       |
-| --------------------------- | ---------------------------------------------------------------------------------- |
-| `--dsn-menu-gap-vertical`   | Ruimte tussen items in verticale oriëntatie (0 — items hebben eigen padding-block) |
-| `--dsn-menu-gap-horizontal` | Ruimte tussen items in horizontale oriëntatie                                      |
+| Token                       | Beschrijving                                                                      |
+| --------------------------- | --------------------------------------------------------------------------------- |
+| `--dsn-menu-gap-vertical`   | Ruimte tussen items in verticale oriëntatie (0: items hebben eigen padding-block) |
+| `--dsn-menu-gap-horizontal` | Ruimte tussen items in horizontale oriëntatie                                     |
 
 ## Accessibility
 
-- `Menu` rendert een `<ul>` — screenreaders kondigen de lijst aan met het aantal items.
-- `Menu` rendert zelf **geen `<nav>`** — de ouder is verantwoordelijk voor de navigatielandmark.
+- `Menu` rendert een `<ul>`: screenreaders kondigen de lijst aan met het aantal items.
+- `Menu` rendert zelf **geen `<nav>`**: de ouder is verantwoordelijk voor de navigatielandmark.
 - De `<nav>` moet een toegankelijke naam hebben via `aria-label` of `aria-labelledby`.
-- Elk `MenuLink`- en `MenuButton`-item is een `<li>` — de directe kinderen van `Menu`.
+- Elk `MenuLink`- en `MenuButton`-item is een `<li>`: de directe kinderen van `Menu`.

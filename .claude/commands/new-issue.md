@@ -1,6 +1,6 @@
 # Nieuw backlog item aanmaken
 
-Maak een nieuw GitHub issue aan als backlog item. Het issue **moet altijd** het standaard template volgen — sla geen secties over.
+Maak een nieuw GitHub issue aan als backlog item. Het issue **moet altijd** het standaard template volgen: sla geen secties over.
 
 Optionele context meegegeven door de gebruiker (componentnaam, beschrijving, etc.):
 
@@ -8,7 +8,7 @@ Optionele context meegegeven door de gebruiker (componentnaam, beschrijving, etc
 
 ---
 
-## Stap 1 — Bepaal titel en scope
+## Stap 1: Bepaal titel en scope
 
 Als de gebruiker geen componentnaam of beschrijving heeft meegegeven via `$ARGUMENTS`, vraag dan:
 
@@ -23,20 +23,20 @@ Bepaal het juiste titelformaat:
 
 ---
 
-## Stap 2 — Verzamel de template-inhoud
+## Stap 2: Verzamel de template-inhoud
 
 Vraag de gebruiker naar de volgende onderdelen (gebruik `AskUserQuestion` of vraag ze één voor één via tekst):
 
-1. **User Story** — "Als [gebruiker/ontwikkelaar] wil ik [wat] zodat [waarom]."
-2. **Context** — Technische context, gerelateerde issues of code. (optioneel)
-3. **Acceptance Criteria** — De concrete done-criteria. (één per regel)
-4. **Notities / Open vragen** — Edge cases, twijfels, refinement-punten. (optioneel)
+1. **User Story**: "Als [gebruiker/ontwikkelaar] wil ik [wat] zodat [waarom]."
+2. **Context**: Technische context, gerelateerde issues of code. (optioneel)
+3. **Acceptance Criteria**: De concrete done-criteria. (één per regel)
+4. **Notities / Open vragen**: Edge cases, twijfels, refinement-punten. (optioneel)
 
 Vraag ook: is dit een **nieuw component**? (bepaalt of de "Bij nieuw component" sectie meegenomen wordt)
 
 ---
 
-## Stap 3 — Stel de issue body samen
+## Stap 3: Stel de issue body samen
 
 Bouw de body op volgens het template hieronder. Vul de gebruikersinput in op de juiste plekken. Laat HTML-commentaren (`<!-- ... -->`) staan als er geen inhoud voor die sectie is.
 
@@ -95,13 +95,13 @@ Als [gebruiker/ontwikkelaar] wil ik [wat] zodat [waarom].
 
 ---
 
-## Stap 4 — Toon ter review
+## Stap 4: Toon ter review
 
 Laat de volledige title én body zien aan de gebruiker. Vraag om expliciete bevestiging voordat het issue aangemaakt wordt.
 
 ---
 
-## Stap 5 — Maak het issue aan
+## Stap 5: Maak het issue aan
 
 Na bevestiging van de gebruiker:
 
@@ -115,7 +115,7 @@ Rapporteer de URL van het aangemaakte issue.
 
 ## Regels
 
-- Gebruik **altijd** het volledige template — sla geen secties over
-- Voeg **geen** verzonnen inhoud toe — als iets onbekend is, gebruik de HTML-comment placeholder
+- Gebruik **altijd** het volledige template: sla geen secties over
+- Voeg **geen** verzonnen inhoud toe: als iets onbekend is, gebruik de HTML-comment placeholder
 - Vraag altijd om **expliciete bevestiging** voordat het issue aangemaakt wordt
 - Sectie `### Bij nieuw component` is **verplicht bij nieuwe componenten**, weglaten bij fixes/chores

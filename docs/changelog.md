@@ -12,12 +12,12 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **Popover** component — lichtgewicht, contextgebonden overlay verankerd aan een triggerelement (PR #156)
+- **Popover** component: lichtgewicht, contextgebonden overlay verankerd aan een triggerelement (PR #156)
 - Gebaseerd op de HTML Popover API (`popover="auto"`) voor ingebakken light-dismiss en top-layer gedrag
 - Compound component patroon: `PopoverHeader`, `PopoverHeading`, `PopoverBody`, `PopoverFooter`
-- `placement` prop: `'bottom'` (default), `'top'`, `'end'`, `'start'` — RTL-bewust
+- `placement` prop: `'bottom'` (default), `'top'`, `'end'`, `'start'`: RTL-bewust
 - JavaScript-positionering via `getBoundingClientRect` + `offsetWidth`/`offsetHeight` met viewport-clamping (8px marge)
-- `max-inline-size: min(var(--dsn-popover-max-width), calc(100vw - 1rem))` — nooit breder dan het viewport op smalle schermen
+- `max-inline-size: min(var(--dsn-popover-max-width), calc(100vw - 1rem))`: nooit breder dan het viewport op smalle schermen
 - `aria-labelledby` automatisch via `PopoverHeading` + React Context; `aria-label` via `label` prop voor headerloze popovers
 - `aria-expanded` synchroon bijgehouden op het triggerelement via `triggerRef` prop
 - Open/sluitanimatie via `@starting-style`, `opacity`, `transform: scale` en `allow-discrete`
@@ -34,7 +34,7 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **`colorScheme` prop** op `PageHeader` — `'default'` (standaard) | `'inverse'` — activeert de `dsn-page-header--inverse` modifier
+- **`colorScheme` prop** op `PageHeader`: `'default'` (standaard) | `'inverse'`: activeert de `dsn-page-header--inverse` modifier
 - **Inverse kleurvariant** (`colorScheme="inverse"`): accent-1-inverse achtergronden op navbar en compact balk voor prominente branding
   - Navbar (large default layout): `accent-1-inverse.bg-default`
   - Compact balk (large compact layout): `accent-1-inverse.bg-default`
@@ -43,7 +43,7 @@ All notable changes to this project are documented in this file.
   - Masthead blijft ongewijzigd op `neutral.bg-document`
 - **Logo-kleuren passen zich automatisch aan** via CSS custom property overrides op `.dsn-page-header--inverse`: `--dsn-logo-color-primary` en `--dsn-logo-color-label` omgedraaid voor donkere achtergrond; reset in masthead-context
 - **Menu-items en buttons zichtbaar** op inverse achtergrond via context-gebonden token-overrides: `--dsn-menu-item-color`, `--dsn-menu-link-current-*` en `--dsn-button-subtle-color` → wit (`accent-1-inverse.color-default`) op alle inverse vlakken
-- Orthogonaal modifier — combineerbaar met alle andere props: `layout="compact" colorScheme="inverse"` werkt correct
+- Orthogonaal modifier: combineerbaar met alle andere props: `layout="compact" colorScheme="inverse"` werkt correct
 - 2 nieuwe Storybook stories: `Inverse color scheme` en `Inverse compact layout`
 
 ---
@@ -54,7 +54,7 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **`layout` prop** op `PageHeader` — `'default'` (standaard) | `'compact'` — activeert de `dsn-page-header--compact` modifier
+- **`layout` prop** op `PageHeader`: `'default'` (standaard) | `'compact'`: activeert de `dsn-page-header--compact` modifier
 - **Compact layout** (large viewport ≥ 64em): één enkele rij via CSS-grid `1fr auto 1fr`:
   - Logo (inline-start, eerste kolom)
   - Primaire navigatie (optisch gecentreerd, middelste kolom)
@@ -73,7 +73,7 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **SkipLink** component — toegankelijkheidskoppeling als eerste focusbaar element op de pagina (PR #149)
+- **SkipLink** component: toegankelijkheidskoppeling als eerste focusbaar element op de pagina (PR #149)
 - Standaard verborgen via `clip-path: inset(50%)`; zichtbaar bij `:focus-visible` in de hoek van het viewport
 - Voldoet aan WCAG 2.1 succescriterium 2.4.1 (Bypass Blocks, Level A)
 - `href` prop (verplicht), `children` prop (default: `"Ga direct naar de hoofdinhoud"`), `React.forwardRef<HTMLAnchorElement>`
@@ -90,8 +90,8 @@ All notable changes to this project are documented in this file.
 
 #### Fixed
 
-- **Zoekknop padding** in de masthead (large viewport): `SearchInput` wrapper krijgt `flex: 1` + `max-inline-size: none` zodat de Zoeken-knop zijn natuurlijke breedte en padding behoudt — zelfde patroon als het mobile zoekpaneel
-- **Token gecorrigeerd**: `--dsn-page-header-padding-inline` van `{dsn.space.row.md}` naar `{dsn.space.inline.xl}` — nu consistent met masthead en navbar padding
+- **Zoekknop padding** in de masthead (large viewport): `SearchInput` wrapper krijgt `flex: 1` + `max-inline-size: none` zodat de Zoeken-knop zijn natuurlijke breedte en padding behoudt: zelfde patroon als het mobile zoekpaneel
+- **Token gecorrigeerd**: `--dsn-page-header-padding-inline` van `{dsn.space.row.md}` naar `{dsn.space.inline.xl}`: nu consistent met masthead en navbar padding
 - **Docs gecorrigeerd**: `--dsn-page-header-search-panel-background-color` was gedocumenteerd als `{dsn.color.neutral.bg-subtle}`, is `{dsn.color.accent-1.bg-default}`
 
 #### Changed
@@ -107,12 +107,12 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **Large viewport layout** (≥ 64em) voor `PageHeader` — tweebandig ontwerp boven `64em` via `display: none` switch:
-  - **Masthead** (`dsn-page-header__masthead`) — neutrale achtergrond met logo (inline-start), servicemenu en inline zoekveld (inline-end)
-  - **Navigatiebalk** (`dsn-page-header__navbar`) — accent-1 achtergrond met primaire navigatie
-- `primaryNavigationLarge` prop — aparte navigatie-inhoud voor de navigatiebalk op large viewport; valt terug op `primaryNavigation` wanneer weggelaten
-- `secondaryNavigationLarge` prop — aparte servicemenu-inhoud voor de masthead; valt terug op `secondaryNavigation` wanneer weggelaten
-- `searchSlot` prop — inline zoekveld (SearchInput + zoekknop) in de masthead rechts van het servicemenu
+- **Large viewport layout** (≥ 64em) voor `PageHeader`: tweebandig ontwerp boven `64em` via `display: none` switch:
+  - **Masthead** (`dsn-page-header__masthead`): neutrale achtergrond met logo (inline-start), servicemenu en inline zoekveld (inline-end)
+  - **Navigatiebalk** (`dsn-page-header__navbar`): accent-1 achtergrond met primaire navigatie
+- `primaryNavigationLarge` prop: aparte navigatie-inhoud voor de navigatiebalk op large viewport; valt terug op `primaryNavigation` wanneer weggelaten
+- `secondaryNavigationLarge` prop: aparte servicemenu-inhoud voor de masthead; valt terug op `secondaryNavigation` wanneer weggelaten
+- `searchSlot` prop: inline zoekveld (SearchInput + zoekknop) in de masthead rechts van het servicemenu
 - CSS-klassen: `dsn-page-header__large-layout`, `dsn-page-header__small-layout`, `dsn-page-header__masthead`, `dsn-page-header__masthead-inner`, `dsn-page-header__secondary-nav`, `dsn-page-header__searchbox`, `dsn-page-header__navbar`
 - 6 nieuwe design tokens: `masthead-background-color`, `masthead-padding-block`, `masthead-padding-inline`, `navbar-background-color`, `navbar-padding-inline`, `secondary-nav-gap`
 - 38 React tests
@@ -125,7 +125,7 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **Logo** component — theme-aware inline SVG logo met twee kleurlagen gekoppeld aan design tokens (PR #139)
+- **Logo** component: theme-aware inline SVG logo met twee kleurlagen gekoppeld aan design tokens (PR #139)
 - `--dsn-logo-color-primary` token → `{dsn.color.accent-1-inverse.bg-default}` (merkkleur per actief thema)
 - `--dsn-logo-color-label` token → `{dsn.color.neutral.bg-document}` (documentachtergrond, doorkijkje-effect)
 - Standalone gebruik: `role="img"` + `<title>` + `aria-labelledby`; decoratief gebruik: `aria-hidden={true}`
@@ -142,13 +142,13 @@ All notable changes to this project are documented in this file.
 
 #### Fixed
 
-- `dsn.form-control.padding-block-start/end` verlaagd van `{dsn.space.block.lg}` (12px) naar `{dsn.space.block.md}` (8px) — `min-block-size` (48px) bepaalt nu de hoogte van alle form controls, gelijk aan de button
+- `dsn.form-control.padding-block-start/end` verlaagd van `{dsn.space.block.lg}` (12px) naar `{dsn.space.block.md}` (8px): `min-block-size` (48px) bepaalt nu de hoogte van alle form controls, gelijk aan de button
 - Cascadeert automatisch naar **TextInput**, **TextArea**, **Select**, **SearchInput**, **DateInput** en **TimeInput**
 - Tijdelijke token-override in `page-header.css` (`.dsn-page-header__search-inner .dsn-text-input`) verwijderd
 
 #### Changed
 
-- `dsn.date-input.button-inset-inline-end` en `dsn.time-input.button-inset-inline-end`: van `{dsn.space.inline.md}` (8px) naar `{dsn.space.inline.sm}` (4px) — icoonknop staat compacter tegen de border
+- `dsn.date-input.button-inset-inline-end` en `dsn.time-input.button-inset-inline-end`: van `{dsn.space.inline.md}` (8px) naar `{dsn.space.inline.sm}` (4px): icoonknop staat compacter tegen de border
 
 ---
 
@@ -158,16 +158,16 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **Menu** component — containercomponent voor `MenuLink`- en `MenuButton`-items
+- **Menu** component: containercomponent voor `MenuLink`- en `MenuButton`-items
 - Rendert een `<ul>` met `list-style: none`; verantwoordelijkheid voor de `<nav>`-wrapper ligt bij de ouder
 - `orientation` prop: `vertical` (standaard, `flex-direction: column`) of `horizontal` (`flex-direction: row`)
-- Horizontale current-indicator via `border-block-end` (i.p.v. `border-inline-start` in verticale oriëntatie) — context-override in `menu-link.css`
+- Horizontale current-indicator via `border-block-end` (i.p.v. `border-inline-start` in verticale oriëntatie): context-override in `menu-link.css`
 - 2 design tokens: `dsn.menu.gap.vertical` (`{dsn.space.block.xs}`, 2px) en `dsn.menu.gap.horizontal` (`{dsn.space.inline.sm}`, 4px)
 - 9 React tests
 
 #### Changed
 
-- `dsn.menu-item.min-block-size` → `{dsn.pointer-target.min-block-size}` (48px) — MenuLink en MenuButton voldoen nu altijd aan WCAG touch target
+- `dsn.menu-item.min-block-size` → `{dsn.pointer-target.min-block-size}` (48px): MenuLink en MenuButton voldoen nu altijd aan WCAG touch target
 
 ---
 
@@ -177,7 +177,7 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **MenuButton** component — navigatieknop voor JavaScript-acties (uitloggen, modal openen, etc.); semantisch een `<button>`, visueel identiek aan MenuLink
+- **MenuButton** component: navigatieknop voor JavaScript-acties (uitloggen, modal openen, etc.); semantisch een `<button>`, visueel identiek aan MenuLink
 - `iconStart`, `iconEnd`, `dotBadge` props; `dotBadge` zweeft rechtsboven de tekst via `position: relative` op de label-span
 - 13 React tests
 
@@ -185,8 +185,8 @@ All notable changes to this project are documented in this file.
 
 - **Tokens gerefactored:** gedeelde visuele stijl van MenuLink en MenuButton samengebracht in nieuw bestand `tokens/components/menu-item.json` (`dsn.menu-item.*` namespace)
 - `tokens/components/menu-link.json` bevat nu alleen nog MenuLink-specifieke tokens (`current.*` en `level-indent`)
-- `tokens/components/menu-button.json` verwijderd — vervangen door de gedeelde `menu-item.json`
-- Kleurverwijzingen van MenuLink en MenuButton gewijzigd van `action-1` naar `action-2` — consistent met `Link`
+- `tokens/components/menu-button.json` verwijderd: vervangen door de gedeelde `menu-item.json`
+- Kleurverwijzingen van MenuLink en MenuButton gewijzigd van `action-1` naar `action-2`: consistent met `Link`
 
 ---
 
@@ -194,7 +194,7 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **MenuLink** component — navigatielink met niveau-hiërarchie, actieve pagina-staat en uitklapbare subnavigatie
+- **MenuLink** component: navigatielink met niveau-hiërarchie, actieve pagina-staat en uitklapbare subnavigatie
 - `level` prop (1–4): toenemende `padding-inline-start` inspringing via `margin-inline-start` op de link
 - `current` prop: `aria-current="page"` + visuele `border-inline-start` indicator (3px, `action-2` kleur)
 - `subItems` + `expanded` + `onExpandToggle`: uitklapknop naast de link met `aria-expanded` en roterende chevron
@@ -210,11 +210,11 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **NumberBadge** component — compact inline pill-badge voor het tonen van getallen (bijv. ongelezen berichten, openstaande taken) binnen een Button of Menu-item (PR #131)
+- **NumberBadge** component: compact inline pill-badge voor het tonen van getallen (bijv. ongelezen berichten, openstaande taken) binnen een Button of Menu-item (PR #131)
 - 5 varianten: `negative` (default), `positive`, `warning`, `info`, `neutral`
-- `maxCount` prop: kapt het getal af met `{maxCount}+` bij overschrijding — werkt op zowel `number` als numerieke string children
-- Altijd `aria-hidden="true"` — toegankelijke context via `dsn-visually-hidden` in de parent
-- `min-inline-size: calc(1lh + 2 * padding-block)` — badge blijft cirkelrond bij 1–2 cijfers, schaalt mee met de fluid type scale
+- `maxCount` prop: kapt het getal af met `{maxCount}+` bij overschrijding: werkt op zowel `number` als numerieke string children
+- Altijd `aria-hidden="true"`: toegankelijke context via `dsn-visually-hidden` in de parent
+- `min-inline-size: calc(1lh + 2 * padding-block)`: badge blijft cirkelrond bij 1–2 cijfers, schaalt mee met de fluid type scale
 - Inverse kleuren: volle signaalachtergrond met witte tekst (`*-inverse-bg-default` + `*-inverse-color-default`)
 - Transparante border voor Windows High Contrast mode ondersteuning
 - 12 React tests, 19 design tokens
@@ -227,18 +227,18 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **Drawer** component — zijpaneel gebaseerd op het native `<dialog>` element (PR #124)
+- **Drawer** component: zijpaneel gebaseerd op het native `<dialog>` element (PR #124)
 - Compound component patroon: `Drawer`, `DrawerHeader`, `DrawerHeading`, `DrawerBody`, `DrawerFooter`
-- `modal` prop (default `true`) — `.showModal()` voor modaal gebruik (focus-trap, backdrop, `aria-modal`), `.show()` voor niet-modaal gebruik waarbij de achtergrond interactief blijft
-- `side` prop (`'right'` | `'left'`, default `'right'`) — positioneert het paneel aan de gewenste zijde van het scherm
-- `aria-labelledby` automatisch gekoppeld aan `DrawerHeading` via `React.useId()` — geen handmatige ID nodig
+- `modal` prop (default `true`): `.showModal()` voor modaal gebruik (focus-trap, backdrop, `aria-modal`), `.show()` voor niet-modaal gebruik waarbij de achtergrond interactief blijft
+- `side` prop (`'right'` | `'left'`, default `'right'`): positioneert het paneel aan de gewenste zijde van het scherm
+- `aria-labelledby` automatisch gekoppeld aan `DrawerHeading` via `React.useId()`: geen handmatige ID nodig
 - Modal variant: Escape sluit via native `cancel`-event; niet-modaal variant: handmatige `keydown`-listener op Escape
 - Slide-in animatie via `@starting-style` en `translateX` (rechts: van `100%`; links: van `-100%`)
 - `::backdrop` met opacity-transitie voor de modal variant
 - Scroll-affordance schaduw in body (Lea Verou verticale techniek)
-- Border alleen aan de binnenzijde — `border-inline-start` voor rechts, `border-inline-end` voor links; geen border-radius
+- Border alleen aan de binnenzijde: `border-inline-start` voor rechts, `border-inline-end` voor links; geen border-radius
 - `max-width` begrensd (25rem); `min-gap` garandeert dat de achtergrondpagina altijd zichtbaar blijft (3rem)
-- `level` prop (1–6, default `2`) op `DrawerHeading` — visueel uiterlijk altijd gelijk
+- `level` prop (1–6, default `2`) op `DrawerHeading`: visueel uiterlijk altijd gelijk
 - 19 componenttokens: achtergrond, rand, schaduw, max-breedte, min-gap, heading-typografie, paddings
 - 20 React tests
 - `new-component-issue` skill uitgebreid: `index.ts` barrel file per componentdirectory toegevoegd aan React acceptatiecriteria
@@ -251,15 +251,15 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **ModalDialog** component — modaal dialoogvenster gebaseerd op het native `<dialog>` element (PR #120)
+- **ModalDialog** component: modaal dialoogvenster gebaseerd op het native `<dialog>` element (PR #120)
 - Compound component patroon: `ModalDialog`, `ModalDialogHeader`, `ModalDialogHeading`, `ModalDialogBody`, `ModalDialogFooter`
-- `.showModal()` intern afgehandeld via `isOpen` prop — garandeert native focus-trap, `aria-modal` semantiek en `inert`-attribuut op de achtergrond
-- `aria-labelledby` automatisch gekoppeld aan `ModalDialogHeading` via `React.useId()` — geen handmatige ID nodig
+- `.showModal()` intern afgehandeld via `isOpen` prop: garandeert native focus-trap, `aria-modal` semantiek en `inert`-attribuut op de achtergrond
+- `aria-labelledby` automatisch gekoppeld aan `ModalDialogHeading` via `React.useId()`: geen handmatige ID nodig
 - Escape-toets sluit via native `cancel`-event; sluitknop altijd aanwezig in header
 - Scroll-affordance schaduw in body (Lea Verou verticale techniek)
-- Open/sluitanimatie via `@starting-style`, `opacity`, `transform` en `allow-discrete` — schakelbaar via `prefers-reduced-motion`
-- `display: flex` alleen op `[open]` staat — UA `display: none` blijft van kracht wanneer gesloten; `flex-direction: column` op basis-selector voorkomt layout-glitch tijdens sluitanimatie
-- `level` prop (1–6, default `2`) op `ModalDialogHeading` — visueel uiterlijk altijd gelijk
+- Open/sluitanimatie via `@starting-style`, `opacity`, `transform` en `allow-discrete`: schakelbaar via `prefers-reduced-motion`
+- `display: flex` alleen op `[open]` staat: UA `display: none` blijft van kracht wanneer gesloten; `flex-direction: column` op basis-selector voorkomt layout-glitch tijdens sluitanimatie
+- `level` prop (1–6, default `2`) op `ModalDialogHeading`: visueel uiterlijk altijd gelijk
 - 18 componenttokens: achtergrond, rand, schaduw, max-breedte, heading-typografie, paddings
 - 16 React tests
 
@@ -271,7 +271,7 @@ All notable changes to this project are documented in this file.
 
 #### Fixed
 
-- **PreviewFrame** — `sb-unstyled` class toegevoegd aan de wrapper div. Storybook's docs-pagina CSS bevat een regel `.css-qa4clq :where(div:not(.sb-anchor, .sb-unstyled, .sb-unstyled div))` die `font-size: 16px` instelde op alle `div`-elementen in de docs-pagina. Doordat deze selector dezelfde specificiteit had als `.dsn-body` en later geladen werd, overschreef die de token-waarde `var(--dsn-text-font-size-md)`. Componenten als Card en Details lieten daardoor een verkeerde font-size zien in het visuele voorbeeld op Docs-pagina's — ondanks dat losse stories wél correct werkten. De `sb-unstyled` class sluit de wrapper én al zijn kind-divs expliciet uit van die Storybook-reset.
+- **PreviewFrame**: `sb-unstyled` class toegevoegd aan de wrapper div. Storybook's docs-pagina CSS bevat een regel `.css-qa4clq :where(div:not(.sb-anchor, .sb-unstyled, .sb-unstyled div))` die `font-size: 16px` instelde op alle `div`-elementen in de docs-pagina. Doordat deze selector dezelfde specificiteit had als `.dsn-body` en later geladen werd, overschreef die de token-waarde `var(--dsn-text-font-size-md)`. Componenten als Card en Details lieten daardoor een verkeerde font-size zien in het visuele voorbeeld op Docs-pagina's: ondanks dat losse stories wél correct werkten. De `sb-unstyled` class sluit de wrapper én al zijn kind-divs expliciet uit van die Storybook-reset.
 
 ---
 
@@ -281,8 +281,8 @@ All notable changes to this project are documented in this file.
 
 #### Fixed
 
-- **PreviewFrame** — `dsn-body` class toegevoegd aan de wrapper div zodat typography tokens (`font-size`, `font-family`, `line-height`, `font-weight`) correct worden geërvd in het visuele voorbeeldblok op Docs-pagina's. Voorheen weken de stijlen af van de afzonderlijke story-canvassen, omdat Storybook's eigen docs-CSS de typografie kon overschrijven.
-- Redundante inline `background`-style verwijderd — `dsn-body` dekt de achtergrondkleur nu zelf af via `--dsn-color-neutral-bg-document`.
+- **PreviewFrame**: `dsn-body` class toegevoegd aan de wrapper div zodat typography tokens (`font-size`, `font-family`, `line-height`, `font-weight`) correct worden geërvd in het visuele voorbeeldblok op Docs-pagina's. Voorheen weken de stijlen af van de afzonderlijke story-canvassen, omdat Storybook's eigen docs-CSS de typografie kon overschrijven.
+- Redundante inline `background`-style verwijderd: `dsn-body` dekt de achtergrondkleur nu zelf af via `--dsn-color-neutral-bg-document`.
 
 ---
 
@@ -292,25 +292,25 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **Backdrop** component — vaste, volledig-scherm overlay die de achtergrondinhoud verhult achter een Modal Dialog of Drawer (PR #114)
-- `<div class="dsn-backdrop" aria-hidden="true">` — altijd decoratief, geen ARIA-rol
-- `dsn-backdrop--no-blur` modifier — schakelt `backdrop-filter: blur()` uit voor omgevingen zonder support
+- **Backdrop** component: vaste, volledig-scherm overlay die de achtergrondinhoud verhult achter een Modal Dialog of Drawer (PR #114)
+- `<div class="dsn-backdrop" aria-hidden="true">`: altijd decoratief, geen ARIA-rol
+- `dsn-backdrop--no-blur` modifier: schakelt `backdrop-filter: blur()` uit voor omgevingen zonder support
 - Component tokens: `--dsn-backdrop-background-color`, `--dsn-backdrop-opacity` (50%), `--dsn-backdrop-blur` (4px), `--dsn-backdrop-z-index` (400)
-- Kleurtoken `backdrop.background-color` in zowel `colors-light.json` als `colors-dark.json` — altijd donker ongeacht light/dark mode (zelfde patroon als box-shadow kleurtokens)
+- Kleurtoken `backdrop.background-color` in zowel `colors-light.json` als `colors-dark.json`: altijd donker ongeacht light/dark mode (zelfde patroon als box-shadow kleurtokens)
 - Semi-transparantie via `color-mix(in srgb, ...)` met expliciete fallback voor browsers zonder support
-- React `blur` prop (boolean, default `true`) — togglet `dsn-backdrop--no-blur` modifier
+- React `blur` prop (boolean, default `true`): togglet `dsn-backdrop--no-blur` modifier
 - 8 React tests
 
 ---
 
 ## Version 5.13.2 (March 23, 2026)
 
-### Storybook story-structuur — consistentie (PR #111)
+### Storybook story-structuur: consistentie (PR #111)
 
 #### Changed
 
 - Vaste sectie-comments toegevoegd aan alle 45 story-bestanden: `// DEFAULT`, `// VARIANTEN`, `// OVERZICHTSSTORIES`, `// TEKST VARIANTEN`, `// RTL`
-- `AllStates` → `AllVariants` bij Alert, Note en StatusBadge — deze componenten tonen visuele kleurvarianten, geen interactieve states
+- `AllStates` → `AllVariants` bij Alert, Note en StatusBadge: deze componenten tonen visuele kleurvarianten, geen interactieve states
 - Lege `// HIGH CONTRAST` secties verwijderd uit alle bestanden (niet meer in gebruik)
 - Lege `// LARGE TEXT` secties verwijderd (Select, NumberInput, PasswordInput, DateInput, TimeInput, DateInputGroup)
 - Nederlandse story-namen vertaald naar Engels (BreadcrumbNavigation, Table)
@@ -327,7 +327,7 @@ All notable changes to this project are documented in this file.
 
 #### Fixed
 
-- **Wireframe font-stack** — Comic Sans MS is nu het primaire font (standaard beschikbaar op de meeste desktops); Comic Neue (via Google Fonts) dient als fallback voor omgevingen zonder Comic Sans (bijv. Android). Voorheen stond de volgorde omgekeerd.
+- **Wireframe font-stack**: Comic Sans MS is nu het primaire font (standaard beschikbaar op de meeste desktops); Comic Neue (via Google Fonts) dient als fallback voor omgevingen zonder Comic Sans (bijv. Android). Voorheen stond de volgorde omgekeerd.
 
 ---
 
@@ -337,23 +337,23 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **Card** component — configureerbare container voor gestructureerde content met stretched-link techniek (PR #108)
+- **Card** component: configureerbare container voor gestructureerde content met stretched-link techniek (PR #108)
 - Sub-componenten: `Card`, `CardHeader`, `CardBody`, `CardHeading`, `CardFooter`, `CardGroup`
-- `<article class="dsn-card">` root — semantisch zelfstandig inhoudsblok, navigeerbaar via schermlezer-sneltoets
-- `dsn-card__image-placeholder` — automatische placeholder bij `CardHeader` zonder children (`aspect-ratio: 16 / 9`, `aria-hidden="true"`)
+- `<article class="dsn-card">` root: semantisch zelfstandig inhoudsblok, navigeerbaar via schermlezer-sneltoets
+- `dsn-card__image-placeholder`: automatische placeholder bij `CardHeader` zonder children (`aspect-ratio: 16 / 9`, `aria-hidden="true"`)
 - Stretched-link techniek: `dsn-card-heading__link::before` met `position: absolute; inset: 0; z-index: 1` dekt de volledige card
 - `CardHeading` ontvangt `href` automatisch via React context van parent `Card`
-- `CardGroup` als `<ul role="list">` (standaard) of `<div>` via `as` prop — gelijke hoogte via `display: flex` op list-items + `flex: 1` op `dsn-card`
-- Hover/focus-stijlen via CSS `:has(.dsn-card-heading__link:hover/focus-visible)` — focus-ring rondom de gehele card (zelfde tokens als Button en Link)
-- CSS `transition` op `background-color` en `box-shadow` — vloeiende hover-overgang (tokens `--dsn-transition-duration-normal` + `--dsn-transition-easing-default`)
+- `CardGroup` als `<ul role="list">` (standaard) of `<div>` via `as` prop: gelijke hoogte via `display: flex` op list-items + `flex: 1` op `dsn-card`
+- Hover/focus-stijlen via CSS `:has(.dsn-card-heading__link:hover/focus-visible)`: focus-ring rondom de gehele card (zelfde tokens als Button en Link)
+- CSS `transition` op `background-color` en `box-shadow`: vloeiende hover-overgang (tokens `--dsn-transition-duration-normal` + `--dsn-transition-easing-default`)
 - Componenttokens: `--dsn-card-background`, `--dsn-card-background-hover`, `--dsn-card-border-*`, `--dsn-card-box-shadow`, `--dsn-card-box-shadow-hover`, `--dsn-card-body-padding-*`, `--dsn-card-footer-padding-*`, `--dsn-card-image-placeholder-*`, `--dsn-card-heading-*`, `--dsn-card-group-*`
 - 43 nieuwe React tests
 
 #### Fixed
 
-- **Afbeelding border-radius onderkant** — border-radius-selector gecorrigeerd naar `.dsn-card__header > .dsn-image .dsn-image__img` zodat alleen de bovenhoeken afgerond zijn en de onderkant recht blijft
-- **Focus state** — was hardcoded kleur; nu via `--dsn-focus-outline-*` tokens, consistent met Button en Link
-- **CardGroup gelijke hoogte** — `display: flex` toegevoegd aan list-items zodat cards in een rij altijd dezelfde hoogte hebben
+- **Afbeelding border-radius onderkant**: border-radius-selector gecorrigeerd naar `.dsn-card__header > .dsn-image .dsn-image__img` zodat alleen de bovenhoeken afgerond zijn en de onderkant recht blijft
+- **Focus state**: was hardcoded kleur; nu via `--dsn-focus-outline-*` tokens, consistent met Button en Link
+- **CardGroup gelijke hoogte**: `display: flex` toegevoegd aan list-items zodat cards in een rij altijd dezelfde hoogte hebben
 
 ---
 
@@ -363,15 +363,15 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **Image** component — performante, toegankelijke wrapper rond het native `<img>` element (PR #105)
+- **Image** component: performante, toegankelijke wrapper rond het native `<img>` element (PR #105)
 - `<figure class="dsn-image">` + `<img class="dsn-image__img">` + optionele `<figcaption class="dsn-image__caption">`
-- Verplichte `width` en `height` props — browser reserveert ruimte vooraf en voorkomt CLS (Cumulative Layout Shift)
-- Standaard `loading="lazy"` + `decoding="async"` — afbeeldingen buiten de viewport laden pas wanneer nodig
-- `priority` prop — `loading="eager"` + `fetchpriority="high"` voor de primaire LCP-afbeelding; gebruik maximaal één keer per pagina
-- `ratio` prop — vaste beeldverhoudingen via CSS `aspect-ratio`: `16:9`, `4:3`, `1:1`
-- `objectFit` prop — `cover` (default, bijsnijden) of `contain` (volledig zichtbaar)
-- `caption` prop — optioneel bijschrift als `<figcaption>`
-- `srcSet` / `sizes` pass-through — voor responsive afbeeldingen met meerdere resoluties
+- Verplichte `width` en `height` props: browser reserveert ruimte vooraf en voorkomt CLS (Cumulative Layout Shift)
+- Standaard `loading="lazy"` + `decoding="async"`: afbeeldingen buiten de viewport laden pas wanneer nodig
+- `priority` prop: `loading="eager"` + `fetchpriority="high"` voor de primaire LCP-afbeelding; gebruik maximaal één keer per pagina
+- `ratio` prop: vaste beeldverhoudingen via CSS `aspect-ratio`: `16:9`, `4:3`, `1:1`
+- `objectFit` prop: `cover` (default, bijsnijden) of `contain` (volledig zichtbaar)
+- `caption` prop: optioneel bijschrift als `<figcaption>`
+- `srcSet` / `sizes` pass-through: voor responsive afbeeldingen met meerdere resoluties
 - `alt=""` activeert automatisch `aria-hidden="true"` op de `<figure>` voor decoratieve afbeeldingen
 - Componenttokens: `--dsn-image-border-radius`, `--dsn-image-caption-color`, `--dsn-image-caption-font-size`, `--dsn-image-caption-line-height`, `--dsn-image-caption-margin-block-start`
 - 27 nieuwe React tests
@@ -380,19 +380,19 @@ All notable changes to this project are documented in this file.
 
 ## Version 5.11.1 (March 21, 2026)
 
-### Heading, Radio en FormField — verbeteringen en fixes
+### Heading, Radio en FormField: verbeteringen en fixes
 
 #### Changed
 
-- **Heading text-wrap: balance** — `text-wrap: balance` toegevoegd aan de Heading-basisklasse, waardoor regeleinden bij meerdere korte regels evenwichtiger worden verdeeld (PR #103)
+- **Heading text-wrap: balance**: `text-wrap: balance` toegevoegd aan de Heading-basisklasse, waardoor regeleinden bij meerdere korte regels evenwichtiger worden verdeeld (PR #103)
 
 #### Fixed
 
-- **Radio inner circle bij checked + focus** — visueel ontbrekende inner circle toegevoegd aan de Radio-component bij de gecombineerde `checked` + `focus-visible` toestand (PR #101)
+- **Radio inner circle bij checked + focus**: visueel ontbrekende inner circle toegevoegd aan de Radio-component bij de gecombineerde `checked` + `focus-visible` toestand (PR #101)
 
 #### Removed
 
-- **FormField "With CheckboxGroup" story** — verwijderd uit Storybook; de story representeerde een niet-aanbevolen compositie-patroon (PR #102)
+- **FormField "With CheckboxGroup" story**: verwijderd uit Storybook; de story representeerde een niet-aanbevolen compositie-patroon (PR #102)
 
 ---
 
@@ -402,10 +402,10 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **DotBadge** component — kleine gekleurde stip die bij een Button of Link de aandacht trekt bij een statuswijziging, zonder label of getal (PR #94)
+- **DotBadge** component: kleine gekleurde stip die bij een Button of Link de aandacht trekt bij een statuswijziging, zonder label of getal (PR #94)
 - Vijf varianten: `negative` (default), `positive`, `warning`, `info`, `neutral`
-- `dsn-dot-badge--pulse` modifier — herhalend ring-effect via `::before` pseudo-element + `@keyframes`, respecteert `prefers-reduced-motion: reduce`
-- Altijd `aria-hidden="true"` — context via `dsn-visually-hidden` in de parent Button of Link
+- `dsn-dot-badge--pulse` modifier: herhalend ring-effect via `::before` pseudo-element + `@keyframes`, respecteert `prefers-reduced-motion: reduce`
+- Altijd `aria-hidden="true"`: context via `dsn-visually-hidden` in de parent Button of Link
 - Absoluut gepositioneerd via logische properties (`inset-block-start`, `inset-inline-end`) voor RTL-correctheid
 - Componenttokens: `--dsn-dot-badge-size` (8px), `--dsn-dot-badge-inset-block-start` (0.25rem), `--dsn-dot-badge-inset-inline-end` (0.25rem), `--dsn-dot-badge-pulse-duration` (1500ms), `--dsn-dot-badge-pulse-easing`
 - Storybook stories: Default, AllVariants, WithPulse, WithButton, WithLink
@@ -413,7 +413,7 @@ All notable changes to this project are documented in this file.
 
 #### Added (tokens)
 
-- **Transition tokens** toegevoegd aan wireframe-thema (`tokens/themes/wireframe/base.json`) — `dsn.transition.duration.*` en `dsn.transition.easing.*` waren aanwezig in start-thema maar ontbraken in wireframe, waardoor component-token referenties faalden bij de build
+- **Transition tokens** toegevoegd aan wireframe-thema (`tokens/themes/wireframe/base.json`): `dsn.transition.duration.*` en `dsn.transition.easing.*` waren aanwezig in start-thema maar ontbraken in wireframe, waardoor component-token referenties faalden bij de build
 
 ---
 
@@ -423,11 +423,11 @@ All notable changes to this project are documented in this file.
 
 #### Fixed
 
-- **ActionGroup row-gap** — `--dsn-action-group-row-gap` verhoogd van `--dsn-space-row-sm` (4px) naar `--dsn-space-row-lg` (12px) voor meer verticale lucht tussen gewrapte rijen (commit f4a41e5)
+- **ActionGroup row-gap**: `--dsn-action-group-row-gap` verhoogd van `--dsn-space-row-sm` (4px) naar `--dsn-space-row-lg` (12px) voor meer verticale lucht tussen gewrapte rijen (commit f4a41e5)
 
 #### Added
 
-- **WithLinkButton story** — nieuwe Storybook story die een `Button strong` combineert met twee `LinkButton` componenten: "Volgende stap", "Opslaan en later verder" en "Stoppen met formulier" (commit 593e580)
+- **WithLinkButton story**: nieuwe Storybook story die een `Button strong` combineert met twee `LinkButton` componenten: "Volgende stap", "Opslaan en later verder" en "Stoppen met formulier" (commit 593e580)
 
 ---
 
@@ -437,8 +437,8 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **ActionGroup** component — lay-outprimitief dat gerelateerde Buttons en Links groepeert en de onderlinge spacing en richting verzorgt (PR #93)
-- Horizontale richting (default): `display: flex; flex-direction: row; flex-wrap: wrap; align-items: center` — wraps automatisch bij te weinig ruimte
+- **ActionGroup** component: lay-outprimitief dat gerelateerde Buttons en Links groepeert en de onderlinge spacing en richting verzorgt (PR #93)
+- Horizontale richting (default): `display: flex; flex-direction: row; flex-wrap: wrap; align-items: center`: wraps automatisch bij te weinig ruimte
 - Verticale richting via `dsn-action-group--vertical` modifier / `direction="vertical"` prop: `flex-direction: column; align-items: flex-start`
 - Componenttokens: `--dsn-action-group-column-gap` (`--dsn-space-inline-lg`, 12px) en `--dsn-action-group-row-gap` (`--dsn-space-row-sm`, 4px)
 - Storybook stories: Default, With Link, Vertical, Wrapping, Single action, Short text, Long text, RTL
@@ -452,7 +452,7 @@ All notable changes to this project are documented in this file.
 
 #### Fixed
 
-- **BreadcrumbNavigation items** — `min-block-size` verwijderd van `.dsn-breadcrumb-navigation__item`; items hadden onbedoeld een minimale hoogte waardoor de verticale uitlijning afweek van reguliere links
+- **BreadcrumbNavigation items**: `min-block-size` verwijderd van `.dsn-breadcrumb-navigation__item`; items hadden onbedoeld een minimale hoogte waardoor de verticale uitlijning afweek van reguliere links
 
 ---
 
@@ -462,12 +462,12 @@ All notable changes to this project are documented in this file.
 
 #### Added
 
-- **BreadcrumbNavigation** component — toont de hiërarchische locatie van de gebruiker en biedt navigatie naar bovenliggende pagina's
+- **BreadcrumbNavigation** component: toont de hiërarchische locatie van de gebruiker en biedt navigatie naar bovenliggende pagina's
 - `BreadcrumbNavigationItem` sub-component met `href`, `current` en `children` props
-- `variant="compact"` — container query collapst naar enkel het ouder-item met terug-pijl bij smalle container (`max-width: 32rem`); back-icon zit binnen de `<a>` zodat kleur en hover automatisch mee-erven
+- `variant="compact"`: container query collapst naar enkel het ouder-item met terug-pijl bij smalle container (`max-width: 32rem`); back-icon zit binnen de `<a>` zodat kleur en hover automatisch mee-erven
 - `aria-current="page"` automatisch op het huidige pagina-item
 - RTL-ondersteuning: scheidingstekens en terug-pijl worden omgedraaid via `transform: scaleX(-1)` bij `[dir="rtl"]`
-- Design tokens (`tokens/components/breadcrumb-navigation.json`): font-size, line-height en icoongrootten volgen `sm` tokens — consistent met Link size small
+- Design tokens (`tokens/components/breadcrumb-navigation.json`): font-size, line-height en icoongrootten volgen `sm` tokens: consistent met Link size small
 - Storybook stories: Default, Compact, Two items, Many items, RTL
 - 25 nieuwe React tests
 
@@ -480,13 +480,13 @@ All notable changes to this project are documented in this file.
 #### Focus outline in reset.css (PR #89, issue #87)
 
 - `reset.css` `:focus-visible` gebruikt nu `var(--dsn-focus-outline-width)`, `var(--dsn-focus-outline-style)`, `var(--dsn-focus-outline-color)` en `var(--dsn-focus-outline-offset)` in plaats van hardcoded `2px solid currentColor` / `outline-offset: 2px`
-- De tokens definiëren `dashed`, `0px offset` en de juiste outline-kleur — de reset volgt nu dezelfde bron van waarheid als de componenten zelf
-- `colors-dark.json` bevat al een expliciete `focus`-sectie met eigen dark mode waarden (`outline-color: #f4f4f4`, inverse `#0b0c0c`) — geen wijzigingen nodig
+- De tokens definiëren `dashed`, `0px offset` en de juiste outline-kleur: de reset volgt nu dezelfde bron van waarheid als de componenten zelf
+- `colors-dark.json` bevat al een expliciete `focus`-sectie met eigen dark mode waarden (`outline-color: #f4f4f4`, inverse `#0b0c0c`): geen wijzigingen nodig
 
 #### Scroll-affordance schaduw in table.css (PR #90, issue #86)
 
 - `--_bg` in `.dsn-table-wrapper` gebruikt nu `var(--dsn-color-neutral-bg-document)` zonder hardcoded `#fcfcfc` fallback
-- `--_shadow` gebruikt nu `var(--dsn-color-shadow-scroll)` in plaats van hardcoded `rgba(0, 0, 0, 0.15)` — dark mode krijgt automatisch `rgba(255, 255, 255, 0.12)` (lichte schaduw op donkere achtergrond)
+- `--_shadow` gebruikt nu `var(--dsn-color-shadow-scroll)` in plaats van hardcoded `rgba(0, 0, 0, 0.15)`: dark mode krijgt automatisch `rgba(255, 255, 255, 0.12)` (lichte schaduw op donkere achtergrond)
 - `dsn.color.shadow.scroll` bestond al in beide thema's; alleen de CSS-referentie ontbrak
 
 ---
@@ -495,13 +495,13 @@ All notable changes to this project are documented in this file.
 
 ### Motion tokens: transition duration & easing (PR #85)
 
-- **10 nieuwe design tokens** — 5 duration (`instant/fast/normal/slow/slower`) en 5 easing (`default/enter/exit/move/linear`) in `base.json` van het Start-thema
-- **Centrale `prefers-reduced-motion` media query** — toegevoegd via `build.js` post-processing aan alle 8 volledige CSS-configuraties; alle duration tokens worden `0ms`; geen component-level media queries nodig
-- **5 component CSS-bestanden bijgewerkt** — hardcoded `0.2s ease` vervangen door `var(--dsn-transition-duration-normal)` en `var(--dsn-transition-easing-default)` in `button.css`, `link.css`, `text-input.css`, `text-area.css`, `details.css`
-- **Storybook Design Tokens pagina uitgebreid** — Motion-sectie toegevoegd onderaan met `## Motion`, `### Transition Duration` en `### Transition Easing` tabellen
-- **`TokenTable` nieuwe `previewType` waarden** — `transition-duration` (animated sweep bar) en `transition-easing` (dot op track) tonen live animatie-previews in de documentatie
-- **Navigatie-index** toegevoegd aan de Design Tokens pagina — genummerde `OrderedList` met `TocLink` componenten (gebruikt `scrollIntoView` i.p.v. URL-navigatie zodat de Storybook sidebar intact blijft)
-- **Preview kleuren** geüniformeerd — spacing, border-radius en motion previews gebruiken allemaal `--dsn-color-accent-1-inverse-bg-default`
+- **10 nieuwe design tokens**: 5 duration (`instant/fast/normal/slow/slower`) en 5 easing (`default/enter/exit/move/linear`) in `base.json` van het Start-thema
+- **Centrale `prefers-reduced-motion` media query**: toegevoegd via `build.js` post-processing aan alle 8 volledige CSS-configuraties; alle duration tokens worden `0ms`; geen component-level media queries nodig
+- **5 component CSS-bestanden bijgewerkt**: hardcoded `0.2s ease` vervangen door `var(--dsn-transition-duration-normal)` en `var(--dsn-transition-easing-default)` in `button.css`, `link.css`, `text-input.css`, `text-area.css`, `details.css`
+- **Storybook Design Tokens pagina uitgebreid**: Motion-sectie toegevoegd onderaan met `## Motion`, `### Transition Duration` en `### Transition Easing` tabellen
+- **`TokenTable` nieuwe `previewType` waarden**: `transition-duration` (animated sweep bar) en `transition-easing` (dot op track) tonen live animatie-previews in de documentatie
+- **Navigatie-index** toegevoegd aan de Design Tokens pagina: genummerde `OrderedList` met `TocLink` componenten (gebruikt `scrollIntoView` i.p.v. URL-navigatie zodat de Storybook sidebar intact blijft)
+- **Preview kleuren** geüniformeerd: spacing, border-radius en motion previews gebruiken allemaal `--dsn-color-accent-1-inverse-bg-default`
 
 ---
 
@@ -509,12 +509,12 @@ All notable changes to this project are documented in this file.
 
 ### Body component: document-level cascade basisstijlen (PR #84, issue #83)
 
-- **Body component** (`dsn-body`) — stelt zes document-level CSS properties in via globale design tokens: `background-color`, `color`, `font-family`, `font-size`, `line-height`, `font-weight`
-- Geen component tokens — `dsn-body` verwijst rechtstreeks naar globale semantische tokens (`--dsn-color-neutral-bg-document`, `--dsn-color-neutral-color-document`, `--dsn-text-font-family-default`, `--dsn-text-font-size-md`, `--dsn-text-line-height-md`, `--dsn-text-font-weight-default`)
-- React `<Body>` component rendert als `<div class="dsn-body">` — zelfde patroon als alle andere componenten
+- **Body component** (`dsn-body`): stelt zes document-level CSS properties in via globale design tokens: `background-color`, `color`, `font-family`, `font-size`, `line-height`, `font-weight`
+- Geen component tokens: `dsn-body` verwijst rechtstreeks naar globale semantische tokens (`--dsn-color-neutral-bg-document`, `--dsn-color-neutral-color-document`, `--dsn-text-font-family-default`, `--dsn-text-font-size-md`, `--dsn-text-line-height-md`, `--dsn-text-font-weight-default`)
+- React `<Body>` component rendert als `<div class="dsn-body">`: zelfde patroon als alle andere componenten
 - Storybook global decorator: `dsn-body` toegevoegd aan `document.body.className` zodat alle story-previews en 'Voorbeeld'-secties automatisch de juiste omgevingsstijlen erven
 - Storybook story onder `Foundations/Body` met volledige documentatie (drie bestanden)
-- **6 nieuwe tests** — totaal 1008 tests, 49 test suites
+- **6 nieuwe tests**: totaal 1008 tests, 49 test suites
 
 ---
 
@@ -522,16 +522,16 @@ All notable changes to this project are documented in this file.
 
 ### Details component: uitvouwbare inhoudsaanwijzer (PR #82, issue #80)
 
-- **Details component** (`dsn-details`) — Uitvouwbare sectie op basis van native `<details>`/`<summary>` HTML-elementen
-- CSS-only chevron-rotatie via `details[open] .dsn-details__icon` — geen JavaScript nodig
+- **Details component** (`dsn-details`): Uitvouwbare sectie op basis van native `<details>`/`<summary>` HTML-elementen
+- CSS-only chevron-rotatie via `details[open] .dsn-details__icon`: geen JavaScript nodig
 - `summary` prop: tekst van het klikbare summarylabel
 - `defaultOpen` prop: startwaarde voor open/dicht (default: `false`)
 - `onToggle` callback: ontvangt `(open: boolean)` bij elke toggle
-- Summarylabel volgt Link-stijlen (`action-2` kleurenserie) — hover underline, focus met geel/zwart ring
-- Contentborder gecentreerd op icoon via `calc(icon-size / 2 - border-width / 2)` — robuust bij fluid icon-size of gewijzigde border-width token
-- `width: fit-content` op summary — klikgebied beperkt tot tekst + icoon
+- Summarylabel volgt Link-stijlen (`action-2` kleurenserie): hover underline, focus met geel/zwart ring
+- Contentborder gecentreerd op icoon via `calc(icon-size / 2 - border-width / 2)`: robuust bij fluid icon-size of gewijzigde border-width token
+- `width: fit-content` op summary: klikgebied beperkt tot tekst + icoon
 - Focus state consistent met Link component: `background-color`, `box-shadow` (dubbele ring), `box-decoration-break: clone`
-- **19 nieuwe tests** — totaal 1002 tests, 48 test suites
+- **19 nieuwe tests**: totaal 1002 tests, 48 test suites
 
 ---
 
@@ -539,14 +539,14 @@ All notable changes to this project are documented in this file.
 
 ### Table-uitbreidingen: selecteerbare rijen, acties en fixes (PR #78, issue #79 + bugfixes)
 
-- **Selecteerbare rijen** — `aria-selected="true"` op `<tr>` toont een achtergrondmarkering via `dsn-table tbody tr[aria-selected='true']`; gebruik in combinatie met een Checkbox in de eerste kolom en een visueel verborgen label
-- **Checkbox-uitlijning in cellen** — `vertical-align: middle` op `.dsn-table td .dsn-checkbox` en `.dsn-table th .dsn-checkbox` — corrigeert de baseline-offset van inline-flex elementen in tabelcellen
-- **Actiekolom (verwijder)** — `dsn-button--subtle-negative dsn-button--size-small` met icoon en `dsn-button__label` met rij-context via `dsn-visually-hidden`
-- **Actiekolom (actiemenu)** — `dsn-button--subtle dsn-button--size-small dsn-button--icon-only` met `dots-vertical` icoon en `dsn-button__label` met rij-context via `dsn-visually-hidden`
-- **Numerieke kolomkop rechts uitgelijnd** — `dsn-table__header-content` in een `dsn-table__cell--numeric` kolomkop krijgt `justify-content: flex-end` zodat kolomtitel en sorteerknopje uitlijnen met de data eronder
-- **Specificiteitsfix numerieke cellen** — `.dsn-table .dsn-table__cell--numeric` (specificiteit 0,2,0) overschrijft de body-cell text-align regel (specificiteit 0,1,2) correct
-- **Tokenfix wireframe thema** — `dsn.color.shadow.scroll` toegevoegd aan wireframe `colors-light.json` en `colors-dark.json` zodat de scroll-affordance schaduw van scrollbare tabellen ook in het wireframe thema werkt
-- **21 nieuwe tests** — totaal 983 tests, 47 test suites
+- **Selecteerbare rijen**: `aria-selected="true"` op `<tr>` toont een achtergrondmarkering via `dsn-table tbody tr[aria-selected='true']`; gebruik in combinatie met een Checkbox in de eerste kolom en een visueel verborgen label
+- **Checkbox-uitlijning in cellen**: `vertical-align: middle` op `.dsn-table td .dsn-checkbox` en `.dsn-table th .dsn-checkbox`: corrigeert de baseline-offset van inline-flex elementen in tabelcellen
+- **Actiekolom (verwijder)**: `dsn-button--subtle-negative dsn-button--size-small` met icoon en `dsn-button__label` met rij-context via `dsn-visually-hidden`
+- **Actiekolom (actiemenu)**: `dsn-button--subtle dsn-button--size-small dsn-button--icon-only` met `dots-vertical` icoon en `dsn-button__label` met rij-context via `dsn-visually-hidden`
+- **Numerieke kolomkop rechts uitgelijnd**: `dsn-table__header-content` in een `dsn-table__cell--numeric` kolomkop krijgt `justify-content: flex-end` zodat kolomtitel en sorteerknopje uitlijnen met de data eronder
+- **Specificiteitsfix numerieke cellen**: `.dsn-table .dsn-table__cell--numeric` (specificiteit 0,2,0) overschrijft de body-cell text-align regel (specificiteit 0,1,2) correct
+- **Tokenfix wireframe thema**: `dsn.color.shadow.scroll` toegevoegd aan wireframe `colors-light.json` en `colors-dark.json` zodat de scroll-affordance schaduw van scrollbare tabellen ook in het wireframe thema werkt
+- **21 nieuwe tests**: totaal 983 tests, 47 test suites
 
 ---
 
@@ -554,13 +554,13 @@ All notable changes to this project are documented in this file.
 
 ### Table component: toegankelijke datatable (PR #77, issue #76)
 
-- **Table component** (`dsn-table`) — Toegankelijke datatable voor tweedimensionale tabeldata met kolomkoppen, optionele rijkoppen, voettekst en sorteerfunctionaliteit
-- `caption` prop verplicht — zichtbaar bijschrift dat ook als toegankelijke naam dient voor schermlezers
-- `scrollable` prop — wikkelt de tabel in een `<div role="region" aria-labelledby="..." tabindex="0">` voor horizontale scrollbaarheid en toetsenbordtoegang
-- `<tfoot>` via children — automatisch vetgedrukt en met sterkere bovenborder via CSS
-- **Sorteericonen** — drie SVG-iconen per sorteerbare kolomkop, CSS toont het juiste icoon op basis van `aria-sort` waarde op `<th>` (`none`, `ascending`, `descending`)
-- **Scroll-affordance schaduw** — Lea Verou techniek met `background-attachment: local/scroll` om scrollbaarheid visueel te tonen
-- **React component** — `React.forwardRef<HTMLTableElement>` met `useId()` voor automatische caption-ID; spreidt alle native tabel-attributen door via `...props`
+- **Table component** (`dsn-table`): Toegankelijke datatable voor tweedimensionale tabeldata met kolomkoppen, optionele rijkoppen, voettekst en sorteerfunctionaliteit
+- `caption` prop verplicht: zichtbaar bijschrift dat ook als toegankelijke naam dient voor schermlezers
+- `scrollable` prop: wikkelt de tabel in een `<div role="region" aria-labelledby="..." tabindex="0">` voor horizontale scrollbaarheid en toetsenbordtoegang
+- `<tfoot>` via children: automatisch vetgedrukt en met sterkere bovenborder via CSS
+- **Sorteericonen**: drie SVG-iconen per sorteerbare kolomkop, CSS toont het juiste icoon op basis van `aria-sort` waarde op `<th>` (`none`, `ascending`, `descending`)
+- **Scroll-affordance schaduw**: Lea Verou techniek met `background-attachment: local/scroll` om scrollbaarheid visueel te tonen
+- **React component**: `React.forwardRef<HTMLTableElement>` met `useId()` voor automatische caption-ID; spreidt alle native tabel-attributen door via `...props`
 - 21 component tokens in `tokens/components/table.json`
 - Storybook: Default, WithFooter, Sortable, Scrollable, SelectableRows, WithLink, WithDeleteAction, WithActionsMenu, AllTogether
 
@@ -570,9 +570,9 @@ All notable changes to this project are documented in this file.
 
 ### Container layout component (PR #75, issue #74)
 
-- **Container component** (`dsn-container`) — Visueel kader voor het groeperen van gerelateerde content
+- **Container component** (`dsn-container`): Visueel kader voor het groeperen van gerelateerde content
 - `elevated` variant via `--dsn-container-elevated-box-shadow` → `box-shadow.sm` (kaarten, panelen, demo-wrappers)
-- `as` prop: `div` (default), `section`, `article`, `aside` — semantiek losgekoppeld van stijl
+- `as` prop: `div` (default), `section`, `article`, `aside`: semantiek losgekoppeld van stijl
 - 9 component tokens: `background-color`, `border-color`, `border-radius`, `border-width`, `box-shadow`, `color`, `padding-block`, `padding-inline`, `elevated.box-shadow`
 - React `forwardRef` met `as`-prop casting via `React.Ref<HTMLDivElement>`
 - Storybook: Default, Elevated, ElevatedWithContent, AllStates stories
@@ -591,7 +591,7 @@ All notable changes to this project are documented in this file.
 - **Shorthand tokens** in `base.json`: `dsn.box-shadow.{sm,md,lg}` als string met embedded SD-referenties
 - SD v3 aanpak: `outputReferences: true` resolvet embedded `{dsn.color.shadow.*}` naar `var(--dsn-color-shadow-*)` in CSS-output
 - Light mode: `highlight: transparent` (no-op); Dark mode: `highlight: color-mix(in srgb, white 8%, transparent)`
-- Dark mode: `direct` 60%, `ambient` 40% (zwart) — schaduwen bewust minder prominent
+- Dark mode: `direct` 60%, `ambient` 40% (zwart): schaduwen bewust minder prominent
 - Wireframe thema: `box-shadow.sm/md/lg: none` (alles flat)
 - Storybook `TokenTable`: `previewType="shadow"` toont kaartje met shadow, reageert op theme/mode wisseling
 
@@ -601,16 +601,16 @@ All notable changes to this project are documented in this file.
 
 ### Grid en GridItem layout componenten met 12 kolommen (PR #71, issue #21)
 
-- **Grid component** (`dsn-grid`) — 12-koloms CSS Grid container met `padding-inline` voor outer margin en `column-gap` voor gutter
-- **GridItem component** — directe child met `colSpan` (1–12), responsive `colSpanSm/Md/Lg` props en `fullBleed` prop
+- **Grid component** (`dsn-grid`): 12-koloms CSS Grid container met `padding-inline` voor outer margin en `column-gap` voor gutter
+- **GridItem component**: directe child met `colSpan` (1–12), responsive `colSpanSm/Md/Lg` props en `fullBleed` prop
 - `dsn-col-{1-12}` CSS utility klassen met `grid-column: span N`
 - Responsive varianten: `dsn-col-sm/md/lg-{n}` met respectievelijk 36em/44em/64em breakpoints
 - `dsn-full-bleed` CSS klasse: breekt visueel uit tot container-rand via `margin-inline: calc(-1 * var(--dsn-grid-margin))`
 - `:where(.dsn-grid) > *` default rule (zero specificity) zodat items standaard volle breedte beslaan
 - **Nieuwe design tokens**: `--dsn-grid-gutter` (16px default; 8px in information-dense), `--dsn-grid-margin` (24px), `--dsn-grid-max-width` (74rem)
-- **Breakpoint-referentietokens**: `--dsn-breakpoint-sm/md/lg/xl` — beschikbaar als CSS custom property voor JS/tooling; niet te gebruiken in CSS `@media` regels
+- **Breakpoint-referentietokens**: `--dsn-breakpoint-sm/md/lg/xl`: beschikbaar als CSS custom property voor JS/tooling; niet te gebruiken in CSS `@media` regels
 - `config.js`: source volgorde aangepast (components vóór project-types) zodat project-type overrides altijd winnen
-- 66 nieuwe tests — totaal 962 tests
+- 66 nieuwe tests: totaal 962 tests
 
 ---
 
@@ -618,12 +618,12 @@ All notable changes to this project are documented in this file.
 
 ### Stack layout component met space-row varianten (PR #70, issue #17)
 
-- **Stack component** (`dsn-stack`) — verticale stapeling met consistente ruimte via `flexbox + gap`
+- **Stack component** (`dsn-stack`): verticale stapeling met consistente ruimte via `flexbox + gap`
 - 9 space-varianten: `sm` (4px), `md` (8px), `lg` (12px), `xl` (16px), `2xl` (20px), `3xl` (24px), `4xl` (32px), `5xl` (64px), `6xl` (160px)
 - Intern `--dsn-stack-space` CSS custom property met fallback naar `--dsn-space-row-md`
 - Default `md` voegt geen modifier-klasse toe aan de DOM (consistent met andere componenten)
-- Nieuwe Storybook-categorie **Layout Components** toegevoegd — staat tussen Foundations en Components in sidebar
-- `storyOrder` key: `'layout components'` (met spatie, lowercase) — spaties worden niet vervangen door koppeltekens door `storybook-multilevel-sort`
+- Nieuwe Storybook-categorie **Layout Components** toegevoegd: staat tussen Foundations en Components in sidebar
+- `storyOrder` key: `'layout components'` (met spatie, lowercase): spaties worden niet vervangen door koppeltekens door `storybook-multilevel-sort`
 
 ---
 
@@ -631,8 +631,8 @@ All notable changes to this project are documented in this file.
 
 ### Component-level tokens: kleur-tokens Alert en Note gepubliceerd (PR #68, issue #67)
 
-- **Alert:** 16 nieuwe component-level kleur-tokens toegevoegd aan `alert.json` — 4 varianten (info, negative, positive, warning) × 4 eigenschappen (background-color, border-color, color, icon-color)
-- **Note:** 20 nieuwe component-level kleur-tokens toegevoegd aan `note.json` — 5 varianten (info, negative, neutral, positive, warning) × 4 eigenschappen (background-color, border-inline-start-color, color, icon-color)
+- **Alert:** 16 nieuwe component-level kleur-tokens toegevoegd aan `alert.json`: 4 varianten (info, negative, positive, warning) × 4 eigenschappen (background-color, border-color, color, icon-color)
+- **Note:** 20 nieuwe component-level kleur-tokens toegevoegd aan `note.json`: 5 varianten (info, negative, neutral, positive, warning) × 4 eigenschappen (background-color, border-inline-start-color, color, icon-color)
 - `alert.css` en `note.css`: intermediate lokale CSS properties verwijzen nu naar de gepubliceerde JSON token variabelen in plaats van rechtstreeks naar semantische tokens
 - `Alert.docs.md` en `Note.docs.md`: twee tabellen (layout + kleur) samengevoegd tot één uniforme tokentabel conform StatusBadge patroon; disclaimer "lokale CSS custom properties" verwijderd
 - Variant kleur-tokens zijn nu overschrijfbaar per thema via CSS custom properties
@@ -682,31 +682,31 @@ All notable changes to this project are documented in this file.
 
 **LinkButton**
 
-- **LinkButton component** — semantisch `<button>`, visueel als een Link — voor JS-acties met lage attentiewaarde
+- **LinkButton component**: semantisch `<button>`, visueel als een Link: voor JS-acties met lage attentiewaarde
 - CSS: erft `dsn-link` en `dsn-link-button` klassen
 - `disabled`: native `<button disabled>` + CSS `.dsn-link.dsn-link-button:disabled`
-- `font: inherit` bewust weggelaten uit `dsn-link-button` — `dsn-link` zet dit al; herhalen overschrijft `font-size` van size-klassen
+- `font: inherit` bewust weggelaten uit `dsn-link-button`: `dsn-link` zet dit al; herhalen overschrijft `font-size` van size-klassen
 - Storybook: Default, Disabled, All states, alle size-varianten, Long text, RTL
 
 **ButtonLink**
 
-- **ButtonLink component** — semantisch `<a>`, visueel als een Button — voor navigatieacties met hoge attentiewaarde
+- **ButtonLink component**: semantisch `<a>`, visueel als een Button: voor navigatieacties met hoge attentiewaarde
 - CSS: `dsn-button dsn-button--{variant} dsn-button--size-{size} dsn-button-link`
 - `disabled`: `aria-disabled="true"` + `tabIndex={-1}` + `pointer-events: none` (`:disabled` pseudo-class werkt niet op `<a>`)
 - `external`: auto `target="_blank"` + `rel="noopener noreferrer"` + zichtbare "(opent nieuw tabblad)" tekst
-- `children` altijd gewrapt in `<span class="dsn-button__label">` — zelfde patroon als Button
+- `children` altijd gewrapt in `<span class="dsn-button__label">`: zelfde patroon als Button
 - Storybook: Default, alle varianten, Disabled, External, Long text, RTL
 
 ### Storybook TypeScript fixes (PR's #51, #52, #53)
 
-- `#51` — Ambient module declaration toegevoegd voor `*.mdx` imports (TypeScript kende het type niet)
-- `#52` — Subpath export geconfigureerd voor `icon-registry.generated` in `components-react`
-- `#53` — `TS7053` opgelost voor `globalThis` string-index in `preview.ts`
+- `#51`: Ambient module declaration toegevoegd voor `*.mdx` imports (TypeScript kende het type niet)
+- `#52`: Subpath export geconfigureerd voor `icon-registry.generated` in `components-react`
+- `#53`: `TS7053` opgelost voor `globalThis` string-index in `preview.ts`
 
 ### Token key ordering (PR #57, issue #56 / PR #64, issue #63)
 
-- `#56` — Consistente sleutelvolgorde doorgevoerd in alle token JSON bestanden: depth-first, alphabetisch, states → variants → sub-componenten
-- `#63` — Follow-up: tokenvolgorde ook doorgevoerd in alle `.docs.md` tabellen in Storybook
+- `#56`: Consistente sleutelvolgorde doorgevoerd in alle token JSON bestanden: depth-first, alphabetisch, states → variants → sub-componenten
+- `#63`: Follow-up: tokenvolgorde ook doorgevoerd in alle `.docs.md` tabellen in Storybook
 
 ---
 
@@ -716,19 +716,19 @@ All notable changes to this project are documented in this file.
 
 **Note component (PR #48)**
 
-- **Note component** — Visueel uitgelicht bericht voor aanvullende of belangrijke informatie; passieve tegenhanger van Alert (geen `role="alert"`, geen live region)
-- 5 varianten: `neutral` (default), `info`, `positive`, `negative`, `warning` — elk met eigen signaalkleur en icoon
+- **Note component**: Visueel uitgelicht bericht voor aanvullende of belangrijke informatie; passieve tegenhanger van Alert (geen `role="alert"`, geen live region)
+- 5 varianten: `neutral` (default), `info`, `positive`, `negative`, `warning`: elk met eigen signaalkleur en icoon
 - CSS grid layout identiek aan Alert: icoon + heading in rij 1, content in rij 2
 - `border-inline-start` (niet rondom zoals Alert) als visuele markering
 - `dsn-note--no-heading` modifier: icoon overspant beide rijen (`grid-row: 1 / span 2`)
-- `as` prop: `div` (default), `aside`, `nav`, `section` — semantiek losgekoppeld van stijl
+- `as` prop: `div` (default), `aside`, `nav`, `section`: semantiek losgekoppeld van stijl
 - Automatische `aria-labelledby` voor landmark-elementen (`nav`, `aside`, `section`) met heading via `useId()`
 - `iconStart` prop: `undefined` = voorkeurspicoon per variant, `null` = geen icoon, `ReactNode` = aangepast icoon
 - Storybook: Default, Info, Positive, Negative, Warning, All states, Without heading, With list, As nav, Long text, RTL, RTL long text
 
 **Paragraph refactoring**
 
-- `dsn-paragraph--default` alias volledig verwijderd — geen backward compatibility meer nodig
+- `dsn-paragraph--default` alias volledig verwijderd: geen backward compatibility meer nodig
 - Default-stijlen zitten nu direct op `.dsn-paragraph` base class
 - `class="dsn-paragraph"` is voldoende; geen modifier class voor de standaard variant
 - React component: `dsn-paragraph--${variant}` alleen toegevoegd voor `lead` en `small-print`
@@ -739,11 +739,11 @@ All notable changes to this project are documented in this file.
 
 - `padding-block` token: `space.block.lg` → `space.block.xl` (meer ademruimte)
 - `row-gap` token: `space.row.xs` → `space.row.md` (heading heeft geen margin-block-end meer)
-- `Icon size="xl"` toegevoegd — ontbrak bij handmatig opgegeven `iconStart` via argTypes mapping
-- `<Paragraph>` in alle stories — geen kale tekst-strings meer als `children`
+- `Icon size="xl"` toegevoegd: ontbrak bij handmatig opgegeven `iconStart` via argTypes mapping
+- `<Paragraph>` in alle stories: geen kale tekst-strings meer als `children`
 - `children` argType: `control: false` (React node, niet stuurbaar via tekstveld)
 - Semantische heading tags in HTML-templates: `<strong>` vervangen door `<h2>` (Alert) en `<h3>` (Note)
-- `htmlTemplate` dynamisch op `headingLevel` — HTML-tab past mee als Controls panel wijzigt
+- `htmlTemplate` dynamisch op `headingLevel`: HTML-tab past mee als Controls panel wijzigt
 
 ---
 
@@ -753,17 +753,17 @@ All notable changes to this project are documented in this file.
 
 **StatusBadge component (PR #46)**
 
-- **StatusBadge component** — Compact label dat een status communiceert met een signaalkleur
+- **StatusBadge component**: Compact label dat een status communiceert met een signaalkleur
 - 5 varianten: `neutral`, `info`, `positive`, `negative`, `warning`
 - Optioneel `iconStart` prop voor een icoon vóór het label
 - Storybook: Default, alle varianten, All states, With icon, RTL
 
 **Alert component (PR #47)**
 
-- **Alert component** — Belangrijk bericht dat de gebruiker informeert over de huidige activiteit of toestand
+- **Alert component**: Belangrijk bericht dat de gebruiker informeert over de huidige activiteit of toestand
 - 4 varianten: `info` (default), `positive`, `negative`, `warning`
 - CSS grid layout: icoon + heading naast elkaar in rij 1, content in rij 2 (`grid-template-columns: icon-size 1fr`)
-- `role="alert"` voor live region — schermlezer kondigt wijzigingen automatisch aan
+- `role="alert"` voor live region: schermlezer kondigt wijzigingen automatisch aan
 - Voorkeurspicoon per variant; overschrijfbaar via `iconStart` prop (`null` = geen icoon)
 - `heading` (verplicht) + optionele `children` voor body content
 - `headingLevel` prop voor semantisch heading-niveau (default `h2`, visueel als `heading-3`)
@@ -779,24 +779,24 @@ All notable changes to this project are documented in this file.
 
 **PreviewFrame component**
 
-- **PreviewFrame UI component** — Visueel kader rondom story previews op docs pagina's
+- **PreviewFrame UI component**: Visueel kader rondom story previews op docs pagina's
 - Token-based achtergrond via `--dsn-color-neutral-bg-document` (reageert op dark mode en themaswitch)
 - Subtiele border (`--dsn-color-neutral-border-subtle`), border-radius bovenaan, geen onderkant border (verbindt met CodeTabs)
 - Locatie: `packages/storybook/src/components/PreviewFrame.tsx`
 
 **CodeTabs component**
 
-- **CodeTabs UI component** — Twee tabs (React en HTML/CSS) met syntax highlighting onder elke story preview
-- Beide tabs zijn volledig **dynamisch** — code werkt bij als de gebruiker props aanpast via het Controls panel
-- **React tab** — `Source of={story}` subscribet op `STORY_ARGS_UPDATED` en toont live de gegenereerde React code
-- **HTML/CSS tab** — `Source of={story} transform={...}` leest `parameters.dsn.htmlTemplate` en genereert HTML op basis van live args; valt terug op statische `html` prop als er geen template is
+- **CodeTabs UI component**: Twee tabs (React en HTML/CSS) met syntax highlighting onder elke story preview
+- Beide tabs zijn volledig **dynamisch**: code werkt bij als de gebruiker props aanpast via het Controls panel
+- **React tab**: `Source of={story}` subscribet op `STORY_ARGS_UPDATED` en toont live de gegenereerde React code
+- **HTML/CSS tab**: `Source of={story} transform={...}` leest `parameters.dsn.htmlTemplate` en genereert HTML op basis van live args; valt terug op statische `html` prop als er geen template is
 - Active tab styling via `--dsn-link-color`; tab bar verbindt visueel met PreviewFrame erboven
 - Locatie: `packages/storybook/src/components/CodeTabs.tsx`
 - Barrel export via `packages/storybook/src/components/index.ts`
 
 **`htmlTemplate` patroon in story files**
 
-- **27 story files** bijgewerkt met `parameters.dsn.htmlTemplate` — functie `(args: any) => string` die HTML genereert op basis van de huidige story args
+- **27 story files** bijgewerkt met `parameters.dsn.htmlTemplate`: functie `(args: any) => string` die HTML genereert op basis van de huidige story args
 - Wrapper componenten zonder `htmlTemplate` (CheckboxGroup, RadioGroup, DateInputGroup) gebruiken de statische `html` prop uit `.docs.mdx`
 - Pattern:
 
@@ -829,7 +829,7 @@ import { PreviewFrame, CodeTabs } from './components';
 
 **Bekende beperking (issue #28)**
 
-- DateInputGroup HTML/CSS tab toont momenteel dezelfde code als de React tab — regressie van de `parameters.docs.source.code` workaround. Fix: `react` prop toevoegen aan CodeTabs (zie issue #28).
+- DateInputGroup HTML/CSS tab toont momenteel dezelfde code als de React tab: regressie van de `parameters.docs.source.code` workaround. Fix: `react` prop toevoegen aan CodeTabs (zie issue #28).
 
 ---
 
@@ -839,7 +839,7 @@ import { PreviewFrame, CodeTabs } from './components';
 
 **Select Component**
 
-- **Select component** — Dropdown select with a custom `chevron-down` icon at inline-end
+- **Select component**: Dropdown select with a custom `chevron-down` icon at inline-end
 - Wrapper `dsn-select-wrapper` handles width variants (same pattern as SearchInput)
 - Native browser select arrow hidden via `appearance: none`
 - Icon disappears when `disabled`
@@ -848,9 +848,9 @@ import { PreviewFrame, CodeTabs } from './components';
 
 **DateInput Component**
 
-- **DateInput component** — Date input (`type="date"`) with an interactive calendar button at inline-end
+- **DateInput component**: Date input (`type="date"`) with an interactive calendar button at inline-end
 - Same pattern as TimeInput: `<Button variant="subtle" size="small" iconOnly>` with `calendar-event` icon
-- Fixed width (no `width` prop) — date inputs have a predictable content width
+- Fixed width (no `width` prop): date inputs have a predictable content width
 - `showPicker()` triggered via internal ref + `handleRef` merge pattern
 - Native browser calendar icon hidden via `::-webkit-calendar-picker-indicator { display: none }`
 - Button disappears when `disabled` or `readOnly`
@@ -859,7 +859,7 @@ import { PreviewFrame, CodeTabs } from './components';
 
 **DateInputGroup Component**
 
-- **DateInputGroup component** — Three separate NumberInputs for day, month, and year
+- **DateInputGroup component**: Three separate NumberInputs for day, month, and year
 - More accessible than native date picker: works consistently across all browsers and allows partial input
 - Day and month fields: width `xs`; year field: width `sm`
 - Inline labels above each field using `dsn-date-input-group__label`
@@ -871,12 +871,12 @@ import { PreviewFrame, CodeTabs } from './components';
 
 **FormFieldset Fix**
 
-- **Red left border in invalid state** — `FormFieldset` now shows a red left border when the `error` prop is set, consistent with `FormField`
+- **Red left border in invalid state**: `FormFieldset` now shows a red left border when the `error` prop is set, consistent with `FormField`
 
 **Statistics**
 
 - **32 total components** (7 content + 25 form)
-- **733 tests** across 38 test suites — all passing
+- **733 tests** across 38 test suites: all passing
 
 ---
 
@@ -886,9 +886,9 @@ import { PreviewFrame, CodeTabs } from './components';
 
 **CI/CD Test Fixes**
 
-- **FormField tests rewritten** — Tests updated to match refactored architecture: `FormField` always renders div/label, removed all `isGroup` test cases
-- **CheckboxGroup tests rewritten** — Tests updated to match refactored component: renders div container (not fieldset), removed `legend`/`hideLegend` prop tests
-- **RadioGroup tests rewritten** — Tests updated to match refactored component: renders div container (not fieldset), removed `legend`/`hideLegend` prop tests
+- **FormField tests rewritten**: Tests updated to match refactored architecture: `FormField` always renders div/label, removed all `isGroup` test cases
+- **CheckboxGroup tests rewritten**: Tests updated to match refactored component: renders div container (not fieldset), removed `legend`/`hideLegend` prop tests
+- **RadioGroup tests rewritten**: Tests updated to match refactored component: renders div container (not fieldset), removed `legend`/`hideLegend` prop tests
 - **All 613 tests passing** across 35 test suites (down from 628 due to removed tests for deleted API surface)
 
 **Architecture Clarification (documented in tests)**
@@ -924,42 +924,42 @@ The component architecture was refactored in v4.2.0 but tests weren't updated:
 
 **GitHub Pages Setup**
 
-- **Automated Storybook deployment** — GitHub Actions workflow deploys Storybook to GitHub Pages on every push to main
-- **Live Storybook URL** — [https://jeffreylauwers.github.io/design-system-starter-kit/](https://jeffreylauwers.github.io/design-system-starter-kit/)
-- **Base path configuration** — Vite base path configured via `STORYBOOK_BASE_PATH` environment variable
-- **Relative asset paths** — Design tokens use relative paths (`./design-tokens/dist/css`) for GitHub Pages compatibility
+- **Automated Storybook deployment**: GitHub Actions workflow deploys Storybook to GitHub Pages on every push to main
+- **Live Storybook URL**: [https://jeffreylauwers.github.io/design-system-starter-kit/](https://jeffreylauwers.github.io/design-system-starter-kit/)
+- **Base path configuration**: Vite base path configured via `STORYBOOK_BASE_PATH` environment variable
+- **Relative asset paths**: Design tokens use relative paths (`./design-tokens/dist/css`) for GitHub Pages compatibility
 
 **Introduction Page**
 
-- **Welcome page added** — Comprehensive introduction page as Storybook landing page
-- **Navigation ordering** — Introduction appears first in sidebar, before Foundations and Components
-- **Design tokens preload** — Default tokens (start-light-default) loaded immediately on Storybook start
-- **Quick start guide** — Installation instructions, usage examples, component overview included
+- **Welcome page added**: Comprehensive introduction page as Storybook landing page
+- **Navigation ordering**: Introduction appears first in sidebar, before Foundations and Components
+- **Design tokens preload**: Default tokens (start-light-default) loaded immediately on Storybook start
+- **Quick start guide**: Installation instructions, usage examples, component overview included
 
 **Form Field Container Components**
 
-- **FormFieldLegend component** — Legend element component for fieldset/legend structure, reuses FormFieldLabel CSS
-- **FormFieldset component** — Container component for group controls (checkbox groups, radio groups)
-- **FormField invalid state** — Red left border when error prop is present
-- **Design tokens for invalid state** — form-field.json extended with invalid border styling
+- **FormFieldLegend component**: Legend element component for fieldset/legend structure, reuses FormFieldLabel CSS
+- **FormFieldset component**: Container component for group controls (checkbox groups, radio groups)
+- **FormField invalid state**: Red left border when error prop is present
+- **Design tokens for invalid state**: form-field.json extended with invalid border styling
 
 **FormFieldStatus Enhancements**
 
-- **Three-variant system** — default (subtle info), positive (success with check icon), warning (caution with alert-triangle icon)
-- **Icon support** — Conditional icons for positive and warning variants
-- **showIcon prop** — Allows disabling icons on positive/warning variants
+- **Three-variant system**: default (subtle info), positive (success with check icon), warning (caution with alert-triangle icon)
+- **Icon support**: Conditional icons for positive and warning variants
+- **showIcon prop**: Allows disabling icons on positive/warning variants
 
 **Bug Fixes & Improvements**
 
-- **ESLint errors fixed** — Unescaped quotes in JSX replaced with HTML entities (&ldquo;/&rdquo;/&rsquo;)
-- **Prettier formatting** — All 81 files formatted consistently
-- **TypeScript exports** — FormFieldStatusVariant type properly exported
-- **Component index files** — Added missing index.ts for FormFieldLegend and FormFieldset
+- **ESLint errors fixed**: Unescaped quotes in JSX replaced with HTML entities (&ldquo;/&rdquo;/&rsquo;)
+- **Prettier formatting**: All 81 files formatted consistently
+- **TypeScript exports**: FormFieldStatusVariant type properly exported
+- **Component index files**: Added missing index.ts for FormFieldLegend and FormFieldset
 
 **Component Count**
 
-- **21 form components** — FormFieldLegend and FormFieldset added to form component collection
-- **25 total components** — 7 content components + 18 form components (Priority 1-4 complete)
+- **21 form components**: FormFieldLegend and FormFieldset added to form component collection
+- **25 total components**: 7 content components + 18 form components (Priority 1-4 complete)
 
 ---
 
@@ -969,17 +969,17 @@ The component architecture was refactored in v4.2.0 but tests weren't updated:
 
 **Build Pipeline Enhancement**
 
-- **Explicit build ordering** — Root build script now executes in explicit dependency order: `tokens → core → components → storybook`
-- **Granular build commands** — New scripts: `build:tokens`, `build:core`, `build:components`, `build:storybook`
-- **Icon generation automation** — Icon registry generation automatically included in `components-react` build step
-- **Build dependency guarantee** — No more race conditions; dependencies always build before dependents
+- **Explicit build ordering**: Root build script now executes in explicit dependency order: `tokens → core → components → storybook`
+- **Granular build commands**: New scripts: `build:tokens`, `build:core`, `build:components`, `build:storybook`
+- **Icon generation automation**: Icon registry generation automatically included in `components-react` build step
+- **Build dependency guarantee**: No more race conditions; dependencies always build before dependents
 
 **Module System & Imports**
 
-- **Barrel exports** — New `/packages/components-react/src/index.ts` exports all components for convenient importing
-- **Clean import syntax** — `import { Button, TextInput } from '@dsn/components-react'` now supported
-- **Package exports** — `components-html` package.json extended with granular exports for individual CSS files
-- **Vitest config enhancement** — Added `@dsn/components-html` alias for proper CSS module resolution
+- **Barrel exports**: New `/packages/components-react/src/index.ts` exports all components for convenient importing
+- **Clean import syntax**: `import { Button, TextInput } from '@dsn/components-react'` now supported
+- **Package exports**: `components-html` package.json extended with granular exports for individual CSS files
+- **Vitest config enhancement**: Added `@dsn/components-html` alias for proper CSS module resolution
 
 **Import Patterns:**
 
@@ -1003,8 +1003,8 @@ import './Button.css';
 
 **Package Structure:**
 
-- **components-html exports** — 14 individual CSS file exports (`./button`, `./icon`, `./text-input`, etc.)
-- **Barrel export grouping** — Components organized by category (Typography, Form Inputs, Form Options, Form Field)
+- **components-html exports**: 14 individual CSS file exports (`./button`, `./icon`, `./text-input`, etc.)
+- **Barrel export grouping**: Components organized by category (Typography, Form Inputs, Form Options, Form Field)
 
 **Documentation Updates**
 
@@ -1025,36 +1025,36 @@ import './Button.css';
 
 ### Form Components - Complete Release
 
-- **TextInput component** — Complete (HTML/CSS, React) with size variants (default, large) and states (disabled, invalid, read-only)
-- **TextArea component** — Complete (HTML/CSS, React) with size variants and states
-- **NumberInput component** — Complete (HTML/CSS, React) with min/max/step props and size variants
-- **PasswordInput component** — Complete (HTML/CSS, React) extends TextInput with type="password"
-- **EmailInput component** — Complete (HTML/CSS, React) extends TextInput with type="email"
-- **TelephoneInput component** — Complete (HTML/CSS, React) extends TextInput with type="tel"
-- **SearchInput component** — Complete (HTML/CSS, React) with search icon on the left
-- **TimeInput component** — Complete (HTML/CSS, React) with type="time" for native time picker
-- **Checkbox component** — Complete (HTML/CSS, React) with checked, indeterminate, disabled states
-- **Radio component** — Complete (HTML/CSS, React) with checked, disabled states
-- **CheckboxOption component** — Complete (HTML/CSS, React) combines Checkbox + Label with accessible touch targets
-- **RadioOption component** — Complete (HTML/CSS, React) combines Radio + Label with accessible touch targets
-- **CheckboxGroup component** — Complete (HTML/CSS, React) div container for CheckboxOption items; pair with FormFieldset for accessible grouping
-- **RadioGroup component** — Complete (HTML/CSS, React) div container for RadioOption items; pair with FormFieldset for accessible grouping
-- **FormField component** — Complete (HTML/CSS, React) div/label container for single-value inputs (TextInput, TextArea, etc.)
-- **FormFieldset component** — Complete (HTML/CSS, React) fieldset/legend container for group controls (CheckboxGroup, RadioGroup)
-- **FormFieldLabel component** — Complete (HTML/CSS, React) with required indicator and suffix support
-- **FormFieldDescription component** — Complete (HTML/CSS, React) for help text
-- **FormFieldErrorMessage component** — Complete (HTML/CSS, React) for validation errors
-- **FormFieldStatus component** — Complete (HTML/CSS, React) for status messages
+- **TextInput component**: Complete (HTML/CSS, React) with size variants (default, large) and states (disabled, invalid, read-only)
+- **TextArea component**: Complete (HTML/CSS, React) with size variants and states
+- **NumberInput component**: Complete (HTML/CSS, React) with min/max/step props and size variants
+- **PasswordInput component**: Complete (HTML/CSS, React) extends TextInput with type="password"
+- **EmailInput component**: Complete (HTML/CSS, React) extends TextInput with type="email"
+- **TelephoneInput component**: Complete (HTML/CSS, React) extends TextInput with type="tel"
+- **SearchInput component**: Complete (HTML/CSS, React) with search icon on the left
+- **TimeInput component**: Complete (HTML/CSS, React) with type="time" for native time picker
+- **Checkbox component**: Complete (HTML/CSS, React) with checked, indeterminate, disabled states
+- **Radio component**: Complete (HTML/CSS, React) with checked, disabled states
+- **CheckboxOption component**: Complete (HTML/CSS, React) combines Checkbox + Label with accessible touch targets
+- **RadioOption component**: Complete (HTML/CSS, React) combines Radio + Label with accessible touch targets
+- **CheckboxGroup component**: Complete (HTML/CSS, React) div container for CheckboxOption items; pair with FormFieldset for accessible grouping
+- **RadioGroup component**: Complete (HTML/CSS, React) div container for RadioOption items; pair with FormFieldset for accessible grouping
+- **FormField component**: Complete (HTML/CSS, React) div/label container for single-value inputs (TextInput, TextArea, etc.)
+- **FormFieldset component**: Complete (HTML/CSS, React) fieldset/legend container for group controls (CheckboxGroup, RadioGroup)
+- **FormFieldLabel component**: Complete (HTML/CSS, React) with required indicator and suffix support
+- **FormFieldDescription component**: Complete (HTML/CSS, React) for help text
+- **FormFieldErrorMessage component**: Complete (HTML/CSS, React) for validation errors
+- **FormFieldStatus component**: Complete (HTML/CSS, React) for status messages
 
 ### Form Components - Technical Improvements
 
-- **Fluid checkbox/radio sizing** — Size scales with typography using `calc(var(--dsn-text-font-size-md) * var(--dsn-text-line-height-md))`
-- **Checkbox icons** — Uses `check.svg` for checked state, `minus.svg` for indeterminate state
-- **Radio disabled checked** — Inner circle uses white color for proper contrast against disabled background
-- **Touch target accessibility** — CheckboxOption/RadioOption use `padding-block` instead of `min-block-size` for WCAG 2.5.5 compliance
-- **Legend token optimization** — CheckboxGroup/RadioGroup legend tokens reference FormFieldLabel tokens (DRY principle)
-- **Form field invalid state tokens** — Created `form-field.json` with red left border styling for invalid fields
-- **19 form component token files** — Complete design token coverage for all form components
+- **Fluid checkbox/radio sizing**: Size scales with typography using `calc(var(--dsn-text-font-size-md) * var(--dsn-text-line-height-md))`
+- **Checkbox icons**: Uses `check.svg` for checked state, `minus.svg` for indeterminate state
+- **Radio disabled checked**: Inner circle uses white color for proper contrast against disabled background
+- **Touch target accessibility**: CheckboxOption/RadioOption use `padding-block` instead of `min-block-size` for WCAG 2.5.5 compliance
+- **Legend token optimization**: CheckboxGroup/RadioGroup legend tokens reference FormFieldLabel tokens (DRY principle)
+- **Form field invalid state tokens**: Created `form-field.json` with red left border styling for invalid fields
+- **19 form component token files**: Complete design token coverage for all form components
 
 ### Testing
 
@@ -1070,23 +1070,23 @@ import './Button.css';
 
 ### Button & Link Enhancements
 
-- **Button loading state** — Animated loader icon replaces `iconStart` when `loading` is true, uses `loader.svg` from icon set
-- **Button loading CSS** — `::after` pseudo-element spinner replaced with real `<Icon name="loader">` element and `dsn-button-spin` keyframe animation
-- **Link external prop** — `external` prop/attribute adds `target="_blank"`, `rel="noopener noreferrer"`, and visible "(opens in new tab)" hint text
-- **Link external — no icon** — Follows GOV.UK pattern: no visual icon for external links, plain text hint instead
+- **Button loading state**: Animated loader icon replaces `iconStart` when `loading` is true, uses `loader.svg` from icon set
+- **Button loading CSS**: `::after` pseudo-element spinner replaced with real `<Icon name="loader">` element and `dsn-button-spin` keyframe animation
+- **Link external prop**: `external` prop/attribute adds `target="_blank"`, `rel="noopener noreferrer"`, and visible "(opens in new tab)" hint text
+- **Link external: no icon**: Follows GOV.UK pattern: no visual icon for external links, plain text hint instead
 
 ### Icon System & CSS Quality
 
-- **Icon expansion** — 45 Tabler icons (was 20), Storybook Icon stories now dynamically generated from `iconMap`
-- **Storybook Icon stories fix** — Hardcoded icon array replaced with dynamic `Object.keys(iconMap)` export
-- **CSS anti-patterns fixed** — `transition: all` replaced with specific properties in Button and Link
-- **Focus-visible deduplication** — 9 identical `:focus-visible` blocks consolidated into single shared rule (420 → 351 lines in button.css)
-- **Loading spinner scaling** — Fixed `rem` → `em` units so spinner scales with button size
+- **Icon expansion**: 45 Tabler icons (was 20), Storybook Icon stories now dynamically generated from `iconMap`
+- **Storybook Icon stories fix**: Hardcoded icon array replaced with dynamic `Object.keys(iconMap)` export
+- **CSS anti-patterns fixed**: `transition: all` replaced with specific properties in Button and Link
+- **Focus-visible deduplication**: 9 identical `:focus-visible` blocks consolidated into single shared rule (420 → 351 lines in button.css)
+- **Loading spinner scaling**: Fixed `rem` → `em` units so spinner scales with button size
 
 ### Utilities & Accessibility
 
-- **Utilities hardcoded values fixed** — Gap, font-weight, and container utilities now use design tokens
-- **sr-only utility** — Available in `@dsn/core` utilities for visually hiding content while keeping it accessible to screen readers
+- **Utilities hardcoded values fixed**: Gap, font-weight, and container utilities now use design tokens
+- **sr-only utility**: Available in `@dsn/core` utilities for visually hiding content while keeping it accessible to screen readers
 
 ### Testing
 
@@ -1099,20 +1099,20 @@ import './Button.css';
 
 ### List Components
 
-- **UnorderedList component** — Complete (HTML/CSS, React, Web Component) with accent-colored bullet markers
-- **OrderedList component** — Complete (HTML/CSS, React, Web Component) with `start` prop support
-- **UnorderedList component tokens** — `unordered-list.json` with font-family, font-weight, color, font-size, line-height, padding, margin, gap, marker-color
-- **OrderedList component tokens** — `ordered-list.json` with font-family, font-weight, color, font-size, line-height, padding, margin, gap, marker-color
-- **ListCombinations stories** — Mixed list compositions with Heading, Paragraph, and Link components
+- **UnorderedList component**: Complete (HTML/CSS, React, Web Component) with accent-colored bullet markers
+- **OrderedList component**: Complete (HTML/CSS, React, Web Component) with `start` prop support
+- **UnorderedList component tokens**: `unordered-list.json` with font-family, font-weight, color, font-size, line-height, padding, margin, gap, marker-color
+- **OrderedList component tokens**: `ordered-list.json` with font-family, font-weight, color, font-size, line-height, padding, margin, gap, marker-color
+- **ListCombinations stories**: Mixed list compositions with Heading, Paragraph, and Link components
 
 ### Storybook Documentation Overhaul
 
-- **Storybook documentation overhaul** — All component docs rewritten in Dutch with consistent structure
-- **Docs page structure** — Doel, Voorbeeld (live Story + Controls), Use when, Don't use when, Best practices, Design tokens
-- **MDX files updated** — `ArgsTable` (deprecated) replaced with `Controls` from `@storybook/blocks`
-- **Docs split-import pattern** — Markdown split on `<!-- VOORBEELD -->` marker; intro before live example, rest after
-- **Sidebar ordering fixed** — `storybook-multilevel-sort` plugin installed; Docs entry now appears first per component
-- **Storybook main.ts** — `configureSort()` with `typeOrder: ['docs', 'story']` for docs-first ordering
+- **Storybook documentation overhaul**: All component docs rewritten in Dutch with consistent structure
+- **Docs page structure**: Doel, Voorbeeld (live Story + Controls), Use when, Don't use when, Best practices, Design tokens
+- **MDX files updated**: `ArgsTable` (deprecated) replaced with `Controls` from `@storybook/blocks`
+- **Docs split-import pattern**: Markdown split on `<!-- VOORBEELD -->` marker; intro before live example, rest after
+- **Sidebar ordering fixed**: `storybook-multilevel-sort` plugin installed; Docs entry now appears first per component
+- **Storybook main.ts**: `configureSort()` with `typeOrder: ['docs', 'story']` for docs-first ordering
 
 ### Testing
 
@@ -1126,23 +1126,23 @@ import './Button.css';
 
 ### Link Component
 
-- **Link component** — Complete (HTML/CSS, React, Web Component) with icon support and 3 size variants
-- **Link size variants** — `small`, `default`, `large` with size-specific font-size, gap, and icon-size tokens
-- **Link inline behavior** — Without explicit size, link inherits font from parent (`font: inherit`) for seamless inline usage in paragraphs
-- **Link component tokens** — `link.json` with color, text-decoration, gap, icon-size, hover/active/disabled states, and size variants
-- **Link Storybook stories** — Default, WithIconStart, WithIconEnd, WithBothIcons, Disabled, CurrentPage, InlineWithText, Sizes, SizesWithIcons, InlineWithParagraphVariants
+- **Link component**: Complete (HTML/CSS, React, Web Component) with icon support and 3 size variants
+- **Link size variants**: `small`, `default`, `large` with size-specific font-size, gap, and icon-size tokens
+- **Link inline behavior**: Without explicit size, link inherits font from parent (`font: inherit`) for seamless inline usage in paragraphs
+- **Link component tokens**: `link.json` with color, text-decoration, gap, icon-size, hover/active/disabled states, and size variants
+- **Link Storybook stories**: Default, WithIconStart, WithIconEnd, WithBothIcons, Disabled, CurrentPage, InlineWithText, Sizes, SizesWithIcons, InlineWithParagraphVariants
 
 ### Icon & Focus Improvements
 
-- **Icon size scale updated** — Consistent across Button and Link: small → `icon.size.sm`, default → `icon.size.md`, large → `icon.size.lg`
-- **Focus indicator dual outline** — `box-shadow` added for inverse outline behind the primary outline, ensuring visibility on all backgrounds
-- **Focus inverse outline token** — `dsn.focus.inverse.outline-color` added for the secondary box-shadow outline
+- **Icon size scale updated**: Consistent across Button and Link: small → `icon.size.sm`, default → `icon.size.md`, large → `icon.size.lg`
+- **Focus indicator dual outline**: `box-shadow` added for inverse outline behind the primary outline, ensuring visibility on all backgrounds
+- **Focus inverse outline token**: `dsn.focus.inverse.outline-color` added for the secondary box-shadow outline
 
 ### Wireframe Theme
 
-- **Wireframe theme overhaul** — Comic Sans font, pure black/white neutral colors, all color scales alias to neutral, yellow (#ffdd00) focus background
-- **Button small min-block-size** — Changed from pointer-target token to hardcoded `2.5rem`
-- **Link text-underline-offset** — Set to `4px` for improved readability
+- **Wireframe theme overhaul**: Comic Sans font, pure black/white neutral colors, all color scales alias to neutral, yellow (#ffdd00) focus background
+- **Button small min-block-size**: Changed from pointer-target token to hardcoded `2.5rem`
+- **Link text-underline-offset**: Set to `4px` for improved readability
 
 ### Testing
 
@@ -1155,14 +1155,14 @@ import './Button.css';
 
 ### Runtime Theme Switching
 
-- **Runtime theme switching in Storybook** — Full support for theme/mode/density switching on both Stories and Docs pages
-- **Dynamic CSS loading** — Tokens loaded at runtime via fetch(), not bundled statically
-- **CSS cascade fix** — Dynamic tokens use `:root:root` selector for higher specificity
-- **MutationObserver** — Ensures dynamic token styles stay at end of `<head>` for cascade priority
-- **Web Components registration** — Removed auto-registration side effects, added `defineAllComponents()` helper
-- **TokenTable improvements** — Live computed CSS values update correctly on theme changes
-- **Storybook preview-head.html** — New file for iframe-level token loading
-- **Fixed invalid icon reference** — Changed `external-link` to `arrow-right` in Button stories
+- **Runtime theme switching in Storybook**: Full support for theme/mode/density switching on both Stories and Docs pages
+- **Dynamic CSS loading**: Tokens loaded at runtime via fetch(), not bundled statically
+- **CSS cascade fix**: Dynamic tokens use `:root:root` selector for higher specificity
+- **MutationObserver**: Ensures dynamic token styles stay at end of `<head>` for cascade priority
+- **Web Components registration**: Removed auto-registration side effects, added `defineAllComponents()` helper
+- **TokenTable improvements**: Live computed CSS values update correctly on theme changes
+- **Storybook preview-head.html**: New file for iframe-level token loading
+- **Fixed invalid icon reference**: Changed `external-link` to `arrow-right` in Button stories
 
 ---
 
@@ -1170,10 +1170,10 @@ import './Button.css';
 
 ### Three-Axis Token Architecture
 
-- **Three-axis token architecture** — Theme × Mode × Project Type configuration model
-- **Theme axis** — `start` (default) and `wireframe` themes, each defining ALL tokens
-- **Mode axis** — `light` and `dark` modes, affecting ONLY color tokens
-- **Project Type axis** — `default` (fluid clamp) and `information-dense` (fixed) typography
+- **Three-axis token architecture**: Theme × Mode × Project Type configuration model
+- **Theme axis**: `start` (default) and `wireframe` themes, each defining ALL tokens
+- **Mode axis**: `light` and `dark` modes, affecting ONLY color tokens
+- **Project Type axis**: `default` (fluid clamp) and `information-dense` (fixed) typography
 - New folder structure: `themes/{name}/base.json`, `colors-light.json`, `colors-dark.json`
 - New folder structure: `project-types/{name}/typography.json`
 - 8 full configurations generated (2 themes × 2 modes × 2 project types)
@@ -1190,10 +1190,10 @@ import './Button.css';
 
 ### Button Icon Support
 
-- Button `iconStart` and `iconEnd` props (React) — both can be used simultaneously
+- Button `iconStart` and `iconEnd` props (React): both can be used simultaneously
 - Button Web Component named slots `icon-start` and `icon-end`
 - Button icon-size tokens per button size (updated in v3.7.0: small → `dsn.icon.size.sm`, default → `dsn.icon.size.md`, large → `dsn.icon.size.lg`)
-- Button icon-only-padding tokens per button size — replaces hardcoded `--dsn-space-inline-*`
+- Button icon-only-padding tokens per button size: replaces hardcoded `--dsn-space-inline-*`
 - CSS icon sizing in button context (`.dsn-button--size-* > .dsn-icon`)
 - New Storybook stories: WithIconStart, WithIconEnd, WithIconStartAndEnd, IconSizes
 - React Button tests (23 tests, +4 new)
@@ -1208,7 +1208,7 @@ import './Button.css';
 - Heading component with 6 appearances: heading-1 through heading-6
 - Independent `level` (semantic h1–h6) and `appearance` (visual style) props
 - Heading component tokens with full set per level (font-family, font-weight, color, font-size, line-height, margin-block-end)
-- Token namespace `dsn.heading.level-{1-6}.*` — avoids collision with core `dsn.heading.*` tokens
+- Token namespace `dsn.heading.level-{1-6}.*`: avoids collision with core `dsn.heading.*` tokens
 - Each level references semantic heading tokens (`dsn.heading.font-family`, `dsn.heading.font-weight`, `dsn.heading.color`) but can be overridden individually
 - Font-size scale shifted one level down: heading-1 = 3xl, heading-2 = 2xl, ... heading-6 = sm
 - Heading HTML/CSS component (`@dsn/components-html`)
@@ -1264,7 +1264,7 @@ import './Button.css';
 
 ### Icon System
 
-- Fluid icon sizes — `calc(font-size × line-height)` with CSS variable references
+- Fluid icon sizes: `calc(font-size × line-height)` with CSS variable references
 - Icon Web Component (`<dsn-icon>`) with Shadow DOM and inline SVG rendering
 - Icon HTML/CSS component added to `@dsn/components-html`
 - Shared icon CSS: `components-html/src/icon/icon.css` as single source of truth

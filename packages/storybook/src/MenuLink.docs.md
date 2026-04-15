@@ -4,7 +4,7 @@ Navigatielink met niveau-hiërarchie, actieve staat en uitklapbare subnavigatie.
 
 ## Doel
 
-MenuLink is een navigatie-item dat semantisch een `<a>`-element is en visueel consistent is met MenuButton. Het wordt gebruikt in primaire en secundaire navigatie — zoals een Page Header of Drawer.
+MenuLink is een navigatie-item dat semantisch een `<a>`-element is en visueel consistent is met MenuButton. Het wordt gebruikt in primaire en secundaire navigatie: zoals een Page Header of Drawer.
 
 De `level`-prop (1–4) geeft de paginahiërarchie weer via toenemende `padding-inline-start`. De `current`-prop markeert de actieve pagina. Een uitklapknop verschijnt wanneer een pagina subpagina's heeft.
 
@@ -20,8 +20,8 @@ De `level`-prop (1–4) geeft de paginahiërarchie weer via toenemende `padding-
 
 ## Don't use when
 
-- De actie een JavaScript-handeling is (geen URL-navigatie) — gebruik dan `MenuButton`.
-- Je buiten een nav-context werkt — gebruik dan een reguliere `Button`, `ButtonLink` of `Link`.
+- De actie een JavaScript-handeling is (geen URL-navigatie): gebruik dan `MenuButton`.
+- Je buiten een nav-context werkt: gebruik dan een reguliere `Button`, `ButtonLink` of `Link`.
 
 ## Best practices
 
@@ -67,7 +67,7 @@ MenuLink genereert een `<li>`-element en moet altijd binnen een `<ul>` geplaatst
 
 ### Niveau-hiërarchie
 
-Gebruik `level` om de hiërarchische positie van een pagina uit te drukken. Level 1 is de basislaag — geen modifier-klasse in de DOM. Elk hoger niveau voegt een `padding-inline-start` toe via `dsn-menu-link--level-{n}`.
+Gebruik `level` om de hiërarchische positie van een pagina uit te drukken. Level 1 is de basislaag: geen modifier-klasse in de DOM. Elk hoger niveau voegt een `padding-inline-start` toe via `dsn-menu-link--level-{n}`.
 
 ```html
 <!-- Level 1 (standaard, geen modifier) -->
@@ -109,7 +109,7 @@ Gebruik `numberBadge` om een telbadge rechts van het label te tonen. Voeg screen
 
 ### Uitklapknop
 
-De uitklapknop is een zelfstandige `<button>` naast de `<a>`. Gebruik altijd `aria-expanded` en geef de knop een toegankelijke naam via `dsn-button__label` met een `dsn-visually-hidden` span voor de paginanaam — nooit `aria-label`.
+De uitklapknop is een zelfstandige `<button>` naast de `<a>`. Gebruik altijd `aria-expanded` en geef de knop een toegankelijke naam via `dsn-button__label` met een `dsn-visually-hidden` span voor de paginanaam: nooit `aria-label`.
 
 ```html
 <span class="dsn-menu-link__divider" aria-hidden="true"></span>
@@ -128,7 +128,7 @@ De uitklapknop is een zelfstandige `<button>` naast de `<a>`. Gebruik altijd `ar
 
 ## Design tokens
 
-MenuLink gebruikt twee token-sets. De gedeelde `--dsn-menu-item-*` tokens zijn ook van toepassing op `MenuButton` — wijzigingen hier gelden voor beide componenten.
+MenuLink gebruikt twee token-sets. De gedeelde `--dsn-menu-item-*` tokens zijn ook van toepassing op `MenuButton`: wijzigingen hier gelden voor beide componenten.
 
 ### Gedeeld met MenuButton (`--dsn-menu-item-*`)
 
@@ -167,7 +167,7 @@ MenuLink gebruikt twee token-sets. De gedeelde `--dsn-menu-item-*` tokens zijn o
 ## Accessibility
 
 - Gebruik `aria-current="page"` (via de `current` prop) om de actieve pagina aan screenreaders door te geven. Gebruik nooit enkel kleur om de actieve staat aan te duiden.
-- De uitklapknop gebruikt altijd `dsn-button__label` voor zijn toegankelijke naam — nooit `aria-label`. Voeg de paginanaam toe via een geneste `dsn-visually-hidden` span.
+- De uitklapknop gebruikt altijd `dsn-button__label` voor zijn toegankelijke naam: nooit `aria-label`. Voeg de paginanaam toe via een geneste `dsn-visually-hidden` span.
 - `aria-expanded` op de uitklapknop geeft de uit-/ingeklapte staat door aan screenreaders.
 - Het icoon in de link en de uitklapknop heeft altijd `aria-hidden="true"`.
 - Zorg dat de omliggende `<ul>` in een `<nav>` staat met een beschrijvende `aria-label`.

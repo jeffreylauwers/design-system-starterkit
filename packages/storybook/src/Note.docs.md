@@ -4,7 +4,7 @@ Visueel uitgelicht bericht voor aanvullende of belangrijke informatie binnen de 
 
 ## Doel
 
-De Note component plaatst extra context of een tip op een opvallende maar niet-urgente manier in de pagina. Het is de passieve tegenhanger van Alert: screenreaders lezen de Note alleen bij navigatie — niet spontaan. Vijf varianten — **neutral**, **info**, **positive**, **negative** en **warning** — geven elk een eigen signaalkleur en linkerborder. Een decoratief icoon versterkt de variant visueel.
+De Note component plaatst extra context of een tip op een opvallende maar niet-urgente manier in de pagina. Het is de passieve tegenhanger van Alert: screenreaders lezen de Note alleen bij navigatie: niet spontaan. Vijf varianten: **neutral**, **info**, **positive**, **negative** en **warning**: geven elk een eigen signaalkleur en linkerborder. Een decoratief icoon versterkt de variant visueel.
 
 <!-- VOORBEELD -->
 
@@ -17,27 +17,27 @@ De Note component plaatst extra context of een tip op een opvallende maar niet-u
 
 ## Don't use when
 
-- Het bericht urgent is of na een gebruikersactie verschijnt — gebruik een **Alert**.
-- De informatie één zin is zonder visuele nadruk — gebruik een **Paragraph** of **FormFieldDescription**.
-- Je een interactief label wilt — gebruik een **StatusBadge** of **Button**.
+- Het bericht urgent is of na een gebruikersactie verschijnt: gebruik een **Alert**.
+- De informatie één zin is zonder visuele nadruk: gebruik een **Paragraph** of **FormFieldDescription**.
+- Je een interactief label wilt: gebruik een **StatusBadge** of **Button**.
 
 ## Best practices
 
 ### Variantkeuze
 
-Een Note wordt bewust door een ontwerper of ontwikkelaar geplaatst. De variant kies je op basis van de intentie van de boodschap — niet op basis van een systeemtoestand. Wanneer een notitie puur aanvullend of contextgevend is, zonder specifieke lading, dan is **neutral** de juiste keuze: de content krijgt visuele nadruk zonder een semantisch signaal te claimen dat er niet is.
+Een Note wordt bewust door een ontwerper of ontwikkelaar geplaatst. De variant kies je op basis van de intentie van de boodschap: niet op basis van een systeemtoestand. Wanneer een notitie puur aanvullend of contextgevend is, zonder specifieke lading, dan is **neutral** de juiste keuze: de content krijgt visuele nadruk zonder een semantisch signaal te claimen dat er niet is.
 
-- **Neutral** — standaard, voor aanvullende context of tips zonder specifieke lading.
-- **Info** — informatieve berichten die extra aandacht verdienen.
-- **Positive** — aanmoediging of bevestiging van een goede keuze.
-- **Negative** — kritische aanvulling, risico of fout in context.
-- **Warning** — waarschuwing die de gebruiker moet lezen vóór hij verder gaat.
+- **Neutral**: standaard, voor aanvullende context of tips zonder specifieke lading.
+- **Info**: informatieve berichten die extra aandacht verdienen.
+- **Positive**: aanmoediging of bevestiging van een goede keuze.
+- **Negative**: kritische aanvulling, risico of fout in context.
+- **Warning**: waarschuwing die de gebruiker moet lezen vóór hij verder gaat.
 
 ### `as` prop
 
 | Waarde            | Wanneer                                                              |
 | ----------------- | -------------------------------------------------------------------- |
-| `'div'` (default) | Inline tip, aanvullende context — de meeste gevallen                 |
+| `'div'` (default) | Inline tip, aanvullende context: de meeste gevallen                  |
 | `'aside'`         | Echt tangentieel aanvullende content in een artikel of lang document |
 | `'nav'`           | Inhoudsopgave met ankerlinks (`"Op deze pagina"`)                    |
 | `'section'`       | Zelfstandige, benoemde inhoudssectie met heading als label           |
@@ -45,7 +45,7 @@ Een Note wordt bewust door een ontwerper of ontwikkelaar geplaatst. De variant k
 ### Heading
 
 - De heading is optioneel. Zonder heading overspant het icoon beide rijen.
-- Houd de heading beknopt — één of twee woorden.
+- Houd de heading beknopt: één of twee woorden.
 - Pas `headingLevel` aan op de documenthiërarchie (standaard `h3`).
 
 ### Landmark semantiek
@@ -96,8 +96,8 @@ Bij `as="nav"`, `as="aside"` of `as="section"` + een `heading` prop: de Note kop
 
 ## Accessibility
 
-- Het icoon heeft altijd `aria-hidden="true"` — de heading (of body) is de informatiedrager.
-- Geen live region — de Note heeft geen `role="alert"` en wordt niet spontaan voorgelezen.
+- Het icoon heeft altijd `aria-hidden="true"`: de heading (of body) is de informatiedrager.
+- Geen live region: de Note heeft geen `role="alert"` en wordt niet spontaan voorgelezen.
 - Bij `as="nav"`, `as="aside"` of `as="section"` + `heading`: automatisch `aria-labelledby` gekoppeld.
 - Pas `headingLevel` aan op de documenthiërarchie zodat de heading in de juiste nesting valt.
-- Note is niet klikbaar — voor interactieve berichten: voeg links of knoppen toe via `children`.
+- Note is niet klikbaar: voor interactieve berichten: voeg links of knoppen toe via `children`.

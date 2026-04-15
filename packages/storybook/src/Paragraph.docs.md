@@ -17,10 +17,10 @@ De Paragraph component biedt een consistente, toegankelijke manier om tekstblokk
 
 ## Don't use when
 
-- Je een enkele regel tekst hebt — overweeg dan gewoon tekst zonder wrapper.
-- Je een titel of kop nodig hebt — gebruik dan de [Heading](/docs/components-heading--docs) component.
-- De tekst interactief is — gebruik dan de [Link](/docs/components-link--docs) component.
-- Je een lijst wilt tonen — gebruik dan de [Unordered List](/docs/components-unorderedlist--docs) of [Ordered List](/docs/components-orderedlist--docs) componenten.
+- Je een enkele regel tekst hebt: overweeg dan gewoon tekst zonder wrapper.
+- Je een titel of kop nodig hebt: gebruik dan de [Heading](/docs/components-heading--docs) component.
+- De tekst interactief is: gebruik dan de [Link](/docs/components-link--docs) component.
+- Je een lijst wilt tonen: gebruik dan de [Unordered List](/docs/components-unorderedlist--docs) of [Ordered List](/docs/components-orderedlist--docs) componenten.
 
 ## Best practices
 

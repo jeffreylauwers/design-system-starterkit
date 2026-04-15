@@ -4,7 +4,7 @@ Visuele groepering van gerelateerde content met achtergrond, border en optionele
 
 ## Doel
 
-Container biedt een afgebakend kader voor content die visueel bij elkaar hoort. Het component combineert een `bg-elevated` achtergrond, een subtiele border en een optionele `box-shadow` tot een herkenbaar geheel. Container is puur visueel — het heeft geen eigen semantische rol en laat de keuze van het HTML-element aan de gebruiker over via de `as` prop.
+Container biedt een afgebakend kader voor content die visueel bij elkaar hoort. Het component combineert een `bg-elevated` achtergrond, een subtiele border en een optionele `box-shadow` tot een herkenbaar geheel. Container is puur visueel: het heeft geen eigen semantische rol en laat de keuze van het HTML-element aan de gebruiker over via de `as` prop.
 
 <!-- VOORBEELD -->
 
@@ -17,9 +17,9 @@ Container biedt een afgebakend kader voor content die visueel bij elkaar hoort. 
 
 ## Don't use when
 
-- Je alleen witruimte nodig hebt tussen secties — gebruik Stack of Grid met de juiste spacing tokens.
-- Het element navigatie, een formulier of andere semantisch geladen structuur is — geef dan de juiste HTML-semantiek aan de parent zelf mee.
-- Je een kleurrijke statusachtergrond wilt — gebruik Alert of Note.
+- Je alleen witruimte nodig hebt tussen secties: gebruik Stack of Grid met de juiste spacing tokens.
+- Het element navigatie, een formulier of andere semantisch geladen structuur is: geef dan de juiste HTML-semantiek aan de parent zelf mee.
+- Je een kleurrijke statusachtergrond wilt: gebruik Alert of Note.
 
 ## Best practices
 
@@ -34,7 +34,7 @@ Container biedt een afgebakend kader voor content die visueel bij elkaar hoort. 
 
 ### Elevated
 
-Gebruik `elevated` alleen als de Container visueel boven de pagina zweeft — zoals een dropdown-panel, een card in een raster of een demo-wrapper in Storybook. Gebruik het niet voor alle containers, want schaduw werkt op contrast: hoe minder schaduwen, hoe meer impact.
+Gebruik `elevated` alleen als de Container visueel boven de pagina zweeft: zoals een dropdown-panel, een card in een raster of een demo-wrapper in Storybook. Gebruik het niet voor alle containers, want schaduw werkt op contrast: hoe minder schaduwen, hoe meer impact.
 
 ### Nesting
 
@@ -42,17 +42,17 @@ Container kan andere layout-componenten bevatten (Stack, Grid). Container regelt
 
 ## Design tokens
 
-| Token                                 | Beschrijving                               |
-| ------------------------------------- | ------------------------------------------ |
-| `--dsn-container-background-color`    | Achtergrond — `neutral.bg-elevated`        |
-| `--dsn-container-border-color`        | Borderkleur — `neutral.border-subtle`      |
-| `--dsn-container-border-radius`       | Afronding — `border.radius.md` (8px)       |
-| `--dsn-container-border-width`        | Breedte — `border.width.thin` (1px)        |
-| `--dsn-container-box-shadow`          | Standaard geen schaduw (`none`)            |
-| `--dsn-container-color`               | Tekstkleur — `neutral.color-document`      |
-| `--dsn-container-padding-block`       | Verticale padding — `space.block.3xl`      |
-| `--dsn-container-padding-inline`      | Horizontale padding — `space.inline.3xl`   |
-| `--dsn-container-elevated-box-shadow` | Schaduw elevated variant — `box-shadow.sm` |
+| Token                                 | Beschrijving                              |
+| ------------------------------------- | ----------------------------------------- |
+| `--dsn-container-background-color`    | Achtergrond: `neutral.bg-elevated`        |
+| `--dsn-container-border-color`        | Borderkleur: `neutral.border-subtle`      |
+| `--dsn-container-border-radius`       | Afronding: `border.radius.md` (8px)       |
+| `--dsn-container-border-width`        | Breedte: `border.width.thin` (1px)        |
+| `--dsn-container-box-shadow`          | Standaard geen schaduw (`none`)           |
+| `--dsn-container-color`               | Tekstkleur: `neutral.color-document`      |
+| `--dsn-container-padding-block`       | Verticale padding: `space.block.3xl`      |
+| `--dsn-container-padding-inline`      | Horizontale padding: `space.inline.3xl`   |
+| `--dsn-container-elevated-box-shadow` | Schaduw elevated variant: `box-shadow.sm` |
 
 ## Accessibility
 

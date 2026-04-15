@@ -17,9 +17,9 @@ Het Drawer component toont een zijpaneel dat over de pagina-inhoud schuift. In t
 
 ## Don't use when
 
-- De gebruiker de achtergrondpagina _niet_ nodig heeft — gebruik dan **ModalDialog**.
-- Een onomkeerbare actie bevestigd moet worden (bijv. verwijderen) — gebruik dan **ModalDialog**.
-- De inhoud een volwaardige werkstroom is die een eigen URL rechtvaardigt — gebruik dan een aparte pagina.
+- De gebruiker de achtergrondpagina _niet_ nodig heeft: gebruik dan **ModalDialog**.
+- Een onomkeerbare actie bevestigd moet worden (bijv. verwijderen): gebruik dan **ModalDialog**.
+- De inhoud een volwaardige werkstroom is die een eigen URL rechtvaardigt: gebruik dan een aparte pagina.
 
 ## Best practices
 
@@ -41,20 +41,20 @@ Het Drawer component toont een zijpaneel dat over de pagina-inhoud schuift. In t
 
 ### Sluitgedrag
 
-- **Sluitknop** in de header sluit het zijpaneel altijd — altijd aanwezig.
+- **Sluitknop** in de header sluit het zijpaneel altijd: altijd aanwezig.
 - **Escape-toets** sluit het zijpaneel (modaal via het native `cancel`-event; non-modaal via `keydown`-listener).
 - **Primaire actie** (bijv. Toepassen) sluit het paneel en voert de actie uit.
 - **Secundaire actie** (bijv. Annuleren) sluit het paneel zonder actie.
 
 ### Positie
 
-- Gebruik `side="right"` (standaard) voor de meeste subtaken — consistent met platformconventies.
+- Gebruik `side="right"` (standaard) voor de meeste subtaken: consistent met platformconventies.
 - Gebruik `side="left"` voor navigatiepanelen die logisch aan de linker kant horen.
 
 ### Heading-niveau
 
 - Gebruik `level={2}` (standaard) als de paginatitel `<h1>` is.
-- Kies het niveau op basis van de documenthiërarchie — het visuele uiterlijk is altijd gelijk.
+- Kies het niveau op basis van de documenthiërarchie: het visuele uiterlijk is altijd gelijk.
 
 ### Lange inhoud
 
@@ -68,7 +68,7 @@ Het Drawer component toont een zijpaneel dat over de pagina-inhoud schuift. In t
 | `--dsn-drawer-background-color`           | Achtergrondkleur (bg-elevated)                          |
 | `--dsn-drawer-border-width`               | Randbreedte van de scheidingslijn met de pagina         |
 | `--dsn-drawer-border-color`               | Randkleur van de scheidingslijn (neutral.border-subtle) |
-| `--dsn-drawer-box-shadow`                 | Schaduw (box-shadow.lg — hoogste elevatie)              |
+| `--dsn-drawer-box-shadow`                 | Schaduw (box-shadow.lg: hoogste elevatie)               |
 | `--dsn-drawer-max-width`                  | Maximale breedte (25rem / 400px)                        |
 | `--dsn-drawer-min-gap`                    | Minimale zichtbare achtergrondruimte (3rem / 48px)      |
 | `--dsn-drawer-heading-font-family`        | Lettertype van de heading                               |
@@ -89,8 +89,8 @@ Het Drawer component toont een zijpaneel dat over de pagina-inhoud schuift. In t
 
 - Het zijpaneel gebruikt het native `<dialog>` element met impliciete `role="dialog"` semantiek.
 - `.showModal()` (modal variant) activeert automatisch de native focus-trap, `aria-modal`-gedrag en `inert`-attribuut op de achtergrond.
-- `.show()` (non-modal variant) toont het paneel zonder focus-trap — de gebruiker kan via Tab navigeren tussen het paneel en de achtergrond.
-- `aria-labelledby` koppelt het zijpaneel automatisch aan de `DrawerHeading` — geen handmatige ID nodig.
-- De sluitknop gebruikt `dsn-button__label` met de tekst "Sluiten" — nooit `aria-label`.
+- `.show()` (non-modal variant) toont het paneel zonder focus-trap: de gebruiker kan via Tab navigeren tussen het paneel en de achtergrond.
+- `aria-labelledby` koppelt het zijpaneel automatisch aan de `DrawerHeading`: geen handmatige ID nodig.
+- De sluitknop gebruikt `dsn-button__label` met de tekst "Sluiten": nooit `aria-label`.
 - Escape sluit het zijpaneel (modaal via het native `cancel`-event; non-modaal via `keydown`-listener).
 - Animaties zijn uitgeschakeld bij `prefers-reduced-motion: reduce`.

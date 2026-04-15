@@ -16,8 +16,8 @@ De FormFieldLabel component is een gestandaardiseerd label element voor form con
 
 ## Don't use when
 
-- Je een inline label nodig hebt binnen een checkbox/radio — gebruik dan [OptionLabel](/docs/components-optionlabel--docs).
-- Je een heading nodig hebt — gebruik [Heading](/docs/components-heading--docs).
+- Je een inline label nodig hebt binnen een checkbox/radio: gebruik dan [OptionLabel](/docs/components-optionlabel--docs).
+- Je een heading nodig hebt: gebruik [Heading](/docs/components-heading--docs).
 
 ## Best practices
 
@@ -67,7 +67,7 @@ De FormFieldLabel component is een gestandaardiseerd label element voor form con
 
 ## Accessibility
 
-- Labels zijn essentieel voor accessibility — elke form control moet een label hebben.
+- Labels zijn essentieel voor accessibility: elke form control moet een label hebben.
 - Gebruik `htmlFor` attribuut om label te koppelen aan input (of wrap in FormField).
 - Screenreaders lezen het label én de suffix voor.
 - Suffix tekst is onderdeel van het label en wordt meegelezen.

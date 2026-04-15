@@ -6,7 +6,7 @@ Vaste, volledig-scherm overlay die de achtergrondinhoud visueel verhult wanneer 
 
 Backdrop is een puur decoratief component. Het dempt de pagina-achtergrond visueel wanneer een Modal Dialog of Drawer open is, zodat de gebruiker zijn focus houdt bij het bovenliggende UI-element. De overlay combineert een semi-transparante donkere laag met een optioneel blur-filter dat de onderliggende interface vervaagt.
 
-Het component heeft bewust geen eigen interactie of toegankelijkheidsmechanisme — het is altijd `aria-hidden="true"` en wordt volledig beheerd door de parent (Modal, Drawer).
+Het component heeft bewust geen eigen interactie of toegankelijkheidsmechanisme: het is altijd `aria-hidden="true"` en wordt volledig beheerd door de parent (Modal, Drawer).
 
 <!-- VOORBEELD -->
 
@@ -20,8 +20,8 @@ Het component heeft bewust geen eigen interactie of toegankelijkheidsmechanisme 
 ## Don't use when
 
 - Als visuele scheider of achtergrond zonder dat er een modaal element boven staat.
-- Als interactief element — gebruik daarvoor een button of overlay met een `onClick` handler op de parent.
-- Voor paginaovergangen of laadschermen — gebruik daarvoor een specifiek loading-patroon.
+- Als interactief element: gebruik daarvoor een button of overlay met een `onClick` handler op de parent.
+- Voor paginaovergangen of laadschermen: gebruik daarvoor een specifiek loading-patroon.
 
 ## Best practices
 
@@ -65,16 +65,16 @@ Conditioneel renderen biedt geen ruimte voor fade-in/out. Als animatie later gew
 
 ## Design tokens
 
-| Token                             | Beschrijving                                                                                       |
-| --------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `--dsn-backdrop-background-color` | Basiskleur van de overlay — altijd donker, ongeacht light/dark mode (per thema apart gedefinieerd) |
-| `--dsn-backdrop-opacity`          | Transparantie van de overlay — gebruikt in `color-mix()` (standaard: `50%`)                        |
-| `--dsn-backdrop-blur`             | Intensiteit van het blur-filter (standaard: `4px`)                                                 |
-| `--dsn-backdrop-z-index`          | Stapelvolgorde — moet lager zijn dan Modal/Drawer z-index (standaard: `400`)                       |
+| Token                             | Beschrijving                                                                                      |
+| --------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `--dsn-backdrop-background-color` | Basiskleur van de overlay: altijd donker, ongeacht light/dark mode (per thema apart gedefinieerd) |
+| `--dsn-backdrop-opacity`          | Transparantie van de overlay: gebruikt in `color-mix()` (standaard: `50%`)                        |
+| `--dsn-backdrop-blur`             | Intensiteit van het blur-filter (standaard: `4px`)                                                |
+| `--dsn-backdrop-z-index`          | Stapelvolgorde: moet lager zijn dan Modal/Drawer z-index (standaard: `400`)                       |
 
 ## Accessibility
 
-- Backdrop heeft altijd `aria-hidden="true"` — schermlezers nemen dit element niet waar.
-- Geen `role` attribuut nodig — het component is puur decoratief.
-- Geen toetsenbordinteractie — het component vangt geen focus en heeft geen klikgedrag.
+- Backdrop heeft altijd `aria-hidden="true"`: schermlezers nemen dit element niet waar.
+- Geen `role` attribuut nodig: het component is puur decoratief.
+- Geen toetsenbordinteractie: het component vangt geen focus en heeft geen klikgedrag.
 - Focus management en het blokkeren van toetsenbordnavigatie naar de achtergrond is de verantwoordelijkheid van de parent (Modal/Drawer via `inert` of focus trap).

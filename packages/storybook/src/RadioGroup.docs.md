@@ -6,7 +6,7 @@ Een container voor meerdere RadioOption componenten.
 
 De RadioGroup component is een simpele container die meerdere RadioOption componenten groepeert met consistente spacing. Het is puur een presentationele lijst zonder semantische form field markup (geen fieldset/legend). Voor een volledige form field met label en beschrijving wrap je de RadioGroup in een FormFieldset component. De gap tussen opties is geoptimaliseerd voor leesbaarheid en touch targets. Radio buttons in dezelfde groep moeten hetzelfde `name` attribuut hebben zodat slechts één optie tegelijk geselecteerd kan zijn.
 
-> **Codevoorbeeld met context**: De HTML/CSS tab toont `RadioOption` componenten als representatieve children. `RadioGroup` is puur een lijst-container — de children bepalen de daadwerkelijke functionaliteit.
+> **Codevoorbeeld met context**: De HTML/CSS tab toont `RadioOption` componenten als representatieve children. `RadioGroup` is puur een lijst-container: de children bepalen de daadwerkelijke functionaliteit.
 
 <!-- VOORBEELD -->
 
@@ -18,9 +18,9 @@ De RadioGroup component is een simpele container die meerdere RadioOption compon
 
 ## Don't use when
 
-- Je een complete form field met label nodig hebt — wrap dan RadioGroup in [FormFieldset](/docs/components-formfieldset--docs).
-- Je maar één radio button hebt — een enkele radio button is zinloos, minimaal 2 opties nodig.
-- Je meerdere opties tegelijk wilt selecteren — gebruik dan [CheckboxGroup](/docs/components-checkboxgroup--docs).
+- Je een complete form field met label nodig hebt: wrap dan RadioGroup in [FormFieldset](/docs/components-formfieldset--docs).
+- Je maar één radio button hebt: een enkele radio button is zinloos, minimaal 2 opties nodig.
+- Je meerdere opties tegelijk wilt selecteren: gebruik dan [CheckboxGroup](/docs/components-checkboxgroup--docs).
 
 ## Best practices
 

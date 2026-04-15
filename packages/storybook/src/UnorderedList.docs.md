@@ -17,10 +17,10 @@ De UnorderedList component biedt een consistente, toegankelijke manier om lijste
 
 ## Don't use when
 
-- De volgorde van items belangrijk is — gebruik dan de [Ordered List](/docs/components-orderedlist--docs) component.
-- Je maar één enkel item hebt — gebruik dan gewoon tekst of een paragraph.
-- De items interactieve acties zijn — overweeg dan een menu of button group.
-- Je tabeldata wilt tonen — gebruik dan een tabel.
+- De volgorde van items belangrijk is: gebruik dan de [Ordered List](/docs/components-orderedlist--docs) component.
+- Je maar één enkel item hebt: gebruik dan gewoon tekst of een paragraph.
+- De items interactieve acties zijn: overweeg dan een menu of button group.
+- Je tabeldata wilt tonen: gebruik dan een tabel.
 
 ## Best practices
 

@@ -17,20 +17,20 @@ De Details component biedt een semantisch correcte uitvouwbare sectie op basis v
 
 ## Don't use when
 
-- De meerderheid van gebruikers de informatie nodig heeft — verberg geen essentiële inhoud.
-- De inhoud cruciaal is voor het voltooien van een taak — toon het altijd zichtbaar.
-- Er een urgente melding nodig is — gebruik een **Alert**.
+- De meerderheid van gebruikers de informatie nodig heeft: verberg geen essentiële inhoud.
+- De inhoud cruciaal is voor het voltooien van een taak: toon het altijd zichtbaar.
+- Er een urgente melding nodig is: gebruik een **Alert**.
 
 ## Best practices
 
 ### Summarylabel
 
-- Houd het summarylabel bondig en beschrijvend — gebruikers beslissen op basis van dit label of ze klikken.
+- Houd het summarylabel bondig en beschrijvend: gebruikers beslissen op basis van dit label of ze klikken.
 - Gebruik een actieve formulering die duidelijk maakt wat er achter zit (bijv. "Welke documenten heb ik nodig?" in plaats van "Meer informatie").
 
 ### Meerdere Details onder elkaar
 
-- Gebruik meerdere afzonderlijke Details-componenten voor FAQ-patronen — niet genest.
+- Gebruik meerdere afzonderlijke Details-componenten voor FAQ-patronen: niet genest.
 - Voeg consistente spacing toe via een Stack of een eigen wrapper.
 
 ### Standaard open
@@ -60,9 +60,9 @@ De Details component biedt een semantisch correcte uitvouwbare sectie op basis v
 
 ## Accessibility
 
-- Het native `<details>`/`<summary>` element heeft een impliciete ARIA-rol `group` — geen extra `role` attribuut nodig.
+- Het native `<details>`/`<summary>` element heeft een impliciete ARIA-rol `group`: geen extra `role` attribuut nodig.
 - De `<summary>` is volledig toetsenbordtoegankelijk: Tab om te focussen, Spatiebalk of Enter om te togglen.
-- Het chevron-icoon heeft `aria-hidden="true"` — de zichtbare tekst in de summarylabel is de toegankelijke naam.
-- Gebruik **nooit** `aria-label` op de `<summary>` — de zichtbare tekst is de toegankelijke naam.
+- Het chevron-icoon heeft `aria-hidden="true"`: de zichtbare tekst in de summarylabel is de toegankelijke naam.
+- Gebruik **nooit** `aria-label` op de `<summary>`: de zichtbare tekst is de toegankelijke naam.
 - De native browser-aanwijzer is verborgen via `list-style: none` en `summary::-webkit-details-marker { display: none }`.
-- Het chevron-icoon roteert 180° via CSS bij de open staat — geen JavaScript nodig.
+- Het chevron-icoon roteert 180° via CSS bij de open staat: geen JavaScript nodig.

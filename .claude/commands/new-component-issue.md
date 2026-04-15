@@ -1,6 +1,6 @@
 # Nieuw component issue aanmaken
 
-Maak een nieuw GitHub issue aan voor een **nieuw design system component**. Het issue volgt het vaste componentspec-formaat — inclusief HTML/CSS-structuur, React API, toegankelijkheidsvereisten en component tokens.
+Maak een nieuw GitHub issue aan voor een **nieuw design system component**. Het issue volgt het vaste componentspec-formaat: inclusief HTML/CSS-structuur, React API, toegankelijkheidsvereisten en component tokens.
 
 Optionele context meegegeven door de gebruiker (componentnaam, beschrijving, etc.):
 
@@ -8,7 +8,7 @@ Optionele context meegegeven door de gebruiker (componentnaam, beschrijving, etc
 
 ---
 
-## Stap 1 — Componentnaam en beschrijving
+## Stap 1: Componentnaam en beschrijving
 
 Als `$ARGUMENTS` geen componentnaam bevat, vraag dan:
 
@@ -19,15 +19,15 @@ Stel de titel op: `feat(ComponentName): korte beschrijving`
 
 ---
 
-## Stap 2 — Verzamel de spec
+## Stap 2: Verzamel de spec
 
-Vraag de gebruiker naar de volgende onderdelen. Meerdere secties mogen in één keer worden aangeleverd; sluit geen enkel onderdeel over — gebruik HTML-commentaren als er niets is.
+Vraag de gebruiker naar de volgende onderdelen. Meerdere secties mogen in één keer worden aangeleverd; sluit geen enkel onderdeel over: gebruik HTML-commentaren als er niets is.
 
 ### 2a. Beschrijving en gebruik
 
 - **Beschrijving**: Wat doet het component en wanneer gebruik je het? (2–4 zinnen)
-- **Gebruik — wanneer wél**: 3–5 bulletpunten
-- **Gebruik — wanneer niet**: 1–2 gevallen waarbij een alternatief beter is
+- **Gebruik: wanneer wél**: 3–5 bulletpunten
+- **Gebruik: wanneer niet**: 1–2 gevallen waarbij een alternatief beter is
 
 ### 2b. HTML/CSS implementatie
 
@@ -40,8 +40,8 @@ Vraag de gebruiker naar de volgende onderdelen. Meerdere secties mogen in één 
 > - Modifier altijd naast basisklasse: `class="dsn-note dsn-note--info"`
 > - Grootte via `--size-{naam}`: `dsn-button--size-small`
 > - Geen geneste element-namen: `dsn-alert__content__text` ❌
-> - Nooit `aria-label` op buttons — altijd `dsn-button__label` span
-> - Nooit hardcoded waarden in CSS — altijd `var(--dsn-*)`
+> - Nooit `aria-label` op buttons: altijd `dsn-button__label` span
+> - Nooit hardcoded waarden in CSS: altijd `var(--dsn-*)`
 
 ### 2c. React component
 
@@ -64,18 +64,18 @@ Vraag specifiek naar:
 - Ontwerpkeuzes achter de tokenwaarden (1–3 regels per niet-voor-de-hand-liggende keuze)
 - Markeer onzekere waarden met een ⚠️ opmerking
 
-> **Token schrijfwijze — altijd controleren:**
+> **Token schrijfwijze: altijd controleren:**
 > Sub-groepen (zoals `icon`, `label`, `control`) worden als geneste objecten geschreven, niet als geflattende sleutels met koppeltekens:
 >
 > ```json
-> // ✅ Correct — geneste structuur
+> // ✅ Correct: geneste structuur
 > "icon": {
 >   "color": { "value": "...", "type": "color" },
 >   "size":  { "value": "...", "type": "dimension" },
 >   "gap":   { "value": "...", "type": "spacing" }
 > }
 >
-> // ❌ Fout — geflattend
+> // ❌ Fout: geflattend
 > "icon-color": { "value": "...", "type": "color" },
 > "icon-size":  { "value": "...", "type": "dimension" }
 > ```
@@ -85,7 +85,7 @@ Vraag specifiek naar:
 
 ---
 
-## Stap 3 — Stel de issue body samen
+## Stap 3: Stel de issue body samen
 
 Bouw de body op in deze volgorde. Vul in wat de gebruiker aanleverde; gebruik HTML-commentaren voor ontbrekende informatie.
 
@@ -152,7 +152,7 @@ Het [ComponentName] component wordt gebruikt voor:
 
 ## Component tokens (voorstel)
 
-> ⚠️ **Review vereist vóór implementatie** — akkoord geven op deze tabel voordat de bouw begint.
+> ⚠️ **Review vereist vóór implementatie**: akkoord geven op deze tabel voordat de bouw begint.
 
 ```json
 {
@@ -189,11 +189,11 @@ Het [ComponentName] component wordt gebruikt voor:
 ### Storybook
 
 - [ ] Drie bestanden aangemaakt: `.stories.tsx`, `.docs.mdx`, `.docs.md`
-- [ ] `// DEFAULT` sectie — `Default` story
-- [ ] `// VARIANTEN` sectie — per-prop/state stories (bijv. `WithDescription`, `Disabled`, `Invalid`)
-- [ ] `// OVERZICHTSSTORIES` sectie — `AllVariants` of `AllStates` (zie regel hieronder)
-- [ ] `// TEKST VARIANTEN` sectie — `ShortText` + `LongText` (alleen bij componenten met zichtbare tekstinhoud)
-- [ ] `// RTL` sectie — `RTL` + `RTLLongText` (alleen bij componenten met tekst of richtingsgevoelige layout)
+- [ ] `// DEFAULT` sectie: `Default` story
+- [ ] `// VARIANTEN` sectie: per-prop/state stories (bijv. `WithDescription`, `Disabled`, `Invalid`)
+- [ ] `// OVERZICHTSSTORIES` sectie: `AllVariants` of `AllStates` (zie regel hieronder)
+- [ ] `// TEKST VARIANTEN` sectie: `ShortText` + `LongText` (alleen bij componenten met zichtbare tekstinhoud)
+- [ ] `// RTL` sectie: `RTL` + `RTLLongText` (alleen bij componenten met tekst of richtingsgevoelige layout)
 - [ ] Alle story-namen in het Engels
 
 ---
@@ -238,31 +238,31 @@ Het [ComponentName] component wordt gebruikt voor:
 ````
 
 **Let op bij het invullen:**
-- Acceptatiecriteria **genereer je** op basis van wat de gebruiker in stap 2 heeft opgegeven — maak ze concreet en specifiek
+- Acceptatiecriteria **genereer je** op basis van wat de gebruiker in stap 2 heeft opgegeven: maak ze concreet en specifiek
 - Storybook stories leiden af uit de HTML/CSS-varianten die beschreven zijn
 - Ontbrekende secties krijgen een HTML-commentaar, niet worden weggelaten
 - Tokens die nog niet bepaald zijn, markeer je expliciet met een ⚠️-opmerking in de Notities sectie
 
-**Storybook story-structuur — vaste regels:**
+**Storybook story-structuur: vaste regels:**
 
 Elke `.stories.tsx` volgt altijd deze sectievolgorde (met `// ===` comments als scheidslijn):
 
-1. `// DEFAULT` — altijd één `Default` story
-2. `// VARIANTEN` — individuele stories per prop of state
-3. `// OVERZICHTSSTORIES` — één overzichtsstory:
+1. `// DEFAULT`: altijd één `Default` story
+2. `// VARIANTEN`: individuele stories per prop of state
+3. `// OVERZICHTSSTORIES`: één overzichtsstory:
    - `AllVariants` / `'All variants'` → voor componenten met **visuele kleur- of stijlvarianten** (bijv. `variant="info|warning|error"`)
    - `AllStates` / `'All states'` → voor componenten met **interactieve states** (bijv. default, disabled, invalid, read-only)
-4. `// TEKST VARIANTEN` — `ShortText` + `LongText` — **alleen** bij componenten met zichtbare tekstinhoud; weglaten bij icoon-only of puur visuele componenten (DotBadge, Icon, Checkbox, Radio)
-5. `// RTL` — `RTL` + `RTLLongText` — **alleen** bij componenten met tekst of richtingsgevoelige layout
+4. `// TEKST VARIANTEN`: `ShortText` + `LongText`: **alleen** bij componenten met zichtbare tekstinhoud; weglaten bij icoon-only of puur visuele componenten (DotBadge, Icon, Checkbox, Radio)
+5. `// RTL`: `RTL` + `RTLLongText`: **alleen** bij componenten met tekst of richtingsgevoelige layout
 
-Geen `// HIGH CONTRAST` sectie — daar zijn we van af gestapt.
+Geen `// HIGH CONTRAST` sectie: daar zijn we van af gestapt.
 
-**Story `name:` properties — altijd Engels:**
+**Story `name:` properties: altijd Engels:**
 
-De `export const` naam en de optionele `name:` string in het story-object moeten **altijd Engels** zijn. Dit geldt ook als de `export const` naam zichzelf al beschrijft — gebruik dan géén `name:` property.
+De `export const` naam en de optionele `name:` string in het story-object moeten **altijd Engels** zijn. Dit geldt ook als de `export const` naam zichzelf al beschrijft: gebruik dan géén `name:` property.
 
 ```ts
-// ✅ Correct — Engelse name property
+// ✅ Correct: Engelse name property
 export const WithIconStart: Story = {
   name: 'With icon start',
   // ...
@@ -278,7 +278,7 @@ export const Current: Story = {
   // ...
 };
 
-// ❌ Fout — Nederlandse name property
+// ❌ Fout: Nederlandse name property
 export const WithIconStart: Story = {
   name: 'Met icoon start', // ❌
 };
@@ -299,13 +299,13 @@ Veelgebruikte Engelse vertalingen:
 
 ---
 
-## Stap 4 — Toon ter review
+## Stap 4: Toon ter review
 
 Laat de volledige title én body zien aan de gebruiker. Vraag om expliciete bevestiging voordat het issue aangemaakt wordt.
 
 ---
 
-## Stap 5 — Maak het issue aan
+## Stap 5: Maak het issue aan
 
 Na bevestiging van de gebruiker:
 
@@ -322,11 +322,11 @@ Rapporteer de URL van het aangemaakte issue.
 
 ## Regels
 
-- Gebruik **altijd** het volledige template — sla geen secties over
-- **Genereer** de acceptatiecriteria op basis van de spec — kopieer ze niet blind uit eerdere issues
-- Voeg **geen** verzonnen implementatiedetails toe — als iets onbekend is, gebruik HTML-commentaar of ⚠️
+- Gebruik **altijd** het volledige template: sla geen secties over
+- **Genereer** de acceptatiecriteria op basis van de spec: kopieer ze niet blind uit eerdere issues
+- Voeg **geen** verzonnen implementatiedetails toe: als iets onbekend is, gebruik HTML-commentaar of ⚠️
 - Vraag altijd om **expliciete bevestiging** voordat het issue aangemaakt wordt
-- Labels zijn altijd `feat,component,needs refinement` — geen uitzonderingen voor nieuwe componenten
-- **Geen Figma-verwijzingen** — er is geen Figma in dit project; schrijf nooit "valideren in Figma", "zie Figma" of soortgelijke verwijzingen
-- **Token schrijfwijze** — controleer altijd of sub-groepen als geneste objecten zijn geschreven (zie stap 2e)
-- **Story namen altijd Engels** — zowel `export const` namen als `name:` properties in story-objecten zijn altijd Engelstalig; Nederlandse `name:` properties zijn een bug (zie voorbeelden in de Storybook story-structuur sectie hierboven)
+- Labels zijn altijd `feat,component,needs refinement`: geen uitzonderingen voor nieuwe componenten
+- **Geen Figma-verwijzingen**: er is geen Figma in dit project; schrijf nooit "valideren in Figma", "zie Figma" of soortgelijke verwijzingen
+- **Token schrijfwijze**: controleer altijd of sub-groepen als geneste objecten zijn geschreven (zie stap 2e)
+- **Story namen altijd Engels**: zowel `export const` namen als `name:` properties in story-objecten zijn altijd Engelstalig; Nederlandse `name:` properties zijn een bug (zie voorbeelden in de Storybook story-structuur sectie hierboven)

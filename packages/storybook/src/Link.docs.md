@@ -17,14 +17,14 @@ De Link component biedt een consistente, toegankelijke manier om hyperlinks weer
 
 ## Don't use when
 
-- De actie een bijeffect heeft (opslaan, verwijderen, formulier versturen) zonder dat er genavigeerd wordt — gebruik dan de [LinkButton](/docs/components-linkbutton--docs) component (link-styling met button semantiek) of de [Button](/docs/components-button--docs) component voor meer prominentie.
-- De link een complexe interactie triggert — overweeg dan een button of custom element.
+- De actie een bijeffect heeft (opslaan, verwijderen, formulier versturen) zonder dat er genavigeerd wordt: gebruik dan de [LinkButton](/docs/components-linkbutton--docs) component (link-styling met button semantiek) of de [Button](/docs/components-button--docs) component voor meer prominentie.
+- De link een complexe interactie triggert: overweeg dan een button of custom element.
 
 ## Best practices
 
 - **Gebruik beschrijvende linkteksten.** Vermijd "klik hier" of "lees meer". Gebruik in plaats daarvan beschrijvende tekst zoals "Bekijk onze prijzen" of "Lees de volledige documentatie".
 - **Markeer de huidige pagina.** Gebruik de `current` prop voor links die naar de huidige pagina wijzen (bijv. in navigatie).
-- **External links krijgen automatisch een hint.** De `external` prop voegt automatisch "(opent nieuw tabblad)" toe. Dit is belangrijk voor toegankelijkheid — gebruikers moeten weten dat ze de huidige context verlaten.
+- **External links krijgen automatisch een hint.** De `external` prop voegt automatisch "(opent nieuw tabblad)" toe. Dit is belangrijk voor toegankelijkheid: gebruikers moeten weten dat ze de huidige context verlaten.
 - **Iconen verduidelijken betekenis.** Gebruik `iconStart` voor acties (download, external link) en `iconEnd` voor richtingen (volgende pagina, externe site).
 - **Gebruik inline links zonder size.** Voor links in lopende tekst, laat de `size` prop weg zodat de link de lettergrootte van de omliggende tekst erft.
 - **Test keyboard navigatie.** Links moeten focusbaar zijn met Tab en activeerbaar met Enter.
@@ -62,4 +62,4 @@ De Link component biedt een consistente, toegankelijke manier om hyperlinks weer
 - Current page links krijgen `aria-current="page"` zodat screenreaders de huidige locatie kunnen aankondigen.
 - External links bevatten zichtbare tekst "(opent nieuw tabblad)" voor alle gebruikers, niet alleen screenreaders.
 - Links hebben een duidelijke focus state met outline voor keyboard navigatie.
-- De onderlijning helpt gebruikers met kleurenblindheid om links te herkennen. Disabled links hebben geen onderlijning — zo wordt de disabled staat niet alleen via kleur overgebracht.
+- De onderlijning helpt gebruikers met kleurenblindheid om links te herkennen. Disabled links hebben geen onderlijning: zo wordt de disabled staat niet alleen via kleur overgebracht.

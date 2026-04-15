@@ -17,10 +17,10 @@ De Checkbox component is een standalone checkbox zonder label - alleen het vierk
 
 ## Don't use when
 
-- Je een checkbox met label nodig hebt — gebruik dan [CheckboxOption](/docs/components-checkboxoption--docs).
-- Je een groep gerelateerde checkboxes hebt — gebruik dan [CheckboxGroup](/docs/components-checkboxgroup--docs).
-- Je een ja/nee keuze hebt — overweeg een toggle/switch (indien beschikbaar in je design system).
-- Je een enkele optie uit meerdere wilt selecteren — gebruik dan [Radio](/docs/components-radio--docs).
+- Je een checkbox met label nodig hebt: gebruik dan [CheckboxOption](/docs/components-checkboxoption--docs).
+- Je een groep gerelateerde checkboxes hebt: gebruik dan [CheckboxGroup](/docs/components-checkboxgroup--docs).
+- Je een ja/nee keuze hebt: overweeg een toggle/switch (indien beschikbaar in je design system).
+- Je een enkele optie uit meerdere wilt selecteren: gebruik dan [Radio](/docs/components-radio--docs).
 
 ## Best practices
 

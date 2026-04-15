@@ -1,6 +1,6 @@
 # NumberBadge
 
-Compact inline-element dat een getal toont — zoals het aantal ongelezen berichten of openstaande taken.
+Compact inline-element dat een getal toont: zoals het aantal ongelezen berichten of openstaande taken.
 
 ## Doel
 
@@ -18,19 +18,19 @@ De component heeft bewust geen eigen toegankelijkheidsmechanisme. De verantwoord
 
 ## Don't use when
 
-- De status kwalitatief is (bijv. "Goedgekeurd", "Let op") — gebruik dan `StatusBadge`.
-- Je alleen de aanwezigheid van een melding wil signaleren zonder getal — gebruik dan `DotBadge`.
-- De badge op zichzelf staat zonder parent Button of Link — de badge heeft altijd context nodig.
+- De status kwalitatief is (bijv. "Goedgekeurd", "Let op"): gebruik dan `StatusBadge`.
+- Je alleen de aanwezigheid van een melding wil signaleren zonder getal: gebruik dan `DotBadge`.
+- De badge op zichzelf staat zonder parent Button of Link: de badge heeft altijd context nodig.
 
 ## Best practices
 
 ### Variantkeuze
 
-- **Negative** — standaard, voor foutmeldingen en ongelezen berichten.
-- **Positive** — voor succesvolle notificaties.
-- **Warning** — voor waarschuwingen die aandacht vragen.
-- **Info** — voor informatieve tellingen.
-- **Neutral** — voor neutrale tellingen zonder urgentie.
+- **Negative**: standaard, voor foutmeldingen en ongelezen berichten.
+- **Positive**: voor succesvolle notificaties.
+- **Warning**: voor waarschuwingen die aandacht vragen.
+- **Info**: voor informatieve tellingen.
+- **Neutral**: voor neutrale tellingen zonder urgentie.
 
 ### Afgekapt getal (99+)
 
@@ -51,10 +51,10 @@ Bij grote aantallen toont NumberBadge `{maxCount}+`. De `dsn-visually-hidden` sp
 
 ### Toegankelijkheid
 
-NumberBadge heeft altijd `aria-hidden="true"` — screenreaders negeren de badge volledig. Voeg altijd context toe in de parent via `dsn-visually-hidden`:
+NumberBadge heeft altijd `aria-hidden="true"`: screenreaders negeren de badge volledig. Voeg altijd context toe in de parent via `dsn-visually-hidden`:
 
 ```html
-<!-- Kleine aantallen — optionele screenreader-context -->
+<!-- Kleine aantallen: optionele screenreader-context -->
 <button type="button" class="dsn-button dsn-button--subtle">
   <svg class="dsn-icon" aria-hidden="true"><!-- inbox --></svg>
   <span class="dsn-button__label">Inbox</span>
@@ -63,7 +63,7 @@ NumberBadge heeft altijd `aria-hidden="true"` — screenreaders negeren de badge
   >
 </button>
 
-<!-- Grote aantallen — verplichte screenreader-context -->
+<!-- Grote aantallen: verplichte screenreader-context -->
 <button type="button" class="dsn-button dsn-button--subtle">
   <svg class="dsn-icon" aria-hidden="true"><!-- inbox --></svg>
   <span class="dsn-button__label">
@@ -87,8 +87,8 @@ NumberBadge heeft altijd `aria-hidden="true"` — screenreaders negeren de badge
 | `--dsn-number-badge-padding-block`             | Verticale padding (xs)                                             |
 | `--dsn-number-badge-padding-inline`            | Horizontale padding (xs)                                           |
 | `--dsn-number-badge-border-radius`             | Pill-vorm via round border-radius                                  |
-| `--dsn-number-badge-border-width`              | Randbreedte (thin — zichtbaar in High Contrast mode)               |
-| `--dsn-number-badge-border-color`              | Randkleur (transparant — zichtbaar in High Contrast mode)          |
+| `--dsn-number-badge-border-width`              | Randbreedte (thin: zichtbaar in High Contrast mode)                |
+| `--dsn-number-badge-border-color`              | Randkleur (transparant: zichtbaar in High Contrast mode)           |
 | `--dsn-number-badge-negative-color`            | Tekstkleur negative variant                                        |
 | `--dsn-number-badge-negative-background-color` | Achtergrondkleur negative variant                                  |
 | `--dsn-number-badge-positive-color`            | Tekstkleur positive variant                                        |
@@ -102,7 +102,7 @@ NumberBadge heeft altijd `aria-hidden="true"` — screenreaders negeren de badge
 
 ## Accessibility
 
-- NumberBadge heeft altijd `aria-hidden="true"` — geen semantische betekenis op zichzelf.
+- NumberBadge heeft altijd `aria-hidden="true"`: geen semantische betekenis op zichzelf.
 - Bij afgekapte getallen (`99+`): verplicht een `dsn-visually-hidden` span in de parent met het werkelijke getal.
 - Bij kleine aantallen zonder afkapping is de `dsn-visually-hidden` span optioneel als de buttonlabel voldoende context biedt.
 - Gebruik nooit `aria-label` op het badge-element zelf.

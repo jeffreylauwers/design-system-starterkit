@@ -62,7 +62,7 @@ De standaardtekst "Ga direct naar de hoofdinhoud" is bruikbaar voor de meeste pa
 
 | Token                                 | Beschrijving                                         |
 | ------------------------------------- | ---------------------------------------------------- |
-| `--dsn-skip-link-z-index`             | Z-index (600) — boven modals en backdrop             |
+| `--dsn-skip-link-z-index`             | Z-index (600): boven modals en backdrop              |
 | `--dsn-skip-link-padding-block`       | Verticale padding bij focus                          |
 | `--dsn-skip-link-padding-inline`      | Horizontale padding bij focus                        |
 | `--dsn-skip-link-border-radius`       | Afgeronde hoeken bij focus                           |
@@ -71,8 +71,8 @@ De standaardtekst "Ga direct naar de hoofdinhoud" is bruikbaar voor de meeste pa
 
 ## Accessibility
 
-- De SkipLink gebruikt het semantische `<a>` element — screenreaders kondigen het aan als "link" en nemen het op in de linklijst (NVDA: `R`; VoiceOver: `Control+Option+U`).
-- De link is standaard verborgen via `clip-path: inset(50%)` — dit is de voorkeursmethode boven `display: none` of `visibility: hidden`, omdat die elementen uit de accessibility tree verwijderen.
+- De SkipLink gebruikt het semantische `<a>` element: screenreaders kondigen het aan als "link" en nemen het op in de linklijst (NVDA: `R`; VoiceOver: `Control+Option+U`).
+- De link is standaard verborgen via `clip-path: inset(50%)`: dit is de voorkeursmethode boven `display: none` of `visibility: hidden`, omdat die elementen uit de accessibility tree verwijderen.
 - Bij `:focus-visible` wordt de clip verwijderd en wordt de link zichtbaar met de standaard focus-stijlen van het design system.
 - De link moet het **eerste** element in de DOM zijn, zodat het de eerste Tab-stop is.
 - Het doelelement moet `tabindex="-1"` hebben als het niet natively focusbaar is, anders werkt de focus-sprong niet in alle browsers (met name Safari/iOS).

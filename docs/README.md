@@ -39,7 +39,7 @@ Complete documentation voor het Design System Starter Kit.
 
 5. **[CSS & Token Naming Conventions](./06-css-naming-conventions.md)**
    - Namespace prefix `dsn-`
-   - BEM — Block, Element, Modifier
+   - BEM: Block, Element, Modifier
    - CSS custom property structuur (globaal, component, lokale alias)
    - Design token namen in JSON
    - Snelle referentie en veelgemaakte fouten

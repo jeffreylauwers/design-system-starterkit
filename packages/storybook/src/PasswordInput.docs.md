@@ -17,13 +17,13 @@ Het tonen en verbergen van het ingevulde wachtwoord is bewust **niet** ingebouwd
 
 ## Don't use when
 
-- Het om een pincode of numerieke code gaat — gebruik dan [NumberInput](/docs/components-numberinput--docs).
-- Het om vrije tekst gaat — gebruik dan [TextInput](/docs/components-textinput--docs).
+- Het om een pincode of numerieke code gaat: gebruik dan [NumberInput](/docs/components-numberinput--docs).
+- Het om vrije tekst gaat: gebruik dan [TextInput](/docs/components-textinput--docs).
 
 ## Best practices
 
 - **Gebruik `passwordAutocomplete` correct.** Stel `current-password` in bij inloggen en `new-password` bij registratie of wachtwoord wijzigen. Dit helpt wachtwoordmanagers de juiste actie te nemen.
-- **Voeg een toon/verberg-knop toe via een apart patroon.** Dit component bevat bewust geen toggle — gebruik hiervoor een Button naast het invoerveld.
+- **Voeg een toon/verberg-knop toe via een apart patroon.** Dit component bevat bewust geen toggle: gebruik hiervoor een Button naast het invoerveld.
 - **Combineer met FormField.** Gebruik altijd een label via `FormField` of `FormFieldLabel` voor toegankelijkheid.
 - **Geef validatie feedback.** Gebruik de `invalid` prop in combinatie met `aria-invalid` en een `FormFieldErrorMessage`.
 

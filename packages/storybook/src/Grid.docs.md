@@ -4,10 +4,10 @@ Het Grid component biedt een 12-koloms CSS Grid layout systeem met consistente g
 
 ## Doel
 
-Grid legt een 12-koloms structuur vast als basis voor paginalayouts. Alle children zijn onderdeel van hetzelfde grid, waardoor kolommen altijd op één lijn staan — ook over meerdere rijen heen.
+Grid legt een 12-koloms structuur vast als basis voor paginalayouts. Alle children zijn onderdeel van hetzelfde grid, waardoor kolommen altijd op één lijn staan: ook over meerdere rijen heen.
 
-- **`Grid`** — de container die de 12 kolommen definieert
-- **`GridItem`** — directe child voor kolomspanning (1–12) met responsive varianten
+- **`Grid`**: de container die de 12 kolommen definieert
+- **`GridItem`**: directe child voor kolomspanning (1–12) met responsive varianten
 
 <!-- VOORBEELD -->
 
@@ -27,10 +27,10 @@ Grid legt een 12-koloms structuur vast als basis voor paginalayouts. Alle childr
 ## Best practices
 
 - Gebruik `contained` voor paginalayouts waarbij de maximale breedte bepaald wordt door `--dsn-grid-max-width`
-- Gebruik geen `GridItem` als directe child niet nodig is — gewone `<div>` elementen werken ook (ze beslaan standaard de volledige breedte via `grid-column: 1 / -1`)
+- Gebruik geen `GridItem` als directe child niet nodig is: gewone `<div>` elementen werken ook (ze beslaan standaard de volledige breedte via `grid-column: 1 / -1`)
 - Combineer `colSpan` met `colSpanMd` en `colSpanLg` voor responsive layouts die op mobiel stapelen (col-12) en breder uitkomen op grotere schermen
 - Gebruik `fullBleed` alleen voor elementen die een achtergrondkleur of -afbeelding edge-to-edge willen tonen
-- Nest geen `Grid` in `Grid` tenzij noodzakelijk — de gutter en margin gelden per grid-instantie
+- Nest geen `Grid` in `Grid` tenzij noodzakelijk: de gutter en margin gelden per grid-instantie
 
 ## Breakpoints
 

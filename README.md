@@ -166,23 +166,23 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 
 | Component     | HTML/CSS | React | Web Component |
 | ------------- | -------- | ----- | ------------- |
-| **Body**      | Yes      | Yes   | —             |
-| **Container** | Yes      | Yes   | —             |
-| **Grid**      | Yes      | Yes   | —             |
-| **GridItem**  | Yes      | Yes   | —             |
-| **Stack**     | Yes      | Yes   | —             |
+| **Body**      | Yes      | Yes   | :             |
+| **Container** | Yes      | Yes   | :             |
+| **Grid**      | Yes      | Yes   | :             |
+| **GridItem**  | Yes      | Yes   | :             |
+| **Stack**     | Yes      | Yes   | :             |
 
 **Content Components (10)**
 
 | Component         | HTML/CSS | React | Web Component |
 | ----------------- | -------- | ----- | ------------- |
 | **Button**        | Yes      | Yes   | Yes           |
-| **ButtonLink**    | Yes      | Yes   | —             |
+| **ButtonLink**    | Yes      | Yes   | :             |
 | **Heading**       | Yes      | Yes   | Yes           |
 | **Icon**          | Yes      | Yes   | Yes           |
-| **Image**         | Yes      | Yes   | —             |
+| **Image**         | Yes      | Yes   | :             |
 | **Link**          | Yes      | Yes   | Yes           |
-| **LinkButton**    | Yes      | Yes   | —             |
+| **LinkButton**    | Yes      | Yes   | :             |
 | **OrderedList**   | Yes      | Yes   | Yes           |
 | **Paragraph**     | Yes      | Yes   | Yes           |
 | **UnorderedList** | Yes      | Yes   | Yes           |
@@ -191,62 +191,62 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 
 | Component       | HTML/CSS | React | Web Component |
 | --------------- | -------- | ----- | ------------- |
-| **Alert**       | Yes      | Yes   | —             |
-| **Backdrop**    | Yes      | Yes   | —             |
-| **Card**        | Yes      | Yes   | —             |
-| **Details**     | Yes      | Yes   | —             |
-| **DotBadge**    | Yes      | Yes   | —             |
-| **Note**        | Yes      | Yes   | —             |
-| **NumberBadge** | Yes      | Yes   | —             |
-| **Popover**     | Yes      | Yes   | —             |
-| **StatusBadge** | Yes      | Yes   | —             |
-| **Table**       | Yes      | Yes   | —             |
+| **Alert**       | Yes      | Yes   | :             |
+| **Backdrop**    | Yes      | Yes   | :             |
+| **Card**        | Yes      | Yes   | :             |
+| **Details**     | Yes      | Yes   | :             |
+| **DotBadge**    | Yes      | Yes   | :             |
+| **Note**        | Yes      | Yes   | :             |
+| **NumberBadge** | Yes      | Yes   | :             |
+| **Popover**     | Yes      | Yes   | :             |
+| **StatusBadge** | Yes      | Yes   | :             |
+| **Table**       | Yes      | Yes   | :             |
 
 **Navigation Components (5)**
 
 | Component                | HTML/CSS | React | Web Component |
 | ------------------------ | -------- | ----- | ------------- |
-| **BreadcrumbNavigation** | Yes      | Yes   | —             |
-| **Menu**                 | Yes      | Yes   | —             |
-| **MenuButton**           | Yes      | Yes   | —             |
-| **MenuLink**             | Yes      | Yes   | —             |
-| **PageHeader**           | Yes      | Yes   | —             |
+| **BreadcrumbNavigation** | Yes      | Yes   | :             |
+| **Menu**                 | Yes      | Yes   | :             |
+| **MenuButton**           | Yes      | Yes   | :             |
+| **MenuLink**             | Yes      | Yes   | :             |
+| **PageHeader**           | Yes      | Yes   | :             |
 
 **Accessibility Components (1)**
 
 | Component    | HTML/CSS | React | Web Component |
 | ------------ | -------- | ----- | ------------- |
-| **SkipLink** | Yes      | Yes   | —             |
+| **SkipLink** | Yes      | Yes   | :             |
 
 **Form Components (25)**
 
 | Component                 | HTML/CSS | React | Web Component |
 | ------------------------- | -------- | ----- | ------------- |
-| **Checkbox**              | Yes      | Yes   | —             |
-| **CheckboxGroup**         | Yes      | Yes   | —             |
-| **CheckboxOption**        | Yes      | Yes   | —             |
-| **DateInput**             | Yes      | Yes   | —             |
-| **DateInputGroup**        | Yes      | Yes   | —             |
-| **EmailInput**            | Yes      | Yes   | —             |
-| **FormField**             | Yes      | Yes   | —             |
-| **FormFieldDescription**  | Yes      | Yes   | —             |
-| **FormFieldErrorMessage** | Yes      | Yes   | —             |
-| **FormFieldLabel**        | Yes      | Yes   | —             |
-| **FormFieldLegend**       | Yes      | Yes   | —             |
-| **FormFieldset**          | Yes      | Yes   | —             |
-| **FormFieldStatus**       | Yes      | Yes   | —             |
-| **NumberInput**           | Yes      | Yes   | —             |
-| **OptionLabel**           | Yes      | Yes   | —             |
-| **PasswordInput**         | Yes      | Yes   | —             |
-| **Radio**                 | Yes      | Yes   | —             |
-| **RadioGroup**            | Yes      | Yes   | —             |
-| **RadioOption**           | Yes      | Yes   | —             |
-| **SearchInput**           | Yes      | Yes   | —             |
-| **Select**                | Yes      | Yes   | —             |
-| **TelephoneInput**        | Yes      | Yes   | —             |
-| **TextArea**              | Yes      | Yes   | —             |
-| **TextInput**             | Yes      | Yes   | —             |
-| **TimeInput**             | Yes      | Yes   | —             |
+| **Checkbox**              | Yes      | Yes   | :             |
+| **CheckboxGroup**         | Yes      | Yes   | :             |
+| **CheckboxOption**        | Yes      | Yes   | :             |
+| **DateInput**             | Yes      | Yes   | :             |
+| **DateInputGroup**        | Yes      | Yes   | :             |
+| **EmailInput**            | Yes      | Yes   | :             |
+| **FormField**             | Yes      | Yes   | :             |
+| **FormFieldDescription**  | Yes      | Yes   | :             |
+| **FormFieldErrorMessage** | Yes      | Yes   | :             |
+| **FormFieldLabel**        | Yes      | Yes   | :             |
+| **FormFieldLegend**       | Yes      | Yes   | :             |
+| **FormFieldset**          | Yes      | Yes   | :             |
+| **FormFieldStatus**       | Yes      | Yes   | :             |
+| **NumberInput**           | Yes      | Yes   | :             |
+| **OptionLabel**           | Yes      | Yes   | :             |
+| **PasswordInput**         | Yes      | Yes   | :             |
+| **Radio**                 | Yes      | Yes   | :             |
+| **RadioGroup**            | Yes      | Yes   | :             |
+| **RadioOption**           | Yes      | Yes   | :             |
+| **SearchInput**           | Yes      | Yes   | :             |
+| **Select**                | Yes      | Yes   | :             |
+| **TelephoneInput**        | Yes      | Yes   | :             |
+| **TextArea**              | Yes      | Yes   | :             |
+| **TextInput**             | Yes      | Yes   | :             |
+| **TimeInput**             | Yes      | Yes   | :             |
 
 See the [Documentation](./docs/) for full component details and specifications.
 
@@ -257,18 +257,18 @@ Components are designed to compose together:
 **Layout Components**
 
 ```jsx
-// React — Container als visueel kader voor gerelateerde content
+// React: Container als visueel kader voor gerelateerde content
 <Container>
   <Heading level={2}>Sectie</Heading>
   <Paragraph>Inhoud van de container.</Paragraph>
 </Container>
 
-// React — Elevated container met schaduw (bijv. kaart)
+// React: Elevated container met schaduw (bijv. kaart)
 <Container elevated as="article">
   <Paragraph>Dit is een elevated container.</Paragraph>
 </Container>
 
-// React — Grid met Containers als items
+// React: Grid met Containers als items
 <Grid contained>
   <GridItem colSpan={8}><Container>Hoofdinhoud</Container></GridItem>
   <GridItem colSpan={4}><Container>Sidebar</Container></GridItem>
@@ -278,34 +278,34 @@ Components are designed to compose together:
 **Content Components**
 
 ```jsx
-// React — Button with icon
+// React: Button with icon
 <Button variant="strong" size="default">
   <Icon name="check" size="sm" />
   Save Changes
 </Button>
 
-// React — Button loading state (animated loader replaces iconStart)
+// React: Button loading state (animated loader replaces iconStart)
 <Button loading>Saving...</Button>
 
-// React — External link (visible hint, no icon)
+// React: External link (visible hint, no icon)
 <Link href="https://example.com" external>Visit example.com</Link>
 ```
 
 ```html
-<!-- Web Component — Button with icon -->
+<!-- Web Component: Button with icon -->
 <dsn-button variant="strong" size="default">
   <dsn-icon name="check" size="sm"></dsn-icon>
   Save Changes
 </dsn-button>
 
-<!-- Web Component — External link -->
+<!-- Web Component: External link -->
 <dsn-link href="https://example.com" external>Visit example.com</dsn-link>
 ```
 
 **Form Components**
 
 ```jsx
-// React — Complete form field with text input
+// React: Complete form field with text input
 <FormField
   label="Email address"
   htmlFor="email"
@@ -320,7 +320,7 @@ Components are designed to compose together:
   />
 </FormField>
 
-// React — Checkbox group with fieldset/legend
+// React: Checkbox group with fieldset/legend
 <FormFieldset
   legend="Notification preferences"
   description="Choose how you want to be notified"
@@ -332,7 +332,7 @@ Components are designed to compose together:
   </CheckboxGroup>
 </FormFieldset>
 
-// React — Radio group
+// React: Radio group
 <FormFieldset legend="Delivery method">
   <RadioGroup>
     <RadioOption label="Standard shipping" name="delivery" value="standard" />

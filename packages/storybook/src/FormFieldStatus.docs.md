@@ -16,9 +16,9 @@ De FormFieldStatus component toont status informatie onder een form control. Het
 
 ## Don't use when
 
-- Je een blokkerende fout wilt tonen — gebruik [FormFieldErrorMessage](/docs/components-formfielderrormessage--docs) (negatieve variant).
-- Je algemene help tekst wilt tonen — gebruik [FormFieldDescription](/docs/components-formfielddescription--docs) (komt boven de input).
-- Je informatieve context wilt geven — gebruik FormFieldDescription (informatie variant is hetzelfde als description).
+- Je een blokkerende fout wilt tonen: gebruik [FormFieldErrorMessage](/docs/components-formfielderrormessage--docs) (negatieve variant).
+- Je algemene help tekst wilt tonen: gebruik [FormFieldDescription](/docs/components-formfielddescription--docs) (komt boven de input).
+- Je informatieve context wilt geven: gebruik FormFieldDescription (informatie variant is hetzelfde als description).
 
 ## Best practices
 
@@ -86,5 +86,5 @@ De FormFieldStatus component toont status informatie onder een form control. Het
 - Positive en warning varianten hebben duidelijke kleuren voor zichtbaarheid.
 - Gebruik `id` attribuut en koppel met `aria-describedby` indien de status essentiële info bevat.
 - Icons hebben `aria-hidden="true"` omdat de tekst zelf voldoende context geeft.
-- Kleur alleen is niet voldoende — de icons helpen bij kleurenblindheid.
+- Kleur alleen is niet voldoende: de icons helpen bij kleurenblindheid.
 - Bij character limits, update aria-live regions voor screenreader feedback.

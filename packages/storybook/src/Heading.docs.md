@@ -17,8 +17,8 @@ De Heading component biedt een consistente, toegankelijke manier om koppen weer 
 
 ## Don't use when
 
-- Je lopende tekst wilt weergeven — gebruik dan de [Paragraph](/docs/components-paragraph--docs) component.
-- Je interactieve elementen wilt tonen — gebruik dan buttons of links.
+- Je lopende tekst wilt weergeven: gebruik dan de [Paragraph](/docs/components-paragraph--docs) component.
+- Je interactieve elementen wilt tonen: gebruik dan buttons of links.
 - De tekst puur decoratief is zonder structurele betekenis.
 
 ## Best practices

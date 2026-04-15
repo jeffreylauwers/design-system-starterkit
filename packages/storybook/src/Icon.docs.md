@@ -17,8 +17,8 @@ De Icon component biedt een consistente, toegankelijke manier om iconen te gebru
 
 ## Don't use when
 
-- Het icoon de enige visuele indicatie is zonder duidelijke betekenis — voeg altijd een `aria-label` toe voor standalone iconen.
-- Je complexe illustraties of logo's wilt tonen — gebruik dan een afbeelding of SVG.
+- Het icoon de enige visuele indicatie is zonder duidelijke betekenis: voeg altijd een `aria-label` toe voor standalone iconen.
+- Je complexe illustraties of logo's wilt tonen: gebruik dan een afbeelding of SVG.
 - Het icoon puur decoratief is en geen betekenis toevoegt aan de interface.
 
 ## Best practices

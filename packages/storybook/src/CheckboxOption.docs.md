@@ -17,10 +17,10 @@ De CheckboxOption component combineert een Checkbox en OptionLabel in een klikba
 
 ## Don't use when
 
-- Je alleen het checkbox vierkantje nodig hebt zonder label — gebruik dan [Checkbox](/docs/components-checkbox--docs).
-- Je een groep checkboxes met een gezamenlijk label nodig hebt — gebruik dan [CheckboxGroup](/docs/components-checkboxgroup--docs).
-- Je maar één optie tegelijk wilt selecteren — gebruik dan [RadioOption](/docs/components-radiooption--docs).
-- Je een aan/uit toggle nodig hebt — overweeg een toggle/switch component (indien beschikbaar).
+- Je alleen het checkbox vierkantje nodig hebt zonder label: gebruik dan [Checkbox](/docs/components-checkbox--docs).
+- Je een groep checkboxes met een gezamenlijk label nodig hebt: gebruik dan [CheckboxGroup](/docs/components-checkboxgroup--docs).
+- Je maar één optie tegelijk wilt selecteren: gebruik dan [RadioOption](/docs/components-radiooption--docs).
+- Je een aan/uit toggle nodig hebt: overweeg een toggle/switch component (indien beschikbaar).
 
 ## Best practices
 

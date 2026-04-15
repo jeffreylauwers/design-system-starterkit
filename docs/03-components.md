@@ -82,34 +82,34 @@ Components are designed to compose together:
 **Content Components**
 
 ```jsx
-// React — Button with icon
+// React: Button with icon
 <Button variant="strong" size="default">
   <Icon name="check" size="sm" />
   Save Changes
 </Button>
 
-// React — Button loading state (animated loader replaces iconStart)
+// React: Button loading state (animated loader replaces iconStart)
 <Button loading>Saving...</Button>
 
-// React — External link (visible hint, no icon)
+// React: External link (visible hint, no icon)
 <Link href="https://example.com" external>Visit example.com</Link>
 ```
 
 ```html
-<!-- Web Component — Button with icon -->
+<!-- Web Component: Button with icon -->
 <dsn-button variant="strong" size="default">
   <dsn-icon name="check" size="sm"></dsn-icon>
   Save Changes
 </dsn-button>
 
-<!-- Web Component — External link -->
+<!-- Web Component: External link -->
 <dsn-link href="https://example.com" external>Visit example.com</dsn-link>
 ```
 
 **Form Components**
 
 ```jsx
-// React — Complete form field with text input
+// React: Complete form field with text input
 <FormField
   label="Email address"
   htmlFor="email"
@@ -124,7 +124,7 @@ Components are designed to compose together:
   />
 </FormField>
 
-// React — Checkbox group with fieldset/legend
+// React: Checkbox group with fieldset/legend
 <FormFieldset
   legend="Notification preferences"
   description="Choose how you want to be notified"
@@ -136,7 +136,7 @@ Components are designed to compose together:
   </CheckboxGroup>
 </FormFieldset>
 
-// React — Radio group
+// React: Radio group
 <FormFieldset legend="Delivery method">
   <RadioGroup>
     <RadioOption label="Standard shipping" name="delivery" value="standard" />
@@ -144,7 +144,7 @@ Components are designed to compose together:
   </RadioGroup>
 </FormFieldset>
 
-// React — Date input group
+// React: Date input group
 <FormFieldset legend="Date of birth" description="For example: 15 3 1990">
   <DateInputGroup
     id="dob"
@@ -208,7 +208,7 @@ Groepeert gerelateerde acties en verzorgt de lay-out van Buttons en Links. Horiz
 
 **Location:** `packages/components-{html|react}/src/ActionGroup/`
 
-**Design tokens:** `--dsn-action-group-column-gap` (12px — horizontale ruimte tussen acties), `--dsn-action-group-row-gap` (4px — ruimte tussen gewrapte rijen).
+**Design tokens:** `--dsn-action-group-column-gap` (12px: horizontale ruimte tussen acties), `--dsn-action-group-row-gap` (4px: ruimte tussen gewrapte rijen).
 
 ---
 
@@ -230,11 +230,11 @@ Stelt document-level CSS stijlen in zodat alle child-elementen via de CSS cascad
 <Body>{/* paginainhoud */}</Body>
 ```
 
-**Props:** Geen custom props — `Body` accepteert alle standaard `HTMLDivElement` attributen.
+**Props:** Geen custom props: `Body` accepteert alle standaard `HTMLDivElement` attributen.
 
 **Gebruik:** Zet `dsn-body` op het `<body>` element in je HTML template, of gebruik de React `<Body>` component als root-wrapper. In Storybook is `dsn-body` via de global decorator automatisch op alle stories van toepassing.
 
-**Design tokens:** Geen component tokens — verwijst rechtstreeks naar globale tokens: `--dsn-color-neutral-bg-document`, `--dsn-color-neutral-color-document`, `--dsn-text-font-family-default`, `--dsn-text-font-size-md`, `--dsn-text-line-height-md`, `--dsn-text-font-weight-default`.
+**Design tokens:** Geen component tokens: verwijst rechtstreeks naar globale tokens: `--dsn-color-neutral-bg-document`, `--dsn-color-neutral-color-document`, `--dsn-text-font-family-default`, `--dsn-text-font-size-md`, `--dsn-text-line-height-md`, `--dsn-text-font-weight-default`.
 
 ---
 
@@ -352,11 +352,11 @@ Visueel kader voor het groeperen van gerelateerde content. Voegt achtergrond, bo
 </Grid>
 ```
 
-**Props `Grid`:** `contained` (boolean) — voegt max-width toe en centreert horizontaal.
+**Props `Grid`:** `contained` (boolean): voegt max-width toe en centreert horizontaal.
 
 **Props `GridItem`:** `colSpan` (1–12), `colSpanSm`, `colSpanMd`, `colSpanLg` (responsieve varianten), `fullBleed` (breekt uit tot container-rand).
 
-**Breakpoints:** sm (36em), md (44em), lg (64em), xl (74em — grens `contained` max-width).
+**Breakpoints:** sm (36em), md (44em), lg (64em), xl (74em: grens `contained` max-width).
 
 **Design tokens:** `--dsn-grid-gutter` (16px; 8px in information-dense), `--dsn-grid-margin` (24px), `--dsn-grid-max-width` (74rem).
 
@@ -467,17 +467,17 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 **Features:**
 
-- `disabled` — Disables link (removes href, adds aria-disabled)
-- `current` — Marks link as current page (aria-current="page")
-- `iconStart` / `iconEnd` — Icon slots before/after text
-- `size` — Optional: `small`, `default`, `large` (when omitted, inherits font from parent)
-- `external` — Opens in new tab with `target="_blank"`, `rel="noopener noreferrer"`, and visible "(opens in new tab)" hint text (no icon, follows GOV.UK pattern)
+- `disabled`: Disables link (removes href, adds aria-disabled)
+- `current`: Marks link as current page (aria-current="page")
+- `iconStart` / `iconEnd`: Icon slots before/after text
+- `size`: Optional: `small`, `default`, `large` (when omitted, inherits font from parent)
+- `external`: Opens in new tab with `target="_blank"`, `rel="noopener noreferrer"`, and visible "(opens in new tab)" hint text (no icon, follows GOV.UK pattern)
 
 **Sizes (3 total):**
 
-- `small` — font-size: sm, icon-size: sm
-- `default` — font-size: md, icon-size: md
-- `large` — font-size: lg, icon-size: lg
+- `small`: font-size: sm, icon-size: sm
+- `default`: font-size: md, icon-size: md
+- `large`: font-size: lg, icon-size: lg
 
 **Inline behavior:** Without an explicit `size` prop/attribute, the Link uses `font: inherit` and flows naturally within paragraphs, inheriting the parent's font size. This makes it ideal for inline usage within Paragraph components.
 
@@ -505,9 +505,9 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 - Independent `level` (semantic h1–h6) and `appearance` (visual style) props
 - Heading component tokens with full set per level (font-family, font-weight, color, font-size, line-height, margin-block-end)
-- Token namespace `dsn.heading.level-{1-6}.*` — avoids collision with core `dsn.heading.*` tokens
+- Token namespace `dsn.heading.level-{1-6}.*`: avoids collision with core `dsn.heading.*` tokens
 - Font-size scale shifted one level down: heading-1 = 3xl, heading-2 = 2xl, ... heading-6 = sm
-- `text-wrap: balance` op de heading-basis-klasse — verdeelt regeleinden evenwichtig voor meerdere korte regels
+- `text-wrap: balance` op de heading-basis-klasse: verdeelt regeleinden evenwichtig voor meerdere korte regels
 
 **Tests:** React (13 tests), Web Component (24 tests)
 
@@ -529,7 +529,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 - `font-family`, `font-weight`, `color`, `font-size`, `line-height`
 - `padding-inline-start`, `margin-block-end`, `gap`
-- `marker-color` — accent color for bullet markers
+- `marker-color`: accent color for bullet markers
 
 **Tests:** React (7 tests), Web Component (7 tests)
 
@@ -543,7 +543,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 **Features:**
 
-- `start` prop — allows numbering to begin at a custom number
+- `start` prop: allows numbering to begin at a custom number
 - Accent-colored number markers via `--dsn-ordered-list-marker-color`
 - Consistent typography and spacing via design tokens
 - Nesting support (nested `<ol>` elements)
@@ -552,7 +552,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 - `font-family`, `font-weight`, `color`, `font-size`, `line-height`
 - `padding-inline-start`, `margin-block-end`, `gap`
-- `marker-color` — accent color for number markers
+- `marker-color`: accent color for number markers
 
 **Tests:** React (8 tests), Web Component (11 tests)
 
@@ -562,24 +562,24 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 **Location:** `packages/components-{html|react}/src/LinkButton/`
 
-**Component Tokens:** Erft van `tokens/components/link.json` — geen eigen token namespace
+**Component Tokens:** Erft van `tokens/components/link.json`: geen eigen token namespace
 
 **Features:**
 
-- Semantisch `<button>`, visueel als een `Link` — voor JS-acties met lage attentiewaarde
-- CSS: `dsn-link dsn-link-button` — erft alle Link-stijlen
+- Semantisch `<button>`, visueel als een `Link`: voor JS-acties met lage attentiewaarde
+- CSS: `dsn-link dsn-link-button`: erft alle Link-stijlen
 - `disabled`: native `<button disabled>` + CSS selector `.dsn-link.dsn-link-button:disabled`
-- `font: inherit` bewust weggelaten uit `dsn-link-button` — `dsn-link` regelt dit al; herhalen overschrijft `font-size` van size-klassen
+- `font: inherit` bewust weggelaten uit `dsn-link-button`: `dsn-link` regelt dit al; herhalen overschrijft `font-size` van size-klassen
 - Zie ook: [De drie-weg keuze (Architecture)](./01-architecture.md)
 
 **Drie-weg keuze:**
 
-| Situatie                                | Component                                  |
-| --------------------------------------- | ------------------------------------------ |
-| Navigeert naar URL, hoge attentiewaarde | `ButtonLink` — `<a>` visueel als Button    |
-| Navigeert naar URL, lage attentiewaarde | `Link` — `<a>` visueel als Link            |
-| JS-actie, lage attentiewaarde           | `LinkButton` — `<button>` visueel als Link |
-| JS-actie, hoge attentiewaarde           | `Button` — `<button>` visueel als Button   |
+| Situatie                                | Component                                 |
+| --------------------------------------- | ----------------------------------------- |
+| Navigeert naar URL, hoge attentiewaarde | `ButtonLink`: `<a>` visueel als Button    |
+| Navigeert naar URL, lage attentiewaarde | `Link`: `<a>` visueel als Link            |
+| JS-actie, lage attentiewaarde           | `LinkButton`: `<button>` visueel als Link |
+| JS-actie, hoge attentiewaarde           | `Button`: `<button>` visueel als Button   |
 
 **HTML/CSS:**
 
@@ -605,15 +605,15 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 **Location:** `packages/components-{html|react}/src/ButtonLink/`
 
-**Component Tokens:** Erft van `tokens/components/button.json` — geen eigen token namespace
+**Component Tokens:** Erft van `tokens/components/button.json`: geen eigen token namespace
 
 **Features:**
 
-- Semantisch `<a>`, visueel als een `Button` — voor navigatieacties met hoge attentiewaarde
+- Semantisch `<a>`, visueel als een `Button`: voor navigatieacties met hoge attentiewaarde
 - CSS: `dsn-button dsn-button--{variant} dsn-button--size-{size} dsn-button-link`
 - `disabled`: `aria-disabled="true"` + `tabIndex={-1}` + `pointer-events: none` (`:disabled` pseudo-class werkt niet op `<a>`)
 - `external`: auto `target="_blank"` + `rel="noopener noreferrer"` + zichtbare "(opent nieuw tabblad)" tekst
-- `children` altijd gewrapt in `<span class="dsn-button__label">` — zelfde patroon als Button
+- `children` altijd gewrapt in `<span class="dsn-button__label">`: zelfde patroon als Button
 
 **HTML/CSS:**
 
@@ -652,14 +652,14 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 **Features:**
 
-- Semantische `<figure>` + `<img>` structuur — altijd correct HTML
-- Verplichte `width` en `height` props — browser reserveert ruimte vooraf, voorkomt CLS
-- `loading="lazy"` + `decoding="async"` standaard — laadt afbeeldingen buiten de viewport pas wanneer nodig
-- `priority` prop — `loading="eager"` + `fetchpriority="high"` voor de primaire LCP-afbeelding (max. één per pagina)
-- `ratio` prop — CSS `aspect-ratio` met drie opties: `16:9`, `4:3`, `1:1`
-- `objectFit` prop — `cover` (default, bijsnijden) of `contain` (volledig zichtbaar)
-- `caption` prop — optioneel `<figcaption>` bijschrift
-- `srcSet` / `sizes` pass-through — voor responsive afbeeldingen
+- Semantische `<figure>` + `<img>` structuur: altijd correct HTML
+- Verplichte `width` en `height` props: browser reserveert ruimte vooraf, voorkomt CLS
+- `loading="lazy"` + `decoding="async"` standaard: laadt afbeeldingen buiten de viewport pas wanneer nodig
+- `priority` prop: `loading="eager"` + `fetchpriority="high"` voor de primaire LCP-afbeelding (max. één per pagina)
+- `ratio` prop: CSS `aspect-ratio` met drie opties: `16:9`, `4:3`, `1:1`
+- `objectFit` prop: `cover` (default, bijsnijden) of `contain` (volledig zichtbaar)
+- `caption` prop: optioneel `<figcaption>` bijschrift
+- `srcSet` / `sizes` pass-through: voor responsive afbeeldingen
 - `alt=""` activeert automatisch `aria-hidden="true"` op de `<figure>` voor decoratieve afbeeldingen
 
 **CSS klassen:**
@@ -763,7 +763,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 ## Display & Feedback Components
 
-**Status:** Complete (HTML/CSS, React) — 12 components total
+**Status:** Complete (HTML/CSS, React): 12 components total
 
 ### Backdrop
 
@@ -775,39 +775,39 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 **Features:**
 
-- `position: fixed; inset: 0` — bedekt het volledige viewport
-- Semi-transparante overlay via `color-mix(in srgb, var(--dsn-backdrop-background-color) var(--dsn-backdrop-opacity), transparent)` — kleur en transparantie via losse tokens
-- `backdrop-filter: blur()` — valt gracefully weg bij browsers zonder support (~6%); fallback via `dsn-backdrop--no-blur` modifier of `blur={false}` prop
-- Altijd `aria-hidden="true"` — puur decoratief, geen ARIA-rol
+- `position: fixed; inset: 0`: bedekt het volledige viewport
+- Semi-transparante overlay via `color-mix(in srgb, var(--dsn-backdrop-background-color) var(--dsn-backdrop-opacity), transparent)`: kleur en transparantie via losse tokens
+- `backdrop-filter: blur()`: valt gracefully weg bij browsers zonder support (~6%); fallback via `dsn-backdrop--no-blur` modifier of `blur={false}` prop
+- Altijd `aria-hidden="true"`: puur decoratief, geen ARIA-rol
 - `background-color` per thema apart gedefinieerd zodat overlay altijd donker is, ongeacht light/dark mode (patroon identiek aan box-shadow kleurtokens)
-- `blur` prop (boolean, default `true`) — togglet `dsn-backdrop--no-blur` modifier
+- `blur` prop (boolean, default `true`): togglet `dsn-backdrop--no-blur` modifier
 
 **CSS klassen:**
 
 | Klasse                  | Element | Beschrijving                                                           |
 | ----------------------- | ------- | ---------------------------------------------------------------------- |
 | `dsn-backdrop`          | `<div>` | Vaste overlay over het volledige viewport; semi-transparante blur-laag |
-| `dsn-backdrop--no-blur` | `<div>` | Modifier — schakelt backdrop-filter uit (fallback)                     |
+| `dsn-backdrop--no-blur` | `<div>` | Modifier: schakelt backdrop-filter uit (fallback)                      |
 
 **Props (React):**
 
 | Prop   | Type                        | Default | Beschrijving                                                     |
 | ------ | --------------------------- | ------- | ---------------------------------------------------------------- |
 | `blur` | `boolean`                   | `true`  | Schakelt blur-filter in/uit via `dsn-backdrop--no-blur` modifier |
-| `ref`  | `React.Ref<HTMLDivElement>` | —       | Doorgegeven via `React.forwardRef`                               |
+| `ref`  | `React.Ref<HTMLDivElement>` | :       | Doorgegeven via `React.forwardRef`                               |
 
 **Gebruik:**
 
 ```html
-<!-- HTML/CSS — basis -->
+<!-- HTML/CSS: basis -->
 <div class="dsn-backdrop" aria-hidden="true"></div>
 
-<!-- HTML/CSS — zonder blur (fallback) -->
+<!-- HTML/CSS: zonder blur (fallback) -->
 <div class="dsn-backdrop dsn-backdrop--no-blur" aria-hidden="true"></div>
 ```
 
 ```tsx
-// React — conditioneel renderen vanuit parent
+// React: conditioneel renderen vanuit parent
 {
   isOpen && <Backdrop />;
 }
@@ -828,15 +828,15 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 **Features:**
 
-- Root is `<article>` — semantisch zelfstandig inhoudsblok, navigeerbaar via schermlezer-sneltoets
+- Root is `<article>`: semantisch zelfstandig inhoudsblok, navigeerbaar via schermlezer-sneltoets
 - Stretched-link techniek: `::before` pseudo-element van `dsn-card-heading__link` dekt de volledige card (`position: absolute; inset: 0; z-index: 1`)
 - `CardHeader` toont automatisch een afbeeldingsplaceholder (`dsn-card__image-placeholder`) wanneer geen children aanwezig zijn
-- `CardBody` groeit via `flex: 1` — footer uitlijnt altijd onderaan
+- `CardBody` groeit via `flex: 1`: footer uitlijnt altijd onderaan
 - `CardHeading` ontvangt `href` via React context van parent `Card` en wraps children in een `<a class="dsn-card-heading__link">`
 - Footer-kinderen staan boven de stretched link via `z-index: 2` in CSS
 - `CardGroup` rendert als `<ul role="list">` (standaard) of `<div>` via `as` prop
-- Standaard geen box-shadow (`none`); hover verhoogt achtergrond naar `bg-elevated` + box-shadow `md` — overgang via CSS `transition` (background-color + box-shadow)
-- Focus: focus-ring rondom de gehele card via CSS `:has(.dsn-card-heading__link:focus-visible)` — zelfde tokens als Button en Link
+- Standaard geen box-shadow (`none`); hover verhoogt achtergrond naar `bg-elevated` + box-shadow `md`: overgang via CSS `transition` (background-color + box-shadow)
+- Focus: focus-ring rondom de gehele card via CSS `:has(.dsn-card-heading__link:focus-visible)`: zelfde tokens als Button en Link
 - Alle spacing via component-tokens (`dsn.card.body.padding-*`, `dsn.card.footer.padding-*`)
 - Standaard `background: bg-document`; hover `background: bg-elevated` voor elevatie-effect
 
@@ -856,7 +856,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 **HTML/CSS:**
 
 ```html
-<!-- Basis — card met afbeelding en stretched link -->
+<!-- Basis: card met afbeelding en stretched link -->
 <article class="dsn-card">
   <div class="dsn-card__header">
     <figure class="dsn-image dsn-image--ratio-16-9" aria-hidden="true">
@@ -884,7 +884,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
   </div>
 </article>
 
-<!-- Card zonder afbeelding — placeholder via lege header -->
+<!-- Card zonder afbeelding: placeholder via lege header -->
 <article class="dsn-card">
   <div class="dsn-card__header">
     <div class="dsn-card__image-placeholder" aria-hidden="true"></div>
@@ -920,7 +920,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
   </CardFooter>
 </Card>
 
-// Zonder afbeelding — lege CardHeader toont automatisch placeholder
+// Zonder afbeelding: lege CardHeader toont automatisch placeholder
 <Card href="/artikel/slug">
   <CardHeader />
   <CardBody>
@@ -943,8 +943,8 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 | Component     | Prop       | Type            | Default | Beschrijving                                                          |
 | ------------- | ---------- | --------------- | ------- | --------------------------------------------------------------------- |
-| `Card`        | `href`     | `string`        | —       | URL voor de stretched link; doorgegeven via context aan `CardHeading` |
-| `CardHeader`  | `children` | `ReactNode`     | —       | Afbeelding; zonder children → placeholder                             |
+| `Card`        | `href`     | `string`        | :       | URL voor de stretched link; doorgegeven via context aan `CardHeading` |
+| `CardHeader`  | `children` | `ReactNode`     | :       | Afbeelding; zonder children → placeholder                             |
 | `CardHeading` | `level`    | `2 \| 3 \| 4`   | `2`     | Semantisch heading-niveau                                             |
 | `CardGroup`   | `as`       | `'ul' \| 'div'` | `'ul'`  | Container-element; `ul` rendert `role="list"`                         |
 
@@ -967,7 +967,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 **Features:**
 
 - Kleine gekleurde stip die `position: absolute` staat t.o.v. de parent-wrapper
-- Altijd `aria-hidden="true"` — toegankelijke context via `dsn-visually-hidden` in de parent
+- Altijd `aria-hidden="true"`: toegankelijke context via `dsn-visually-hidden` in de parent
 - `pulse` modifier voegt herhalend ring-effect toe via `::before` pseudo-element
 - Logische properties (`inset-block-start`, `inset-inline-end`) voor RTL-correctheid
 - Pulse-animatie respecteert `prefers-reduced-motion: reduce`
@@ -999,9 +999,9 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 **Features:**
 
 - Compact inline pill-badge voor gebruik binnen een Button of Menu-item (via `iconEnd`)
-- Altijd `aria-hidden="true"` — toegankelijke context via `dsn-visually-hidden` in de parent
+- Altijd `aria-hidden="true"`: toegankelijke context via `dsn-visually-hidden` in de parent
 - `maxCount` prop kapt het getal af: toont `{maxCount}+` als `children` groter is (werkt op zowel `number` als numerieke strings)
-- `min-inline-size: calc(1lh + 2 * padding-block)` — badge blijft cirkelrond bij 1–2 cijfers, schaalt mee met de fluid type scale
+- `min-inline-size: calc(1lh + 2 * padding-block)`: badge blijft cirkelrond bij 1–2 cijfers, schaalt mee met de fluid type scale
 - Inverse kleuren: witte tekst op volle signaalachtergrond (`*-inverse-bg-default` + `*-inverse-color-default`)
 - Transparante border voor Windows High Contrast mode ondersteuning
 
@@ -1041,7 +1041,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 - Compact inline label met signaalkleur
 - Optioneel `iconStart` prop voor een icoon vóór het label
-- Geen eigen afmeting — schaalt mee met de omgevende typografie
+- Geen eigen afmeting: schaalt mee met de omgevende typografie
 
 **Tests:** React (10 tests)
 
@@ -1059,13 +1059,13 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 **Features:**
 
-- `role="alert"` live region — schermlezer kondigt wijzigingen automatisch aan
+- `role="alert"` live region: schermlezer kondigt wijzigingen automatisch aan
 - CSS grid layout: icoon + heading naast elkaar (rij 1), body content eronder (rij 2)
 - `grid-template-columns: var(--dsn-icon-size-xl) 1fr`
 - Voorkeurspicoon per variant; overschrijfbaar via `iconStart` (`null` = geen icoon)
 - `heading` verplicht; `headingLevel` default `2` (visueel als `heading-3`)
 - Volledige border rondom (niet alleen inline-start)
-- Body content via `children` — gebruik `<Paragraph>` voor tekst, `<UnorderedList>` voor lijsten
+- Body content via `children`: gebruik `<Paragraph>` voor tekst, `<UnorderedList>` voor lijsten
 
 **HTML/CSS:**
 
@@ -1100,12 +1100,12 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 **Features:**
 
-- Passieve tegenhanger van Alert — geen `role="alert"`, geen live region
+- Passieve tegenhanger van Alert: geen `role="alert"`, geen live region
 - Schermlezer leest Note alleen bij navigatie, niet spontaan
 - `border-inline-start` als visuele markering (niet rondom zoals Alert)
 - CSS grid layout identiek aan Alert
 - `dsn-note--no-heading` modifier: icoon overspant beide rijen (`grid-row: 1 / span 2`)
-- `as` prop: `div` (default), `aside`, `nav`, `section` — semantiek losgekoppeld van visuele stijl
+- `as` prop: `div` (default), `aside`, `nav`, `section`: semantiek losgekoppeld van visuele stijl
 - Automatische `aria-labelledby` via `useId()` voor landmark-elementen met heading
 - `heading` optioneel (Alert: verplicht); `headingLevel` default `3`
 
@@ -1135,7 +1135,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
   <Paragraph>Dit heeft gevolgen voor uw aanvraag.</Paragraph>
 </Note>
 
-// Zonder heading — icoon overspant beide rijen
+// Zonder heading: icoon overspant beide rijen
 <Note variant="info">
   <Paragraph>Extra context zonder titel.</Paragraph>
 </Note>
@@ -1162,12 +1162,12 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 **Features:**
 
-- `<caption>` verplicht — zichtbaar bijschrift en toegankelijke naam voor schermlezers
+- `<caption>` verplicht: zichtbaar bijschrift en toegankelijke naam voor schermlezers
 - `scrollable` prop: wikkelt de tabel in een `<div role="region" aria-labelledby="..." tabindex="0">` voor horizontale scrollbaarheid en toetsenbordtoegang
-- `<tfoot>` via children — automatisch gestijld met vetgedrukte tekst en sterkere bovenborder
+- `<tfoot>` via children: automatisch gestijld met vetgedrukte tekst en sterkere bovenborder
 - Sorteerfunctionaliteit via `aria-sort` op `<th>` + CSS-gestuurde iconen (`dsn-table__sort-icon--{none,ascending,descending}`)
-- Numerieke kolommen via `dsn-table__cell--numeric` — rechts uitgelijnde tekst + tabular nums
-- Selecteerbare rijen via `aria-selected="true"` op `<tr>` — achtergrondkleur via `dsn.color.neutral.bg-active`
+- Numerieke kolommen via `dsn-table__cell--numeric`: rechts uitgelijnde tekst + tabular nums
+- Selecteerbare rijen via `aria-selected="true"` op `<tr>`: achtergrondkleur via `dsn.color.neutral.bg-active`
 - Checkbox- en actiepatronen voor rijselectie en rijacties via standaard Button klassen
 
 **HTML/CSS:**
@@ -1284,15 +1284,15 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 **Features:**
 
-- Gebaseerd op native `<details>`/`<summary>` HTML-elementen — geen JavaScript nodig voor toggle
+- Gebaseerd op native `<details>`/`<summary>` HTML-elementen: geen JavaScript nodig voor toggle
 - `summary` prop: tekst van het klikbare summarylabel
 - `defaultOpen` prop: startwaarde voor open/dicht (default: `false`)
 - `onToggle` callback: ontvangt `(open: boolean)` bij elke toggle
 - Chevron-icoon roteert 180° via CSS bij open staat (`details[open] .dsn-details__icon`)
-- Summarylabel volgt Link-stijlen (`action-2` kleurenserie) — hover underline, focus met geel/zwart ring
+- Summarylabel volgt Link-stijlen (`action-2` kleurenserie): hover underline, focus met geel/zwart ring
 - Contentborder (`border-inline-start`) gecentreerd op het icoon via `calc(icon-size / 2 - border-width / 2)`
-- `width: fit-content` op summary — klikgebied beperkt tot tekst + icoon
-- Impliciete ARIA-rol `group` — geen extra `role` attribuut nodig
+- `width: fit-content` op summary: klikgebied beperkt tot tekst + icoon
+- Impliciete ARIA-rol `group`: geen extra `role` attribuut nodig
 
 **HTML/CSS:**
 
@@ -1355,36 +1355,36 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 **Features:**
 
-- Gebaseerd op het native `<dialog>` element met `.showModal()` — ingebakken focus-trap, `aria-modal`, `inert`-attribuut op de achtergrond
-- Compound component patroon met React Context — `headingId` en `onClose` automatisch doorgegeven aan sub-componenten
-- `aria-labelledby` automatisch gekoppeld aan `ModalDialogHeading` via `React.useId()` — geen handmatige ID nodig
-- Sluitknop (`dsn-button--icon-only`) altijd aanwezig in de header — nooit `aria-label`; tekst via `dsn-button__label`
+- Gebaseerd op het native `<dialog>` element met `.showModal()`: ingebakken focus-trap, `aria-modal`, `inert`-attribuut op de achtergrond
+- Compound component patroon met React Context: `headingId` en `onClose` automatisch doorgegeven aan sub-componenten
+- `aria-labelledby` automatisch gekoppeld aan `ModalDialogHeading` via `React.useId()`: geen handmatige ID nodig
+- Sluitknop (`dsn-button--icon-only`) altijd aanwezig in de header: nooit `aria-label`; tekst via `dsn-button__label`
 - Escape sluit via native `cancel`-event (`handleCancel` roept `onClose` aan)
 - Scroll-affordance schaduw in body (Lea Verou verticale techniek)
 - Open/sluitanimatie via `@starting-style`, `opacity`, `transform` en `allow-discrete`
-- `display: flex` alleen op `[open]` staat — UA `display: none` blijft van kracht wanneer gesloten
-- `flex-direction: column` op de basis-selector — voorkomt layout-glitch tijdens sluitanimatie
+- `display: flex` alleen op `[open]` staat: UA `display: none` blijft van kracht wanneer gesloten
+- `flex-direction: column` op de basis-selector: voorkomt layout-glitch tijdens sluitanimatie
 - Reduceer-motie-ondersteuning via `prefers-reduced-motion: reduce`
-- `level` prop op `ModalDialogHeading` (1–6, default `2`) — visueel uiterlijk altijd gelijk
+- `level` prop op `ModalDialogHeading` (1–6, default `2`): visueel uiterlijk altijd gelijk
 
 **CSS klassen:**
 
 | Klasse                     | Element    | Beschrijving                                                  |
 | -------------------------- | ---------- | ------------------------------------------------------------- |
-| `dsn-modal-dialog`         | `<dialog>` | Root — native dialog; `display: flex` alleen bij `[open]`     |
+| `dsn-modal-dialog`         | `<dialog>` | Root: native dialog; `display: flex` alleen bij `[open]`      |
 | `dsn-modal-dialog__header` | `<div>`    | Flexbox header met heading + sluitknop; border-block-end      |
 | `dsn-modal-dialog-heading` | `<h2>`     | Heading sub-component; `flex: 1`; typografie via eigen tokens |
 | `dsn-modal-dialog__body`   | `<div>`    | Scrollbare inhoud; scroll-affordance schaduwen via background |
 | `dsn-modal-dialog__footer` | `<div>`    | Actiesectie; border-block-start; `flex-shrink: 0`             |
 
-**Props (React — ModalDialog):**
+**Props (React: ModalDialog):**
 
 | Prop       | Type                           | Default | Beschrijving                                             |
 | ---------- | ------------------------------ | ------- | -------------------------------------------------------- |
-| `isOpen`   | `boolean`                      | —       | Bepaalt of het dialoogvenster getoond wordt              |
-| `onClose`  | `() => void`                   | —       | Callback bij sluiten (sluitknop, Escape, buiten klikken) |
-| `children` | `React.ReactNode`              | —       | Sub-componenten: Header, Body, Footer                    |
-| `ref`      | `React.Ref<HTMLDialogElement>` | —       | Doorgegeven via `React.forwardRef`                       |
+| `isOpen`   | `boolean`                      | :       | Bepaalt of het dialoogvenster getoond wordt              |
+| `onClose`  | `() => void`                   | :       | Callback bij sluiten (sluitknop, Escape, buiten klikken) |
+| `children` | `React.ReactNode`              | :       | Sub-componenten: Header, Body, Footer                    |
+| `ref`      | `React.Ref<HTMLDialogElement>` | :       | Doorgegeven via `React.forwardRef`                       |
 
 **HTML/CSS:**
 
@@ -1472,25 +1472,25 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Features:**
 
-- Gebaseerd op het native `<dialog>` element — `modal` prop bepaalt `.showModal()` (focus-trap, backdrop, `aria-modal`) of `.show()` (niet-modaal, achtergrond blijft interactief)
-- `side` prop (`'right'` | `'left'`, default `'right'`) — positioneert het paneel aan de juiste of linker zijkant van het scherm
-- Compound component patroon met React Context — `headingId` en `onClose` automatisch doorgegeven aan sub-componenten
-- `aria-labelledby` automatisch gekoppeld aan `DrawerHeading` via `React.useId()` — geen handmatige ID nodig
-- Sluitknop (`dsn-button--icon-only`) altijd aanwezig in de header — nooit `aria-label`; tekst via `dsn-button__label`
+- Gebaseerd op het native `<dialog>` element: `modal` prop bepaalt `.showModal()` (focus-trap, backdrop, `aria-modal`) of `.show()` (niet-modaal, achtergrond blijft interactief)
+- `side` prop (`'right'` | `'left'`, default `'right'`): positioneert het paneel aan de juiste of linker zijkant van het scherm
+- Compound component patroon met React Context: `headingId` en `onClose` automatisch doorgegeven aan sub-componenten
+- `aria-labelledby` automatisch gekoppeld aan `DrawerHeading` via `React.useId()`: geen handmatige ID nodig
+- Sluitknop (`dsn-button--icon-only`) altijd aanwezig in de header: nooit `aria-label`; tekst via `dsn-button__label`
 - Modal variant: Escape sluit via native `cancel`-event; niet-modaal variant: handmatige `keydown`-listener op Escape
 - Slide-in animatie via `@starting-style` en `translateX` (rechts: van `100%`; links: van `-100%`)
 - `::backdrop` met opacity-transitie voor de modal variant
 - Scroll-affordance schaduw in body (Lea Verou verticale techniek)
-- Border alleen aan de binnenzijde — `border-inline-start` voor rechts, `border-inline-end` voor links; geen border-radius
+- Border alleen aan de binnenzijde: `border-inline-start` voor rechts, `border-inline-end` voor links; geen border-radius
 - `max-width` begrensd via token; `min-gap` garandeert dat de achtergrondpagina zichtbaar blijft
 - Reduceer-motie-ondersteuning via `prefers-reduced-motion: reduce`
-- `level` prop op `DrawerHeading` (1–6, default `2`) — visueel uiterlijk altijd gelijk
+- `level` prop op `DrawerHeading` (1–6, default `2`): visueel uiterlijk altijd gelijk
 
 **CSS klassen:**
 
 | Klasse                   | Element    | Beschrijving                                                  |
 | ------------------------ | ---------- | ------------------------------------------------------------- |
-| `dsn-drawer`             | `<dialog>` | Root — native dialog; `position: fixed; inset-block: 0`       |
+| `dsn-drawer`             | `<dialog>` | Root: native dialog; `position: fixed; inset-block: 0`        |
 | `dsn-drawer--side-right` | `<dialog>` | Positioneert rechts; slide-in van rechts; border links        |
 | `dsn-drawer--side-left`  | `<dialog>` | Positioneert links; slide-in van links; border rechts         |
 | `dsn-drawer__header`     | `<div>`    | Flexbox header met heading + sluitknop; border-block-end      |
@@ -1498,16 +1498,16 @@ const [isOpen, setIsOpen] = React.useState(false);
 | `dsn-drawer__body`       | `<div>`    | Scrollbare inhoud; scroll-affordance schaduwen via background |
 | `dsn-drawer__footer`     | `<div>`    | Actiesectie; border-block-start; `flex-shrink: 0`             |
 
-**Props (React — Drawer):**
+**Props (React: Drawer):**
 
 | Prop       | Type                           | Default   | Beschrijving                                       |
 | ---------- | ------------------------------ | --------- | -------------------------------------------------- |
-| `isOpen`   | `boolean`                      | —         | Bepaalt of het zijpaneel getoond wordt             |
-| `onClose`  | `() => void`                   | —         | Callback bij sluiten (sluitknop, Escape)           |
+| `isOpen`   | `boolean`                      | :         | Bepaalt of het zijpaneel getoond wordt             |
+| `onClose`  | `() => void`                   | :         | Callback bij sluiten (sluitknop, Escape)           |
 | `modal`    | `boolean`                      | `true`    | Modal (focus-trap, backdrop) of niet-modaal        |
 | `side`     | `'right' \| 'left'`            | `'right'` | Zijde van het scherm waaraan het paneel verschijnt |
-| `children` | `React.ReactNode`              | —         | Sub-componenten: Header, Body, Footer              |
-| `ref`      | `React.Ref<HTMLDialogElement>` | —         | Doorgegeven via `React.forwardRef`                 |
+| `children` | `React.ReactNode`              | :         | Sub-componenten: Header, Body, Footer              |
+| `ref`      | `React.Ref<HTMLDialogElement>` | :         | Doorgegeven via `React.forwardRef`                 |
 
 **HTML/CSS:**
 
@@ -1596,20 +1596,20 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Features:**
 
-- Gebaseerd op de HTML Popover API (`popover="auto"`) — ingebakken light-dismiss en top-layer gedrag zonder extra JavaScript voor stacking context
-- Positionering via JavaScript (`getBoundingClientRect` + `offsetWidth`/`offsetHeight`) — RTL-bewust, automatisch viewport-clamping (8px marge)
-- CSS `max-inline-size: min(var(--dsn-popover-max-width), calc(100vw - 1rem))` — nooit breder dan het viewport op smalle schermen
-- Compound component patroon met React Context — `headingId` en `onClose` automatisch doorgegeven aan sub-componenten
+- Gebaseerd op de HTML Popover API (`popover="auto"`): ingebakken light-dismiss en top-layer gedrag zonder extra JavaScript voor stacking context
+- Positionering via JavaScript (`getBoundingClientRect` + `offsetWidth`/`offsetHeight`): RTL-bewust, automatisch viewport-clamping (8px marge)
+- CSS `max-inline-size: min(var(--dsn-popover-max-width), calc(100vw - 1rem))`: nooit breder dan het viewport op smalle schermen
+- Compound component patroon met React Context: `headingId` en `onClose` automatisch doorgegeven aan sub-componenten
 - `aria-labelledby` automatisch gekoppeld aan `PopoverHeading` via `React.useId()` (popovers met heading); `aria-label` via `label` prop (popovers zonder heading, bijv. contextmenu)
-- `aria-expanded` op het triggerelement — synchroon bijgehouden via `triggerRef` prop
+- `aria-expanded` op het triggerelement: synchroon bijgehouden via `triggerRef` prop
 - Sluitknop (`dsn-button--icon-only`) automatisch geïnjecteerd in `PopoverHeader`
 - Open/sluitanimatie via `@starting-style`, `opacity`, `transform: scale` en `allow-discrete` voor `display` en `overlay`
-- `flex-direction: column` op de basis-selector — voorkomt layout-glitch tijdens sluitanimatie
+- `flex-direction: column` op de basis-selector: voorkomt layout-glitch tijdens sluitanimatie
 - Fallback light-dismiss via `pointerdown` op `document` (voor iframe-grenzen en oudere browsers)
-- `placement` prop: `'bottom'` (default), `'top'`, `'end'`, `'start'` — `end`/`start` zijn RTL-bewust
-- `role="dialog"` + `aria-modal="false"` — niet-modaal, geen focus-trap, achtergrond blijft interactief
+- `placement` prop: `'bottom'` (default), `'top'`, `'end'`, `'start'`: `end`/`start` zijn RTL-bewust
+- `role="dialog"` + `aria-modal="false"`: niet-modaal, geen focus-trap, achtergrond blijft interactief
 - Focus springt bij openen naar het eerste interactieve element in de popover
-- `level` prop op `PopoverHeading` (1–6, default `2`) — visueel uiterlijk altijd gelijk
+- `level` prop op `PopoverHeading` (1–6, default `2`): visueel uiterlijk altijd gelijk
 - Reduceer-motie-ondersteuning via `prefers-reduced-motion: reduce`
 
 **CSS klassen:**
@@ -1617,7 +1617,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 | Klasse                          | Element | Beschrijving                                                  |
 | ------------------------------- | ------- | ------------------------------------------------------------- |
 | `dsn-popover-wrapper`           | `<div>` | Relatief-gepositioneerde container voor CSS-only gebruik      |
-| `dsn-popover`                   | `<div>` | Root — `popover="auto"`; `role="dialog"`; animaties en stijl  |
+| `dsn-popover`                   | `<div>` | Root: `popover="auto"`; `role="dialog"`; animaties en stijl   |
 | `dsn-popover--placement-bottom` | `<div>` | CSS-only plaatsing onder de trigger (default)                 |
 | `dsn-popover--placement-top`    | `<div>` | CSS-only plaatsing boven de trigger                           |
 | `dsn-popover--placement-end`    | `<div>` | CSS-only plaatsing rechts (LTR) / links (RTL)                 |
@@ -1627,16 +1627,16 @@ const [isOpen, setIsOpen] = React.useState(false);
 | `dsn-popover__body`             | `<div>` | Inhoudssectie; padding via tokens                             |
 | `dsn-popover__footer`           | `<div>` | Actiesectie; border-block-start; `flex-shrink: 0`             |
 
-**Props (React — Popover):**
+**Props (React: Popover):**
 
 | Prop         | Type                                    | Default    | Beschrijving                                                          |
 | ------------ | --------------------------------------- | ---------- | --------------------------------------------------------------------- |
-| `isOpen`     | `boolean`                               | —          | Bepaalt of de popover getoond wordt                                   |
-| `onClose`    | `() => void`                            | —          | Callback bij sluiten (Escape, klik buiten, sluitknop in header)       |
-| `triggerRef` | `React.RefObject<HTMLElement>`          | —          | Referentie naar het triggerelement voor positionering + focus-herstel |
+| `isOpen`     | `boolean`                               | :          | Bepaalt of de popover getoond wordt                                   |
+| `onClose`    | `() => void`                            | :          | Callback bij sluiten (Escape, klik buiten, sluitknop in header)       |
+| `triggerRef` | `React.RefObject<HTMLElement>`          | :          | Referentie naar het triggerelement voor positionering + focus-herstel |
 | `placement`  | `'top' \| 'bottom' \| 'start' \| 'end'` | `'bottom'` | Gewenste plaatsing relatief aan het triggerelement                    |
-| `label`      | `string`                                | —          | `aria-label` voor popovers zonder `PopoverHeading`                    |
-| `children`   | `React.ReactNode`                       | —          | Sub-componenten: `PopoverHeader`, `PopoverBody`, `PopoverFooter`      |
+| `label`      | `string`                                | :          | `aria-label` voor popovers zonder `PopoverHeading`                    |
+| `children`   | `React.ReactNode`                       | :          | Sub-componenten: `PopoverHeader`, `PopoverBody`, `PopoverFooter`      |
 
 **HTML/CSS:**
 
@@ -1697,7 +1697,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 ## Navigation Components
 
-**Status:** Complete (HTML/CSS, React) — 5 components total
+**Status:** Complete (HTML/CSS, React): 5 components total
 
 ### Menu
 
@@ -1711,17 +1711,17 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Features:**
 
-- Containercomponent voor `MenuLink`- en `MenuButton`-items — rendert een `<ul>` met `list-style: none`
+- Containercomponent voor `MenuLink`- en `MenuButton`-items: rendert een `<ul>` met `list-style: none`
 - `orientation="vertical"` (standaard): `flex-direction: column`, items op volledige breedte
 - `orientation="horizontal"`: `flex-direction: row`, items naast elkaar op inhoudsbreedte
-- Horizontale current-staat gebruikt `border-block-end` (i.p.v. `border-inline-start`) — context-override via `.dsn-menu--horizontal` in `menu-link.css`
+- Horizontale current-staat gebruikt `border-block-end` (i.p.v. `border-inline-start`): context-override via `.dsn-menu--horizontal` in `menu-link.css`
 - De `<nav>`-wrapper is de verantwoordelijkheid van de ouder
 
 **CSS-klassen:**
 
 | Klasse                 | Element | Beschrijving                               |
 | ---------------------- | ------- | ------------------------------------------ |
-| `dsn-menu`             | `<ul>`  | Basiscomponent — altijd aanwezig           |
+| `dsn-menu`             | `<ul>`  | Basiscomponent: altijd aanwezig            |
 | `dsn-menu--horizontal` | `<ul>`  | Horizontale oriëntatie: items naast elkaar |
 
 **Design tokens:**
@@ -1734,7 +1734,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 **Usage:**
 
 ```html
-<!-- HTML/CSS — verticaal (standaard) -->
+<!-- HTML/CSS: verticaal (standaard) -->
 <nav aria-label="Hoofdnavigatie">
   <ul class="dsn-menu">
     <li class="dsn-menu-link">...</li>
@@ -1742,7 +1742,7 @@ const [isOpen, setIsOpen] = React.useState(false);
   </ul>
 </nav>
 
-<!-- HTML/CSS — horizontaal -->
+<!-- HTML/CSS: horizontaal -->
 <nav aria-label="Paginanavigatie">
   <ul class="dsn-menu dsn-menu--horizontal">
     <li class="dsn-menu-link">...</li>
@@ -1752,7 +1752,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 ```
 
 ```tsx
-// React — verticaal (standaard)
+// React: verticaal (standaard)
 <nav aria-label="Hoofdnavigatie">
   <Menu>
     <MenuLink href="/home">Home</MenuLink>
@@ -1760,7 +1760,7 @@ const [isOpen, setIsOpen] = React.useState(false);
   </Menu>
 </nav>
 
-// React — horizontaal
+// React: horizontaal
 <nav aria-label="Paginanavigatie">
   <Menu orientation="horizontal">
     <MenuLink href="/home" current>Home</MenuLink>
@@ -1783,9 +1783,9 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Variants (2 total):** `default`, `compact`
 
-**Props — BreadcrumbNavigation:** `aria-label`, `variant`, `children`
+**Props: BreadcrumbNavigation:** `aria-label`, `variant`, `children`
 
-**Props — BreadcrumbNavigationItem:** `href`, `current`, `children`
+**Props: BreadcrumbNavigationItem:** `href`, `current`, `children`
 
 **Features:**
 
@@ -1793,10 +1793,10 @@ const [isOpen, setIsOpen] = React.useState(false);
 - `aria-current="page"` automatisch op het huidige pagina-item
 - `default` variant: items wrappen naar de volgende rij bij weinig ruimte (`flex-wrap`)
 - `compact` variant: container query collapst naar enkel het ouder-item met terug-pijl (`← Ouder`) bij smalle container (`max-width: 32rem`)
-- Terug-pijl icoon zit binnen de `<a>` — erft linkkleur en hover-stijl automatisch
+- Terug-pijl icoon zit binnen de `<a>`: erft linkkleur en hover-stijl automatisch
 - Scheidingstekens en terug-icoon zijn decoratief (`aria-hidden="true"`)
 - RTL: richtingsgevoelige iconen worden omgedraaid via `transform: scaleX(-1)`
-- Font-size, line-height en icoongrootte volgen `sm` tokens — consistent met Link size small
+- Font-size, line-height en icoongrootte volgen `sm` tokens: consistent met Link size small
 
 **CSS-klassen:**
 
@@ -1814,7 +1814,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 **Usage:**
 
 ```html
-<!-- HTML/CSS — standaard -->
+<!-- HTML/CSS: standaard -->
 <nav aria-label="Broodkruimelpad" class="dsn-breadcrumb-navigation">
   <ol class="dsn-breadcrumb-navigation__list">
     <li class="dsn-breadcrumb-navigation__item">
@@ -1847,13 +1847,13 @@ const [isOpen, setIsOpen] = React.useState(false);
 ```
 
 ```tsx
-// React — standaard
+// React: standaard
 <BreadcrumbNavigation aria-label="Broodkruimelpad">
   <BreadcrumbNavigationItem href="/home">Home</BreadcrumbNavigationItem>
   <BreadcrumbNavigationItem href="/product" current>Product</BreadcrumbNavigationItem>
 </BreadcrumbNavigation>
 
-// React — compact variant
+// React: compact variant
 <BreadcrumbNavigation aria-label="Broodkruimelpad" variant="compact">
   <BreadcrumbNavigationItem href="/home">Home</BreadcrumbNavigationItem>
   <BreadcrumbNavigationItem href="/categorie">Categorie</BreadcrumbNavigationItem>
@@ -1861,7 +1861,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 </BreadcrumbNavigation>
 ```
 
-**Placement:** Vóór `<main>`, na de primaire navigatie — zodat een skip-link alle navigatie in één keer kan overslaan.
+**Placement:** Vóór `<main>`, na de primaire navigatie: zodat een skip-link alle navigatie in één keer kan overslaan.
 
 **Tests:** React (25 tests)
 
@@ -1879,8 +1879,8 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Features:**
 
-- Semantisch een `<a>`, visueel consistent met MenuButton — gebruik voor URL-navigatie
-- Rendeert als `<li class="dsn-menu-link">` — altijd in een `<ul>` plaatsen
+- Semantisch een `<a>`, visueel consistent met MenuButton: gebruik voor URL-navigatie
+- Rendeert als `<li class="dsn-menu-link">`: altijd in een `<ul>` plaatsen
 - `level` prop (1–4) stelt hiërarchische inspringing in via `margin-inline-start` op de link
 - `current` prop voegt `aria-current="page"` toe en toont een `border-inline-start` indicator (3px)
 - `subItems` prop toont een uitklapknop naast de link; `expanded` beheert de open/dichte staat
@@ -1891,11 +1891,11 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 | Klasse                         | Element    | Beschrijving                                              |
 | ------------------------------ | ---------- | --------------------------------------------------------- |
-| `dsn-menu-link`                | `<li>`     | Basiscomponent — altijd aanwezig                          |
+| `dsn-menu-link`                | `<li>`     | Basiscomponent: altijd aanwezig                           |
 | `dsn-menu-link--level-2`       | `<li>`     | Inspringing: 1× `level-indent`                            |
 | `dsn-menu-link--level-3`       | `<li>`     | Inspringing: 2× `level-indent`                            |
 | `dsn-menu-link--level-4`       | `<li>`     | Inspringing: 3× `level-indent`                            |
-| `dsn-menu-link__link`          | `<a>`      | De navigatielink — bevat icoon, label, badge              |
+| `dsn-menu-link__link`          | `<a>`      | De navigatielink: bevat icoon, label, badge               |
 | `dsn-menu-link__label`         | `<span>`   | Zichtbare linktekst                                       |
 | `dsn-menu-link__divider`       | `<span>`   | Decoratieve scheidingslijn tussen link en uitklapknop     |
 | `dsn-menu-link__expand-button` | `<button>` | Uitklapknop; `aria-expanded` toggle; chevron roteert 180° |
@@ -1903,7 +1903,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 **Usage:**
 
 ```html
-<!-- HTML/CSS — level 1, standaard -->
+<!-- HTML/CSS: level 1, standaard -->
 <ul style="list-style: none; margin: 0; padding: 0;">
   <li class="dsn-menu-link">
     <a class="dsn-menu-link__link" href="/dashboard">
@@ -1949,18 +1949,18 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Features:**
 
-- Semantisch een `<button>`, visueel consistent met MenuLink — gebruik voor JS-acties (uitloggen, modal openen, etc.)
-- Rendeert als `<li class="dsn-menu-button">` — altijd in een `<ul>` plaatsen
+- Semantisch een `<button>`, visueel consistent met MenuLink: gebruik voor JS-acties (uitloggen, modal openen, etc.)
+- Rendeert als `<li class="dsn-menu-button">`: altijd in een `<ul>` plaatsen
 - `dotBadge` slot voor een `<DotBadge>` die rechtsboven de tekst zweeft (gerenderd in de label-span, `position: relative`)
-- Geen disabled state — niet van toepassing in navigatiecontext
+- Geen disabled state: niet van toepassing in navigatiecontext
 - Volledig gedeelde visuele stijl via `--dsn-menu-item-*` tokens
 
 **CSS-klassen:**
 
 | Klasse                    | Element    | Beschrijving                                                             |
 | ------------------------- | ---------- | ------------------------------------------------------------------------ |
-| `dsn-menu-button`         | `<li>`     | Basiscomponent — altijd aanwezig                                         |
-| `dsn-menu-button__button` | `<button>` | De knop — button-reset + volledige breedte, flexbox layout               |
+| `dsn-menu-button`         | `<li>`     | Basiscomponent: altijd aanwezig                                          |
+| `dsn-menu-button__button` | `<button>` | De knop: button-reset + volledige breedte, flexbox layout                |
 | `dsn-menu-button__label`  | `<span>`   | Zichtbare knoptekst; `flex: 1`; `position: relative` voor dotBadge anker |
 
 **Usage:**
@@ -2023,11 +2023,11 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 - Mobile-first: hamburgerknop (inline-start) opent een `Drawer`, gecentreerd logo (CSS-grid `1fr auto 1fr`), zoekknop (inline-end) ontvouwt zoekpaneel direct onder de header
 - Boven `64em` (~1024px): tweebandig large viewport layout via `display: none` switch (`layout="default"`, standaard)
-  - **Masthead** — neutrale achtergrond met logo (inline-start), servicemenu en inline zoekveld (inline-end)
-  - **Navigatiebalk** — accent-1 achtergrond met primaire navigatie; MenuLink-items krijgen `min-block-size: 4rem` en `padding-inline: var(--dsn-space-inline-xl)` via token-overschrijving op de container
-- `layout="compact"` — één rij op large viewport: logo (inline-start) | primaire navigatie (gecentreerd, CSS-grid `1fr auto 1fr`) | servicemenu + icon-only zoekknop (inline-end)
-- `colorScheme="inverse"` — accent-1-inverse achtergrond op navbar, compact balk en zoekpaneel; masthead blijft neutraal; logo en menu-items passen kleuren automatisch aan via CSS custom property overrides
-- `primaryNavigationLarge` / `secondaryNavigationLarge` — aparte slots voor large viewport; valt terug op de mobile variant wanneer weggelaten
+  - **Masthead**: neutrale achtergrond met logo (inline-start), servicemenu en inline zoekveld (inline-end)
+  - **Navigatiebalk**: accent-1 achtergrond met primaire navigatie; MenuLink-items krijgen `min-block-size: 4rem` en `padding-inline: var(--dsn-space-inline-xl)` via token-overschrijving op de container
+- `layout="compact"`: één rij op large viewport: logo (inline-start) | primaire navigatie (gecentreerd, CSS-grid `1fr auto 1fr`) | servicemenu + icon-only zoekknop (inline-end)
+- `colorScheme="inverse"`: accent-1-inverse achtergrond op navbar, compact balk en zoekpaneel; masthead blijft neutraal; logo en menu-items passen kleuren automatisch aan via CSS custom property overrides
+- `primaryNavigationLarge` / `secondaryNavigationLarge`: aparte slots voor large viewport; valt terug op de mobile variant wanneer weggelaten
 - `sticky='sticky'`: `position: sticky; inset-block-start: 0`
 - `sticky='auto-hide'`: sticky + verbergt bij scroll-down via JS `scroll`-eventlistener (`data-hidden` attribuut), CSS-transitie animeert de beweging
 - Focus management: openen zoekpaneel → focus naar `<input>`; sluiten → focus terug naar zoekknop
@@ -2070,7 +2070,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 | `--dsn-page-header-border-block-end-color`        | `{dsn.color.accent-1.color-default}` | Kleur onderkantrand (merkkleur)             |
 | `--dsn-page-header-padding-block`                 | `{dsn.space.block.md}`               | Verticale padding mobile binnenbalk         |
 | `--dsn-page-header-padding-inline`                | `{dsn.space.inline.xl}`              | Horizontale padding mobile binnenbalk       |
-| `--dsn-page-header-z-index`                       | `300`                                | Z-index sticky — onder backdrop (400)       |
+| `--dsn-page-header-z-index`                       | `300`                                | Z-index sticky: onder backdrop (400)        |
 | `--dsn-page-header-logo-max-block-size`           | `2rem`                               | Maximale hoogte logo (32px)                 |
 | `--dsn-page-header-search-panel-background-color` | `{dsn.color.accent-1.bg-default}`    | Achtergrond zoekpaneel (small viewport)     |
 | `--dsn-page-header-search-panel-padding-block`    | `{dsn.space.block.md}`               | Verticale padding zoekpaneel                |
@@ -2088,7 +2088,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 **Usage:**
 
 ```html
-<!-- HTML/CSS — small viewport -->
+<!-- HTML/CSS: small viewport -->
 <header class="dsn-page-header">
   <div class="dsn-page-header__small-layout">
     <div class="dsn-page-header__inner">
@@ -2107,7 +2107,7 @@ const [isOpen, setIsOpen] = React.useState(false);
         <a href="/">
           <svg class="dsn-logo" aria-hidden="true"><!-- logo --></svg>
           <span class="dsn-visually-hidden"
-            >Naam organisatie — terug naar homepage</span
+            >Naam organisatie: terug naar homepage</span
           >
         </a>
       </div>
@@ -2191,7 +2191,7 @@ const [isOpen, setIsOpen] = React.useState(false);
     <a href="/">
       <Logo aria-hidden={true} />
       <span className="dsn-visually-hidden">
-        Naam organisatie — terug naar homepage
+        Naam organisatie: terug naar homepage
       </span>
     </a>
   }
@@ -2239,7 +2239,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 ## Branding Components
 
-**Status:** Complete (HTML/CSS, React) — 1 component total
+**Status:** Complete (HTML/CSS, React): 1 component total
 
 ### Logo
 
@@ -2253,7 +2253,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Features:**
 
-- Rendert het Starter Kit-logo als inline SVG — CSS-klassen op paden werken hierdoor correct
+- Rendert het Starter Kit-logo als inline SVG: CSS-klassen op paden werken hierdoor correct
 - Twee kleurlagen via design tokens: `dsn-logo__primary` (achtergrond + letterpaden) en `dsn-logo__label` (binnenste rechthoek)
 - Tokens refereren naar thema-kleuren → past automatisch mee bij thema- en moduswisseling
 - Standalone gebruik: `role="img"` + `<title id>` + `aria-labelledby` koppeling
@@ -2263,23 +2263,23 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **CSS-klassen:**
 
-| Klasse              | Element  | Beschrijving                                                                    |
-| ------------------- | -------- | ------------------------------------------------------------------------------- |
-| `dsn-logo`          | `<svg>`  | Basisklasse voor het logocomponent                                              |
-| `dsn-logo__primary` | `<path>` | Achtergrondrechthoek + alle letterpaden — `fill: var(--dsn-logo-color-primary)` |
-| `dsn-logo__label`   | `<path>` | Binnenste rechthoek — `fill: var(--dsn-logo-color-label)`                       |
+| Klasse              | Element  | Beschrijving                                                                   |
+| ------------------- | -------- | ------------------------------------------------------------------------------ |
+| `dsn-logo`          | `<svg>`  | Basisklasse voor het logocomponent                                             |
+| `dsn-logo__primary` | `<path>` | Achtergrondrechthoek + alle letterpaden: `fill: var(--dsn-logo-color-primary)` |
+| `dsn-logo__label`   | `<path>` | Binnenste rechthoek: `fill: var(--dsn-logo-color-label)`                       |
 
 **Design Tokens:**
 
-| Token                      | Waarde                                    | Beschrijving                                  |
-| -------------------------- | ----------------------------------------- | --------------------------------------------- |
-| `--dsn-logo-color-primary` | `{dsn.color.accent-1-inverse.bg-default}` | Merkkleur — blauw (Start) / zwart (Wireframe) |
-| `--dsn-logo-color-label`   | `{dsn.color.neutral.bg-document}`         | Documentachtergrond — doorkijkje-effect       |
+| Token                      | Waarde                                    | Beschrijving                                 |
+| -------------------------- | ----------------------------------------- | -------------------------------------------- |
+| `--dsn-logo-color-primary` | `{dsn.color.accent-1-inverse.bg-default}` | Merkkleur: blauw (Start) / zwart (Wireframe) |
+| `--dsn-logo-color-label`   | `{dsn.color.neutral.bg-document}`         | Documentachtergrond: doorkijkje-effect       |
 
 **Usage:**
 
 ```html
-<!-- HTML/CSS — standalone -->
+<!-- HTML/CSS: standalone -->
 <svg
   class="dsn-logo"
   xmlns="http://www.w3.org/2000/svg"
@@ -2296,24 +2296,24 @@ const [isOpen, setIsOpen] = React.useState(false);
   <!-- letterpaden met dsn-logo__primary -->
 </svg>
 
-<!-- HTML/CSS — decoratief (in een link) -->
+<!-- HTML/CSS: decoratief (in een link) -->
 <a href="/">
   <svg class="dsn-logo" aria-hidden="true" ...><!-- paden --></svg>
-  <span class="dsn-visually-hidden">Starter Kit — terug naar homepage</span>
+  <span class="dsn-visually-hidden">Starter Kit: terug naar homepage</span>
 </a>
 ```
 
 ```tsx
-// React — standalone
+// React: standalone
 <Logo />
 
-// React — decoratief
+// React: decoratief
 <a href="/">
   <Logo aria-hidden={true} />
-  <span className="dsn-visually-hidden">Starter Kit — terug naar homepage</span>
+  <span className="dsn-visually-hidden">Starter Kit: terug naar homepage</span>
 </a>
 
-// React — custom title
+// React: custom title
 <Logo title="Mijn Organisatie" />
 ```
 
@@ -2323,7 +2323,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 ## Accessibility Components
 
-**Status:** Complete (HTML/CSS, React) — 1 component total
+**Status:** Complete (HTML/CSS, React): 1 component total
 
 ### SkipLink
 
@@ -2337,10 +2337,10 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Features:**
 
-- Eerste focusbaar element op de pagina — plaatsen vóór `<header>` en `<nav>` in de DOM
-- Standaard verborgen via `clip-path: inset(50%)` — blijft in de accessibility tree (screenreaders kunnen het vinden)
-- Zichtbaar bij `:focus-visible` — gepositioneerd in de hoek van het viewport met focus-stijlen
-- Z-index 600 — boven modals (500), drawer (500) en backdrop (400)
+- Eerste focusbaar element op de pagina: plaatsen vóór `<header>` en `<nav>` in de DOM
+- Standaard verborgen via `clip-path: inset(50%)`: blijft in de accessibility tree (screenreaders kunnen het vinden)
+- Zichtbaar bij `:focus-visible`: gepositioneerd in de hoek van het viewport met focus-stijlen
+- Z-index 600: boven modals (500), drawer (500) en backdrop (400)
 - Voldoet aan WCAG 2.1 succescriterium 2.4.1 (Bypass Blocks, Level A)
 - `React.forwardRef<HTMLAnchorElement>`
 
@@ -2364,7 +2364,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 **Usage:**
 
 ```html
-<!-- HTML/CSS — altijd als eerste element in <body> -->
+<!-- HTML/CSS: altijd als eerste element in <body> -->
 <a href="#main-content" class="dsn-skip-link">Ga direct naar de hoofdinhoud</a>
 <header>...</header>
 <main id="main-content" tabindex="-1">...</main>
@@ -2383,7 +2383,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 ## Form Components
 
-**Status:** Complete (HTML/CSS, React) — 25 components total
+**Status:** Complete (HTML/CSS, React): 25 components total
 
 **Location:** `packages/components-{html|react}/src/`
 
@@ -2459,7 +2459,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Tokens:** `tokens/components/time-input.json`, extends TextInput tokens
 
-**Features:** Wrapper with interactive clock button (`Button subtle small iconOnly`) at inline-end. `showPicker()` triggered via internal ref. No `width` prop — fixed `sm` width.
+**Features:** Wrapper with interactive clock button (`Button subtle small iconOnly`) at inline-end. `showPicker()` triggered via internal ref. No `width` prop: fixed `sm` width.
 
 **Props:** `invalid`, `disabled`, `readOnly`, and all native `<input type="time">` attributes
 
@@ -2469,7 +2469,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Tokens:** `tokens/components/date-input.json`, extends TextInput tokens
 
-**Features:** Wrapper with interactive calendar button (`Button subtle small iconOnly`, `calendar-event` icon) at inline-end. Same pattern as TimeInput. `showPicker()` via internal ref + `handleRef` merge. Fixed width — no `width` prop.
+**Features:** Wrapper with interactive calendar button (`Button subtle small iconOnly`, `calendar-event` icon) at inline-end. Same pattern as TimeInput. `showPicker()` via internal ref + `handleRef` merge. Fixed width: no `width` prop.
 
 **Props:** `invalid`, `disabled`, `readOnly`, and all native `<input type="date">` attributes
 
@@ -2557,7 +2557,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Tokens:** `tokens/components/checkbox-group.json`
 
-**Features:** Simple div container for `CheckboxOption` items. Fieldset/legend structure lives in `FormFieldset` — always wrap `CheckboxGroup` in a `FormFieldset` for accessible grouping.
+**Features:** Simple div container for `CheckboxOption` items. Fieldset/legend structure lives in `FormFieldset`: always wrap `CheckboxGroup` in a `FormFieldset` for accessible grouping.
 
 **Props:** `children`, standard div attributes
 
@@ -2567,7 +2567,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Tokens:** `tokens/components/radio-group.json`
 
-**Features:** Simple div container for `RadioOption` items. Fieldset/legend structure lives in `FormFieldset` — always wrap `RadioGroup` in a `FormFieldset` for accessible grouping.
+**Features:** Simple div container for `RadioOption` items. Fieldset/legend structure lives in `FormFieldset`: always wrap `RadioGroup` in a `FormFieldset` for accessible grouping.
 
 **Props:** `children`, standard div attributes
 

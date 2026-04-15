@@ -1,13 +1,13 @@
 # @dsn/core
 
-Core utilities and global styles for the design system — CSS reset, utility classes, and shared JavaScript helpers.
+Core utilities and global styles for the design system: CSS reset, utility classes, and shared JavaScript helpers.
 
 ## Features
 
 - CSS reset (normalize + opinionated defaults)
 - Utility CSS classes
-- `classNames()` — conditional class name builder
-- `bem()` / `bemModifiers()` — BEM class name helpers
+- `classNames()`: conditional class name builder
+- `bem()` / `bemModifiers()`: BEM class name helpers
 
 ## Installation
 

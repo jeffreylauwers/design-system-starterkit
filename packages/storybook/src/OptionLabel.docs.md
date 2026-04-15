@@ -16,9 +16,9 @@ De OptionLabel component is een gespecialiseerd label element voor gebruik met c
 
 ## Don't use when
 
-- Je een checkbox met label nodig hebt — gebruik dan [CheckboxOption](/docs/components-checkboxoption--docs).
-- Je een radio button met label nodig hebt — gebruik dan [RadioOption](/docs/components-radiooption--docs).
-- Je een label voor andere form inputs nodig hebt — gebruik dan FormFieldLabel.
+- Je een checkbox met label nodig hebt: gebruik dan [CheckboxOption](/docs/components-checkboxoption--docs).
+- Je een radio button met label nodig hebt: gebruik dan [RadioOption](/docs/components-radiooption--docs).
+- Je een label voor andere form inputs nodig hebt: gebruik dan FormFieldLabel.
 
 ## Best practices
 

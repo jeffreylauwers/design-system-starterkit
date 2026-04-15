@@ -1,6 +1,6 @@
 # @dsn/components-web
 
-Web Components for the design system — framework-agnostic custom elements using Shadow DOM.
+Web Components for the design system: framework-agnostic custom elements using Shadow DOM.
 
 ## Features
 

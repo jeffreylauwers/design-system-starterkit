@@ -4,7 +4,7 @@ Een link die semantisch een `<a>` is, maar visueel het uiterlijk van een [Button
 
 ## Doel
 
-`ButtonLink` verhoogt de attentiewaarde van een navigatieactie op plekken waar een gewone [Link](/docs/components-link--docs) te weinig prominentie heeft. Gebruik het wanneer een actie naar een andere pagina of URL navigeert — dus een echte `<a href>` nodig is — maar de visuele prominentie van een Button beter aansluit bij de context.
+`ButtonLink` verhoogt de attentiewaarde van een navigatieactie op plekken waar een gewone [Link](/docs/components-link--docs) te weinig prominentie heeft. Gebruik het wanneer een actie naar een andere pagina of URL navigeert: dus een echte `<a href>` nodig is: maar de visuele prominentie van een Button beter aansluit bij de context.
 
 <!-- VOORBEELD -->
 
@@ -16,10 +16,10 @@ Een link die semantisch een `<a>` is, maar visueel het uiterlijk van een [Button
 
 ## Don't use when
 
-- De actie een JavaScript-handler of form-submit vereist en niet navigeert — gebruik dan de [Button](/docs/components-button--docs) component.
-- Je een knop wilt met een lage attentiewaarde die navigeert — gebruik dan de [Link](/docs/components-link--docs) component.
-- Je JS-acties met een lage visuele prominentie wilt — gebruik dan de [LinkButton](/docs/components-linkbutton--docs) component.
-- Je een echte `<button>` nodig hebt maar het eruit wil laten zien als een link — gebruik dan `LinkButton`, nooit een `<button>` met `href`.
+- De actie een JavaScript-handler of form-submit vereist en niet navigeert: gebruik dan de [Button](/docs/components-button--docs) component.
+- Je een knop wilt met een lage attentiewaarde die navigeert: gebruik dan de [Link](/docs/components-link--docs) component.
+- Je JS-acties met een lage visuele prominentie wilt: gebruik dan de [LinkButton](/docs/components-linkbutton--docs) component.
+- Je een echte `<button>` nodig hebt maar het eruit wil laten zien als een link: gebruik dan `LinkButton`, nooit een `<button>` met `href`.
 
 ## Best practices
 
@@ -31,9 +31,9 @@ Een link die semantisch een `<a>` is, maar visueel het uiterlijk van een [Button
 
 ## Accessibility
 
-- Semantisch een `<a>` — screenreaders kondigen het element aan als "link", niet als "knop". Gebruikers weten daardoor dat de actie navigatie veroorzaakt.
-- `disabled` werkt via `aria-disabled="true"` + `tabIndex={-1}` — `<a>` heeft geen native `disabled` attribuut.
-- `iconOnly` via `dsn-button__label` — tekst visueel verborgen maar beschikbaar voor screenreaders. Gebruik altijd beschrijvende `children` als toegankelijke naam.
+- Semantisch een `<a>`: screenreaders kondigen het element aan als "link", niet als "knop". Gebruikers weten daardoor dat de actie navigatie veroorzaakt.
+- `disabled` werkt via `aria-disabled="true"` + `tabIndex={-1}`: `<a>` heeft geen native `disabled` attribuut.
+- `iconOnly` via `dsn-button__label`: tekst visueel verborgen maar beschikbaar voor screenreaders. Gebruik altijd beschrijvende `children` als toegankelijke naam.
 - Iconen zijn altijd decoratief (`aria-hidden="true"`).
 - `external` voegt zichtbare tekst "(opent nieuw tabblad)" toe voor alle gebruikers, niet alleen screenreaders.
 

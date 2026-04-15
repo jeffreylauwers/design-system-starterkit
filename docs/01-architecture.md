@@ -289,9 +289,9 @@ The full-featured default theme with brand colors and polished styling.
 A minimal theme for prototyping and development.
 
 - **Font**: Comic Sans MS (for clear wireframe distinction)
-- **Border radius**: 2px (sm), 4px (md), 8px (lg) — more minimal
-- **Border width**: 2px (thin), 4px (medium), 8px (thick) — thicker than start
-- **Colors**: Pure black & white — all color scales (accent, action, info, positive, negative, warning) alias to neutral
+- **Border radius**: 2px (sm), 4px (md), 8px (lg): more minimal
+- **Border width**: 2px (thin), 4px (medium), 8px (thick): thicker than start
+- **Colors**: Pure black & white: all color scales (accent, action, info, positive, negative, warning) alias to neutral
 - **Light mode**: backgrounds #FFFFFF, text/borders #000000
 - **Dark mode**: backgrounds #000000, text/borders #FFFFFF
 - **Focus**: Yellow (#ffdd00) background with solid black/white outline
