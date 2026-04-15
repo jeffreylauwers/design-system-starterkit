@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, DotBadge, Icon, Link } from '@dsn/components-react';
+import { Button, DotBadge, Icon } from '@dsn/components-react';
 import DocsPage from './DotBadge.docs.mdx';
 
 const meta: Meta<typeof DotBadge> = {
@@ -200,41 +200,6 @@ export const WithButton: Story = {
           <span className="dsn-visually-hidden">, status bijgewerkt</span>
         </Button>
         <DotBadge variant="positive" />
-      </div>
-    </div>
-  ),
-};
-
-export const WithLink: Story = {
-  name: 'With Link',
-  render: () => (
-    <div
-      style={{
-        display: 'flex',
-        gap: '2rem',
-        flexWrap: 'wrap',
-        alignItems: 'flex-start',
-      }}
-    >
-      {/* Link met dot */}
-      <div style={{ position: 'relative', display: 'inline-flex' }}>
-        <Link href="#">
-          Meldingen
-          <span className="dsn-visually-hidden"> (ongelezen)</span>
-        </Link>
-        <DotBadge variant="negative" />
-      </div>
-
-      {/* Link met pulserende dot */}
-      <div style={{ position: 'relative', display: 'inline-flex' }}>
-        <Link href="#">
-          Updates
-          <span className="dsn-visually-hidden">
-            {' '}
-            (nieuwe updates beschikbaar)
-          </span>
-        </Link>
-        <DotBadge variant="info" pulse />
       </div>
     </div>
   ),

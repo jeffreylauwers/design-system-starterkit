@@ -8,6 +8,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--dsn-link-gap);
+  position: relative; /* Ankerpunt voor DotBadge */
 
   /* Typography */
   color: var(--dsn-link-color);
