@@ -794,7 +794,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 | Prop   | Type                        | Default | Beschrijving                                                     |
 | ------ | --------------------------- | ------- | ---------------------------------------------------------------- |
 | `blur` | `boolean`                   | `true`  | Schakelt blur-filter in/uit via `dsn-backdrop--no-blur` modifier |
-| `ref`  | `React.Ref<HTMLDivElement>` | :       | Doorgegeven via `React.forwardRef`                               |
+| `ref`  | `React.Ref<HTMLDivElement>` | -       | Doorgegeven via `React.forwardRef`                               |
 
 **Gebruik:**
 
@@ -943,8 +943,8 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 | Component     | Prop       | Type            | Default | Beschrijving                                                          |
 | ------------- | ---------- | --------------- | ------- | --------------------------------------------------------------------- |
-| `Card`        | `href`     | `string`        | :       | URL voor de stretched link; doorgegeven via context aan `CardHeading` |
-| `CardHeader`  | `children` | `ReactNode`     | :       | Afbeelding; zonder children → placeholder                             |
+| `Card`        | `href`     | `string`        | -       | URL voor de stretched link; doorgegeven via context aan `CardHeading` |
+| `CardHeader`  | `children` | `ReactNode`     | -       | Afbeelding; zonder children → placeholder                             |
 | `CardHeading` | `level`    | `2 \| 3 \| 4`   | `2`     | Semantisch heading-niveau                                             |
 | `CardGroup`   | `as`       | `'ul' \| 'div'` | `'ul'`  | Container-element; `ul` rendert `role="list"`                         |
 
@@ -1381,10 +1381,10 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 | Prop       | Type                           | Default | Beschrijving                                             |
 | ---------- | ------------------------------ | ------- | -------------------------------------------------------- |
-| `isOpen`   | `boolean`                      | :       | Bepaalt of het dialoogvenster getoond wordt              |
-| `onClose`  | `() => void`                   | :       | Callback bij sluiten (sluitknop, Escape, buiten klikken) |
-| `children` | `React.ReactNode`              | :       | Sub-componenten: Header, Body, Footer                    |
-| `ref`      | `React.Ref<HTMLDialogElement>` | :       | Doorgegeven via `React.forwardRef`                       |
+| `isOpen`   | `boolean`                      | -       | Bepaalt of het dialoogvenster getoond wordt              |
+| `onClose`  | `() => void`                   | -       | Callback bij sluiten (sluitknop, Escape, buiten klikken) |
+| `children` | `React.ReactNode`              | -       | Sub-componenten: Header, Body, Footer                    |
+| `ref`      | `React.Ref<HTMLDialogElement>` | -       | Doorgegeven via `React.forwardRef`                       |
 
 **HTML/CSS:**
 
@@ -1502,12 +1502,12 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 | Prop       | Type                           | Default   | Beschrijving                                       |
 | ---------- | ------------------------------ | --------- | -------------------------------------------------- |
-| `isOpen`   | `boolean`                      | :         | Bepaalt of het zijpaneel getoond wordt             |
-| `onClose`  | `() => void`                   | :         | Callback bij sluiten (sluitknop, Escape)           |
+| `isOpen`   | `boolean`                      | -         | Bepaalt of het zijpaneel getoond wordt             |
+| `onClose`  | `() => void`                   | -         | Callback bij sluiten (sluitknop, Escape)           |
 | `modal`    | `boolean`                      | `true`    | Modal (focus-trap, backdrop) of niet-modaal        |
 | `side`     | `'right' \| 'left'`            | `'right'` | Zijde van het scherm waaraan het paneel verschijnt |
-| `children` | `React.ReactNode`              | :         | Sub-componenten: Header, Body, Footer              |
-| `ref`      | `React.Ref<HTMLDialogElement>` | :         | Doorgegeven via `React.forwardRef`                 |
+| `children` | `React.ReactNode`              | -         | Sub-componenten: Header, Body, Footer              |
+| `ref`      | `React.Ref<HTMLDialogElement>` | -         | Doorgegeven via `React.forwardRef`                 |
 
 **HTML/CSS:**
 
@@ -1631,12 +1631,12 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 | Prop         | Type                                    | Default    | Beschrijving                                                          |
 | ------------ | --------------------------------------- | ---------- | --------------------------------------------------------------------- |
-| `isOpen`     | `boolean`                               | :          | Bepaalt of de popover getoond wordt                                   |
-| `onClose`    | `() => void`                            | :          | Callback bij sluiten (Escape, klik buiten, sluitknop in header)       |
-| `triggerRef` | `React.RefObject<HTMLElement>`          | :          | Referentie naar het triggerelement voor positionering + focus-herstel |
+| `isOpen`     | `boolean`                               | -          | Bepaalt of de popover getoond wordt                                   |
+| `onClose`    | `() => void`                            | -          | Callback bij sluiten (Escape, klik buiten, sluitknop in header)       |
+| `triggerRef` | `React.RefObject<HTMLElement>`          | -          | Referentie naar het triggerelement voor positionering + focus-herstel |
 | `placement`  | `'top' \| 'bottom' \| 'start' \| 'end'` | `'bottom'` | Gewenste plaatsing relatief aan het triggerelement                    |
-| `label`      | `string`                                | :          | `aria-label` voor popovers zonder `PopoverHeading`                    |
-| `children`   | `React.ReactNode`                       | :          | Sub-componenten: `PopoverHeader`, `PopoverBody`, `PopoverFooter`      |
+| `label`      | `string`                                | -          | `aria-label` voor popovers zonder `PopoverHeading`                    |
+| `children`   | `React.ReactNode`                       | -          | Sub-componenten: `PopoverHeader`, `PopoverBody`, `PopoverFooter`      |
 
 **HTML/CSS:**
 
