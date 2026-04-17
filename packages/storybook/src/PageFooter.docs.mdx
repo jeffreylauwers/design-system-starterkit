@@ -18,7 +18,7 @@ export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
 <CodeTabs
   of={PageFooterStories.Default}
   react={`<PageFooter
-  logoSlot={
+  slot1={
     <a href="/">
       <Logo aria-hidden={true} />
       <span className="dsn-visually-hidden">
@@ -26,13 +26,13 @@ export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
       </span>
     </a>
   }
-  secondarySlot={
+  slot2={
     <Paragraph>
       Dit is een voorbeeldorganisatie.{' '}
       <Link href="/about">Meer informatie</Link>.
     </Paragraph>
   }
-  contentSlot={
+  slot3={
     <UnorderedList>
       <li><Link href="/nieuws">Nieuws</Link></li>
       <li><Link href="/over-ons">Over ons</Link></li>
@@ -40,7 +40,7 @@ export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
       <li><Link href="/klachten">Klachten</Link></li>
     </UnorderedList>
   }
-  linksSlot={
+  slot4={
     <UnorderedList>
       <li><Link href="/privacy">Privacyverklaring</Link></li>
       <li><Link href="/accessibility">Toegankelijkheid</Link></li>

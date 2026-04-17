@@ -12,7 +12,7 @@ import { rtlDecorator } from './story-helpers';
 // META
 // =============================================================================
 
-const logoSlot = (
+const slot1 = (
   <a href="/">
     <Logo aria-hidden={true} />
     <span className="dsn-visually-hidden">
@@ -21,13 +21,13 @@ const logoSlot = (
   </a>
 );
 
-const secondarySlot = (
+const slot2 = (
   <Paragraph>
     Dit is een voorbeeldorganisatie. <Link href="/about">Meer informatie</Link>.
   </Paragraph>
 );
 
-const contentSlot = (
+const slot3 = (
   <UnorderedList>
     <li>
       <Link href="/nieuws">Nieuws</Link>
@@ -44,7 +44,7 @@ const contentSlot = (
   </UnorderedList>
 );
 
-const linksSlot = (
+const slot4 = (
   <UnorderedList>
     <li>
       <Link href="/privacy">Privacyverklaring</Link>
@@ -65,7 +65,7 @@ const linksSlot = (
 // ARABISCHE CONTENT (voor RTL stories)
 // =============================================================================
 
-const logoSlotAR = (
+const slot1AR = (
   <a href="/">
     <Logo aria-hidden={true} />
     <span className="dsn-visually-hidden">
@@ -74,13 +74,13 @@ const logoSlotAR = (
   </a>
 );
 
-const secondarySlotAR = (
+const slot2AR = (
   <Paragraph>
     هذه منظمة نموذجية. <Link href="/about">مزيد من المعلومات</Link>.
   </Paragraph>
 );
 
-const contentSlotAR = (
+const slot3AR = (
   <UnorderedList>
     <li>
       <Link href="/nieuws">أخبار</Link>
@@ -97,7 +97,7 @@ const contentSlotAR = (
   </UnorderedList>
 );
 
-const linksSlotAR = (
+const slot4AR = (
   <UnorderedList>
     <li>
       <Link href="/privacy">سياسة الخصوصية</Link>
@@ -161,10 +161,10 @@ const meta: Meta<typeof PageFooter> = {
     },
   },
   args: {
-    logoSlot,
-    secondarySlot,
-    contentSlot,
-    linksSlot,
+    slot1,
+    slot2,
+    slot3,
+    slot4,
   },
   argTypes: {
     colorScheme: {
@@ -173,10 +173,10 @@ const meta: Meta<typeof PageFooter> = {
       description:
         'Kleurschema: `default` (accent-1) of `inverse` (accent-1-inverse)',
     },
-    logoSlot: { control: false },
-    secondarySlot: { control: false },
-    contentSlot: { control: false },
-    linksSlot: { control: false },
+    slot1: { control: false },
+    slot2: { control: false },
+    slot3: { control: false },
+    slot4: { control: false },
   },
 };
 
@@ -211,18 +211,13 @@ export const AllVariants: Story = {
   name: 'Alle varianten',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      <PageFooter
-        logoSlot={logoSlot}
-        secondarySlot={secondarySlot}
-        contentSlot={contentSlot}
-        linksSlot={linksSlot}
-      />
+      <PageFooter slot1={slot1} slot2={slot2} slot3={slot3} slot4={slot4} />
       <PageFooter
         colorScheme="inverse"
-        logoSlot={logoSlot}
-        secondarySlot={secondarySlot}
-        contentSlot={contentSlot}
-        linksSlot={linksSlot}
+        slot1={slot1}
+        slot2={slot2}
+        slot3={slot3}
+        slot4={slot4}
       />
     </div>
   ),
@@ -240,10 +235,10 @@ export const DefaultRTL: Story = {
   name: 'Default: RTL',
   decorators: [rtlDecorator],
   args: {
-    logoSlot: logoSlotAR,
-    secondarySlot: secondarySlotAR,
-    contentSlot: contentSlotAR,
-    linksSlot: linksSlotAR,
+    slot1: slot1AR,
+    slot2: slot2AR,
+    slot3: slot3AR,
+    slot4: slot4AR,
   },
   parameters: {
     docs: {

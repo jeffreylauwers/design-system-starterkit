@@ -17,29 +17,29 @@ describe('PageFooter', () => {
   // ---------------------------------------------------------------------------
 
   it('rendert een <footer>-element', () => {
-    const { container } = render(<PageFooter logoSlot={defaultLogo} />);
+    const { container } = render(<PageFooter slot1={defaultLogo} />);
     expect(container.querySelector('footer')).toBeTruthy();
   });
 
   it('heeft de basis dsn-page-footer klasse', () => {
-    const { container } = render(<PageFooter logoSlot={defaultLogo} />);
+    const { container } = render(<PageFooter slot1={defaultLogo} />);
     expect(container.querySelector('footer')).toHaveClass('dsn-page-footer');
   });
 
   it('rendert de inner-wrapper met dsn-page-footer__inner', () => {
-    const { container } = render(<PageFooter logoSlot={defaultLogo} />);
+    const { container } = render(<PageFooter slot1={defaultLogo} />);
     expect(container.querySelector('.dsn-page-footer__inner')).toBeTruthy();
   });
 
   it('rendert een grid (dsn-grid) binnen de inner-wrapper', () => {
-    const { container } = render(<PageFooter logoSlot={defaultLogo} />);
+    const { container } = render(<PageFooter slot1={defaultLogo} />);
     expect(
       container.querySelector('.dsn-page-footer__inner .dsn-grid')
     ).toBeTruthy();
   });
 
-  it('rendert het logoSlot in slot 1', () => {
-    const { container } = render(<PageFooter logoSlot={defaultLogo} />);
+  it('rendert slot1 in de footer', () => {
+    const { container } = render(<PageFooter slot1={defaultLogo} />);
     expect(container.querySelector('footer a[href="/"]')).toBeTruthy();
   });
 
@@ -48,7 +48,7 @@ describe('PageFooter', () => {
   // ---------------------------------------------------------------------------
 
   it('heeft geen inverse modifier bij colorScheme default', () => {
-    const { container } = render(<PageFooter logoSlot={defaultLogo} />);
+    const { container } = render(<PageFooter slot1={defaultLogo} />);
     expect(container.querySelector('footer')).not.toHaveClass(
       'dsn-page-footer--inverse'
     );
@@ -56,7 +56,7 @@ describe('PageFooter', () => {
 
   it('heeft de inverse modifier bij colorScheme inverse', () => {
     const { container } = render(
-      <PageFooter logoSlot={defaultLogo} colorScheme="inverse" />
+      <PageFooter slot1={defaultLogo} colorScheme="inverse" />
     );
     expect(container.querySelector('footer')).toHaveClass(
       'dsn-page-footer--inverse'
@@ -67,18 +67,18 @@ describe('PageFooter', () => {
   // Slots
   // ---------------------------------------------------------------------------
 
-  it('rendert contentSlot als dat meegegeven wordt', () => {
+  it('rendert slot3 als dat meegegeven wordt', () => {
     const { container } = render(
-      <PageFooter logoSlot={defaultLogo} contentSlot={<p>Lorem ipsum</p>} />
+      <PageFooter slot1={defaultLogo} slot3={<p>Lorem ipsum</p>} />
     );
     expect(container.querySelector('footer p')).toBeTruthy();
   });
 
-  it('rendert linksSlot als dat meegegeven wordt', () => {
+  it('rendert slot4 als dat meegegeven wordt', () => {
     const { container } = render(
       <PageFooter
-        logoSlot={defaultLogo}
-        linksSlot={
+        slot1={defaultLogo}
+        slot4={
           <ul>
             <li>
               <a href="/privacy">Privacyverklaring</a>
@@ -91,11 +91,11 @@ describe('PageFooter', () => {
     expect(container.querySelector('footer a[href="/privacy"]')).toBeTruthy();
   });
 
-  it('rendert secondarySlot als dat meegegeven wordt', () => {
+  it('rendert slot2 als dat meegegeven wordt', () => {
     const { container } = render(
       <PageFooter
-        logoSlot={defaultLogo}
-        secondarySlot={<span data-testid="secondary">Extra</span>}
+        slot1={defaultLogo}
+        slot2={<span data-testid="secondary">Extra</span>}
       />
     );
     expect(container.querySelector('[data-testid="secondary"]')).toBeTruthy();
@@ -107,21 +107,21 @@ describe('PageFooter', () => {
 
   it('voegt extra className toe aan het root element', () => {
     const { container } = render(
-      <PageFooter logoSlot={defaultLogo} className="extra-class" />
+      <PageFooter slot1={defaultLogo} className="extra-class" />
     );
     expect(container.querySelector('footer')).toHaveClass('extra-class');
   });
 
   it('stuurt HTML-attributen door naar het <footer>-element', () => {
     const { container } = render(
-      <PageFooter logoSlot={defaultLogo} data-testid="page-footer" />
+      <PageFooter slot1={defaultLogo} data-testid="page-footer" />
     );
     expect(container.querySelector('[data-testid="page-footer"]')).toBeTruthy();
   });
 
   it('geeft ref door naar het <footer>-element', () => {
     const ref = { current: null as HTMLElement | null };
-    render(<PageFooter logoSlot={defaultLogo} ref={ref} />);
+    render(<PageFooter slot1={defaultLogo} ref={ref} />);
     expect(ref.current).not.toBeNull();
     expect(ref.current?.tagName.toLowerCase()).toBe('footer');
   });

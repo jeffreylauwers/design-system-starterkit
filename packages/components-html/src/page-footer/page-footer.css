@@ -9,7 +9,7 @@
  *   <div class="dsn-page-footer__inner">
  *     <div class="dsn-grid">
  *       <div class="dsn-col-12 dsn-col-lg-3"><!-- logo slot --></div>
- *       <div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__secondary"><!-- secondary slot --></div>
+ *       <div class="dsn-col-12 dsn-col-lg-3"><!-- slot 2 (optioneel) --></div>
  *       <div class="dsn-col-12 dsn-col-lg-3"><!-- content slot --></div>
  *       <div class="dsn-col-12 dsn-col-lg-3"><!-- links slot --></div>
  *     </div>

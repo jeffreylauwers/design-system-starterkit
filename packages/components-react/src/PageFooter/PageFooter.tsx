@@ -10,29 +10,17 @@ export interface PageFooterProps extends Omit<
   React.HTMLAttributes<HTMLElement>,
   'children'
 > {
-  /**
-   * Logo-inhoud voor slot 1 (inline-start).
-   * Wikkel het logo in een `<a>` met `dsn-visually-hidden` tekst voor toegankelijkheid.
-   */
-  logoSlot: React.ReactNode;
+  /** Kolom 1 (inline-start). Doorgaans het organisatielogo in een `<a>`. */
+  slot1?: React.ReactNode;
 
-  /**
-   * Optioneel tussenslot voor slot 2 — leeg tussenruimte of toekomstige inhoud.
-   * Als leeg, wordt het verborgen via CSS `:empty { display: none }`.
-   */
-  secondarySlot?: React.ReactNode;
+  /** Kolom 2. Optioneel — wordt niet gerenderd als weggelaten. */
+  slot2?: React.ReactNode;
 
-  /**
-   * Optionele korte paragraaf of contextinhoud voor slot 3.
-   * Doorgaans een `<Paragraph>` met een `<Link>`.
-   */
-  contentSlot?: React.ReactNode;
+  /** Kolom 3. Vrije inhoud: navigatielinks, tekst, adressen, etc. */
+  slot3?: React.ReactNode;
 
-  /**
-   * Optionele lijst van footerlinks voor slot 4 (inline-end).
-   * Doorgaans een `<UnorderedList>` met `<Link>`-items.
-   */
-  linksSlot?: React.ReactNode;
+  /** Kolom 4 (inline-end). Vrije inhoud: juridische links, social media, etc. */
+  slot4?: React.ReactNode;
 
   /**
    * Kleurschema van de footer.
@@ -55,18 +43,19 @@ export interface PageFooterProps extends Omit<
  * @example
  * ```tsx
  * <PageFooter
- *   logoSlot={
+ *   slot1={
  *     <a href="/">
  *       <Logo aria-hidden={true} />
  *       <span className="dsn-visually-hidden">Starter Kit — terug naar homepage</span>
  *     </a>
  *   }
- *   contentSlot={
- *     <Paragraph>
- *       Lorem ipsum, <Link href="/about">meer informatie</Link>.
- *     </Paragraph>
+ *   slot3={
+ *     <UnorderedList>
+ *       <li><Link href="/nieuws">Nieuws</Link></li>
+ *       <li><Link href="/over-ons">Over ons</Link></li>
+ *     </UnorderedList>
  *   }
- *   linksSlot={
+ *   slot4={
  *     <UnorderedList>
  *       <li><Link href="/privacy">Privacyverklaring</Link></li>
  *       <li><Link href="/accessibility">Toegankelijkheid</Link></li>
@@ -79,10 +68,10 @@ export const PageFooter = React.forwardRef<HTMLElement, PageFooterProps>(
   (
     {
       className,
-      logoSlot,
-      secondarySlot,
-      contentSlot,
-      linksSlot,
+      slot1,
+      slot2,
+      slot3,
+      slot4,
       colorScheme = 'default',
       ...props
     },
@@ -98,20 +87,26 @@ export const PageFooter = React.forwardRef<HTMLElement, PageFooterProps>(
       <footer ref={ref} className={classes} {...props}>
         <div className="dsn-page-footer__inner">
           <Grid>
-            <GridItem colSpan={12} colSpanLg={3}>
-              {logoSlot}
-            </GridItem>
-            {secondarySlot && (
+            {slot1 && (
               <GridItem colSpan={12} colSpanLg={3}>
-                {secondarySlot}
+                {slot1}
               </GridItem>
             )}
-            <GridItem colSpan={12} colSpanLg={3}>
-              {contentSlot}
-            </GridItem>
-            <GridItem colSpan={12} colSpanLg={3}>
-              {linksSlot}
-            </GridItem>
+            {slot2 && (
+              <GridItem colSpan={12} colSpanLg={3}>
+                {slot2}
+              </GridItem>
+            )}
+            {slot3 && (
+              <GridItem colSpan={12} colSpanLg={3}>
+                {slot3}
+              </GridItem>
+            )}
+            {slot4 && (
+              <GridItem colSpan={12} colSpanLg={3}>
+                {slot4}
+              </GridItem>
+            )}
           </Grid>
         </div>
       </footer>

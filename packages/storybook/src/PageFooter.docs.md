@@ -4,7 +4,7 @@ Paginavoettekst met accent-1 achtergrond, dikke topborder en een 4-koloms grid.
 
 ## Doel
 
-`PageFooter` is het afsluitende onderdeel van een pagina. Het component draagt de huisstijlkleur (`accent-1`) als achtergrond en heeft een dikke `border-block-start` die visueel aansluit bij de `border-block-end` van de `PageHeader`. Binnenin bevindt zich een 4-koloms grid: logo (slot 1), een optioneel tussenslot (slot 2), een korte paragraaf of contextinhoud (slot 3) en een lijst van standaard footerlinks (slot 4).
+`PageFooter` is het afsluitende onderdeel van een pagina. Het component draagt de huisstijlkleur (`accent-1`) als achtergrond en heeft een dikke `border-block-start` die visueel aansluit bij de `border-block-end` van de `PageHeader`. Binnenin bevindt zich een 4-koloms grid met vier vrije slots (`slot1`–`slot4`). Wat erin gaat, bepaalt de implementatie: logo, navigatielinks, juridische links, tekst of een combinatie daarvan.
 
 Op kleine viewports stapelen alle slots verticaal. Op grote viewports (≥ 64em) staan de vier slots naast elkaar in gelijke kolommen.
 
@@ -23,50 +23,26 @@ Op kleine viewports stapelen alle slots verticaal. Op grote viewports (≥ 64em)
 
 ## Best practices
 
-### Logo-slot
+### Slot 1 (inline-start)
 
-Het `logoSlot` accepteert vrije inhoud. Wikkel het logo altijd in een `<a>` met een visueel verborgen tekst zodat screenreaders de bestemming voorlezen:
-
-```html
-<!-- Aanbevolen: <a> met visueel verborgen label -->
-<div class="dsn-page-footer__inner">
-  <a href="/">
-    <svg class="dsn-logo" aria-hidden="true"><!-- paden --></svg>
-    <span class="dsn-visually-hidden"
-      >Naam organisatie — terug naar homepage</span
-    >
-  </a>
-</div>
-```
-
-### Footerlinks
-
-Slot 4 (`linksSlot`) is bedoeld voor een `<UnorderedList>` met `<Link>`-items. Gebruik beschrijvende linkteksten die buiten context begrijpelijk zijn:
+Doorgaans het organisatielogo. Wikkel het altijd in een `<a>` met een visueel verborgen tekst zodat screenreaders de bestemming voorlezen:
 
 ```html
-<ul class="dsn-unordered-list">
-  <li><a class="dsn-link" href="/privacy">Privacyverklaring</a></li>
-  <li><a class="dsn-link" href="/accessibility">Toegankelijkheid</a></li>
-  <li><a class="dsn-link" href="/cookies">Cookies</a></li>
-  <li><a class="dsn-link" href="/contact">Contact</a></li>
-</ul>
+<a href="/">
+  <svg class="dsn-logo" aria-hidden="true"><!-- paden --></svg>
+  <span class="dsn-visually-hidden"
+    >Naam organisatie — terug naar homepage</span
+  >
+</a>
 ```
 
-### Tussenslot (secondarySlot)
+### Slot 2 (optioneel)
 
-Het `secondarySlot` (slot 2) is optioneel. Als je het weglaat, wordt de grid-kolom niet gerenderd en ontstaat er geen onnodige `row-gap` op mobiel:
+`slot2` is optioneel. Als je het weglaat, wordt de grid-kolom niet gerenderd en ontstaat er geen onnodige `row-gap` op mobiel.
 
-```html
-<!-- Gevuld: paragraaf met link -->
-<div class="dsn-col-12 dsn-col-lg-3">
-  <p class="dsn-paragraph">
-    Dit is een voorbeeldorganisatie.
-    <a class="dsn-link" href="/about">Meer informatie</a>.
-  </p>
-</div>
+### Slot 3 en slot 4
 
-<!-- Weggelaten: kolom wordt niet gerenderd -->
-```
+Vrije inhoud. Gebruik een `<UnorderedList>` met `<Link>`-items voor navigatie- of juridische links. Zorg voor beschrijvende linkteksten die buiten context begrijpelijk zijn:
 
 ### Inverse colorScheme
 
@@ -102,4 +78,4 @@ Het logo-anker in slot 1 heeft een visueel verborgen tekst via `dsn-visually-hid
 
 ### Linkteksten
 
-Links in slot 2 (paragraaf), slot 3 (navigatielinks) en slot 4 (juridische links) moeten beschrijvende teksten hebben die buiten context begrijpelijk zijn (WCAG 2.4.6). Vermijd generieke teksten zoals "Klik hier" of "Lees meer".
+Links in `slot2`, `slot3` en `slot4` moeten beschrijvende teksten hebben die buiten context begrijpelijk zijn (WCAG 2.4.6). Vermijd generieke teksten zoals "Klik hier" of "Lees meer".
