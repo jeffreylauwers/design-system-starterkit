@@ -58,14 +58,6 @@
 }
 
 /* =============================================================================
-   Secundair slot: verberg op mobile als inhoud ontbreekt (geen row-gap verspillen)
-   ============================================================================= */
-
-.dsn-page-footer__secondary:empty {
-  display: none;
-}
-
-/* =============================================================================
    Inverse modifier — schakelt naar accent-1-inverse kleurenschaal
    ============================================================================= */
 

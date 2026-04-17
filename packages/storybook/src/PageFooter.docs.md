@@ -54,19 +54,18 @@ Slot 4 (`linksSlot`) is bedoeld voor een `<UnorderedList>` met `<Link>`-items. G
 
 ### Tussenslot (secondarySlot)
 
-Het `secondarySlot` (slot 2) is optioneel. Gebruik het voor een korte paragraaf of beschrijvende tekst naast het logo. Als je het weglaat verdwijnt het slot op mobiel via CSS `:empty { display: none }` zodat geen onnodige `row-gap` ontstaat:
+Het `secondarySlot` (slot 2) is optioneel. Als je het weglaat, wordt de grid-kolom niet gerenderd en ontstaat er geen onnodige `row-gap` op mobiel:
 
 ```html
 <!-- Gevuld: paragraaf met link -->
-<div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__secondary">
+<div class="dsn-col-12 dsn-col-lg-3">
   <p class="dsn-paragraph">
     Dit is een voorbeeldorganisatie.
     <a class="dsn-link" href="/about">Meer informatie</a>.
   </p>
 </div>
 
-<!-- Leeg: slot verborgen op mobiel -->
-<div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__secondary"></div>
+<!-- Weggelaten: kolom wordt niet gerenderd -->
 ```
 
 ### Inverse colorScheme

@@ -101,13 +101,11 @@ export const PageFooter = React.forwardRef<HTMLElement, PageFooterProps>(
             <GridItem colSpan={12} colSpanLg={3}>
               {logoSlot}
             </GridItem>
-            <GridItem
-              colSpan={12}
-              colSpanLg={3}
-              className="dsn-page-footer__secondary"
-            >
-              {secondarySlot}
-            </GridItem>
+            {secondarySlot && (
+              <GridItem colSpan={12} colSpanLg={3}>
+                {secondarySlot}
+              </GridItem>
+            )}
             <GridItem colSpan={12} colSpanLg={3}>
               {contentSlot}
             </GridItem>
