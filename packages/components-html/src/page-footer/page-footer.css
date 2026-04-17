@@ -92,7 +92,10 @@
   );
 }
 
-/* Logo-kleuren aanpassen op inverse achtergrond */
+/* Logo-kleuren aanpassen op inverse achtergrond:
+   primary → wit (logo-rand zichtbaar op donkere achtergrond)
+   label   → donkerblauw (doorkijkje-effect: letters tonen de achtergrondkleur) */
 .dsn-page-footer--inverse .dsn-logo {
   --dsn-logo-color-primary: var(--dsn-color-accent-1-inverse-color-default);
+  --dsn-logo-color-label: var(--dsn-color-accent-1-inverse-bg-default);
 }
