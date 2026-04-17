@@ -125,6 +125,58 @@ export interface PageHeaderProps extends Omit<
    */
   onSearchClose?: () => void;
 
+  // ── i18n labels ────────────────────────────────────────────────────────────
+
+  /**
+   * Label van de menuknop en de Drawer-heading.
+   * @default 'Menu'
+   */
+  menuButtonLabel?: string;
+
+  /**
+   * Label van de zoekknop wanneer het zoekpaneel gesloten is.
+   * @default 'Zoeken'
+   */
+  searchButtonLabel?: string;
+
+  /**
+   * Label van de zoekknop wanneer het zoekpaneel open is.
+   * @default 'Sluiten'
+   */
+  closeButtonLabel?: string;
+
+  /**
+   * Placeholder van het zoekveld in het zoekpaneel (small viewport en compact layout).
+   * @default 'Zoeken…'
+   */
+  searchInputPlaceholder?: string;
+
+  /**
+   * `aria-label` van het zoekveld in het zoekpaneel.
+   * @default 'Zoekopdracht'
+   */
+  searchInputAriaLabel?: string;
+
+  /**
+   * Label van de zoek-submitknop in het zoekpaneel.
+   * @default 'Zoeken'
+   */
+  searchSubmitLabel?: string;
+
+  /**
+   * `aria-label` van de primaire navigatie-`<nav>` (large viewport) en
+   * visueel verborgen heading in de Drawer.
+   * @default 'Hoofdmenu'
+   */
+  primaryNavAriaLabel?: string;
+
+  /**
+   * `aria-label` van het servicemenu-`<nav>` (large viewport) en
+   * visueel verborgen heading in de Drawer.
+   * @default 'Servicemenu'
+   */
+  secondaryNavAriaLabel?: string;
+
   className?: string;
 }
 
@@ -180,6 +232,14 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
       onMenuClose,
       onSearchOpen,
       onSearchClose,
+      menuButtonLabel = 'Menu',
+      searchButtonLabel = 'Zoeken',
+      closeButtonLabel = 'Sluiten',
+      searchInputPlaceholder = 'Zoeken…',
+      searchInputAriaLabel = 'Zoekopdracht',
+      searchSubmitLabel = 'Zoeken',
+      primaryNavAriaLabel = 'Hoofdmenu',
+      secondaryNavAriaLabel = 'Servicemenu',
       ...props
     },
     ref
@@ -304,7 +364,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
                   onClick={handleMenuOpen}
                   iconStart={<Icon name="menu" aria-hidden />}
                 >
-                  Menu
+                  {menuButtonLabel}
                   {menuButtonBadgeLabel && (
                     <span className="dsn-visually-hidden">
                       , {menuButtonBadgeLabel}
@@ -329,7 +389,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
                     <Icon name={isSearchOpen ? 'x' : 'search'} aria-hidden />
                   }
                 >
-                  {isSearchOpen ? 'Sluiten' : 'Zoeken'}
+                  {isSearchOpen ? closeButtonLabel : searchButtonLabel}
                 </Button>
               </div>
             </div>
@@ -343,10 +403,10 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
               <div className="dsn-page-header__search-inner">
                 <SearchInput
                   ref={searchInputRef}
-                  placeholder="Zoeken…"
-                  aria-label="Zoekopdracht"
+                  placeholder={searchInputPlaceholder}
+                  aria-label={searchInputAriaLabel}
                 />
-                <Button variant="strong">Zoeken</Button>
+                <Button variant="strong">{searchSubmitLabel}</Button>
               </div>
             </div>
           </div>
@@ -363,7 +423,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
 
                   <div className="dsn-page-header__secondary-nav">
                     {(secondaryNavigationLarge ?? secondaryNavigation) && (
-                      <nav aria-label="Servicemenu">
+                      <nav aria-label={secondaryNavAriaLabel}>
                         {secondaryNavigationLarge ?? secondaryNavigation}
                       </nav>
                     )}
@@ -380,7 +440,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
               <div className="dsn-page-header__navbar">
                 <div className="dsn-page-header__navbar-inner">
                   {(primaryNavigationLarge ?? primaryNavigation) && (
-                    <nav aria-label="Hoofdmenu">
+                    <nav aria-label={primaryNavAriaLabel}>
                       {primaryNavigationLarge ?? primaryNavigation}
                     </nav>
                   )}
@@ -404,7 +464,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
                     Dit garandeert dat de Drawer altijd de verticale variant ontvangt. */}
                 <div className="dsn-page-header__compact-primary-nav">
                   {(primaryNavigationLarge ?? primaryNavigation) && (
-                    <nav aria-label="Hoofdmenu">
+                    <nav aria-label={primaryNavAriaLabel}>
                       {primaryNavigationLarge ?? primaryNavigation}
                     </nav>
                   )}
@@ -413,7 +473,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
                 {/* Servicemenu + zoekknop (icon-only) — inline-end (derde gridkolom) */}
                 <div className="dsn-page-header__compact-secondary">
                   {(secondaryNavigationLarge ?? secondaryNavigation) && (
-                    <nav aria-label="Servicemenu">
+                    <nav aria-label={secondaryNavAriaLabel}>
                       {secondaryNavigationLarge ?? secondaryNavigation}
                     </nav>
                   )}
@@ -428,7 +488,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
                       <Icon name={isSearchOpen ? 'x' : 'search'} aria-hidden />
                     }
                   >
-                    {isSearchOpen ? 'Sluiten' : 'Zoeken'}
+                    {isSearchOpen ? closeButtonLabel : searchButtonLabel}
                   </Button>
                 </div>
               </div>
@@ -442,10 +502,10 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
                 <div className="dsn-page-header__search-inner">
                   <SearchInput
                     ref={compactSearchInputRef}
-                    placeholder="Zoeken…"
-                    aria-label="Zoekopdracht"
+                    placeholder={searchInputPlaceholder}
+                    aria-label={searchInputAriaLabel}
                   />
-                  <Button variant="strong">Zoeken</Button>
+                  <Button variant="strong">{searchSubmitLabel}</Button>
                 </div>
               </div>
             </div>
@@ -455,14 +515,14 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
         {/* Navigatielade (sibling aan PageHeader, altijd in DOM) */}
         <Drawer isOpen={isMenuOpen} onClose={handleMenuClose} side="left">
           <DrawerHeader>
-            <DrawerHeading>Menu</DrawerHeading>
+            <DrawerHeading>{menuButtonLabel}</DrawerHeading>
           </DrawerHeader>
           <DrawerBody>
             <Stack space="5xl">
               {primaryNavigation && (
                 <nav aria-labelledby={primaryNavId}>
                   <h3 id={primaryNavId} className="dsn-visually-hidden">
-                    Hoofdmenu
+                    {primaryNavAriaLabel}
                   </h3>
                   {primaryNavigation}
                 </nav>
@@ -470,7 +530,7 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
               {secondaryNavigation && (
                 <nav aria-labelledby={serviceNavId}>
                   <h3 id={serviceNavId} className="dsn-visually-hidden">
-                    Servicemenu
+                    {secondaryNavAriaLabel}
                   </h3>
                   {secondaryNavigation}
                 </nav>

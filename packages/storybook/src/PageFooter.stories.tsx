@@ -6,6 +6,7 @@ import {
   Paragraph,
   UnorderedList,
 } from '@dsn/components-react';
+import { rtlDecorator } from './story-helpers';
 
 // =============================================================================
 // META
@@ -56,6 +57,59 @@ const linksSlot = (
     </li>
     <li>
       <Link href="/contact">Contact</Link>
+    </li>
+  </UnorderedList>
+);
+
+// =============================================================================
+// ARABISCHE CONTENT (voor RTL stories)
+// =============================================================================
+
+const logoSlotAR = (
+  <a href="/">
+    <Logo aria-hidden={true} />
+    <span className="dsn-visually-hidden">
+      Starter Kit — العودة إلى الصفحة الرئيسية
+    </span>
+  </a>
+);
+
+const secondarySlotAR = (
+  <Paragraph>
+    هذه منظمة نموذجية. <Link href="/about">مزيد من المعلومات</Link>.
+  </Paragraph>
+);
+
+const contentSlotAR = (
+  <UnorderedList>
+    <li>
+      <Link href="/nieuws">أخبار</Link>
+    </li>
+    <li>
+      <Link href="/over-ons">عن المنظمة</Link>
+    </li>
+    <li>
+      <Link href="/werken-bij">الوظائف</Link>
+    </li>
+    <li>
+      <Link href="/klachten">الشكاوى</Link>
+    </li>
+  </UnorderedList>
+);
+
+const linksSlotAR = (
+  <UnorderedList>
+    <li>
+      <Link href="/privacy">سياسة الخصوصية</Link>
+    </li>
+    <li>
+      <Link href="/accessibility">إمكانية الوصول</Link>
+    </li>
+    <li>
+      <Link href="/cookies">ملفات تعريف الارتباط</Link>
+    </li>
+    <li>
+      <Link href="/contact">اتصل بنا</Link>
     </li>
   </UnorderedList>
 );
@@ -177,6 +231,25 @@ export const AllVariants: Story = {
       description: {
         story:
           'Overzicht van beide kleurvarianten: `default` (accent-1) en `inverse` (accent-1-inverse).',
+      },
+    },
+  },
+};
+
+export const DefaultRTL: Story = {
+  name: 'Default: RTL',
+  decorators: [rtlDecorator],
+  args: {
+    logoSlot: logoSlotAR,
+    secondarySlot: secondarySlotAR,
+    contentSlot: contentSlotAR,
+    linksSlot: linksSlotAR,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Right-to-left layout (Arabisch). De vier grid-slots worden gespiegeld: logo staat inline-end, links inline-start. CSS logische eigenschappen spiegelen automatisch.',
       },
     },
   },
