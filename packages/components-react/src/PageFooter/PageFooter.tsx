@@ -104,7 +104,7 @@ export const PageFooter = React.forwardRef<HTMLElement, PageFooterProps>(
             <GridItem
               colSpan={12}
               colSpanLg={3}
-              className="dsn-page-footer__empty-slot"
+              className="dsn-page-footer__secondary"
             >
               {secondarySlot}
             </GridItem>

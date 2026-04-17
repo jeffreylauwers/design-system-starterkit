@@ -9,7 +9,7 @@
  *   <div class="dsn-page-footer__inner">
  *     <div class="dsn-grid">
  *       <div class="dsn-col-12 dsn-col-lg-3"><!-- logo slot --></div>
- *       <div class="dsn-col-12 dsn-col-lg-3"><!-- leeg tussenslot --></div>
+ *       <div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__secondary"><!-- secondary slot --></div>
  *       <div class="dsn-col-12 dsn-col-lg-3"><!-- content slot --></div>
  *       <div class="dsn-col-12 dsn-col-lg-3"><!-- links slot --></div>
  *     </div>
@@ -58,10 +58,10 @@
 }
 
 /* =============================================================================
-   Leeg slot: verberg op mobile als inhoud ontbreekt (geen row-gap verspillen)
+   Secundair slot: verberg op mobile als inhoud ontbreekt (geen row-gap verspillen)
    ============================================================================= */
 
-.dsn-page-footer__empty-slot:empty {
+.dsn-page-footer__secondary:empty {
   display: none;
 }
 

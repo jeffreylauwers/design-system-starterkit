@@ -58,7 +58,7 @@ Het `secondarySlot` (slot 2) is optioneel. Gebruik het voor een korte paragraaf 
 
 ```html
 <!-- Gevuld: paragraaf met link -->
-<div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__empty-slot">
+<div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__secondary">
   <p class="dsn-paragraph">
     Dit is een voorbeeldorganisatie.
     <a class="dsn-link" href="/about">Meer informatie</a>.
@@ -66,7 +66,7 @@ Het `secondarySlot` (slot 2) is optioneel. Gebruik het voor een korte paragraaf 
 </div>
 
 <!-- Leeg: slot verborgen op mobiel -->
-<div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__empty-slot"></div>
+<div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__secondary"></div>
 ```
 
 ### Inverse colorScheme
