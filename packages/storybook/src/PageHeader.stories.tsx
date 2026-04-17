@@ -503,12 +503,12 @@ const meta: Meta<typeof PageHeader> = {
       table: { category: 'Gedrag' },
     },
     layout: {
-      control: 'select',
+      control: { type: 'radio' },
       options: ['default', 'compact'],
       table: { category: 'Gedrag' },
     },
     colorScheme: {
-      control: 'select',
+      control: { type: 'radio' },
       options: ['default', 'inverse'],
       table: { category: 'Gedrag' },
     },
