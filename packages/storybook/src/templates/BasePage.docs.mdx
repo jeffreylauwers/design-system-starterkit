@@ -1,18 +1,18 @@
 import { Meta, Story, Markdown } from '@storybook/blocks';
-import * as BasicPageStories from './BasicPage.stories';
-import docs from './BasicPage.docs.md?raw';
+import * as BasePageStories from './BasePage.stories';
+import docs from './BasePage.docs.md?raw';
 import { PreviewFrame } from '../components';
 
 export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
 
-<Meta of={BasicPageStories} />
+<Meta of={BasePageStories} />
 
 <Markdown>{intro}</Markdown>
 
 ## Voorbeeld
 
 <PreviewFrame>
-  <Story of={BasicPageStories.Default} />
+  <Story of={BasePageStories.Default} />
 </PreviewFrame>
 
 <Markdown>{rest}</Markdown>

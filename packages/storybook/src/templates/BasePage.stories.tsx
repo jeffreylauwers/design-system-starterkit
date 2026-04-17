@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import {
   Body,
   Button,
-  Container,
   Heading,
   Link,
   Logo,
@@ -210,12 +209,21 @@ const footerSlot4 = (
   </UnorderedList>
 );
 
+// Padding op <main>: 64px boven/onder (--dsn-space-block-6xl),
+// 16px links/rechts (--dsn-space-inline-xl).
+// Template-specifiek: bewust niet via Container of een herbruikbare klasse —
+// andere templates kiezen zelf hun eigen spacing.
+const mainStyle: React.CSSProperties = {
+  paddingBlock: 'var(--dsn-space-block-6xl)',
+  paddingInline: 'var(--dsn-space-inline-xl)',
+};
+
 // =============================================================================
 // META
 // =============================================================================
 
 const meta: Meta = {
-  title: 'Templates/BasicPage',
+  title: 'Templates/BasePage',
   parameters: {
     layout: 'fullscreen',
   },
@@ -230,7 +238,7 @@ type Story = StoryObj;
 // =============================================================================
 
 export const Default: Story = {
-  name: 'Basic Page',
+  name: 'Base Page',
   render: () => (
     <Body>
       <SkipLink href="#main-content" />
@@ -244,20 +252,18 @@ export const Default: Story = {
           searchSlot={searchSlot}
         />
         <PageBody>
-          <main id="main-content" tabIndex={-1}>
-            <Container>
-              <Heading level={1}>Paginatitel</Heading>
-              <Paragraph>
-                Dit is de basisstructuur van een pagina in het design system. De
-                footer staat altijd onderaan de viewport, ongeacht de
-                hoeveelheid inhoud.
-              </Paragraph>
-              <Paragraph>
-                Voeg hier de paginaspecifieke inhoud toe:{' '}
-                <Link href="#">tekst</Link>, formulieren, tabellen of andere
-                componenten.
-              </Paragraph>
-            </Container>
+          <main id="main-content" tabIndex={-1} style={mainStyle}>
+            <Heading level={1}>Paginatitel</Heading>
+            <Paragraph>
+              Dit is de basisstructuur van een pagina in het design system. De
+              footer staat altijd onderaan de viewport, ongeacht de hoeveelheid
+              inhoud.
+            </Paragraph>
+            <Paragraph>
+              Voeg hier de paginaspecifieke inhoud toe:{' '}
+              <Link href="#">tekst</Link>, formulieren, tabellen of andere
+              componenten.
+            </Paragraph>
           </main>
         </PageBody>
         <PageFooter
@@ -272,7 +278,7 @@ export const Default: Story = {
 };
 
 export const Inverse: Story = {
-  name: 'Basic Page: Inverse',
+  name: 'Base Page: Inverse',
   render: () => (
     <Body>
       <SkipLink href="#main-content" />
@@ -287,15 +293,13 @@ export const Inverse: Story = {
           searchSlot={searchSlot}
         />
         <PageBody>
-          <main id="main-content" tabIndex={-1}>
-            <Container>
-              <Heading level={1}>Paginatitel</Heading>
-              <Paragraph>
-                Dit is de inverse variant: PageHeader en PageFooter met
-                colorScheme=&quot;inverse&quot;. De accent-1-inverse achtergrond
-                geeft de pagina een prominente huisstijlkleur.
-              </Paragraph>
-            </Container>
+          <main id="main-content" tabIndex={-1} style={mainStyle}>
+            <Heading level={1}>Paginatitel</Heading>
+            <Paragraph>
+              De inverse variant: PageHeader en PageFooter met
+              colorScheme=&quot;inverse&quot;. De accent-1-inverse achtergrond
+              geeft de pagina een prominente huisstijlkleur.
+            </Paragraph>
           </main>
         </PageBody>
         <PageFooter

@@ -1,10 +1,10 @@
-# Basic Page
+# Base Page
 
 Eerste paginatemplate: de basisstructuur voor elke pagina in de applicatie.
 
 ## Doel
 
-Het Basic Page template combineert `Body`, `SkipLink`, `PageLayout`, `PageHeader`, `PageBody` en `PageFooter` tot een complete, toegankelijke paginastructuur. Het template dient als fundament voor alle volgende templates (Homepage, Detailpagina, Formulierpagina, etc.).
+Het Base Page template combineert `Body`, `SkipLink`, `PageLayout`, `PageHeader`, `PageBody` en `PageFooter` tot een complete, toegankelijke paginastructuur. Het template dient als fundament voor alle volgende templates (Homepage, Detailpagina, Formulierpagina, etc.).
 
 Templates zijn Storybook-only composities van bestaande componenten. Ze bevatten geen eigen CSS of React component.
 
@@ -14,22 +14,22 @@ Templates zijn Storybook-only composities van bestaande componenten. Ze bevatten
 
 Elk onderdeel van het template heeft een afgebakende taak:
 
-| Onderdeel    | Element                         | Verantwoordelijkheid                                              |
-| ------------ | ------------------------------- | ----------------------------------------------------------------- |
-| `Body`       | `<div class="dsn-body">`        | font-family, achtergrondkleur, basistypografie via CSS-overerving |
-| `SkipLink`   | `<a href="#main-content">`      | WCAG 2.4.1 — eerste focusbaar element, overgesloten bij Tab       |
-| `PageLayout` | `<div class="dsn-page-layout">` | `display: flex; flex-direction: column; min-block-size: 100dvh`   |
-| `PageHeader` | `<header>`                      | logo, navigatie, zoeken (impliciet `role="banner"`)               |
-| `PageBody`   | `<div class="dsn-page-body">`   | `flex: 1` — vult ruimte tussen header en footer                   |
-| `<main>`     | `<main id="main-content">`      | Primaire pagina-inhoud (impliciet `role="main"`)                  |
-| `PageFooter` | `<footer>`                      | links, logo, colofon (impliciet `role="contentinfo"`)             |
+| Onderdeel    | Element                         | Verantwoordelijkheid                                                    |
+| ------------ | ------------------------------- | ----------------------------------------------------------------------- |
+| `Body`       | `<div class="dsn-body">`        | font-family, achtergrondkleur, basistypografie via CSS-overerving       |
+| `SkipLink`   | `<a href="#main-content">`      | WCAG 2.4.1 — eerste focusbaar element, verborgen totdat het gefocust is |
+| `PageLayout` | `<div class="dsn-page-layout">` | `display: flex; flex-direction: column; min-block-size: 100dvh`         |
+| `PageHeader` | `<header>`                      | logo, navigatie, zoeken (impliciet `role="banner"`)                     |
+| `PageBody`   | `<div class="dsn-page-body">`   | `flex: 1` — vult ruimte tussen header en footer                         |
+| `<main>`     | `<main id="main-content">`      | Primaire pagina-inhoud (impliciet `role="main"`)                        |
+| `PageFooter` | `<footer>`                      | links, logo, colofon (impliciet `role="contentinfo"`)                   |
 
 ## Waarom `<main>` in het template en niet in `PageBody`?
 
 `PageBody` is een flexibele container die in complexere templates ook `SideNavigation` en `Breadcrumbs` kan bevatten — elementen die buiten `<main>` vallen. De `<main>` is daarom een expliciete child in het template, niet ingebakken in `PageBody`:
 
 ```html
-<!-- Basic Page: alleen main -->
+<!-- Base Page: alleen main -->
 <div class="dsn-page-body">
   <main id="main-content" tabindex="-1">...</main>
 </div>
@@ -43,6 +43,25 @@ Elk onderdeel van het template heeft een afgebakende taak:
   </div>
 </div>
 ```
+
+## Padding op `<main>`
+
+Dit template plaatst padding direct als inline style op `<main>`, zonder gebruik van de `Container`-component:
+
+```tsx
+<main
+  id="main-content"
+  tabIndex={-1}
+  style={{
+    paddingBlock: 'var(--dsn-space-block-6xl)',   // 64px boven en onder
+    paddingInline: 'var(--dsn-space-inline-xl)',   // 16px links en rechts
+  }}
+>
+```
+
+**Waarom geen `Container`?** De `Container`-component voegt een `max-inline-size` toe en centreert de content. Voor templates die een andere breedtebeperking nodig hebben (of geen), is directe padding op `<main>` flexibeler. Andere templates kiezen hun eigen spacing-strategie.
+
+**Waarom inline style en niet een CSS-klasse?** De padding is template-specifiek. Een herbruikbare klasse zou suggereren dat dit het standaard patroon is voor alle templates — dat is niet het geval.
 
 ## Use when
 
@@ -72,15 +91,7 @@ De skip-link hoort **niet** in `PageLayout` of `PageHeader` — die components w
 
 ### `<main>` met `tabIndex={-1}`
 
-Geef de `<main>` altijd `tabIndex={-1}` zodat de skip-link er programmatisch naartoe kan springen. Zonder dit werkt de focus-sprong niet in alle browsers:
-
-```tsx
-<main id="main-content" tabIndex={-1}>
-  <Container>
-    <Heading level={1}>Paginatitel</Heading>
-  </Container>
-</main>
-```
+Geef de `<main>` altijd `tabIndex={-1}` zodat de skip-link er programmatisch naartoe kan springen. Zonder dit werkt de focus-sprong niet in alle browsers.
 
 ### Zichtbare `<h1>` verplicht
 
