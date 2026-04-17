@@ -1,0 +1,103 @@
+# Basic Page
+
+Eerste paginatemplate: de basisstructuur voor elke pagina in de applicatie.
+
+## Doel
+
+Het Basic Page template combineert `Body`, `SkipLink`, `PageLayout`, `PageHeader`, `PageBody` en `PageFooter` tot een complete, toegankelijke paginastructuur. Het template dient als fundament voor alle volgende templates (Homepage, Detailpagina, Formulierpagina, etc.).
+
+Templates zijn Storybook-only composities van bestaande componenten. Ze bevatten geen eigen CSS of React component.
+
+<!-- VOORBEELD -->
+
+## Verantwoordelijkheidsverdeling
+
+Elk onderdeel van het template heeft een afgebakende taak:
+
+| Onderdeel    | Element                         | Verantwoordelijkheid                                              |
+| ------------ | ------------------------------- | ----------------------------------------------------------------- |
+| `Body`       | `<div class="dsn-body">`        | font-family, achtergrondkleur, basistypografie via CSS-overerving |
+| `SkipLink`   | `<a href="#main-content">`      | WCAG 2.4.1 — eerste focusbaar element, overgesloten bij Tab       |
+| `PageLayout` | `<div class="dsn-page-layout">` | `display: flex; flex-direction: column; min-block-size: 100dvh`   |
+| `PageHeader` | `<header>`                      | logo, navigatie, zoeken (impliciet `role="banner"`)               |
+| `PageBody`   | `<div class="dsn-page-body">`   | `flex: 1` — vult ruimte tussen header en footer                   |
+| `<main>`     | `<main id="main-content">`      | Primaire pagina-inhoud (impliciet `role="main"`)                  |
+| `PageFooter` | `<footer>`                      | links, logo, colofon (impliciet `role="contentinfo"`)             |
+
+## Waarom `<main>` in het template en niet in `PageBody`?
+
+`PageBody` is een flexibele container die in complexere templates ook `SideNavigation` en `Breadcrumbs` kan bevatten — elementen die buiten `<main>` vallen. De `<main>` is daarom een expliciete child in het template, niet ingebakken in `PageBody`:
+
+```html
+<!-- Basic Page: alleen main -->
+<div class="dsn-page-body">
+  <main id="main-content" tabindex="-1">...</main>
+</div>
+
+<!-- Later: Detailpagina met side navigation -->
+<div class="dsn-page-body">
+  <nav class="dsn-breadcrumbs" aria-label="Kruimelpad">...</nav>
+  <div class="dsn-page-body__content">
+    <nav class="dsn-side-nav" aria-label="Sectienavigatie">...</nav>
+    <main id="main-content" tabindex="-1">...</main>
+  </div>
+</div>
+```
+
+## Use when
+
+- Je een volledige pagina opbouwt met header, inhoud en footer.
+- Je een startpunt nodig hebt voor een nieuw paginatype.
+
+## Don't use when
+
+- Je een gedeelte van een pagina opmaakt: gebruik dan `Stack`, `Grid` of `Container`.
+- Je geen `PageHeader` of `PageFooter` nodig hebt.
+
+## Best practices
+
+### Skip-link in het template
+
+De skip-link hoort **niet** in `PageLayout` of `PageHeader` — die components weten niets van de `<main>` verderop in de DOM. Het template is de juiste plek omdat het de volledige paginastructuur overziet. De `SkipLink` moet het **eerste focusbare element** in de DOM zijn:
+
+```tsx
+<Body>
+  <SkipLink href="#main-content" />  {/* altijd als eerste */}
+  <PageLayout>
+    <PageHeader ... />
+    ...
+  </PageLayout>
+</Body>
+```
+
+### `<main>` met `tabIndex={-1}`
+
+Geef de `<main>` altijd `tabIndex={-1}` zodat de skip-link er programmatisch naartoe kan springen. Zonder dit werkt de focus-sprong niet in alle browsers:
+
+```tsx
+<main id="main-content" tabIndex={-1}>
+  <Container>
+    <Heading level={1}>Paginatitel</Heading>
+  </Container>
+</main>
+```
+
+### Zichtbare `<h1>` verplicht
+
+Elke pagina moet een zichtbare `<h1>` bevatten (WCAG 2.4.6). Gebruik de `Heading`-component met `level={1}` als eerste heading in `<main>`.
+
+## Accessibility
+
+### Landmarks
+
+De template biedt alle vereiste ARIA-landmarks automatisch via de semantische HTML-elementen:
+
+- `<header>` → impliciet `role="banner"`
+- `<main>` → impliciet `role="main"`
+- `<footer>` → impliciet `role="contentinfo"`
+
+Screenreadergebruikers kunnen via landmark-navigatie direct naar elk onderdeel springen.
+
+### Skip-link (WCAG 2.4.1)
+
+De skip-link is verborgen totdat de gebruiker er met Tab op focust, waarna hij zichtbaar wordt. Bij activeren springt de focus naar `<main id="main-content">`. Dit voldoet aan WCAG 2.1 succescriterium 2.4.1 (Bypass Blocks, Level A).
