@@ -52,18 +52,21 @@ Slot 4 (`linksSlot`) is bedoeld voor een `<UnorderedList>` met `<Link>`-items. G
 </ul>
 ```
 
-### Leeg tussenslot
+### Tussenslot (secondarySlot)
 
-Het `secondarySlot` (slot 2) is standaard leeg. Op mobiel verdwijnt het via CSS `:empty { display: none }` zodat geen onnodige `row-gap` ontstaat. Vul het in als je visuele ruimte of extra inhoud nodig hebt:
+Het `secondarySlot` (slot 2) is optioneel. Gebruik het voor een korte paragraaf of beschrijvende tekst naast het logo. Als je het weglaat verdwijnt het slot op mobiel via CSS `:empty { display: none }` zodat geen onnodige `row-gap` ontstaat:
 
 ```html
+<!-- Gevuld: paragraaf met link -->
+<div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__empty-slot">
+  <p class="dsn-paragraph">
+    Dit is een voorbeeldorganisatie.
+    <a class="dsn-link" href="/about">Meer informatie</a>.
+  </p>
+</div>
+
 <!-- Leeg: slot verborgen op mobiel -->
 <div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__empty-slot"></div>
-
-<!-- Gevuld: zichtbaar op alle viewports -->
-<div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__empty-slot">
-  <p class="dsn-paragraph">Extra inhoud</p>
-</div>
 ```
 
 ### Inverse colorScheme
@@ -78,14 +81,15 @@ De `inverse` kleurvariant schakelt naar de `accent-1-inverse` kleurenschaal voor
 
 ## Design tokens
 
-| Token                                        | Waarde                                | Beschrijving               |
-| -------------------------------------------- | ------------------------------------- | -------------------------- |
-| `--dsn-page-footer-background-color`         | `{dsn.color.accent-1.bg-default}`     | Achtergrondkleur (default) |
-| `--dsn-page-footer-border-block-start-width` | `{dsn.border.width.thick}`            | Breedte topborder (4px)    |
-| `--dsn-page-footer-border-block-start-color` | `{dsn.color.accent-1.border-default}` | Kleur topborder (default)  |
-| `--dsn-page-footer-padding-block`            | `{dsn.space.block.xl}`                | Verticale padding          |
-| `--dsn-page-footer-padding-inline`           | `{dsn.space.inline.xl}`               | Horizontale padding        |
-| `--dsn-page-footer-logo-max-block-size`      | `2rem`                                | Maximale logohoogte (32px) |
+| Token                                        | Waarde                                | Beschrijving                             |
+| -------------------------------------------- | ------------------------------------- | ---------------------------------------- |
+| `--dsn-page-footer-background-color`         | `{dsn.color.accent-1.bg-default}`     | Achtergrondkleur (default)               |
+| `--dsn-page-footer-border-block-start-width` | `{dsn.border.width.thick}`            | Breedte topborder (4px)                  |
+| `--dsn-page-footer-border-block-start-color` | `{dsn.color.accent-1.border-default}` | Kleur topborder (default)                |
+| `--dsn-page-footer-padding-block`            | `{dsn.space.block.6xl}`               | Verticale padding boven en onder (64px)  |
+| `--dsn-page-footer-padding-inline`           | `{dsn.space.inline.xl}`               | Horizontale padding                      |
+| `--dsn-page-footer-slot-gap`                 | `{dsn.space.block.xl}`                | Verticale ruimte tussen gestapelde slots |
+| `--dsn-page-footer-logo-max-block-size`      | `2rem`                                | Maximale logohoogte (32px)               |
 
 ## Accessibility
 
@@ -99,4 +103,4 @@ Het logo-anker in slot 1 heeft een visueel verborgen tekst via `dsn-visually-hid
 
 ### Linkteksten
 
-Links in slot 3 (paragraaf) en slot 4 (lijst) moeten beschrijvende teksten hebben die buiten context begrijpelijk zijn (WCAG 2.4.6). Vermijd generieke teksten zoals "Klik hier" of "Lees meer".
+Links in slot 2 (paragraaf), slot 3 (navigatielinks) en slot 4 (juridische links) moeten beschrijvende teksten hebben die buiten context begrijpelijk zijn (WCAG 2.4.6). Vermijd generieke teksten zoals "Klik hier" of "Lees meer".

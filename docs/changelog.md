@@ -6,6 +6,23 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.26.0 (April 17, 2026)
+
+### PageFooter component (issue #161, PR #162)
+
+#### Added
+
+- **PageFooter** component: paginavoettekst met `accent-1` achtergrond, dikke `border-block-start` (4px) en een responsive 4-koloms grid (PR #162)
+- `<footer>` element met impliciet `role="contentinfo"` landmark
+- 4 slots: `logoSlot` (slot 1), `secondarySlot` (slot 2, optioneel), `contentSlot` (slot 3), `linksSlot` (slot 4)
+- Op mobiel: slots verticaal gestapeld met `row-gap` via `--dsn-page-footer-slot-gap`; leeg `secondarySlot` verborgen via `:empty { display: none }`
+- Op ≥ 64em: vier gelijke kolommen naast elkaar via `dsn-col-12 dsn-col-lg-3`
+- `colorScheme="inverse"` modifier: schakelt naar `accent-1-inverse` achtergrond; tekst-, link- en logokleuren via CSS custom property overrides; `--dsn-logo-color-label` mee omgedraaid voor correct doorkijkje-effect
+- 7 design tokens in `tokens/components/page-footer.json`: `background-color`, `border-block-start-width`, `border-block-start-color`, `padding-block`, `padding-inline`, `slot-gap`, `logo.max-block-size`
+- 11 tests, 3 Storybook bestanden
+
+---
+
 ## Version 5.25.0 (April 14, 2026)
 
 ### Popover component (issue #155, PR #156)

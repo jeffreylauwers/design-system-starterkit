@@ -26,11 +26,19 @@ export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
       </span>
     </a>
   }
-  contentSlot={
+  secondarySlot={
     <Paragraph>
       Dit is een voorbeeldorganisatie.{' '}
       <Link href="/about">Meer informatie</Link>.
     </Paragraph>
+  }
+  contentSlot={
+    <UnorderedList>
+      <li><Link href="/nieuws">Nieuws</Link></li>
+      <li><Link href="/over-ons">Over ons</Link></li>
+      <li><Link href="/werken-bij">Werken bij</Link></li>
+      <li><Link href="/klachten">Klachten</Link></li>
+    </UnorderedList>
   }
   linksSlot={
     <UnorderedList>
@@ -51,13 +59,18 @@ export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
         </a>
       </div>
       <div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__empty-slot">
-        <!-- leeg tussenslot -->
-      </div>
-      <div class="dsn-col-12 dsn-col-lg-3">
         <p class="dsn-paragraph">
           Dit is een voorbeeldorganisatie.
           <a class="dsn-link" href="/about">Meer informatie</a>.
         </p>
+      </div>
+      <div class="dsn-col-12 dsn-col-lg-3">
+        <ul class="dsn-unordered-list">
+          <li><a class="dsn-link" href="/nieuws">Nieuws</a></li>
+          <li><a class="dsn-link" href="/over-ons">Over ons</a></li>
+          <li><a class="dsn-link" href="/werken-bij">Werken bij</a></li>
+          <li><a class="dsn-link" href="/klachten">Klachten</a></li>
+        </ul>
       </div>
       <div class="dsn-col-12 dsn-col-lg-3">
         <ul class="dsn-unordered-list">

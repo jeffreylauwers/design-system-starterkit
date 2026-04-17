@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** April 9, 2026
+**Last Updated:** April 17, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -1697,7 +1697,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 ## Navigation Components
 
-**Status:** Complete (HTML/CSS, React): 5 components total
+**Status:** Complete (HTML/CSS, React): 6 components total
 
 ### Menu
 
@@ -2234,6 +2234,130 @@ const [isOpen, setIsOpen] = React.useState(false);
 ```
 
 **Tests:** React (38 tests)
+
+---
+
+### PageFooter
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/page-footer/` / `packages/components-react/src/PageFooter/`
+
+**Tokens:** `tokens/components/page-footer.json`
+
+**Props:** `logoSlot`, `secondarySlot`, `contentSlot`, `linksSlot`, `colorScheme` (`'default'` | `'inverse'`), `className`
+
+**Features:**
+
+- Paginavoettekst met `accent-1` achtergrond en dikke `border-block-start` (4px): visuele tegenhanger van de `PageHeader border-block-end`
+- `<footer>` element met impliciet `role="contentinfo"` landmark — geen extra attribuut nodig
+- 4-koloms grid via `dsn-grid` + `dsn-col-12 dsn-col-lg-3`: vier gelijke slots naast elkaar op ≥ 64em, verticaal gestapeld op mobiel
+- `row-gap` tussen gestapelde slots op mobiel via `--dsn-page-footer-slot-gap`
+- `colorScheme="inverse"`: schakelt naar `accent-1-inverse` achtergrond; tekst-, link- en logokleuren worden via CSS custom property overrides automatisch aangepast voor contrast
+- Logo-slot: `max-block-size` via `--dsn-page-footer-logo-max-block-size` (2rem); `--dsn-logo-color-primary` en `--dsn-logo-color-label` omgedraaid bij inverse voor correct doorkijkje-effect
+- `secondarySlot` (slot 2): optioneel; verdwijnt op mobiel via `:empty { display: none }` als leeg
+
+**CSS-klassen:**
+
+| Klasse                        | Element    | Beschrijving                                             |
+| ----------------------------- | ---------- | -------------------------------------------------------- |
+| `dsn-page-footer`             | `<footer>` | Rootblok: accent-1 achtergrond, dikke border-block-start |
+| `dsn-page-footer--inverse`    | `<footer>` | Modifier: accent-1-inverse kleurenschaal                 |
+| `dsn-page-footer__inner`      | `<div>`    | Padding-container voor het grid                          |
+| `dsn-page-footer__empty-slot` | `<div>`    | Optioneel slot 2: verborgen via `:empty` wanneer leeg    |
+
+**Design tokens:**
+
+| Token                                        | Waarde                                | Beschrijving                             |
+| -------------------------------------------- | ------------------------------------- | ---------------------------------------- |
+| `--dsn-page-footer-background-color`         | `{dsn.color.accent-1.bg-default}`     | Achtergrondkleur (default)               |
+| `--dsn-page-footer-border-block-start-width` | `{dsn.border.width.thick}`            | Breedte topborder (4px)                  |
+| `--dsn-page-footer-border-block-start-color` | `{dsn.color.accent-1.border-default}` | Kleur topborder (default)                |
+| `--dsn-page-footer-padding-block`            | `{dsn.space.block.6xl}`               | Verticale padding boven en onder (64px)  |
+| `--dsn-page-footer-padding-inline`           | `{dsn.space.inline.xl}`               | Horizontale padding                      |
+| `--dsn-page-footer-slot-gap`                 | `{dsn.space.block.xl}`                | Verticale ruimte tussen gestapelde slots |
+| `--dsn-page-footer-logo-max-block-size`      | `2rem`                                | Maximale logohoogte (32px)               |
+
+**Usage:**
+
+```html
+<!-- HTML/CSS -->
+<footer class="dsn-page-footer">
+  <div class="dsn-page-footer__inner">
+    <div class="dsn-grid">
+      <div class="dsn-col-12 dsn-col-lg-3">
+        <a href="/">
+          <svg class="dsn-logo" aria-hidden="true"><!-- logo --></svg>
+          <span class="dsn-visually-hidden"
+            >Naam organisatie — terug naar homepage</span
+          >
+        </a>
+      </div>
+      <div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__empty-slot">
+        <p class="dsn-paragraph">
+          Korte beschrijving.
+          <a class="dsn-link" href="/about">Meer informatie</a>.
+        </p>
+      </div>
+      <div class="dsn-col-12 dsn-col-lg-3">
+        <ul class="dsn-unordered-list">
+          <li><a class="dsn-link" href="/nieuws">Nieuws</a></li>
+          <li><a class="dsn-link" href="/over-ons">Over ons</a></li>
+        </ul>
+      </div>
+      <div class="dsn-col-12 dsn-col-lg-3">
+        <ul class="dsn-unordered-list">
+          <li><a class="dsn-link" href="/privacy">Privacyverklaring</a></li>
+          <li>
+            <a class="dsn-link" href="/accessibility">Toegankelijkheid</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+```
+
+```tsx
+// React
+<PageFooter
+  logoSlot={
+    <a href="/">
+      <Logo aria-hidden={true} />
+      <span className="dsn-visually-hidden">
+        Naam organisatie — terug naar homepage
+      </span>
+    </a>
+  }
+  secondarySlot={
+    <Paragraph>
+      Korte beschrijving. <Link href="/about">Meer informatie</Link>.
+    </Paragraph>
+  }
+  contentSlot={
+    <UnorderedList>
+      <li>
+        <Link href="/nieuws">Nieuws</Link>
+      </li>
+      <li>
+        <Link href="/over-ons">Over ons</Link>
+      </li>
+    </UnorderedList>
+  }
+  linksSlot={
+    <UnorderedList>
+      <li>
+        <Link href="/privacy">Privacyverklaring</Link>
+      </li>
+      <li>
+        <Link href="/accessibility">Toegankelijkheid</Link>
+      </li>
+    </UnorderedList>
+  }
+/>
+```
+
+**Tests:** React (11 tests)
 
 ---
 
