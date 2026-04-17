@@ -1,0 +1,32 @@
+import { Meta, Story, Markdown } from '@storybook/blocks';
+import * as PageBodyStories from './PageBody.stories';
+import docs from './PageBody.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={PageBodyStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={PageBodyStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={PageBodyStories.Default}
+  react={`<PageBody>
+  <main id="main-content" tabIndex={-1}>
+    <Container>...</Container>
+  </main>
+</PageBody>`}
+  html={`<div class="dsn-page-body">
+  <main id="main-content" tabindex="-1">
+    <!-- pagina-inhoud -->
+  </main>
+</div>`}
+/>
+
+<Markdown>{rest}</Markdown>
