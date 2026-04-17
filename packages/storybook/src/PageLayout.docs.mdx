@@ -1,0 +1,42 @@
+import { Meta, Story, Markdown } from '@storybook/blocks';
+import * as PageLayoutStories from './PageLayout.stories';
+import docs from './PageLayout.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={PageLayoutStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={PageLayoutStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={PageLayoutStories.Default}
+  react={`<SkipLink href="#main-content" />
+<PageLayout>
+  <PageHeader logoSlot={logoLink} />
+  <PageBody>
+    <main id="main-content" tabIndex={-1}>
+      <Container>...</Container>
+    </main>
+  </PageBody>
+  <PageFooter slot1={logoLink} slot3={footerLinks} slot4={footerLinks} />
+</PageLayout>`}
+  html={`<a href="#main-content" class="dsn-skip-link">Ga direct naar de hoofdinhoud</a>
+<div class="dsn-page-layout">
+  <header class="dsn-page-header"><!-- PageHeader --></header>
+  <div class="dsn-page-body">
+    <main id="main-content" tabindex="-1">
+      <!-- paginainhoud -->
+    </main>
+  </div>
+  <footer class="dsn-page-footer"><!-- PageFooter --></footer>
+</div>`}
+/>
+
+<Markdown>{rest}</Markdown>
