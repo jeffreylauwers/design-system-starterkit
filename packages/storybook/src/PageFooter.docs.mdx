@@ -1,0 +1,77 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as PageFooterStories from './PageFooter.stories';
+import docs from './PageFooter.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={PageFooterStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={PageFooterStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={PageFooterStories.Default}
+  react={`<PageFooter
+  logoSlot={
+    <a href="/">
+      <Logo aria-hidden={true} />
+      <span className="dsn-visually-hidden">
+        Starter Kit — terug naar homepage
+      </span>
+    </a>
+  }
+  contentSlot={
+    <Paragraph>
+      Dit is een voorbeeldorganisatie.{' '}
+      <Link href="/about">Meer informatie</Link>.
+    </Paragraph>
+  }
+  linksSlot={
+    <UnorderedList>
+      <li><Link href="/privacy">Privacyverklaring</Link></li>
+      <li><Link href="/accessibility">Toegankelijkheid</Link></li>
+      <li><Link href="/cookies">Cookies</Link></li>
+      <li><Link href="/contact">Contact</Link></li>
+    </UnorderedList>
+  }
+/>`}
+  html={`<footer class="dsn-page-footer">
+  <div class="dsn-page-footer__inner">
+    <div class="dsn-grid">
+      <div class="dsn-col-12 dsn-col-lg-3">
+        <a href="/">
+          <svg class="dsn-logo" aria-hidden="true"><!-- Logo SVG --></svg>
+          <span class="dsn-visually-hidden">Starter Kit — terug naar homepage</span>
+        </a>
+      </div>
+      <div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__empty-slot">
+        <!-- leeg tussenslot -->
+      </div>
+      <div class="dsn-col-12 dsn-col-lg-3">
+        <p class="dsn-paragraph">
+          Dit is een voorbeeldorganisatie.
+          <a class="dsn-link" href="/about">Meer informatie</a>.
+        </p>
+      </div>
+      <div class="dsn-col-12 dsn-col-lg-3">
+        <ul class="dsn-unordered-list">
+          <li><a class="dsn-link" href="/privacy">Privacyverklaring</a></li>
+          <li><a class="dsn-link" href="/accessibility">Toegankelijkheid</a></li>
+          <li><a class="dsn-link" href="/cookies">Cookies</a></li>
+          <li><a class="dsn-link" href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>`}
+/>
+
+<Controls of={PageFooterStories.Default} />
+
+<Markdown>{rest}</Markdown>
