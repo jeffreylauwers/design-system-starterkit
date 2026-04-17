@@ -49,6 +49,15 @@
 }
 
 /* =============================================================================
+   Grid slot-gap — verticale ruimte tussen gestapelde slots op small viewport.
+   Op large viewport (4 kolommen naast elkaar) is row-gap visueel niet storend.
+   ============================================================================= */
+
+.dsn-page-footer .dsn-grid {
+  row-gap: var(--dsn-page-footer-slot-gap);
+}
+
+/* =============================================================================
    Leeg slot: verberg op mobile als inhoud ontbreekt (geen row-gap verspillen)
    ============================================================================= */
 

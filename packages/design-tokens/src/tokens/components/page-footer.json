@@ -17,9 +17,14 @@
         "comment": "Kleur van de bovenkantrand — accent-1 border-default voor subtiele maar zichtbare scheiding met de pagina-inhoud"
       },
       "padding-block": {
-        "value": "{dsn.space.block.xl}",
+        "value": "{dsn.space.block.6xl}",
         "type": "spacing",
         "comment": "Verticale ademruimte van de footer-binnenbalk"
+      },
+      "slot-gap": {
+        "value": "{dsn.space.block.xl}",
+        "type": "spacing",
+        "comment": "Verticale witruimte tussen gestapelde slots op small viewport"
       },
       "padding-inline": {
         "value": "{dsn.space.inline.xl}",

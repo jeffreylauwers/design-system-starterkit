@@ -20,10 +20,27 @@ const logoSlot = (
   </a>
 );
 
-const contentSlot = (
+const secondarySlot = (
   <Paragraph>
     Dit is een voorbeeldorganisatie. <Link href="/about">Meer informatie</Link>.
   </Paragraph>
+);
+
+const contentSlot = (
+  <UnorderedList>
+    <li>
+      <Link href="/nieuws">Nieuws</Link>
+    </li>
+    <li>
+      <Link href="/over-ons">Over ons</Link>
+    </li>
+    <li>
+      <Link href="/werken-bij">Werken bij</Link>
+    </li>
+    <li>
+      <Link href="/klachten">Klachten</Link>
+    </li>
+  </UnorderedList>
 );
 
 const linksSlot = (
@@ -62,13 +79,18 @@ const meta: Meta<typeof PageFooter> = {
         </a>
       </div>
       <div class="dsn-col-12 dsn-col-lg-3 dsn-page-footer__empty-slot">
-        <!-- leeg tussenslot -->
-      </div>
-      <div class="dsn-col-12 dsn-col-lg-3">
         <p class="dsn-paragraph">
           Dit is een voorbeeldorganisatie.
           <a class="dsn-link" href="/about">Meer informatie</a>.
         </p>
+      </div>
+      <div class="dsn-col-12 dsn-col-lg-3">
+        <ul class="dsn-unordered-list">
+          <li><a class="dsn-link" href="/nieuws">Nieuws</a></li>
+          <li><a class="dsn-link" href="/over-ons">Over ons</a></li>
+          <li><a class="dsn-link" href="/werken-bij">Werken bij</a></li>
+          <li><a class="dsn-link" href="/klachten">Klachten</a></li>
+        </ul>
       </div>
       <div class="dsn-col-12 dsn-col-lg-3">
         <ul class="dsn-unordered-list">
@@ -86,6 +108,7 @@ const meta: Meta<typeof PageFooter> = {
   },
   args: {
     logoSlot,
+    secondarySlot,
     contentSlot,
     linksSlot,
   },
@@ -130,35 +153,20 @@ export const Inverse: Story = {
   },
 };
 
-export const WithSecondarySlot: Story = {
-  name: 'Met secondarySlot',
-  args: {
-    secondarySlot: (
-      <Paragraph>Slot 2 — beschikbaar voor toekomstige inhoud.</Paragraph>
-    ),
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Het optionele `secondarySlot` (slot 2) vult de ruimte tussen het logo en de inhoud. Als het leeg is, is het verborgen via `:empty { display: none }` zodat geen onnodige ruimte wordt ingenomen op mobiel.',
-      },
-    },
-  },
-};
-
 export const AllVariants: Story = {
   name: 'Alle varianten',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <PageFooter
         logoSlot={logoSlot}
+        secondarySlot={secondarySlot}
         contentSlot={contentSlot}
         linksSlot={linksSlot}
       />
       <PageFooter
         colorScheme="inverse"
         logoSlot={logoSlot}
+        secondarySlot={secondarySlot}
         contentSlot={contentSlot}
         linksSlot={linksSlot}
       />
