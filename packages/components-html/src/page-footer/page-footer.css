@@ -1,0 +1,93 @@
+/**
+ * PageFooter Component
+ * Paginavoettekst met accent-1 achtergrond, dikke border-block-start en
+ * een 4-koloms grid. Mobile-first: slots stapelen verticaal; op grote
+ * viewports (≥ 64em) vier gelijke kolommen naast elkaar.
+ *
+ * Structuur:
+ * <footer class="dsn-page-footer">
+ *   <div class="dsn-page-footer__inner">
+ *     <div class="dsn-grid">
+ *       <div class="dsn-col-12 dsn-col-lg-3"><!-- logo slot --></div>
+ *       <div class="dsn-col-12 dsn-col-lg-3"><!-- slot 2 (optioneel) --></div>
+ *       <div class="dsn-col-12 dsn-col-lg-3"><!-- content slot --></div>
+ *       <div class="dsn-col-12 dsn-col-lg-3"><!-- links slot --></div>
+ *     </div>
+ *   </div>
+ * </footer>
+ *
+ * <!-- Inverse colorScheme -->
+ * <footer class="dsn-page-footer dsn-page-footer--inverse">...</footer>
+ */
+
+/* =============================================================================
+   Base
+   ============================================================================= */
+
+.dsn-page-footer {
+  background-color: var(--dsn-page-footer-background-color);
+  border-block-start: var(--dsn-page-footer-border-block-start-width) solid
+    var(--dsn-page-footer-border-block-start-color);
+}
+
+/* =============================================================================
+   Inner container — max-breedte + padding
+   ============================================================================= */
+
+.dsn-page-footer__inner {
+  padding-block: var(--dsn-page-footer-padding-block);
+  padding-inline: var(--dsn-page-footer-padding-inline);
+}
+
+/* =============================================================================
+   Logo — max-block-size op directe child van het logo-slot
+   ============================================================================= */
+
+.dsn-page-footer .dsn-logo {
+  max-block-size: var(--dsn-page-footer-logo-max-block-size);
+  inline-size: auto;
+}
+
+/* =============================================================================
+   Grid slot-gap — verticale ruimte tussen gestapelde slots op small viewport.
+   Op large viewport (4 kolommen naast elkaar) is row-gap visueel niet storend.
+   ============================================================================= */
+
+.dsn-page-footer .dsn-grid {
+  row-gap: var(--dsn-page-footer-slot-gap);
+}
+
+/* =============================================================================
+   Inverse modifier — schakelt naar accent-1-inverse kleurenschaal
+   ============================================================================= */
+
+.dsn-page-footer--inverse {
+  --dsn-page-footer-background-color: var(
+    --dsn-color-accent-1-inverse-bg-default
+  );
+  --dsn-page-footer-border-block-start-color: var(
+    --dsn-color-accent-1-inverse-border-default
+  );
+}
+
+/* Tekst- en linkkleur-overrides op inverse achtergrond */
+.dsn-page-footer--inverse {
+  --dsn-paragraph-color: var(--dsn-color-accent-1-inverse-color-default);
+  --dsn-link-color: var(--dsn-color-accent-1-inverse-color-default);
+  --dsn-link-text-decoration-color: var(
+    --dsn-color-accent-1-inverse-color-default
+  );
+  --dsn-link-hover-color: var(--dsn-color-accent-1-inverse-color-hover);
+  --dsn-unordered-list-color: var(--dsn-color-accent-1-inverse-color-default);
+  --dsn-unordered-list-marker-color: var(
+    --dsn-color-accent-1-inverse-color-default
+  );
+}
+
+/* Logo-kleuren aanpassen op inverse achtergrond:
+   primary → wit (logo-rand zichtbaar op donkere achtergrond)
+   label   → donkerblauw (doorkijkje-effect: letters tonen de achtergrondkleur) */
+.dsn-page-footer--inverse .dsn-logo {
+  --dsn-logo-color-primary: var(--dsn-color-accent-1-inverse-color-default);
+  --dsn-logo-color-label: var(--dsn-color-accent-1-inverse-bg-default);
+}
