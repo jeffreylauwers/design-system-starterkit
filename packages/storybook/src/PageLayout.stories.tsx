@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import {
   Logo,
   Link,
+  Menu,
+  MenuLink,
   PageBody,
   PageFooter,
   PageHeader,
@@ -21,6 +23,40 @@ const logoLink = (
       Starter Kit — terug naar homepage
     </span>
   </a>
+);
+
+const primaryNav = (
+  <Menu orientation="vertical">
+    <MenuLink href="/" level={1} current>
+      Home
+    </MenuLink>
+    <MenuLink href="/over-ons" level={1}>
+      Over ons
+    </MenuLink>
+    <MenuLink href="/nieuws" level={1}>
+      Nieuws
+    </MenuLink>
+    <MenuLink href="/contact" level={1}>
+      Contact
+    </MenuLink>
+  </Menu>
+);
+
+const primaryNavLarge = (
+  <Menu orientation="horizontal">
+    <MenuLink href="/" level={1} current>
+      Home
+    </MenuLink>
+    <MenuLink href="/over-ons" level={1}>
+      Over ons
+    </MenuLink>
+    <MenuLink href="/nieuws" level={1}>
+      Nieuws
+    </MenuLink>
+    <MenuLink href="/contact" level={1}>
+      Contact
+    </MenuLink>
+  </Menu>
 );
 
 const footerSlot3 = (
@@ -90,7 +126,11 @@ export const Default: Story = {
     <>
       <SkipLink href="#main-content" />
       <PageLayout>
-        <PageHeader logoSlot={logoLink} />
+        <PageHeader
+          logoSlot={logoLink}
+          primaryNavigation={primaryNav}
+          primaryNavigationLarge={primaryNavLarge}
+        />
         <PageBody>
           <main id="main-content" tabIndex={-1} style={{ padding: '2rem' }}>
             <p>
