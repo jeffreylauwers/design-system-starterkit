@@ -25,6 +25,7 @@
    ============================================================================= */
 
 .dsn-page-footer {
+  --dsn-grid-margin: 0;
   background-color: var(--dsn-page-footer-background-color);
   border-block-start: var(--dsn-page-footer-border-block-start-width) solid
     var(--dsn-page-footer-border-block-start-color);
