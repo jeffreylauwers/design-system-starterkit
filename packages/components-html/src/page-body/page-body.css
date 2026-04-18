@@ -1,3 +1,30 @@
+/**
+ * PageBody Component
+ * Structurele wrapper voor de hoofdinhoud van een pagina. Vult de beschikbare
+ * verticale ruimte op via `flex: 1` (sticky footer patroon binnen PageLayout).
+ *
+ * Structuur:
+ * <div class="dsn-page-body">
+ *   <div class="dsn-page-body__inner">
+ *     <main id="main-content" tabindex="-1">
+ *       <!-- paginainhoud -->
+ *     </main>
+ *   </div>
+ * </div>
+ */
+
+/* =============================================================================
+   Base
+   ============================================================================= */
+
 .dsn-page-body {
   flex: 1;
+}
+
+/* =============================================================================
+   Inner container — padding + optioneel max-inline-size via dsn.page.max-inline-size
+   ============================================================================= */
+
+.dsn-page-body__inner {
+  padding-inline: var(--dsn-page-body-padding-inline);
 }
