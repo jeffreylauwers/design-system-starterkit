@@ -25,6 +25,17 @@ describe('PageBody', () => {
     expect(container.querySelector('div')).toHaveClass('dsn-page-body');
   });
 
+  it('rendert een dsn-page-body__inner wrapper', () => {
+    const { container } = render(
+      <PageBody>
+        <main>inhoud</main>
+      </PageBody>
+    );
+    expect(
+      container.querySelector('.dsn-page-body > .dsn-page-body__inner')
+    ).toBeTruthy();
+  });
+
   it('rendert children', () => {
     const { container } = render(
       <PageBody>

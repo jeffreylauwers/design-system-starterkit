@@ -41,7 +41,7 @@ export const PageBody = React.forwardRef<HTMLDivElement, PageBodyProps>(
         className={classNames('dsn-page-body', className)}
         {...props}
       >
-        {children}
+        <div className="dsn-page-body__inner">{children}</div>
       </div>
     );
   }
