@@ -210,12 +210,10 @@ const footerSlot4 = (
 );
 
 // Padding op <main>: 64px boven/onder (--dsn-space-block-6xl),
-// 16px links/rechts (--dsn-space-inline-xl).
 // Template-specifiek: bewust niet via Container of een herbruikbare klasse —
 // andere templates kiezen zelf hun eigen spacing.
 const mainStyle: React.CSSProperties = {
   paddingBlock: 'var(--dsn-space-block-6xl)',
-  paddingInline: 'var(--dsn-space-inline-xl)',
 };
 
 // =============================================================================

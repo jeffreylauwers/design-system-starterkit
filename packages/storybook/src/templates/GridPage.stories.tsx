@@ -168,7 +168,6 @@ const footerSlot4 = (
 
 const mainStyle: React.CSSProperties = {
   paddingBlock: 'var(--dsn-space-block-6xl)',
-  paddingInline: 'var(--dsn-space-inline-xl)',
 };
 
 // =============================================================================
