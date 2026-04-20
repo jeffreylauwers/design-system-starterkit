@@ -280,13 +280,44 @@ export const FullWidth: Story = {
         <PageBody>
           <main id="main-content" tabIndex={-1} style={mainStyle}>
             <Stack space="2xl">
+              {/* Rij 1: volle breedte */}
               <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
                 <GridItem colSpan={12}>
                   <Container>
-                    <Paragraph>
-                      Full-width: inhoud strekt zich uit over de volledige
-                      viewport-breedte.
-                    </Paragraph>
+                    <Paragraph>Rij 1 — volle breedte (12 kolommen)</Paragraph>
+                  </Container>
+                </GridItem>
+              </Grid>
+
+              {/* Rij 2: 2 kolommen vanaf md */}
+              <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
+                <GridItem colSpan={12} colSpanMd={6}>
+                  <Container>
+                    <Paragraph>Rij 2 — kolom 1 van 2</Paragraph>
+                  </Container>
+                </GridItem>
+                <GridItem colSpan={12} colSpanMd={6}>
+                  <Container>
+                    <Paragraph>Rij 2 — kolom 2 van 2</Paragraph>
+                  </Container>
+                </GridItem>
+              </Grid>
+
+              {/* Rij 3: 3 kolommen vanaf md */}
+              <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
+                <GridItem colSpan={12} colSpanMd={4}>
+                  <Container>
+                    <Paragraph>Rij 3 — kolom 1 van 3</Paragraph>
+                  </Container>
+                </GridItem>
+                <GridItem colSpan={12} colSpanMd={4}>
+                  <Container>
+                    <Paragraph>Rij 3 — kolom 2 van 3</Paragraph>
+                  </Container>
+                </GridItem>
+                <GridItem colSpan={12} colSpanMd={4}>
+                  <Container>
+                    <Paragraph>Rij 3 — kolom 3 van 3</Paragraph>
                   </Container>
                 </GridItem>
               </Grid>

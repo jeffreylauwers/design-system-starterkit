@@ -332,9 +332,14 @@ export const FullWidth: Story = {
           <main id="main-content" tabIndex={-1} style={mainStyle}>
             <Heading level={1}>Paginatitel</Heading>
             <Paragraph>
-              Full-width variant: <code>--dsn-page-max-inline-size</code> is
-              ingesteld op <code>none</code> op de PageLayout. Header, body en
-              footer nemen de volledige viewport-breedte in.
+              Dit is de basisstructuur van een pagina in het design system. De
+              footer staat altijd onderaan de viewport, ongeacht de hoeveelheid
+              inhoud.
+            </Paragraph>
+            <Paragraph>
+              Voeg hier de paginaspecifieke inhoud toe:{' '}
+              <Link href="#">tekst</Link>, formulieren, tabellen of andere
+              componenten.
             </Paragraph>
           </main>
         </PageBody>
