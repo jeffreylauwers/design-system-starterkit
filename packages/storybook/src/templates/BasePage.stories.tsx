@@ -311,3 +311,45 @@ export const Inverse: Story = {
     </Body>
   ),
 };
+
+export const FullWidth: Story = {
+  name: 'Base Page: Full Width',
+  render: () => (
+    <Body>
+      <SkipLink href="#main-content" />
+      <PageLayout
+        style={{ '--dsn-page-max-inline-size': 'none' } as React.CSSProperties}
+      >
+        <PageHeader
+          logoSlot={logoSlot}
+          primaryNavigation={<PrimaryNavigation />}
+          primaryNavigationLarge={primaryNavigationLarge}
+          secondaryNavigation={secondaryNavigation}
+          secondaryNavigationLarge={secondaryNavigationLarge}
+          searchSlot={searchSlot}
+        />
+        <PageBody>
+          <main id="main-content" tabIndex={-1} style={mainStyle}>
+            <Heading level={1}>Paginatitel</Heading>
+            <Paragraph>
+              Dit is de basisstructuur van een pagina in het design system. De
+              footer staat altijd onderaan de viewport, ongeacht de hoeveelheid
+              inhoud.
+            </Paragraph>
+            <Paragraph>
+              Voeg hier de paginaspecifieke inhoud toe:{' '}
+              <Link href="#">tekst</Link>, formulieren, tabellen of andere
+              componenten.
+            </Paragraph>
+          </main>
+        </PageBody>
+        <PageFooter
+          slot1={footerSlot1}
+          slot2={footerSlot2}
+          slot3={footerSlot3}
+          slot4={footerSlot4}
+        />
+      </PageLayout>
+    </Body>
+  ),
+};
