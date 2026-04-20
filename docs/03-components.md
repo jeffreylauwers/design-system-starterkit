@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** April 17, 2026
+**Last Updated:** April 20, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -158,7 +158,7 @@ Components are designed to compose together:
 
 ## Layout Components
 
-Layout components bieden structuur voor paginalayouts. ActionGroup groepeert gerelateerde acties; Body stelt document-level cascade stijlen in; Container heeft een visuele stijl; Grid en Stack zijn pure CSS-utilities.
+Layout components bieden structuur voor paginalayouts. ActionGroup groepeert gerelateerde acties; Body stelt document-level cascade stijlen in; BreakoutSection laat een sectie uitslaan tot de volledige viewportbreedte; Container heeft een visuele stijl; Grid en Stack zijn pure CSS-utilities.
 
 ### ActionGroup
 
@@ -235,6 +235,54 @@ Stelt document-level CSS stijlen in zodat alle child-elementen via de CSS cascad
 **Gebruik:** Zet `dsn-body` op het `<body>` element in je HTML template, of gebruik de React `<Body>` component als root-wrapper. In Storybook is `dsn-body` via de global decorator automatisch op alle stories van toepassing.
 
 **Design tokens:** Geen component tokens: verwijst rechtstreeks naar globale tokens: `--dsn-color-neutral-bg-document`, `--dsn-color-neutral-color-document`, `--dsn-text-font-family-default`, `--dsn-text-font-size-md`, `--dsn-text-line-height-md`, `--dsn-text-font-weight-default`.
+
+---
+
+### BreakoutSection
+
+Laat een sectie "uitslaan" buiten een beperkte paginabreedte om de volledige viewportbreedte te beslaan via `margin-inline: calc(50% - 50vw)`. Bedoeld voor gebruik binnen `PageBody`, die `overflow-x: clip` heeft zodat er geen horizontale scrolbalk verschijnt.
+
+**HTML/CSS:**
+
+```html
+<section
+  class="dsn-breakout-section"
+  style="background-color: var(--dsn-color-accent-1-bg-default);"
+>
+  <!-- inhoud die de volledige viewportbreedte beslaat -->
+  <div
+    style="max-inline-size: var(--dsn-page-max-inline-size); margin-inline: auto; padding-inline: var(--dsn-page-body-padding-inline);"
+  >
+    <h2>Sectietitel</h2>
+    <p>Inhoud herbeperkt via inner wrapper.</p>
+  </div>
+</section>
+```
+
+**React:**
+
+```tsx
+<BreakoutSection
+  style={{ backgroundColor: 'var(--dsn-color-accent-1-bg-default)' }}
+>
+  <div
+    style={{
+      maxInlineSize: 'var(--dsn-page-max-inline-size)',
+      marginInline: 'auto',
+      paddingInline: 'var(--dsn-page-body-padding-inline)',
+    }}
+  >
+    <Heading level={2}>Sectietitel</Heading>
+    <Paragraph>Inhoud herbeperkt via inner wrapper.</Paragraph>
+  </div>
+</BreakoutSection>
+```
+
+**Props:** `as` (`div` | `section` | `article` | `aside`, default `section`), `children`.
+
+**Vereiste:** Gebruik alleen binnen `PageBody` of een parent met `overflow-x: clip`.
+
+**Design tokens:** Geen eigen component tokens. Gebruikt `--dsn-page-max-inline-size` en `--dsn-page-body-padding-inline` voor de inner wrapper (verantwoordelijkheid van de consumer).
 
 ---
 

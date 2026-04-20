@@ -2,6 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   Body,
+  BreakoutSection,
   Button,
   Heading,
   Link,
@@ -216,6 +217,18 @@ const mainStyle: React.CSSProperties = {
   paddingBlock: 'var(--dsn-space-block-6xl)',
 };
 
+// Inner container binnen BreakoutSection: herbeperkt de inhoud tot de paginabreedte
+const breakoutInnerStyle: React.CSSProperties = {
+  maxInlineSize: 'var(--dsn-page-max-inline-size)',
+  marginInline: 'auto',
+  paddingInline: 'var(--dsn-page-body-padding-inline)',
+  paddingBlock: 'var(--dsn-space-block-4xl)',
+};
+
+const breakoutSectionStyle: React.CSSProperties = {
+  backgroundColor: 'var(--dsn-color-accent-1-bg-default)',
+};
+
 // =============================================================================
 // META
 // =============================================================================
@@ -340,6 +353,107 @@ export const FullWidth: Story = {
               Voeg hier de paginaspecifieke inhoud toe:{' '}
               <Link href="#">tekst</Link>, formulieren, tabellen of andere
               componenten.
+            </Paragraph>
+          </main>
+        </PageBody>
+        <PageFooter
+          slot1={footerSlot1}
+          slot2={footerSlot2}
+          slot3={footerSlot3}
+          slot4={footerSlot4}
+        />
+      </PageLayout>
+    </Body>
+  ),
+};
+
+export const WithBreakoutSection: Story = {
+  name: 'Base Page: with BreakoutSection',
+  render: () => (
+    <Body>
+      <SkipLink href="#main-content" />
+      <PageLayout>
+        <PageHeader
+          logoSlot={logoSlot}
+          primaryNavigation={<PrimaryNavigation />}
+          primaryNavigationLarge={primaryNavigationLarge}
+          secondaryNavigation={secondaryNavigation}
+          secondaryNavigationLarge={secondaryNavigationLarge}
+          searchSlot={searchSlot}
+        />
+        <PageBody>
+          <main id="main-content" tabIndex={-1} style={mainStyle}>
+            <Heading level={1}>Paginatitel</Heading>
+            <Paragraph>
+              Normale paginainhoud voor de uitgeslagen sectie.
+            </Paragraph>
+            <BreakoutSection style={breakoutSectionStyle}>
+              <div style={breakoutInnerStyle}>
+                <Heading level={2}>Uitgeslagen sectie</Heading>
+                <Paragraph>
+                  Deze sectie breekt buiten de beperkte paginabreedte en beslaat
+                  de volledige viewportbreedte. De inhoud erin is herbeperkt via
+                  een inner wrapper.
+                </Paragraph>
+              </div>
+            </BreakoutSection>
+            <Paragraph>
+              Normale paginainhoud na de uitgeslagen sectie.
+            </Paragraph>
+          </main>
+        </PageBody>
+        <PageFooter
+          slot1={footerSlot1}
+          slot2={footerSlot2}
+          slot3={footerSlot3}
+          slot4={footerSlot4}
+        />
+      </PageLayout>
+    </Body>
+  ),
+};
+
+export const FullWidthWithBreakoutSection: Story = {
+  name: 'Base Page: Full Width + BreakoutSection',
+  render: () => (
+    <Body>
+      <SkipLink href="#main-content" />
+      <PageLayout
+        style={{ '--dsn-page-max-inline-size': 'none' } as React.CSSProperties}
+      >
+        <PageHeader
+          logoSlot={logoSlot}
+          primaryNavigation={<PrimaryNavigation />}
+          primaryNavigationLarge={primaryNavigationLarge}
+          secondaryNavigation={secondaryNavigation}
+          secondaryNavigationLarge={secondaryNavigationLarge}
+          searchSlot={searchSlot}
+        />
+        <PageBody>
+          <main id="main-content" tabIndex={-1} style={mainStyle}>
+            <Heading level={1}>Paginatitel</Heading>
+            <Paragraph>
+              In full-width modus is er geen beperkte containerbreedte. Een
+              BreakoutSection heeft hier hetzelfde visuele effect als de
+              achtergrond, maar de margin-inline formule past zich aan aan de
+              werkelijke containerbreedte.
+            </Paragraph>
+            <BreakoutSection style={breakoutSectionStyle}>
+              <div
+                style={{
+                  paddingBlock: 'var(--dsn-space-block-4xl)',
+                  paddingInline: 'var(--dsn-page-body-padding-inline)',
+                }}
+              >
+                <Heading level={2}>Uitgeslagen sectie</Heading>
+                <Paragraph>
+                  Ook in full-width paginalayout breekt BreakoutSection correct
+                  uit en beslaat de volledige breedte.
+                </Paragraph>
+              </div>
+            </BreakoutSection>
+            <Paragraph>
+              Normale paginainhoud na de uitgeslagen sectie.
             </Paragraph>
           </main>
         </PageBody>

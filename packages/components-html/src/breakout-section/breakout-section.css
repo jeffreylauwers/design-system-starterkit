@@ -1,0 +1,18 @@
+/**
+ * BreakoutSection Layout Component
+ * Laat een sectie "uitslaan" buiten een beperkte paginabreedte om de volledige
+ * viewportbreedte te beslaan.
+ *
+ * Vereiste: de parent (.dsn-page-body) moet overflow-x: clip hebben om
+ * horizontale scrolbalken te voorkomen.
+ *
+ * Usage:
+ * <section class="dsn-breakout-section">
+ *   <!-- inhoud beslaat volledige viewportbreedte -->
+ * </section>
+ */
+
+.dsn-breakout-section {
+  margin-block: var(--dsn-space-block-4xl);
+  margin-inline: calc(50% - 50vw);
+}

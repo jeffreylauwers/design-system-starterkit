@@ -1,0 +1,30 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as BreakoutSectionStories from './BreakoutSection.stories';
+import docs from './BreakoutSection.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={BreakoutSectionStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={BreakoutSectionStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={BreakoutSectionStories.Default}
+  html={`<section class="dsn-breakout-section" style="background-color: var(--dsn-color-accent-1-inverse-bg-default); padding-block: var(--dsn-space-block-4xl);">
+  <div style="max-inline-size: var(--dsn-page-max-inline-size); margin-inline: auto; padding-inline: var(--dsn-page-body-padding-inline);">
+    <h2>Uitgeslagen sectie</h2>
+    <p>Inhoud herbeperkt via inner wrapper.</p>
+  </div>
+</section>`}
+/>
+
+<Controls of={BreakoutSectionStories.Default} />
+
+<Markdown>{rest}</Markdown>
