@@ -30,20 +30,22 @@ const meta: Meta<typeof BreakoutSection> = {
 export default meta;
 type Story = StoryObj<typeof BreakoutSection>;
 
-// Wrapper die een beperkte paginabreedte simuleert zodat het uitslaan zichtbaar is
+// Wrapper die een beperkte paginabreedte simuleert zodat het uitslaan zichtbaar is.
+// De buitenste div is volle breedte met overflow-x: clip (zoals dsn-page-body).
+// De binnenste div is geconstrained (zoals dsn-page-body__inner).
 function ConstrainedPage({ children }: { children: React.ReactNode }) {
   return (
     <div
       style={{
-        maxInlineSize: '960px',
-        marginInline: 'auto',
         overflowX: 'clip',
-        paddingBlock: 'var(--dsn-space-block-4xl)',
       }}
     >
       <div
         style={{
+          maxInlineSize: '960px',
+          marginInline: 'auto',
           paddingInline: 'var(--dsn-space-inline-3xl)',
+          paddingBlock: 'var(--dsn-space-block-4xl)',
         }}
       >
         {children}
