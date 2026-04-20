@@ -6,6 +6,40 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.28.0 (April 20, 2026)
+
+### BreakoutSection component (issue #173, PR #181)
+
+#### Added
+
+- **BreakoutSection** component: laat een sectie "uitslaan" buiten een beperkte paginabreedte om de volledige viewportbreedte te beslaan (PR #181)
+- CSS-formule `margin-inline: calc(50% - 50vw)` werkt ongeacht viewportbreedte
+- `margin-block: var(--dsn-space-block-4xl)` voor verticale ruimte boven en onder
+- `as` prop: `div` | `section` | `article` | `aside` (default `section`)
+- `overflow-x: clip` toegevoegd aan `.dsn-page-body` om horizontale scrolbalk te voorkomen
+- Template stories uitgebreid: BasePage en GridPage elk met twee extra varianten (_with BreakoutSection_ en _Full Width + BreakoutSection_)
+- 8 tests, 3 Storybook bestanden
+
+---
+
+## Version 5.27.0 (April 20, 2026)
+
+### PageBody inner container + dsn.page.max-inline-size token (issues #170, #172)
+
+#### Added
+
+- **`dsn-page-body__inner`** wrapper in PageBody: centraliseert `max-inline-size` en `padding-inline` op één plek (PR #170)
+- **`dsn.page.max-inline-size`** token: overschrijfbaar CSS custom property `--dsn-page-max-inline-size` op `PageLayout`-niveau voor eenvoudige full-width layout via `--dsn-page-max-inline-size: none`
+- `--dsn-page-max-inline-size` doorpropageerd naar `PageHeader` en `PageFooter` inner containers (ee5d903)
+
+#### Added
+
+- **BasePage template** (issue #168, PR #168): eerste volledig uitgewerkte paginatemplate met `PageLayout`, `PageHeader`, `PageBody`, `PageFooter`, navigatie, zoekbalk en sticky footer
+- **GridPage template** (issue #169, PR #169): paginatemplate met `Grid` + `GridItem` compositie en meerdere kolom-layouts
+- Beide templates: _Default_, _Inverse_ (BasePage) en _Full Width_ varianten
+
+---
+
 ## Version 5.26.0 (April 17, 2026)
 
 ### PageFooter component (issue #161, PR #162)
