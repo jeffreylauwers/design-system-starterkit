@@ -38,6 +38,8 @@
 .dsn-page-footer__inner {
   padding-block: var(--dsn-page-footer-padding-block);
   padding-inline: var(--dsn-page-footer-padding-inline);
+  max-inline-size: var(--dsn-page-max-inline-size);
+  margin-inline: auto;
 }
 
 /* =============================================================================

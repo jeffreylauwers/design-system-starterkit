@@ -260,3 +260,46 @@ export const Default: Story = {
     </Body>
   ),
 };
+
+export const FullWidth: Story = {
+  name: 'Grid Page: Full Width',
+  render: () => (
+    <Body>
+      <SkipLink href="#main-content" />
+      <PageLayout
+        style={{ '--dsn-page-max-inline-size': 'none' } as React.CSSProperties}
+      >
+        <PageHeader
+          logoSlot={logoSlot}
+          primaryNavigation={<PrimaryNavigation />}
+          primaryNavigationLarge={primaryNavigationLarge}
+          secondaryNavigation={secondaryNavigation}
+          secondaryNavigationLarge={secondaryNavigationLarge}
+          searchSlot={searchSlot}
+        />
+        <PageBody>
+          <main id="main-content" tabIndex={-1} style={mainStyle}>
+            <Stack space="2xl">
+              <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
+                <GridItem colSpan={12}>
+                  <Container>
+                    <Paragraph>
+                      Full-width: inhoud strekt zich uit over de volledige
+                      viewport-breedte.
+                    </Paragraph>
+                  </Container>
+                </GridItem>
+              </Grid>
+            </Stack>
+          </main>
+        </PageBody>
+        <PageFooter
+          slot1={footerSlot1}
+          slot2={footerSlot2}
+          slot3={footerSlot3}
+          slot4={footerSlot4}
+        />
+      </PageLayout>
+    </Body>
+  ),
+};

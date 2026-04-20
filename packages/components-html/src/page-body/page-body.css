@@ -27,4 +27,6 @@
 
 .dsn-page-body__inner {
   padding-inline: var(--dsn-page-body-padding-inline);
+  max-inline-size: var(--dsn-page-max-inline-size);
+  margin-inline: auto;
 }

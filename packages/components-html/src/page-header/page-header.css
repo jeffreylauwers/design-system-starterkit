@@ -85,13 +85,15 @@
 .dsn-page-header__masthead {
   background-color: var(--dsn-page-header-masthead-background-color);
   padding-block: var(--dsn-page-header-masthead-padding-block);
-  padding-inline: var(--dsn-page-header-masthead-padding-inline);
 }
 
 .dsn-page-header__masthead-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-inline: var(--dsn-page-header-masthead-padding-inline);
+  max-inline-size: var(--dsn-page-max-inline-size);
+  margin-inline: auto;
 }
 
 /* =============================================================================
@@ -133,13 +135,18 @@
    logo (inline-start) en servicemenu + zoekknop (inline-end).
    ============================================================================= */
 
+.dsn-page-header__compact-layout {
+  background-color: var(--dsn-page-header-compact-background-color);
+}
+
 .dsn-page-header__compact-inner {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  background-color: var(--dsn-page-header-compact-background-color);
   padding-block: var(--dsn-page-header-compact-padding-block);
   padding-inline: var(--dsn-page-header-compact-padding-inline);
+  max-inline-size: var(--dsn-page-max-inline-size);
+  margin-inline: auto;
 }
 
 /* Logo in compact context links uitlijnen — niet centreren zoals in de mobile bar.
@@ -168,13 +175,18 @@
 
 .dsn-page-header__navbar {
   background-color: var(--dsn-page-header-navbar-background-color);
-  padding-inline: var(--dsn-page-header-navbar-padding-inline);
 
   /* MenuLink-items in de navbar krijgen een grotere min-block-size en ruimere
      padding-inline. Door de tokens te overschrijven op de container werkt de
      calc()-compensatie voor de current-indicator automatisch mee. */
   --dsn-menu-item-min-block-size: 4rem;
   --dsn-menu-item-padding-inline: var(--dsn-space-inline-xl);
+}
+
+.dsn-page-header__navbar-inner {
+  padding-inline: var(--dsn-page-header-navbar-padding-inline);
+  max-inline-size: var(--dsn-page-max-inline-size);
+  margin-inline: auto;
 }
 
 /* =============================================================================
@@ -226,6 +238,8 @@
   align-items: center;
   padding-block: var(--dsn-page-header-padding-block);
   padding-inline: var(--dsn-page-header-padding-inline);
+  max-inline-size: var(--dsn-page-max-inline-size);
+  margin-inline: auto;
 }
 
 /* =============================================================================
@@ -281,13 +295,15 @@
 .dsn-page-header__search-panel {
   background-color: var(--dsn-page-header-search-panel-background-color);
   padding-block: var(--dsn-page-header-search-panel-padding-block);
-  padding-inline: var(--dsn-page-header-search-panel-padding-inline);
 }
 
 .dsn-page-header__search-inner {
   display: flex;
   gap: var(--dsn-space-inline-md);
   align-items: flex-start;
+  padding-inline: var(--dsn-page-header-search-panel-padding-inline);
+  max-inline-size: var(--dsn-page-max-inline-size);
+  margin-inline: auto;
 }
 
 /* SearchInput wrapper vult beschikbare ruimte volledig — overschrijft de standaard
