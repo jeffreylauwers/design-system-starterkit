@@ -2,10 +2,12 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   Body,
+  BreakoutSection,
   Button,
   Container,
   Grid,
   GridItem,
+  Heading,
   Link,
   Logo,
   Menu,
@@ -170,6 +172,17 @@ const mainStyle: React.CSSProperties = {
   paddingBlock: 'var(--dsn-space-block-6xl)',
 };
 
+const breakoutSectionStyle: React.CSSProperties = {
+  backgroundColor: 'var(--dsn-color-accent-1-bg-default)',
+};
+
+const breakoutInnerStyle: React.CSSProperties = {
+  maxInlineSize: 'var(--dsn-page-max-inline-size)',
+  marginInline: 'auto',
+  paddingInline: 'var(--dsn-page-body-padding-inline)',
+  paddingBlock: 'var(--dsn-space-block-4xl)',
+};
+
 // =============================================================================
 // META
 // =============================================================================
@@ -318,6 +331,141 @@ export const FullWidth: Story = {
                 <GridItem colSpan={12} colSpanMd={4}>
                   <Container>
                     <Paragraph>Rij 3 — kolom 3 van 3</Paragraph>
+                  </Container>
+                </GridItem>
+              </Grid>
+            </Stack>
+          </main>
+        </PageBody>
+        <PageFooter
+          slot1={footerSlot1}
+          slot2={footerSlot2}
+          slot3={footerSlot3}
+          slot4={footerSlot4}
+        />
+      </PageLayout>
+    </Body>
+  ),
+};
+
+export const WithBreakoutSection: Story = {
+  name: 'Grid Page: with BreakoutSection',
+  render: () => (
+    <Body>
+      <SkipLink href="#main-content" />
+      <PageLayout>
+        <PageHeader
+          logoSlot={logoSlot}
+          primaryNavigation={<PrimaryNavigation />}
+          primaryNavigationLarge={primaryNavigationLarge}
+          secondaryNavigation={secondaryNavigation}
+          secondaryNavigationLarge={secondaryNavigationLarge}
+          searchSlot={searchSlot}
+        />
+        <PageBody>
+          <main id="main-content" tabIndex={-1} style={mainStyle}>
+            <Stack space="2xl">
+              {/* Rij 1: volle breedte */}
+              <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
+                <GridItem colSpan={12}>
+                  <Container>
+                    <Paragraph>Rij 1 — volle breedte (12 kolommen)</Paragraph>
+                  </Container>
+                </GridItem>
+              </Grid>
+
+              {/* BreakoutSection: breekt buiten de grid-container */}
+              <BreakoutSection style={breakoutSectionStyle}>
+                <div style={breakoutInnerStyle}>
+                  <Heading level={2}>Uitgeslagen sectie</Heading>
+                  <Paragraph>
+                    Deze sectie breekt buiten de beperkte paginabreedte. De
+                    inhoud erin is herbeperkt via een inner wrapper.
+                  </Paragraph>
+                </div>
+              </BreakoutSection>
+
+              {/* Rij 2: 2 kolommen vanaf md */}
+              <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
+                <GridItem colSpan={12} colSpanMd={6}>
+                  <Container>
+                    <Paragraph>Rij 2 — kolom 1 van 2</Paragraph>
+                  </Container>
+                </GridItem>
+                <GridItem colSpan={12} colSpanMd={6}>
+                  <Container>
+                    <Paragraph>Rij 2 — kolom 2 van 2</Paragraph>
+                  </Container>
+                </GridItem>
+              </Grid>
+            </Stack>
+          </main>
+        </PageBody>
+        <PageFooter
+          slot1={footerSlot1}
+          slot2={footerSlot2}
+          slot3={footerSlot3}
+          slot4={footerSlot4}
+        />
+      </PageLayout>
+    </Body>
+  ),
+};
+
+export const FullWidthWithBreakoutSection: Story = {
+  name: 'Grid Page: Full Width + BreakoutSection',
+  render: () => (
+    <Body>
+      <SkipLink href="#main-content" />
+      <PageLayout
+        style={{ '--dsn-page-max-inline-size': 'none' } as React.CSSProperties}
+      >
+        <PageHeader
+          logoSlot={logoSlot}
+          primaryNavigation={<PrimaryNavigation />}
+          primaryNavigationLarge={primaryNavigationLarge}
+          secondaryNavigation={secondaryNavigation}
+          secondaryNavigationLarge={secondaryNavigationLarge}
+          searchSlot={searchSlot}
+        />
+        <PageBody>
+          <main id="main-content" tabIndex={-1} style={mainStyle}>
+            <Stack space="2xl">
+              {/* Rij 1: volle breedte */}
+              <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
+                <GridItem colSpan={12}>
+                  <Container>
+                    <Paragraph>Rij 1 — volle breedte (12 kolommen)</Paragraph>
+                  </Container>
+                </GridItem>
+              </Grid>
+
+              {/* BreakoutSection in full-width paginalayout */}
+              <BreakoutSection style={breakoutSectionStyle}>
+                <div
+                  style={{
+                    paddingBlock: 'var(--dsn-space-block-4xl)',
+                    paddingInline: 'var(--dsn-page-body-padding-inline)',
+                  }}
+                >
+                  <Heading level={2}>Uitgeslagen sectie</Heading>
+                  <Paragraph>
+                    Ook in full-width paginalayout breekt BreakoutSection
+                    correct uit en beslaat de volledige breedte.
+                  </Paragraph>
+                </div>
+              </BreakoutSection>
+
+              {/* Rij 2: 2 kolommen vanaf md */}
+              <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
+                <GridItem colSpan={12} colSpanMd={6}>
+                  <Container>
+                    <Paragraph>Rij 2 — kolom 1 van 2</Paragraph>
+                  </Container>
+                </GridItem>
+                <GridItem colSpan={12} colSpanMd={6}>
+                  <Container>
+                    <Paragraph>Rij 2 — kolom 2 van 2</Paragraph>
                   </Container>
                 </GridItem>
               </Grid>
