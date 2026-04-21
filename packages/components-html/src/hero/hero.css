@@ -1,0 +1,204 @@
+/**
+ * Hero Component
+ * Prominente introductiesectie direct onder de PageHeader. Beslaat de volledige
+ * paginabreedte via het BreakoutSection-patroon (margin-inline: calc(50% - 50vw)).
+ *
+ * Vereiste: de parent heeft overflow-x: clip (dsn-page-body).
+ *
+ * Usage:
+ * <section class="dsn-hero" aria-labelledby="hero-heading">
+ *   <div class="dsn-hero__inner">
+ *     <div class="dsn-hero__content">
+ *       <!-- heading, paragraph, action group of searchbox -->
+ *     </div>
+ *   </div>
+ * </section>
+ *
+ * Searchbox (zoekfunctie als primaire actie):
+ * <div class="dsn-hero__searchbox">
+ *   <!-- SearchInput wrapper + submit button -->
+ * </div>
+ */
+
+/* =============================================================================
+   Base
+   ============================================================================= */
+
+.dsn-hero {
+  margin-inline: calc(50% - 50vw);
+  min-block-size: max(
+    var(--dsn-hero-min-block-size),
+    var(--dsn-hero-block-size)
+  );
+  background-color: var(--dsn-hero-background-color-default);
+  color: var(--dsn-hero-color-default);
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================================================================
+   Inner — centrerende wrapper (stemt af op dsn-page-body__inner)
+   ============================================================================= */
+
+.dsn-hero__inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-inline-size: var(--dsn-page-max-inline-size);
+  margin-inline: auto;
+  padding-inline: var(--dsn-hero-padding-inline);
+  padding-block: var(--dsn-hero-padding-block);
+  inline-size: 100%;
+}
+
+/* =============================================================================
+   Content — verticaal gecentreerde slot-container
+   ============================================================================= */
+
+.dsn-hero__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =============================================================================
+   Searchbox — zoekveld + submit button naast elkaar
+   ============================================================================= */
+
+.dsn-hero__searchbox {
+  display: flex;
+  align-items: center;
+  gap: var(--dsn-space-inline-md);
+}
+
+/* SearchInput wrapper vult beschikbare ruimte; button behoudt zijn natuurlijke breedte */
+.dsn-hero__searchbox .dsn-search-input-wrapper {
+  flex: 1;
+  min-inline-size: 0;
+  max-inline-size: none;
+}
+
+.dsn-hero__searchbox .dsn-text-input {
+  max-inline-size: none;
+  inline-size: 100%;
+}
+
+/* =============================================================================
+   Modifier: --inverse
+   Achtergrond + tekst- en componentkleur-overrides via CSS custom properties.
+   Patroon identiek aan PageHeader en PageFooter --inverse.
+   ============================================================================= */
+
+.dsn-hero--inverse {
+  background-color: var(--dsn-hero-background-color-inverse);
+  color: var(--dsn-hero-color-inverse);
+
+  /* Tekst-componenten */
+  --dsn-heading-level-1-color: var(--dsn-hero-color-inverse);
+  --dsn-heading-level-2-color: var(--dsn-hero-color-inverse);
+  --dsn-heading-level-3-color: var(--dsn-hero-color-inverse);
+  --dsn-heading-level-4-color: var(--dsn-hero-color-inverse);
+  --dsn-heading-level-5-color: var(--dsn-hero-color-inverse);
+  --dsn-heading-level-6-color: var(--dsn-hero-color-inverse);
+  --dsn-paragraph-color: var(--dsn-hero-color-inverse);
+
+  /* Strong button — action-1 kleurenschaal op inverse achtergrond */
+  --dsn-button-strong-background-color: var(--dsn-color-action-1-bg-default);
+  --dsn-button-strong-color: var(--dsn-color-action-1-color-default);
+  --dsn-button-strong-hover-background-color: var(
+    --dsn-color-action-1-bg-hover
+  );
+  --dsn-button-strong-hover-color: var(--dsn-color-action-1-color-hover);
+  --dsn-button-strong-active-background-color: var(
+    --dsn-color-action-1-bg-active
+  );
+  --dsn-button-strong-active-color: var(--dsn-color-action-1-color-active);
+
+  /* Subtle button — transparant met lichte tekst/rand op inverse achtergrond */
+  --dsn-button-subtle-color: var(--dsn-color-accent-1-inverse-color-default);
+  --dsn-button-subtle-hover-background-color: var(
+    --dsn-color-accent-1-inverse-bg-hover
+  );
+  --dsn-button-subtle-hover-color: var(
+    --dsn-color-accent-1-inverse-color-hover
+  );
+  --dsn-button-subtle-active-background-color: var(
+    --dsn-color-accent-1-inverse-bg-active
+  );
+  --dsn-button-subtle-active-color: var(
+    --dsn-color-accent-1-inverse-color-active
+  );
+}
+
+/* =============================================================================
+   Modifier: --image
+   ============================================================================= */
+
+.dsn-hero--image {
+  background-image: var(--dsn-hero-bg-image);
+  background-size: cover;
+  background-position: center;
+  color: var(--dsn-hero-color-inverse);
+
+  /* Tekst-componenten */
+  --dsn-heading-level-1-color: var(--dsn-hero-color-inverse);
+  --dsn-heading-level-2-color: var(--dsn-hero-color-inverse);
+  --dsn-heading-level-3-color: var(--dsn-hero-color-inverse);
+  --dsn-heading-level-4-color: var(--dsn-hero-color-inverse);
+  --dsn-heading-level-5-color: var(--dsn-hero-color-inverse);
+  --dsn-heading-level-6-color: var(--dsn-hero-color-inverse);
+  --dsn-paragraph-color: var(--dsn-hero-color-inverse);
+
+  /* Buttons — zelfde als inverse */
+  --dsn-button-strong-background-color: var(--dsn-color-action-1-bg-default);
+  --dsn-button-strong-color: var(--dsn-color-action-1-color-default);
+  --dsn-button-strong-hover-background-color: var(
+    --dsn-color-action-1-bg-hover
+  );
+  --dsn-button-strong-hover-color: var(--dsn-color-action-1-color-hover);
+  --dsn-button-strong-active-background-color: var(
+    --dsn-color-action-1-bg-active
+  );
+  --dsn-button-strong-active-color: var(--dsn-color-action-1-color-active);
+  --dsn-button-subtle-color: var(--dsn-color-accent-1-inverse-color-default);
+  --dsn-button-subtle-hover-background-color: var(
+    --dsn-color-accent-1-inverse-bg-hover
+  );
+  --dsn-button-subtle-hover-color: var(
+    --dsn-color-accent-1-inverse-color-hover
+  );
+  --dsn-button-subtle-active-background-color: var(
+    --dsn-color-accent-1-inverse-bg-active
+  );
+  --dsn-button-subtle-active-color: var(
+    --dsn-color-accent-1-inverse-color-active
+  );
+}
+
+/* =============================================================================
+   Modifier: --image-blend (gecombineerd met --image)
+   ============================================================================= */
+
+.dsn-hero--image.dsn-hero--image-blend {
+  background-color: var(--dsn-hero-image-blend-color);
+  background-blend-mode: multiply;
+}
+
+/* =============================================================================
+   Modifier: --align-center
+   ============================================================================= */
+
+.dsn-hero--align-center .dsn-hero__content {
+  align-items: center;
+  text-align: center;
+}
+
+/* ActionGroup en searchbox centreren mee */
+.dsn-hero--align-center .dsn-action-group {
+  justify-content: center;
+}
+
+.dsn-hero--align-center .dsn-hero__searchbox {
+  justify-content: center;
+}

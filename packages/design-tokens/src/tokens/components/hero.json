@@ -1,0 +1,57 @@
+{
+  "dsn": {
+    "hero": {
+      "block-size": {
+        "value": "70svh",
+        "type": "dimension",
+        "comment": "Hoogte van de Hero via min-block-size: max(--dsn-hero-min-block-size, --dsn-hero-block-size); aanpasbaar per instantie via inline style"
+      },
+      "min-block-size": {
+        "value": "400px",
+        "type": "dimension",
+        "comment": "Minimale hoogte van de Hero — vloer zodat de Hero niet te klein wordt bij weinig inhoud of kleine viewport"
+      },
+      "padding-block": {
+        "value": "{dsn.space.block.4xl}",
+        "type": "spacing",
+        "comment": "Verticale padding van de Hero-inhoud"
+      },
+      "padding-inline": {
+        "value": "{dsn.space.inline.xl}",
+        "type": "spacing",
+        "comment": "Horizontale padding van de dsn-hero__inner wrapper — stemt af op dsn-page-body-padding-inline"
+      },
+      "background-color": {
+        "default": {
+          "value": "{dsn.color.accent-1.bg-default}",
+          "type": "color",
+          "comment": "Achtergrondkleur van de standaard Hero — licht blauw accent-1"
+        },
+        "inverse": {
+          "value": "{dsn.color.accent-1-inverse.bg-default}",
+          "type": "color",
+          "comment": "Achtergrondkleur van de inverse Hero — donker blauw"
+        }
+      },
+      "color": {
+        "default": {
+          "value": "{dsn.color.accent-1.color-default}",
+          "type": "color",
+          "comment": "Tekstkleur in de standaard Hero"
+        },
+        "inverse": {
+          "value": "{dsn.color.accent-1-inverse.color-default}",
+          "type": "color",
+          "comment": "Tekstkleur in de inverse Hero — lichte kleur op donkere achtergrond"
+        }
+      },
+      "image": {
+        "blend-color": {
+          "value": "{dsn.color.accent-1-inverse.bg-default}",
+          "type": "color",
+          "comment": "Blendkleur voor de image-blend variant — zelfde als inverse achtergrond voor visuele samenhang"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as HeroStories from './Hero.stories';
+import docs from './Hero.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={HeroStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={HeroStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={HeroStories.Default}
+  html={`<section class="dsn-hero" aria-labelledby="hero-heading">
+  <div class="dsn-hero__inner">
+    <div class="dsn-hero__content">
+      <div class="dsn-stack dsn-stack--space-lg">
+        <h1 class="dsn-heading dsn-heading--level-1" id="hero-heading">Paginatitel</h1>
+        <p class="dsn-paragraph dsn-paragraph--lead">
+          Introductietekst die de kernboodschap samenvat in één of twee zinnen.
+        </p>
+        <div class="dsn-action-group">
+          <a href="/start" class="dsn-button dsn-button--strong dsn-button--size-large">
+            <span class="dsn-button__label">Aan de slag</span>
+          </a>
+          <a href="/meer" class="dsn-button dsn-button--subtle dsn-button--size-large">
+            <span class="dsn-button__label">Meer informatie</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>`}
+/>
+
+<Controls of={HeroStories.Default} />
+
+<Markdown>{rest}</Markdown>

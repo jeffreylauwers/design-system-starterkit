@@ -10,6 +10,7 @@ export * from './ActionGroup';
 export * from './Body';
 export * from './BreakoutSection';
 export * from './Container';
+export * from './Hero';
 export * from './Grid';
 export * from './Stack';
 
