@@ -1,0 +1,18 @@
+import { Meta, Story, Markdown } from '@storybook/blocks';
+import * as HomePageStories from './HomePage.stories';
+import docs from './HomePage.docs.md?raw';
+import { PreviewFrame } from '../components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={HomePageStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={HomePageStories.Default} />
+</PreviewFrame>
+
+<Markdown>{rest}</Markdown>
