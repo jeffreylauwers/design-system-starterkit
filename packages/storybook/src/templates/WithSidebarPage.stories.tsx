@@ -171,27 +171,70 @@ const mainStyle: React.CSSProperties = {
 };
 
 // =============================================================================
-// SIDEBAR NAVIGATIE (uitsluitend Level 2 MenuLinks)
+// SIDEBAR NAVIGATIE
 // =============================================================================
 
-const sidebarNavigation = (
-  <nav aria-label="Sub-navigatie">
-    <Menu orientation="vertical">
-      <MenuLink href="/level-1a" level={2} current>
-        Overzicht
-      </MenuLink>
-      <MenuLink href="/level-1a/sub-1" level={2}>
-        Sub-item 1
-      </MenuLink>
-      <MenuLink href="/level-1a/sub-2" level={2}>
-        Sub-item 2
-      </MenuLink>
-      <MenuLink href="/level-1a/sub-3" level={2}>
-        Sub-item 3
-      </MenuLink>
-    </Menu>
-  </nav>
-);
+function SidebarNavigation() {
+  const [exp2b, setExp2b] = React.useState(true);
+  const [exp3b, setExp3b] = React.useState(true);
+
+  return (
+    <nav aria-label="Sub-navigatie">
+      <Menu orientation="vertical">
+        <MenuLink href="/level-2a" level={1} current>
+          Level 2a
+        </MenuLink>
+        <MenuLink
+          href="/level-2b"
+          level={1}
+          subItems
+          expanded={exp2b}
+          onExpandToggle={() => setExp2b((v) => !v)}
+        >
+          Level 2b
+        </MenuLink>
+        {exp2b && (
+          <>
+            <MenuLink href="/level-3a" level={2}>
+              Level 3a
+            </MenuLink>
+            <MenuLink
+              href="/level-3b"
+              level={2}
+              subItems
+              expanded={exp3b}
+              onExpandToggle={() => setExp3b((v) => !v)}
+            >
+              Level 3b
+            </MenuLink>
+            {exp3b && (
+              <>
+                <MenuLink href="/level-4a" level={3}>
+                  Level 4a
+                </MenuLink>
+                <MenuLink href="/level-4b" level={3}>
+                  Level 4b
+                </MenuLink>
+              </>
+            )}
+            <MenuLink href="/level-3c" level={2}>
+              Level 3c
+            </MenuLink>
+            <MenuLink href="/level-3d" level={2}>
+              Level 3d
+            </MenuLink>
+          </>
+        )}
+        <MenuLink href="/level-2c" level={1}>
+          Level 2c
+        </MenuLink>
+        <MenuLink href="/level-2d" level={1}>
+          Level 2d
+        </MenuLink>
+      </Menu>
+    </nav>
+  );
+}
 
 // =============================================================================
 // GEDEELDE GRID-INHOUD (identiek aan GridPage)
@@ -281,7 +324,7 @@ export const Default: Story = {
         <PageBody>
           <div className="dsn-sidebar-layout">
             <aside className="dsn-sidebar-layout__sidebar">
-              {sidebarNavigation}
+              <SidebarNavigation />
             </aside>
             <main
               id="main-content"
