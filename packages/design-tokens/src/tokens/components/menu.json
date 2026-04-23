@@ -3,7 +3,7 @@
     "menu": {
       "gap": {
         "vertical": {
-          "value": "{dsn.space.block.xs}",
+          "value": "{dsn.space.block.md}",
           "type": "spacing",
           "comment": "Kleine ruimte tussen items in verticale oriëntatie"
         },
