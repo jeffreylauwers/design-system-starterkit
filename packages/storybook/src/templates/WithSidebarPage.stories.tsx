@@ -175,8 +175,8 @@ const mainStyle: React.CSSProperties = {
 // =============================================================================
 
 function SidebarNavigation() {
-  const [exp2b, setExp2b] = React.useState(true);
-  const [exp3b, setExp3b] = React.useState(true);
+  const [exp2b, setExp2b] = React.useState(false);
+  const [exp3b, setExp3b] = React.useState(false);
 
   return (
     <nav aria-label="Sub-navigatie">
