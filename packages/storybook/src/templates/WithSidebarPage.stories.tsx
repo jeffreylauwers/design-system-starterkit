@@ -347,6 +347,48 @@ export const Default: Story = {
   ),
 };
 
+export const FullWidth: Story = {
+  name: 'With Sidebar Page: Full Width',
+  render: () => (
+    <Body>
+      <SkipLink href="#main-content" />
+      <PageLayout
+        style={{ '--dsn-page-max-inline-size': 'none' } as React.CSSProperties}
+      >
+        <PageHeader
+          logoSlot={logoSlot}
+          primaryNavigation={<PrimaryNavigation />}
+          primaryNavigationLarge={primaryNavigationLarge}
+          secondaryNavigation={secondaryNavigation}
+          secondaryNavigationLarge={secondaryNavigationLarge}
+          searchSlot={searchSlot}
+        />
+        <PageBody>
+          <div className="dsn-sidebar-layout">
+            <aside className="dsn-sidebar-layout__sidebar">
+              <SidebarNavigation />
+            </aside>
+            <main
+              id="main-content"
+              tabIndex={-1}
+              className="dsn-sidebar-layout__main"
+              style={mainStyle}
+            >
+              <GridContent />
+            </main>
+          </div>
+        </PageBody>
+        <PageFooter
+          slot1={footerSlot1}
+          slot2={footerSlot2}
+          slot3={footerSlot3}
+          slot4={footerSlot4}
+        />
+      </PageLayout>
+    </Body>
+  ),
+};
+
 export const WithoutSidebar: Story = {
   name: 'With Sidebar Page: geen sub-items',
   render: () => (
