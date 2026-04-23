@@ -31,3 +31,31 @@
   max-inline-size: var(--dsn-page-max-inline-size);
   margin-inline: auto;
 }
+
+/* =============================================================================
+   Sidebar layout — twee-koloms splitsing binnen dsn-page-body__inner
+   Sidebar zichtbaar op large viewport (>= 64em), gelijktijdig met
+   dsn-page-header__large-layout.
+   ============================================================================= */
+
+.dsn-sidebar-layout {
+  display: flex;
+}
+
+.dsn-sidebar-layout__sidebar {
+  display: none;
+}
+
+.dsn-sidebar-layout__main {
+  flex: 1;
+  min-inline-size: 0;
+}
+
+@media (min-width: 64em) {
+  .dsn-sidebar-layout__sidebar {
+    display: block;
+    flex-shrink: 0;
+    inline-size: var(--dsn-sidebar-layout-sidebar-inline-size, 16rem);
+    padding-inline-end: var(--dsn-space-inline-2xl);
+  }
+}

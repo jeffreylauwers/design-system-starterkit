@@ -1,0 +1,18 @@
+import { Meta, Story, Markdown } from '@storybook/blocks';
+import * as WithSidebarPageStories from './WithSidebarPage.stories';
+import docs from './WithSidebarPage.docs.md?raw';
+import { PreviewFrame } from '../components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={WithSidebarPageStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={WithSidebarPageStories.Default} />
+</PreviewFrame>
+
+<Markdown>{rest}</Markdown>
