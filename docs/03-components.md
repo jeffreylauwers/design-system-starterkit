@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** April 20, 2026
+**Last Updated:** April 23, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -283,6 +283,122 @@ Laat een sectie "uitslaan" buiten een beperkte paginabreedte om de volledige vie
 **Vereiste:** Gebruik alleen binnen `PageBody` of een parent met `overflow-x: clip`.
 
 **Design tokens:** Geen eigen component tokens. Gebruikt `--dsn-page-max-inline-size` en `--dsn-page-body-padding-inline` voor de inner wrapper (verantwoordelijkheid van de consumer).
+
+---
+
+### Hero
+
+Prominente introductiesectie direct onder de `PageHeader`. Beslaat de volledige paginabreedte via het BreakoutSection-patroon (`margin-inline: calc(50% - 50vw)`). Vereist een parent met `overflow-x: clip` (standaard aanwezig in `dsn-page-body`).
+
+**HTML/CSS:**
+
+```html
+<section class="dsn-hero" aria-labelledby="hero-heading">
+  <div class="dsn-hero__inner">
+    <div class="dsn-hero__content">
+      <h1 id="hero-heading">Paginatitel</h1>
+      <p class="dsn-paragraph dsn-paragraph--lead">Introductietekst.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Inverse variant -->
+<section class="dsn-hero dsn-hero--inverse" aria-labelledby="hero-heading">
+  ...
+</section>
+
+<!-- Achtergrondafbeelding -->
+<section
+  class="dsn-hero dsn-hero--image"
+  style="--dsn-hero-bg-image: url('/hero.jpg')"
+  aria-labelledby="hero-heading"
+>
+  ...
+</section>
+
+<!-- Afbeelding met kleuroverlay (blend) -->
+<section
+  class="dsn-hero dsn-hero--image dsn-hero--image-blend"
+  style="--dsn-hero-bg-image: url('/hero.jpg')"
+  aria-labelledby="hero-heading"
+>
+  ...
+</section>
+
+<!-- Gecentreerde inhoud -->
+<section class="dsn-hero dsn-hero--align-center" aria-labelledby="hero-heading">
+  ...
+</section>
+```
+
+**React:**
+
+```tsx
+<Hero aria-labelledby="hero-heading">
+  <Stack space="lg">
+    <Heading level={1} id="hero-heading">
+      Paginatitel
+    </Heading>
+    <Paragraph variant="lead">Introductietekst.</Paragraph>
+    <ActionGroup>
+      <ButtonLink href="/start" variant="strong" size="large">
+        Aan de slag
+      </ButtonLink>
+    </ActionGroup>
+  </Stack>
+</Hero>;
+
+{
+  /* Inverse variant */
+}
+<Hero variant="inverse" aria-labelledby="hero-heading">
+  ...
+</Hero>;
+
+{
+  /* Achtergrondafbeelding met blend */
+}
+<Hero
+  variant="image-blend"
+  backgroundImage="/hero.jpg"
+  aria-labelledby="hero-heading"
+>
+  ...
+</Hero>;
+
+{
+  /* Gecentreerde inhoud */
+}
+<Hero align="center" aria-labelledby="hero-heading">
+  ...
+</Hero>;
+```
+
+**Props:**
+
+| Prop              | Type                                                 | Default     | Beschrijving                                                      |
+| ----------------- | ---------------------------------------------------- | ----------- | ----------------------------------------------------------------- |
+| `variant`         | `'default' \| 'inverse' \| 'image' \| 'image-blend'` | `'default'` | Achtergrondstijl                                                  |
+| `backgroundImage` | `string`                                             | —           | URL van achtergrondafbeelding (vereist bij `image`/`image-blend`) |
+| `align`           | `'start' \| 'center'`                                | `'start'`   | Horizontale uitlijning van de inhoud                              |
+
+**Accessibility:** Gebruik `aria-labelledby` met het `id` van de `<Heading level={1}>` binnenin de Hero.
+
+**Design tokens:**
+
+| Token                                 | Waarde                                       | Beschrijving                                  |
+| ------------------------------------- | -------------------------------------------- | --------------------------------------------- |
+| `--dsn-hero-block-size`               | `70svh`                                      | Streefhoogte (via `min-block-size: max(...)`) |
+| `--dsn-hero-min-block-size`           | `400px`                                      | Vloer: minimale hoogte                        |
+| `--dsn-hero-padding-block`            | `{dsn.space.block.4xl}`                      | Verticale padding van de inhoud               |
+| `--dsn-hero-padding-inline`           | `{dsn.space.inline.xl}`                      | Horizontale padding (afgestemd op PageBody)   |
+| `--dsn-hero-background-color-default` | `{dsn.color.accent-1.bg-default}`            | Achtergrond default                           |
+| `--dsn-hero-background-color-inverse` | `{dsn.color.accent-1-inverse.bg-default}`    | Achtergrond inverse                           |
+| `--dsn-hero-color-default`            | `{dsn.color.accent-1.color-default}`         | Tekstkleur default                            |
+| `--dsn-hero-color-inverse`            | `{dsn.color.accent-1-inverse.color-default}` | Tekstkleur inverse                            |
+| `--dsn-hero-image-blend-color`        | `{dsn.color.accent-1-inverse.bg-default}`    | Blendkleur bij `image-blend`                  |
+
+**Location:** `packages/components-{html|react}/src/Hero/`
 
 ---
 
@@ -1776,7 +1892,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 | Token                       | Waarde                        | Beschrijving                                  |
 | --------------------------- | ----------------------------- | --------------------------------------------- |
-| `--dsn-menu-gap-vertical`   | `{dsn.space.block.xs}` (2px)  | Ruimte tussen items in verticale oriëntatie   |
+| `--dsn-menu-gap-vertical`   | `{dsn.space.block.md}` (8px)  | Ruimte tussen items in verticale oriëntatie   |
 | `--dsn-menu-gap-horizontal` | `{dsn.space.inline.sm}` (4px) | Ruimte tussen items in horizontale oriëntatie |
 
 **Usage:**
@@ -2864,15 +2980,15 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 51
+**Total Components:** 52
 
 **Implementations:**
 
-- **HTML/CSS:** 51 components
-- **React:** 51 components (1329 tests total, 65 test suites)
+- **HTML/CSS:** 52 components
+- **React:** 52 components (1380 tests total, 70 test suites)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
-**Test Coverage:** 1329 tests across 65 test suites
+**Test Coverage:** 1380 tests across 70 test suites
 
 ---
 

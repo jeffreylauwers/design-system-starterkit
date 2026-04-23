@@ -6,6 +6,33 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.29.0 (April 23, 2026)
+
+### Hero component + HomePage & WithSidebar templates + Menu gap
+
+#### Added
+
+- **Hero** component: prominente introductiesectie die de volledige paginabreedte beslaat via het BreakoutSection-patroon (`margin-inline: calc(50% - 50vw)`)
+  - 4 varianten: `default`, `inverse`, `image`, `image-blend`
+  - `align` prop: `start` (default) of `center` voor horizontale uitlijning van de inhoud
+  - `backgroundImage` prop: CSS custom property `--dsn-hero-bg-image` voor afbeeldingsvarianten
+  - `--dsn-hero-block-size` (70svh) + `--dsn-hero-min-block-size` (400px) voor instelbare hoogte
+  - 8 design tokens in `tokens/components/hero.json`
+- **HomePage template** (issue #184): paginatemplate met Hero direct onder de PageHeader gevolgd door responsieve grid-inhoud
+  - 4 stories: _Default_, _Full Width_, _Inverse_ (image-blend + inverse PageHeader), _Compact + Inverse + Full Width_
+- **WithSidebar template** (issue #186, PR #187): paginatemplate met vaste zijkolom voor subnavigatie
+  - `dsn-sidebar-layout` CSS in `page-body.css`: flexbox twee-koloms splitsing, sidebar verborgen op < 64em, zichtbaar op >= 64em
+  - Sidebar breedte via `--dsn-sidebar-layout-sidebar-inline-size` (default `20rem`)
+  - Sidebar current-staat: `background-color: transparent`, border-inline-start indicator behouden
+  - `margin-block: var(--dsn-space-block-3xl)` op de sidebar
+  - 3 stories: _Default_ (met sidebar), _Full Width_, _geen sub-items_ (sidebar weggelaten)
+
+#### Changed
+
+- **Menu `gap.vertical` token**: `{dsn.space.block.xs}` (2px) → `{dsn.space.block.md}` (8px) voor meer ademruimte tussen menu-items in verticale oriëntatie
+
+---
+
 ## Version 5.28.0 (April 20, 2026)
 
 ### BreakoutSection component (issue #173, PR #181)
