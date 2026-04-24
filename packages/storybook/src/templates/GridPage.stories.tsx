@@ -41,6 +41,9 @@ function PrimaryNavigation() {
 
   return (
     <Menu orientation="vertical">
+      <MenuLink href="/" level={1}>
+        Homepage
+      </MenuLink>
       <MenuLink href="/level-1a" level={1} current>
         Level 1a
       </MenuLink>
@@ -75,6 +78,9 @@ function PrimaryNavigation() {
 
 const primaryNavigationLarge = (
   <Menu orientation="horizontal">
+    <MenuLink href="/" level={1}>
+      Homepage
+    </MenuLink>
     <MenuLink href="/level-1a" level={1} current>
       Level 1a
     </MenuLink>

@@ -33,6 +33,7 @@ const logoSlot = (
  * Primaire navigatie met alle niveaus (1–4) uitklapbaar.
  *
  * Structuur:
+ * - Homepage
  * - Level 1a (current)
  * - Level 1b
  *   - Level 2a
@@ -55,9 +56,9 @@ function PrimaryNavigation() {
 
   return (
     <Menu orientation="vertical">
-      {/* Level 1a */}
+      {/* Homepage */}
       <MenuLink href="/level-1a" level={1} current>
-        Level 1a
+        Homepage
       </MenuLink>
 
       {/* Level 1b */}
@@ -164,6 +165,9 @@ const secondaryNavigationLarge = (
 /** Large viewport: alleen Level 1 items horizontaal, geen sub-items toggle */
 const primaryNavigationLarge = (
   <Menu orientation="horizontal">
+    <MenuLink href="/" level={1}>
+      Homepage
+    </MenuLink>
     <MenuLink href="/level-1a" level={1} current>
       Level 1a
     </MenuLink>
@@ -178,6 +182,113 @@ const primaryNavigationLarge = (
     </MenuLink>
   </Menu>
 );
+
+/** Large viewport compact: zonder Level 1d */
+const primaryNavigationLargeCompact = (
+  <Menu orientation="horizontal">
+    <MenuLink href="/" level={1}>
+      Homepage
+    </MenuLink>
+    <MenuLink href="/level-1a" level={1} current>
+      Level 1a
+    </MenuLink>
+    <MenuLink href="/level-1b" level={1}>
+      Level 1b
+    </MenuLink>
+    <MenuLink href="/level-1c" level={1}>
+      Level 1c
+    </MenuLink>
+    <MenuLink href="/level-1d" level={1}>
+      Level 1d
+    </MenuLink>
+  </Menu>
+);
+
+function PrimaryNavigationCompact() {
+  const [exp1b, setExp1b] = React.useState(false);
+  const [exp2b, setExp2b] = React.useState(false);
+  const [exp3b, setExp3b] = React.useState(false);
+
+  return (
+    <Menu orientation="vertical">
+      <MenuLink href="/" level={1}>
+        Homepage
+      </MenuLink>
+      <MenuLink href="/level-1a" level={1} current>
+        Level 1a
+      </MenuLink>
+      <MenuLink
+        href="/level-1b"
+        level={1}
+        subItems
+        expanded={exp1b}
+        onExpandToggle={() => setExp1b((v) => !v)}
+      >
+        Level 1b
+      </MenuLink>
+      {exp1b && (
+        <>
+          <MenuLink href="/level-2a" level={2}>
+            Level 2a
+          </MenuLink>
+          <MenuLink
+            href="/level-2b"
+            level={2}
+            subItems
+            expanded={exp2b}
+            onExpandToggle={() => setExp2b((v) => !v)}
+          >
+            Level 2b
+          </MenuLink>
+          {exp2b && (
+            <>
+              <MenuLink href="/level-3a" level={3}>
+                Level 3a
+              </MenuLink>
+              <MenuLink
+                href="/level-3b"
+                level={3}
+                subItems
+                expanded={exp3b}
+                onExpandToggle={() => setExp3b((v) => !v)}
+              >
+                Level 3b
+              </MenuLink>
+              {exp3b && (
+                <>
+                  <MenuLink href="/level-4a" level={4}>
+                    Level 4a
+                  </MenuLink>
+                  <MenuLink href="/level-4b" level={4}>
+                    Level 4b
+                  </MenuLink>
+                </>
+              )}
+              <MenuLink href="/level-3c" level={3}>
+                Level 3c
+              </MenuLink>
+              <MenuLink href="/level-3d" level={3}>
+                Level 3d
+              </MenuLink>
+            </>
+          )}
+          <MenuLink href="/level-2c" level={2}>
+            Level 2c
+          </MenuLink>
+          <MenuLink href="/level-2d" level={2}>
+            Level 2d
+          </MenuLink>
+        </>
+      )}
+      <MenuLink href="/level-1c" level={1}>
+        Level 1c
+      </MenuLink>
+      <MenuLink href="/level-1d" level={1}>
+        Level 1d
+      </MenuLink>
+    </Menu>
+  );
+}
 
 const searchSlot = (
   <>
@@ -599,6 +710,8 @@ export const Compact: Story = {
   name: 'Compact',
   args: {
     layout: 'compact',
+    primaryNavigation: <PrimaryNavigationCompact />,
+    primaryNavigationLarge: primaryNavigationLargeCompact,
   },
   parameters: {
     viewport: { defaultViewport: 'large' },
@@ -616,6 +729,8 @@ export const CompactInverse: Story = {
   args: {
     layout: 'compact',
     colorScheme: 'inverse',
+    primaryNavigation: <PrimaryNavigationCompact />,
+    primaryNavigationLarge: primaryNavigationLargeCompact,
   },
   parameters: {
     viewport: { defaultViewport: 'large' },
@@ -632,6 +747,8 @@ export const CompactLoggedIn: Story = {
   name: 'Compact: Logged In',
   args: {
     layout: 'compact',
+    primaryNavigation: <PrimaryNavigationCompact />,
+    primaryNavigationLarge: primaryNavigationLargeCompact,
     secondaryNavigation: <LoggedInServiceMenuSmall />,
     secondaryNavigationLarge: <LoggedInServiceMenuLarge />,
   },
@@ -650,6 +767,8 @@ export const CompactNewMessage: Story = {
   name: 'Compact: New message',
   args: {
     layout: 'compact',
+    primaryNavigation: <PrimaryNavigationCompact />,
+    primaryNavigationLarge: primaryNavigationLargeCompact,
     menuButtonBadge: <DotBadge variant="negative" pulse />,
     menuButtonBadgeLabel: '2 nieuwe berichten',
     secondaryNavigation: <NewMessageServiceMenuSmall />,

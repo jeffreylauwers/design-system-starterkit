@@ -49,6 +49,7 @@
 .dsn-sidebar-layout__main {
   flex: 1;
   min-inline-size: 0;
+  padding-block-start: var(--dsn-space-block-3xl);
 }
 
 @media (min-width: 64em) {
@@ -57,7 +58,7 @@
     flex-shrink: 0;
     inline-size: var(--dsn-sidebar-layout-sidebar-inline-size, 20rem);
     padding-inline-end: var(--dsn-space-inline-2xl);
-    margin-block: var(--dsn-space-block-3xl);
+    padding-block: var(--dsn-space-block-3xl);
   }
 }
 

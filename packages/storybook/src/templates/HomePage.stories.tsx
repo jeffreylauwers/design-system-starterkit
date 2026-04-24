@@ -43,7 +43,10 @@ function PrimaryNavigation() {
 
   return (
     <Menu orientation="vertical">
-      <MenuLink href="/level-1a" level={1} current>
+      <MenuLink href="/" level={1} current>
+        Homepage
+      </MenuLink>
+      <MenuLink href="/level-1a" level={1}>
         Level 1a
       </MenuLink>
       <MenuLink
@@ -77,7 +80,10 @@ function PrimaryNavigation() {
 
 const primaryNavigationLarge = (
   <Menu orientation="horizontal">
-    <MenuLink href="/level-1a" level={1} current>
+    <MenuLink href="/" level={1} current>
+      Homepage
+    </MenuLink>
+    <MenuLink href="/level-1a" level={1}>
       Level 1a
     </MenuLink>
     <MenuLink href="/level-1b" level={1}>
@@ -91,6 +97,60 @@ const primaryNavigationLarge = (
     </MenuLink>
   </Menu>
 );
+
+const primaryNavigationLargeCompact = (
+  <Menu orientation="horizontal">
+    <MenuLink href="/" level={1} current>
+      Homepage
+    </MenuLink>
+    <MenuLink href="/level-1a" level={1}>
+      Level 1a
+    </MenuLink>
+    <MenuLink href="/level-1b" level={1}>
+      Level 1b
+    </MenuLink>
+    <MenuLink href="/level-1c" level={1}>
+      Level 1c
+    </MenuLink>
+  </Menu>
+);
+
+function PrimaryNavigationCompact() {
+  const [exp1b, setExp1b] = React.useState(false);
+
+  return (
+    <Menu orientation="vertical">
+      <MenuLink href="/" level={1} current>
+        Homepage
+      </MenuLink>
+      <MenuLink href="/level-1a" level={1}>
+        Level 1a
+      </MenuLink>
+      <MenuLink
+        href="/level-1b"
+        level={1}
+        subItems
+        expanded={exp1b}
+        onExpandToggle={() => setExp1b((v) => !v)}
+      >
+        Level 1b
+      </MenuLink>
+      {exp1b && (
+        <>
+          <MenuLink href="/level-2a" level={2}>
+            Level 2a
+          </MenuLink>
+          <MenuLink href="/level-2b" level={2}>
+            Level 2b
+          </MenuLink>
+        </>
+      )}
+      <MenuLink href="/level-1c" level={1}>
+        Level 1c
+      </MenuLink>
+    </Menu>
+  );
+}
 
 const secondaryNavigation = (
   <Menu orientation="vertical">
@@ -400,8 +460,8 @@ export const CompactInverseFullWidth: Story = {
           logoSlot={logoSlot}
           layout="compact"
           colorScheme="inverse"
-          primaryNavigation={<PrimaryNavigation />}
-          primaryNavigationLarge={primaryNavigationLarge}
+          primaryNavigation={<PrimaryNavigationCompact />}
+          primaryNavigationLarge={primaryNavigationLargeCompact}
           secondaryNavigation={secondaryNavigation}
           secondaryNavigationLarge={secondaryNavigationLarge}
           searchSlot={searchSlot}

@@ -36,6 +36,7 @@
    =========================== */
 .dsn-breadcrumb-navigation {
   display: block;
+  padding-block: var(--dsn-space-block-lg);
   font-size: var(--dsn-breadcrumb-navigation-font-size);
   font-weight: var(--dsn-breadcrumb-navigation-font-weight);
   line-height: var(--dsn-breadcrumb-navigation-line-height);
