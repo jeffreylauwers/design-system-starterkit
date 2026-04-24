@@ -718,7 +718,7 @@ export const Compact: Story = {
     docs: {
       description: {
         story:
-          'Op viewports ≥ 64em toont de compact variant één enkele rij: logo (inline-start), primaire navigatie (optisch gecentreerd via CSS-grid `1fr auto 1fr`), en servicemenu + zoek-iconknop (inline-end). Gebruikt `primaryNavigationLarge` voor de compacte balk en `primaryNavigation` (verticaal) voor de Drawer op small viewport.',
+          'Op viewports ≥ 64em toont de compact variant één enkele rij: logo (inline-start), primaire navigatie (links uitgelijnd via CSS-grid `auto 1fr auto` met `column-gap`), en servicemenu + zoek-iconknop (inline-end). Gebruikt `primaryNavigationLarge` voor de compacte balk en `primaryNavigation` (verticaal) voor de Drawer op small viewport.',
       },
     },
   },

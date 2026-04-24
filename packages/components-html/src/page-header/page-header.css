@@ -141,7 +141,8 @@
 
 .dsn-page-header__compact-inner {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto 1fr auto;
+  column-gap: var(--dsn-space-column-3xl);
   align-items: center;
   padding-block: var(--dsn-page-header-compact-padding-block);
   padding-inline: var(--dsn-page-header-compact-padding-inline);
@@ -155,10 +156,10 @@
   justify-content: flex-start;
 }
 
-/* Primaire navigatie in de middelste gridkolom */
+/* Primaire navigatie links uitlijnen na het logo */
 .dsn-page-header__compact-primary-nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* Servicemenu + zoekknop uitgelijnd naar inline-end */
