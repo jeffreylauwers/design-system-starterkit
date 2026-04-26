@@ -177,6 +177,20 @@ export interface PageHeaderProps extends Omit<
    */
   secondaryNavAriaLabel?: string;
 
+  /**
+   * Verbergt de menuknop in de small viewport layout.
+   * Gebruik dit wanneer er geen navigatie aanwezig is (bijv. formulierpagina's).
+   * @default false
+   */
+  hideMenuButton?: boolean;
+
+  /**
+   * Verbergt de zoekknop in zowel de small viewport als compact layout.
+   * Gebruik dit wanneer zoeken niet relevant is (bijv. formulierpagina's).
+   * @default false
+   */
+  hideSearchButton?: boolean;
+
   className?: string;
 }
 
@@ -240,6 +254,8 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
       searchSubmitLabel = 'Zoeken',
       primaryNavAriaLabel = 'Hoofdmenu',
       secondaryNavAriaLabel = 'Servicemenu',
+      hideMenuButton = false,
+      hideSearchButton = false,
       ...props
     },
     ref
@@ -358,20 +374,22 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
             <div className="dsn-page-header__inner">
               {/* Inline-start: menuknop */}
               <div className="dsn-page-header__start">
-                <Button
-                  ref={menuButtonRef}
-                  variant="subtle"
-                  onClick={handleMenuOpen}
-                  iconStart={<Icon name="menu" aria-hidden />}
-                >
-                  {menuButtonLabel}
-                  {menuButtonBadgeLabel && (
-                    <span className="dsn-visually-hidden">
-                      , {menuButtonBadgeLabel}
-                    </span>
-                  )}
-                  {menuButtonBadge}
-                </Button>
+                {!hideMenuButton && (
+                  <Button
+                    ref={menuButtonRef}
+                    variant="subtle"
+                    onClick={handleMenuOpen}
+                    iconStart={<Icon name="menu" aria-hidden />}
+                  >
+                    {menuButtonLabel}
+                    {menuButtonBadgeLabel && (
+                      <span className="dsn-visually-hidden">
+                        , {menuButtonBadgeLabel}
+                      </span>
+                    )}
+                    {menuButtonBadge}
+                  </Button>
+                )}
               </div>
 
               {/* Gecentreerd logo */}
@@ -379,18 +397,20 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
 
               {/* Inline-end: zoekknop / sluitknop */}
               <div className="dsn-page-header__end">
-                <Button
-                  ref={searchButtonRef}
-                  variant="subtle"
-                  aria-expanded={isSearchOpen}
-                  aria-controls={searchPanelId}
-                  onClick={handleSearchToggle}
-                  iconStart={
-                    <Icon name={isSearchOpen ? 'x' : 'search'} aria-hidden />
-                  }
-                >
-                  {isSearchOpen ? closeButtonLabel : searchButtonLabel}
-                </Button>
+                {!hideSearchButton && (
+                  <Button
+                    ref={searchButtonRef}
+                    variant="subtle"
+                    aria-expanded={isSearchOpen}
+                    aria-controls={searchPanelId}
+                    onClick={handleSearchToggle}
+                    iconStart={
+                      <Icon name={isSearchOpen ? 'x' : 'search'} aria-hidden />
+                    }
+                  >
+                    {isSearchOpen ? closeButtonLabel : searchButtonLabel}
+                  </Button>
+                )}
               </div>
             </div>
 
@@ -477,19 +497,24 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
                       {secondaryNavigationLarge ?? secondaryNavigation}
                     </nav>
                   )}
-                  <Button
-                    ref={compactSearchButtonRef}
-                    variant="subtle"
-                    iconOnly
-                    aria-expanded={isSearchOpen}
-                    aria-controls={compactSearchPanelId}
-                    onClick={handleSearchToggle}
-                    iconStart={
-                      <Icon name={isSearchOpen ? 'x' : 'search'} aria-hidden />
-                    }
-                  >
-                    {isSearchOpen ? closeButtonLabel : searchButtonLabel}
-                  </Button>
+                  {!hideSearchButton && (
+                    <Button
+                      ref={compactSearchButtonRef}
+                      variant="subtle"
+                      iconOnly
+                      aria-expanded={isSearchOpen}
+                      aria-controls={compactSearchPanelId}
+                      onClick={handleSearchToggle}
+                      iconStart={
+                        <Icon
+                          name={isSearchOpen ? 'x' : 'search'}
+                          aria-hidden
+                        />
+                      }
+                    >
+                      {isSearchOpen ? closeButtonLabel : searchButtonLabel}
+                    </Button>
+                  )}
                 </div>
               </div>
 

@@ -117,7 +117,12 @@ export const Default: Story = {
     <Body>
       <SkipLink href="#main-content" />
       <PageLayout>
-        <PageHeader logoSlot={logoSlot} layout="compact" />
+        <PageHeader
+          logoSlot={logoSlot}
+          layout="compact"
+          hideMenuButton
+          hideSearchButton
+        />
         <PageBody>
           <main id="main-content" tabIndex={-1} style={mainStyle}>
             <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
@@ -129,14 +134,16 @@ export const Default: Story = {
                     Vorige stap
                   </Link>
 
-                  <h2 className="dsn-heading dsn-heading--heading-2">
-                    Titel van de stap
-                  </h2>
+                  <Stack space="sm">
+                    <h2 className="dsn-heading dsn-heading--heading-2">
+                      Titel van de stap
+                    </h2>
 
-                  <Paragraph>
-                    Vul hieronder uw persoonlijke gegevens in. Alle velden zijn
-                    verplicht, tenzij anders aangegeven.
-                  </Paragraph>
+                    <Paragraph>
+                      Vul hieronder uw persoonlijke gegevens in. Alle velden
+                      zijn verplicht, tenzij anders aangegeven.
+                    </Paragraph>
+                  </Stack>
 
                   <form noValidate>
                     <Stack space="3xl">
