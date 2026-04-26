@@ -33,24 +33,41 @@ Templates zijn Storybook-only composities van bestaande componenten. Ze bevatten
 | Klein (< lg)  | 12/12 (volle breedte) |
 | Groot (>= lg) | kolommen 3 t/m 10     |
 
+## Header
+
+De `PageHeader` gebruikt `layout="compact"` en verbergt zowel de menuknop als de zoekknop via `hideMenuButton` en `hideSearchButton`. Op alle viewports is daardoor alleen het logo zichtbaar.
+
+```tsx
+<PageHeader
+  logoSlot={logoSlot}
+  layout="compact"
+  hideMenuButton
+  hideSearchButton
+/>
+```
+
 ## Inhoudsstructuur
 
-De `<main>` bevat een `Stack` met de volgende elementen in volgorde:
+De `<main>` bevat een `Stack space="3xl"` met de volgende elementen in volgorde:
 
-1. `Heading` level 1 — formuliertitel (bijv. naam van het formulier)
+1. `Heading` level 1 — formuliertitel
 2. `Link` met `arrow-left` icoon — "Vorige stap"
-3. `Heading` level 1 — staptitel (bijv. "Stap 2: Uw gegevens")
-4. `Paragraph` — instructietekst
-5. `<form>` met:
+3. `Stack space="sm"` met daarin:
+   - `<h2 className="dsn-heading dsn-heading--heading-2">` — staptitel
+   - `Paragraph` — instructietekst
+4. `<form>` met een `Stack space="3xl"` met daarin:
    - `FormField` voor een tekstveld
-   - `FormFieldset` met een `CheckboxGroup`
+   - `FormFieldset` met een `RadioGroup`
    - `FormField` met `labelSuffix="(niet verplicht)"`
-   - `ActionGroup` met drie acties
+   - `ActionGroup direction="vertical"` met extra `marginBlockStart`
 
 ## ActionGroup
 
 ```tsx
-<ActionGroup>
+<ActionGroup
+  direction="vertical"
+  style={{ marginBlockStart: 'var(--dsn-space-block-3xl)' }}
+>
   <Button variant="strong" type="submit">
     Volgende stap
   </Button>
@@ -73,4 +90,5 @@ De `<main>` bevat een `Stack` met de volgende elementen in volgorde:
 
 - De `<main>` heeft `id="main-content"` zodat de skip-link werkt voor toetsenbordgebruikers.
 - Het `<form>`-element heeft `noValidate` om de browser-validatie te onderdrukken; valideer in plaats daarvan via de design system form-componenten.
-- De formuliertitel en staptitel zijn beide `<h1>` — zorg dat de pagina per stap opnieuw geladen of gefocust wordt zodat screenreaders de nieuwe stap aankondigen.
+- De formuliertitel is een `<h1>`, de staptitel een `<h2>` — dit geeft een correcte koppenstructuur per stap.
+- De staptitel en de bijbehorende instructietekst zitten samen in een `Stack space="sm"` om de visuele koppeling te benadrukken.

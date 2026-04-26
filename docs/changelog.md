@@ -6,6 +6,33 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.30.0 (April 26, 2026)
+
+### FormStepPage template + GridItem colStart/colEnd + PageHeader hideMenuButton/hideSearchButton
+
+#### Added
+
+- **FormStepPage template** (issue #191, PR #193): paginatemplate voor meerstappenformulieren
+  - `PageHeader` toont alleen het logo via `hideMenuButton` en `hideSearchButton` props
+  - Formulierinhoud gecentreerd via `colStartLg={3} colEndLg={11}` op large viewport (kolommen 3–10)
+  - Inhoudsstructuur: H1 formuliertitel, "Vorige stap" link, H2 staptitel + paragraaf, form met `FormField`, `FormFieldset` (RadioGroup), optioneel veld, `ActionGroup direction="vertical"`
+  - 3 Storybook-bestanden: `.stories.tsx`, `.docs.mdx`, `.docs.md`
+- **GridItem `colStart`/`colEnd` props** (issue #190, PR #193): positioneringscontrole via `grid-column-start` en `grid-column-end`
+  - Props: `colStart`, `colStartSm`, `colStartMd`, `colStartLg`, `colEnd`, `colEndSm`, `colEndMd`, `colEndLg` (waarden 1–13)
+  - CSS-klassen: `dsn-col-start-{1-13}`, `dsn-col-end-{1-13}`, responsieve varianten `dsn-col-start-{sm|md|lg}-{1-13}` en `dsn-col-end-{sm|md|lg}-{1-13}`
+  - Nieuwe TypeScript type `GridColPosition` (1–13) naast bestaand `GridColSpan` (1–12)
+- **PageHeader `hideMenuButton` en `hideSearchButton` props**: verbergen de hamburger-/zoekknop op zowel small als large viewport; standaard `false` voor volledige backwards-compatibility
+
+#### Changed
+
+- **PageHeader compact layout**: `gap` tussen logo en primaire navigatielinks vergroot voor betere uitlijning
+
+#### Fixed
+
+- **Detailpage template**: Level 2a, 3a en 4a stories toegevoegd met breadcrumb-navigatie
+
+---
+
 ## Version 5.29.0 (April 23, 2026)
 
 ### Hero component + HomePage & WithSidebar templates + Menu gap
