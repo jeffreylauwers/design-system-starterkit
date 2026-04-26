@@ -4,8 +4,6 @@ import {
   ActionGroup,
   Body,
   Button,
-  CheckboxGroup,
-  CheckboxOption,
   FormField,
   FormFieldset,
   Grid,
@@ -20,6 +18,8 @@ import {
   PageHeader,
   PageLayout,
   Paragraph,
+  RadioGroup,
+  RadioOption,
   SkipLink,
   Stack,
   TextInput,
@@ -117,19 +117,21 @@ export const Default: Story = {
     <Body>
       <SkipLink href="#main-content" />
       <PageLayout>
-        <PageHeader logoSlot={logoSlot} />
+        <PageHeader logoSlot={logoSlot} layout="compact" />
         <PageBody>
           <main id="main-content" tabIndex={-1} style={mainStyle}>
             <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
               <GridItem colSpan={12} colStartLg={3} colEndLg={11}>
-                <Stack space="xl">
-                  <Heading level={1}>Aanvraag woonvergunning</Heading>
+                <Stack space="3xl">
+                  <Heading level={1}>Titel formulier</Heading>
 
                   <Link href="#" iconStart={<Icon name="arrow-left" />}>
                     Vorige stap
                   </Link>
 
-                  <Heading level={1}>Stap 2: Uw gegevens</Heading>
+                  <h2 className="dsn-heading dsn-heading--heading-2">
+                    Titel van de stap
+                  </h2>
 
                   <Paragraph>
                     Vul hieronder uw persoonlijke gegevens in. Alle velden zijn
@@ -137,23 +139,25 @@ export const Default: Story = {
                   </Paragraph>
 
                   <form noValidate>
-                    <Stack space="lg">
-                      <FormField label="Volledige naam" htmlFor="naam">
+                    <Stack space="3xl">
+                      <FormField label="Naam" htmlFor="naam">
                         <TextInput id="naam" autoComplete="name" />
                       </FormField>
 
-                      <FormFieldset legend="Welke documenten heeft u bij de hand?">
-                        <CheckboxGroup>
-                          <CheckboxOption
-                            label="Identiteitsbewijs"
-                            value="id"
+                      <FormFieldset legend="Favoriete fruit">
+                        <RadioGroup>
+                          <RadioOption
+                            name="fruit"
+                            label="Appel"
+                            value="appel"
                           />
-                          <CheckboxOption label="Huurcontract" value="huur" />
-                          <CheckboxOption
-                            label="Inkomensverklaring"
-                            value="inkomen"
+                          <RadioOption
+                            name="fruit"
+                            label="Banaan"
+                            value="banaan"
                           />
-                        </CheckboxGroup>
+                          <RadioOption name="fruit" label="Kers" value="kers" />
+                        </RadioGroup>
                       </FormFieldset>
 
                       <FormField
@@ -168,7 +172,12 @@ export const Default: Story = {
                         />
                       </FormField>
 
-                      <ActionGroup>
+                      <ActionGroup
+                        direction="vertical"
+                        style={{
+                          marginBlockStart: 'var(--dsn-space-block-3xl)',
+                        }}
+                      >
                         <Button variant="strong" type="submit">
                           Volgende stap
                         </Button>
