@@ -1,0 +1,18 @@
+import { Meta, Story, Markdown } from '@storybook/blocks';
+import * as FormStepPageStories from './FormStepPage.stories';
+import docs from './FormStepPage.docs.md?raw';
+import { PreviewFrame } from '../components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={FormStepPageStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={FormStepPageStories.Default} />
+</PreviewFrame>
+
+<Markdown>{rest}</Markdown>

@@ -481,6 +481,13 @@ Visueel kader voor het groeperen van gerelateerde content. Voegt achtergrond, bo
   <div class="dsn-col-12 dsn-col-md-12 dsn-col-lg-4">Item C</div>
 </div>
 
+<!-- Positionering via colStart/colEnd (kolommen 3–10 op lg) -->
+<div class="dsn-grid">
+  <div class="dsn-col-12 dsn-col-start-lg-3 dsn-col-end-lg-11">
+    Gecentreerde content
+  </div>
+</div>
+
 <!-- Full-bleed: breekt uit tot container-randen -->
 <div class="dsn-grid dsn-grid--contained">
   <div class="dsn-col-8">Normale content</div>
@@ -507,6 +514,11 @@ Visueel kader voor het groeperen van gerelateerde content. Voegt achtergrond, bo
   <GridItem colSpan={12} colSpanMd={12} colSpanLg={4}>Item C</GridItem>
 </Grid>
 
+// Positionering: 12 kolommen op small, kolommen 3–10 op large
+<Grid>
+  <GridItem colSpan={12} colStartLg={3} colEndLg={11}>Gecentreerde content</GridItem>
+</Grid>
+
 // Full-bleed
 <Grid contained>
   <GridItem colSpan={8}>Normale content</GridItem>
@@ -518,7 +530,12 @@ Visueel kader voor het groeperen van gerelateerde content. Voegt achtergrond, bo
 
 **Props `Grid`:** `contained` (boolean): voegt max-width toe en centreert horizontaal.
 
-**Props `GridItem`:** `colSpan` (1–12), `colSpanSm`, `colSpanMd`, `colSpanLg` (responsieve varianten), `fullBleed` (breekt uit tot container-rand).
+**Props `GridItem`:**
+
+- `colSpan` (1–12), `colSpanSm`, `colSpanMd`, `colSpanLg`: responsieve kolomspanning
+- `colStart` (1–13), `colStartSm`, `colStartMd`, `colStartLg`: startkolom via `grid-column-start`
+- `colEnd` (1–13), `colEndSm`, `colEndMd`, `colEndLg`: eindkolom via `grid-column-end`
+- `fullBleed`: breekt uit tot container-rand
 
 **Breakpoints:** sm (36em), md (44em), lg (64em), xl (74em: grens `contained` max-width).
 
@@ -2181,11 +2198,11 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 **Tokens:** `tokens/components/page-header.json`
 
-**Props:** `logoSlot`, `sticky` (`'none'` | `'sticky'` | `'auto-hide'`), `layout` (`'default'` | `'compact'`), `colorScheme` (`'default'` | `'inverse'`), `initialSearchOpen`, `primaryNavigation`, `primaryNavigationLarge`, `secondaryNavigation`, `secondaryNavigationLarge`, `searchSlot`, `onMenuOpen`, `onMenuClose`, `onSearchOpen`, `onSearchClose`, `className`
+**Props:** `logoSlot`, `sticky` (`'none'` | `'sticky'` | `'auto-hide'`), `layout` (`'default'` | `'compact'`), `colorScheme` (`'default'` | `'inverse'`), `initialSearchOpen`, `primaryNavigation`, `primaryNavigationLarge`, `secondaryNavigation`, `secondaryNavigationLarge`, `searchSlot`, `hideMenuButton` (boolean, default `false`), `hideSearchButton` (boolean, default `false`), `onMenuOpen`, `onMenuClose`, `onSearchOpen`, `onSearchClose`, `className`
 
 **Features:**
 
-- Mobile-first: hamburgerknop (inline-start) opent een `Drawer`, gecentreerd logo (CSS-grid `1fr auto 1fr`), zoekknop (inline-end) ontvouwt zoekpaneel direct onder de header
+- Mobile-first: hamburgerknop (inline-start) opent een `Drawer`, gecentreerd logo (CSS-grid `1fr auto 1fr`), zoekknop (inline-end) ontvouwt zoekpaneel direct onder de header; beide knoppen optioneel verbergen via `hideMenuButton` en `hideSearchButton` (gebruik voor formulier- of focuspagina's zonder navigatie)
 - Boven `64em` (~1024px): tweebandig large viewport layout via `display: none` switch (`layout="default"`, standaard)
   - **Masthead**: neutrale achtergrond met logo (inline-start), servicemenu en inline zoekveld (inline-end)
   - **Navigatiebalk**: accent-1 achtergrond met primaire navigatie; MenuLink-items krijgen `min-block-size: 4rem` en `padding-inline: var(--dsn-space-inline-xl)` via token-overschrijving op de container
