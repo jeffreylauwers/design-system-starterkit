@@ -43,6 +43,53 @@ Grid legt een 12-koloms structuur vast als basis voor paginalayouts. Alle childr
 
 De breakpoint-waarden zijn ook beschikbaar als design tokens (`--dsn-breakpoint-sm` t/m `--dsn-breakpoint-xl`) voor gebruik in JavaScript (bijv. `matchMedia`). In CSS media queries zijn ze hardcoded omdat CSS custom properties niet werken in `@media` regels.
 
+## ColStart en ColEnd
+
+Gebruik `colStart` en `colEnd` (1–13) om een GridItem op een nauwkeurige kolompositie te plaatsen, zonder lege blinde GridItems te hoeven toevoegen. `colStart` stelt `grid-column-start` in; `colEnd` stelt `grid-column-end` in.
+
+```html
+<!-- HTML/CSS -->
+<div class="dsn-grid dsn-grid--contained">
+  <!-- Start op kolom 3, eindigt voor kolom 11 (8 kolommen breed) -->
+  <div class="dsn-col-start-3 dsn-col-end-11">Gecentreerde content</div>
+
+  <!-- Linkerhelft -->
+  <div class="dsn-col-start-1 dsn-col-end-7">Links</div>
+  <!-- Rechterhelft -->
+  <div class="dsn-col-start-7 dsn-col-end-13">Rechts</div>
+</div>
+```
+
+```tsx
+// React
+<Grid contained>
+  <GridItem colStart={3} colEnd={11}>
+    Gecentreerde content
+  </GridItem>
+  <GridItem colStart={1} colEnd={7}>
+    Links
+  </GridItem>
+  <GridItem colStart={7} colEnd={13}>
+    Rechts
+  </GridItem>
+</Grid>
+```
+
+Responsive varianten werken hetzelfde als bij `colSpan`: suffix `Sm`, `Md` of `Lg` voor de bijbehorende breakpoints.
+
+```html
+<!-- Volledig breed op mobiel, gepositioneerd op large -->
+<div class="dsn-col-12 dsn-col-start-lg-3 dsn-col-end-lg-11">Content</div>
+```
+
+```tsx
+<GridItem colSpan={12} colStartLg={3} colEndLg={11}>
+  Content
+</GridItem>
+```
+
+> `colEnd={13}` is geldig in een 12-kolomsgrid: het item eindigt na de laatste kolom.
+
 ## Full-bleed
 
 Een `GridItem` met `fullBleed` (of `<div class="dsn-full-bleed">`) breekt visueel uit tot de buitenrand van de grid container. Het item beslaat de volle breedte inclusief de `--dsn-grid-margin`. Dit is handig voor achtergrondvlakken die "edge-to-edge" lopen.

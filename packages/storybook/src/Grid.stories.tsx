@@ -107,6 +107,35 @@ export const FullBleed: Story = {
 };
 
 // =============================================================================
+// COL-START / COL-END
+// =============================================================================
+
+export const ColStartEnd: Story = {
+  name: 'ColStart en ColEnd',
+  render: () => (
+    <Grid contained>
+      <GridItem colStart={3} colEnd={11}>
+        <Container>
+          colStart=3 colEnd=11 — start op kolom 3, eindigt voor kolom 11 (8
+          kolommen breed)
+        </Container>
+      </GridItem>
+      <GridItem colStart={1} colEnd={7}>
+        <Container>colStart=1 colEnd=7 — linkerhelft</Container>
+      </GridItem>
+      <GridItem colStart={7} colEnd={13}>
+        <Container>colStart=7 colEnd=13 — rechterhelft</Container>
+      </GridItem>
+      <GridItem colSpan={12} colStartLg={3} colEndLg={11}>
+        <Container>
+          col-12 op mobiel → colStartLg=3 colEndLg=11 op large
+        </Container>
+      </GridItem>
+    </Grid>
+  ),
+};
+
+// =============================================================================
 // OVERZICHTSSTORIES
 // =============================================================================
 
