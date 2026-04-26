@@ -2,6 +2,20 @@ import React from 'react';
 import { classNames } from '@dsn/core';
 
 export type GridColSpan = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+export type GridColPosition =
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 11
+  | 12
+  | 13;
 
 export interface GridItemProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -27,6 +41,24 @@ export interface GridItemProps extends React.HTMLAttributes<HTMLDivElement> {
    * Overschrijft colSpan op dit breekpunt.
    */
   colSpanLg?: GridColSpan;
+
+  /** Startkolom (grid-column-start, 1–13). */
+  colStart?: GridColPosition;
+  /** Startkolom vanaf sm-breakpoint. */
+  colStartSm?: GridColPosition;
+  /** Startkolom vanaf md-breakpoint. */
+  colStartMd?: GridColPosition;
+  /** Startkolom vanaf lg-breakpoint. */
+  colStartLg?: GridColPosition;
+
+  /** Eindkolom (grid-column-end, 1–13). */
+  colEnd?: GridColPosition;
+  /** Eindkolom vanaf sm-breakpoint. */
+  colEndSm?: GridColPosition;
+  /** Eindkolom vanaf md-breakpoint. */
+  colEndMd?: GridColPosition;
+  /** Eindkolom vanaf lg-breakpoint. */
+  colEndLg?: GridColPosition;
 
   /**
    * Breekt visueel uit tot de buitenrand van de grid container.
@@ -80,6 +112,14 @@ export const GridItem = React.forwardRef<HTMLDivElement, GridItemProps>(
       colSpanSm,
       colSpanMd,
       colSpanLg,
+      colStart,
+      colStartSm,
+      colStartMd,
+      colStartLg,
+      colEnd,
+      colEndSm,
+      colEndMd,
+      colEndLg,
       fullBleed,
       children,
       ...props
@@ -91,6 +131,14 @@ export const GridItem = React.forwardRef<HTMLDivElement, GridItemProps>(
       colSpanSm && `dsn-col-sm-${colSpanSm}`,
       colSpanMd && `dsn-col-md-${colSpanMd}`,
       colSpanLg && `dsn-col-lg-${colSpanLg}`,
+      colStart && `dsn-col-start-${colStart}`,
+      colStartSm && `dsn-col-start-sm-${colStartSm}`,
+      colStartMd && `dsn-col-start-md-${colStartMd}`,
+      colStartLg && `dsn-col-start-lg-${colStartLg}`,
+      colEnd && `dsn-col-end-${colEnd}`,
+      colEndSm && `dsn-col-end-sm-${colEndSm}`,
+      colEndMd && `dsn-col-end-md-${colEndMd}`,
+      colEndLg && `dsn-col-end-lg-${colEndLg}`,
       fullBleed && 'dsn-full-bleed',
       className
     );

@@ -70,6 +70,49 @@ describe('GridItem', () => {
     expect(container.firstChild).not.toHaveClass('dsn-full-bleed');
   });
 
+  it.each([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] as const)(
+    'applies dsn-col-start-%i class for colStart=%i',
+    (colStart) => {
+      const { container } = render(<GridItem colStart={colStart} />);
+      expect(container.firstChild).toHaveClass(`dsn-col-start-${colStart}`);
+    }
+  );
+
+  it.each([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] as const)(
+    'applies dsn-col-end-%i class for colEnd=%i',
+    (colEnd) => {
+      const { container } = render(<GridItem colEnd={colEnd} />);
+      expect(container.firstChild).toHaveClass(`dsn-col-end-${colEnd}`);
+    }
+  );
+
+  it('applies responsive col-start classes', () => {
+    const { container } = render(
+      <GridItem colStartSm={2} colStartMd={3} colStartLg={4} />
+    );
+    expect(container.firstChild).toHaveClass('dsn-col-start-sm-2');
+    expect(container.firstChild).toHaveClass('dsn-col-start-md-3');
+    expect(container.firstChild).toHaveClass('dsn-col-start-lg-4');
+  });
+
+  it('applies responsive col-end classes', () => {
+    const { container } = render(
+      <GridItem colEndSm={10} colEndMd={11} colEndLg={13} />
+    );
+    expect(container.firstChild).toHaveClass('dsn-col-end-sm-10');
+    expect(container.firstChild).toHaveClass('dsn-col-end-md-11');
+    expect(container.firstChild).toHaveClass('dsn-col-end-lg-13');
+  });
+
+  it('combines colStart and colEnd with colSpan', () => {
+    const { container } = render(
+      <GridItem colSpan={8} colStart={3} colEnd={11} />
+    );
+    expect(container.firstChild).toHaveClass('dsn-col-8');
+    expect(container.firstChild).toHaveClass('dsn-col-start-3');
+    expect(container.firstChild).toHaveClass('dsn-col-end-11');
+  });
+
   it('applies custom className alongside col class', () => {
     const { container } = render(<GridItem colSpan={6} className="custom" />);
     expect(container.firstChild).toHaveClass('dsn-col-6');
