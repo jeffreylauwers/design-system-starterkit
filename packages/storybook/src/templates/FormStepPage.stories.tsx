@@ -22,6 +22,7 @@ import {
   RadioOption,
   SkipLink,
   Stack,
+  TelephoneInput,
   TextInput,
   UnorderedList,
 } from '@dsn/components-react';
@@ -163,7 +164,7 @@ export const Default: Story = {
                             label="Banaan"
                             value="banaan"
                           />
-                          <RadioOption name="fruit" label="Kers" value="kers" />
+                          <RadioOption name="fruit" label="Kiwi" value="kiwi" />
                         </RadioGroup>
                       </FormFieldset>
 
@@ -172,11 +173,7 @@ export const Default: Story = {
                         htmlFor="telefoon"
                         labelSuffix="(niet verplicht)"
                       >
-                        <TextInput
-                          id="telefoon"
-                          autoComplete="tel"
-                          inputMode="tel"
-                        />
+                        <TelephoneInput id="telefoon" width="md" />
                       </FormField>
 
                       <ActionGroup
