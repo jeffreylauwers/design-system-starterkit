@@ -35,6 +35,17 @@
 }
 
 /* =============================================================================
+   Icon-start uitlijning — level 2+ indent gelijk aan icon-breedte + gap
+   Gebruik wanneer level-1 items een iconStart hebben.
+   ============================================================================= */
+
+.dsn-menu--icon-start {
+  --dsn-menu-link-level-indent: calc(
+    var(--dsn-menu-item-icon-size) + var(--dsn-menu-item-gap)
+  );
+}
+
+/* =============================================================================
    Horizontale oriëntatie
    ============================================================================= */
 
