@@ -14,6 +14,13 @@ export interface MenuProps extends React.HTMLAttributes<HTMLUListElement> {
   orientation?: MenuOrientation;
 
   /**
+   * Geeft aan dat level-1 items een `iconStart` hebben.
+   * Level 2+ items worden dan ingesprongen zodat hun tekst uitlijnt met het label van level 1.
+   * @default false
+   */
+  iconStart?: boolean;
+
+  /**
    * `MenuLink`- en/of `MenuButton`-items (verplicht)
    */
   children: React.ReactNode;
@@ -53,10 +60,20 @@ export interface MenuProps extends React.HTMLAttributes<HTMLUListElement> {
  * ```
  */
 export const Menu = React.forwardRef<HTMLUListElement, MenuProps>(
-  ({ orientation = 'vertical', className, children, ...props }, ref) => {
+  (
+    {
+      orientation = 'vertical',
+      iconStart = false,
+      className,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     const classes = classNames(
       'dsn-menu',
       orientation === 'horizontal' && 'dsn-menu--horizontal',
+      iconStart && 'dsn-menu--icon-start',
       className
     );
 

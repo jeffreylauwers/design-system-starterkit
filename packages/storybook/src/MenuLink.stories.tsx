@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon, MenuLink, NumberBadge } from '@dsn/components-react';
+import { Icon, Menu, MenuLink, NumberBadge } from '@dsn/components-react';
 import type { IconName } from '@dsn/components-react/icon-registry.generated';
 import DocsPage from './MenuLink.docs.mdx';
 import {
@@ -243,7 +243,7 @@ export const Levels: Story = {
 export const ExpandedWithSubItems: Story = {
   name: 'Expanded with sub-pages',
   render: () => (
-    <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+    <Menu iconStart>
       <MenuLink
         href="/rapporten"
         iconStart={<Icon name="file-description" aria-hidden />}
@@ -261,7 +261,7 @@ export const ExpandedWithSubItems: Story = {
       <MenuLink href="/rapporten/jaarlijks" level={2}>
         Jaarlijks
       </MenuLink>
-    </ul>
+    </Menu>
   ),
 };
 
@@ -269,7 +269,7 @@ export const FullNavigation: Story = {
   name: 'Full navigation menu',
   render: () => (
     <nav aria-label="Primaire navigatie" style={{ maxWidth: '280px' }}>
-      <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+      <Menu iconStart>
         <MenuLink
           href="/dashboard"
           iconStart={<Icon name="home" aria-hidden />}
@@ -309,7 +309,7 @@ export const FullNavigation: Story = {
         >
           Instellingen
         </MenuLink>
-      </ul>
+      </Menu>
     </nav>
   ),
 };
