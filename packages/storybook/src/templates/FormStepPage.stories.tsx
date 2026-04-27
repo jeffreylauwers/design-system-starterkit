@@ -141,8 +141,7 @@ export const Default: Story = {
                     </h2>
 
                     <Paragraph>
-                      Vul hieronder uw persoonlijke gegevens in. Alle velden
-                      zijn verplicht, tenzij anders aangegeven.
+                      Vul alles in. Als iets niet verplicht is, staat dat erbij.
                     </Paragraph>
                   </Stack>
 
