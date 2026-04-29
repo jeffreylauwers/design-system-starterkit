@@ -2,272 +2,272 @@
   "dsn": {
     "checkbox": {
       "background-color": {
-        "value": "{dsn.form-control.background-color}",
-        "type": "color"
+        "$value": "{dsn.form-control.background-color}",
+        "$type": "color"
       },
       "border-color": {
-        "value": "{dsn.form-control.border-color}",
-        "type": "color"
+        "$value": "{dsn.form-control.border-color}",
+        "$type": "color"
       },
       "border-radius": {
-        "value": "0px",
-        "type": "dimension",
-        "comment": "Square corners for checkbox"
+        "$value": "0px",
+        "$type": "dimension",
+        "$description": "Square corners for checkbox"
       },
       "border-width": {
-        "value": "{dsn.border.width.thin}",
-        "type": "dimension"
+        "$value": "{dsn.border.width.thin}",
+        "$type": "dimension"
       },
       "size": {
-        "value": "calc(var(--dsn-text-font-size-md) * var(--dsn-text-line-height-md))",
-        "type": "dimension",
-        "comment": "Size of the checkbox - fluid based on text size and line-height"
+        "$value": "calc(var(--dsn-text-font-size-md) * var(--dsn-text-line-height-md))",
+        "$type": "dimension",
+        "$description": "Size of the checkbox - fluid based on text size and line-height"
       },
       "active": {
         "background-color": {
-          "value": "{dsn.form-control.active.background-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.active.background-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "{dsn.form-control.active.border-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.active.border-color}",
+          "$type": "color"
         },
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension"
         }
       },
       "checked": {
         "background-color": {
-          "value": "{dsn.form-control.accent-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.accent-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "transparent",
-          "type": "color"
+          "$value": "transparent",
+          "$type": "color"
         },
         "border-width": {
-          "value": "{dsn.border.width.thin}",
-          "type": "dimension"
+          "$value": "{dsn.border.width.thin}",
+          "$type": "dimension"
         },
         "color": {
-          "value": "{dsn.color.neutral-inverse.color-default}",
-          "type": "color",
-          "comment": "Check icon color"
+          "$value": "{dsn.color.neutral-inverse.color-default}",
+          "$type": "color",
+          "$description": "Check icon color"
         }
       },
       "disabled": {
         "background-color": {
-          "value": "{dsn.form-control.disabled.background-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.disabled.background-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "{dsn.form-control.disabled.border-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.disabled.border-color}",
+          "$type": "color"
         }
       },
       "focus": {
         "background-color": {
-          "value": "{dsn.form-control.focus.background-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.focus.background-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "{dsn.form-control.focus.border-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.focus.border-color}",
+          "$type": "color"
         },
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension"
         }
       },
       "hover": {
         "background-color": {
-          "value": "{dsn.form-control.hover.background-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.hover.background-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "{dsn.form-control.hover.border-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.hover.border-color}",
+          "$type": "color"
         },
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension"
         }
       },
       "invalid": {
         "background-color": {
-          "value": "{dsn.form-control.invalid.background-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.invalid.background-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "{dsn.form-control.invalid.border-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.invalid.border-color}",
+          "$type": "color"
         },
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension"
         }
       },
       "checked-active": {
         "background-color": {
-          "value": "{dsn.form-control.active.accent-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.active.accent-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "transparent",
-          "type": "color"
+          "$value": "transparent",
+          "$type": "color"
         },
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension"
         },
         "color": {
-          "value": "{dsn.color.neutral-inverse.color-default}",
-          "type": "color"
+          "$value": "{dsn.color.neutral-inverse.color-default}",
+          "$type": "color"
         }
       },
       "checked-disabled": {
         "background-color": {
-          "value": "{dsn.form-control.disabled.accent-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.disabled.accent-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "{dsn.form-control.disabled.border-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.disabled.border-color}",
+          "$type": "color"
         },
         "color": {
-          "value": "{dsn.form-control.disabled.color}",
-          "type": "color"
+          "$value": "{dsn.form-control.disabled.color}",
+          "$type": "color"
         }
       },
       "checked-focus": {
         "background-color": {
-          "value": "{dsn.form-control.focus.background-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.focus.background-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "{dsn.form-control.focus.border-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.focus.border-color}",
+          "$type": "color"
         },
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension"
         },
         "color": {
-          "value": "{dsn.form-control.focus.color}",
-          "type": "color"
+          "$value": "{dsn.form-control.focus.color}",
+          "$type": "color"
         }
       },
       "checked-hover": {
         "background-color": {
-          "value": "{dsn.form-control.hover.accent-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.hover.accent-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "transparent",
-          "type": "color"
+          "$value": "transparent",
+          "$type": "color"
         },
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension"
         },
         "color": {
-          "value": "{dsn.color.neutral-inverse.color-default}",
-          "type": "color"
+          "$value": "{dsn.color.neutral-inverse.color-default}",
+          "$type": "color"
         }
       },
       "indeterminate": {
         "background-color": {
-          "value": "{dsn.form-control.accent-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.accent-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "transparent",
-          "type": "color"
+          "$value": "transparent",
+          "$type": "color"
         },
         "border-width": {
-          "value": "{dsn.border.width.thin}",
-          "type": "dimension"
+          "$value": "{dsn.border.width.thin}",
+          "$type": "dimension"
         },
         "color": {
-          "value": "{dsn.color.neutral-inverse.color-default}",
-          "type": "color",
-          "comment": "Indeterminate icon (minus) color"
+          "$value": "{dsn.color.neutral-inverse.color-default}",
+          "$type": "color",
+          "$description": "Indeterminate icon (minus) color"
         }
       },
       "indeterminate-active": {
         "background-color": {
-          "value": "{dsn.form-control.active.accent-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.active.accent-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "transparent",
-          "type": "color"
+          "$value": "transparent",
+          "$type": "color"
         },
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension"
         },
         "color": {
-          "value": "{dsn.color.neutral-inverse.color-default}",
-          "type": "color"
+          "$value": "{dsn.color.neutral-inverse.color-default}",
+          "$type": "color"
         }
       },
       "indeterminate-disabled": {
         "background-color": {
-          "value": "{dsn.form-control.disabled.accent-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.disabled.accent-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "{dsn.form-control.disabled.border-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.disabled.border-color}",
+          "$type": "color"
         },
         "color": {
-          "value": "{dsn.form-control.disabled.color}",
-          "type": "color"
+          "$value": "{dsn.form-control.disabled.color}",
+          "$type": "color"
         }
       },
       "indeterminate-focus": {
         "background-color": {
-          "value": "{dsn.form-control.focus.background-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.focus.background-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "{dsn.form-control.focus.border-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.focus.border-color}",
+          "$type": "color"
         },
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension"
         },
         "color": {
-          "value": "{dsn.form-control.focus.color}",
-          "type": "color"
+          "$value": "{dsn.form-control.focus.color}",
+          "$type": "color"
         }
       },
       "indeterminate-hover": {
         "background-color": {
-          "value": "{dsn.form-control.hover.accent-color}",
-          "type": "color"
+          "$value": "{dsn.form-control.hover.accent-color}",
+          "$type": "color"
         },
         "border-color": {
-          "value": "transparent",
-          "type": "color"
+          "$value": "transparent",
+          "$type": "color"
         },
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension"
         },
         "color": {
-          "value": "{dsn.color.neutral-inverse.color-default}",
-          "type": "color"
+          "$value": "{dsn.color.neutral-inverse.color-default}",
+          "$type": "color"
         }
       },
       "icon": {
         "size": {
-          "value": "calc(var(--dsn-checkbox-size) * 0.67)",
-          "type": "dimension",
-          "comment": "Check icon size - 67% of checkbox size for proper visual balance"
+          "$value": "calc(var(--dsn-checkbox-size) * 0.67)",
+          "$type": "dimension",
+          "$description": "Check icon size - 67% of checkbox size for proper visual balance"
         }
       }
     }

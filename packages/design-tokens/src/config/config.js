@@ -1,4 +1,4 @@
-const StyleDictionary = require('style-dictionary');
+import StyleDictionary from 'style-dictionary';
 
 // =============================================================================
 // CUSTOM FORMATS
@@ -9,18 +9,18 @@ const StyleDictionary = require('style-dictionary');
 // When outputReferences is true, keeps var(--token) references for unresolved tokens
 StyleDictionary.registerFormat({
   name: 'css/variables-scoped',
-  formatter: function ({ dictionary, options }) {
+  format: function ({ dictionary, options }) {
     const selector = options.selector || ':root';
     const outputReferences = options.outputReferences || false;
 
-    const lines = dictionary.allProperties.map((token) => {
-      const comment = token.comment ? ` /* ${token.comment} */` : '';
+    const lines = dictionary.allTokens.map((token) => {
+      const comment = token.description ? ` /* ${token.description} */` : '';
       let value = token.value;
 
       // If outputReferences is enabled and the original value had references,
       // convert them to CSS custom property references
-      if (outputReferences && token.original && token.original.value) {
-        const originalValue = token.original.value;
+      if (outputReferences && token.original && token.original.$value) {
+        const originalValue = token.original.$value;
         // Check if the original value contains Style Dictionary references like {dsn.color.x}
         if (typeof originalValue === 'string' && originalValue.includes('{')) {
           // Convert {dsn.token.path} to var(--dsn-token-path)
@@ -38,16 +38,16 @@ StyleDictionary.registerFormat({
 });
 
 // Custom format for TypeScript declarations
-// Generates typed exports matching the javascript/es6 output
+// Generates typed exports matching the javascript/esm output
 StyleDictionary.registerFormat({
   name: 'typescript/declarations',
-  formatter: function ({ dictionary }) {
-    const lines = dictionary.allProperties.map((token) => {
+  format: function ({ dictionary }) {
+    const lines = dictionary.allTokens.map((token) => {
       const name = token.name
         .split('-')
         .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
         .join('');
-      const comment = token.comment ? ` // ${token.comment}` : '';
+      const comment = token.description ? ` // ${token.description}` : '';
       return `export declare const ${name}: string;${comment}`;
     });
     return lines.join('\n') + '\n';
@@ -118,7 +118,7 @@ function createFullConfig(theme, mode, projectType) {
         files: [
           {
             destination: `${configName}.js`,
-            format: 'javascript/es6',
+            format: 'javascript/esm',
           },
           {
             destination: `${configName}.d.ts`,
@@ -280,7 +280,7 @@ const scopedConfigs = {
 // Legacy aliases for backward compatibility
 const legacyConfigs = createLegacyConfig();
 
-module.exports = {
+export {
   // Configuration axes (for build script)
   themes,
   modes,
@@ -291,12 +291,11 @@ module.exports = {
   scopedConfigs,
 
   // Legacy aliases (backward compatibility)
-  light: legacyConfigs.light,
-  dark: legacyConfigs.dark,
-
-  // Helper functions (for custom builds)
   createFullConfig,
   createModeScopedConfig,
   createProjectTypeScopedConfig,
   createThemeBaseScopedConfig,
 };
+
+export const light = legacyConfigs.light;
+export const dark = legacyConfigs.dark;

@@ -2,29 +2,29 @@
   "dsn": {
     "select": {
       "icon-color": {
-        "value": "{dsn.color.action-1.color-default}",
-        "type": "color",
-        "comment": "Chevron icon color — same as subtle button icon color"
+        "$value": "{dsn.color.action-1.color-default}",
+        "$type": "color",
+        "$description": "Chevron icon color — same as subtle button icon color"
       },
       "icon-gap": {
-        "value": "{dsn.space.text.md}",
-        "type": "dimension",
-        "comment": "Gap between chevron icon and select text"
+        "$value": "{dsn.space.text.md}",
+        "$type": "dimension",
+        "$description": "Gap between chevron icon and select text"
       },
       "icon-inset-inline-end": {
-        "value": "{dsn.space.inline.md}",
-        "type": "dimension",
-        "comment": "Distance from the inline-end border to the chevron icon (8px)"
+        "$value": "{dsn.space.inline.md}",
+        "$type": "dimension",
+        "$description": "Distance from the inline-end border to the chevron icon (8px)"
       },
       "icon-size": {
-        "value": "{dsn.icon.size.md}",
-        "type": "dimension",
-        "comment": "Chevron-down icon size — matches the medium icon size"
+        "$value": "{dsn.icon.size.md}",
+        "$type": "dimension",
+        "$description": "Chevron-down icon size — matches the medium icon size"
       },
       "padding-inline-end-with-icon": {
-        "value": "calc({dsn.select.icon-size} + {dsn.select.icon-gap} + {dsn.select.icon-inset-inline-end})",
-        "type": "dimension",
-        "comment": "Right padding when icon is present: icon-size + gap + inset"
+        "$value": "calc({dsn.select.icon-size} + {dsn.select.icon-gap} + {dsn.select.icon-inset-inline-end})",
+        "$type": "dimension",
+        "$description": "Right padding when icon is present: icon-size + gap + inset"
       }
     }
   }

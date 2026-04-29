@@ -3,1754 +3,1754 @@
     "color": {
       "neutral": {
         "bg-document": {
-          "value": "#111111",
-          "type": "color",
-          "comment": "Document background"
+          "$value": "#111111",
+          "$type": "color",
+          "$description": "Document background"
         },
         "bg-elevated": {
-          "value": "#111111",
-          "type": "color",
-          "comment": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+          "$value": "#111111",
+          "$type": "color",
+          "$description": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
-          "value": "#040404",
-          "type": "color",
-          "comment": "Subtle background"
+          "$value": "#040404",
+          "$type": "color",
+          "$description": "Subtle background"
         },
         "bg-default": {
-          "value": "#1D1D1D",
-          "type": "color",
-          "comment": "Default background"
+          "$value": "#1D1D1D",
+          "$type": "color",
+          "$description": "Default background"
         },
         "bg-hover": {
-          "value": "#262626",
-          "type": "color",
-          "comment": "Hover state background"
+          "$value": "#262626",
+          "$type": "color",
+          "$description": "Hover state background"
         },
         "bg-active": {
-          "value": "#2E2E2E",
-          "type": "color",
-          "comment": "Active state background"
+          "$value": "#2E2E2E",
+          "$type": "color",
+          "$description": "Active state background"
         },
         "border-subtle": {
-          "value": "#3E3E3E",
-          "type": "color",
-          "comment": "Subtle border"
+          "$value": "#3E3E3E",
+          "$type": "color",
+          "$description": "Subtle border"
         },
         "border-default": {
-          "value": "#686868",
-          "type": "color",
-          "comment": "Default border"
+          "$value": "#686868",
+          "$type": "color",
+          "$description": "Default border"
         },
         "border-hover": {
-          "value": "#727272",
-          "type": "color",
-          "comment": "Hover state border"
+          "$value": "#727272",
+          "$type": "color",
+          "$description": "Hover state border"
         },
         "border-active": {
-          "value": "#7C7C7C",
-          "type": "color",
-          "comment": "Active state border"
+          "$value": "#7C7C7C",
+          "$type": "color",
+          "$description": "Active state border"
         },
         "color-default": {
-          "value": "#ABABAB",
-          "type": "color",
-          "comment": "Default text color"
+          "$value": "#ABABAB",
+          "$type": "color",
+          "$description": "Default text color"
         },
         "color-hover": {
-          "value": "#BBBBBB",
-          "type": "color",
-          "comment": "Hover state text"
+          "$value": "#BBBBBB",
+          "$type": "color",
+          "$description": "Hover state text"
         },
         "color-active": {
-          "value": "#CCCCCC",
-          "type": "color",
-          "comment": "Active state text"
+          "$value": "#CCCCCC",
+          "$type": "color",
+          "$description": "Active state text"
         },
         "color-subtle": {
-          "value": "#8B8B8B",
-          "type": "color",
-          "comment": "Subtle text color"
+          "$value": "#8B8B8B",
+          "$type": "color",
+          "$description": "Subtle text color"
         },
         "color-document": {
-          "value": "#F1F1F1",
-          "type": "color",
-          "comment": "Document text color"
+          "$value": "#F1F1F1",
+          "$type": "color",
+          "$description": "Document text color"
         }
       },
       "accent-1": {
         "bg-document": {
-          "value": "#001126",
-          "type": "color",
-          "comment": "Document background"
+          "$value": "#001126",
+          "$type": "color",
+          "$description": "Document background"
         },
         "bg-elevated": {
-          "value": "#001126",
-          "type": "color",
-          "comment": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+          "$value": "#001126",
+          "$type": "color",
+          "$description": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
-          "value": "#000409",
-          "type": "color",
-          "comment": "Subtle background"
+          "$value": "#000409",
+          "$type": "color",
+          "$description": "Subtle background"
         },
         "bg-default": {
-          "value": "#001D40",
-          "type": "color",
-          "comment": "Default background"
+          "$value": "#001D40",
+          "$type": "color",
+          "$description": "Default background"
         },
         "bg-hover": {
-          "value": "#002551",
-          "type": "color",
-          "comment": "Hover state background"
+          "$value": "#002551",
+          "$type": "color",
+          "$description": "Hover state background"
         },
         "bg-active": {
-          "value": "#002D62",
-          "type": "color",
-          "comment": "Active state background"
+          "$value": "#002D62",
+          "$type": "color",
+          "$description": "Active state background"
         },
         "border-subtle": {
-          "value": "#003B81",
-          "type": "color",
-          "comment": "Subtle border"
+          "$value": "#003B81",
+          "$type": "color",
+          "$description": "Subtle border"
         },
         "border-default": {
-          "value": "#3169AD",
-          "type": "color",
-          "comment": "Default border"
+          "$value": "#3169AD",
+          "$type": "color",
+          "$description": "Default border"
         },
         "border-hover": {
-          "value": "#3F74B2",
-          "type": "color",
-          "comment": "Hover state border"
+          "$value": "#3F74B2",
+          "$type": "color",
+          "$description": "Hover state border"
         },
         "border-active": {
-          "value": "#4E7FB8",
-          "type": "color",
-          "comment": "Active state border"
+          "$value": "#4E7FB8",
+          "$type": "color",
+          "$description": "Active state border"
         },
         "color-default": {
-          "value": "#8FAED2",
-          "type": "color",
-          "comment": "Default text color"
+          "$value": "#8FAED2",
+          "$type": "color",
+          "$description": "Default text color"
         },
         "color-hover": {
-          "value": "#A5BEDB",
-          "type": "color",
-          "comment": "Hover state text"
+          "$value": "#A5BEDB",
+          "$type": "color",
+          "$description": "Hover state text"
         },
         "color-active": {
-          "value": "#BBCEE4",
-          "type": "color",
-          "comment": "Active state text"
+          "$value": "#BBCEE4",
+          "$type": "color",
+          "$description": "Active state text"
         },
         "color-subtle": {
-          "value": "#648EC1",
-          "type": "color",
-          "comment": "Subtle text color"
+          "$value": "#648EC1",
+          "$type": "color",
+          "$description": "Subtle text color"
         },
         "color-document": {
-          "value": "#ECF1F7",
-          "type": "color",
-          "comment": "Document text color"
+          "$value": "#ECF1F7",
+          "$type": "color",
+          "$description": "Document text color"
         }
       },
       "accent-2": {
         "bg-document": {
-          "value": "{dsn.color.accent-1.bg-document}",
-          "type": "color",
-          "comment": "Document background"
+          "$value": "{dsn.color.accent-1.bg-document}",
+          "$type": "color",
+          "$description": "Document background"
         },
         "bg-elevated": {
-          "value": "{dsn.color.accent-1.bg-elevated}",
-          "type": "color",
-          "comment": "Elevated background"
+          "$value": "{dsn.color.accent-1.bg-elevated}",
+          "$type": "color",
+          "$description": "Elevated background"
         },
         "bg-subtle": {
-          "value": "{dsn.color.accent-1.bg-subtle}",
-          "type": "color",
-          "comment": "Subtle background"
+          "$value": "{dsn.color.accent-1.bg-subtle}",
+          "$type": "color",
+          "$description": "Subtle background"
         },
         "bg-default": {
-          "value": "{dsn.color.accent-1.bg-default}",
-          "type": "color",
-          "comment": "Default background"
+          "$value": "{dsn.color.accent-1.bg-default}",
+          "$type": "color",
+          "$description": "Default background"
         },
         "bg-hover": {
-          "value": "{dsn.color.accent-1.bg-hover}",
-          "type": "color",
-          "comment": "Hover state background"
+          "$value": "{dsn.color.accent-1.bg-hover}",
+          "$type": "color",
+          "$description": "Hover state background"
         },
         "bg-active": {
-          "value": "{dsn.color.accent-1.bg-active}",
-          "type": "color",
-          "comment": "Active state background"
+          "$value": "{dsn.color.accent-1.bg-active}",
+          "$type": "color",
+          "$description": "Active state background"
         },
         "border-subtle": {
-          "value": "{dsn.color.accent-1.border-subtle}",
-          "type": "color",
-          "comment": "Subtle border"
+          "$value": "{dsn.color.accent-1.border-subtle}",
+          "$type": "color",
+          "$description": "Subtle border"
         },
         "border-default": {
-          "value": "{dsn.color.accent-1.border-default}",
-          "type": "color",
-          "comment": "Default border"
+          "$value": "{dsn.color.accent-1.border-default}",
+          "$type": "color",
+          "$description": "Default border"
         },
         "border-hover": {
-          "value": "{dsn.color.accent-1.border-hover}",
-          "type": "color",
-          "comment": "Hover state border"
+          "$value": "{dsn.color.accent-1.border-hover}",
+          "$type": "color",
+          "$description": "Hover state border"
         },
         "border-active": {
-          "value": "{dsn.color.accent-1.border-active}",
-          "type": "color",
-          "comment": "Active state border"
+          "$value": "{dsn.color.accent-1.border-active}",
+          "$type": "color",
+          "$description": "Active state border"
         },
         "color-default": {
-          "value": "{dsn.color.accent-1.color-default}",
-          "type": "color",
-          "comment": "Default text color"
+          "$value": "{dsn.color.accent-1.color-default}",
+          "$type": "color",
+          "$description": "Default text color"
         },
         "color-hover": {
-          "value": "{dsn.color.accent-1.color-hover}",
-          "type": "color",
-          "comment": "Hover state text"
+          "$value": "{dsn.color.accent-1.color-hover}",
+          "$type": "color",
+          "$description": "Hover state text"
         },
         "color-active": {
-          "value": "{dsn.color.accent-1.color-active}",
-          "type": "color",
-          "comment": "Active state text"
+          "$value": "{dsn.color.accent-1.color-active}",
+          "$type": "color",
+          "$description": "Active state text"
         },
         "color-subtle": {
-          "value": "{dsn.color.accent-1.color-subtle}",
-          "type": "color",
-          "comment": "Subtle text color"
+          "$value": "{dsn.color.accent-1.color-subtle}",
+          "$type": "color",
+          "$description": "Subtle text color"
         },
         "color-document": {
-          "value": "{dsn.color.accent-1.color-document}",
-          "type": "color",
-          "comment": "Document text color"
+          "$value": "{dsn.color.accent-1.color-document}",
+          "$type": "color",
+          "$description": "Document text color"
         }
       },
       "accent-3": {
         "bg-document": {
-          "value": "{dsn.color.accent-1.bg-document}",
-          "type": "color",
-          "comment": "Document background"
+          "$value": "{dsn.color.accent-1.bg-document}",
+          "$type": "color",
+          "$description": "Document background"
         },
         "bg-elevated": {
-          "value": "{dsn.color.accent-1.bg-elevated}",
-          "type": "color",
-          "comment": "Elevated background"
+          "$value": "{dsn.color.accent-1.bg-elevated}",
+          "$type": "color",
+          "$description": "Elevated background"
         },
         "bg-subtle": {
-          "value": "{dsn.color.accent-1.bg-subtle}",
-          "type": "color",
-          "comment": "Subtle background"
+          "$value": "{dsn.color.accent-1.bg-subtle}",
+          "$type": "color",
+          "$description": "Subtle background"
         },
         "bg-default": {
-          "value": "{dsn.color.accent-1.bg-default}",
-          "type": "color",
-          "comment": "Default background"
+          "$value": "{dsn.color.accent-1.bg-default}",
+          "$type": "color",
+          "$description": "Default background"
         },
         "bg-hover": {
-          "value": "{dsn.color.accent-1.bg-hover}",
-          "type": "color",
-          "comment": "Hover state background"
+          "$value": "{dsn.color.accent-1.bg-hover}",
+          "$type": "color",
+          "$description": "Hover state background"
         },
         "bg-active": {
-          "value": "{dsn.color.accent-1.bg-active}",
-          "type": "color",
-          "comment": "Active state background"
+          "$value": "{dsn.color.accent-1.bg-active}",
+          "$type": "color",
+          "$description": "Active state background"
         },
         "border-subtle": {
-          "value": "{dsn.color.accent-1.border-subtle}",
-          "type": "color",
-          "comment": "Subtle border"
+          "$value": "{dsn.color.accent-1.border-subtle}",
+          "$type": "color",
+          "$description": "Subtle border"
         },
         "border-default": {
-          "value": "{dsn.color.accent-1.border-default}",
-          "type": "color",
-          "comment": "Default border"
+          "$value": "{dsn.color.accent-1.border-default}",
+          "$type": "color",
+          "$description": "Default border"
         },
         "border-hover": {
-          "value": "{dsn.color.accent-1.border-hover}",
-          "type": "color",
-          "comment": "Hover state border"
+          "$value": "{dsn.color.accent-1.border-hover}",
+          "$type": "color",
+          "$description": "Hover state border"
         },
         "border-active": {
-          "value": "{dsn.color.accent-1.border-active}",
-          "type": "color",
-          "comment": "Active state border"
+          "$value": "{dsn.color.accent-1.border-active}",
+          "$type": "color",
+          "$description": "Active state border"
         },
         "color-default": {
-          "value": "{dsn.color.accent-1.color-default}",
-          "type": "color",
-          "comment": "Default text color"
+          "$value": "{dsn.color.accent-1.color-default}",
+          "$type": "color",
+          "$description": "Default text color"
         },
         "color-hover": {
-          "value": "{dsn.color.accent-1.color-hover}",
-          "type": "color",
-          "comment": "Hover state text"
+          "$value": "{dsn.color.accent-1.color-hover}",
+          "$type": "color",
+          "$description": "Hover state text"
         },
         "color-active": {
-          "value": "{dsn.color.accent-1.color-active}",
-          "type": "color",
-          "comment": "Active state text"
+          "$value": "{dsn.color.accent-1.color-active}",
+          "$type": "color",
+          "$description": "Active state text"
         },
         "color-subtle": {
-          "value": "{dsn.color.accent-1.color-subtle}",
-          "type": "color",
-          "comment": "Subtle text color"
+          "$value": "{dsn.color.accent-1.color-subtle}",
+          "$type": "color",
+          "$description": "Subtle text color"
         },
         "color-document": {
-          "value": "{dsn.color.accent-1.color-document}",
-          "type": "color",
-          "comment": "Document text color"
+          "$value": "{dsn.color.accent-1.color-document}",
+          "$type": "color",
+          "$description": "Document text color"
         }
       },
       "action-1": {
         "bg-document": {
-          "value": "{dsn.color.accent-1.bg-document}",
-          "type": "color",
-          "comment": "Document background - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.bg-document}",
+          "$type": "color",
+          "$description": "Document background - Primary actions (buttons)"
         },
         "bg-elevated": {
-          "value": "{dsn.color.accent-1.bg-elevated}",
-          "type": "color",
-          "comment": "Elevated background - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.bg-elevated}",
+          "$type": "color",
+          "$description": "Elevated background - Primary actions (buttons)"
         },
         "bg-subtle": {
-          "value": "{dsn.color.accent-1.bg-subtle}",
-          "type": "color",
-          "comment": "Subtle background - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.bg-subtle}",
+          "$type": "color",
+          "$description": "Subtle background - Primary actions (buttons)"
         },
         "bg-default": {
-          "value": "{dsn.color.accent-1.bg-default}",
-          "type": "color",
-          "comment": "Default background - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.bg-default}",
+          "$type": "color",
+          "$description": "Default background - Primary actions (buttons)"
         },
         "bg-hover": {
-          "value": "{dsn.color.accent-1.bg-hover}",
-          "type": "color",
-          "comment": "Hover state background - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.bg-hover}",
+          "$type": "color",
+          "$description": "Hover state background - Primary actions (buttons)"
         },
         "bg-active": {
-          "value": "{dsn.color.accent-1.bg-active}",
-          "type": "color",
-          "comment": "Active state background - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.bg-active}",
+          "$type": "color",
+          "$description": "Active state background - Primary actions (buttons)"
         },
         "border-subtle": {
-          "value": "{dsn.color.accent-1.border-subtle}",
-          "type": "color",
-          "comment": "Subtle border - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.border-subtle}",
+          "$type": "color",
+          "$description": "Subtle border - Primary actions (buttons)"
         },
         "border-default": {
-          "value": "{dsn.color.accent-1.border-default}",
-          "type": "color",
-          "comment": "Default border - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.border-default}",
+          "$type": "color",
+          "$description": "Default border - Primary actions (buttons)"
         },
         "border-hover": {
-          "value": "{dsn.color.accent-1.border-hover}",
-          "type": "color",
-          "comment": "Hover state border - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.border-hover}",
+          "$type": "color",
+          "$description": "Hover state border - Primary actions (buttons)"
         },
         "border-active": {
-          "value": "{dsn.color.accent-1.border-active}",
-          "type": "color",
-          "comment": "Active state border - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.border-active}",
+          "$type": "color",
+          "$description": "Active state border - Primary actions (buttons)"
         },
         "color-default": {
-          "value": "{dsn.color.accent-1.color-default}",
-          "type": "color",
-          "comment": "Default text color - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.color-default}",
+          "$type": "color",
+          "$description": "Default text color - Primary actions (buttons)"
         },
         "color-hover": {
-          "value": "{dsn.color.accent-1.color-hover}",
-          "type": "color",
-          "comment": "Hover state text - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.color-hover}",
+          "$type": "color",
+          "$description": "Hover state text - Primary actions (buttons)"
         },
         "color-active": {
-          "value": "{dsn.color.accent-1.color-active}",
-          "type": "color",
-          "comment": "Active state text - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.color-active}",
+          "$type": "color",
+          "$description": "Active state text - Primary actions (buttons)"
         },
         "color-subtle": {
-          "value": "{dsn.color.accent-1.color-subtle}",
-          "type": "color",
-          "comment": "Subtle text color - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.color-subtle}",
+          "$type": "color",
+          "$description": "Subtle text color - Primary actions (buttons)"
         },
         "color-document": {
-          "value": "{dsn.color.accent-1.color-document}",
-          "type": "color",
-          "comment": "Document text color - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1.color-document}",
+          "$type": "color",
+          "$description": "Document text color - Primary actions (buttons)"
         }
       },
       "action-2": {
         "bg-document": {
-          "value": "{dsn.color.accent-1.bg-document}",
-          "type": "color",
-          "comment": "Document background - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.bg-document}",
+          "$type": "color",
+          "$description": "Document background - Secondary actions (links, navigation)"
         },
         "bg-elevated": {
-          "value": "{dsn.color.accent-1.bg-elevated}",
-          "type": "color",
-          "comment": "Elevated background - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.bg-elevated}",
+          "$type": "color",
+          "$description": "Elevated background - Secondary actions (links, navigation)"
         },
         "bg-subtle": {
-          "value": "{dsn.color.accent-1.bg-subtle}",
-          "type": "color",
-          "comment": "Subtle background - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.bg-subtle}",
+          "$type": "color",
+          "$description": "Subtle background - Secondary actions (links, navigation)"
         },
         "bg-default": {
-          "value": "{dsn.color.accent-1.bg-default}",
-          "type": "color",
-          "comment": "Default background - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.bg-default}",
+          "$type": "color",
+          "$description": "Default background - Secondary actions (links, navigation)"
         },
         "bg-hover": {
-          "value": "{dsn.color.accent-1.bg-hover}",
-          "type": "color",
-          "comment": "Hover state background - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.bg-hover}",
+          "$type": "color",
+          "$description": "Hover state background - Secondary actions (links, navigation)"
         },
         "bg-active": {
-          "value": "{dsn.color.accent-1.bg-active}",
-          "type": "color",
-          "comment": "Active state background - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.bg-active}",
+          "$type": "color",
+          "$description": "Active state background - Secondary actions (links, navigation)"
         },
         "border-subtle": {
-          "value": "{dsn.color.accent-1.border-subtle}",
-          "type": "color",
-          "comment": "Subtle border - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.border-subtle}",
+          "$type": "color",
+          "$description": "Subtle border - Secondary actions (links, navigation)"
         },
         "border-default": {
-          "value": "{dsn.color.accent-1.border-default}",
-          "type": "color",
-          "comment": "Default border - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.border-default}",
+          "$type": "color",
+          "$description": "Default border - Secondary actions (links, navigation)"
         },
         "border-hover": {
-          "value": "{dsn.color.accent-1.border-hover}",
-          "type": "color",
-          "comment": "Hover state border - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.border-hover}",
+          "$type": "color",
+          "$description": "Hover state border - Secondary actions (links, navigation)"
         },
         "border-active": {
-          "value": "{dsn.color.accent-1.border-active}",
-          "type": "color",
-          "comment": "Active state border - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.border-active}",
+          "$type": "color",
+          "$description": "Active state border - Secondary actions (links, navigation)"
         },
         "color-default": {
-          "value": "{dsn.color.accent-1.color-default}",
-          "type": "color",
-          "comment": "Default text color - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.color-default}",
+          "$type": "color",
+          "$description": "Default text color - Secondary actions (links, navigation)"
         },
         "color-hover": {
-          "value": "{dsn.color.accent-1.color-hover}",
-          "type": "color",
-          "comment": "Hover state text - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.color-hover}",
+          "$type": "color",
+          "$description": "Hover state text - Secondary actions (links, navigation)"
         },
         "color-active": {
-          "value": "{dsn.color.accent-1.color-active}",
-          "type": "color",
-          "comment": "Active state text - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.color-active}",
+          "$type": "color",
+          "$description": "Active state text - Secondary actions (links, navigation)"
         },
         "color-subtle": {
-          "value": "{dsn.color.accent-1.color-subtle}",
-          "type": "color",
-          "comment": "Subtle text color - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.color-subtle}",
+          "$type": "color",
+          "$description": "Subtle text color - Secondary actions (links, navigation)"
         },
         "color-document": {
-          "value": "{dsn.color.accent-1.color-document}",
-          "type": "color",
-          "comment": "Document text color - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1.color-document}",
+          "$type": "color",
+          "$description": "Document text color - Secondary actions (links, navigation)"
         }
       },
       "info": {
         "bg-document": {
-          "value": "{dsn.color.accent-1.bg-document}",
-          "type": "color",
-          "comment": "Document background"
+          "$value": "{dsn.color.accent-1.bg-document}",
+          "$type": "color",
+          "$description": "Document background"
         },
         "bg-elevated": {
-          "value": "{dsn.color.accent-1.bg-elevated}",
-          "type": "color",
-          "comment": "Elevated background"
+          "$value": "{dsn.color.accent-1.bg-elevated}",
+          "$type": "color",
+          "$description": "Elevated background"
         },
         "bg-subtle": {
-          "value": "{dsn.color.accent-1.bg-subtle}",
-          "type": "color",
-          "comment": "Subtle background"
+          "$value": "{dsn.color.accent-1.bg-subtle}",
+          "$type": "color",
+          "$description": "Subtle background"
         },
         "bg-default": {
-          "value": "{dsn.color.accent-1.bg-default}",
-          "type": "color",
-          "comment": "Default background"
+          "$value": "{dsn.color.accent-1.bg-default}",
+          "$type": "color",
+          "$description": "Default background"
         },
         "bg-hover": {
-          "value": "{dsn.color.accent-1.bg-hover}",
-          "type": "color",
-          "comment": "Hover state background"
+          "$value": "{dsn.color.accent-1.bg-hover}",
+          "$type": "color",
+          "$description": "Hover state background"
         },
         "bg-active": {
-          "value": "{dsn.color.accent-1.bg-active}",
-          "type": "color",
-          "comment": "Active state background"
+          "$value": "{dsn.color.accent-1.bg-active}",
+          "$type": "color",
+          "$description": "Active state background"
         },
         "border-subtle": {
-          "value": "{dsn.color.accent-1.border-subtle}",
-          "type": "color",
-          "comment": "Subtle border"
+          "$value": "{dsn.color.accent-1.border-subtle}",
+          "$type": "color",
+          "$description": "Subtle border"
         },
         "border-default": {
-          "value": "{dsn.color.accent-1.border-default}",
-          "type": "color",
-          "comment": "Default border"
+          "$value": "{dsn.color.accent-1.border-default}",
+          "$type": "color",
+          "$description": "Default border"
         },
         "border-hover": {
-          "value": "{dsn.color.accent-1.border-hover}",
-          "type": "color",
-          "comment": "Hover state border"
+          "$value": "{dsn.color.accent-1.border-hover}",
+          "$type": "color",
+          "$description": "Hover state border"
         },
         "border-active": {
-          "value": "{dsn.color.accent-1.border-active}",
-          "type": "color",
-          "comment": "Active state border"
+          "$value": "{dsn.color.accent-1.border-active}",
+          "$type": "color",
+          "$description": "Active state border"
         },
         "color-default": {
-          "value": "{dsn.color.accent-1.color-default}",
-          "type": "color",
-          "comment": "Default text color"
+          "$value": "{dsn.color.accent-1.color-default}",
+          "$type": "color",
+          "$description": "Default text color"
         },
         "color-hover": {
-          "value": "{dsn.color.accent-1.color-hover}",
-          "type": "color",
-          "comment": "Hover state text"
+          "$value": "{dsn.color.accent-1.color-hover}",
+          "$type": "color",
+          "$description": "Hover state text"
         },
         "color-active": {
-          "value": "{dsn.color.accent-1.color-active}",
-          "type": "color",
-          "comment": "Active state text"
+          "$value": "{dsn.color.accent-1.color-active}",
+          "$type": "color",
+          "$description": "Active state text"
         },
         "color-subtle": {
-          "value": "{dsn.color.accent-1.color-subtle}",
-          "type": "color",
-          "comment": "Subtle text color"
+          "$value": "{dsn.color.accent-1.color-subtle}",
+          "$type": "color",
+          "$description": "Subtle text color"
         },
         "color-document": {
-          "value": "{dsn.color.accent-1.color-document}",
-          "type": "color",
-          "comment": "Document text color"
+          "$value": "{dsn.color.accent-1.color-document}",
+          "$type": "color",
+          "$description": "Document text color"
         }
       },
       "negative": {
         "bg-document": {
-          "value": "#1C0000",
-          "type": "color",
-          "comment": "Document background"
+          "$value": "#1C0000",
+          "$type": "color",
+          "$description": "Document background"
         },
         "bg-elevated": {
-          "value": "#1C0000",
-          "type": "color",
-          "comment": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+          "$value": "#1C0000",
+          "$type": "color",
+          "$description": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
-          "value": "#060000",
-          "type": "color",
-          "comment": "Subtle background"
+          "$value": "#060000",
+          "$type": "color",
+          "$description": "Subtle background"
         },
         "bg-default": {
-          "value": "#2E0000",
-          "type": "color",
-          "comment": "Default background"
+          "$value": "#2E0000",
+          "$type": "color",
+          "$description": "Default background"
         },
         "bg-hover": {
-          "value": "#3D0000",
-          "type": "color",
-          "comment": "Hover state background"
+          "$value": "#3D0000",
+          "$type": "color",
+          "$description": "Hover state background"
         },
         "bg-active": {
-          "value": "#4C0000",
-          "type": "color",
-          "comment": "Active state background"
+          "$value": "#4C0000",
+          "$type": "color",
+          "$description": "Active state background"
         },
         "border-subtle": {
-          "value": "#820000",
-          "type": "color",
-          "comment": "Subtle border"
+          "$value": "#820000",
+          "$type": "color",
+          "$description": "Subtle border"
         },
         "border-default": {
-          "value": "#E74848",
-          "type": "color",
-          "comment": "Default border"
+          "$value": "#E74848",
+          "$type": "color",
+          "$description": "Default border"
         },
         "border-hover": {
-          "value": "#EC6D6D",
-          "type": "color",
-          "comment": "Hover state border"
+          "$value": "#EC6D6D",
+          "$type": "color",
+          "$description": "Hover state border"
         },
         "border-active": {
-          "value": "#F19191",
-          "type": "color",
-          "comment": "Active state border"
+          "$value": "#F19191",
+          "$type": "color",
+          "$description": "Active state border"
         },
         "color-default": {
-          "value": "#F9B1B1",
-          "type": "color",
-          "comment": "Default text color"
+          "$value": "#F9B1B1",
+          "$type": "color",
+          "$description": "Default text color"
         },
         "color-hover": {
-          "value": "#FBC3C3",
-          "type": "color",
-          "comment": "Hover state text"
+          "$value": "#FBC3C3",
+          "$type": "color",
+          "$description": "Hover state text"
         },
         "color-active": {
-          "value": "#FCD5D5",
-          "type": "color",
-          "comment": "Active state text"
+          "$value": "#FCD5D5",
+          "$type": "color",
+          "$description": "Active state text"
         },
         "color-subtle": {
-          "value": "#EB8181",
-          "type": "color",
-          "comment": "Subtle text color"
+          "$value": "#EB8181",
+          "$type": "color",
+          "$description": "Subtle text color"
         },
         "color-document": {
-          "value": "#FEEDED",
-          "type": "color",
-          "comment": "Document text color"
+          "$value": "#FEEDED",
+          "$type": "color",
+          "$description": "Document text color"
         }
       },
       "positive": {
         "bg-document": {
-          "value": "#001509",
-          "type": "color",
-          "comment": "Document background"
+          "$value": "#001509",
+          "$type": "color",
+          "$description": "Document background"
         },
         "bg-elevated": {
-          "value": "#001509",
-          "type": "color",
-          "comment": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+          "$value": "#001509",
+          "$type": "color",
+          "$description": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
-          "value": "#000802",
-          "type": "color",
-          "comment": "Subtle background"
+          "$value": "#000802",
+          "$type": "color",
+          "$description": "Subtle background"
         },
         "bg-default": {
-          "value": "#002312",
-          "type": "color",
-          "comment": "Default background"
+          "$value": "#002312",
+          "$type": "color",
+          "$description": "Default background"
         },
         "bg-hover": {
-          "value": "#003019",
-          "type": "color",
-          "comment": "Hover state background"
+          "$value": "#003019",
+          "$type": "color",
+          "$description": "Hover state background"
         },
         "bg-active": {
-          "value": "#003E1F",
-          "type": "color",
-          "comment": "Active state background"
+          "$value": "#003E1F",
+          "$type": "color",
+          "$description": "Active state background"
         },
         "border-subtle": {
-          "value": "#00481B",
-          "type": "color",
-          "comment": "Subtle border"
+          "$value": "#00481B",
+          "$type": "color",
+          "$description": "Subtle border"
         },
         "border-default": {
-          "value": "#1BA158",
-          "type": "color",
-          "comment": "Default border"
+          "$value": "#1BA158",
+          "$type": "color",
+          "$description": "Default border"
         },
         "border-hover": {
-          "value": "#3BB470",
-          "type": "color",
-          "comment": "Hover state border"
+          "$value": "#3BB470",
+          "$type": "color",
+          "$description": "Hover state border"
         },
         "border-active": {
-          "value": "#5BC788",
-          "type": "color",
-          "comment": "Active state border"
+          "$value": "#5BC788",
+          "$type": "color",
+          "$description": "Active state border"
         },
         "color-default": {
-          "value": "#8AD3A6",
-          "type": "color",
-          "comment": "Default text color"
+          "$value": "#8AD3A6",
+          "$type": "color",
+          "$description": "Default text color"
         },
         "color-hover": {
-          "value": "#A3DCBA",
-          "type": "color",
-          "comment": "Hover state text"
+          "$value": "#A3DCBA",
+          "$type": "color",
+          "$description": "Hover state text"
         },
         "color-active": {
-          "value": "#BCE5CE",
-          "type": "color",
-          "comment": "Active state text"
+          "$value": "#BCE5CE",
+          "$type": "color",
+          "$description": "Active state text"
         },
         "color-subtle": {
-          "value": "#6AC495",
-          "type": "color",
-          "comment": "Subtle text color"
+          "$value": "#6AC495",
+          "$type": "color",
+          "$description": "Subtle text color"
         },
         "color-document": {
-          "value": "#E4F5EA",
-          "type": "color",
-          "comment": "Document text color"
+          "$value": "#E4F5EA",
+          "$type": "color",
+          "$description": "Document text color"
         }
       },
       "warning": {
         "bg-document": {
-          "value": "#190F04",
-          "type": "color",
-          "comment": "Document background"
+          "$value": "#190F04",
+          "$type": "color",
+          "$description": "Document background"
         },
         "bg-elevated": {
-          "value": "#190F04",
-          "type": "color",
-          "comment": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+          "$value": "#190F04",
+          "$type": "color",
+          "$description": "Elevated background — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
-          "value": "#0B0501",
-          "type": "color",
-          "comment": "Subtle background"
+          "$value": "#0B0501",
+          "$type": "color",
+          "$description": "Subtle background"
         },
         "bg-default": {
-          "value": "#2B1A09",
-          "type": "color",
-          "comment": "Default background"
+          "$value": "#2B1A09",
+          "$type": "color",
+          "$description": "Default background"
         },
         "bg-hover": {
-          "value": "#3C250D",
-          "type": "color",
-          "comment": "Hover state background"
+          "$value": "#3C250D",
+          "$type": "color",
+          "$description": "Hover state background"
         },
         "bg-active": {
-          "value": "#4D2F10",
-          "type": "color",
-          "comment": "Active state background"
+          "$value": "#4D2F10",
+          "$type": "color",
+          "$description": "Active state background"
         },
         "border-subtle": {
-          "value": "#5A3511",
-          "type": "color",
-          "comment": "Subtle border"
+          "$value": "#5A3511",
+          "$type": "color",
+          "$description": "Subtle border"
         },
         "border-default": {
-          "value": "#D37F25",
-          "type": "color",
-          "comment": "Default border"
+          "$value": "#D37F25",
+          "$type": "color",
+          "$description": "Default border"
         },
         "border-hover": {
-          "value": "#DE9843",
-          "type": "color",
-          "comment": "Hover state border"
+          "$value": "#DE9843",
+          "$type": "color",
+          "$description": "Hover state border"
         },
         "border-active": {
-          "value": "#E9B062",
-          "type": "color",
-          "comment": "Active state border"
+          "$value": "#E9B062",
+          "$type": "color",
+          "$description": "Active state border"
         },
         "color-default": {
-          "value": "#FFB46B",
-          "type": "color",
-          "comment": "Default text color"
+          "$value": "#FFB46B",
+          "$type": "color",
+          "$description": "Default text color"
         },
         "color-hover": {
-          "value": "#FFC38B",
-          "type": "color",
-          "comment": "Hover state text"
+          "$value": "#FFC38B",
+          "$type": "color",
+          "$description": "Hover state text"
         },
         "color-active": {
-          "value": "#FFD2AA",
-          "type": "color",
-          "comment": "Active state text"
+          "$value": "#FFD2AA",
+          "$type": "color",
+          "$description": "Active state text"
         },
         "color-subtle": {
-          "value": "#F3A453",
-          "type": "color",
-          "comment": "Subtle text color"
+          "$value": "#F3A453",
+          "$type": "color",
+          "$description": "Subtle text color"
         },
         "color-document": {
-          "value": "#FFEEDD",
-          "type": "color",
-          "comment": "Document text color"
+          "$value": "#FFEEDD",
+          "$type": "color",
+          "$description": "Document text color"
         }
       },
       "neutral-inverse": {
         "bg-document": {
-          "value": "#FBFBFB",
-          "type": "color",
-          "comment": "Document background (inverse)"
+          "$value": "#FBFBFB",
+          "$type": "color",
+          "$description": "Document background (inverse)"
         },
         "bg-elevated": {
-          "value": "#FBFBFB",
-          "type": "color",
-          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+          "$value": "#FBFBFB",
+          "$type": "color",
+          "$description": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
-          "value": "#F1F1F1",
-          "type": "color",
-          "comment": "Subtle background (inverse)"
+          "$value": "#F1F1F1",
+          "$type": "color",
+          "$description": "Subtle background (inverse)"
         },
         "bg-default": {
-          "value": "#ABABAB",
-          "type": "color",
-          "comment": "Default background (inverse)"
+          "$value": "#ABABAB",
+          "$type": "color",
+          "$description": "Default background (inverse)"
         },
         "bg-hover": {
-          "value": "#BBBBBB",
-          "type": "color",
-          "comment": "Hover state background (inverse)"
+          "$value": "#BBBBBB",
+          "$type": "color",
+          "$description": "Hover state background (inverse)"
         },
         "bg-active": {
-          "value": "#CCCCCC",
-          "type": "color",
-          "comment": "Active state background (inverse)"
+          "$value": "#CCCCCC",
+          "$type": "color",
+          "$description": "Active state background (inverse)"
         },
         "border-subtle": {
-          "value": "#BFBFBF",
-          "type": "color",
-          "comment": "Subtle border (inverse)"
+          "$value": "#BFBFBF",
+          "$type": "color",
+          "$description": "Subtle border (inverse)"
         },
         "border-default": {
-          "value": "#3E3E3E",
-          "type": "color",
-          "comment": "Default border (inverse)"
+          "$value": "#3E3E3E",
+          "$type": "color",
+          "$description": "Default border (inverse)"
         },
         "border-hover": {
-          "value": "#2E2E2E",
-          "type": "color",
-          "comment": "Hover state border (inverse)"
+          "$value": "#2E2E2E",
+          "$type": "color",
+          "$description": "Hover state border (inverse)"
         },
         "border-active": {
-          "value": "#1D1D1D",
-          "type": "color",
-          "comment": "Active state border (inverse)"
+          "$value": "#1D1D1D",
+          "$type": "color",
+          "$description": "Active state border (inverse)"
         },
         "color-default": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Default text color (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Default text color (inverse)"
         },
         "color-hover": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Hover state text (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Hover state text (inverse)"
         },
         "color-active": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Active state text (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Active state text (inverse)"
         },
         "color-subtle": {
-          "value": "#3E3E3E",
-          "type": "color",
-          "comment": "Subtle text color (inverse)"
+          "$value": "#3E3E3E",
+          "$type": "color",
+          "$description": "Subtle text color (inverse)"
         },
         "color-document": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Document text color (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Document text color (inverse)"
         }
       },
       "accent-1-inverse": {
         "bg-document": {
-          "value": "#DCEBF9",
-          "type": "color",
-          "comment": "Document background (inverse)"
+          "$value": "#DCEBF9",
+          "$type": "color",
+          "$description": "Document background (inverse)"
         },
         "bg-elevated": {
-          "value": "#DCEBF9",
-          "type": "color",
-          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+          "$value": "#DCEBF9",
+          "$type": "color",
+          "$description": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
-          "value": "#ECF1F7",
-          "type": "color",
-          "comment": "Subtle background (inverse)"
+          "$value": "#ECF1F7",
+          "$type": "color",
+          "$description": "Subtle background (inverse)"
         },
         "bg-default": {
-          "value": "#8FAED2",
-          "type": "color",
-          "comment": "Default background (inverse)"
+          "$value": "#8FAED2",
+          "$type": "color",
+          "$description": "Default background (inverse)"
         },
         "bg-hover": {
-          "value": "#A5BEDB",
-          "type": "color",
-          "comment": "Hover state background (inverse)"
+          "$value": "#A5BEDB",
+          "$type": "color",
+          "$description": "Hover state background (inverse)"
         },
         "bg-active": {
-          "value": "#BBCEE4",
-          "type": "color",
-          "comment": "Active state background (inverse)"
+          "$value": "#BBCEE4",
+          "$type": "color",
+          "$description": "Active state background (inverse)"
         },
         "border-subtle": {
-          "value": "#B0C6DF",
-          "type": "color",
-          "comment": "Subtle border (inverse)"
+          "$value": "#B0C6DF",
+          "$type": "color",
+          "$description": "Subtle border (inverse)"
         },
         "border-default": {
-          "value": "#003B81",
-          "type": "color",
-          "comment": "Default border (inverse)"
+          "$value": "#003B81",
+          "$type": "color",
+          "$description": "Default border (inverse)"
         },
         "border-hover": {
-          "value": "#002D62",
-          "type": "color",
-          "comment": "Hover state border (inverse)"
+          "$value": "#002D62",
+          "$type": "color",
+          "$description": "Hover state border (inverse)"
         },
         "border-active": {
-          "value": "#001D40",
-          "type": "color",
-          "comment": "Active state border (inverse)"
+          "$value": "#001D40",
+          "$type": "color",
+          "$description": "Active state border (inverse)"
         },
         "color-default": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Default text color (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Default text color (inverse)"
         },
         "color-hover": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Hover state text (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Hover state text (inverse)"
         },
         "color-active": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Active state text (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Active state text (inverse)"
         },
         "color-subtle": {
-          "value": "#003B81",
-          "type": "color",
-          "comment": "Subtle text color (inverse)"
+          "$value": "#003B81",
+          "$type": "color",
+          "$description": "Subtle text color (inverse)"
         },
         "color-document": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Document text color (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Document text color (inverse)"
         }
       },
       "accent-2-inverse": {
         "bg-document": {
-          "value": "{dsn.color.accent-1-inverse.bg-document}",
-          "type": "color",
-          "comment": "Document background (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.bg-document}",
+          "$type": "color",
+          "$description": "Document background (inverse)"
         },
         "bg-elevated": {
-          "value": "{dsn.color.accent-1-inverse.bg-elevated}",
-          "type": "color",
-          "comment": "Elevated background (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.bg-elevated}",
+          "$type": "color",
+          "$description": "Elevated background (inverse)"
         },
         "bg-subtle": {
-          "value": "{dsn.color.accent-1-inverse.bg-subtle}",
-          "type": "color",
-          "comment": "Subtle background (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.bg-subtle}",
+          "$type": "color",
+          "$description": "Subtle background (inverse)"
         },
         "bg-default": {
-          "value": "{dsn.color.accent-1-inverse.bg-default}",
-          "type": "color",
-          "comment": "Default background (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.bg-default}",
+          "$type": "color",
+          "$description": "Default background (inverse)"
         },
         "bg-hover": {
-          "value": "{dsn.color.accent-1-inverse.bg-hover}",
-          "type": "color",
-          "comment": "Hover state background (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.bg-hover}",
+          "$type": "color",
+          "$description": "Hover state background (inverse)"
         },
         "bg-active": {
-          "value": "{dsn.color.accent-1-inverse.bg-active}",
-          "type": "color",
-          "comment": "Active state background (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.bg-active}",
+          "$type": "color",
+          "$description": "Active state background (inverse)"
         },
         "border-subtle": {
-          "value": "{dsn.color.accent-1-inverse.border-subtle}",
-          "type": "color",
-          "comment": "Subtle border (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.border-subtle}",
+          "$type": "color",
+          "$description": "Subtle border (inverse)"
         },
         "border-default": {
-          "value": "{dsn.color.accent-1-inverse.border-default}",
-          "type": "color",
-          "comment": "Default border (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.border-default}",
+          "$type": "color",
+          "$description": "Default border (inverse)"
         },
         "border-hover": {
-          "value": "{dsn.color.accent-1-inverse.border-hover}",
-          "type": "color",
-          "comment": "Hover state border (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.border-hover}",
+          "$type": "color",
+          "$description": "Hover state border (inverse)"
         },
         "border-active": {
-          "value": "{dsn.color.accent-1-inverse.border-active}",
-          "type": "color",
-          "comment": "Active state border (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.border-active}",
+          "$type": "color",
+          "$description": "Active state border (inverse)"
         },
         "color-default": {
-          "value": "{dsn.color.accent-1-inverse.color-default}",
-          "type": "color",
-          "comment": "Default text color (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.color-default}",
+          "$type": "color",
+          "$description": "Default text color (inverse)"
         },
         "color-hover": {
-          "value": "{dsn.color.accent-1-inverse.color-hover}",
-          "type": "color",
-          "comment": "Hover state text (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.color-hover}",
+          "$type": "color",
+          "$description": "Hover state text (inverse)"
         },
         "color-active": {
-          "value": "{dsn.color.accent-1-inverse.color-active}",
-          "type": "color",
-          "comment": "Active state text (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.color-active}",
+          "$type": "color",
+          "$description": "Active state text (inverse)"
         },
         "color-subtle": {
-          "value": "{dsn.color.accent-1-inverse.color-subtle}",
-          "type": "color",
-          "comment": "Subtle text color (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.color-subtle}",
+          "$type": "color",
+          "$description": "Subtle text color (inverse)"
         },
         "color-document": {
-          "value": "{dsn.color.accent-1-inverse.color-document}",
-          "type": "color",
-          "comment": "Document text color (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.color-document}",
+          "$type": "color",
+          "$description": "Document text color (inverse)"
         }
       },
       "accent-3-inverse": {
         "bg-document": {
-          "value": "{dsn.color.accent-1-inverse.bg-document}",
-          "type": "color",
-          "comment": "Document background (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.bg-document}",
+          "$type": "color",
+          "$description": "Document background (inverse)"
         },
         "bg-elevated": {
-          "value": "{dsn.color.accent-1-inverse.bg-elevated}",
-          "type": "color",
-          "comment": "Elevated background (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.bg-elevated}",
+          "$type": "color",
+          "$description": "Elevated background (inverse)"
         },
         "bg-subtle": {
-          "value": "{dsn.color.accent-1-inverse.bg-subtle}",
-          "type": "color",
-          "comment": "Subtle background (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.bg-subtle}",
+          "$type": "color",
+          "$description": "Subtle background (inverse)"
         },
         "bg-default": {
-          "value": "{dsn.color.accent-1-inverse.bg-default}",
-          "type": "color",
-          "comment": "Default background (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.bg-default}",
+          "$type": "color",
+          "$description": "Default background (inverse)"
         },
         "bg-hover": {
-          "value": "{dsn.color.accent-1-inverse.bg-hover}",
-          "type": "color",
-          "comment": "Hover state background (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.bg-hover}",
+          "$type": "color",
+          "$description": "Hover state background (inverse)"
         },
         "bg-active": {
-          "value": "{dsn.color.accent-1-inverse.bg-active}",
-          "type": "color",
-          "comment": "Active state background (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.bg-active}",
+          "$type": "color",
+          "$description": "Active state background (inverse)"
         },
         "border-subtle": {
-          "value": "{dsn.color.accent-1-inverse.border-subtle}",
-          "type": "color",
-          "comment": "Subtle border (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.border-subtle}",
+          "$type": "color",
+          "$description": "Subtle border (inverse)"
         },
         "border-default": {
-          "value": "{dsn.color.accent-1-inverse.border-default}",
-          "type": "color",
-          "comment": "Default border (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.border-default}",
+          "$type": "color",
+          "$description": "Default border (inverse)"
         },
         "border-hover": {
-          "value": "{dsn.color.accent-1-inverse.border-hover}",
-          "type": "color",
-          "comment": "Hover state border (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.border-hover}",
+          "$type": "color",
+          "$description": "Hover state border (inverse)"
         },
         "border-active": {
-          "value": "{dsn.color.accent-1-inverse.border-active}",
-          "type": "color",
-          "comment": "Active state border (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.border-active}",
+          "$type": "color",
+          "$description": "Active state border (inverse)"
         },
         "color-default": {
-          "value": "{dsn.color.accent-1-inverse.color-default}",
-          "type": "color",
-          "comment": "Default text color (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.color-default}",
+          "$type": "color",
+          "$description": "Default text color (inverse)"
         },
         "color-hover": {
-          "value": "{dsn.color.accent-1-inverse.color-hover}",
-          "type": "color",
-          "comment": "Hover state text (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.color-hover}",
+          "$type": "color",
+          "$description": "Hover state text (inverse)"
         },
         "color-active": {
-          "value": "{dsn.color.accent-1-inverse.color-active}",
-          "type": "color",
-          "comment": "Active state text (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.color-active}",
+          "$type": "color",
+          "$description": "Active state text (inverse)"
         },
         "color-subtle": {
-          "value": "{dsn.color.accent-1-inverse.color-subtle}",
-          "type": "color",
-          "comment": "Subtle text color (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.color-subtle}",
+          "$type": "color",
+          "$description": "Subtle text color (inverse)"
         },
         "color-document": {
-          "value": "{dsn.color.accent-1-inverse.color-document}",
-          "type": "color",
-          "comment": "Document text color (inverse)"
+          "$value": "{dsn.color.accent-1-inverse.color-document}",
+          "$type": "color",
+          "$description": "Document text color (inverse)"
         }
       },
       "action-1-inverse": {
         "bg-document": {
-          "value": "{dsn.color.accent-1-inverse.bg-document}",
-          "type": "color",
-          "comment": "Document background (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.bg-document}",
+          "$type": "color",
+          "$description": "Document background (inverse) - Primary actions (buttons)"
         },
         "bg-elevated": {
-          "value": "{dsn.color.accent-1-inverse.bg-elevated}",
-          "type": "color",
-          "comment": "Elevated background (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.bg-elevated}",
+          "$type": "color",
+          "$description": "Elevated background (inverse) - Primary actions (buttons)"
         },
         "bg-subtle": {
-          "value": "{dsn.color.accent-1-inverse.bg-subtle}",
-          "type": "color",
-          "comment": "Subtle background (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.bg-subtle}",
+          "$type": "color",
+          "$description": "Subtle background (inverse) - Primary actions (buttons)"
         },
         "bg-default": {
-          "value": "{dsn.color.accent-1-inverse.bg-default}",
-          "type": "color",
-          "comment": "Default background (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.bg-default}",
+          "$type": "color",
+          "$description": "Default background (inverse) - Primary actions (buttons)"
         },
         "bg-hover": {
-          "value": "{dsn.color.accent-1-inverse.bg-hover}",
-          "type": "color",
-          "comment": "Hover state background (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.bg-hover}",
+          "$type": "color",
+          "$description": "Hover state background (inverse) - Primary actions (buttons)"
         },
         "bg-active": {
-          "value": "{dsn.color.accent-1-inverse.bg-active}",
-          "type": "color",
-          "comment": "Active state background (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.bg-active}",
+          "$type": "color",
+          "$description": "Active state background (inverse) - Primary actions (buttons)"
         },
         "border-subtle": {
-          "value": "{dsn.color.accent-1-inverse.border-subtle}",
-          "type": "color",
-          "comment": "Subtle border (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.border-subtle}",
+          "$type": "color",
+          "$description": "Subtle border (inverse) - Primary actions (buttons)"
         },
         "border-default": {
-          "value": "{dsn.color.accent-1-inverse.border-default}",
-          "type": "color",
-          "comment": "Default border (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.border-default}",
+          "$type": "color",
+          "$description": "Default border (inverse) - Primary actions (buttons)"
         },
         "border-hover": {
-          "value": "{dsn.color.accent-1-inverse.border-hover}",
-          "type": "color",
-          "comment": "Hover state border (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.border-hover}",
+          "$type": "color",
+          "$description": "Hover state border (inverse) - Primary actions (buttons)"
         },
         "border-active": {
-          "value": "{dsn.color.accent-1-inverse.border-active}",
-          "type": "color",
-          "comment": "Active state border (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.border-active}",
+          "$type": "color",
+          "$description": "Active state border (inverse) - Primary actions (buttons)"
         },
         "color-default": {
-          "value": "{dsn.color.accent-1-inverse.color-default}",
-          "type": "color",
-          "comment": "Default text color (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.color-default}",
+          "$type": "color",
+          "$description": "Default text color (inverse) - Primary actions (buttons)"
         },
         "color-hover": {
-          "value": "{dsn.color.accent-1-inverse.color-hover}",
-          "type": "color",
-          "comment": "Hover state text (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.color-hover}",
+          "$type": "color",
+          "$description": "Hover state text (inverse) - Primary actions (buttons)"
         },
         "color-active": {
-          "value": "{dsn.color.accent-1-inverse.color-active}",
-          "type": "color",
-          "comment": "Active state text (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.color-active}",
+          "$type": "color",
+          "$description": "Active state text (inverse) - Primary actions (buttons)"
         },
         "color-subtle": {
-          "value": "{dsn.color.accent-1-inverse.color-subtle}",
-          "type": "color",
-          "comment": "Subtle text color (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.color-subtle}",
+          "$type": "color",
+          "$description": "Subtle text color (inverse) - Primary actions (buttons)"
         },
         "color-document": {
-          "value": "{dsn.color.accent-1-inverse.color-document}",
-          "type": "color",
-          "comment": "Document text color (inverse) - Primary actions (buttons)"
+          "$value": "{dsn.color.accent-1-inverse.color-document}",
+          "$type": "color",
+          "$description": "Document text color (inverse) - Primary actions (buttons)"
         }
       },
       "action-2-inverse": {
         "bg-document": {
-          "value": "{dsn.color.accent-1-inverse.bg-document}",
-          "type": "color",
-          "comment": "Document background (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.bg-document}",
+          "$type": "color",
+          "$description": "Document background (inverse) - Secondary actions (links, navigation)"
         },
         "bg-elevated": {
-          "value": "{dsn.color.accent-1-inverse.bg-elevated}",
-          "type": "color",
-          "comment": "Elevated background (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.bg-elevated}",
+          "$type": "color",
+          "$description": "Elevated background (inverse) - Secondary actions (links, navigation)"
         },
         "bg-subtle": {
-          "value": "{dsn.color.accent-1-inverse.bg-subtle}",
-          "type": "color",
-          "comment": "Subtle background (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.bg-subtle}",
+          "$type": "color",
+          "$description": "Subtle background (inverse) - Secondary actions (links, navigation)"
         },
         "bg-default": {
-          "value": "{dsn.color.accent-1-inverse.bg-default}",
-          "type": "color",
-          "comment": "Default background (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.bg-default}",
+          "$type": "color",
+          "$description": "Default background (inverse) - Secondary actions (links, navigation)"
         },
         "bg-hover": {
-          "value": "{dsn.color.accent-1-inverse.bg-hover}",
-          "type": "color",
-          "comment": "Hover state background (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.bg-hover}",
+          "$type": "color",
+          "$description": "Hover state background (inverse) - Secondary actions (links, navigation)"
         },
         "bg-active": {
-          "value": "{dsn.color.accent-1-inverse.bg-active}",
-          "type": "color",
-          "comment": "Active state background (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.bg-active}",
+          "$type": "color",
+          "$description": "Active state background (inverse) - Secondary actions (links, navigation)"
         },
         "border-subtle": {
-          "value": "{dsn.color.accent-1-inverse.border-subtle}",
-          "type": "color",
-          "comment": "Subtle border (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.border-subtle}",
+          "$type": "color",
+          "$description": "Subtle border (inverse) - Secondary actions (links, navigation)"
         },
         "border-default": {
-          "value": "{dsn.color.accent-1-inverse.border-default}",
-          "type": "color",
-          "comment": "Default border (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.border-default}",
+          "$type": "color",
+          "$description": "Default border (inverse) - Secondary actions (links, navigation)"
         },
         "border-hover": {
-          "value": "{dsn.color.accent-1-inverse.border-hover}",
-          "type": "color",
-          "comment": "Hover state border (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.border-hover}",
+          "$type": "color",
+          "$description": "Hover state border (inverse) - Secondary actions (links, navigation)"
         },
         "border-active": {
-          "value": "{dsn.color.accent-1-inverse.border-active}",
-          "type": "color",
-          "comment": "Active state border (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.border-active}",
+          "$type": "color",
+          "$description": "Active state border (inverse) - Secondary actions (links, navigation)"
         },
         "color-default": {
-          "value": "{dsn.color.accent-1-inverse.color-default}",
-          "type": "color",
-          "comment": "Default text color (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.color-default}",
+          "$type": "color",
+          "$description": "Default text color (inverse) - Secondary actions (links, navigation)"
         },
         "color-hover": {
-          "value": "{dsn.color.accent-1-inverse.color-hover}",
-          "type": "color",
-          "comment": "Hover state text (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.color-hover}",
+          "$type": "color",
+          "$description": "Hover state text (inverse) - Secondary actions (links, navigation)"
         },
         "color-active": {
-          "value": "{dsn.color.accent-1-inverse.color-active}",
-          "type": "color",
-          "comment": "Active state text (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.color-active}",
+          "$type": "color",
+          "$description": "Active state text (inverse) - Secondary actions (links, navigation)"
         },
         "color-subtle": {
-          "value": "{dsn.color.accent-1-inverse.color-subtle}",
-          "type": "color",
-          "comment": "Subtle text color (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.color-subtle}",
+          "$type": "color",
+          "$description": "Subtle text color (inverse) - Secondary actions (links, navigation)"
         },
         "color-document": {
-          "value": "{dsn.color.accent-1-inverse.color-document}",
-          "type": "color",
-          "comment": "Document text color (inverse) - Secondary actions (links, navigation)"
+          "$value": "{dsn.color.accent-1-inverse.color-document}",
+          "$type": "color",
+          "$description": "Document text color (inverse) - Secondary actions (links, navigation)"
         }
       },
       "info-inverse": {
         "bg-document": {
-          "value": "#DCEBF9",
-          "type": "color",
-          "comment": "Document background (inverse)"
+          "$value": "#DCEBF9",
+          "$type": "color",
+          "$description": "Document background (inverse)"
         },
         "bg-elevated": {
-          "value": "#DCEBF9",
-          "type": "color",
-          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+          "$value": "#DCEBF9",
+          "$type": "color",
+          "$description": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
-          "value": "#ECF1F7",
-          "type": "color",
-          "comment": "Subtle background (inverse)"
+          "$value": "#ECF1F7",
+          "$type": "color",
+          "$description": "Subtle background (inverse)"
         },
         "bg-default": {
-          "value": "#8FAED2",
-          "type": "color",
-          "comment": "Default background (inverse)"
+          "$value": "#8FAED2",
+          "$type": "color",
+          "$description": "Default background (inverse)"
         },
         "bg-hover": {
-          "value": "#A5BEDB",
-          "type": "color",
-          "comment": "Hover state background (inverse)"
+          "$value": "#A5BEDB",
+          "$type": "color",
+          "$description": "Hover state background (inverse)"
         },
         "bg-active": {
-          "value": "#BBCEE4",
-          "type": "color",
-          "comment": "Active state background (inverse)"
+          "$value": "#BBCEE4",
+          "$type": "color",
+          "$description": "Active state background (inverse)"
         },
         "border-subtle": {
-          "value": "#B0C6DF",
-          "type": "color",
-          "comment": "Subtle border (inverse)"
+          "$value": "#B0C6DF",
+          "$type": "color",
+          "$description": "Subtle border (inverse)"
         },
         "border-default": {
-          "value": "#003B81",
-          "type": "color",
-          "comment": "Default border (inverse)"
+          "$value": "#003B81",
+          "$type": "color",
+          "$description": "Default border (inverse)"
         },
         "border-hover": {
-          "value": "#002D62",
-          "type": "color",
-          "comment": "Hover state border (inverse)"
+          "$value": "#002D62",
+          "$type": "color",
+          "$description": "Hover state border (inverse)"
         },
         "border-active": {
-          "value": "#001D40",
-          "type": "color",
-          "comment": "Active state border (inverse)"
+          "$value": "#001D40",
+          "$type": "color",
+          "$description": "Active state border (inverse)"
         },
         "color-default": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Default text color (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Default text color (inverse)"
         },
         "color-hover": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Hover state text (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Hover state text (inverse)"
         },
         "color-active": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Active state text (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Active state text (inverse)"
         },
         "color-subtle": {
-          "value": "#003B81",
-          "type": "color",
-          "comment": "Subtle text color (inverse)"
+          "$value": "#003B81",
+          "$type": "color",
+          "$description": "Subtle text color (inverse)"
         },
         "color-document": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Document text color (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Document text color (inverse)"
         }
       },
       "negative-inverse": {
         "bg-document": {
-          "value": "#FCDADA",
-          "type": "color",
-          "comment": "Document background (inverse)"
+          "$value": "#FCDADA",
+          "$type": "color",
+          "$description": "Document background (inverse)"
         },
         "bg-elevated": {
-          "value": "#FCDADA",
-          "type": "color",
-          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+          "$value": "#FCDADA",
+          "$type": "color",
+          "$description": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
-          "value": "#FEEDED",
-          "type": "color",
-          "comment": "Subtle background (inverse)"
+          "$value": "#FEEDED",
+          "$type": "color",
+          "$description": "Subtle background (inverse)"
         },
         "bg-default": {
-          "value": "#F9B1B1",
-          "type": "color",
-          "comment": "Default background (inverse)"
+          "$value": "#F9B1B1",
+          "$type": "color",
+          "$description": "Default background (inverse)"
         },
         "bg-hover": {
-          "value": "#FBC3C3",
-          "type": "color",
-          "comment": "Hover state background (inverse)"
+          "$value": "#FBC3C3",
+          "$type": "color",
+          "$description": "Hover state background (inverse)"
         },
         "bg-active": {
-          "value": "#FCD5D5",
-          "type": "color",
-          "comment": "Active state background (inverse)"
+          "$value": "#FCD5D5",
+          "$type": "color",
+          "$description": "Active state background (inverse)"
         },
         "border-subtle": {
-          "value": "#F3ABAB",
-          "type": "color",
-          "comment": "Subtle border (inverse)"
+          "$value": "#F3ABAB",
+          "$type": "color",
+          "$description": "Subtle border (inverse)"
         },
         "border-default": {
-          "value": "#820000",
-          "type": "color",
-          "comment": "Default border (inverse)"
+          "$value": "#820000",
+          "$type": "color",
+          "$description": "Default border (inverse)"
         },
         "border-hover": {
-          "value": "#4C0000",
-          "type": "color",
-          "comment": "Hover state border (inverse)"
+          "$value": "#4C0000",
+          "$type": "color",
+          "$description": "Hover state border (inverse)"
         },
         "border-active": {
-          "value": "#2E0000",
-          "type": "color",
-          "comment": "Active state border (inverse)"
+          "$value": "#2E0000",
+          "$type": "color",
+          "$description": "Active state border (inverse)"
         },
         "color-default": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Default text color (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Default text color (inverse)"
         },
         "color-hover": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Hover state text (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Hover state text (inverse)"
         },
         "color-active": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Active state text (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Active state text (inverse)"
         },
         "color-subtle": {
-          "value": "#820000",
-          "type": "color",
-          "comment": "Subtle text color (inverse)"
+          "$value": "#820000",
+          "$type": "color",
+          "$description": "Subtle text color (inverse)"
         },
         "color-document": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Document text color (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Document text color (inverse)"
         }
       },
       "positive-inverse": {
         "bg-document": {
-          "value": "#CCE8D7",
-          "type": "color",
-          "comment": "Document background (inverse)"
+          "$value": "#CCE8D7",
+          "$type": "color",
+          "$description": "Document background (inverse)"
         },
         "bg-elevated": {
-          "value": "#CCE8D7",
-          "type": "color",
-          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+          "$value": "#CCE8D7",
+          "$type": "color",
+          "$description": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
-          "value": "#E4F5EA",
-          "type": "color",
-          "comment": "Subtle background (inverse)"
+          "$value": "#E4F5EA",
+          "$type": "color",
+          "$description": "Subtle background (inverse)"
         },
         "bg-default": {
-          "value": "#8AD3A6",
-          "type": "color",
-          "comment": "Default background (inverse)"
+          "$value": "#8AD3A6",
+          "$type": "color",
+          "$description": "Default background (inverse)"
         },
         "bg-hover": {
-          "value": "#A3DCBA",
-          "type": "color",
-          "comment": "Hover state background (inverse)"
+          "$value": "#A3DCBA",
+          "$type": "color",
+          "$description": "Hover state background (inverse)"
         },
         "bg-active": {
-          "value": "#BCE5CE",
-          "type": "color",
-          "comment": "Active state background (inverse)"
+          "$value": "#BCE5CE",
+          "$type": "color",
+          "$description": "Active state background (inverse)"
         },
         "border-subtle": {
-          "value": "#7DCA9E",
-          "type": "color",
-          "comment": "Subtle border (inverse)"
+          "$value": "#7DCA9E",
+          "$type": "color",
+          "$description": "Subtle border (inverse)"
         },
         "border-default": {
-          "value": "#00481B",
-          "type": "color",
-          "comment": "Default border (inverse)"
+          "$value": "#00481B",
+          "$type": "color",
+          "$description": "Default border (inverse)"
         },
         "border-hover": {
-          "value": "#003E1F",
-          "type": "color",
-          "comment": "Hover state border (inverse)"
+          "$value": "#003E1F",
+          "$type": "color",
+          "$description": "Hover state border (inverse)"
         },
         "border-active": {
-          "value": "#002312",
-          "type": "color",
-          "comment": "Active state border (inverse)"
+          "$value": "#002312",
+          "$type": "color",
+          "$description": "Active state border (inverse)"
         },
         "color-default": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Default text color (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Default text color (inverse)"
         },
         "color-hover": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Hover state text (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Hover state text (inverse)"
         },
         "color-active": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Active state text (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Active state text (inverse)"
         },
         "color-subtle": {
-          "value": "#00481B",
-          "type": "color",
-          "comment": "Subtle text color (inverse)"
+          "$value": "#00481B",
+          "$type": "color",
+          "$description": "Subtle text color (inverse)"
         },
         "color-document": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Document text color (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Document text color (inverse)"
         }
       },
       "warning-inverse": {
         "bg-document": {
-          "value": "#FFEAC6",
-          "type": "color",
-          "comment": "Document background (inverse)"
+          "$value": "#FFEAC6",
+          "$type": "color",
+          "$description": "Document background (inverse)"
         },
         "bg-elevated": {
-          "value": "#FFEAC6",
-          "type": "color",
-          "comment": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
+          "$value": "#FFEAC6",
+          "$type": "color",
+          "$description": "Elevated background (inverse) — for floating layers (modals, popovers, dropdowns). Same as bg-document in light mode; can be lightened in dark mode to convey elevation."
         },
         "bg-subtle": {
-          "value": "#FFEEDD",
-          "type": "color",
-          "comment": "Subtle background (inverse)"
+          "$value": "#FFEEDD",
+          "$type": "color",
+          "$description": "Subtle background (inverse)"
         },
         "bg-default": {
-          "value": "#FFB46B",
-          "type": "color",
-          "comment": "Default background (inverse)"
+          "$value": "#FFB46B",
+          "$type": "color",
+          "$description": "Default background (inverse)"
         },
         "bg-hover": {
-          "value": "#FFC38B",
-          "type": "color",
-          "comment": "Hover state background (inverse)"
+          "$value": "#FFC38B",
+          "$type": "color",
+          "$description": "Hover state background (inverse)"
         },
         "bg-active": {
-          "value": "#FFD2AA",
-          "type": "color",
-          "comment": "Active state background (inverse)"
+          "$value": "#FFD2AA",
+          "$type": "color",
+          "$description": "Active state background (inverse)"
         },
         "border-subtle": {
-          "value": "#FFA754",
-          "type": "color",
-          "comment": "Subtle border (inverse)"
+          "$value": "#FFA754",
+          "$type": "color",
+          "$description": "Subtle border (inverse)"
         },
         "border-default": {
-          "value": "#5A3511",
-          "type": "color",
-          "comment": "Default border (inverse)"
+          "$value": "#5A3511",
+          "$type": "color",
+          "$description": "Default border (inverse)"
         },
         "border-hover": {
-          "value": "#4D2F10",
-          "type": "color",
-          "comment": "Hover state border (inverse)"
+          "$value": "#4D2F10",
+          "$type": "color",
+          "$description": "Hover state border (inverse)"
         },
         "border-active": {
-          "value": "#2B1A09",
-          "type": "color",
-          "comment": "Active state border (inverse)"
+          "$value": "#2B1A09",
+          "$type": "color",
+          "$description": "Active state border (inverse)"
         },
         "color-default": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Default text color (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Default text color (inverse)"
         },
         "color-hover": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Hover state text (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Hover state text (inverse)"
         },
         "color-active": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Active state text (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Active state text (inverse)"
         },
         "color-subtle": {
-          "value": "#5A3511",
-          "type": "color",
-          "comment": "Subtle text color (inverse)"
+          "$value": "#5A3511",
+          "$type": "color",
+          "$description": "Subtle text color (inverse)"
         },
         "color-document": {
-          "value": "#000000",
-          "type": "color",
-          "comment": "Document text color (inverse)"
+          "$value": "#000000",
+          "$type": "color",
+          "$description": "Document text color (inverse)"
         }
       },
       "transparent": {
-        "value": "transparent",
-        "type": "color",
-        "comment": "Fully transparent - for invisible backgrounds and borders"
+        "$value": "transparent",
+        "$type": "color",
+        "$description": "Fully transparent - for invisible backgrounds and borders"
       },
       "shadow": {
         "direct": {
-          "value": "color-mix(in srgb, black 60%, transparent)",
-          "type": "color",
-          "comment": "Scherpe schaduwlaag — sterker dan light mode omdat donkere achtergronden meer contrast nodig hebben"
+          "$value": "color-mix(in srgb, black 60%, transparent)",
+          "$type": "color",
+          "$description": "Scherpe schaduwlaag — sterker dan light mode omdat donkere achtergronden meer contrast nodig hebben"
         },
         "ambient": {
-          "value": "color-mix(in srgb, black 40%, transparent)",
-          "type": "color",
-          "comment": "Diffuse schaduwlaag — sterker dan light mode"
+          "$value": "color-mix(in srgb, black 40%, transparent)",
+          "$type": "color",
+          "$description": "Diffuse schaduwlaag — sterker dan light mode"
         },
         "highlight": {
-          "value": "color-mix(in srgb, white 8%, transparent)",
-          "type": "color",
-          "comment": "Outline-laag — subtiele witte rand geeft elevated surfaces randscherpte in dark mode"
+          "$value": "color-mix(in srgb, white 8%, transparent)",
+          "$type": "color",
+          "$description": "Outline-laag — subtiele witte rand geeft elevated surfaces randscherpte in dark mode"
         },
         "scroll": {
-          "value": "rgba(255, 255, 255, 0.12)",
-          "type": "color",
-          "comment": "Scroll-affordance schaduw — lichte kleur voor zichtbaarheid op donkere achtergrond"
+          "$value": "rgba(255, 255, 255, 0.12)",
+          "$type": "color",
+          "$description": "Scroll-affordance schaduw — lichte kleur voor zichtbaarheid op donkere achtergrond"
         }
       }
     },
     "heading": {
       "color": {
-        "value": "{dsn.color.neutral.color-document}",
-        "type": "color",
-        "comment": "Heading text color"
+        "$value": "{dsn.color.neutral.color-document}",
+        "$type": "color",
+        "$description": "Heading text color"
       }
     },
     "form-control": {
       "accent-color": {
-        "value": "{dsn.color.action-1.color-default}",
-        "type": "color",
-        "comment": "Form control accent color (checkboxes, radio buttons)"
+        "$value": "{dsn.color.action-1.color-default}",
+        "$type": "color",
+        "$description": "Form control accent color (checkboxes, radio buttons)"
       },
       "background-color": {
-        "value": "{dsn.color.neutral.bg-document}",
-        "type": "color",
-        "comment": "Form control background"
+        "$value": "{dsn.color.neutral.bg-document}",
+        "$type": "color",
+        "$description": "Form control background"
       },
       "border-color": {
-        "value": "{dsn.color.neutral.border-default}",
-        "type": "color",
-        "comment": "Form control border"
+        "$value": "{dsn.color.neutral.border-default}",
+        "$type": "color",
+        "$description": "Form control border"
       },
       "color": {
-        "value": "{dsn.color.neutral.color-document}",
-        "type": "color",
-        "comment": "Form control text color"
+        "$value": "{dsn.color.neutral.color-document}",
+        "$type": "color",
+        "$description": "Form control text color"
       },
       "placeholder": {
         "color": {
-          "value": "{dsn.color.neutral.color-subtle}",
-          "type": "color",
-          "comment": "Form control placeholder text color"
+          "$value": "{dsn.color.neutral.color-subtle}",
+          "$type": "color",
+          "$description": "Form control placeholder text color"
         }
       },
       "hover": {
         "accent-color": {
-          "value": "{dsn.color.action-1.color-hover}",
-          "type": "color",
-          "comment": "Form control hover accent color"
+          "$value": "{dsn.color.action-1.color-hover}",
+          "$type": "color",
+          "$description": "Form control hover accent color"
         },
         "background-color": {
-          "value": "{dsn.color.neutral.bg-hover}",
-          "type": "color",
-          "comment": "Form control hover background"
+          "$value": "{dsn.color.neutral.bg-hover}",
+          "$type": "color",
+          "$description": "Form control hover background"
         },
         "border-color": {
-          "value": "{dsn.color.neutral.border-hover}",
-          "type": "color",
-          "comment": "Form control hover border"
+          "$value": "{dsn.color.neutral.border-hover}",
+          "$type": "color",
+          "$description": "Form control hover border"
         },
         "color": {
-          "value": "{dsn.form-control.color}",
-          "type": "color",
-          "comment": "Form control hover text color"
+          "$value": "{dsn.form-control.color}",
+          "$type": "color",
+          "$description": "Form control hover text color"
         }
       },
       "focus": {
         "background-color": {
-          "value": "{dsn.form-control.background-color}",
-          "type": "color",
-          "comment": "Form control focus background"
+          "$value": "{dsn.form-control.background-color}",
+          "$type": "color",
+          "$description": "Form control focus background"
         },
         "border-color": {
-          "value": "{dsn.color.neutral.border-active}",
-          "type": "color",
-          "comment": "Form control focus border"
+          "$value": "{dsn.color.neutral.border-active}",
+          "$type": "color",
+          "$description": "Form control focus border"
         },
         "color": {
-          "value": "{dsn.form-control.color}",
-          "type": "color",
-          "comment": "Form control focus text color"
+          "$value": "{dsn.form-control.color}",
+          "$type": "color",
+          "$description": "Form control focus text color"
         }
       },
       "active": {
         "accent-color": {
-          "value": "{dsn.color.action-1.color-active}",
-          "type": "color",
-          "comment": "Form control active accent color"
+          "$value": "{dsn.color.action-1.color-active}",
+          "$type": "color",
+          "$description": "Form control active accent color"
         },
         "background-color": {
-          "value": "{dsn.color.neutral.bg-active}",
-          "type": "color",
-          "comment": "Form control active background"
+          "$value": "{dsn.color.neutral.bg-active}",
+          "$type": "color",
+          "$description": "Form control active background"
         },
         "border-color": {
-          "value": "{dsn.color.neutral.border-active}",
-          "type": "color",
-          "comment": "Form control active border"
+          "$value": "{dsn.color.neutral.border-active}",
+          "$type": "color",
+          "$description": "Form control active border"
         },
         "color": {
-          "value": "{dsn.form-control.color}",
-          "type": "color",
-          "comment": "Form control active text color"
+          "$value": "{dsn.form-control.color}",
+          "$type": "color",
+          "$description": "Form control active text color"
         }
       },
       "disabled": {
         "accent-color": {
-          "value": "{dsn.color.neutral.bg-subtle}",
-          "type": "color",
-          "comment": "Form control disabled accent color"
+          "$value": "{dsn.color.neutral.bg-subtle}",
+          "$type": "color",
+          "$description": "Form control disabled accent color"
         },
         "background-color": {
-          "value": "{dsn.color.neutral.bg-subtle}",
-          "type": "color",
-          "comment": "Form control disabled background"
+          "$value": "{dsn.color.neutral.bg-subtle}",
+          "$type": "color",
+          "$description": "Form control disabled background"
         },
         "border-color": {
-          "value": "{dsn.color.neutral.border-subtle}",
-          "type": "color",
-          "comment": "Form control disabled border"
+          "$value": "{dsn.color.neutral.border-subtle}",
+          "$type": "color",
+          "$description": "Form control disabled border"
         },
         "color": {
-          "value": "{dsn.color.neutral.color-subtle}",
-          "type": "color",
-          "comment": "Form control disabled text color"
+          "$value": "{dsn.color.neutral.color-subtle}",
+          "$type": "color",
+          "$description": "Form control disabled text color"
         }
       },
       "invalid": {
         "background-color": {
-          "value": "{dsn.color.negative.bg-default}",
-          "type": "color",
-          "comment": "Form control invalid background"
+          "$value": "{dsn.color.negative.bg-default}",
+          "$type": "color",
+          "$description": "Form control invalid background"
         },
         "border-color": {
-          "value": "{dsn.color.negative.border-default}",
-          "type": "color",
-          "comment": "Form control invalid border"
+          "$value": "{dsn.color.negative.border-default}",
+          "$type": "color",
+          "$description": "Form control invalid border"
         },
         "color": {
-          "value": "{dsn.color.negative.color-default}",
-          "type": "color",
-          "comment": "Form control invalid text color"
+          "$value": "{dsn.color.negative.color-default}",
+          "$type": "color",
+          "$description": "Form control invalid text color"
         }
       },
       "read-only": {
         "background-color": {
-          "value": "{dsn.color.neutral.bg-subtle}",
-          "type": "color",
-          "comment": "Form control read-only background"
+          "$value": "{dsn.color.neutral.bg-subtle}",
+          "$type": "color",
+          "$description": "Form control read-only background"
         },
         "border-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Form control read-only border"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Form control read-only border"
         },
         "color": {
-          "value": "{dsn.color.neutral.color-document}",
-          "type": "color",
-          "comment": "Form control read-only text color"
+          "$value": "{dsn.color.neutral.color-document}",
+          "$type": "color",
+          "$description": "Form control read-only text color"
         }
       }
     },
     "focus": {
       "background-color": {
-        "value": "#ffdd00",
-        "type": "color",
-        "comment": "Focus indicator background"
+        "$value": "#ffdd00",
+        "$type": "color",
+        "$description": "Focus indicator background"
       },
       "color": {
-        "value": "#0b0c0c",
-        "type": "color",
-        "comment": "Focus indicator text color"
+        "$value": "#0b0c0c",
+        "$type": "color",
+        "$description": "Focus indicator text color"
       },
       "outline-color": {
-        "value": "#f4f4f4",
-        "type": "color",
-        "comment": "Focus outline color - light for dark backgrounds"
+        "$value": "#f4f4f4",
+        "$type": "color",
+        "$description": "Focus outline color - light for dark backgrounds"
       },
       "inverse": {
         "outline-color": {
-          "value": "#0b0c0c",
-          "type": "color",
-          "comment": "Focus outline color for use on light/tinted backgrounds in dark mode - opposite of outline-color"
+          "$value": "#0b0c0c",
+          "$type": "color",
+          "$description": "Focus outline color for use on light/tinted backgrounds in dark mode - opposite of outline-color"
         }
       }
     },
     "backdrop": {
       "background-color": {
-        "value": "{dsn.color.neutral.bg-document}",
-        "type": "color",
-        "comment": "Achtergrondkleur van de backdrop — altijd donker, ongeacht dark mode. Gebruikt neutral.bg-document (#111111) zodat de overlay donker blijft in dark mode."
+        "$value": "{dsn.color.neutral.bg-document}",
+        "$type": "color",
+        "$description": "Achtergrondkleur van de backdrop — altijd donker, ongeacht dark mode. Gebruikt neutral.bg-document (#111111) zodat de overlay donker blijft in dark mode."
       }
     }
   }

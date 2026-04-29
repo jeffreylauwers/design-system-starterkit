@@ -2,118 +2,118 @@
   "dsn": {
     "card": {
       "background-color": {
-        "value": "{dsn.color.neutral.bg-document}",
-        "type": "color",
-        "comment": "Card achtergrondkleur standaard — zelfde als paginaachtergrond"
+        "$value": "{dsn.color.neutral.bg-document}",
+        "$type": "color",
+        "$description": "Card achtergrondkleur standaard — zelfde als paginaachtergrond"
       },
       "background-color-hover": {
-        "value": "{dsn.color.neutral.bg-elevated}",
-        "type": "color",
-        "comment": "Card achtergrondkleur bij hover — bg-elevated benadrukt elevatie"
+        "$value": "{dsn.color.neutral.bg-elevated}",
+        "$type": "color",
+        "$description": "Card achtergrondkleur bij hover — bg-elevated benadrukt elevatie"
       },
       "border-radius": {
-        "value": "{dsn.border.radius.md}",
-        "type": "dimension",
-        "comment": "Afgeronde hoeken van de card (8px)"
+        "$value": "{dsn.border.radius.md}",
+        "$type": "dimension",
+        "$description": "Afgeronde hoeken van de card (8px)"
       },
       "border-width": {
-        "value": "{dsn.border.width.thin}",
-        "type": "borderWidth",
-        "comment": "Randbreedte van de card"
+        "$value": "{dsn.border.width.thin}",
+        "$type": "borderWidth",
+        "$description": "Randbreedte van de card"
       },
       "border-color": {
-        "value": "{dsn.color.neutral.border-subtle}",
-        "type": "color",
-        "comment": "Randkleur van de card"
+        "$value": "{dsn.color.neutral.border-subtle}",
+        "$type": "color",
+        "$description": "Randkleur van de card"
       },
       "box-shadow": {
-        "value": "none",
-        "type": "shadow",
-        "comment": "Schaduw standaard — geen schaduw by default"
+        "$value": "none",
+        "$type": "shadow",
+        "$description": "Schaduw standaard — geen schaduw by default"
       },
       "box-shadow-hover": {
-        "value": "{dsn.box-shadow.md}",
-        "type": "shadow",
-        "comment": "Schaduw bij hover — hogere elevatie benadrukt interactiviteit"
+        "$value": "{dsn.box-shadow.md}",
+        "$type": "shadow",
+        "$description": "Schaduw bij hover — hogere elevatie benadrukt interactiviteit"
       },
       "body": {
         "padding-block": {
-          "value": "{dsn.space.block.xl}",
-          "type": "spacing",
-          "comment": "Verticale padding van de card body (16px)"
+          "$value": "{dsn.space.block.xl}",
+          "$type": "spacing",
+          "$description": "Verticale padding van de card body (16px)"
         },
         "padding-inline": {
-          "value": "{dsn.space.inline.xl}",
-          "type": "spacing",
-          "comment": "Horizontale padding van de card body (16px)"
+          "$value": "{dsn.space.inline.xl}",
+          "$type": "spacing",
+          "$description": "Horizontale padding van de card body (16px)"
         },
         "row-gap": {
-          "value": "{dsn.space.block.lg}",
-          "type": "spacing",
-          "comment": "Verticale ruimte tussen directe kinderen van de card body (12px)"
+          "$value": "{dsn.space.block.lg}",
+          "$type": "spacing",
+          "$description": "Verticale ruimte tussen directe kinderen van de card body (12px)"
         }
       },
       "footer": {
         "padding-block-end": {
-          "value": "{dsn.space.block.3xl}",
-          "type": "spacing",
-          "comment": "Onderkant padding van de card footer (24px)"
+          "$value": "{dsn.space.block.3xl}",
+          "$type": "spacing",
+          "$description": "Onderkant padding van de card footer (24px)"
         },
         "padding-inline": {
-          "value": "{dsn.space.inline.xl}",
-          "type": "spacing",
-          "comment": "Horizontale padding van de card footer (16px)"
+          "$value": "{dsn.space.inline.xl}",
+          "$type": "spacing",
+          "$description": "Horizontale padding van de card footer (16px)"
         }
       },
       "image-placeholder": {
         "background-color": {
-          "value": "{dsn.color.neutral.bg-subtle}",
-          "type": "color",
-          "comment": "Achtergrondkleur van de afbeeldingsplaceholder"
+          "$value": "{dsn.color.neutral.bg-subtle}",
+          "$type": "color",
+          "$description": "Achtergrondkleur van de afbeeldingsplaceholder"
         },
         "color": {
-          "value": "{dsn.color.neutral.color-subtle}",
-          "type": "color",
-          "comment": "Kleur van het icoon in de afbeeldingsplaceholder"
+          "$value": "{dsn.color.neutral.color-subtle}",
+          "$type": "color",
+          "$description": "Kleur van het icoon in de afbeeldingsplaceholder"
         }
       },
       "heading": {
         "font-family": {
-          "value": "{dsn.heading.font-family}",
-          "type": "fontFamily",
-          "comment": "Lettertype van de card heading"
+          "$value": "{dsn.heading.font-family}",
+          "$type": "fontFamily",
+          "$description": "Lettertype van de card heading"
         },
         "font-weight": {
-          "value": "{dsn.heading.font-weight}",
-          "type": "fontWeight",
-          "comment": "Vetgedrukt van de card heading"
+          "$value": "{dsn.heading.font-weight}",
+          "$type": "fontWeight",
+          "$description": "Vetgedrukt van de card heading"
         },
         "color": {
-          "value": "{dsn.heading.color}",
-          "type": "color",
-          "comment": "Kleur van de card heading"
+          "$value": "{dsn.heading.color}",
+          "$type": "color",
+          "$description": "Kleur van de card heading"
         },
         "font-size": {
-          "value": "{dsn.text.font-size.lg}",
-          "type": "fontSize",
-          "comment": "Tekstgrootte van de card heading (20–24px fluid)"
+          "$value": "{dsn.text.font-size.lg}",
+          "$type": "fontSize",
+          "$description": "Tekstgrootte van de card heading (20–24px fluid)"
         },
         "line-height": {
-          "value": "{dsn.text.line-height.lg}",
-          "type": "lineHeight",
-          "comment": "Regelafstand van de card heading"
+          "$value": "{dsn.text.line-height.lg}",
+          "$type": "lineHeight",
+          "$description": "Regelafstand van de card heading"
         }
       },
       "group": {
         "gap": {
-          "value": "{dsn.space.inline.xl}",
-          "type": "spacing",
-          "comment": "Ruimte tussen cards in een CardGroup (16px)"
+          "$value": "{dsn.space.inline.xl}",
+          "$type": "spacing",
+          "$description": "Ruimte tussen cards in een CardGroup (16px)"
         },
         "item-min-width": {
-          "value": "17.5rem",
-          "type": "dimension",
-          "comment": "Minimale breedte van een card in een groep (280px) — gebruikt door CSS auto-fill"
+          "$value": "17.5rem",
+          "$type": "dimension",
+          "$description": "Minimale breedte van een card in een groep (280px) — gebruikt door CSS auto-fill"
         }
       }
     }

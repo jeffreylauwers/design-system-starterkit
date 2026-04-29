@@ -2,40 +2,40 @@
   "dsn": {
     "page-footer": {
       "background-color": {
-        "value": "{dsn.color.accent-1.bg-default}",
-        "type": "color",
-        "comment": "Achtergrondkleur van de PageFooter — merkkleur accent-1 als huisstijldrager"
+        "$value": "{dsn.color.accent-1.bg-default}",
+        "$type": "color",
+        "$description": "Achtergrondkleur van de PageFooter — merkkleur accent-1 als huisstijldrager"
       },
       "border-block-start-width": {
-        "value": "{dsn.border.width.thick}",
-        "type": "dimension",
-        "comment": "Breedte van de bovenkantrand (4px) — spiegelt de PageHeader border-block-end voor visuele symmetrie"
+        "$value": "{dsn.border.width.thick}",
+        "$type": "dimension",
+        "$description": "Breedte van de bovenkantrand (4px) — spiegelt de PageHeader border-block-end voor visuele symmetrie"
       },
       "border-block-start-color": {
-        "value": "{dsn.color.accent-1.border-default}",
-        "type": "color",
-        "comment": "Kleur van de bovenkantrand — accent-1 border-default voor subtiele maar zichtbare scheiding met de pagina-inhoud"
+        "$value": "{dsn.color.accent-1.border-default}",
+        "$type": "color",
+        "$description": "Kleur van de bovenkantrand — accent-1 border-default voor subtiele maar zichtbare scheiding met de pagina-inhoud"
       },
       "padding-block": {
-        "value": "{dsn.space.block.6xl}",
-        "type": "spacing",
-        "comment": "Verticale ademruimte van de footer-binnenbalk"
+        "$value": "{dsn.space.block.6xl}",
+        "$type": "spacing",
+        "$description": "Verticale ademruimte van de footer-binnenbalk"
       },
       "slot-gap": {
-        "value": "{dsn.space.block.xl}",
-        "type": "spacing",
-        "comment": "Verticale witruimte tussen gestapelde slots op small viewport"
+        "$value": "{dsn.space.block.xl}",
+        "$type": "spacing",
+        "$description": "Verticale witruimte tussen gestapelde slots op small viewport"
       },
       "padding-inline": {
-        "value": "{dsn.space.inline.xl}",
-        "type": "spacing",
-        "comment": "Horizontale padding van de footer-binnenbalk — zelfde schaal als PageHeader masthead en navbar"
+        "$value": "{dsn.space.inline.xl}",
+        "$type": "spacing",
+        "$description": "Horizontale padding van de footer-binnenbalk — zelfde schaal als PageHeader masthead en navbar"
       },
       "logo": {
         "max-block-size": {
-          "value": "2rem",
-          "type": "dimension",
-          "comment": "Maximale hoogte van het logo in de PageFooter (32px) — zelfde waarde als page-header.logo.max-block-size voor consistente logogrootte"
+          "$value": "2rem",
+          "$type": "dimension",
+          "$description": "Maximale hoogte van het logo in de PageFooter (32px) — zelfde waarde als page-header.logo.max-block-size voor consistente logogrootte"
         }
       }
     }

@@ -3,577 +3,577 @@
     "text": {
       "font-family": {
         "default": {
-          "value": "IBM Plex Sans, sans-serif",
-          "comment": "Default font family for body text"
+          "$value": "IBM Plex Sans, sans-serif",
+          "$description": "Default font family for body text"
         },
         "monospace": {
-          "value": "IBM Plex Mono, monospace",
-          "comment": "Monospace font family for code"
+          "$value": "IBM Plex Mono, monospace",
+          "$description": "Monospace font family for code"
         }
       },
       "font-weight": {
         "default": {
-          "value": "400",
-          "comment": "Regular weight"
+          "$value": "400",
+          "$description": "Regular weight"
         },
         "bold": {
-          "value": "700",
-          "comment": "Bold weight"
+          "$value": "700",
+          "$description": "Bold weight"
         }
       },
       "line-height": {
         "sm": {
-          "value": "1.5",
-          "comment": "150% line height for small text"
+          "$value": "1.5",
+          "$description": "150% line height for small text"
         },
         "md": {
-          "value": "1.5",
-          "comment": "150% line height for medium text"
+          "$value": "1.5",
+          "$description": "150% line height for medium text"
         },
         "lg": {
-          "value": "1.25",
-          "comment": "125% line height for large text"
+          "$value": "1.25",
+          "$description": "125% line height for large text"
         },
         "xl": {
-          "value": "1.25",
-          "comment": "125% line height for headings"
+          "$value": "1.25",
+          "$description": "125% line height for headings"
         },
         "2xl": {
-          "value": "1.25",
-          "comment": "125% line height for large headings"
+          "$value": "1.25",
+          "$description": "125% line height for large headings"
         },
         "3xl": {
-          "value": "1.25",
-          "comment": "125% line height for display text"
+          "$value": "1.25",
+          "$description": "125% line height for display text"
         },
         "4xl": {
-          "value": "1.1",
-          "comment": "110% line height for hero text"
+          "$value": "1.1",
+          "$description": "110% line height for hero text"
         }
       }
     },
     "heading": {
       "font-family": {
-        "value": "IBM Plex Sans, sans-serif",
-        "comment": "Font family for headings"
+        "$value": "IBM Plex Sans, sans-serif",
+        "$description": "Font family for headings"
       },
       "font-weight": {
-        "value": "700",
-        "comment": "Bold weight for headings"
+        "$value": "700",
+        "$description": "Bold weight for headings"
       }
     },
     "space": {
       "base": {
-        "value": "0.5rem",
-        "comment": "8px - Base unit for 8pt grid system"
+        "$value": "0.5rem",
+        "$description": "8px - Base unit for 8pt grid system"
       },
       "block": {
         "2xs": {
-          "value": "calc(0.5rem * 0.125)",
-          "comment": "1px - Vertical spacing within components"
+          "$value": "calc(0.5rem * 0.125)",
+          "$description": "1px - Vertical spacing within components"
         },
         "xs": {
-          "value": "calc(0.5rem * 0.25)",
-          "comment": "2px - Vertical spacing within components"
+          "$value": "calc(0.5rem * 0.25)",
+          "$description": "2px - Vertical spacing within components"
         },
         "sm": {
-          "value": "calc(0.5rem * 0.5)",
-          "comment": "4px - Vertical spacing within components"
+          "$value": "calc(0.5rem * 0.5)",
+          "$description": "4px - Vertical spacing within components"
         },
         "md": {
-          "value": "calc(0.5rem * 1)",
-          "comment": "8px - Vertical spacing within components"
+          "$value": "calc(0.5rem * 1)",
+          "$description": "8px - Vertical spacing within components"
         },
         "lg": {
-          "value": "calc(0.5rem * 1.5)",
-          "comment": "12px - Vertical spacing within components"
+          "$value": "calc(0.5rem * 1.5)",
+          "$description": "12px - Vertical spacing within components"
         },
         "xl": {
-          "value": "calc(0.5rem * 2)",
-          "comment": "16px - Vertical spacing within components"
+          "$value": "calc(0.5rem * 2)",
+          "$description": "16px - Vertical spacing within components"
         },
         "2xl": {
-          "value": "calc(0.5rem * 2.5)",
-          "comment": "20px - Vertical spacing within components"
+          "$value": "calc(0.5rem * 2.5)",
+          "$description": "20px - Vertical spacing within components"
         },
         "3xl": {
-          "value": "calc(0.5rem * 3)",
-          "comment": "24px - Vertical spacing within components"
+          "$value": "calc(0.5rem * 3)",
+          "$description": "24px - Vertical spacing within components"
         },
         "4xl": {
-          "value": "calc(0.5rem * 4)",
-          "comment": "32px - Vertical spacing within components"
+          "$value": "calc(0.5rem * 4)",
+          "$description": "32px - Vertical spacing within components"
         },
         "5xl": {
-          "value": "calc(0.5rem * 6)",
-          "comment": "48px - Vertical spacing within components"
+          "$value": "calc(0.5rem * 6)",
+          "$description": "48px - Vertical spacing within components"
         },
         "6xl": {
-          "value": "calc(0.5rem * 8)",
-          "comment": "64px - Vertical spacing within components"
+          "$value": "calc(0.5rem * 8)",
+          "$description": "64px - Vertical spacing within components"
         }
       },
       "inline": {
         "2xs": {
-          "value": "calc(0.5rem * 0.125)",
-          "comment": "1px - Horizontal spacing within components"
+          "$value": "calc(0.5rem * 0.125)",
+          "$description": "1px - Horizontal spacing within components"
         },
         "xs": {
-          "value": "calc(0.5rem * 0.25)",
-          "comment": "2px - Horizontal spacing within components"
+          "$value": "calc(0.5rem * 0.25)",
+          "$description": "2px - Horizontal spacing within components"
         },
         "sm": {
-          "value": "calc(0.5rem * 0.5)",
-          "comment": "4px - Horizontal spacing within components"
+          "$value": "calc(0.5rem * 0.5)",
+          "$description": "4px - Horizontal spacing within components"
         },
         "md": {
-          "value": "calc(0.5rem * 1)",
-          "comment": "8px - Horizontal spacing within components"
+          "$value": "calc(0.5rem * 1)",
+          "$description": "8px - Horizontal spacing within components"
         },
         "lg": {
-          "value": "calc(0.5rem * 1.5)",
-          "comment": "12px - Horizontal spacing within components"
+          "$value": "calc(0.5rem * 1.5)",
+          "$description": "12px - Horizontal spacing within components"
         },
         "xl": {
-          "value": "calc(0.5rem * 2)",
-          "comment": "16px - Horizontal spacing within components"
+          "$value": "calc(0.5rem * 2)",
+          "$description": "16px - Horizontal spacing within components"
         },
         "2xl": {
-          "value": "calc(0.5rem * 2.5)",
-          "comment": "20px - Horizontal spacing within components"
+          "$value": "calc(0.5rem * 2.5)",
+          "$description": "20px - Horizontal spacing within components"
         },
         "3xl": {
-          "value": "calc(0.5rem * 3)",
-          "comment": "24px - Horizontal spacing within components"
+          "$value": "calc(0.5rem * 3)",
+          "$description": "24px - Horizontal spacing within components"
         },
         "4xl": {
-          "value": "calc(0.5rem * 4)",
-          "comment": "32px - Horizontal spacing within components"
+          "$value": "calc(0.5rem * 4)",
+          "$description": "32px - Horizontal spacing within components"
         },
         "5xl": {
-          "value": "calc(0.5rem * 6)",
-          "comment": "48px - Horizontal spacing within components"
+          "$value": "calc(0.5rem * 6)",
+          "$description": "48px - Horizontal spacing within components"
         },
         "6xl": {
-          "value": "calc(0.5rem * 8)",
-          "comment": "64px - Horizontal spacing within components"
+          "$value": "calc(0.5rem * 8)",
+          "$description": "64px - Horizontal spacing within components"
         }
       },
       "text": {
         "3xs": {
-          "value": "calc(0.5rem * 0.125)",
-          "comment": "1px - Spacing between text and icons"
+          "$value": "calc(0.5rem * 0.125)",
+          "$description": "1px - Spacing between text and icons"
         },
         "2xs": {
-          "value": "calc(0.5rem * 0.25)",
-          "comment": "2px - Spacing between text and icons"
+          "$value": "calc(0.5rem * 0.25)",
+          "$description": "2px - Spacing between text and icons"
         },
         "xs": {
-          "value": "calc(0.5rem * 0.25)",
-          "comment": "2px - Spacing between text and icons"
+          "$value": "calc(0.5rem * 0.25)",
+          "$description": "2px - Spacing between text and icons"
         },
         "sm": {
-          "value": "calc(0.5rem * 0.5)",
-          "comment": "4px - Spacing between text and icons"
+          "$value": "calc(0.5rem * 0.5)",
+          "$description": "4px - Spacing between text and icons"
         },
         "md": {
-          "value": "calc(0.5rem * 1)",
-          "comment": "8px - Spacing between text and icons"
+          "$value": "calc(0.5rem * 1)",
+          "$description": "8px - Spacing between text and icons"
         },
         "lg": {
-          "value": "calc(0.5rem * 1.5)",
-          "comment": "12px - Spacing between text and icons"
+          "$value": "calc(0.5rem * 1.5)",
+          "$description": "12px - Spacing between text and icons"
         },
         "xl": {
-          "value": "calc(0.5rem * 2)",
-          "comment": "16px - Spacing between text and icons"
+          "$value": "calc(0.5rem * 2)",
+          "$description": "16px - Spacing between text and icons"
         },
         "2xl": {
-          "value": "calc(0.5rem * 2.5)",
-          "comment": "20px - Spacing between text and icons"
+          "$value": "calc(0.5rem * 2.5)",
+          "$description": "20px - Spacing between text and icons"
         },
         "3xl": {
-          "value": "calc(0.5rem * 3)",
-          "comment": "24px - Spacing between text and icons"
+          "$value": "calc(0.5rem * 3)",
+          "$description": "24px - Spacing between text and icons"
         }
       },
       "column": {
         "2xs": {
-          "value": "calc(0.5rem * 0.125)",
-          "comment": "1px - Horizontal spacing between components"
+          "$value": "calc(0.5rem * 0.125)",
+          "$description": "1px - Horizontal spacing between components"
         },
         "xs": {
-          "value": "calc(0.5rem * 0.25)",
-          "comment": "2px - Horizontal spacing between components"
+          "$value": "calc(0.5rem * 0.25)",
+          "$description": "2px - Horizontal spacing between components"
         },
         "sm": {
-          "value": "calc(0.5rem * 0.5)",
-          "comment": "4px - Horizontal spacing between components"
+          "$value": "calc(0.5rem * 0.5)",
+          "$description": "4px - Horizontal spacing between components"
         },
         "md": {
-          "value": "calc(0.5rem * 1)",
-          "comment": "8px - Horizontal spacing between components"
+          "$value": "calc(0.5rem * 1)",
+          "$description": "8px - Horizontal spacing between components"
         },
         "lg": {
-          "value": "calc(0.5rem * 1.5)",
-          "comment": "12px - Horizontal spacing between components"
+          "$value": "calc(0.5rem * 1.5)",
+          "$description": "12px - Horizontal spacing between components"
         },
         "xl": {
-          "value": "calc(0.5rem * 2)",
-          "comment": "16px - Horizontal spacing between components"
+          "$value": "calc(0.5rem * 2)",
+          "$description": "16px - Horizontal spacing between components"
         },
         "2xl": {
-          "value": "calc(0.5rem * 2.5)",
-          "comment": "20px - Horizontal spacing between components"
+          "$value": "calc(0.5rem * 2.5)",
+          "$description": "20px - Horizontal spacing between components"
         },
         "3xl": {
-          "value": "calc(0.5rem * 3)",
-          "comment": "24px - Horizontal spacing between components"
+          "$value": "calc(0.5rem * 3)",
+          "$description": "24px - Horizontal spacing between components"
         },
         "4xl": {
-          "value": "calc(0.5rem * 4)",
-          "comment": "32px - Horizontal spacing between components"
+          "$value": "calc(0.5rem * 4)",
+          "$description": "32px - Horizontal spacing between components"
         },
         "5xl": {
-          "value": "calc(0.5rem * 8)",
-          "comment": "64px - Horizontal spacing between components"
+          "$value": "calc(0.5rem * 8)",
+          "$description": "64px - Horizontal spacing between components"
         },
         "6xl": {
-          "value": "calc(0.5rem * 20)",
-          "comment": "160px - Horizontal spacing between components"
+          "$value": "calc(0.5rem * 20)",
+          "$description": "160px - Horizontal spacing between components"
         }
       },
       "row": {
         "2xs": {
-          "value": "calc(0.5rem * 0.125)",
-          "comment": "1px - Vertical spacing between components"
+          "$value": "calc(0.5rem * 0.125)",
+          "$description": "1px - Vertical spacing between components"
         },
         "xs": {
-          "value": "calc(0.5rem * 0.25)",
-          "comment": "2px - Vertical spacing between components"
+          "$value": "calc(0.5rem * 0.25)",
+          "$description": "2px - Vertical spacing between components"
         },
         "sm": {
-          "value": "calc(0.5rem * 0.5)",
-          "comment": "4px - Vertical spacing between components"
+          "$value": "calc(0.5rem * 0.5)",
+          "$description": "4px - Vertical spacing between components"
         },
         "md": {
-          "value": "calc(0.5rem * 1)",
-          "comment": "8px - Vertical spacing between components"
+          "$value": "calc(0.5rem * 1)",
+          "$description": "8px - Vertical spacing between components"
         },
         "lg": {
-          "value": "calc(0.5rem * 1.5)",
-          "comment": "12px - Vertical spacing between components"
+          "$value": "calc(0.5rem * 1.5)",
+          "$description": "12px - Vertical spacing between components"
         },
         "xl": {
-          "value": "calc(0.5rem * 2)",
-          "comment": "16px - Vertical spacing between components"
+          "$value": "calc(0.5rem * 2)",
+          "$description": "16px - Vertical spacing between components"
         },
         "2xl": {
-          "value": "calc(0.5rem * 2.5)",
-          "comment": "20px - Vertical spacing between components"
+          "$value": "calc(0.5rem * 2.5)",
+          "$description": "20px - Vertical spacing between components"
         },
         "3xl": {
-          "value": "calc(0.5rem * 3)",
-          "comment": "24px - Vertical spacing between components"
+          "$value": "calc(0.5rem * 3)",
+          "$description": "24px - Vertical spacing between components"
         },
         "4xl": {
-          "value": "calc(0.5rem * 4)",
-          "comment": "32px - Vertical spacing between components"
+          "$value": "calc(0.5rem * 4)",
+          "$description": "32px - Vertical spacing between components"
         },
         "5xl": {
-          "value": "calc(0.5rem * 8)",
-          "comment": "64px - Vertical spacing between components"
+          "$value": "calc(0.5rem * 8)",
+          "$description": "64px - Vertical spacing between components"
         },
         "6xl": {
-          "value": "calc(0.5rem * 20)",
-          "comment": "160px - Vertical spacing between components"
+          "$value": "calc(0.5rem * 20)",
+          "$description": "160px - Vertical spacing between components"
         }
       }
     },
     "icon": {
       "size": {
         "sm": {
-          "value": "calc({dsn.text.font-size.sm} * {dsn.text.line-height.sm})",
-          "comment": "Fluid icon size - coupled to font-size.sm × line-height.sm"
+          "$value": "calc({dsn.text.font-size.sm} * {dsn.text.line-height.sm})",
+          "$description": "Fluid icon size - coupled to font-size.sm × line-height.sm"
         },
         "md": {
-          "value": "calc({dsn.text.font-size.md} * {dsn.text.line-height.md})",
-          "comment": "Fluid icon size - coupled to font-size.md × line-height.md"
+          "$value": "calc({dsn.text.font-size.md} * {dsn.text.line-height.md})",
+          "$description": "Fluid icon size - coupled to font-size.md × line-height.md"
         },
         "lg": {
-          "value": "calc({dsn.text.font-size.lg} * {dsn.text.line-height.lg})",
-          "comment": "Fluid icon size - coupled to font-size.lg × line-height.lg"
+          "$value": "calc({dsn.text.font-size.lg} * {dsn.text.line-height.lg})",
+          "$description": "Fluid icon size - coupled to font-size.lg × line-height.lg"
         },
         "xl": {
-          "value": "calc({dsn.text.font-size.xl} * {dsn.text.line-height.xl})",
-          "comment": "Fluid icon size - coupled to font-size.xl × line-height.xl"
+          "$value": "calc({dsn.text.font-size.xl} * {dsn.text.line-height.xl})",
+          "$description": "Fluid icon size - coupled to font-size.xl × line-height.xl"
         },
         "2xl": {
-          "value": "calc({dsn.text.font-size.2xl} * {dsn.text.line-height.2xl})",
-          "comment": "Fluid icon size - coupled to font-size.2xl × line-height.2xl"
+          "$value": "calc({dsn.text.font-size.2xl} * {dsn.text.line-height.2xl})",
+          "$description": "Fluid icon size - coupled to font-size.2xl × line-height.2xl"
         },
         "3xl": {
-          "value": "calc({dsn.text.font-size.3xl} * {dsn.text.line-height.3xl})",
-          "comment": "Fluid icon size - coupled to font-size.3xl × line-height.3xl"
+          "$value": "calc({dsn.text.font-size.3xl} * {dsn.text.line-height.3xl})",
+          "$description": "Fluid icon size - coupled to font-size.3xl × line-height.3xl"
         },
         "4xl": {
-          "value": "calc({dsn.text.font-size.4xl} * {dsn.text.line-height.4xl})",
-          "comment": "Fluid icon size - coupled to font-size.4xl × line-height.4xl"
+          "$value": "calc({dsn.text.font-size.4xl} * {dsn.text.line-height.4xl})",
+          "$description": "Fluid icon size - coupled to font-size.4xl × line-height.4xl"
         }
       }
     },
     "pointer-target": {
       "min-block-size": {
-        "value": "3rem",
-        "type": "dimension",
-        "comment": "WCAG 2.5.5 Target Size - Minimum 48px (3rem) touch target"
+        "$value": "3rem",
+        "$type": "dimension",
+        "$description": "WCAG 2.5.5 Target Size - Minimum 48px (3rem) touch target"
       },
       "min-inline-size": {
-        "value": "3rem",
-        "type": "dimension",
-        "comment": "WCAG 2.5.5 Target Size - Minimum 48px (3rem) touch target"
+        "$value": "3rem",
+        "$type": "dimension",
+        "$description": "WCAG 2.5.5 Target Size - Minimum 48px (3rem) touch target"
       }
     },
     "border": {
       "radius": {
         "sm": {
-          "value": "4px",
-          "comment": "Small border radius"
+          "$value": "4px",
+          "$description": "Small border radius"
         },
         "md": {
-          "value": "8px",
-          "comment": "Medium border radius"
+          "$value": "8px",
+          "$description": "Medium border radius"
         },
         "lg": {
-          "value": "16px",
-          "comment": "Large border radius"
+          "$value": "16px",
+          "$description": "Large border radius"
         },
         "round": {
-          "value": "999px",
-          "comment": "Fully rounded (pills, circles)"
+          "$value": "999px",
+          "$description": "Fully rounded (pills, circles)"
         }
       },
       "width": {
         "thin": {
-          "value": "1px",
-          "comment": "Thin border"
+          "$value": "1px",
+          "$description": "Thin border"
         },
         "medium": {
-          "value": "2px",
-          "comment": "Medium border"
+          "$value": "2px",
+          "$description": "Medium border"
         },
         "thick": {
-          "value": "4px",
-          "comment": "Thick border"
+          "$value": "4px",
+          "$description": "Thick border"
         }
       }
     },
     "focus": {
       "outline-offset": {
-        "value": "0px",
-        "comment": "Focus outline offset"
+        "$value": "0px",
+        "$description": "Focus outline offset"
       },
       "outline-style": {
-        "value": "dashed",
-        "comment": "Focus outline style"
+        "$value": "dashed",
+        "$description": "Focus outline style"
       },
       "outline-width": {
-        "value": "2px",
-        "comment": "Focus outline width"
+        "$value": "2px",
+        "$description": "Focus outline width"
       }
     },
     "form-control": {
       "font-family": {
-        "value": "{dsn.text.font-family.default}",
-        "type": "fontFamily",
-        "comment": "Form control font family"
+        "$value": "{dsn.text.font-family.default}",
+        "$type": "fontFamily",
+        "$description": "Form control font family"
       },
       "font-size": {
-        "value": "{dsn.text.font-size.md}",
-        "type": "fontSize",
-        "comment": "Form control font size"
+        "$value": "{dsn.text.font-size.md}",
+        "$type": "fontSize",
+        "$description": "Form control font size"
       },
       "font-weight": {
-        "value": "{dsn.text.font-weight.default}",
-        "type": "fontWeight",
-        "comment": "Form control font weight"
+        "$value": "{dsn.text.font-weight.default}",
+        "$type": "fontWeight",
+        "$description": "Form control font weight"
       },
       "line-height": {
-        "value": "{dsn.text.line-height.md}",
-        "type": "lineHeight",
-        "comment": "Form control line height"
+        "$value": "{dsn.text.line-height.md}",
+        "$type": "lineHeight",
+        "$description": "Form control line height"
       },
       "padding-block-start": {
-        "value": "{dsn.space.block.md}",
-        "type": "dimension",
-        "comment": "Form control top padding — 8px zodat min-block-size (48px) de hoogte bepaalt, gelijk aan de button"
+        "$value": "{dsn.space.block.md}",
+        "$type": "dimension",
+        "$description": "Form control top padding — 8px zodat min-block-size (48px) de hoogte bepaalt, gelijk aan de button"
       },
       "padding-block-end": {
-        "value": "{dsn.space.block.md}",
-        "type": "dimension",
-        "comment": "Form control bottom padding — 8px zodat min-block-size (48px) de hoogte bepaalt, gelijk aan de button"
+        "$value": "{dsn.space.block.md}",
+        "$type": "dimension",
+        "$description": "Form control bottom padding — 8px zodat min-block-size (48px) de hoogte bepaalt, gelijk aan de button"
       },
       "padding-inline-start": {
-        "value": "{dsn.space.inline.lg}",
-        "type": "dimension",
-        "comment": "Form control left padding"
+        "$value": "{dsn.space.inline.lg}",
+        "$type": "dimension",
+        "$description": "Form control left padding"
       },
       "padding-inline-end": {
-        "value": "{dsn.space.inline.lg}",
-        "type": "dimension",
-        "comment": "Form control right padding"
+        "$value": "{dsn.space.inline.lg}",
+        "$type": "dimension",
+        "$description": "Form control right padding"
       },
       "max-inline-size": {
-        "value": "25rem",
-        "type": "dimension",
-        "comment": "Form control maximum width"
+        "$value": "25rem",
+        "$type": "dimension",
+        "$description": "Form control maximum width"
       },
       "border-radius": {
-        "value": "0px",
-        "type": "dimension",
-        "comment": "Form control border radius"
+        "$value": "0px",
+        "$type": "dimension",
+        "$description": "Form control border radius"
       },
       "border-width": {
-        "value": "{dsn.border.width.thin}",
-        "type": "dimension",
-        "comment": "Form control border width"
+        "$value": "{dsn.border.width.thin}",
+        "$type": "dimension",
+        "$description": "Form control border width"
       },
       "width": {
         "xs": {
-          "value": "10ch",
-          "type": "dimension",
-          "comment": "Extra small width - for very short inputs (e.g., postal code, year, CVV)"
+          "$value": "10ch",
+          "$type": "dimension",
+          "$description": "Extra small width - for very short inputs (e.g., postal code, year, CVV)"
         },
         "sm": {
-          "value": "14ch",
-          "type": "dimension",
-          "comment": "Small width - for short inputs (e.g., time HH:MM, short codes)"
+          "$value": "14ch",
+          "$type": "dimension",
+          "$description": "Small width - for short inputs (e.g., time HH:MM, short codes)"
         },
         "md": {
-          "value": "20ch",
-          "type": "dimension",
-          "comment": "Medium width - for medium inputs (e.g., date dd/mm/yyyy, phone number)"
+          "$value": "20ch",
+          "$type": "dimension",
+          "$description": "Medium width - for medium inputs (e.g., date dd/mm/yyyy, phone number)"
         },
         "lg": {
-          "value": "32ch",
-          "type": "dimension",
-          "comment": "Large width (default) - for standard inputs (e.g., name, email)"
+          "$value": "32ch",
+          "$type": "dimension",
+          "$description": "Large width (default) - for standard inputs (e.g., name, email)"
         },
         "xl": {
-          "value": "48ch",
-          "type": "dimension",
-          "comment": "Extra large width - for longer inputs (e.g., URL)"
+          "$value": "48ch",
+          "$type": "dimension",
+          "$description": "Extra large width - for longer inputs (e.g., URL)"
         },
         "full": {
-          "value": "100%",
-          "type": "dimension",
-          "comment": "Full width - responsive to container"
+          "$value": "100%",
+          "$type": "dimension",
+          "$description": "Full width - responsive to container"
         }
       },
       "hover": {
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension",
-          "comment": "Form control hover border width"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension",
+          "$description": "Form control hover border width"
         }
       },
       "focus": {
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension",
-          "comment": "Form control focus border width"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension",
+          "$description": "Form control focus border width"
         }
       },
       "active": {
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension",
-          "comment": "Form control active border width"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension",
+          "$description": "Form control active border width"
         }
       },
       "invalid": {
         "border-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension",
-          "comment": "Form control invalid border width"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension",
+          "$description": "Form control invalid border width"
         }
       }
     },
     "breakpoint": {
       "sm": {
-        "value": "36em",
-        "comment": "Small breakpoint - ~576px. Reference only; use hardcoded values in CSS @media rules."
+        "$value": "36em",
+        "$description": "Small breakpoint - ~576px. Reference only; use hardcoded values in CSS @media rules."
       },
       "md": {
-        "value": "44em",
-        "comment": "Medium breakpoint - ~704px. Reference only; use hardcoded values in CSS @media rules."
+        "$value": "44em",
+        "$description": "Medium breakpoint - ~704px. Reference only; use hardcoded values in CSS @media rules."
       },
       "lg": {
-        "value": "64em",
-        "comment": "Large breakpoint - ~1024px. Reference only; use hardcoded values in CSS @media rules."
+        "$value": "64em",
+        "$description": "Large breakpoint - ~1024px. Reference only; use hardcoded values in CSS @media rules."
       },
       "xl": {
-        "value": "74em",
-        "comment": "Extra large breakpoint - ~1184px. Reference only; use hardcoded values in CSS @media rules."
+        "$value": "74em",
+        "$description": "Extra large breakpoint - ~1184px. Reference only; use hardcoded values in CSS @media rules."
       }
     },
     "box-shadow": {
       "sm": {
-        "value": "0 1px 2px 0 {dsn.color.shadow.direct}, 0 2px 4px 0 {dsn.color.shadow.ambient}, 0 0 0 1px {dsn.color.shadow.highlight}",
-        "comment": "Kleine elevatie — cards, chips, kleine floating elementen"
+        "$value": "0 1px 2px 0 {dsn.color.shadow.direct}, 0 2px 4px 0 {dsn.color.shadow.ambient}, 0 0 0 1px {dsn.color.shadow.highlight}",
+        "$description": "Kleine elevatie — cards, chips, kleine floating elementen"
       },
       "md": {
-        "value": "0 2px 4px 0 {dsn.color.shadow.direct}, 0 8px 16px 0 {dsn.color.shadow.ambient}, 0 0 0 1px {dsn.color.shadow.highlight}",
-        "comment": "Middelgrote elevatie — dropdowns, date pickers, tooltips"
+        "$value": "0 2px 4px 0 {dsn.color.shadow.direct}, 0 8px 16px 0 {dsn.color.shadow.ambient}, 0 0 0 1px {dsn.color.shadow.highlight}",
+        "$description": "Middelgrote elevatie — dropdowns, date pickers, tooltips"
       },
       "lg": {
-        "value": "0 4px 8px 0 {dsn.color.shadow.direct}, 0 16px 32px 0 {dsn.color.shadow.ambient}, 0 0 0 1px {dsn.color.shadow.highlight}",
-        "comment": "Grote elevatie — modals, dialogen, side panels"
+        "$value": "0 4px 8px 0 {dsn.color.shadow.direct}, 0 16px 32px 0 {dsn.color.shadow.ambient}, 0 0 0 1px {dsn.color.shadow.highlight}",
+        "$description": "Grote elevatie — modals, dialogen, side panels"
       }
     },
     "transition": {
       "duration": {
         "instant": {
-          "value": "0ms",
-          "comment": "State-changes die onmiddellijk moeten aanvoelen"
+          "$value": "0ms",
+          "$description": "State-changes die onmiddellijk moeten aanvoelen"
         },
         "fast": {
-          "value": "100ms",
-          "comment": "Subtiele hover-states, kleur-transitions"
+          "$value": "100ms",
+          "$description": "Subtiele hover-states, kleur-transitions"
         },
         "normal": {
-          "value": "200ms",
-          "comment": "Standaard UI-transitions"
+          "$value": "200ms",
+          "$description": "Standaard UI-transitions"
         },
         "slow": {
-          "value": "350ms",
-          "comment": "Grotere bewegingen, accordions"
+          "$value": "350ms",
+          "$description": "Grotere bewegingen, accordions"
         },
         "slower": {
-          "value": "500ms",
-          "comment": "Complexe animaties, page-level transitions"
+          "$value": "500ms",
+          "$description": "Complexe animaties, page-level transitions"
         }
       },
       "easing": {
         "default": {
-          "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-          "comment": "Algemeen — equivalent van CSS ease"
+          "$value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+          "$description": "Algemeen — equivalent van CSS ease"
         },
         "enter": {
-          "value": "cubic-bezier(0, 0, 0.2, 1)",
-          "comment": "Elementen die het scherm binnenkomen (decelereren)"
+          "$value": "cubic-bezier(0, 0, 0.2, 1)",
+          "$description": "Elementen die het scherm binnenkomen (decelereren)"
         },
         "exit": {
-          "value": "cubic-bezier(0.4, 0, 1, 1)",
-          "comment": "Elementen die het scherm verlaten (accelereren)"
+          "$value": "cubic-bezier(0.4, 0, 1, 1)",
+          "$description": "Elementen die het scherm verlaten (accelereren)"
         },
         "move": {
-          "value": "cubic-bezier(0.4, 0, 0.2, 1)",
-          "comment": "Elementen die van positie wisselen"
+          "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "$description": "Elementen die van positie wisselen"
         },
         "linear": {
-          "value": "linear",
-          "comment": "Progress bars, loaders"
+          "$value": "linear",
+          "$description": "Progress bars, loaders"
         }
       }
     }

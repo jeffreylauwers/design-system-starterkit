@@ -3,14 +3,14 @@
     "menu": {
       "gap": {
         "vertical": {
-          "value": "{dsn.space.block.md}",
-          "type": "spacing",
-          "comment": "Kleine ruimte tussen items in verticale oriëntatie"
+          "$value": "{dsn.space.block.md}",
+          "$type": "spacing",
+          "$description": "Kleine ruimte tussen items in verticale oriëntatie"
         },
         "horizontal": {
-          "value": "{dsn.space.inline.sm}",
-          "type": "spacing",
-          "comment": "Ruimte tussen items in horizontale oriëntatie"
+          "$value": "{dsn.space.inline.sm}",
+          "$type": "spacing",
+          "$description": "Ruimte tussen items in horizontale oriëntatie"
         }
       }
     }

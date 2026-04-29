@@ -2,44 +2,44 @@
   "dsn": {
     "form-field-error-message": {
       "color": {
-        "value": "{dsn.color.negative.color-default}",
-        "type": "color",
-        "comment": "Form field error message text color (negative sentiment)"
+        "$value": "{dsn.color.negative.color-default}",
+        "$type": "color",
+        "$description": "Form field error message text color (negative sentiment)"
       },
       "font-family": {
-        "value": "{dsn.text.font-family.default}",
-        "type": "fontFamily",
-        "comment": "Form field error message font family"
+        "$value": "{dsn.text.font-family.default}",
+        "$type": "fontFamily",
+        "$description": "Form field error message font family"
       },
       "font-size": {
-        "value": "{dsn.text.font-size.md}",
-        "type": "fontSize",
-        "comment": "Form field error message font size"
+        "$value": "{dsn.text.font-size.md}",
+        "$type": "fontSize",
+        "$description": "Form field error message font size"
       },
       "font-weight": {
-        "value": "{dsn.text.font-weight.default}",
-        "type": "fontWeight",
-        "comment": "Form field error message font weight"
+        "$value": "{dsn.text.font-weight.default}",
+        "$type": "fontWeight",
+        "$description": "Form field error message font weight"
       },
       "gap": {
-        "value": "{dsn.space.text.sm}",
-        "type": "dimension",
-        "comment": "Space between icon and error message text"
+        "$value": "{dsn.space.text.sm}",
+        "$type": "dimension",
+        "$description": "Space between icon and error message text"
       },
       "icon-size": {
-        "value": "{dsn.icon.size.md}",
-        "type": "dimension",
-        "comment": "Error message icon size"
+        "$value": "{dsn.icon.size.md}",
+        "$type": "dimension",
+        "$description": "Error message icon size"
       },
       "line-height": {
-        "value": "{dsn.text.line-height.md}",
-        "type": "lineHeight",
-        "comment": "Form field error message line height"
+        "$value": "{dsn.text.line-height.md}",
+        "$type": "lineHeight",
+        "$description": "Form field error message line height"
       },
       "margin-block-end": {
-        "value": "{dsn.space.block.md}",
-        "type": "dimension",
-        "comment": "Space below error message before form control"
+        "$value": "{dsn.space.block.md}",
+        "$type": "dimension",
+        "$description": "Space below error message before form control"
       }
     }
   }

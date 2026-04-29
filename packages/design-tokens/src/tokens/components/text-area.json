@@ -2,240 +2,240 @@
   "dsn": {
     "text-area": {
       "background-color": {
-        "value": "{dsn.form-control.background-color}",
-        "type": "color",
-        "comment": "Text area background color"
+        "$value": "{dsn.form-control.background-color}",
+        "$type": "color",
+        "$description": "Text area background color"
       },
       "border-color": {
-        "value": "{dsn.form-control.border-color}",
-        "type": "color",
-        "comment": "Text area border color"
+        "$value": "{dsn.form-control.border-color}",
+        "$type": "color",
+        "$description": "Text area border color"
       },
       "border-radius": {
-        "value": "{dsn.form-control.border-radius}",
-        "type": "dimension",
-        "comment": "Text area border radius"
+        "$value": "{dsn.form-control.border-radius}",
+        "$type": "dimension",
+        "$description": "Text area border radius"
       },
       "border-width": {
-        "value": "{dsn.form-control.border-width}",
-        "type": "dimension",
-        "comment": "Text area border width"
+        "$value": "{dsn.form-control.border-width}",
+        "$type": "dimension",
+        "$description": "Text area border width"
       },
       "color": {
-        "value": "{dsn.form-control.color}",
-        "type": "color",
-        "comment": "Text area text color"
+        "$value": "{dsn.form-control.color}",
+        "$type": "color",
+        "$description": "Text area text color"
       },
       "font-family": {
-        "value": "{dsn.form-control.font-family}",
-        "type": "fontFamily",
-        "comment": "Text area font family"
+        "$value": "{dsn.form-control.font-family}",
+        "$type": "fontFamily",
+        "$description": "Text area font family"
       },
       "font-size": {
-        "value": "{dsn.form-control.font-size}",
-        "type": "fontSize",
-        "comment": "Text area font size"
+        "$value": "{dsn.form-control.font-size}",
+        "$type": "fontSize",
+        "$description": "Text area font size"
       },
       "font-weight": {
-        "value": "{dsn.form-control.font-weight}",
-        "type": "fontWeight",
-        "comment": "Text area font weight"
+        "$value": "{dsn.form-control.font-weight}",
+        "$type": "fontWeight",
+        "$description": "Text area font weight"
       },
       "line-height": {
-        "value": "{dsn.form-control.line-height}",
-        "type": "lineHeight",
-        "comment": "Text area line height"
+        "$value": "{dsn.form-control.line-height}",
+        "$type": "lineHeight",
+        "$description": "Text area line height"
       },
       "min-block-size": {
-        "value": "{dsn.pointer-target.min-block-size}",
-        "type": "dimension",
-        "comment": "Text area minimum height"
+        "$value": "{dsn.pointer-target.min-block-size}",
+        "$type": "dimension",
+        "$description": "Text area minimum height"
       },
       "min-inline-size": {
-        "value": "{dsn.pointer-target.min-inline-size}",
-        "type": "dimension",
-        "comment": "Text area minimum width"
+        "$value": "{dsn.pointer-target.min-inline-size}",
+        "$type": "dimension",
+        "$description": "Text area minimum width"
       },
       "outline-offset": {
-        "value": "0px",
-        "type": "dimension",
-        "comment": "Text area outline offset"
+        "$value": "0px",
+        "$type": "dimension",
+        "$description": "Text area outline offset"
       },
       "padding-block-end": {
-        "value": "{dsn.form-control.padding-block-end}",
-        "type": "dimension",
-        "comment": "Text area bottom padding"
+        "$value": "{dsn.form-control.padding-block-end}",
+        "$type": "dimension",
+        "$description": "Text area bottom padding"
       },
       "padding-block-start": {
-        "value": "{dsn.form-control.padding-block-start}",
-        "type": "dimension",
-        "comment": "Text area top padding"
+        "$value": "{dsn.form-control.padding-block-start}",
+        "$type": "dimension",
+        "$description": "Text area top padding"
       },
       "padding-inline-end": {
-        "value": "{dsn.form-control.padding-inline-end}",
-        "type": "dimension",
-        "comment": "Text area right padding"
+        "$value": "{dsn.form-control.padding-inline-end}",
+        "$type": "dimension",
+        "$description": "Text area right padding"
       },
       "padding-inline-start": {
-        "value": "{dsn.form-control.padding-inline-start}",
-        "type": "dimension",
-        "comment": "Text area left padding"
+        "$value": "{dsn.form-control.padding-inline-start}",
+        "$type": "dimension",
+        "$description": "Text area left padding"
       },
       "resize": {
-        "value": "vertical",
-        "type": "other",
-        "comment": "Text area resize behavior (vertical, horizontal, both, none)"
+        "$value": "vertical",
+        "$type": "other",
+        "$description": "Text area resize behavior (vertical, horizontal, both, none)"
       },
       "disabled": {
         "background-color": {
-          "value": "{dsn.form-control.disabled.background-color}",
-          "type": "color",
-          "comment": "Text area disabled background"
+          "$value": "{dsn.form-control.disabled.background-color}",
+          "$type": "color",
+          "$description": "Text area disabled background"
         },
         "border-color": {
-          "value": "{dsn.form-control.disabled.border-color}",
-          "type": "color",
-          "comment": "Text area disabled border"
+          "$value": "{dsn.form-control.disabled.border-color}",
+          "$type": "color",
+          "$description": "Text area disabled border"
         },
         "color": {
-          "value": "{dsn.form-control.disabled.color}",
-          "type": "color",
-          "comment": "Text area disabled text color"
+          "$value": "{dsn.form-control.disabled.color}",
+          "$type": "color",
+          "$description": "Text area disabled text color"
         }
       },
       "focus": {
         "background-color": {
-          "value": "{dsn.form-control.focus.background-color}",
-          "type": "color",
-          "comment": "Text area focus background"
+          "$value": "{dsn.form-control.focus.background-color}",
+          "$type": "color",
+          "$description": "Text area focus background"
         },
         "border-color": {
-          "value": "{dsn.form-control.focus.border-color}",
-          "type": "color",
-          "comment": "Text area focus border"
+          "$value": "{dsn.form-control.focus.border-color}",
+          "$type": "color",
+          "$description": "Text area focus border"
         },
         "box-shadow-x": {
-          "value": "0",
-          "type": "dimension",
-          "comment": "Text area focus box shadow x offset"
+          "$value": "0",
+          "$type": "dimension",
+          "$description": "Text area focus box shadow x offset"
         },
         "box-shadow-y": {
-          "value": "0",
-          "type": "dimension",
-          "comment": "Text area focus box shadow y offset"
+          "$value": "0",
+          "$type": "dimension",
+          "$description": "Text area focus box shadow y offset"
         },
         "box-shadow-blur": {
-          "value": "0",
-          "type": "dimension",
-          "comment": "Text area focus box shadow blur"
+          "$value": "0",
+          "$type": "dimension",
+          "$description": "Text area focus box shadow blur"
         },
         "box-shadow-spread": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension",
-          "comment": "Text area focus box shadow spread (creates thicker border effect)"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension",
+          "$description": "Text area focus box shadow spread (creates thicker border effect)"
         },
         "box-shadow-color": {
-          "value": "{dsn.text-area.focus.border-color}",
-          "type": "color",
-          "comment": "Text area focus box shadow color"
+          "$value": "{dsn.text-area.focus.border-color}",
+          "$type": "color",
+          "$description": "Text area focus box shadow color"
         },
         "color": {
-          "value": "{dsn.form-control.focus.color}",
-          "type": "color",
-          "comment": "Text area focus text color"
+          "$value": "{dsn.form-control.focus.color}",
+          "$type": "color",
+          "$description": "Text area focus text color"
         }
       },
       "hover": {
         "box-shadow-x": {
-          "value": "0",
-          "type": "dimension",
-          "comment": "Text area hover box shadow x offset"
+          "$value": "0",
+          "$type": "dimension",
+          "$description": "Text area hover box shadow x offset"
         },
         "box-shadow-y": {
-          "value": "0",
-          "type": "dimension",
-          "comment": "Text area hover box shadow y offset"
+          "$value": "0",
+          "$type": "dimension",
+          "$description": "Text area hover box shadow y offset"
         },
         "box-shadow-blur": {
-          "value": "0",
-          "type": "dimension",
-          "comment": "Text area hover box shadow blur"
+          "$value": "0",
+          "$type": "dimension",
+          "$description": "Text area hover box shadow blur"
         },
         "box-shadow-spread": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension",
-          "comment": "Text area hover box shadow spread (creates thicker border effect)"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension",
+          "$description": "Text area hover box shadow spread (creates thicker border effect)"
         },
         "box-shadow-color": {
-          "value": "{dsn.text-area.border-color}",
-          "type": "color",
-          "comment": "Text area hover box shadow color"
+          "$value": "{dsn.text-area.border-color}",
+          "$type": "color",
+          "$description": "Text area hover box shadow color"
         }
       },
       "placeholder": {
         "color": {
-          "value": "{dsn.form-control.placeholder.color}",
-          "type": "color",
-          "comment": "Text area placeholder color"
+          "$value": "{dsn.form-control.placeholder.color}",
+          "$type": "color",
+          "$description": "Text area placeholder color"
         }
       },
       "invalid": {
         "background-color": {
-          "value": "{dsn.form-control.invalid.background-color}",
-          "type": "color",
-          "comment": "Text area invalid background"
+          "$value": "{dsn.form-control.invalid.background-color}",
+          "$type": "color",
+          "$description": "Text area invalid background"
         },
         "border-color": {
-          "value": "{dsn.form-control.invalid.border-color}",
-          "type": "color",
-          "comment": "Text area invalid border"
+          "$value": "{dsn.form-control.invalid.border-color}",
+          "$type": "color",
+          "$description": "Text area invalid border"
         },
         "box-shadow-x": {
-          "value": "0",
-          "type": "dimension",
-          "comment": "Text area invalid box shadow x offset"
+          "$value": "0",
+          "$type": "dimension",
+          "$description": "Text area invalid box shadow x offset"
         },
         "box-shadow-y": {
-          "value": "0",
-          "type": "dimension",
-          "comment": "Text area invalid box shadow y offset"
+          "$value": "0",
+          "$type": "dimension",
+          "$description": "Text area invalid box shadow y offset"
         },
         "box-shadow-blur": {
-          "value": "0",
-          "type": "dimension",
-          "comment": "Text area invalid box shadow blur"
+          "$value": "0",
+          "$type": "dimension",
+          "$description": "Text area invalid box shadow blur"
         },
         "box-shadow-spread": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension",
-          "comment": "Text area invalid box shadow spread (creates thicker border effect)"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension",
+          "$description": "Text area invalid box shadow spread (creates thicker border effect)"
         },
         "box-shadow-color": {
-          "value": "{dsn.text-area.invalid.border-color}",
-          "type": "color",
-          "comment": "Text area invalid box shadow color"
+          "$value": "{dsn.text-area.invalid.border-color}",
+          "$type": "color",
+          "$description": "Text area invalid box shadow color"
         },
         "color": {
-          "value": "{dsn.form-control.color}",
-          "type": "color",
-          "comment": "Text area invalid text color"
+          "$value": "{dsn.form-control.color}",
+          "$type": "color",
+          "$description": "Text area invalid text color"
         }
       },
       "read-only": {
         "background-color": {
-          "value": "{dsn.form-control.read-only.background-color}",
-          "type": "color",
-          "comment": "Text area read-only background"
+          "$value": "{dsn.form-control.read-only.background-color}",
+          "$type": "color",
+          "$description": "Text area read-only background"
         },
         "border-color": {
-          "value": "{dsn.form-control.read-only.border-color}",
-          "type": "color",
-          "comment": "Text area read-only border"
+          "$value": "{dsn.form-control.read-only.border-color}",
+          "$type": "color",
+          "$description": "Text area read-only border"
         },
         "color": {
-          "value": "{dsn.form-control.read-only.color}",
-          "type": "color",
-          "comment": "Text area read-only text color"
+          "$value": "{dsn.form-control.read-only.color}",
+          "$type": "color",
+          "$description": "Text area read-only text color"
         }
       }
     }
