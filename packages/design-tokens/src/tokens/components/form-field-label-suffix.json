@@ -2,34 +2,34 @@
   "dsn": {
     "form-field-label-suffix": {
       "color": {
-        "value": "{dsn.color.neutral.color-document}",
-        "type": "color",
-        "comment": "Form field label suffix text color"
+        "$value": "{dsn.color.neutral.color-document}",
+        "$type": "color",
+        "$description": "Form field label suffix text color"
       },
       "font-family": {
-        "value": "{dsn.text.font-family.default}",
-        "type": "fontFamily",
-        "comment": "Form field label suffix font family"
+        "$value": "{dsn.text.font-family.default}",
+        "$type": "fontFamily",
+        "$description": "Form field label suffix font family"
       },
       "font-size": {
-        "value": "{dsn.text.font-size.md}",
-        "type": "fontSize",
-        "comment": "Form field label suffix font size"
+        "$value": "{dsn.text.font-size.md}",
+        "$type": "fontSize",
+        "$description": "Form field label suffix font size"
       },
       "font-weight": {
-        "value": "{dsn.text.font-weight.default}",
-        "type": "fontWeight",
-        "comment": "Form field label suffix font weight"
+        "$value": "{dsn.text.font-weight.default}",
+        "$type": "fontWeight",
+        "$description": "Form field label suffix font weight"
       },
       "line-height": {
-        "value": "{dsn.text.line-height.md}",
-        "type": "lineHeight",
-        "comment": "Form field label suffix line height"
+        "$value": "{dsn.text.line-height.md}",
+        "$type": "lineHeight",
+        "$description": "Form field label suffix line height"
       },
       "margin-inline-start": {
-        "value": "{dsn.space.text.sm}",
-        "type": "dimension",
-        "comment": "Space between label text and suffix text"
+        "$value": "{dsn.space.text.sm}",
+        "$type": "dimension",
+        "$description": "Space between label text and suffix text"
       }
     }
   }

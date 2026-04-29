@@ -2,39 +2,39 @@
   "dsn": {
     "form-field-label": {
       "color": {
-        "value": "{dsn.color.neutral.color-document}",
-        "type": "color",
-        "comment": "Form field label text color"
+        "$value": "{dsn.color.neutral.color-document}",
+        "$type": "color",
+        "$description": "Form field label text color"
       },
       "font-family": {
-        "value": "{dsn.text.font-family.default}",
-        "type": "fontFamily",
-        "comment": "Form field label font family"
+        "$value": "{dsn.text.font-family.default}",
+        "$type": "fontFamily",
+        "$description": "Form field label font family"
       },
       "font-size": {
-        "value": "{dsn.text.font-size.md}",
-        "type": "fontSize",
-        "comment": "Form field label font size"
+        "$value": "{dsn.text.font-size.md}",
+        "$type": "fontSize",
+        "$description": "Form field label font size"
       },
       "font-weight": {
-        "value": "{dsn.text.font-weight.bold}",
-        "type": "fontWeight",
-        "comment": "Form field label font weight"
+        "$value": "{dsn.text.font-weight.bold}",
+        "$type": "fontWeight",
+        "$description": "Form field label font weight"
       },
       "line-height": {
-        "value": "{dsn.text.line-height.md}",
-        "type": "lineHeight",
-        "comment": "Form field label line height"
+        "$value": "{dsn.text.line-height.md}",
+        "$type": "lineHeight",
+        "$description": "Form field label line height"
       },
       "margin-block-end": {
-        "value": "{dsn.space.block.md}",
-        "type": "dimension",
-        "comment": "Space below label before form control (when no description follows)"
+        "$value": "{dsn.space.block.md}",
+        "$type": "dimension",
+        "$description": "Space below label before form control (when no description follows)"
       },
       "margin-block-end-with-description": {
-        "value": "{dsn.space.block.sm}",
-        "type": "dimension",
-        "comment": "Space below label when description follows"
+        "$value": "{dsn.space.block.sm}",
+        "$type": "dimension",
+        "$description": "Space below label when description follows"
       }
     }
   }

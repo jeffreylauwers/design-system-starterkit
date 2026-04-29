@@ -24,6 +24,7 @@
   "files": [
     "dist"
   ],
+  "type": "module",
   "scripts": {
     "build": "node src/config/build.js",
     "clean": "rm -rf dist",
@@ -37,6 +38,6 @@
   "author": "Jeffrey Lauwers",
   "license": "MIT",
   "devDependencies": {
-    "style-dictionary": "^3.9.2"
+    "style-dictionary": "^4.0.0"
   }
 }

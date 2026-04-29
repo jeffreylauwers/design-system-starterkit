@@ -2,616 +2,616 @@
   "dsn": {
     "button": {
       "border-radius": {
-        "value": "{dsn.border.radius.md}",
-        "type": "dimension",
-        "comment": "Button border radius"
+        "$value": "{dsn.border.radius.md}",
+        "$type": "dimension",
+        "$description": "Button border radius"
       },
       "border-width": {
-        "value": "{dsn.border.width.thin}",
-        "type": "dimension",
-        "comment": "Button border width"
+        "$value": "{dsn.border.width.thin}",
+        "$type": "dimension",
+        "$description": "Button border width"
       },
       "font-family": {
-        "value": "{dsn.text.font-family.default}",
-        "type": "fontFamily",
-        "comment": "Button font family"
+        "$value": "{dsn.text.font-family.default}",
+        "$type": "fontFamily",
+        "$description": "Button font family"
       },
       "font-weight": {
-        "value": "{dsn.text.font-weight.bold}",
-        "type": "fontWeight",
-        "comment": "Button font weight"
+        "$value": "{dsn.text.font-weight.bold}",
+        "$type": "fontWeight",
+        "$description": "Button font weight"
       },
       "line-height": {
-        "value": "{dsn.text.line-height.md}",
-        "type": "lineHeight",
-        "comment": "Button line height"
+        "$value": "{dsn.text.line-height.md}",
+        "$type": "lineHeight",
+        "$description": "Button line height"
       },
       "min-block-size": {
-        "value": "{dsn.pointer-target.min-block-size}",
-        "type": "dimension",
-        "comment": "Button minimum block size (WCAG 2.5.5 touch target)"
+        "$value": "{dsn.pointer-target.min-block-size}",
+        "$type": "dimension",
+        "$description": "Button minimum block size (WCAG 2.5.5 touch target)"
       },
       "min-inline-size": {
-        "value": "{dsn.pointer-target.min-inline-size}",
-        "type": "dimension",
-        "comment": "Button minimum inline size (WCAG 2.5.5 touch target)"
+        "$value": "{dsn.pointer-target.min-inline-size}",
+        "$type": "dimension",
+        "$description": "Button minimum inline size (WCAG 2.5.5 touch target)"
       },
       "default": {
         "background-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Default button background"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Default button background"
         },
         "border-color": {
-          "value": "{dsn.color.action-1.border-default}",
-          "type": "color",
-          "comment": "Default button border"
+          "$value": "{dsn.color.action-1.border-default}",
+          "$type": "color",
+          "$description": "Default button border"
         },
         "color": {
-          "value": "{dsn.color.action-1.color-default}",
-          "type": "color",
-          "comment": "Default button text/icon color"
+          "$value": "{dsn.color.action-1.color-default}",
+          "$type": "color",
+          "$description": "Default button text/icon color"
         },
         "active": {
           "background-color": {
-            "value": "{dsn.color.action-1.bg-active}",
-            "type": "color",
-            "comment": "Default button active background"
+            "$value": "{dsn.color.action-1.bg-active}",
+            "$type": "color",
+            "$description": "Default button active background"
           },
           "border-color": {
-            "value": "{dsn.color.action-1.border-active}",
-            "type": "color",
-            "comment": "Default button active border"
+            "$value": "{dsn.color.action-1.border-active}",
+            "$type": "color",
+            "$description": "Default button active border"
           },
           "color": {
-            "value": "{dsn.color.action-1.color-active}",
-            "type": "color",
-            "comment": "Default button active text/icon color"
+            "$value": "{dsn.color.action-1.color-active}",
+            "$type": "color",
+            "$description": "Default button active text/icon color"
           }
         },
         "hover": {
           "background-color": {
-            "value": "{dsn.color.action-1.bg-hover}",
-            "type": "color",
-            "comment": "Default button hover background"
+            "$value": "{dsn.color.action-1.bg-hover}",
+            "$type": "color",
+            "$description": "Default button hover background"
           },
           "border-color": {
-            "value": "{dsn.color.action-1.border-hover}",
-            "type": "color",
-            "comment": "Default button hover border"
+            "$value": "{dsn.color.action-1.border-hover}",
+            "$type": "color",
+            "$description": "Default button hover border"
           },
           "color": {
-            "value": "{dsn.color.action-1.color-hover}",
-            "type": "color",
-            "comment": "Default button hover text/icon color"
+            "$value": "{dsn.color.action-1.color-hover}",
+            "$type": "color",
+            "$description": "Default button hover text/icon color"
           }
         }
       },
       "default-negative": {
         "background-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Default negative button background"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Default negative button background"
         },
         "border-color": {
-          "value": "{dsn.color.negative.border-default}",
-          "type": "color",
-          "comment": "Default negative button border"
+          "$value": "{dsn.color.negative.border-default}",
+          "$type": "color",
+          "$description": "Default negative button border"
         },
         "color": {
-          "value": "{dsn.color.negative.color-default}",
-          "type": "color",
-          "comment": "Default negative button text/icon color"
+          "$value": "{dsn.color.negative.color-default}",
+          "$type": "color",
+          "$description": "Default negative button text/icon color"
         },
         "active": {
           "background-color": {
-            "value": "{dsn.color.negative.bg-active}",
-            "type": "color",
-            "comment": "Default negative button active background"
+            "$value": "{dsn.color.negative.bg-active}",
+            "$type": "color",
+            "$description": "Default negative button active background"
           },
           "border-color": {
-            "value": "{dsn.color.negative.border-active}",
-            "type": "color",
-            "comment": "Default negative button active border"
+            "$value": "{dsn.color.negative.border-active}",
+            "$type": "color",
+            "$description": "Default negative button active border"
           },
           "color": {
-            "value": "{dsn.color.negative.color-active}",
-            "type": "color",
-            "comment": "Default negative button active text/icon color"
+            "$value": "{dsn.color.negative.color-active}",
+            "$type": "color",
+            "$description": "Default negative button active text/icon color"
           }
         },
         "hover": {
           "background-color": {
-            "value": "{dsn.color.negative.bg-hover}",
-            "type": "color",
-            "comment": "Default negative button hover background"
+            "$value": "{dsn.color.negative.bg-hover}",
+            "$type": "color",
+            "$description": "Default negative button hover background"
           },
           "border-color": {
-            "value": "{dsn.color.negative.border-hover}",
-            "type": "color",
-            "comment": "Default negative button hover border"
+            "$value": "{dsn.color.negative.border-hover}",
+            "$type": "color",
+            "$description": "Default negative button hover border"
           },
           "color": {
-            "value": "{dsn.color.negative.color-hover}",
-            "type": "color",
-            "comment": "Default negative button hover text/icon color"
+            "$value": "{dsn.color.negative.color-hover}",
+            "$type": "color",
+            "$description": "Default negative button hover text/icon color"
           }
         }
       },
       "default-positive": {
         "background-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Default positive button background"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Default positive button background"
         },
         "border-color": {
-          "value": "{dsn.color.positive.border-default}",
-          "type": "color",
-          "comment": "Default positive button border"
+          "$value": "{dsn.color.positive.border-default}",
+          "$type": "color",
+          "$description": "Default positive button border"
         },
         "color": {
-          "value": "{dsn.color.positive.color-default}",
-          "type": "color",
-          "comment": "Default positive button text/icon color"
+          "$value": "{dsn.color.positive.color-default}",
+          "$type": "color",
+          "$description": "Default positive button text/icon color"
         },
         "active": {
           "background-color": {
-            "value": "{dsn.color.positive.bg-active}",
-            "type": "color",
-            "comment": "Default positive button active background"
+            "$value": "{dsn.color.positive.bg-active}",
+            "$type": "color",
+            "$description": "Default positive button active background"
           },
           "border-color": {
-            "value": "{dsn.color.positive.border-active}",
-            "type": "color",
-            "comment": "Default positive button active border"
+            "$value": "{dsn.color.positive.border-active}",
+            "$type": "color",
+            "$description": "Default positive button active border"
           },
           "color": {
-            "value": "{dsn.color.positive.color-active}",
-            "type": "color",
-            "comment": "Default positive button active text/icon color"
+            "$value": "{dsn.color.positive.color-active}",
+            "$type": "color",
+            "$description": "Default positive button active text/icon color"
           }
         },
         "hover": {
           "background-color": {
-            "value": "{dsn.color.positive.bg-hover}",
-            "type": "color",
-            "comment": "Default positive button hover background"
+            "$value": "{dsn.color.positive.bg-hover}",
+            "$type": "color",
+            "$description": "Default positive button hover background"
           },
           "border-color": {
-            "value": "{dsn.color.positive.border-hover}",
-            "type": "color",
-            "comment": "Default positive button hover border"
+            "$value": "{dsn.color.positive.border-hover}",
+            "$type": "color",
+            "$description": "Default positive button hover border"
           },
           "color": {
-            "value": "{dsn.color.positive.color-hover}",
-            "type": "color",
-            "comment": "Default positive button hover text/icon color"
+            "$value": "{dsn.color.positive.color-hover}",
+            "$type": "color",
+            "$description": "Default positive button hover text/icon color"
           }
         }
       },
       "strong": {
         "background-color": {
-          "value": "{dsn.color.action-1-inverse.bg-default}",
-          "type": "color",
-          "comment": "Strong button background"
+          "$value": "{dsn.color.action-1-inverse.bg-default}",
+          "$type": "color",
+          "$description": "Strong button background"
         },
         "border-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Strong button border"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Strong button border"
         },
         "color": {
-          "value": "{dsn.color.action-1-inverse.color-default}",
-          "type": "color",
-          "comment": "Strong button text/icon color"
+          "$value": "{dsn.color.action-1-inverse.color-default}",
+          "$type": "color",
+          "$description": "Strong button text/icon color"
         },
         "active": {
           "background-color": {
-            "value": "{dsn.color.action-1-inverse.bg-active}",
-            "type": "color",
-            "comment": "Strong button active background"
+            "$value": "{dsn.color.action-1-inverse.bg-active}",
+            "$type": "color",
+            "$description": "Strong button active background"
           },
           "border-color": {
-            "value": "{dsn.color.transparent}",
-            "type": "color",
-            "comment": "Strong button active border"
+            "$value": "{dsn.color.transparent}",
+            "$type": "color",
+            "$description": "Strong button active border"
           },
           "color": {
-            "value": "{dsn.color.action-1-inverse.color-active}",
-            "type": "color",
-            "comment": "Strong button active text/icon color"
+            "$value": "{dsn.color.action-1-inverse.color-active}",
+            "$type": "color",
+            "$description": "Strong button active text/icon color"
           }
         },
         "hover": {
           "background-color": {
-            "value": "{dsn.color.action-1-inverse.bg-hover}",
-            "type": "color",
-            "comment": "Strong button hover background"
+            "$value": "{dsn.color.action-1-inverse.bg-hover}",
+            "$type": "color",
+            "$description": "Strong button hover background"
           },
           "border-color": {
-            "value": "{dsn.color.transparent}",
-            "type": "color",
-            "comment": "Strong button hover border"
+            "$value": "{dsn.color.transparent}",
+            "$type": "color",
+            "$description": "Strong button hover border"
           },
           "color": {
-            "value": "{dsn.color.action-1-inverse.color-hover}",
-            "type": "color",
-            "comment": "Strong button hover text/icon color"
+            "$value": "{dsn.color.action-1-inverse.color-hover}",
+            "$type": "color",
+            "$description": "Strong button hover text/icon color"
           }
         }
       },
       "strong-negative": {
         "background-color": {
-          "value": "{dsn.color.negative-inverse.bg-default}",
-          "type": "color",
-          "comment": "Strong negative button background"
+          "$value": "{dsn.color.negative-inverse.bg-default}",
+          "$type": "color",
+          "$description": "Strong negative button background"
         },
         "border-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Strong negative button border"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Strong negative button border"
         },
         "color": {
-          "value": "{dsn.color.negative-inverse.color-default}",
-          "type": "color",
-          "comment": "Strong negative button text/icon color"
+          "$value": "{dsn.color.negative-inverse.color-default}",
+          "$type": "color",
+          "$description": "Strong negative button text/icon color"
         },
         "active": {
           "background-color": {
-            "value": "{dsn.color.negative-inverse.bg-active}",
-            "type": "color",
-            "comment": "Strong negative button active background"
+            "$value": "{dsn.color.negative-inverse.bg-active}",
+            "$type": "color",
+            "$description": "Strong negative button active background"
           },
           "border-color": {
-            "value": "{dsn.color.transparent}",
-            "type": "color",
-            "comment": "Strong negative button active border"
+            "$value": "{dsn.color.transparent}",
+            "$type": "color",
+            "$description": "Strong negative button active border"
           },
           "color": {
-            "value": "{dsn.color.negative-inverse.color-active}",
-            "type": "color",
-            "comment": "Strong negative button active text/icon color"
+            "$value": "{dsn.color.negative-inverse.color-active}",
+            "$type": "color",
+            "$description": "Strong negative button active text/icon color"
           }
         },
         "hover": {
           "background-color": {
-            "value": "{dsn.color.negative-inverse.bg-hover}",
-            "type": "color",
-            "comment": "Strong negative button hover background"
+            "$value": "{dsn.color.negative-inverse.bg-hover}",
+            "$type": "color",
+            "$description": "Strong negative button hover background"
           },
           "border-color": {
-            "value": "{dsn.color.transparent}",
-            "type": "color",
-            "comment": "Strong negative button hover border"
+            "$value": "{dsn.color.transparent}",
+            "$type": "color",
+            "$description": "Strong negative button hover border"
           },
           "color": {
-            "value": "{dsn.color.negative-inverse.color-hover}",
-            "type": "color",
-            "comment": "Strong negative button hover text/icon color"
+            "$value": "{dsn.color.negative-inverse.color-hover}",
+            "$type": "color",
+            "$description": "Strong negative button hover text/icon color"
           }
         }
       },
       "strong-positive": {
         "background-color": {
-          "value": "{dsn.color.positive-inverse.bg-default}",
-          "type": "color",
-          "comment": "Strong positive button background"
+          "$value": "{dsn.color.positive-inverse.bg-default}",
+          "$type": "color",
+          "$description": "Strong positive button background"
         },
         "border-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Strong positive button border"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Strong positive button border"
         },
         "color": {
-          "value": "{dsn.color.positive-inverse.color-default}",
-          "type": "color",
-          "comment": "Strong positive button text/icon color"
+          "$value": "{dsn.color.positive-inverse.color-default}",
+          "$type": "color",
+          "$description": "Strong positive button text/icon color"
         },
         "active": {
           "background-color": {
-            "value": "{dsn.color.positive-inverse.bg-active}",
-            "type": "color",
-            "comment": "Strong positive button active background"
+            "$value": "{dsn.color.positive-inverse.bg-active}",
+            "$type": "color",
+            "$description": "Strong positive button active background"
           },
           "border-color": {
-            "value": "{dsn.color.transparent}",
-            "type": "color",
-            "comment": "Strong positive button active border"
+            "$value": "{dsn.color.transparent}",
+            "$type": "color",
+            "$description": "Strong positive button active border"
           },
           "color": {
-            "value": "{dsn.color.positive-inverse.color-active}",
-            "type": "color",
-            "comment": "Strong positive button active text/icon color"
+            "$value": "{dsn.color.positive-inverse.color-active}",
+            "$type": "color",
+            "$description": "Strong positive button active text/icon color"
           }
         },
         "hover": {
           "background-color": {
-            "value": "{dsn.color.positive-inverse.bg-hover}",
-            "type": "color",
-            "comment": "Strong positive button hover background"
+            "$value": "{dsn.color.positive-inverse.bg-hover}",
+            "$type": "color",
+            "$description": "Strong positive button hover background"
           },
           "border-color": {
-            "value": "{dsn.color.transparent}",
-            "type": "color",
-            "comment": "Strong positive button hover border"
+            "$value": "{dsn.color.transparent}",
+            "$type": "color",
+            "$description": "Strong positive button hover border"
           },
           "color": {
-            "value": "{dsn.color.positive-inverse.color-hover}",
-            "type": "color",
-            "comment": "Strong positive button hover text/icon color"
+            "$value": "{dsn.color.positive-inverse.color-hover}",
+            "$type": "color",
+            "$description": "Strong positive button hover text/icon color"
           }
         }
       },
       "subtle": {
         "background-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Subtle button background"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Subtle button background"
         },
         "border-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Subtle button border"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Subtle button border"
         },
         "color": {
-          "value": "{dsn.color.action-1.color-default}",
-          "type": "color",
-          "comment": "Subtle button text/icon color"
+          "$value": "{dsn.color.action-1.color-default}",
+          "$type": "color",
+          "$description": "Subtle button text/icon color"
         },
         "active": {
           "background-color": {
-            "value": "{dsn.color.action-1.bg-active}",
-            "type": "color",
-            "comment": "Subtle button active background"
+            "$value": "{dsn.color.action-1.bg-active}",
+            "$type": "color",
+            "$description": "Subtle button active background"
           },
           "border-color": {
-            "value": "{dsn.color.transparent}",
-            "type": "color",
-            "comment": "Subtle button active border"
+            "$value": "{dsn.color.transparent}",
+            "$type": "color",
+            "$description": "Subtle button active border"
           },
           "color": {
-            "value": "{dsn.color.action-1.color-active}",
-            "type": "color",
-            "comment": "Subtle button active text/icon color"
+            "$value": "{dsn.color.action-1.color-active}",
+            "$type": "color",
+            "$description": "Subtle button active text/icon color"
           }
         },
         "hover": {
           "background-color": {
-            "value": "{dsn.color.action-1.bg-hover}",
-            "type": "color",
-            "comment": "Subtle button hover background"
+            "$value": "{dsn.color.action-1.bg-hover}",
+            "$type": "color",
+            "$description": "Subtle button hover background"
           },
           "border-color": {
-            "value": "{dsn.color.transparent}",
-            "type": "color",
-            "comment": "Subtle button hover border"
+            "$value": "{dsn.color.transparent}",
+            "$type": "color",
+            "$description": "Subtle button hover border"
           },
           "color": {
-            "value": "{dsn.color.action-1.color-hover}",
-            "type": "color",
-            "comment": "Subtle button hover text/icon color"
+            "$value": "{dsn.color.action-1.color-hover}",
+            "$type": "color",
+            "$description": "Subtle button hover text/icon color"
           }
         }
       },
       "subtle-negative": {
         "background-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Subtle negative button background"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Subtle negative button background"
         },
         "border-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Subtle negative button border"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Subtle negative button border"
         },
         "color": {
-          "value": "{dsn.color.negative.color-default}",
-          "type": "color",
-          "comment": "Subtle negative button text/icon color"
+          "$value": "{dsn.color.negative.color-default}",
+          "$type": "color",
+          "$description": "Subtle negative button text/icon color"
         },
         "active": {
           "background-color": {
-            "value": "{dsn.color.negative.bg-active}",
-            "type": "color",
-            "comment": "Subtle negative button active background"
+            "$value": "{dsn.color.negative.bg-active}",
+            "$type": "color",
+            "$description": "Subtle negative button active background"
           },
           "border-color": {
-            "value": "{dsn.color.transparent}",
-            "type": "color",
-            "comment": "Subtle negative button active border"
+            "$value": "{dsn.color.transparent}",
+            "$type": "color",
+            "$description": "Subtle negative button active border"
           },
           "color": {
-            "value": "{dsn.color.negative.color-active}",
-            "type": "color",
-            "comment": "Subtle negative button active text/icon color"
+            "$value": "{dsn.color.negative.color-active}",
+            "$type": "color",
+            "$description": "Subtle negative button active text/icon color"
           }
         },
         "hover": {
           "background-color": {
-            "value": "{dsn.color.negative.bg-hover}",
-            "type": "color",
-            "comment": "Subtle negative button hover background"
+            "$value": "{dsn.color.negative.bg-hover}",
+            "$type": "color",
+            "$description": "Subtle negative button hover background"
           },
           "border-color": {
-            "value": "{dsn.color.transparent}",
-            "type": "color",
-            "comment": "Subtle negative button hover border"
+            "$value": "{dsn.color.transparent}",
+            "$type": "color",
+            "$description": "Subtle negative button hover border"
           },
           "color": {
-            "value": "{dsn.color.negative.color-hover}",
-            "type": "color",
-            "comment": "Subtle negative button hover text/icon color"
+            "$value": "{dsn.color.negative.color-hover}",
+            "$type": "color",
+            "$description": "Subtle negative button hover text/icon color"
           }
         }
       },
       "subtle-positive": {
         "background-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Subtle positive button background"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Subtle positive button background"
         },
         "border-color": {
-          "value": "{dsn.color.transparent}",
-          "type": "color",
-          "comment": "Subtle positive button border"
+          "$value": "{dsn.color.transparent}",
+          "$type": "color",
+          "$description": "Subtle positive button border"
         },
         "color": {
-          "value": "{dsn.color.positive.color-default}",
-          "type": "color",
-          "comment": "Subtle positive button text/icon color"
+          "$value": "{dsn.color.positive.color-default}",
+          "$type": "color",
+          "$description": "Subtle positive button text/icon color"
         },
         "active": {
           "background-color": {
-            "value": "{dsn.color.positive.bg-active}",
-            "type": "color",
-            "comment": "Subtle positive button active background"
+            "$value": "{dsn.color.positive.bg-active}",
+            "$type": "color",
+            "$description": "Subtle positive button active background"
           },
           "border-color": {
-            "value": "{dsn.color.transparent}",
-            "type": "color",
-            "comment": "Subtle positive button active border"
+            "$value": "{dsn.color.transparent}",
+            "$type": "color",
+            "$description": "Subtle positive button active border"
           },
           "color": {
-            "value": "{dsn.color.positive.color-active}",
-            "type": "color",
-            "comment": "Subtle positive button active text/icon color"
+            "$value": "{dsn.color.positive.color-active}",
+            "$type": "color",
+            "$description": "Subtle positive button active text/icon color"
           }
         },
         "hover": {
           "background-color": {
-            "value": "{dsn.color.positive.bg-hover}",
-            "type": "color",
-            "comment": "Subtle positive button hover background"
+            "$value": "{dsn.color.positive.bg-hover}",
+            "$type": "color",
+            "$description": "Subtle positive button hover background"
           },
           "border-color": {
-            "value": "{dsn.color.transparent}",
-            "type": "color",
-            "comment": "Subtle positive button hover border"
+            "$value": "{dsn.color.transparent}",
+            "$type": "color",
+            "$description": "Subtle positive button hover border"
           },
           "color": {
-            "value": "{dsn.color.positive.color-hover}",
-            "type": "color",
-            "comment": "Subtle positive button hover text/icon color"
+            "$value": "{dsn.color.positive.color-hover}",
+            "$type": "color",
+            "$description": "Subtle positive button hover text/icon color"
           }
         }
       },
       "disabled": {
         "background-color": {
-          "value": "{dsn.color.neutral.bg-subtle}",
-          "type": "color",
-          "comment": "Disabled button background — neutral scale, variant-independent"
+          "$value": "{dsn.color.neutral.bg-subtle}",
+          "$type": "color",
+          "$description": "Disabled button background — neutral scale, variant-independent"
         },
         "color": {
-          "value": "{dsn.color.neutral.color-subtle}",
-          "type": "color",
-          "comment": "Disabled button text/icon color — neutral scale, variant-independent"
+          "$value": "{dsn.color.neutral.color-subtle}",
+          "$type": "color",
+          "$description": "Disabled button text/icon color — neutral scale, variant-independent"
         },
         "border-color": {
-          "value": "{dsn.color.neutral.border-subtle}",
-          "type": "color",
-          "comment": "Disabled button border color — neutral scale, variant-independent"
+          "$value": "{dsn.color.neutral.border-subtle}",
+          "$type": "color",
+          "$description": "Disabled button border color — neutral scale, variant-independent"
         }
       },
       "size": {
         "default": {
           "font-size": {
-            "value": "{dsn.text.font-size.md}",
-            "type": "dimension",
-            "comment": "Default button font size"
+            "$value": "{dsn.text.font-size.md}",
+            "$type": "dimension",
+            "$description": "Default button font size"
           },
           "gap": {
-            "value": "{dsn.space.text.sm}",
-            "type": "dimension",
-            "comment": "Default button gap between icon and text"
+            "$value": "{dsn.space.text.sm}",
+            "$type": "dimension",
+            "$description": "Default button gap between icon and text"
           },
           "icon-only-padding": {
-            "value": "{dsn.space.block.md}",
-            "type": "dimension",
-            "comment": "Default button icon-only padding"
+            "$value": "{dsn.space.block.md}",
+            "$type": "dimension",
+            "$description": "Default button icon-only padding"
           },
           "icon-size": {
-            "value": "{dsn.icon.size.md}",
-            "type": "dimension",
-            "comment": "Default button icon size"
+            "$value": "{dsn.icon.size.md}",
+            "$type": "dimension",
+            "$description": "Default button icon size"
           },
           "padding-block": {
-            "value": "{dsn.space.block.md}",
-            "type": "dimension",
-            "comment": "Default button vertical padding"
+            "$value": "{dsn.space.block.md}",
+            "$type": "dimension",
+            "$description": "Default button vertical padding"
           },
           "padding-inline": {
-            "value": "{dsn.space.inline.xl}",
-            "type": "dimension",
-            "comment": "Default button horizontal padding"
+            "$value": "{dsn.space.inline.xl}",
+            "$type": "dimension",
+            "$description": "Default button horizontal padding"
           }
         },
         "large": {
           "font-size": {
-            "value": "{dsn.text.font-size.lg}",
-            "type": "dimension",
-            "comment": "Large button font size"
+            "$value": "{dsn.text.font-size.lg}",
+            "$type": "dimension",
+            "$description": "Large button font size"
           },
           "gap": {
-            "value": "{dsn.space.text.md}",
-            "type": "dimension",
-            "comment": "Large button gap between icon and text"
+            "$value": "{dsn.space.text.md}",
+            "$type": "dimension",
+            "$description": "Large button gap between icon and text"
           },
           "icon-only-padding": {
-            "value": "{dsn.space.block.lg}",
-            "type": "dimension",
-            "comment": "Large button icon-only padding"
+            "$value": "{dsn.space.block.lg}",
+            "$type": "dimension",
+            "$description": "Large button icon-only padding"
           },
           "icon-size": {
-            "value": "{dsn.icon.size.lg}",
-            "type": "dimension",
-            "comment": "Large button icon size"
+            "$value": "{dsn.icon.size.lg}",
+            "$type": "dimension",
+            "$description": "Large button icon size"
           },
           "padding-block": {
-            "value": "{dsn.space.block.lg}",
-            "type": "dimension",
-            "comment": "Large button vertical padding"
+            "$value": "{dsn.space.block.lg}",
+            "$type": "dimension",
+            "$description": "Large button vertical padding"
           },
           "padding-inline": {
-            "value": "{dsn.space.inline.2xl}",
-            "type": "dimension",
-            "comment": "Large button horizontal padding"
+            "$value": "{dsn.space.inline.2xl}",
+            "$type": "dimension",
+            "$description": "Large button horizontal padding"
           }
         },
         "small": {
           "font-size": {
-            "value": "{dsn.text.font-size.sm}",
-            "type": "dimension",
-            "comment": "Small button font size"
+            "$value": "{dsn.text.font-size.sm}",
+            "$type": "dimension",
+            "$description": "Small button font size"
           },
           "gap": {
-            "value": "{dsn.space.text.sm}",
-            "type": "dimension",
-            "comment": "Small button gap between icon and text"
+            "$value": "{dsn.space.text.sm}",
+            "$type": "dimension",
+            "$description": "Small button gap between icon and text"
           },
           "icon-only-padding": {
-            "value": "{dsn.space.block.sm}",
-            "type": "dimension",
-            "comment": "Small button icon-only padding"
+            "$value": "{dsn.space.block.sm}",
+            "$type": "dimension",
+            "$description": "Small button icon-only padding"
           },
           "icon-size": {
-            "value": "{dsn.icon.size.sm}",
-            "type": "dimension",
-            "comment": "Small button icon size"
+            "$value": "{dsn.icon.size.sm}",
+            "$type": "dimension",
+            "$description": "Small button icon size"
           },
           "min-block-size": {
-            "value": "2.5rem",
-            "type": "dimension",
-            "comment": "Small button minimum block size (reduced touch target — 40px)"
+            "$value": "2.5rem",
+            "$type": "dimension",
+            "$description": "Small button minimum block size (reduced touch target — 40px)"
           },
           "padding-block": {
-            "value": "{dsn.space.block.sm}",
-            "type": "dimension",
-            "comment": "Small button vertical padding"
+            "$value": "{dsn.space.block.sm}",
+            "$type": "dimension",
+            "$description": "Small button vertical padding"
           },
           "padding-inline": {
-            "value": "{dsn.space.inline.lg}",
-            "type": "dimension",
-            "comment": "Small button horizontal padding"
+            "$value": "{dsn.space.inline.lg}",
+            "$type": "dimension",
+            "$description": "Small button horizontal padding"
           }
         }
       }

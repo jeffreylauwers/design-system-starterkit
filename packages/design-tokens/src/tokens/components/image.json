@@ -2,30 +2,30 @@
   "dsn": {
     "image": {
       "border-radius": {
-        "value": "{dsn.border.radius.md}",
-        "type": "dimension",
-        "comment": "Afgeronde hoeken van de afbeelding"
+        "$value": "{dsn.border.radius.md}",
+        "$type": "dimension",
+        "$description": "Afgeronde hoeken van de afbeelding"
       },
       "caption": {
         "color": {
-          "value": "{dsn.color.neutral.color-subtle}",
-          "type": "color",
-          "comment": "Gedempte kleur voor bijschrift — bewust minder prominent dan bodytekst"
+          "$value": "{dsn.color.neutral.color-subtle}",
+          "$type": "color",
+          "$description": "Gedempte kleur voor bijschrift — bewust minder prominent dan bodytekst"
         },
         "font-size": {
-          "value": "{dsn.text.font-size.sm}",
-          "type": "dimension",
-          "comment": "Iets kleiner dan bodytekst om hiërarchie te markeren"
+          "$value": "{dsn.text.font-size.sm}",
+          "$type": "dimension",
+          "$description": "Iets kleiner dan bodytekst om hiërarchie te markeren"
         },
         "line-height": {
-          "value": "{dsn.text.line-height.sm}",
-          "type": "lineHeight",
-          "comment": "Compacte regelafstand passend bij kleine tekst — consistent met font-size.sm"
+          "$value": "{dsn.text.line-height.sm}",
+          "$type": "lineHeight",
+          "$description": "Compacte regelafstand passend bij kleine tekst — consistent met font-size.sm"
         },
         "margin-block-start": {
-          "value": "{dsn.space.row.sm}",
-          "type": "dimension",
-          "comment": "Kleine ademruimte tussen afbeelding en bijschrift"
+          "$value": "{dsn.space.row.sm}",
+          "$type": "dimension",
+          "$description": "Kleine ademruimte tussen afbeelding en bijschrift"
         }
       }
     }

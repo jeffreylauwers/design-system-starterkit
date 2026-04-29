@@ -2,14 +2,14 @@
   "dsn": {
     "action-group": {
       "column-gap": {
-        "value": "{dsn.space.inline.lg}",
-        "type": "dimension",
-        "comment": "Horizontal gap between actions in horizontal direction"
+        "$value": "{dsn.space.inline.lg}",
+        "$type": "dimension",
+        "$description": "Horizontal gap between actions in horizontal direction"
       },
       "row-gap": {
-        "value": "{dsn.space.row.lg}",
-        "type": "dimension",
-        "comment": "Vertical gap between wrapped rows in horizontal direction"
+        "$value": "{dsn.space.row.lg}",
+        "$type": "dimension",
+        "$description": "Vertical gap between wrapped rows in horizontal direction"
       }
     }
   }

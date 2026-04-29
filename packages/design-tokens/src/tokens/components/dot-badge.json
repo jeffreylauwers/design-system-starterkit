@@ -2,28 +2,28 @@
   "dsn": {
     "dot-badge": {
       "size": {
-        "value": "0.5rem",
-        "type": "dimension",
-        "comment": "Diameter van de dot (8px)"
+        "$value": "0.5rem",
+        "$type": "dimension",
+        "$description": "Diameter van de dot (8px)"
       },
       "inset-block-start": {
-        "value": "0.25rem",
-        "type": "dimension",
-        "comment": "Verticale offset — dot zit 0.25rem binnen de bovenrand van de parent"
+        "$value": "0.25rem",
+        "$type": "dimension",
+        "$description": "Verticale offset — dot zit 0.25rem binnen de bovenrand van de parent"
       },
       "inset-inline-end": {
-        "value": "0.25rem",
-        "type": "dimension",
-        "comment": "Horizontale offset — dot zit 0.25rem binnen de rechterrand van de parent"
+        "$value": "0.25rem",
+        "$type": "dimension",
+        "$description": "Horizontale offset — dot zit 0.25rem binnen de rechterrand van de parent"
       },
       "pulse-duration": {
-        "value": "1500ms",
-        "type": "duration",
-        "comment": "Duur van de pulse-animatie — bewust hoger dan transition.duration.slower (500ms): dit is een herhalende ambient animatie, geen UI-transition"
+        "$value": "1500ms",
+        "$type": "duration",
+        "$description": "Duur van de pulse-animatie — bewust hoger dan transition.duration.slower (500ms): dit is een herhalende ambient animatie, geen UI-transition"
       },
       "pulse-easing": {
-        "value": "{dsn.transition.easing.default}",
-        "comment": "Easing van de pulse-animatie"
+        "$value": "{dsn.transition.easing.default}",
+        "$description": "Easing van de pulse-animatie"
       }
     }
   }

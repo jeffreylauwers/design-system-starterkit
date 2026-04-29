@@ -2,19 +2,19 @@
   "dsn": {
     "backdrop": {
       "opacity": {
-        "value": "50%",
-        "type": "opacity",
-        "comment": "Bepaalt hoe doorzichtig de overlay is — gebruikt in color-mix()"
+        "$value": "50%",
+        "$type": "opacity",
+        "$description": "Bepaalt hoe doorzichtig de overlay is — gebruikt in color-mix()"
       },
       "blur": {
-        "value": "4px",
-        "type": "dimension",
-        "comment": "backdrop-filter: blur() op de overlay — valt gracefully weg zonder support"
+        "$value": "4px",
+        "$type": "dimension",
+        "$description": "backdrop-filter: blur() op de overlay — valt gracefully weg zonder support"
       },
       "z-index": {
-        "value": "400",
-        "type": "number",
-        "comment": "Z-index schaal: backdrop (400) → modal-dialog/drawer (500) → skip-link (600)"
+        "$value": "400",
+        "$type": "number",
+        "$description": "Z-index schaal: backdrop (400) → modal-dialog/drawer (500) → skip-link (600)"
       }
     }
   }

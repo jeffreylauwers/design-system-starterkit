@@ -3,14 +3,14 @@
     "logo": {
       "color": {
         "primary": {
-          "value": "{dsn.color.accent-1-inverse.bg-default}",
-          "type": "color",
-          "comment": "Achtergrondrechthoek en letterpaden — de merkkleur van het actieve thema."
+          "$value": "{dsn.color.accent-1-inverse.bg-default}",
+          "$type": "color",
+          "$description": "Achtergrondrechthoek en letterpaden — de merkkleur van het actieve thema."
         },
         "label": {
-          "value": "{dsn.color.neutral.bg-document}",
-          "type": "color",
-          "comment": "Binnenste rechthoek — zelfde kleur als de documentachtergrond, zodat de letters als doorkijkjes werken."
+          "$value": "{dsn.color.neutral.bg-document}",
+          "$type": "color",
+          "$description": "Binnenste rechthoek — zelfde kleur als de documentachtergrond, zodat de letters als doorkijkjes werken."
         }
       }
     }

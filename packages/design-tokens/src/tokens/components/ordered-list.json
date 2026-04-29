@@ -2,49 +2,49 @@
   "dsn": {
     "ordered-list": {
       "color": {
-        "value": "{dsn.color.neutral.color-document}",
-        "type": "color",
-        "comment": "Ordered list text color"
+        "$value": "{dsn.color.neutral.color-document}",
+        "$type": "color",
+        "$description": "Ordered list text color"
       },
       "font-family": {
-        "value": "{dsn.text.font-family.default}",
-        "type": "fontFamily",
-        "comment": "Ordered list font family"
+        "$value": "{dsn.text.font-family.default}",
+        "$type": "fontFamily",
+        "$description": "Ordered list font family"
       },
       "font-size": {
-        "value": "{dsn.text.font-size.md}",
-        "type": "fontSize",
-        "comment": "Ordered list font size"
+        "$value": "{dsn.text.font-size.md}",
+        "$type": "fontSize",
+        "$description": "Ordered list font size"
       },
       "font-weight": {
-        "value": "{dsn.text.font-weight.default}",
-        "type": "fontWeight",
-        "comment": "Ordered list font weight"
+        "$value": "{dsn.text.font-weight.default}",
+        "$type": "fontWeight",
+        "$description": "Ordered list font weight"
       },
       "gap": {
-        "value": "{dsn.space.row.sm}",
-        "type": "spacing",
-        "comment": "Space between list items"
+        "$value": "{dsn.space.row.sm}",
+        "$type": "spacing",
+        "$description": "Space between list items"
       },
       "line-height": {
-        "value": "{dsn.text.line-height.md}",
-        "type": "lineHeight",
-        "comment": "Ordered list line height"
+        "$value": "{dsn.text.line-height.md}",
+        "$type": "lineHeight",
+        "$description": "Ordered list line height"
       },
       "margin-block-end": {
-        "value": "{dsn.space.row.lg}",
-        "type": "spacing",
-        "comment": "Ordered list bottom margin"
+        "$value": "{dsn.space.row.lg}",
+        "$type": "spacing",
+        "$description": "Ordered list bottom margin"
       },
       "marker-color": {
-        "value": "{dsn.color.neutral.color-document}",
-        "type": "color",
-        "comment": "Number marker color"
+        "$value": "{dsn.color.neutral.color-document}",
+        "$type": "color",
+        "$description": "Number marker color"
       },
       "padding-inline-start": {
-        "value": "{dsn.space.inline.3xl}",
-        "type": "spacing",
-        "comment": "Ordered list left indentation"
+        "$value": "{dsn.space.inline.3xl}",
+        "$type": "spacing",
+        "$description": "Ordered list left indentation"
       }
     }
   }

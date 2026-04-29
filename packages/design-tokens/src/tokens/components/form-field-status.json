@@ -2,54 +2,54 @@
   "dsn": {
     "form-field-status": {
       "color": {
-        "value": "{dsn.color.neutral.color-subtle}",
-        "type": "color",
-        "comment": "Form field status text color (subtle for non-critical info)"
+        "$value": "{dsn.color.neutral.color-subtle}",
+        "$type": "color",
+        "$description": "Form field status text color (subtle for non-critical info)"
       },
       "font-family": {
-        "value": "{dsn.text.font-family.default}",
-        "type": "fontFamily",
-        "comment": "Form field status font family"
+        "$value": "{dsn.text.font-family.default}",
+        "$type": "fontFamily",
+        "$description": "Form field status font family"
       },
       "font-size": {
-        "value": "{dsn.text.font-size.md}",
-        "type": "fontSize",
-        "comment": "Form field status font size"
+        "$value": "{dsn.text.font-size.md}",
+        "$type": "fontSize",
+        "$description": "Form field status font size"
       },
       "font-weight": {
-        "value": "{dsn.text.font-weight.default}",
-        "type": "fontWeight",
-        "comment": "Form field status font weight"
+        "$value": "{dsn.text.font-weight.default}",
+        "$type": "fontWeight",
+        "$description": "Form field status font weight"
       },
       "gap": {
-        "value": "{dsn.space.text.sm}",
-        "type": "dimension",
-        "comment": "Gap between icon and text (positive and warning variants)"
+        "$value": "{dsn.space.text.sm}",
+        "$type": "dimension",
+        "$description": "Gap between icon and text (positive and warning variants)"
       },
       "icon-size": {
-        "value": "{dsn.icon.size.md}",
-        "type": "dimension",
-        "comment": "Icon size for positive and warning variants"
+        "$value": "{dsn.icon.size.md}",
+        "$type": "dimension",
+        "$description": "Icon size for positive and warning variants"
       },
       "line-height": {
-        "value": "{dsn.text.line-height.md}",
-        "type": "lineHeight",
-        "comment": "Form field status line height"
+        "$value": "{dsn.text.line-height.md}",
+        "$type": "lineHeight",
+        "$description": "Form field status line height"
       },
       "margin-block-start": {
-        "value": "{dsn.space.block.md}",
-        "type": "dimension",
-        "comment": "Space above status message after form control"
+        "$value": "{dsn.space.block.md}",
+        "$type": "dimension",
+        "$description": "Space above status message after form control"
       },
       "positive-color": {
-        "value": "{dsn.color.positive.color-default}",
-        "type": "color",
-        "comment": "Text color for positive variant"
+        "$value": "{dsn.color.positive.color-default}",
+        "$type": "color",
+        "$description": "Text color for positive variant"
       },
       "warning-color": {
-        "value": "{dsn.color.warning.color-default}",
-        "type": "color",
-        "comment": "Text color for warning variant"
+        "$value": "{dsn.color.warning.color-default}",
+        "$type": "color",
+        "$description": "Text color for warning variant"
       }
     }
   }

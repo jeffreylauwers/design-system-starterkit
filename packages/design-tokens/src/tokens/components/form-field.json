@@ -2,30 +2,30 @@
   "dsn": {
     "form-field": {
       "margin-block-end": {
-        "value": "0px",
-        "type": "dimension",
-        "comment": "Bottom margin of form field container"
+        "$value": "0px",
+        "$type": "dimension",
+        "$description": "Bottom margin of form field container"
       },
       "margin-block-start": {
-        "value": "0px",
-        "type": "dimension",
-        "comment": "Top margin of form field container"
+        "$value": "0px",
+        "$type": "dimension",
+        "$description": "Top margin of form field container"
       },
       "invalid": {
         "border-inline-start-color": {
-          "value": "{dsn.color.negative.border-default}",
-          "type": "color",
-          "comment": "Left border color for invalid form fields"
+          "$value": "{dsn.color.negative.border-default}",
+          "$type": "color",
+          "$description": "Left border color for invalid form fields"
         },
         "border-inline-start-width": {
-          "value": "{dsn.border.width.medium}",
-          "type": "dimension",
-          "comment": "Left border width for invalid form fields"
+          "$value": "{dsn.border.width.medium}",
+          "$type": "dimension",
+          "$description": "Left border width for invalid form fields"
         },
         "padding-inline-start": {
-          "value": "{dsn.space.inline.xl}",
-          "type": "dimension",
-          "comment": "Left padding for invalid form fields (to accommodate border)"
+          "$value": "{dsn.space.inline.xl}",
+          "$type": "dimension",
+          "$description": "Left padding for invalid form fields (to accommodate border)"
         }
       }
     }

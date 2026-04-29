@@ -2,110 +2,110 @@
   "dsn": {
     "page-header": {
       "background-color": {
-        "value": "{dsn.color.neutral.bg-document}",
-        "type": "color",
-        "comment": "Achtergrondkleur van de PageHeader — zelfde als pagina-achtergrond; de border-block-end doet het visuele scheidingswerk"
+        "$value": "{dsn.color.neutral.bg-document}",
+        "$type": "color",
+        "$description": "Achtergrondkleur van de PageHeader — zelfde als pagina-achtergrond; de border-block-end doet het visuele scheidingswerk"
       },
       "border-block-end-width": {
-        "value": "{dsn.border.width.thick}",
-        "type": "dimension",
-        "comment": "Breedte van de onderkantrand (4px) — duidelijke visuele scheiding in lijn met overheids design system-patronen"
+        "$value": "{dsn.border.width.thick}",
+        "$type": "dimension",
+        "$description": "Breedte van de onderkantrand (4px) — duidelijke visuele scheiding in lijn met overheids design system-patronen"
       },
       "border-block-end-color": {
-        "value": "{dsn.color.accent-1.color-default}",
-        "type": "color",
-        "comment": "Kleur van de onderkantrand — merkkleur die de header verankert aan het accent-1 palet"
+        "$value": "{dsn.color.accent-1.color-default}",
+        "$type": "color",
+        "$description": "Kleur van de onderkantrand — merkkleur die de header verankert aan het accent-1 palet"
       },
       "padding-block": {
-        "value": "{dsn.space.block.md}",
-        "type": "spacing",
-        "comment": "Verticale padding van de header-binnenbalk"
+        "$value": "{dsn.space.block.md}",
+        "$type": "spacing",
+        "$description": "Verticale padding van de header-binnenbalk"
       },
       "padding-inline": {
-        "value": "{dsn.space.inline.xl}",
-        "type": "spacing",
-        "comment": "Horizontale padding van de header-binnenbalk — zelfde schaal als masthead en navbar"
+        "$value": "{dsn.space.inline.xl}",
+        "$type": "spacing",
+        "$description": "Horizontale padding van de header-binnenbalk — zelfde schaal als masthead en navbar"
       },
       "z-index": {
-        "value": "300",
-        "type": "number",
-        "comment": "Z-index voor sticky/auto-hide gedrag — bewust lager dan backdrop (400) zodat Drawer/Modal-backdrop over de header schuift"
+        "$value": "300",
+        "$type": "number",
+        "$description": "Z-index voor sticky/auto-hide gedrag — bewust lager dan backdrop (400) zodat Drawer/Modal-backdrop over de header schuift"
       },
       "logo": {
         "max-block-size": {
-          "value": "2rem",
-          "type": "dimension",
-          "comment": "Maximale hoogte van het logo in de PageHeader op mobile (32px). Breedte schaalt automatisch via inline-size: auto. White-label: overschrijf dit token per thema voor andere logo-proporties."
+          "$value": "2rem",
+          "$type": "dimension",
+          "$description": "Maximale hoogte van het logo in de PageHeader op mobile (32px). Breedte schaalt automatisch via inline-size: auto. White-label: overschrijf dit token per thema voor andere logo-proporties."
         }
       },
       "masthead": {
         "background-color": {
-          "value": "{dsn.color.neutral.bg-document}",
-          "type": "color",
-          "comment": "Masthead achtergrond — zelfde neutrale kleur als pagina-achtergrond"
+          "$value": "{dsn.color.neutral.bg-document}",
+          "$type": "color",
+          "$description": "Masthead achtergrond — zelfde neutrale kleur als pagina-achtergrond"
         },
         "padding-block": {
-          "value": "{dsn.space.block.xl}",
-          "type": "spacing",
-          "comment": "Verticale ademruimte in de masthead"
+          "$value": "{dsn.space.block.xl}",
+          "$type": "spacing",
+          "$description": "Verticale ademruimte in de masthead"
         },
         "padding-inline": {
-          "value": "{dsn.space.inline.xl}",
-          "type": "spacing",
-          "comment": "Horizontale padding masthead — zelfde als navbar"
+          "$value": "{dsn.space.inline.xl}",
+          "$type": "spacing",
+          "$description": "Horizontale padding masthead — zelfde als navbar"
         }
       },
       "navbar": {
         "background-color": {
-          "value": "{dsn.color.accent-1.bg-default}",
-          "type": "color",
-          "comment": "Navigatiebalk achtergrond — merkkleur accent-1"
+          "$value": "{dsn.color.accent-1.bg-default}",
+          "$type": "color",
+          "$description": "Navigatiebalk achtergrond — merkkleur accent-1"
         },
         "padding-inline": {
-          "value": "{dsn.space.inline.xl}",
-          "type": "spacing",
-          "comment": "Horizontale padding navigatiebalk — zelfde als masthead"
+          "$value": "{dsn.space.inline.xl}",
+          "$type": "spacing",
+          "$description": "Horizontale padding navigatiebalk — zelfde als masthead"
         }
       },
       "secondary-nav": {
         "gap": {
-          "value": "{dsn.space.column.3xl}",
-          "type": "spacing",
-          "comment": "Witruimte tussen servicemenu (Menu) en zoekveld in de masthead"
+          "$value": "{dsn.space.column.3xl}",
+          "$type": "spacing",
+          "$description": "Witruimte tussen servicemenu (Menu) en zoekveld in de masthead"
         }
       },
       "search-panel": {
         "background-color": {
-          "value": "{dsn.color.accent-1.bg-default}",
-          "type": "color",
-          "comment": "Achtergrondkleur van het zoekpaneel — merkkleur voor branding"
+          "$value": "{dsn.color.accent-1.bg-default}",
+          "$type": "color",
+          "$description": "Achtergrondkleur van het zoekpaneel — merkkleur voor branding"
         },
         "padding-block": {
-          "value": "{dsn.space.block.md}",
-          "type": "spacing",
-          "comment": "Verticale padding van het zoekpaneel"
+          "$value": "{dsn.space.block.md}",
+          "$type": "spacing",
+          "$description": "Verticale padding van het zoekpaneel"
         },
         "padding-inline": {
-          "value": "{dsn.space.inline.xl}",
-          "type": "spacing",
-          "comment": "Horizontale padding van het zoekpaneel"
+          "$value": "{dsn.space.inline.xl}",
+          "$type": "spacing",
+          "$description": "Horizontale padding van het zoekpaneel"
         }
       },
       "compact": {
         "background-color": {
-          "value": "{dsn.color.neutral.bg-document}",
-          "type": "color",
-          "comment": "Achtergrond van de compacte balk — zelfde neutrale kleur als masthead; de primaire navigatie staat hier direct naast het logo zonder aparte navbar"
+          "$value": "{dsn.color.neutral.bg-document}",
+          "$type": "color",
+          "$description": "Achtergrond van de compacte balk — zelfde neutrale kleur als masthead; de primaire navigatie staat hier direct naast het logo zonder aparte navbar"
         },
         "padding-block": {
-          "value": "{dsn.space.block.xl}",
-          "type": "spacing",
-          "comment": "Verticale ademruimte in de compacte balk — zelfde schaal als masthead"
+          "$value": "{dsn.space.block.xl}",
+          "$type": "spacing",
+          "$description": "Verticale ademruimte in de compacte balk — zelfde schaal als masthead"
         },
         "padding-inline": {
-          "value": "{dsn.space.inline.xl}",
-          "type": "spacing",
-          "comment": "Horizontale padding van de compacte balk — zelfde schaal als masthead en navbar"
+          "$value": "{dsn.space.inline.xl}",
+          "$type": "spacing",
+          "$description": "Horizontale padding van de compacte balk — zelfde schaal als masthead en navbar"
         }
       }
     }
