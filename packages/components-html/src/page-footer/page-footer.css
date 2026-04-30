@@ -51,6 +51,11 @@
   inline-size: auto;
 }
 
+/* Logo-link display — inline <a> rond een block SVG fragmenteert de focus ring */
+.dsn-page-footer a:not(.dsn-link) {
+  display: inline-block;
+}
+
 /* =============================================================================
    Grid slot-gap — verticale ruimte tussen gestapelde slots op small viewport.
    Op large viewport (4 kolommen naast elkaar) is row-gap visueel niet storend.

@@ -81,6 +81,9 @@ button {
   outline: var(--dsn-focus-outline-width) var(--dsn-focus-outline-style)
     var(--dsn-focus-outline-color);
   outline-offset: var(--dsn-focus-outline-offset);
+  box-shadow: 0 0 0
+    calc(var(--dsn-focus-outline-offset) + var(--dsn-focus-outline-width))
+    var(--dsn-focus-inverse-outline-color);
 }
 
 /* Remove focus outline for mouse users */
