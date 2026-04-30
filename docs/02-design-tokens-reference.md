@@ -1,6 +1,6 @@
 # Design Tokens Reference
 
-**Last Updated:** March 15, 2026
+**Last Updated:** April 30, 2026
 
 Complete reference for all design tokens in the Design System Starter Kit.
 
@@ -15,6 +15,7 @@ Complete reference for all design tokens in the Design System Starter Kit.
 5. [Borders](#borders)
 6. [Focus States](#focus-states)
 7. [Motion](#motion)
+8. [Breakpoints](#breakpoints)
 
 ---
 
@@ -170,6 +171,29 @@ Icon sizes scale fluidly with the viewport because they reference the fluid `cla
 - **min-block-size:** 3rem (48px)
 - **min-inline-size:** 3rem (48px)
 - **Rationale:** WCAG 2.5.5 Target Size compliance
+
+### Content Sizing
+
+Maximum width constraints for page layout and readable text lines.
+
+| Token                      | CSS Variable                 | Value | Purpose                                            |
+| -------------------------- | ---------------------------- | ----- | -------------------------------------------------- |
+| `dsn.page.max-inline-size` | `--dsn-page-max-inline-size` | 75rem | Maximum content width within page-level components |
+| `dsn.text.max-inline-size` | `--dsn-text-max-inline-size` | 65ch  | Maximum line length for readable body text         |
+
+### Form Control Sizing
+
+Width presets based on expected character count, and a default maximum width cap.
+
+| Token                              | CSS Variable                         | Value | Purpose                                      |
+| ---------------------------------- | ------------------------------------ | ----- | -------------------------------------------- |
+| `dsn.form-control.max-inline-size` | `--dsn-form-control-max-inline-size` | 25rem | Default maximum width when no preset applies |
+| `dsn.form-control.width.xs`        | `--dsn-form-control-width-xs`        | 10ch  | Very short inputs (postal code, year, CVV)   |
+| `dsn.form-control.width.sm`        | `--dsn-form-control-width-sm`        | 14ch  | Short inputs (time HH:MM, short codes)       |
+| `dsn.form-control.width.md`        | `--dsn-form-control-width-md`        | 20ch  | Medium inputs (date, phone number)           |
+| `dsn.form-control.width.lg`        | `--dsn-form-control-width-lg`        | 32ch  | Standard inputs (name, email) — default      |
+| `dsn.form-control.width.xl`        | `--dsn-form-control-width-xl`        | 48ch  | Longer inputs (URL)                          |
+| `dsn.form-control.width.full`      | `--dsn-form-control-width-full`      | 100%  | Full width, responsive to container          |
 
 ---
 
@@ -355,12 +379,25 @@ Five semantic easing curves for consistent motion feel.
 
 ## Token Statistics
 
-**Total Tokens (as of v4.9.0):**
+**Total Tokens (as of v5.32.0):**
 
-- Semantic tokens: ~400 per configuration
-- Component tokens: ~700 (30 component JSON files: 9 content + 3 display/feedback + 25 form, incl. variant kleur-tokens Alert/Note/StatusBadge)
+- Semantic tokens: ~420 per configuration (incl. content sizing, form control sizing, breakpoints)
+- Component tokens: ~700 (component JSON files per categorie: layout, content, display/feedback, navigation, branding, form)
 - **Total: ~1100+ tokens per full configuration**
 - **Total configurations: 8** (2 themes × 2 modes × 2 project types)
+
+---
+
+## Breakpoints
+
+Reference breakpoints for responsive design. Available as CSS custom properties for JavaScript use, but **cannot be used inside CSS `@media` rules** — browsers do not resolve custom properties in media queries. Use the hardcoded `em` values directly in CSS.
+
+| Token               | CSS Variable          | Value | Approx. px |
+| ------------------- | --------------------- | ----- | ---------- |
+| `dsn.breakpoint.sm` | `--dsn-breakpoint-sm` | 36em  | ~576px     |
+| `dsn.breakpoint.md` | `--dsn-breakpoint-md` | 44em  | ~704px     |
+| `dsn.breakpoint.lg` | `--dsn-breakpoint-lg` | 64em  | ~1024px    |
+| `dsn.breakpoint.xl` | `--dsn-breakpoint-xl` | 74em  | ~1184px    |
 
 ---
 

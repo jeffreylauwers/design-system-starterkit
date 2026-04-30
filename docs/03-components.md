@@ -2999,15 +2999,15 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 52
+**Total Components:** 65
 
 **Implementations:**
 
-- **HTML/CSS:** 52 components
-- **React:** 52 components (1380 tests total, 70 test suites)
+- **HTML/CSS:** 65 components
+- **React:** 65 components (1409 tests total, 70 test suites)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
-**Test Coverage:** 1380 tests across 70 test suites
+**Test Coverage:** 1409 tests across 70 test suites
 
 ---
 
