@@ -50,6 +50,11 @@
           "$value": "1.1",
           "$description": "110% line height for hero text"
         }
+      },
+      "max-inline-size": {
+        "$value": "65ch",
+        "$type": "sizing",
+        "$description": "Maximum line length for readable body text (paragraphs, lists)"
       }
     },
     "heading": {
