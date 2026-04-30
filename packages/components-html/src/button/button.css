@@ -6,6 +6,7 @@
 .dsn-button {
   /* Reset */
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
   justify-content: center;
   position: relative; /* Ankerpunt voor DotBadge */

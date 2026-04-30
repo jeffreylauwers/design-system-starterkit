@@ -6,6 +6,7 @@
 .dsn-link {
   /* Layout */
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
   gap: var(--dsn-link-gap);
   position: relative; /* Ankerpunt voor DotBadge */
