@@ -6,6 +6,49 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.32.0 (April 30, 2026)
+
+### Design Tokens: overzichtspagina uitgebreid met ontbrekende semantische tokens
+
+#### Added
+
+- **Content Sizing** tokens gedocumenteerd in Storybook Design Tokens overzicht:
+  - `--dsn-page-max-inline-size` (75rem): maximale inhoudsbreedte voor page-level componenten
+  - `--dsn-text-max-inline-size` (65ch): maximale regellengte voor leesbare bodytekst
+- **Form Control Sizing** tokens gedocumenteerd: `--dsn-form-control-max-inline-size` (25rem) en zes breedte-presets `xs`–`full` (10ch–100%)
+- **Breakpoints** gedocumenteerd als referentie-sectie: `sm` (36em), `md` (44em), `lg` (64em), `xl` (74em), met toelichting dat ze niet bruikbaar zijn in CSS `@media`-regels
+- `docs/02-design-tokens-reference.md` bijgewerkt met Content Sizing, Form Control Sizing en Breakpoints secties
+
+---
+
+## Version 5.31.0 (April 30, 2026)
+
+### Form flow templates + focus ring fixes + aria-label hernamingen
+
+#### Added
+
+- **FormIntroductionPage template** (issue #198, PR #218): introductietemplate voor meerstappenformulieren
+  - Toont formuliertitel (H1), uitgebreide introductietekst (meerdere paragrafen), en een enkel CTA-formulier met RadioGroup en knop
+  - Gecentreerd via `colStartLg={3} colEndLg={11}` op large viewport
+  - Story staat in de `Templates/Form flow` groep
+- **`dsn.text.max-inline-size` token** (65ch): gedeeld semantic token voor maximale regellengte; toegepast op `dsn-unordered-list` en `dsn-ordered-list` (gelijkgesteld aan `dsn-paragraph`), nieuw token in `base.json` van beide thema's (PR #218)
+
+#### Changed
+
+- **FormStepPage story hernoemd** naar "Form step: Example" en verplaatst naar `Templates/Form flow` groep (PR #217)
+
+#### Fixed
+
+- **PageHeader aria-labels** hernoemd voor consistente navigatie-landmark namen (PR #215):
+  - `'Hoofdmenu'` → `'Hoofd-navigatie'`
+  - `'Servicemenu'` → `'Service-navigatie'`
+- **Focus ring consistentie** voor logo-links en inline-flex componenten (PR #216):
+  - `box-shadow` toegevoegd aan globale `:focus-visible` in `reset.css` voor witte inverse-outline op donkere achtergronden
+  - `display: inline-block` toegevoegd aan logo-link in PageFooter zodat de focus ring als één rechthoek omhult
+  - `align-self: flex-start` toegevoegd aan `.dsn-link` en `.dsn-button` zodat ze niet uitstrekken tot volledige breedte als direct kind van een Stack
+
+---
+
 ## Version 5.30.0 (April 26, 2026)
 
 ### FormStepPage template + GridItem colStart/colEnd + PageHeader hideMenuButton/hideSearchButton

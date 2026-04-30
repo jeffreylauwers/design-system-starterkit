@@ -162,16 +162,19 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 
 ### Current Components
 
-**Layout Components (7)**
+**Layout Components (10)**
 
 | Component           | HTML/CSS | React | Web Component |
 | ------------------- | -------- | ----- | ------------- |
+| **ActionGroup**     | Yes      | Yes   | No            |
 | **Body**            | Yes      | Yes   | No            |
 | **BreakoutSection** | Yes      | Yes   | No            |
 | **Container**       | Yes      | Yes   | No            |
 | **Grid**            | Yes      | Yes   | No            |
 | **GridItem**        | Yes      | Yes   | No            |
 | **Hero**            | Yes      | Yes   | No            |
+| **PageBody**        | Yes      | Yes   | No            |
+| **PageLayout**      | Yes      | Yes   | No            |
 | **Stack**           | Yes      | Yes   | No            |
 
 **Content Components (10)**
@@ -189,7 +192,7 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 | **Paragraph**     | Yes      | Yes   | Yes           |
 | **UnorderedList** | Yes      | Yes   | Yes           |
 
-**Display & Feedback Components (10)**
+**Display & Feedback Components (12)**
 
 | Component       | HTML/CSS | React | Web Component |
 | --------------- | -------- | ----- | ------------- |
@@ -198,13 +201,15 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 | **Card**        | Yes      | Yes   | No            |
 | **Details**     | Yes      | Yes   | No            |
 | **DotBadge**    | Yes      | Yes   | No            |
+| **Drawer**      | Yes      | Yes   | No            |
+| **ModalDialog** | Yes      | Yes   | No            |
 | **Note**        | Yes      | Yes   | No            |
 | **NumberBadge** | Yes      | Yes   | No            |
 | **Popover**     | Yes      | Yes   | No            |
 | **StatusBadge** | Yes      | Yes   | No            |
 | **Table**       | Yes      | Yes   | No            |
 
-**Navigation Components (5)**
+**Navigation Components (6)**
 
 | Component                | HTML/CSS | React | Web Component |
 | ------------------------ | -------- | ----- | ------------- |
@@ -212,7 +217,14 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 | **Menu**                 | Yes      | Yes   | No            |
 | **MenuButton**           | Yes      | Yes   | No            |
 | **MenuLink**             | Yes      | Yes   | No            |
+| **PageFooter**           | Yes      | Yes   | No            |
 | **PageHeader**           | Yes      | Yes   | No            |
+
+**Branding Components (1)**
+
+| Component | HTML/CSS | React | Web Component |
+| --------- | -------- | ----- | ------------- |
+| **Logo**  | Yes      | Yes   | No            |
 
 **Accessibility Components (1)**
 
@@ -393,18 +405,18 @@ Comprehensive documentation is available in the `/docs` folder:
 
 - **Pre-commit hooks** via Husky + lint-staged (ESLint + Prettier)
 - **Type checking** across all packages (`pnpm type-check`)
-- **1364 tests** covering React components, Web Components, and utilities
+- **1409 tests** covering React components, Web Components, and utilities
 - **CI/CD** via GitHub Actions (lint, type-check, test, build)
 
 ## Tech Stack
 
 - **Build Tool:** Vite
-- **Token Processor:** Style Dictionary 3.9
+- **Token Processor:** Style Dictionary 4.4.0 (DTCG format)
 - **Web Components:** Vanilla TypeScript (Shadow DOM)
 - **React:** 18+
 - **TypeScript:** 5.3+
 - **Testing:** Vitest + React Testing Library
-- **Documentation:** Storybook 7.x
+- **Documentation:** Storybook 7.6
 - **CI/CD:** GitHub Actions
 - **Package Manager:** PNPM 8+
 - **Code Quality:** Husky, lint-staged, ESLint, Prettier

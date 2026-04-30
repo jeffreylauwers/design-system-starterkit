@@ -23,8 +23,11 @@ Design tokens are the single source of truth for colors, typography, spacing, bo
   <li><TocLink targetId="focus-indicators">Focus Indicators</TocLink></li>
   <li><TocLink targetId="icon-sizes">Icon Sizes</TocLink></li>
   <li><TocLink targetId="pointer-target-sizing">Pointer Target Sizing</TocLink></li>
+  <li><TocLink targetId="content-sizing">Content Sizing</TocLink></li>
+  <li><TocLink targetId="form-control-sizing">Form Control Sizing</TocLink></li>
   <li><TocLink targetId="box-shadows">Box Shadows</TocLink></li>
   <li><TocLink targetId="motion">Motion</TocLink></li>
+  <li><TocLink targetId="breakpoints">Breakpoints</TocLink></li>
 </OrderedList>
 
 ---
@@ -665,6 +668,37 @@ Minimum touch/click target sizes following WCAG 2.5.5 Target Size.
 
 ---
 
+## Content Sizing
+
+Maximum width constraints for page content and readable text lines.
+
+<TokenTable
+  tokens={[
+    { name: 'Page Max Inline Size', cssVar: '--dsn-page-max-inline-size', value: '75rem' },
+    { name: 'Text Max Inline Size', cssVar: '--dsn-text-max-inline-size', value: '65ch' },
+  ]}
+/>
+
+---
+
+## Form Control Sizing
+
+Width presets for form inputs, based on the expected character count of the input value. Use `max-inline-size` as the default cap when no specific width preset applies.
+
+<TokenTable
+  tokens={[
+    { name: 'Max Inline Size', cssVar: '--dsn-form-control-max-inline-size', value: '25rem' },
+    { name: 'Width xs', cssVar: '--dsn-form-control-width-xs', value: '10ch' },
+    { name: 'Width sm', cssVar: '--dsn-form-control-width-sm', value: '14ch' },
+    { name: 'Width md', cssVar: '--dsn-form-control-width-md', value: '20ch' },
+    { name: 'Width lg', cssVar: '--dsn-form-control-width-lg', value: '32ch' },
+    { name: 'Width xl', cssVar: '--dsn-form-control-width-xl', value: '48ch' },
+    { name: 'Width full', cssVar: '--dsn-form-control-width-full', value: '100%' },
+  ]}
+/>
+
+---
+
 ## Box Shadows
 
 Elevation shadows communicate depth: which surface floats above another. Each shadow is composed of two drop shadow layers (direct + ambient) and a spread-only outline layer (highlight). Only the color tokens differ between light and dark mode; the shadow structure is identical.
@@ -724,5 +758,20 @@ Bij `prefers-reduced-motion: reduce` worden alle duration-tokens naar `0ms` geze
     { name: 'Exit', cssVar: '--dsn-transition-easing-exit', value: 'cubic-bezier(0.4, 0, 1, 1)' },
     { name: 'Move', cssVar: '--dsn-transition-easing-move', value: 'cubic-bezier(0.4, 0, 0.2, 1)' },
     { name: 'Linear', cssVar: '--dsn-transition-easing-linear', value: 'linear' },
+  ]}
+/>
+
+---
+
+## Breakpoints
+
+Reference breakpoints for responsive design. These tokens are available as CSS custom properties but **should not be used in CSS `@media` rules** — browsers do not resolve custom properties inside media queries. Use the hardcoded values directly in your CSS.
+
+<TokenTable
+  tokens={[
+    { name: 'sm', cssVar: '--dsn-breakpoint-sm', value: '36em (~576px)' },
+    { name: 'md', cssVar: '--dsn-breakpoint-md', value: '44em (~704px)' },
+    { name: 'lg', cssVar: '--dsn-breakpoint-lg', value: '64em (~1024px)' },
+    { name: 'xl', cssVar: '--dsn-breakpoint-xl', value: '74em (~1184px)' },
   ]}
 />
