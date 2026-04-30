@@ -2332,7 +2332,9 @@ const [isOpen, setIsOpen] = React.useState(false);
         </div>
         <div class="dsn-page-header__secondary-nav">
           <nav aria-labelledby="service-nav-id">
-            <h2 id="service-nav-id" class="dsn-visually-hidden">Servicemenu</h2>
+            <h2 id="service-nav-id" class="dsn-visually-hidden">
+              Service-navigatie
+            </h2>
             <ul class="dsn-menu dsn-menu--horizontal">
               <!-- MenuLink items -->
             </ul>
@@ -2355,7 +2357,7 @@ const [isOpen, setIsOpen] = React.useState(false);
     </div>
     <div class="dsn-page-header__navbar">
       <nav aria-labelledby="primary-nav-id">
-        <h2 id="primary-nav-id" class="dsn-visually-hidden">Hoofdmenu</h2>
+        <h2 id="primary-nav-id" class="dsn-visually-hidden">Hoofd-navigatie</h2>
         <ul class="dsn-menu dsn-menu--horizontal">
           <!-- MenuLink items -->
         </ul>
