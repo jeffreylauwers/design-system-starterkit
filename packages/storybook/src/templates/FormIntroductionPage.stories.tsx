@@ -6,7 +6,6 @@ import {
   Grid,
   GridItem,
   Heading,
-  Logo,
   PageBody,
   PageFooter,
   PageHeader,
@@ -16,64 +15,17 @@ import {
   Stack,
   UnorderedList,
 } from '@dsn/components-react';
+import {
+  logoSlot,
+  footerSlot1,
+  footerSlot2,
+  footerSlot3,
+  footerSlot4,
+} from './templateSharedContent';
 
 // =============================================================================
 // GEDEELDE CONTENT
 // =============================================================================
-
-const logoSlot = (
-  <a href="/">
-    <Logo aria-hidden={true} />
-    <span className="dsn-visually-hidden">
-      Starter Kit — terug naar homepage
-    </span>
-  </a>
-);
-
-const footerSlot1 = (
-  <a href="/">
-    <Logo aria-hidden={true} />
-    <span className="dsn-visually-hidden">
-      Starter Kit — terug naar homepage
-    </span>
-  </a>
-);
-
-const footerSlot2 = <Paragraph>Dit is een voorbeeldorganisatie.</Paragraph>;
-
-const footerSlot3 = (
-  <UnorderedList>
-    <li>
-      <a href="/nieuws">Nieuws</a>
-    </li>
-    <li>
-      <a href="/over-ons">Over ons</a>
-    </li>
-    <li>
-      <a href="/werken-bij">Werken bij</a>
-    </li>
-    <li>
-      <a href="/klachten">Klachten</a>
-    </li>
-  </UnorderedList>
-);
-
-const footerSlot4 = (
-  <UnorderedList>
-    <li>
-      <a href="/privacy">Privacyverklaring</a>
-    </li>
-    <li>
-      <a href="/accessibility">Toegankelijkheid</a>
-    </li>
-    <li>
-      <a href="/cookies">Cookies</a>
-    </li>
-    <li>
-      <a href="/contact">Contact</a>
-    </li>
-  </UnorderedList>
-);
 
 const mainStyle: React.CSSProperties = {
   paddingBlock: 'var(--dsn-space-block-6xl)',
