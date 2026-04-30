@@ -98,7 +98,7 @@ const mainStyle: React.CSSProperties = {
 // =============================================================================
 
 const meta: Meta = {
-  title: 'Templates/FormStepPage',
+  title: 'Templates/Form flow/Form step: Example',
   parameters: {
     layout: 'fullscreen',
   },
@@ -112,8 +112,8 @@ type Story = StoryObj;
 // STORIES
 // =============================================================================
 
-export const Default: Story = {
-  name: 'Form Step Page',
+export const Example: Story = {
+  name: 'Form step: Example',
   render: () => (
     <Body>
       <SkipLink href="#main-content" />
