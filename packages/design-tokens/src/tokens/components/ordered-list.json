@@ -21,6 +21,11 @@
         "$type": "fontWeight",
         "$description": "Ordered list font weight"
       },
+      "max-inline-size": {
+        "$value": "{dsn.text.max-inline-size}",
+        "$type": "sizing",
+        "$description": "Ordered list max width for readability"
+      },
       "gap": {
         "$value": "{dsn.space.row.sm}",
         "$type": "spacing",

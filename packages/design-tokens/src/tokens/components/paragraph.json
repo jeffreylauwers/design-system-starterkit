@@ -17,7 +17,7 @@
         "$description": "Paragraph font weight"
       },
       "max-inline-size": {
-        "$value": "65ch",
+        "$value": "{dsn.text.max-inline-size}",
         "$type": "sizing",
         "$description": "Paragraph max width for readability"
       },

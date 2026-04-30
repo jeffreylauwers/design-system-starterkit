@@ -21,6 +21,11 @@
           "$description": "Bold weight"
         }
       },
+      "max-inline-size": {
+        "$value": "65ch",
+        "$type": "sizing",
+        "$description": "Maximum line length for readable body text (paragraphs, lists)"
+      },
       "line-height": {
         "sm": {
           "$value": "1.5",
