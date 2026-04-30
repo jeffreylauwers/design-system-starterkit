@@ -166,14 +166,14 @@ export interface PageHeaderProps extends Omit<
   /**
    * `aria-label` van de primaire navigatie-`<nav>` (large viewport) en
    * visueel verborgen heading in de Drawer.
-   * @default 'Hoofdmenu'
+   * @default 'Hoofd-navigatie'
    */
   primaryNavAriaLabel?: string;
 
   /**
    * `aria-label` van het servicemenu-`<nav>` (large viewport) en
    * visueel verborgen heading in de Drawer.
-   * @default 'Servicemenu'
+   * @default 'Service-navigatie'
    */
   secondaryNavAriaLabel?: string;
 
@@ -252,8 +252,8 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
       searchInputPlaceholder = 'Zoeken…',
       searchInputAriaLabel = 'Zoekopdracht',
       searchSubmitLabel = 'Zoeken',
-      primaryNavAriaLabel = 'Hoofdmenu',
-      secondaryNavAriaLabel = 'Servicemenu',
+      primaryNavAriaLabel = 'Hoofd-navigatie',
+      secondaryNavAriaLabel = 'Service-navigatie',
       hideMenuButton = false,
       hideSearchButton = false,
       ...props

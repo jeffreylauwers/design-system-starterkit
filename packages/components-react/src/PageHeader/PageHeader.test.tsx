@@ -223,7 +223,7 @@ describe('PageHeader', () => {
     expect(container.querySelector('.dsn-page-header__searchbox')).toBeNull();
   });
 
-  it('masthead nav heeft aria-label="Servicemenu"', () => {
+  it('masthead nav heeft aria-label="Service-navigatie"', () => {
     const { container } = render(
       <PageHeader
         logoSlot={defaultLogo}
@@ -231,15 +231,15 @@ describe('PageHeader', () => {
       />
     );
     const nav = container.querySelector('.dsn-page-header__masthead nav');
-    expect(nav).toHaveAttribute('aria-label', 'Servicemenu');
+    expect(nav).toHaveAttribute('aria-label', 'Service-navigatie');
   });
 
-  it('navbar nav heeft aria-label="Hoofdmenu"', () => {
+  it('navbar nav heeft aria-label="Hoofd-navigatie"', () => {
     const { container } = render(
       <PageHeader logoSlot={defaultLogo} primaryNavigation={<span>nav</span>} />
     );
     const nav = container.querySelector('.dsn-page-header__navbar nav');
-    expect(nav).toHaveAttribute('aria-label', 'Hoofdmenu');
+    expect(nav).toHaveAttribute('aria-label', 'Hoofd-navigatie');
   });
 
   // ---------------------------------------------------------------------------
@@ -394,7 +394,7 @@ describe('PageHeader', () => {
     expect(compactLayout?.textContent).toContain('Contact');
   });
 
-  it('compact layout primaire nav heeft aria-label="Hoofdmenu"', () => {
+  it('compact layout primaire nav heeft aria-label="Hoofd-navigatie"', () => {
     const { container } = render(
       <PageHeader
         logoSlot={defaultLogo}
@@ -405,10 +405,10 @@ describe('PageHeader', () => {
     const nav = container.querySelector(
       '.dsn-page-header__compact-primary-nav nav'
     );
-    expect(nav).toHaveAttribute('aria-label', 'Hoofdmenu');
+    expect(nav).toHaveAttribute('aria-label', 'Hoofd-navigatie');
   });
 
-  it('compact layout servicemenu nav heeft aria-label="Servicemenu"', () => {
+  it('compact layout servicemenu nav heeft aria-label="Service-navigatie"', () => {
     const { container } = render(
       <PageHeader
         logoSlot={defaultLogo}
@@ -419,7 +419,7 @@ describe('PageHeader', () => {
     const nav = container.querySelector(
       '.dsn-page-header__compact-secondary nav'
     );
-    expect(nav).toHaveAttribute('aria-label', 'Servicemenu');
+    expect(nav).toHaveAttribute('aria-label', 'Service-navigatie');
   });
 
   it('compact layout heeft een zoekpaneel', () => {
