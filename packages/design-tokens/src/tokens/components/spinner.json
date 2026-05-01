@@ -1,0 +1,38 @@
+{
+  "dsn": {
+    "spinner": {
+      "size": {
+        "$value": "1.5rem",
+        "$type": "dimension",
+        "$description": "Diameter van de spinner (24px)"
+      },
+      "size-large": {
+        "$value": "3rem",
+        "$type": "dimension",
+        "$description": "Grote variant — diameter van de spinner (48px)"
+      },
+      "stroke-width": {
+        "$value": "{dsn.border.width.medium}",
+        "$type": "dimension",
+        "$description": "Lijndikte van de boog — identiek aan border.width.medium voor visuele consistentie"
+      },
+      "color": {
+        "$value": "{dsn.color.accent-1.color-default}",
+        "$description": "Kleur van de draaiende boog"
+      },
+      "track-color": {
+        "$value": "{dsn.color.neutral.bg-subtle}",
+        "$description": "Achtergrondkleur van de cirkelbaan"
+      },
+      "duration": {
+        "$value": "800ms",
+        "$type": "duration",
+        "$description": "Duur van één rotatie — bewust sneller dan transition.duration.slower (500ms): dit is een herhalende ambient animatie"
+      },
+      "gap-size": {
+        "$value": "{dsn.space.inline.md}",
+        "$description": "Ruimte tussen spinner en label"
+      }
+    }
+  }
+}
