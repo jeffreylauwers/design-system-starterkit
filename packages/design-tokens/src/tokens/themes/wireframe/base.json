@@ -68,6 +68,10 @@
       }
     },
     "space": {
+      "none": {
+        "$value": "0px",
+        "$description": "No spacing"
+      },
       "base": {
         "$value": "0.5rem",
         "$description": "8px - Base unit for 8pt grid system"
@@ -341,6 +345,10 @@
     },
     "border": {
       "radius": {
+        "square": {
+          "$value": "0px",
+          "$description": "No border radius — square corners"
+        },
         "sm": {
           "$value": "2px",
           "$description": "Small border radius - minimal for wireframe"
@@ -359,6 +367,10 @@
         }
       },
       "width": {
+        "none": {
+          "$value": "0px",
+          "$description": "No border width"
+        },
         "thin": {
           "$value": "2px",
           "$description": "Thin border"
@@ -523,6 +535,10 @@
       }
     },
     "box-shadow": {
+      "none": {
+        "$value": "none",
+        "$description": "Geen elevatie — vlak oppervlak zonder schaduw"
+      },
       "sm": {
         "$value": "none",
         "$description": "Small elevation — flat in wireframe theme"
@@ -534,6 +550,33 @@
       "lg": {
         "$value": "none",
         "$description": "Large elevation — flat in wireframe theme"
+      }
+    },
+    "z-index": {
+      "300": {
+        "$value": "300",
+        "$type": "number",
+        "$description": "Sticky navigatie-elementen — PageHeader sticky/auto-hide"
+      },
+      "350": {
+        "$value": "350",
+        "$type": "number",
+        "$description": "Floating UI-elementen — Popover, tooltips, dropdowns"
+      },
+      "400": {
+        "$value": "400",
+        "$type": "number",
+        "$description": "Verduisterende laag — Backdrop achter modals en drawers"
+      },
+      "500": {
+        "$value": "500",
+        "$type": "number",
+        "$description": "Modale lagen — ModalDialog, Drawer"
+      },
+      "600": {
+        "$value": "600",
+        "$type": "number",
+        "$description": "Altijd bovenaan — SkipLink (toegankelijkheid)"
       }
     },
     "transition": {

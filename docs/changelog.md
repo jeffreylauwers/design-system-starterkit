@@ -6,6 +6,33 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.34.0 (May 1, 2026)
+
+### Semantische design tokens: none-waarden en z-index
+
+#### Added
+
+- **`dsn.border.radius.square`** (`0px`): expliciete nul-waarde voor vierkante hoeken; gebruikt door Alert, Checkbox en form-control border-radius
+- **`dsn.border.width.none`** (`0px`): expliciete nul-waarde voor border-width; gebruikt door CheckboxGroup en RadioGroup fieldset-reset
+- **`dsn.space.none`** (`0px`): expliciete nul-waarde voor spacing; gebruikt door CheckboxGroup, RadioGroup, FormField, NumberBadge en BreadcrumbNavigation
+- **`dsn.box-shadow.none`** (`none`): expliciete nul-waarde voor box-shadow; semantische aanvulling voor themes die elevatie willen uitzetten
+- **`dsn.z-index.300`** (`300`): PageHeader sticky/auto-hide
+- **`dsn.z-index.350`** (`350`): Popover, tooltips, dropdowns — boven sticky headers
+- **`dsn.z-index.400`** (`400`): Backdrop achter modals en drawers
+- **`dsn.z-index.500`** (`500`): ModalDialog, Drawer
+- **`dsn.z-index.600`** (`600`): SkipLink — altijd bovenaan (toegankelijkheid)
+
+#### Changed
+
+- 10 component tokens bijgewerkt van hardcoded `"0px"` naar semantische token-referenties (`{dsn.border.radius.square}`, `{dsn.border.width.none}`, `{dsn.space.none}`)
+- 6 component tokens bijgewerkt van hardcoded z-index waarden naar `{dsn.z-index.*}` referenties: PageHeader, Popover, Backdrop, ModalDialog, Drawer, SkipLink
+- Popover z-index gecorrigeerd van 300 naar 350 — garandeert nu daadwerkelijk positionering boven sticky headers
+- `dsn.form-control.border-radius` in beide themes bijgewerkt naar `{dsn.border.radius.square}`
+- Alle nieuwe tokens toegevoegd aan `wireframe/base.json` (thema-agnostische waarden identiek aan `start/base.json`)
+- DesignTokens.mdx in Storybook bijgewerkt met nieuwe rijen in Border Width, Border Radius, Spacing, Box Shadows en nieuw Z-Index onderdeel
+
+---
+
 ## Version 5.33.0 (May 1, 2026)
 
 ### Spinner + ProgressBar

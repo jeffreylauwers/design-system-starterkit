@@ -37,9 +37,9 @@
         "$description": "Minimale breedte van de popover (200px)"
       },
       "z-index": {
-        "$value": "300",
+        "$value": "{dsn.z-index.350}",
         "$type": "number",
-        "$description": "Z-index van de popover — lager dan ModalDialog/Drawer (500), hoger dan sticky headers (200)"
+        "$description": "Z-index van de popover — boven sticky headers ({dsn.z-index.300}), lager dan backdrop ({dsn.z-index.400})"
       },
       "heading": {
         "font-family": {

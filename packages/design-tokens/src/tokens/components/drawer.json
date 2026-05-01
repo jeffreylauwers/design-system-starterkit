@@ -2,9 +2,9 @@
   "dsn": {
     "drawer": {
       "z-index": {
-        "$value": "500",
+        "$value": "{dsn.z-index.500}",
         "$type": "number",
-        "$description": "Positionering boven de backdrop (400) en onder de skip-link (600)"
+        "$description": "Positionering boven de backdrop ({dsn.z-index.400}) en onder de skip-link ({dsn.z-index.600})"
       },
       "background-color": {
         "$value": "{dsn.color.neutral.bg-elevated}",

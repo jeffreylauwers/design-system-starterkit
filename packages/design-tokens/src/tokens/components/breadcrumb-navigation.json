@@ -40,7 +40,7 @@
           "$description": "Vertical padding to reach min-block-size"
         },
         "padding-inline": {
-          "$value": "0px",
+          "$value": "{dsn.space.none}",
           "$type": "dimension",
           "$description": "No horizontal padding on items"
         }

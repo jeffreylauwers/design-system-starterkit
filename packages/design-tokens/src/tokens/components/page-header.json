@@ -27,9 +27,9 @@
         "$description": "Horizontale padding van de header-binnenbalk — zelfde schaal als masthead en navbar"
       },
       "z-index": {
-        "$value": "300",
+        "$value": "{dsn.z-index.300}",
         "$type": "number",
-        "$description": "Z-index voor sticky/auto-hide gedrag — bewust lager dan backdrop (400) zodat Drawer/Modal-backdrop over de header schuift"
+        "$description": "Z-index voor sticky/auto-hide gedrag — bewust lager dan backdrop ({dsn.z-index.400}) zodat Drawer/Modal-backdrop over de header schuift"
       },
       "logo": {
         "max-block-size": {

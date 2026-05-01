@@ -2,9 +2,9 @@
   "dsn": {
     "alert": {
       "border-radius": {
-        "$value": "0px",
+        "$value": "{dsn.border.radius.square}",
         "$type": "dimension",
-        "$description": "Alert border radius (0px by default; themes can override to add rounded corners)"
+        "$description": "Alert border radius (square by default; themes can override to add rounded corners)"
       },
       "border-width": {
         "$value": "{dsn.border.width.medium}",
