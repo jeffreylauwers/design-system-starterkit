@@ -944,7 +944,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 ## Display & Feedback Components
 
-**Status:** Complete (HTML/CSS, React): 12 components total
+**Status:** Complete (HTML/CSS, React): 14 components total
 
 ### Backdrop
 
@@ -1225,6 +1225,87 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 - Geen eigen afmeting: schaalt mee met de omgevende typografie
 
 **Tests:** React (10 tests)
+
+### Spinner
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/spinner/` / `packages/components-react/src/Spinner/`
+
+**Tokens:** `tokens/components/spinner.json`
+
+**Props:** `label`, `hideLabel`, `size`
+
+**Features:**
+
+- SVG-gebaseerde cirkelvormige laadindicator voor onbepaalde wachttijden
+- `role="status"` op de container kondigt de laadtoestand aan bij screenreaders
+- `hideLabel` verbergt het label visueel via `dsn-visually-hidden` maar behoudt toegankelijkheid
+- Twee groottes: `default` (24px, label rechts) en `large` (48px, label gecentreerd onder)
+- `prefers-reduced-motion: reduce`: rotatie vervangen door subtiel pulseren
+
+**HTML klassen:**
+
+```html
+<!-- Standaard -->
+<div class="dsn-spinner" role="status">
+  <svg class="dsn-spinner__circle" viewBox="0 0 24 24" aria-hidden="true">
+    <circle class="dsn-spinner__track" cx="12" cy="12" r="10" />
+    <circle class="dsn-spinner__arc" cx="12" cy="12" r="10" />
+  </svg>
+  <span class="dsn-spinner__label">Laden...</span>
+</div>
+
+<!-- Groot -->
+<div class="dsn-spinner dsn-spinner--large" role="status">...</div>
+
+<!-- Visueel verborgen label -->
+<span class="dsn-spinner__label dsn-visually-hidden">Laden...</span>
+```
+
+**Tests:** React (14 tests)
+
+### ProgressBar
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/progress-bar/` / `packages/components-react/src/ProgressBar/`
+
+**Tokens:** `tokens/components/progress-bar.json`
+
+**Props:** `label`, `value`, `max`, `description`, `id`
+
+**Features:**
+
+- Natief `<progress>`-element met impliciete `role="progressbar"`, `aria-valuenow`, `aria-valuemin` en `aria-valuemax`
+- `<label>` gekoppeld via `for`/`id`: robuuster dan `aria-label`
+- Percentage automatisch berekend: `Math.round((value / max) * 100)`, boven de balk getoond met `aria-hidden="true"`
+- Optionele `description` onder de balk
+- Cross-browser CSS: `::-webkit-progress-bar/value` (Chrome/Safari) + `::-moz-progress-bar` (Firefox)
+- Pill-vorm via `border-radius: round`, fill-animatie met `prefers-reduced-motion` support
+- `useId()` voor automatisch gegenereerd ID als geen `id` prop meegegeven
+
+**HTML klassen:**
+
+```html
+<div class="dsn-progress-bar">
+  <label class="dsn-visually-hidden" for="pb-1">Bestand uploaden</label>
+  <div class="dsn-progress-bar__header">
+    <p class="dsn-paragraph dsn-progress-bar__percentage" aria-hidden="true">
+      35%
+    </p>
+  </div>
+  <progress id="pb-1" class="dsn-progress-bar__bar" value="35" max="100">
+    35%
+  </progress>
+  <!-- Optioneel: -->
+  <p class="dsn-paragraph dsn-progress-bar__description">
+    Bestand wordt geüpload...
+  </p>
+</div>
+```
+
+**Tests:** React (19 tests)
 
 ### Alert
 

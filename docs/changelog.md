@@ -6,6 +6,29 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.33.0 (May 1, 2026)
+
+### Spinner + ProgressBar
+
+#### Added
+
+- **Spinner** (issue #220, PR #222): cirkelvormige laadindicator voor onbepaalde wachttijden
+  - SVG arc-animatie met track en boog; `role="status"` op de container
+  - `label` prop altijd vereist; `hideLabel` verbergt visueel via `dsn-visually-hidden`
+  - Twee groottes: `default` (24px, label rechts) en `large` (48px, label onder)
+  - `prefers-reduced-motion`: rotatie vervangen door subtiel pulseren
+  - 7 component tokens: `size`, `size-large`, `stroke-width`, `color`, `track-color`, `duration`, `gap-size`
+- **ProgressBar** (issue #221, PR #224): horizontale voortgangsbalk voor bepaalde wachttijden
+  - Natief `<progress>`-element met impliciete `role="progressbar"`; `<label>` via `for`/`id`
+  - Percentage automatisch berekend via `Math.round((value / max) * 100)`, zichtbaar boven de balk
+  - Optionele `description` prop voor tekst onder de balk
+  - `max` prop voor stapsgewijze processen (bijv. `value=3 max=7` → 43%)
+  - Cross-browser CSS: `::-webkit-progress-bar/value` + `::-moz-progress-bar`; pill-vorm + fill-animatie
+  - `prefers-reduced-motion`: fill-overgang uitgeschakeld
+  - 6 component tokens: `color.track`, `color.fill`, `block-size`, `border-radius`, `gap.header`, `gap.footer`
+
+---
+
 ## Version 5.32.0 (April 30, 2026)
 
 ### Design Tokens: overzichtspagina uitgebreid met ontbrekende semantische tokens

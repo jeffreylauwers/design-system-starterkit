@@ -1,0 +1,40 @@
+{
+  "dsn": {
+    "progress-bar": {
+      "color": {
+        "track": {
+          "$value": "{dsn.color.neutral.bg-default}",
+          "$type": "color",
+          "$description": "Grijze achtergrondtrack"
+        },
+        "fill": {
+          "$value": "{dsn.color.accent-1.color-default}",
+          "$type": "color",
+          "$description": "Blauwe vulbalk — zelfde primaire accentkleur als Spinner"
+        }
+      },
+      "block-size": {
+        "$value": "8px",
+        "$type": "dimension",
+        "$description": "Hoogte van de balk — gangbare dikte voor voortgangsbalken"
+      },
+      "border-radius": {
+        "$value": "{dsn.border.radius.round}",
+        "$type": "borderRadius",
+        "$description": "Volledig afgerond (pill-vorm) voor zowel track als fill"
+      },
+      "gap": {
+        "header": {
+          "$value": "{dsn.space.block.xs}",
+          "$type": "spacing",
+          "$description": "Ruimte tussen percentage-tekst en balk"
+        },
+        "footer": {
+          "$value": "{dsn.space.block.xs}",
+          "$type": "spacing",
+          "$description": "Ruimte tussen balk en beschrijving"
+        }
+      }
+    }
+  }
+}

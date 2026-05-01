@@ -1,0 +1,90 @@
+/**
+ * ProgressBar Component
+ * Horizontale voortgangsbalk voor bepaalde wachttijden.
+ *
+ * Het native <progress>-element heeft impliciete role="progressbar", aria-valuenow,
+ * aria-valuemin en aria-valuemax. Een visueel verborgen <label> koppelt de toegankelijke
+ * naam via for/id. De percentage-tekst heeft aria-hidden="true" om dubbele aankondiging
+ * te vermijden.
+ *
+ * Usage:
+ * <!-- Basis -->
+ * <div class="dsn-progress-bar">
+ *   <label class="dsn-visually-hidden" for="pb-1">Bestand uploaden</label>
+ *   <div class="dsn-progress-bar__header">
+ *     <p class="dsn-paragraph dsn-progress-bar__percentage" aria-hidden="true">35%</p>
+ *   </div>
+ *   <progress id="pb-1" class="dsn-progress-bar__bar" value="35" max="100">35%</progress>
+ * </div>
+ *
+ * <!-- Met beschrijving -->
+ * <div class="dsn-progress-bar">
+ *   <label class="dsn-visually-hidden" for="pb-2">Bestand uploaden</label>
+ *   <div class="dsn-progress-bar__header">
+ *     <p class="dsn-paragraph dsn-progress-bar__percentage" aria-hidden="true">35%</p>
+ *   </div>
+ *   <progress id="pb-2" class="dsn-progress-bar__bar" value="35" max="100">35%</progress>
+ *   <p class="dsn-paragraph dsn-progress-bar__description">Bestand wordt geüpload...</p>
+ * </div>
+ */
+
+.dsn-progress-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dsn-progress-bar-gap-header);
+}
+
+.dsn-progress-bar__header {
+  display: flex;
+  align-items: baseline;
+}
+
+/* Paragraph margin-reset: voorkomen dat dsn-paragraph zijn eigen margin-block-end toepast */
+.dsn-progress-bar .dsn-paragraph {
+  margin-block-end: 0;
+}
+
+.dsn-progress-bar__bar {
+  appearance: none;
+  display: block;
+  inline-size: 100%;
+  block-size: var(--dsn-progress-bar-block-size);
+  border: none;
+  border-radius: var(--dsn-progress-bar-border-radius);
+  /* Firefox: track-kleur via element background */
+  background-color: var(--dsn-progress-bar-color-track);
+  color: var(--dsn-progress-bar-color-fill);
+}
+
+/* Chrome/Safari: track */
+.dsn-progress-bar__bar::-webkit-progress-bar {
+  background-color: var(--dsn-progress-bar-color-track);
+  border-radius: var(--dsn-progress-bar-border-radius);
+}
+
+/* Chrome/Safari: fill */
+.dsn-progress-bar__bar::-webkit-progress-value {
+  background-color: var(--dsn-progress-bar-color-fill);
+  border-radius: var(--dsn-progress-bar-border-radius);
+  transition: inline-size var(--dsn-transition-duration-slow)
+    var(--dsn-transition-easing-linear);
+}
+
+/* Firefox: fill */
+.dsn-progress-bar__bar::-moz-progress-bar {
+  background-color: var(--dsn-progress-bar-color-fill);
+  border-radius: var(--dsn-progress-bar-border-radius);
+  transition: inline-size var(--dsn-transition-duration-slow)
+    var(--dsn-transition-easing-linear);
+}
+
+.dsn-progress-bar__description {
+  margin-block-start: var(--dsn-progress-bar-gap-footer);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dsn-progress-bar__bar::-webkit-progress-value,
+  .dsn-progress-bar__bar::-moz-progress-bar {
+    transition: none;
+  }
+}
