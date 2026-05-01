@@ -8,8 +8,6 @@ import {
   Grid,
   GridItem,
   Heading,
-  Link,
-  Logo,
   Menu,
   MenuLink,
   PageBody,
@@ -20,21 +18,18 @@ import {
   SearchInput,
   SkipLink,
   Stack,
-  UnorderedList,
 } from '@dsn/components-react';
+import {
+  logoSlot,
+  footerSlot1,
+  footerSlot2,
+  footerSlot3,
+  footerSlot4,
+} from './templateSharedContent';
 
 // =============================================================================
 // GEDEELDE CONTENT (identiek aan BasePage stories)
 // =============================================================================
-
-const logoSlot = (
-  <a href="/">
-    <Logo aria-hidden={true} />
-    <span className="dsn-visually-hidden">
-      Starter Kit — terug naar homepage
-    </span>
-  </a>
-);
 
 function PrimaryNavigation() {
   const [exp1b, setExp1b] = React.useState(false);
@@ -123,55 +118,6 @@ const searchSlot = (
     <SearchInput placeholder="Zoeken…" aria-label="Zoekopdracht" />
     <Button variant="strong">Zoeken</Button>
   </>
-);
-
-const footerSlot1 = (
-  <a href="/">
-    <Logo aria-hidden={true} />
-    <span className="dsn-visually-hidden">
-      Starter Kit — terug naar homepage
-    </span>
-  </a>
-);
-
-const footerSlot2 = (
-  <Paragraph>
-    Dit is een voorbeeldorganisatie. <Link href="/about">Meer informatie</Link>.
-  </Paragraph>
-);
-
-const footerSlot3 = (
-  <UnorderedList>
-    <li>
-      <Link href="/nieuws">Nieuws</Link>
-    </li>
-    <li>
-      <Link href="/over-ons">Over ons</Link>
-    </li>
-    <li>
-      <Link href="/werken-bij">Werken bij</Link>
-    </li>
-    <li>
-      <Link href="/klachten">Klachten</Link>
-    </li>
-  </UnorderedList>
-);
-
-const footerSlot4 = (
-  <UnorderedList>
-    <li>
-      <Link href="/privacy">Privacyverklaring</Link>
-    </li>
-    <li>
-      <Link href="/accessibility">Toegankelijkheid</Link>
-    </li>
-    <li>
-      <Link href="/cookies">Cookies</Link>
-    </li>
-    <li>
-      <Link href="/contact">Contact</Link>
-    </li>
-  </UnorderedList>
 );
 
 const mainStyle: React.CSSProperties = {
