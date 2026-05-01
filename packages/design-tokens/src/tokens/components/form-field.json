@@ -2,12 +2,12 @@
   "dsn": {
     "form-field": {
       "margin-block-end": {
-        "$value": "0px",
+        "$value": "{dsn.space.none}",
         "$type": "dimension",
         "$description": "Bottom margin of form field container"
       },
       "margin-block-start": {
-        "$value": "0px",
+        "$value": "{dsn.space.none}",
         "$type": "dimension",
         "$description": "Top margin of form field container"
       },

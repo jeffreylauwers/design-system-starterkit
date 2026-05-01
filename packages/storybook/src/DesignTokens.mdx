@@ -26,6 +26,7 @@ Design tokens are the single source of truth for colors, typography, spacing, bo
   <li><TocLink targetId="content-sizing">Content Sizing</TocLink></li>
   <li><TocLink targetId="form-control-sizing">Form Control Sizing</TocLink></li>
   <li><TocLink targetId="box-shadows">Box Shadows</TocLink></li>
+  <li><TocLink targetId="z-index">Z-Index</TocLink></li>
   <li><TocLink targetId="motion">Motion</TocLink></li>
   <li><TocLink targetId="breakpoints">Breakpoints</TocLink></li>
 </OrderedList>
@@ -491,6 +492,15 @@ All alias accent-1-inverse by default. Available CSS variables:
 All spacing is based on a `0.5rem` (8px) base unit, following an 8-point grid system.
 The system defines five spacing concepts: **row** (vertical between components), **column** (horizontal between components), **inline** (horizontal within components), **block** (vertical within components), and **text** (between text and icons).
 
+### None
+
+<TokenTable
+  previewType="spacing"
+  tokens={[
+    { name: 'none', cssVar: '--dsn-space-none', value: '0px' },
+  ]}
+/>
+
 ### Row Spacing (vertical between components)
 
 <TokenTable
@@ -592,6 +602,7 @@ The system defines five spacing concepts: **row** (vertical between components),
 
 <TokenTable
   tokens={[
+    { name: 'None', cssVar: '--dsn-border-width-none', value: '0px' },
     { name: 'Thin', cssVar: '--dsn-border-width-thin', value: '1px' },
     { name: 'Medium', cssVar: '--dsn-border-width-medium', value: '2px' },
     { name: 'Thick', cssVar: '--dsn-border-width-thick', value: '4px' },
@@ -603,6 +614,7 @@ The system defines five spacing concepts: **row** (vertical between components),
 <TokenTable
   previewType="border-radius"
   tokens={[
+    { name: 'square', cssVar: '--dsn-border-radius-square', value: '0px' },
     { name: 'sm', cssVar: '--dsn-border-radius-sm', value: '4px' },
     { name: 'md', cssVar: '--dsn-border-radius-md', value: '8px' },
     { name: 'lg', cssVar: '--dsn-border-radius-lg', value: '16px' },
@@ -721,9 +733,26 @@ The three primitives that power all elevation shadows. In light mode `highlight`
 <TokenTable
   previewType="shadow"
   tokens={[
+    { name: 'none: Flat, no elevation', cssVar: '--dsn-box-shadow-none', value: 'none' },
     { name: 'sm: Cards, chips', cssVar: '--dsn-box-shadow-sm' },
     { name: 'md: Dropdowns, tooltips', cssVar: '--dsn-box-shadow-md' },
     { name: 'lg: Modals, dialogs', cssVar: '--dsn-box-shadow-lg' },
+  ]}
+/>
+
+---
+
+## Z-Index
+
+Z-index tokens definiëren de stapelvolgorde van UI-lagen. De tokennaam is gelijk aan de waarde, zodat er altijd ruimte is om tussenliggende niveaus toe te voegen.
+
+<TokenTable
+  tokens={[
+    { name: '300 — PageHeader (sticky/auto-hide)', cssVar: '--dsn-z-index-300', value: '300' },
+    { name: '350 — Popover, tooltips, dropdowns', cssVar: '--dsn-z-index-350', value: '350' },
+    { name: '400 — Backdrop (achter modals/drawers)', cssVar: '--dsn-z-index-400', value: '400' },
+    { name: '500 — ModalDialog, Drawer', cssVar: '--dsn-z-index-500', value: '500' },
+    { name: '600 — SkipLink (altijd bovenaan)', cssVar: '--dsn-z-index-600', value: '600' },
   ]}
 />
 

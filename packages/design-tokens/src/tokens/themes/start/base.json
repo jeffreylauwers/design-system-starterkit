@@ -68,6 +68,10 @@
       }
     },
     "space": {
+      "none": {
+        "$value": "0px",
+        "$description": "No spacing"
+      },
       "base": {
         "$value": "0.5rem",
         "$description": "8px - Base unit for 8pt grid system"
@@ -341,6 +345,10 @@
     },
     "border": {
       "radius": {
+        "square": {
+          "$value": "0px",
+          "$description": "No border radius — square corners"
+        },
         "sm": {
           "$value": "4px",
           "$description": "Small border radius"
@@ -359,6 +367,10 @@
         }
       },
       "width": {
+        "none": {
+          "$value": "0px",
+          "$description": "No border width"
+        },
         "thin": {
           "$value": "1px",
           "$description": "Thin border"
@@ -434,7 +446,7 @@
         "$description": "Form control maximum width"
       },
       "border-radius": {
-        "$value": "0px",
+        "$value": "{dsn.border.radius.square}",
         "$type": "dimension",
         "$description": "Form control border radius"
       },
@@ -523,6 +535,10 @@
       }
     },
     "box-shadow": {
+      "none": {
+        "$value": "none",
+        "$description": "Geen elevatie — vlak oppervlak zonder schaduw"
+      },
       "sm": {
         "$value": "0 1px 2px 0 {dsn.color.shadow.direct}, 0 2px 4px 0 {dsn.color.shadow.ambient}, 0 0 0 1px {dsn.color.shadow.highlight}",
         "$description": "Kleine elevatie — cards, chips, kleine floating elementen"
@@ -534,6 +550,33 @@
       "lg": {
         "$value": "0 4px 8px 0 {dsn.color.shadow.direct}, 0 16px 32px 0 {dsn.color.shadow.ambient}, 0 0 0 1px {dsn.color.shadow.highlight}",
         "$description": "Grote elevatie — modals, dialogen, side panels"
+      }
+    },
+    "z-index": {
+      "300": {
+        "$value": "300",
+        "$type": "number",
+        "$description": "Sticky navigatie-elementen — PageHeader sticky/auto-hide"
+      },
+      "350": {
+        "$value": "350",
+        "$type": "number",
+        "$description": "Floating UI-elementen — Popover, tooltips, dropdowns"
+      },
+      "400": {
+        "$value": "400",
+        "$type": "number",
+        "$description": "Verduisterende laag — Backdrop achter modals en drawers"
+      },
+      "500": {
+        "$value": "500",
+        "$type": "number",
+        "$description": "Modale lagen — ModalDialog, Drawer"
+      },
+      "600": {
+        "$value": "600",
+        "$type": "number",
+        "$description": "Altijd bovenaan — SkipLink (toegankelijkheid)"
       }
     },
     "transition": {

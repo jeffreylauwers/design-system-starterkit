@@ -12,9 +12,9 @@
         "$description": "backdrop-filter: blur() op de overlay — valt gracefully weg zonder support"
       },
       "z-index": {
-        "$value": "400",
+        "$value": "{dsn.z-index.400}",
         "$type": "number",
-        "$description": "Z-index schaal: backdrop (400) → modal-dialog/drawer (500) → skip-link (600)"
+        "$description": "Z-index schaal: backdrop ({dsn.z-index.400}) → modal-dialog/drawer ({dsn.z-index.500}) → skip-link ({dsn.z-index.600})"
       }
     }
   }

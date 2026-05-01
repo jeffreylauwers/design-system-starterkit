@@ -16,7 +16,7 @@
         "$description": "NumberBadge font weight — bold voor leesbaarheid op kleine afmeting"
       },
       "padding-block": {
-        "$value": "0px",
+        "$value": "{dsn.space.none}",
         "$type": "dimension",
         "$description": "Verticale padding"
       },

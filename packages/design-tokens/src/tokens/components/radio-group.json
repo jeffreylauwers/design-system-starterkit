@@ -2,7 +2,7 @@
   "dsn": {
     "radio-group": {
       "border-width": {
-        "$value": "0px",
+        "$value": "{dsn.border.width.none}",
         "$type": "dimension",
         "$description": "No border by default for fieldset"
       },
@@ -12,12 +12,12 @@
         "$description": "Space between radio options in the group"
       },
       "margin": {
-        "$value": "0px",
+        "$value": "{dsn.space.none}",
         "$type": "dimension",
         "$description": "No margin by default for fieldset"
       },
       "padding": {
-        "$value": "0px",
+        "$value": "{dsn.space.none}",
         "$type": "dimension",
         "$description": "No padding by default for fieldset"
       },

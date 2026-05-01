@@ -2,9 +2,9 @@
   "dsn": {
     "skip-link": {
       "z-index": {
-        "$value": "600",
+        "$value": "{dsn.z-index.600}",
         "$type": "number",
-        "$description": "Hoogste z-index — boven modals (500) en backdrop (400), zodat de skip-link altijd zichtbaar is bij focus"
+        "$description": "Hoogste z-index — boven modals ({dsn.z-index.500}) en backdrop ({dsn.z-index.400}), zodat de skip-link altijd zichtbaar is bij focus"
       },
       "padding-block": {
         "$value": "{dsn.space.block.md}",

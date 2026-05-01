@@ -1,6 +1,6 @@
 # Design Tokens Reference
 
-**Last Updated:** April 30, 2026
+**Last Updated:** May 1, 2026
 
 Complete reference for all design tokens in the Design System Starter Kit.
 
@@ -14,8 +14,10 @@ Complete reference for all design tokens in the Design System Starter Kit.
 4. [Colors](#colors)
 5. [Borders](#borders)
 6. [Focus States](#focus-states)
-7. [Motion](#motion)
-8. [Breakpoints](#breakpoints)
+7. [Box Shadows](#box-shadows)
+8. [Z-Index](#z-index)
+9. [Motion](#motion)
+10. [Breakpoints](#breakpoints)
 
 ---
 
@@ -111,6 +113,10 @@ Complete reference for all design tokens in the Design System Starter Kit.
 
 - **Value:** 0.5rem (8px)
 - **Purpose:** Base unit for 8pt grid system
+
+### None
+
+- `none`: 0px — Explicitly no spacing; use instead of hardcoded `0` in component tokens.
 
 ### Spacing Concepts
 
@@ -271,6 +277,7 @@ color: var(--dsn-color-neutral-color-default);
 
 #### Start Theme
 
+- `square`: 0px — Explicitly no border radius; used for alerts, checkboxes, form controls
 - `sm`: 4px
 - `md`: 8px
 - `lg`: 16px
@@ -278,6 +285,7 @@ color: var(--dsn-color-neutral-color-default);
 
 #### Wireframe Theme
 
+- `square`: 0px
 - `sm`: 2px
 - `md`: 4px
 - `lg`: 8px
@@ -285,6 +293,7 @@ color: var(--dsn-color-neutral-color-default);
 
 ### Border Width
 
+- `none`: 0px — Explicitly no border; used to reset fieldset borders (checkbox-group, radio-group)
 - `thin`: 1px
 - `medium`: 2px
 - `thick`: 4px
@@ -330,6 +339,37 @@ Focus indicators use a dual-outline technique: a primary `outline` for the main 
 - `outline-offset`: 2px
 - `outline-style`: solid
 - `outline-width`: 2px
+
+---
+
+## Box Shadows
+
+Elevation shadows communicate depth. Each shadow is composed of two drop shadow layers (direct + ambient) and a spread-only outline layer (highlight). Only the color tokens differ between light and dark mode.
+
+| Token                 | CSS Variable            | Start Theme                  | Wireframe Theme |
+| --------------------- | ----------------------- | ---------------------------- | --------------- |
+| `dsn.box-shadow.none` | `--dsn-box-shadow-none` | `none`                       | `none`          |
+| `dsn.box-shadow.sm`   | `--dsn-box-shadow-sm`   | 2-layer shadow + 1px outline | `none` (flat)   |
+| `dsn.box-shadow.md`   | `--dsn-box-shadow-md`   | 2-layer shadow + 1px outline | `none` (flat)   |
+| `dsn.box-shadow.lg`   | `--dsn-box-shadow-lg`   | 2-layer shadow + 1px outline | `none` (flat)   |
+
+**Usage:** `sm` for cards/chips, `md` for dropdowns/tooltips, `lg` for modals/dialogs. The wireframe theme intentionally flattens all elevation to `none`.
+
+---
+
+## Z-Index
+
+Z-index tokens define the stacking order of UI layers. The token name matches its numeric value, leaving room to insert intermediate levels.
+
+| Token             | CSS Variable        | Value | Used by                          |
+| ----------------- | ------------------- | ----- | -------------------------------- |
+| `dsn.z-index.300` | `--dsn-z-index-300` | 300   | PageHeader (sticky/auto-hide)    |
+| `dsn.z-index.350` | `--dsn-z-index-350` | 350   | Popover, tooltips, dropdowns     |
+| `dsn.z-index.400` | `--dsn-z-index-400` | 400   | Backdrop (behind modals/drawers) |
+| `dsn.z-index.500` | `--dsn-z-index-500` | 500   | ModalDialog, Drawer              |
+| `dsn.z-index.600` | `--dsn-z-index-600` | 600   | SkipLink (always on top — a11y)  |
+
+Z-index tokens are identical across all themes and modes.
 
 ---
 
@@ -379,11 +419,11 @@ Five semantic easing curves for consistent motion feel.
 
 ## Token Statistics
 
-**Total Tokens (as of v5.32.0):**
+**Total Tokens (as of v5.34.0):**
 
-- Semantic tokens: ~420 per configuration (incl. content sizing, form control sizing, breakpoints)
+- Semantic tokens: ~435 per configuration (incl. content sizing, form control sizing, box shadows, z-index, breakpoints)
 - Component tokens: ~700 (component JSON files per categorie: layout, content, display/feedback, navigation, branding, form)
-- **Total: ~1100+ tokens per full configuration**
+- **Total: ~1135+ tokens per full configuration**
 - **Total configurations: 8** (2 themes × 2 modes × 2 project types)
 
 ---
