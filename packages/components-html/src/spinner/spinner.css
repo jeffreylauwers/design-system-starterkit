@@ -1,0 +1,100 @@
+/**
+ * Spinner Component
+ * Cirkelvormige laadindicator voor onbepaalde wachttijden.
+ *
+ * role="status" op de container maakt de laadtoestand toegankelijk voor screenreaders.
+ * De SVG-cirkel is decoratief (aria-hidden="true") — het label geeft de toegankelijke naam.
+ *
+ * Usage:
+ * <!-- Standaard (label rechts) -->
+ * <div class="dsn-spinner" role="status">
+ *   <svg class="dsn-spinner__circle" viewBox="0 0 24 24" aria-hidden="true">
+ *     <circle class="dsn-spinner__track" cx="12" cy="12" r="10" />
+ *     <circle class="dsn-spinner__arc" cx="12" cy="12" r="10" />
+ *   </svg>
+ *   <span class="dsn-spinner__label">Laden...</span>
+ * </div>
+ *
+ * <!-- Grote variant (label gecentreerd onder spinner) -->
+ * <div class="dsn-spinner dsn-spinner--large" role="status">
+ *   <svg class="dsn-spinner__circle" viewBox="0 0 24 24" aria-hidden="true">
+ *     <circle class="dsn-spinner__track" cx="12" cy="12" r="10" />
+ *     <circle class="dsn-spinner__arc" cx="12" cy="12" r="10" />
+ *   </svg>
+ *   <span class="dsn-spinner__label">Laden...</span>
+ * </div>
+ *
+ * <!-- Visueel verborgen label (toegankelijk voor screenreaders via dsn-visually-hidden) -->
+ * <div class="dsn-spinner" role="status">
+ *   <svg class="dsn-spinner__circle" viewBox="0 0 24 24" aria-hidden="true">
+ *     <circle class="dsn-spinner__track" cx="12" cy="12" r="10" />
+ *     <circle class="dsn-spinner__arc" cx="12" cy="12" r="10" />
+ *   </svg>
+ *   <span class="dsn-spinner__label dsn-visually-hidden">Laden...</span>
+ * </div>
+ */
+
+.dsn-spinner {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--dsn-spinner-gap-size);
+}
+
+.dsn-spinner--large {
+  flex-direction: column;
+  align-items: center;
+}
+
+.dsn-spinner__circle {
+  flex-shrink: 0;
+  width: var(--dsn-spinner-size);
+  height: var(--dsn-spinner-size);
+  animation: dsn-spinner-rotate var(--dsn-spinner-duration) linear infinite;
+  transform-origin: center;
+}
+
+.dsn-spinner--large .dsn-spinner__circle {
+  width: var(--dsn-spinner-size-large);
+  height: var(--dsn-spinner-size-large);
+}
+
+/* Baan: volledige achtergrondcirkel als visuele rails */
+.dsn-spinner__track {
+  fill: none;
+  stroke: var(--dsn-spinner-track-color);
+  stroke-width: var(--dsn-spinner-stroke-width);
+}
+
+/* Boog: gedeeltelijke cirkel die de animatie zichtbaar maakt */
+.dsn-spinner__arc {
+  fill: none;
+  stroke: var(--dsn-spinner-color);
+  stroke-width: var(--dsn-spinner-stroke-width);
+  stroke-linecap: round;
+  /* 75% zichtbaar (47.12 van 62.83 omtrek), 25% gap — bij r=10 in 24-unit viewBox */
+  stroke-dasharray: 47 16;
+}
+
+@keyframes dsn-spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* prefers-reduced-motion: subtiel pulseren i.p.v. roteren */
+@media (prefers-reduced-motion: reduce) {
+  .dsn-spinner__circle {
+    animation: dsn-spinner-pulse var(--dsn-spinner-duration) ease-in-out
+      infinite alternate;
+  }
+}
+
+@keyframes dsn-spinner-pulse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}

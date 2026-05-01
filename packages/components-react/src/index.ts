@@ -52,6 +52,7 @@ export * from './OptionLabel';
 // Display & Feedback Components
 export * from './Backdrop';
 export * from './DotBadge';
+export * from './Spinner';
 export * from './NumberBadge';
 export * from './StatusBadge';
 export * from './Alert';
