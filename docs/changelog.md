@@ -6,6 +6,29 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.35.0 (May 2, 2026)
+
+### File + FileList
+
+#### Added
+
+- **`File` component**: toont bestandsmeta (naam, type, grootte) met contextafhankelijke acties
+  - Vier upload-states: `default`, `loading`, `uploaded`, `error`
+  - `uploaded` keert automatisch na 2 seconden terug naar `default`; statuswijziging aangekondigd via `aria-live="polite"`
+  - Interactieve variant (stretched-link techniek) wanneer `href` aanwezig is en `onDelete` ontbreekt
+  - Bestandsnaam gestyled als `dsn-link` (blauw, onderstreept, bold) wanneer `href` aanwezig
+  - Media-vlak: vast 3rem×3rem vierkant met bestandsicoon of afbeeldingspreview (`object-fit: cover`)
+  - Verwijder-actie in LinkButton-stijl (`dsn-link dsn-link-button`)
+  - Hover/active/focus op de gehele component in de interactieve variant — zelfde patroon als Card
+  - Fade-in animatie (`dsn-file-action-in`) op Spinner, check-icoon en verwijder-knop; respecteert `prefers-reduced-motion`
+  - `ctaVariant`: `view` (opent in nieuw tabblad) of `download` (triggert download met `download`-attribuut)
+  - `mediaType`: `document` (`file-description.svg`) of `image` (`photo.svg`)
+  - `previewSrc`: vervangt het icoon door een afbeeldingspreview
+- **`FileList` component**: `<ul role="list">` wrapper voor meerdere `File` items — behoudt lijstsemantiek bij CSS-resets
+- **`tokens/components/file.json`**: 25 component tokens (`background-color`, `border-*`, `box-shadow*`, `padding-*`, `gap`, `media.*`, `name.*`, `meta.*`, `status-icon.*`)
+
+---
+
 ## Version 5.34.0 (May 1, 2026)
 
 ### Semantische design tokens: none-waarden en z-index
