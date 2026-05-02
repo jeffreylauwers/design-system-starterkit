@@ -1,0 +1,43 @@
+import { Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import * as FileStories from './File.stories';
+import docs from './File.docs.md?raw';
+import { PreviewFrame, CodeTabs } from './components';
+
+export const [intro, rest] = docs.split('<!-- VOORBEELD -->');
+
+<Meta of={FileStories} />
+
+<Markdown>{intro}</Markdown>
+
+## Voorbeeld
+
+<PreviewFrame>
+  <Story of={FileStories.Default} />
+</PreviewFrame>
+
+<CodeTabs
+  of={FileStories.Default}
+  html={`<div class="dsn-file">
+  <div class="dsn-file__media" aria-hidden="true">
+    <svg class="dsn-icon" aria-hidden="true"><!-- file-description.svg --></svg>
+  </div>
+  <div class="dsn-file__content">
+    <a class="dsn-file__name" href="/bestanden/document.pdf">document</a>
+    <span class="dsn-file__meta">PDF · 1,2 MB</span>
+  </div>
+  <div class="dsn-file__actions">
+    <button type="button" class="dsn-button dsn-button--subtle dsn-button--size-small">
+      <svg class="dsn-icon" aria-hidden="true"><!-- trash.svg --></svg>
+      <span class="dsn-button__label">
+        Verwijder
+        <span class="dsn-visually-hidden"> document.pdf</span>
+      </span>
+    </button>
+  </div>
+  <span class="dsn-visually-hidden" aria-live="polite" aria-atomic="true"></span>
+</div>`}
+/>
+
+<Controls of={FileStories.Default} />
+
+<Markdown>{rest}</Markdown>

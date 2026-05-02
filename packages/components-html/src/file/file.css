@@ -1,0 +1,205 @@
+/* =============================================================================
+   File
+   Toont bestandsmeta (naam, type, grootte) en contextafhankelijke acties.
+   CSS grid met 3 kolommen: media-vlak | content | actions
+   ============================================================================= */
+
+/* File — root container */
+.dsn-file {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--dsn-file-gap);
+  padding-block: var(--dsn-file-padding-block);
+  padding-inline: var(--dsn-file-padding-inline);
+  background-color: var(--dsn-file-background-color);
+  border: var(--dsn-file-border-width) solid var(--dsn-file-border-color);
+  border-radius: var(--dsn-file-border-radius);
+  box-shadow: var(--dsn-file-box-shadow);
+}
+
+/* Error state: rode randkleur signaleert de mislukking */
+.dsn-file--error {
+  border-color: var(--dsn-file-border-color-error);
+}
+
+/* =============================================================================
+   Interactieve variant — hover/active/focus via :has() op de stretched link
+   Zelfde techniek als Card, aangevuld met border-color
+   ============================================================================= */
+
+.dsn-file--interactive {
+  cursor: pointer;
+  transition:
+    background-color var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    border-color var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    box-shadow var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default);
+}
+
+/* Hover op de gehele container — ook actief wanneer de CTA-link gehoverd wordt */
+.dsn-file--interactive:hover {
+  background-color: var(--dsn-file-background-color-hover);
+  border-color: var(--dsn-file-border-color-hover);
+  box-shadow: var(--dsn-file-box-shadow-hover);
+}
+
+/* Active alleen via de stretched link — niet bij klik op de CTA-link */
+.dsn-file--interactive:has(.dsn-file__name--stretched:active) {
+  background-color: var(--dsn-file-background-color-active);
+  border-color: var(--dsn-file-border-color-active);
+}
+
+.dsn-file--interactive:has(.dsn-file__name--stretched:focus-visible) {
+  outline: var(--dsn-focus-outline-width) var(--dsn-focus-outline-style)
+    var(--dsn-focus-outline-color);
+  outline-offset: var(--dsn-focus-outline-offset);
+}
+
+/* =============================================================================
+   Media-vlak — icoon of afbeeldingspreview
+   ============================================================================= */
+
+.dsn-file__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: var(--dsn-file-media-size);
+  inline-size: var(--dsn-file-media-size);
+  border-radius: var(--dsn-file-media-border-radius);
+  background-color: var(--dsn-file-media-background-color);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Icoon in media-vlak */
+.dsn-file__media > .dsn-icon {
+  color: var(--dsn-file-media-icon-color);
+  width: var(--dsn-file-media-icon-size);
+  height: var(--dsn-file-media-icon-size);
+  flex-shrink: 0;
+}
+
+/* Preview-afbeelding vult het vaste media-vlak volledig */
+.dsn-file__preview {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =============================================================================
+   Content — naam, meta en optionele ErrorMessage
+   ============================================================================= */
+
+.dsn-file__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dsn-file-content-gap);
+  min-width: 0;
+}
+
+/* Bestandsnaam — bold, mag over meerdere regels lopen */
+.dsn-file__name {
+  font-weight: var(--dsn-file-name-font-weight);
+}
+
+/* Alleen als span: expliciete kleur (als link geeft dsn-link de kleur) */
+span.dsn-file__name {
+  color: var(--dsn-file-name-color);
+}
+
+/* Stretched link — ::before dekt de volledige component */
+.dsn-file__name--stretched::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Geen eigen focus-stijlen — de focus-ring zit op de gehele component */
+.dsn-file__name--stretched:focus-visible {
+  background-color: transparent;
+  color: inherit;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Meta — type + grootte */
+.dsn-file__meta {
+  font-size: var(--dsn-file-meta-font-size);
+  color: var(--dsn-file-meta-color);
+}
+
+/* =============================================================================
+   Actions — inline-end area: Spinner, status-icoon, of Button/Link
+   ============================================================================= */
+
+.dsn-file__actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Directe kinderen van actions staan boven de stretched link */
+.dsn-file__actions > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Status-icoon bij uploaded state — fadeIn bij verschijnen */
+.dsn-file__status-icon {
+  color: var(--dsn-file-status-icon-color);
+  width: var(--dsn-file-status-icon-size);
+  height: var(--dsn-file-status-icon-size);
+  flex-shrink: 0;
+  animation: dsn-file-action-in var(--dsn-transition-duration-normal)
+    var(--dsn-transition-easing-default);
+}
+
+/* Spinner, verwijder-knop — fadeIn bij verschijnen of terugkeer naar default */
+.dsn-file__actions > .dsn-spinner,
+.dsn-file__actions > .dsn-link-button {
+  animation: dsn-file-action-in var(--dsn-transition-duration-normal)
+    var(--dsn-transition-easing-default);
+}
+
+@keyframes dsn-file-action-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* =============================================================================
+   FileList — ul wrapper voor meerdere File items
+   ============================================================================= */
+
+.dsn-file-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dsn-file-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================================================================
+   Reduced motion — animaties uitzetten voor gebruikers die dat prefereren
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .dsn-file--interactive {
+    transition: none;
+  }
+
+  .dsn-file__status-icon,
+  .dsn-file__actions > .dsn-link-button {
+    animation: none;
+  }
+}

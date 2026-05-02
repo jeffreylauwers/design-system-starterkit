@@ -944,7 +944,7 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 
 ## Display & Feedback Components
 
-**Status:** Complete (HTML/CSS, React): 14 components total
+**Status:** Complete (HTML/CSS, React): 16 components total
 
 ### Backdrop
 
@@ -1306,6 +1306,96 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 ```
 
 **Tests:** React (19 tests)
+
+### File
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-{html|react}/src/file/` / `packages/components-react/src/File/`
+
+**Tokens:** `tokens/components/file.json`
+
+**Props:** `fileName`, `fileType`, `fileSize`, `status`, `errorMessage`, `href`, `onDelete`, `deleteLabel`, `ctaVariant`, `ctaLabel`, `mediaType`, `previewSrc`, `loadingLabel`, `uploadedLabel`
+
+**Features:**
+
+- CSS grid met 3 kolommen: `auto 1fr auto` (media-vlak | content | actions)
+- Vier upload-states: `default`, `loading`, `uploaded`, `error`
+- `uploaded` keert automatisch na 2 seconden terug naar `default` via `setTimeout`; aankondiging via `aria-live="polite"`
+- Interactieve variant (stretched-link techniek) wanneer `href` aanwezig is en `onDelete` ontbreekt — zelfde patroon als Card
+- Hover/active/focus op de gehele component via `:hover` / `:has(.dsn-file__name--stretched:active)` / `:has(.dsn-file__name--stretched:focus-visible)`
+- Bestandsnaam als `<a class="dsn-link">` (gestyled als link, bold) wanneer `href` aanwezig; anders `<span>`
+- Media-vlak: vast 3rem×3rem vierkant met bestandsicoon (`file-description.svg` of `photo.svg`) of afbeeldingspreview (`object-fit: cover`)
+- Verwijder-knop in LinkButton-stijl: `dsn-link dsn-link-button dsn-link--size-default`
+- Fade-in animatie op Spinner, check-icoon en verwijder-knop bij verschijnen; respecteert `prefers-reduced-motion`
+
+**HTML klassen:**
+
+```html
+<!-- Default (met href + verwijder) -->
+<div class="dsn-file">
+  <div class="dsn-file__media" aria-hidden="true">
+    <svg class="dsn-icon" aria-hidden="true"><!-- file-description.svg --></svg>
+  </div>
+  <div class="dsn-file__content">
+    <a class="dsn-file__name dsn-link" href="/bestanden/document.pdf"
+      >document</a
+    >
+    <span class="dsn-file__meta">PDF · 1,2 MB</span>
+  </div>
+  <div class="dsn-file__actions">
+    <button
+      type="button"
+      class="dsn-link dsn-link-button dsn-link--size-default"
+    >
+      <svg class="dsn-icon" aria-hidden="true"><!-- trash.svg --></svg>
+      Verwijder<span class="dsn-visually-hidden"> document.pdf</span>
+    </button>
+  </div>
+  <span
+    class="dsn-visually-hidden"
+    aria-live="polite"
+    aria-atomic="true"
+  ></span>
+</div>
+
+<!-- State modifiers -->
+<div class="dsn-file dsn-file--loading">...</div>
+<div class="dsn-file dsn-file--uploaded">...</div>
+<div class="dsn-file dsn-file--error">...</div>
+<div class="dsn-file dsn-file--interactive">...</div>
+
+<!-- Stretched link in interactieve variant -->
+<a class="dsn-file__name dsn-link dsn-file__name--stretched" href="..."
+  >document</a
+>
+```
+
+**Tests:** React (52 tests)
+
+### FileList
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-react/src/File/`
+
+**Props:** `children`, `className`
+
+**Features:**
+
+- `<ul role="list">` wrapper met `<li>` per `File` — behoudt lijstsemantiek bij CSS-resets
+- Verticale stapeling via `flex-direction: column` met `gap: var(--dsn-file-gap)`
+
+**HTML klassen:**
+
+```html
+<ul class="dsn-file-list" role="list">
+  <li><!-- File --></li>
+  <li><!-- File --></li>
+</ul>
+```
+
+**Tests:** React (6 tests)
 
 ### Alert
 
@@ -3080,12 +3170,12 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 65
+**Total Components:** 67
 
 **Implementations:**
 
-- **HTML/CSS:** 65 components
-- **React:** 65 components (1409 tests total, 70 test suites)
+- **HTML/CSS:** 67 components
+- **React:** 67 components (1495 tests total, 73 test suites)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
 **Test Coverage:** 1409 tests across 70 test suites

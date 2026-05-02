@@ -1,0 +1,136 @@
+{
+  "dsn": {
+    "file": {
+      "background-color": {
+        "$value": "{dsn.color.neutral.bg-document}",
+        "$type": "color",
+        "$description": "Achtergrondkleur van het file component"
+      },
+      "background-color-hover": {
+        "$value": "{dsn.color.neutral.bg-elevated}",
+        "$type": "color",
+        "$description": "Achtergrondkleur bij hover in de interactieve variant — zelfde als Card"
+      },
+      "background-color-active": {
+        "$value": "{dsn.color.neutral.bg-elevated}",
+        "$type": "color",
+        "$description": "Achtergrondkleur bij active — zelfde als hover; geen box-shadow wijziging"
+      },
+      "border-radius": {
+        "$value": "{dsn.border.radius.md}",
+        "$type": "dimension"
+      },
+      "border-width": {
+        "$value": "{dsn.border.width.thin}",
+        "$type": "borderWidth"
+      },
+      "border-color": {
+        "$value": "{dsn.color.neutral.border-subtle}",
+        "$type": "color"
+      },
+      "border-color-hover": {
+        "$value": "{dsn.color.neutral.border-default}",
+        "$type": "color",
+        "$description": "Iets prominentere rand bij hover — signaleert interactiviteit"
+      },
+      "border-color-active": {
+        "$value": "{dsn.color.neutral.border-default}",
+        "$type": "color",
+        "$description": "Zelfde als hover"
+      },
+      "border-color-error": {
+        "$value": "{dsn.color.negative.border-default}",
+        "$type": "color",
+        "$description": "Randkleur in de error state — zelfde schaal als FormFieldset bij invalid"
+      },
+      "box-shadow": {
+        "$value": "none",
+        "$type": "shadow",
+        "$description": "Geen schaduw standaard — zelfde als Card"
+      },
+      "box-shadow-hover": {
+        "$value": "{dsn.box-shadow.md}",
+        "$type": "shadow",
+        "$description": "Hogere elevatie bij hover — zelfde als Card hover"
+      },
+      "padding-block": {
+        "$value": "{dsn.space.block.lg}",
+        "$type": "spacing"
+      },
+      "padding-inline": {
+        "$value": "{dsn.space.inline.xl}",
+        "$type": "spacing"
+      },
+      "gap": {
+        "$value": "{dsn.space.inline.lg}",
+        "$type": "spacing",
+        "$description": "Horizontale ruimte tussen media-vlak, content en actions"
+      },
+      "content": {
+        "gap": {
+          "$value": "{dsn.space.block.xs}",
+          "$type": "spacing",
+          "$description": "Verticale ruimte tussen naam, meta en error message"
+        }
+      },
+      "name": {
+        "color": {
+          "$value": "{dsn.color.neutral.color-default}",
+          "$type": "color"
+        },
+        "font-weight": {
+          "$value": "{dsn.text.font-weight.bold}",
+          "$type": "fontWeight",
+          "$description": "Bold gewicht benadrukt de bestandsnaam als primaire informatie"
+        }
+      },
+      "meta": {
+        "color": {
+          "$value": "{dsn.color.neutral.color-subtle}",
+          "$type": "color",
+          "$description": "Subtielere kleur legt visuele hiërarchie vast t.o.v. de naam"
+        },
+        "font-size": {
+          "$value": "{dsn.text.font-size.md}",
+          "$type": "fontSize"
+        }
+      },
+      "media": {
+        "size": {
+          "$value": "3rem",
+          "$type": "dimension",
+          "$description": "Vaste grootte van het media-vlak (48px) — vierkant voor zowel icoon als preview"
+        },
+        "border-radius": {
+          "$value": "{dsn.border.radius.sm}",
+          "$type": "dimension"
+        },
+        "background-color": {
+          "$value": "{dsn.color.neutral.bg-default}",
+          "$type": "color"
+        },
+        "icon": {
+          "color": {
+            "$value": "{dsn.color.neutral.color-subtle}",
+            "$type": "color"
+          },
+          "size": {
+            "$value": "{dsn.icon.size.md}",
+            "$type": "dimension"
+          }
+        }
+      },
+      "status-icon": {
+        "color": {
+          "$value": "{dsn.color.positive.color-default}",
+          "$type": "color",
+          "$description": "Zelfde token als FormFieldStatus positive variant"
+        },
+        "size": {
+          "$value": "{dsn.icon.size.md}",
+          "$type": "dimension"
+        }
+      }
+    }
+  }
+}

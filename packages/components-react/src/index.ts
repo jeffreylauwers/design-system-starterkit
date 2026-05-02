@@ -91,3 +91,4 @@ export * from './Card';
 export * from './ModalDialog';
 export * from './Drawer';
 export * from './Popover';
+export * from './File';
