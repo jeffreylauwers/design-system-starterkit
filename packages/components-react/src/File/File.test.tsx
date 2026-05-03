@@ -100,6 +100,39 @@ describe('File', () => {
       expect(name?.nodeName).toBe('A');
       expect(name).toHaveAttribute('href', '/bestanden/document.pdf');
     });
+
+    it('naam-link heeft altijd target="_blank" en rel="noopener noreferrer"', () => {
+      const { container } = render(
+        <File fileName="document.pdf" href="/bestanden/document.pdf" />
+      );
+      const name = container.querySelector('.dsn-file__name');
+      expect(name).toHaveAttribute('target', '_blank');
+      expect(name).toHaveAttribute('rel', 'noopener noreferrer');
+    });
+
+    it('naam-link heeft target="_blank" ook wanneer onDelete aanwezig is', () => {
+      const { container } = render(
+        <File
+          fileName="document.pdf"
+          href="/bestanden/document.pdf"
+          onDelete={() => {}}
+        />
+      );
+      const name = container.querySelector('.dsn-file__name');
+      expect(name).toHaveAttribute('target', '_blank');
+    });
+
+    it('naam-link heeft geen download-attribuut', () => {
+      const { container } = render(
+        <File
+          fileName="document.pdf"
+          href="/bestanden/document.pdf"
+          ctaVariant="download"
+        />
+      );
+      const name = container.querySelector('.dsn-file__name');
+      expect(name).not.toHaveAttribute('download');
+    });
   });
 
   describe('status: default', () => {
@@ -304,7 +337,7 @@ describe('File', () => {
   });
 
   describe('interactieve variant', () => {
-    it('heeft dsn-file--interactive klasse bij href zonder onDelete', () => {
+    it('heeft dsn-file--interactive klasse bij href zonder onDelete (view)', () => {
       const { container } = render(
         <File fileName="document.pdf" href="/bestanden/document.pdf" />
       );
@@ -322,7 +355,18 @@ describe('File', () => {
       expect(container.firstChild).not.toHaveClass('dsn-file--interactive');
     });
 
-    it('naam heeft dsn-file__name--stretched klasse', () => {
+    it('heeft geen dsn-file--interactive klasse bij ctaVariant="download"', () => {
+      const { container } = render(
+        <File
+          fileName="document.pdf"
+          href="/bestanden/document.pdf"
+          ctaVariant="download"
+        />
+      );
+      expect(container.firstChild).not.toHaveClass('dsn-file--interactive');
+    });
+
+    it('naam heeft dsn-file__name--stretched klasse bij view', () => {
       const { container } = render(
         <File fileName="document.pdf" href="/bestanden/document.pdf" />
       );
@@ -330,20 +374,19 @@ describe('File', () => {
       expect(name).toHaveClass('dsn-file__name--stretched');
     });
 
-    it('ctaVariant="view": CTA-link heeft target="_blank"', () => {
+    it('naam heeft geen dsn-file__name--stretched klasse bij download', () => {
       const { container } = render(
         <File
           fileName="document.pdf"
           href="/bestanden/document.pdf"
-          ctaVariant="view"
+          ctaVariant="download"
         />
       );
-      const ctaLink = container.querySelector('.dsn-file__actions a');
-      expect(ctaLink).toHaveAttribute('target', '_blank');
-      expect(ctaLink).toHaveAttribute('rel', 'noopener noreferrer');
+      const name = container.querySelector('.dsn-file__name');
+      expect(name).not.toHaveClass('dsn-file__name--stretched');
     });
 
-    it('ctaVariant="view": CTA-link heeft aria-hidden en tabindex="-1"', () => {
+    it('ctaVariant="view": toont geen CTA-link in actions', () => {
       const { container } = render(
         <File
           fileName="document.pdf"
@@ -352,8 +395,7 @@ describe('File', () => {
         />
       );
       const ctaLink = container.querySelector('.dsn-file__actions a');
-      expect(ctaLink).toHaveAttribute('aria-hidden', 'true');
-      expect(ctaLink).toHaveAttribute('tabindex', '-1');
+      expect(ctaLink).not.toBeInTheDocument();
     });
 
     it('ctaVariant="download": CTA-link heeft download attribuut', () => {
@@ -368,30 +410,17 @@ describe('File', () => {
       expect(ctaLink).toHaveAttribute('download');
     });
 
-    it('stretched link heeft dezelfde href als CTA-link', () => {
+    it('ctaVariant="download": CTA-link heeft aria-hidden en tabindex="-1"', () => {
       const { container } = render(
         <File
           fileName="document.pdf"
           href="/bestanden/document.pdf"
-          ctaVariant="view"
-        />
-      );
-      const nameLink = container.querySelector('.dsn-file__name--stretched');
-      const ctaLink = container.querySelector('.dsn-file__actions a');
-      expect(nameLink).toHaveAttribute('href', '/bestanden/document.pdf');
-      expect(ctaLink).toHaveAttribute('href', '/bestanden/document.pdf');
-    });
-
-    it('toont "Bekijken" als standaard ctaLabel bij view', () => {
-      const { container } = render(
-        <File
-          fileName="document.pdf"
-          href="/bestanden/document.pdf"
-          ctaVariant="view"
+          ctaVariant="download"
         />
       );
       const ctaLink = container.querySelector('.dsn-file__actions a');
-      expect(ctaLink).toHaveTextContent('Bekijken');
+      expect(ctaLink).toHaveAttribute('aria-hidden', 'true');
+      expect(ctaLink).toHaveAttribute('tabindex', '-1');
     });
 
     it('toont "Download" als standaard ctaLabel bij download', () => {
@@ -406,16 +435,17 @@ describe('File', () => {
       expect(ctaLink).toHaveTextContent('Download');
     });
 
-    it('gebruikt een aangepaste ctaLabel', () => {
+    it('gebruikt een aangepaste ctaLabel bij download', () => {
       const { container } = render(
         <File
           fileName="document.pdf"
           href="/bestanden/document.pdf"
-          ctaLabel="Open bestand"
+          ctaVariant="download"
+          ctaLabel="Sla op"
         />
       );
       const ctaLink = container.querySelector('.dsn-file__actions a');
-      expect(ctaLink).toHaveTextContent('Open bestand');
+      expect(ctaLink).toHaveTextContent('Sla op');
     });
   });
 
