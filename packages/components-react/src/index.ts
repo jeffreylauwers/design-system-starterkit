@@ -29,6 +29,7 @@ export * from './Icon';
 
 // Form Inputs
 export * from './TextInput';
+export * from './FileInput';
 export * from './EmailInput';
 export * from './PasswordInput';
 export * from './NumberInput';

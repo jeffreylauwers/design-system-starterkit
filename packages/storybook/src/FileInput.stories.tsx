@@ -1,0 +1,168 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import {
+  FileInput,
+  FormFieldLabel,
+  UnorderedList,
+} from '@dsn/components-react';
+import DocsPage from './FileInput.docs.mdx';
+
+const meta: Meta<typeof FileInput> = {
+  title: 'Components/FileInput',
+  component: FileInput,
+  parameters: {
+    docs: {
+      page: DocsPage,
+    },
+    dsn: {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      htmlTemplate: (args: any) => {
+        const attrs = [
+          args.disabled && 'disabled',
+          args.required && 'required',
+          args.multiple && 'multiple',
+          args.invalid && 'aria-invalid="true"',
+          args.accept && `accept="${args.accept}"`,
+        ]
+          .filter(Boolean)
+          .join(' ');
+        return `<input type="file" class="dsn-file-input"${attrs ? ' ' + attrs : ''} />`;
+      },
+    },
+  },
+  argTypes: {
+    disabled: { control: 'boolean' },
+    invalid: { control: 'boolean' },
+    required: { control: 'boolean' },
+    multiple: { control: 'boolean' },
+    accept: { control: 'text' },
+  },
+  args: {},
+};
+
+export default meta;
+type Story = StoryObj<typeof FileInput>;
+
+// =============================================================================
+// DEFAULT
+// =============================================================================
+
+export const Default: Story = {};
+
+// =============================================================================
+// VARIANTEN
+// =============================================================================
+
+export const Disabled: Story = {
+  args: { disabled: true },
+};
+
+export const Invalid: Story = {
+  args: { invalid: true },
+};
+
+export const Required: Story = {
+  args: { required: true },
+};
+
+export const Multiple: Story = {
+  name: 'Multiple files',
+  args: { multiple: true },
+};
+
+export const WithAccept: Story = {
+  name: 'With accept filter',
+  args: { accept: '.pdf,.docx,.xlsx' },
+};
+
+// =============================================================================
+// OVERZICHTSSTORY
+// =============================================================================
+
+export const AllStates: Story = {
+  name: 'All states',
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1.5rem',
+      }}
+    >
+      <div>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Default
+        </label>
+        <FileInput />
+      </div>
+      <div>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Disabled
+        </label>
+        <FileInput disabled />
+      </div>
+      <div>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Invalid
+        </label>
+        <FileInput invalid />
+      </div>
+      <div>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '0.5rem',
+            fontWeight: 'bold',
+          }}
+        >
+          Multiple
+        </label>
+        <FileInput multiple />
+      </div>
+    </div>
+  ),
+};
+
+// =============================================================================
+// IN FORM FIELD CONTEXT
+// =============================================================================
+
+export const InFormField: Story = {
+  name: 'In form field',
+  render: () => (
+    <div className="dsn-form-field">
+      <FormFieldLabel htmlFor="bestand-upload" suffix="(niet verplicht)">
+        Bestand toevoegen
+      </FormFieldLabel>
+      <UnorderedList id="bestand-upload-description">
+        <li>U kunt meerdere bestanden tegelijk toevoegen.</li>
+        <li>U mag maximaal 10 MB aan bestanden toevoegen.</li>
+        <li>
+          Toegestane bestandstypen: doc, docx, xlsx, pdf, zip, jpg, png, bmp en
+          gif.
+        </li>
+      </UnorderedList>
+      <FileInput
+        id="bestand-upload"
+        aria-describedby="bestand-upload-description"
+      />
+    </div>
+  ),
+};

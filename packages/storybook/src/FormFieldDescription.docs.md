@@ -4,7 +4,7 @@ Optionele help tekst die onder het label en boven de form control wordt getoond.
 
 ## Doel
 
-De FormFieldDescription component toont aanvullende informatie of instructies voor een form field. Het heeft een subtiele tekstkleur om het te onderscheiden van het label en gebruikt een `<p>` element. De description komt altijd tussen het label en de form control. Het helpt gebruikers om te begrijpen wat er verwacht wordt zonder dat het label zelf te lang wordt. Voor accessibility moet de description gekoppeld worden aan de form control via `aria-describedby`.
+De FormFieldDescription component toont aanvullende informatie of instructies voor een form field. Het heeft een subtiele tekstkleur om het te onderscheiden van het label en gebruikt standaard een `<p>` element. Gebruik `as="div"` wanneer de description block-level content bevat zoals een lijst — een `<ul>` mag niet binnen een `<p>` staan. De description komt altijd tussen het label en de form control. Voor accessibility moet de description gekoppeld worden aan de form control via `aria-describedby`.
 
 <!-- VOORBEELD -->
 
@@ -27,6 +27,7 @@ De FormFieldDescription component toont aanvullende informatie of instructies vo
 - **Houd het kort.** Descriptions moeten bondig zijn (1-2 zinnen meestal).
 - **Wees specifiek.** Geef concrete voorbeelden of requirements ("Minimaal 8 tekens" in plaats van "Kies een sterk wachtwoord").
 - **Gebruik aria-describedby.** Geef de description een `id` en koppel het aan de form control.
+- **Gebruik `as="div"` voor lijsten.** Als de description een `UnorderedList` of andere block-level elementen bevat, render dan als `<div>` — een `<ul>` is geen geldig kind van een `<p>`.
 - **Niet voor errors.** Gebruik FormFieldErrorMessage voor validatie feedback.
 - **Niet voor status.** Gebruik FormFieldStatus voor success/info/warning feedback.
 - **Timing.** Descriptions zijn altijd zichtbaar, niet alleen na interactie.

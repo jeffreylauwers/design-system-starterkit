@@ -192,7 +192,7 @@ Het [ComponentName] component wordt gebruikt voor:
 - [ ] `// DEFAULT` sectie: `Default` story
 - [ ] `// VARIANTEN` sectie: per-prop/state stories (bijv. `WithDescription`, `Disabled`, `Invalid`)
 - [ ] `// OVERZICHTSSTORIES` sectie: `AllVariants` of `AllStates` (zie regel hieronder)
-- [ ] `// TEKST VARIANTEN` sectie: `ShortText` + `LongText` (alleen bij componenten met zichtbare tekstinhoud)
+- [ ] `// TEKST VARIANTEN` sectie: `ShortText` + `LongText` (alleen bij componenten met zichtbare tekstinhoud) — `LongText` gebruikt `VEEL_TEKST` uit `story-helpers.tsx`
 - [ ] `// RTL` sectie: `RTL` + `RTLLongText` (alleen bij componenten met tekst of richtingsgevoelige layout)
 - [ ] Alle story-namen in het Engels
 
@@ -252,7 +252,7 @@ Elke `.stories.tsx` volgt altijd deze sectievolgorde (met `// ===` comments als 
 3. `// OVERZICHTSSTORIES`: één overzichtsstory:
    - `AllVariants` / `'All variants'` → voor componenten met **visuele kleur- of stijlvarianten** (bijv. `variant="info|warning|error"`)
    - `AllStates` / `'All states'` → voor componenten met **interactieve states** (bijv. default, disabled, invalid, read-only)
-4. `// TEKST VARIANTEN`: `ShortText` + `LongText`: **alleen** bij componenten met zichtbare tekstinhoud; weglaten bij icoon-only of puur visuele componenten (DotBadge, Icon, Checkbox, Radio)
+4. `// TEKST VARIANTEN`: `ShortText` + `LongText`: **alleen** bij componenten met zichtbare tekstinhoud; weglaten bij icoon-only of puur visuele componenten (DotBadge, Icon, Checkbox, Radio) — `LongText` gebruikt altijd `VEEL_TEKST` uit `story-helpers.tsx`
 5. `// RTL`: `RTL` + `RTLLongText`: **alleen** bij componenten met tekst of richtingsgevoelige layout
 
 Geen `// HIGH CONTRAST` sectie: daar zijn we van af gestapt.

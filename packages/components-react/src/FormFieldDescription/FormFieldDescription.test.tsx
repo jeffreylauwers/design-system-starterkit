@@ -12,9 +12,16 @@ describe('FormFieldDescription', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders as a <p> element', () => {
+  it('renders as a <p> element by default', () => {
     render(<FormFieldDescription>Description text</FormFieldDescription>);
     expect(screen.getByText('Description text').tagName).toBe('P');
+  });
+
+  it('renders as a <div> element when as="div"', () => {
+    render(
+      <FormFieldDescription as="div">Description text</FormFieldDescription>
+    );
+    expect(screen.getByText('Description text').tagName).toBe('DIV');
   });
 
   it('always has base dsn-form-field-description class', () => {
@@ -36,9 +43,19 @@ describe('FormFieldDescription', () => {
   });
 
   it('forwards ref', () => {
-    const ref = { current: null as HTMLParagraphElement | null };
+    const ref = { current: null as HTMLElement | null };
     render(<FormFieldDescription ref={ref}>Description</FormFieldDescription>);
     expect(ref.current).toBeInstanceOf(HTMLParagraphElement);
+  });
+
+  it('forwards ref for div variant', () => {
+    const ref = { current: null as HTMLElement | null };
+    render(
+      <FormFieldDescription as="div" ref={ref}>
+        Description
+      </FormFieldDescription>
+    );
+    expect(ref.current).toBeInstanceOf(HTMLDivElement);
   });
 
   it('spreads additional HTML attributes', () => {

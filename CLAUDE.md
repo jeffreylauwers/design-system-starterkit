@@ -180,6 +180,59 @@ Bekijk `packages/storybook/src/Button.docs.md` als referentie voor toon en opmaa
 
 ---
 
+## Storybook stories: naamgeving en canonieke teksten
+
+### Story namen: altijd Engels
+
+Story `name` waarden zijn altijd Engelstalig. Gebruik de Engelse variant van bekende patronen:
+
+| Patroon             | ✅ Correct             | ❌ Niet doen               |
+| ------------------- | ---------------------- | -------------------------- |
+| Overzicht           | `'All States'`         | `'Alle states'`            |
+| Lange tekst         | `'Long Text'`          | `'Lange tekst'`            |
+| Korte tekst         | `'Short Text'`         | `'Korte tekst'`            |
+| Met iets            | `'With Image Preview'` | `'Met afbeeldingspreview'` |
+| Interactief variant | `'Interactive'`        | `'Interactief'`            |
+| RTL                 | `'RTL'`                | —                          |
+| Bestandslijst       | `'File List'`          | `'Bestandslijst'`          |
+
+### Canonieke teksten uit `story-helpers.tsx`
+
+Voor lange tekst in stories, gebruik altijd de gedeelde constanten uit `packages/storybook/src/story-helpers.tsx`. Importeer ze nooit opnieuw als losse string.
+
+```tsx
+import {
+  VEEL_TEKST,
+  WEINIG_TEKST,
+  TEKST,
+  VEEL_TEKST_AR,
+} from './story-helpers';
+
+// ✅ Lange bestandsnaam
+args: {
+  fileName: `${VEEL_TEKST}.pdf`;
+}
+
+// ✅ Lange labeltekst
+args: {
+  label: VEEL_TEKST;
+}
+
+// ❌ Nooit een eigen lange string verzinnen
+args: {
+  fileName: 'dit-is-een-heel-lange-naam-die-afgekapt-moet-worden.pdf';
+}
+```
+
+| Constante       | Waarde (samenvatting)                                              |
+| --------------- | ------------------------------------------------------------------ |
+| `TEKST`         | `'Tekst'`                                                          |
+| `WEINIG_TEKST`  | `'A'`                                                              |
+| `VEEL_TEKST`    | Nederlandstalige zin over meerdere regels (voor long-text stories) |
+| `VEEL_TEKST_AR` | Arabische variant van `VEEL_TEKST` (voor RTL stories)              |
+
+---
+
 ## Git-workflow
 
 ```bash
