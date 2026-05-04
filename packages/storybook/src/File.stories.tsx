@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { File, FileList } from '@dsn/components-react';
 import DocsPage from './File.docs.mdx';
-import { rtlDecorator } from './story-helpers';
+import { rtlDecorator, VEEL_TEKST } from './story-helpers';
 
 const HREF = '/bestanden/document.pdf';
 const IMG_SRC = 'https://picsum.photos/seed/file1/200/200';
@@ -21,12 +21,14 @@ const meta: Meta<typeof File> = {
         const isLoading = status === 'loading';
         const isUploaded = status === 'uploaded';
         const isError = status === 'error';
+        const ctaVariantVal = args.ctaVariant ?? 'view';
+        const isStretchedLink = isInteractive && ctaVariantVal !== 'download';
 
         const modifiers = [
           isLoading ? 'dsn-file--loading' : '',
           isUploaded ? 'dsn-file--uploaded' : '',
           isError ? 'dsn-file--error' : '',
-          isInteractive ? 'dsn-file--interactive' : '',
+          isStretchedLink ? 'dsn-file--interactive' : '',
         ]
           .filter(Boolean)
           .join(' ');
@@ -42,15 +44,12 @@ const meta: Meta<typeof File> = {
         const meta = metaParts.join(' · ');
 
         const nameTag = hasHref ? 'a' : 'span';
-        const nameClass = `dsn-file__name${isInteractive ? ' dsn-file__name--stretched' : ''}`;
+        const nameClass = `dsn-file__name${isStretchedLink ? ' dsn-file__name--stretched' : ''}`;
         const hrefAttr = hasHref ? ` href="${args.href}"` : '';
-        const targetAttr =
-          isInteractive && args.ctaVariant !== 'download'
-            ? ' target="_blank" rel="noopener noreferrer"'
-            : '';
-        const downloadAttr =
-          isInteractive && args.ctaVariant === 'download' ? ' download' : '';
-        const nameEl = `<${nameTag} class="${nameClass}"${hrefAttr}${targetAttr}${downloadAttr}>${nameWithoutExt}</${nameTag}>`;
+        const targetAttr = hasHref
+          ? ' target="_blank" rel="noopener noreferrer"'
+          : '';
+        const nameEl = `<${nameTag} class="${nameClass}"${hrefAttr}${targetAttr}>${nameWithoutExt}</${nameTag}>`;
 
         const errorEl =
           isError && args.errorMessage
@@ -85,24 +84,14 @@ const meta: Meta<typeof File> = {
     </button>`
             : '';
 
-        const ctaVariant = args.ctaVariant ?? 'view';
-        const ctaLabel =
-          args.ctaLabel ??
-          (ctaVariant === 'download' ? 'Download' : 'Bekijken');
-        const ctaTargetAttr =
-          ctaVariant !== 'download'
-            ? ' target="_blank" rel="noopener noreferrer"'
-            : '';
-        const ctaDownloadAttr = ctaVariant === 'download' ? ' download' : '';
-        const ctaIconEl =
-          ctaVariant === 'download'
-            ? `<svg class="dsn-icon" aria-hidden="true"><!-- download.svg --></svg>\n      `
-            : '';
-        const ctaEl = isInteractive
-          ? `<a class="dsn-link" href="${args.href}" aria-hidden="true" tabindex="-1"${ctaTargetAttr}${ctaDownloadAttr}>
-      ${ctaIconEl}${ctaLabel}
+        const ctaLabel = args.ctaLabel ?? 'Download';
+        const ctaEl =
+          isInteractive && ctaVariantVal === 'download'
+            ? `<a class="dsn-link" href="${args.href}" aria-hidden="true" tabindex="-1" download>
+      <svg class="dsn-icon" aria-hidden="true"><!-- download.svg --></svg>
+      ${ctaLabel}
     </a>`
-          : '';
+            : '';
 
         const actionsContent = spinnerEl || checkEl || deleteEl || ctaEl || '';
 
@@ -191,7 +180,7 @@ export const Error: Story = {
 };
 
 export const WithImagePreview: Story = {
-  name: 'Met afbeeldingspreview',
+  name: 'With Image Preview',
   args: {
     fileName: 'foto.jpg',
     fileType: 'JPG',
@@ -203,7 +192,7 @@ export const WithImagePreview: Story = {
 };
 
 export const InteractiveView: Story = {
-  name: 'Interactief — Bekijken',
+  name: 'Interactive',
   args: {
     href: HREF,
     ctaVariant: 'view',
@@ -211,7 +200,7 @@ export const InteractiveView: Story = {
 };
 
 export const InteractiveDownload: Story = {
-  name: 'Interactief — Download',
+  name: 'Interactive Download',
   args: {
     href: HREF,
     ctaVariant: 'download',
@@ -219,7 +208,7 @@ export const InteractiveDownload: Story = {
 };
 
 export const DocumentType: Story = {
-  name: 'Media: document',
+  name: 'Document Icon',
   args: {
     href: HREF,
     onDelete: () => {},
@@ -228,7 +217,7 @@ export const DocumentType: Story = {
 };
 
 export const ImageType: Story = {
-  name: 'Media: afbeelding (icoon)',
+  name: 'Image Icon',
   args: {
     fileName: 'foto.jpg',
     fileType: 'JPG',
@@ -244,7 +233,7 @@ export const ImageType: Story = {
 // =============================================================================
 
 export const AllStates: Story = {
-  name: 'Alle upload-states',
+  name: 'All Upload States',
   render: () => (
     <div
       style={{
@@ -293,7 +282,7 @@ export const AllStates: Story = {
 // =============================================================================
 
 export const ShortFileName: Story = {
-  name: 'Korte bestandsnaam',
+  name: 'Short File Name',
   args: {
     fileName: 'a.pdf',
     fileType: 'PDF',
@@ -304,10 +293,9 @@ export const ShortFileName: Story = {
 };
 
 export const LongFileName: Story = {
-  name: 'Lange bestandsnaam',
+  name: 'Long File Name',
   args: {
-    fileName:
-      'dit-is-een-heel-lange-bestandsnaam-die-mogelijk-afgekapt-moet-worden.pdf',
+    fileName: `${VEEL_TEKST}.pdf`,
     fileType: 'PDF',
     fileSize: '12,3 MB',
     href: HREF,
@@ -342,7 +330,7 @@ export const RTL: Story = {
 // =============================================================================
 
 export const WithFileList: Story = {
-  name: 'FileList — meerdere bestanden',
+  name: 'File List',
   render: () => (
     <FileList style={{ maxWidth: '560px' }}>
       <File

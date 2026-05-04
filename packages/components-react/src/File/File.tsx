@@ -43,14 +43,15 @@ export interface FileProps extends React.HTMLAttributes<HTMLDivElement> {
 
   /**
    * CTA-type in de interactieve variant.
-   * 'view' opent in een nieuw tabblad; 'download' triggert een download.
+   * 'view' toont geen aparte CTA; de bestandsnaam opent als stretched link in een nieuw tabblad.
+   * 'download' toont een aparte download-knop; de bestandsnaam opent in een nieuw tabblad.
    * @default 'view'
    */
   ctaVariant?: FileCtaVariant;
 
   /**
-   * Overschrijft het standaard CTA-label.
-   * Standaard: "Bekijken" bij view, "Download" bij download.
+   * Overschrijft het standaard CTA-label voor de download-variant.
+   * Standaard: "Download".
    */
   ctaLabel?: string;
 
@@ -94,13 +95,21 @@ export interface FileProps extends React.HTMLAttributes<HTMLDivElement> {
  *   onDelete={() => handleDelete()}
  * />
  *
- * // Interactief — "Bekijken" (nieuw tabblad)
+ * // Interactief — bestandsnaam als link (nieuw tabblad)
  * <File
  *   fileName="rapport-2024.pdf"
  *   fileType="PDF"
  *   fileSize="2,1 MB"
  *   href="/bestanden/rapport-2024.pdf"
- *   ctaVariant="view"
+ * />
+ *
+ * // Interactief — download CTA
+ * <File
+ *   fileName="rapport-2024.pdf"
+ *   fileType="PDF"
+ *   fileSize="2,1 MB"
+ *   href="/bestanden/rapport-2024.pdf"
+ *   ctaVariant="download"
  * />
  * ```
  */
@@ -163,25 +172,26 @@ export const File = React.forwardRef<HTMLDivElement, FileProps>(
 
     // Interactieve modus: href aanwezig en geen onDelete
     const isInteractive = Boolean(href) && !onDelete;
+    // Stretched link: interactief zonder aparte download-CTA
+    const isStretchedLink = isInteractive && ctaVariant !== 'download';
 
     const rootClasses = classNames(
       'dsn-file',
       currentStatus === 'loading' && 'dsn-file--loading',
       currentStatus === 'uploaded' && 'dsn-file--uploaded',
       currentStatus === 'error' && 'dsn-file--error',
-      isInteractive && 'dsn-file--interactive',
+      isStretchedLink && 'dsn-file--interactive',
       className
     );
 
     const nameClasses = classNames(
       'dsn-file__name',
       href && 'dsn-link',
-      isInteractive && 'dsn-file__name--stretched'
+      isStretchedLink && 'dsn-file__name--stretched'
     );
 
     const iconName = mediaType === 'image' ? 'photo' : 'file-description';
-    const defaultCtaLabel = ctaVariant === 'download' ? 'Download' : 'Bekijken';
-    const resolvedCtaLabel = ctaLabel ?? defaultCtaLabel;
+    const resolvedCtaLabel = ctaLabel ?? 'Download';
 
     return (
       <div ref={ref} className={rootClasses} {...props}>
@@ -200,12 +210,8 @@ export const File = React.forwardRef<HTMLDivElement, FileProps>(
             <a
               className={nameClasses}
               href={href}
-              {...(isInteractive && ctaVariant === 'view'
-                ? { target: '_blank', rel: 'noopener noreferrer' }
-                : {})}
-              {...(isInteractive && ctaVariant === 'download'
-                ? { download: true }
-                : {})}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {fileNameWithoutExt}
             </a>
@@ -239,19 +245,15 @@ export const File = React.forwardRef<HTMLDivElement, FileProps>(
                 <span className="dsn-visually-hidden"> {fileName}</span>
               </button>
             )}
-          {isInteractive && (
+          {isInteractive && ctaVariant === 'download' && (
             <a
               className="dsn-link"
               href={href}
               aria-hidden="true"
               tabIndex={-1}
-              {...(ctaVariant === 'view'
-                ? { target: '_blank', rel: 'noopener noreferrer' }
-                : { download: true })}
+              download
             >
-              {ctaVariant === 'download' && (
-                <Icon name="download" aria-hidden />
-              )}
+              <Icon name="download" aria-hidden />
               {resolvedCtaLabel}
             </a>
           )}

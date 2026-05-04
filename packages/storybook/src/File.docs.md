@@ -54,7 +54,7 @@ De verwijderknop bevat altijd de volledige bestandsnaam als visueel verborgen te
 
 ### Interactieve variant
 
-Wanneer `href` aanwezig is en `onDelete` ontbreekt, schakelt het component automatisch over naar de interactieve variant. De bestandsnaam wordt een stretched link die de gehele component klikbaar maakt. De CTA-link in de actions heeft `aria-hidden="true"` en `tabindex="-1"` om een dubbele tabstop te vermijden.
+Wanneer `href` aanwezig is opent de bestandsnaam altijd in een nieuw tabblad. Wanneer ook `onDelete` ontbreekt en `ctaVariant` niet `'download'` is, schakelt het component over naar de volledig-klikbare interactieve variant: de bestandsnaam wordt een stretched link die de gehele component klikbaar maakt.
 
 ```html
 <div class="dsn-file dsn-file--interactive">
@@ -71,22 +71,32 @@ Wanneer `href` aanwezig is en `onDelete` ontbreekt, schakelt het component autom
     >
     <span class="dsn-file__meta">PDF · 1,2 MB</span>
   </div>
-  <div class="dsn-file__actions">
-    <a
-      class="dsn-link"
-      href="/bestanden/document.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-hidden="true"
-      tabindex="-1"
-      >Bekijken</a
-    >
-  </div>
+  <div class="dsn-file__actions"></div>
   <span
     class="dsn-visually-hidden"
     aria-live="polite"
     aria-atomic="true"
   ></span>
+</div>
+```
+
+Bij `ctaVariant="download"` verschijnt er ook een aparte download-knop in de actions-zone. De bestandsnaam opent nog steeds in een nieuw tabblad. De download-link heeft `aria-hidden="true"` en `tabindex="-1"` om een dubbele tabstop te vermijden.
+
+```html
+<div class="dsn-file">
+  <!-- media + content identiek aan bovenstaand -->
+  <div class="dsn-file__actions">
+    <a
+      class="dsn-link"
+      href="/bestanden/document.pdf"
+      aria-hidden="true"
+      tabindex="-1"
+      download
+    >
+      <svg class="dsn-icon" aria-hidden="true"><!-- download.svg --></svg>
+      Download
+    </a>
+  </div>
 </div>
 ```
 
@@ -139,5 +149,5 @@ Gebruik `FileList` als wrapper wanneer je meerdere `File` componenten toont. De 
 - `<img class="dsn-file__preview" alt="">` heeft een lege `alt` — de media-container is toch `aria-hidden`.
 - De verwijderknop bevat de bestandsnaam inclusief extensie als visueel verborgen tekst. Gebruik nooit `aria-label`.
 - Elk `File` component bevat een visueel verborgen `<span aria-live="polite" aria-atomic="true">`. Bij de `uploaded` state wordt deze gevuld met de bevestigingstekst; bij terugkeer naar `default` wordt hij leeggemaakt.
-- In de interactieve variant heeft de CTA-link `aria-hidden="true"` en `tabindex="-1"` — de stretched link is het enige focuspunt.
+- In de interactieve variant (stretched link) is de bestandsnaam het enige focuspunt. Bij de download-variant heeft de download-link `aria-hidden="true"` en `tabindex="-1"` — de bestandsnaam is het primaire focuspunt.
 - `FileList` rendert `<ul role="list">` met `<li>` wrappers om lijstsemantiek te bewaren bij CSS-resets.
