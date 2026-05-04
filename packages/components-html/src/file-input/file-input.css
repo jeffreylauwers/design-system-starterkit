@@ -1,0 +1,111 @@
+/**
+ * File Input Component
+ * Unstyled container + styled ::file-selector-button (as dsn-button--default).
+ * No outer border or background: the browser renders button + filename text.
+ *
+ * Usage:
+ * <input type="file" class="dsn-file-input" />
+ */
+
+.dsn-file-input {
+  /* Typography */
+  font-family: var(--dsn-file-input-font-family);
+  font-size: var(--dsn-file-input-font-size);
+  font-weight: var(--dsn-file-input-font-weight);
+  line-height: var(--dsn-file-input-line-height);
+
+  /* Subtle color for the "No file chosen" / filename text */
+  color: var(--dsn-file-input-color);
+  background-color: transparent;
+  border: none;
+
+  /* Sizing */
+  min-block-size: var(--dsn-file-input-min-block-size);
+  min-inline-size: var(--dsn-file-input-min-inline-size);
+
+  /* Display */
+  display: block;
+  box-sizing: border-box;
+
+  /* Vertical space so the ::file-selector-button focus ring is not clipped */
+  padding-block: calc(
+    var(--dsn-focus-outline-offset) + var(--dsn-focus-outline-width)
+  );
+  padding-inline: 0;
+}
+
+/* Remove browser default focus outline — handled via ::file-selector-button below */
+.dsn-file-input:focus {
+  outline: none;
+}
+
+/* File selector button — styled like dsn-button--default */
+.dsn-file-input::file-selector-button {
+  /* Typography */
+  font-family: var(--dsn-button-font-family);
+  font-size: var(--dsn-button-size-default-font-size);
+  font-weight: var(--dsn-button-font-weight);
+  line-height: var(--dsn-button-line-height);
+
+  /* Colors */
+  background-color: var(--dsn-button-default-background-color);
+  color: var(--dsn-button-default-color);
+
+  /* Border — full radius on all sides */
+  border: var(--dsn-button-border-width) solid
+    var(--dsn-button-default-border-color);
+  border-radius: var(--dsn-button-border-radius);
+
+  /* Spacing */
+  padding-block: var(--dsn-button-size-default-padding-block);
+  padding-inline: var(--dsn-button-size-default-padding-inline);
+  margin-inline-end: var(--dsn-file-input-column-gap);
+
+  /* Sizing */
+  min-block-size: var(--dsn-button-min-block-size);
+
+  /* Interaction */
+  cursor: pointer;
+
+  /* Transitions */
+  transition:
+    background-color var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    color var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default),
+    border-color var(--dsn-transition-duration-normal)
+      var(--dsn-transition-easing-default);
+}
+
+/* Hover — button gets default hover styling */
+.dsn-file-input:hover:not(:disabled)::file-selector-button {
+  background-color: var(--dsn-button-default-hover-background-color);
+  color: var(--dsn-button-default-hover-color);
+  border-color: var(--dsn-button-default-hover-border-color);
+}
+
+/* Focus — button shows the design system focus ring */
+.dsn-file-input:focus-visible::file-selector-button {
+  background-color: var(--dsn-focus-background-color);
+  color: var(--dsn-focus-color);
+  border-color: var(--dsn-focus-background-color);
+  outline: var(--dsn-focus-outline-width) var(--dsn-focus-outline-style)
+    var(--dsn-focus-outline-color);
+  outline-offset: var(--dsn-focus-outline-offset);
+  box-shadow: 0 0 0
+    calc(var(--dsn-focus-outline-offset) + var(--dsn-focus-outline-width))
+    var(--dsn-focus-inverse-outline-color);
+}
+
+/* Disabled — button uses the same tokens as dsn-button:disabled; text is muted */
+.dsn-file-input:disabled {
+  color: var(--dsn-file-input-disabled-color);
+  cursor: not-allowed;
+}
+
+.dsn-file-input:disabled::file-selector-button {
+  background-color: var(--dsn-button-disabled-background-color);
+  color: var(--dsn-button-disabled-color);
+  border-color: var(--dsn-button-disabled-border-color);
+  cursor: not-allowed;
+}
