@@ -144,12 +144,8 @@ function SimpleDetailsPage() {
 
                   <form noValidate>
                     <Stack space="3xl">
-                      <FormField label="Voornaam" htmlFor="voornaam">
-                        <TextInput id="voornaam" autoComplete="given-name" />
-                      </FormField>
-
-                      <FormField label="Achternaam" htmlFor="achternaam">
-                        <TextInput id="achternaam" autoComplete="family-name" />
+                      <FormField label="Naam" htmlFor="naam">
+                        <TextInput id="naam" autoComplete="name" />
                       </FormField>
 
                       <FormField label="E-mailadres" htmlFor="email">
@@ -233,12 +229,8 @@ function SimpleDetailsWithUploadPage() {
 
                   <form noValidate>
                     <Stack space="3xl">
-                      <FormField label="Voornaam" htmlFor="voornaam">
-                        <TextInput id="voornaam" autoComplete="given-name" />
-                      </FormField>
-
-                      <FormField label="Achternaam" htmlFor="achternaam">
-                        <TextInput id="achternaam" autoComplete="family-name" />
+                      <FormField label="Naam" htmlFor="naam">
+                        <TextInput id="naam" autoComplete="name" />
                       </FormField>
 
                       <FormField label="E-mailadres" htmlFor="email">
@@ -368,12 +360,8 @@ export const WithSaveForLaterModal: Story = {
 
                   <form noValidate>
                     <Stack space="3xl">
-                      <FormField label="Voornaam" htmlFor="voornaam">
-                        <TextInput id="voornaam" autoComplete="given-name" />
-                      </FormField>
-
-                      <FormField label="Achternaam" htmlFor="achternaam">
-                        <TextInput id="achternaam" autoComplete="family-name" />
+                      <FormField label="Naam" htmlFor="naam">
+                        <TextInput id="naam" autoComplete="name" />
                       </FormField>
 
                       <FormField label="E-mailadres" htmlFor="email">
@@ -472,12 +460,8 @@ export const WithStopFormModal: Story = {
 
                   <form noValidate>
                     <Stack space="3xl">
-                      <FormField label="Voornaam" htmlFor="voornaam">
-                        <TextInput id="voornaam" autoComplete="given-name" />
-                      </FormField>
-
-                      <FormField label="Achternaam" htmlFor="achternaam">
-                        <TextInput id="achternaam" autoComplete="family-name" />
+                      <FormField label="Naam" htmlFor="naam">
+                        <TextInput id="naam" autoComplete="name" />
                       </FormField>
 
                       <FormField label="E-mailadres" htmlFor="email">
