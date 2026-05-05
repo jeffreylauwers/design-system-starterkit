@@ -109,7 +109,7 @@ export const WithValue: Story = {
 };
 
 export const WithFormFieldset: Story = {
-  name: 'With FormFieldset (complete form field)',
+  name: 'Within Form Fieldset',
   render: (args) => <WithFormFieldsetStory {...args} />,
 };
 

@@ -144,16 +144,15 @@ export const AllStates: Story = {
 // IN FORM FIELD CONTEXT
 // =============================================================================
 
-export const InFormField: Story = {
-  name: 'In form field',
+export const InFormFieldSingle: Story = {
+  name: 'Within Form Field: Single file',
   render: () => (
     <div className="dsn-form-field">
       <FormFieldLabel htmlFor="bestand-upload" suffix="(niet verplicht)">
         Bestand toevoegen
       </FormFieldLabel>
       <UnorderedList id="bestand-upload-description">
-        <li>U kunt meerdere bestanden tegelijk toevoegen.</li>
-        <li>U mag maximaal 10 MB aan bestanden toevoegen.</li>
+        <li>Het bestand mag maximaal 10 MB zijn.</li>
         <li>
           Toegestane bestandstypen: doc, docx, xlsx, pdf, zip, jpg, png, bmp en
           gif.
@@ -162,6 +161,30 @@ export const InFormField: Story = {
       <FileInput
         id="bestand-upload"
         aria-describedby="bestand-upload-description"
+      />
+    </div>
+  ),
+};
+
+export const InFormFieldMultiple: Story = {
+  name: 'Within Form Field: Multiple files',
+  render: () => (
+    <div className="dsn-form-field">
+      <FormFieldLabel htmlFor="bestanden-upload" suffix="(niet verplicht)">
+        Bestanden toevoegen
+      </FormFieldLabel>
+      <UnorderedList id="bestanden-upload-description">
+        <li>U kunt meerdere bestanden tegelijk toevoegen.</li>
+        <li>U mag maximaal 10 MB aan bestanden toevoegen.</li>
+        <li>
+          Toegestane bestandstypen: doc, docx, xlsx, pdf, zip, jpg, png, bmp en
+          gif.
+        </li>
+      </UnorderedList>
+      <FileInput
+        id="bestanden-upload"
+        aria-describedby="bestanden-upload-description"
+        multiple
       />
     </div>
   ),
