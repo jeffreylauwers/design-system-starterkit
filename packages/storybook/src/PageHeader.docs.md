@@ -311,7 +311,6 @@ Het zoekpaneel verschijnt direct onder de header-binnenbalk. Het paneel bevat ee
 - Zoekknop heeft `aria-expanded` (false/true) en `aria-controls` gericht op het zoekpaneel-ID.
 - Bij openen zoekpaneel: focus verplaatst automatisch naar het `<input>` van de `SearchInput`.
 - Bij sluiten zoekpaneel: focus keert terug naar de zoek-/sluitknop.
-- Elke `<nav>` in de Drawer heeft een unieke toegankelijke naam via `aria-labelledby` + visueel verborgen `<h3>`.
+- Alle `<nav>`-elementen (zowel in de Drawer als op large viewport) gebruiken `aria-label` ("Hoofd-navigatie", "Service-navigatie"): geen verborgen headings, zodat de heading-hiërarchie van de pagina niet vervuild wordt vóór de `<h1>`.
 - Drawer-focusbeheer wordt verzorgd door het bestaande `Drawer`-component.
 - Op large viewport: `dsn-page-header__small-layout` en `dsn-page-header__large-layout` worden geswitcht met `display: none`: de inactieve sectie valt automatisch uit de accessibility tree.
-- Op large viewport: beide `<nav>` elementen gebruiken `aria-label` ("Service-navigatie", "Hoofd-navigatie"): geen verborgen headings, zodat de heading-hiërarchie van de pagina niet vervuild wordt vóór de `<h1>`.
