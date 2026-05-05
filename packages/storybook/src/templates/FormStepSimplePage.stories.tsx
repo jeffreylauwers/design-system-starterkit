@@ -84,8 +84,6 @@ export const Example: Story = {
                   </Link>
 
                   <Stack space="sm">
-                    <Paragraph>Stap 1 van 5</Paragraph>
-
                     <h2 className="dsn-heading dsn-heading--heading-2">
                       Uw gegevens
                     </h2>
@@ -167,8 +165,6 @@ export const WithUpload: Story = {
                   </Link>
 
                   <Stack space="sm">
-                    <Paragraph>Stap 1 van 5</Paragraph>
-
                     <h2 className="dsn-heading dsn-heading--heading-2">
                       Uw gegevens
                     </h2>
