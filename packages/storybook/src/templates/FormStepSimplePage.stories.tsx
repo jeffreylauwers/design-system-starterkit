@@ -122,8 +122,8 @@ export const Example: Story = {
                         <Button variant="strong" type="submit">
                           Volgende stap
                         </Button>
-                        <LinkButton>Vorige stap</LinkButton>
                         <LinkButton>Opslaan en later verder</LinkButton>
+                        <LinkButton>Stoppen met het formulier</LinkButton>
                       </ActionGroup>
                     </Stack>
                   </form>
@@ -227,8 +227,8 @@ export const WithUpload: Story = {
                         <Button variant="strong" type="submit">
                           Volgende stap
                         </Button>
-                        <LinkButton>Vorige stap</LinkButton>
                         <LinkButton>Opslaan en later verder</LinkButton>
+                        <LinkButton>Stoppen met het formulier</LinkButton>
                       </ActionGroup>
                     </Stack>
                   </form>
