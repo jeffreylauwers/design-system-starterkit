@@ -4,6 +4,7 @@ import {
   ActionGroup,
   Body,
   Button,
+  EmailInput,
   FormField,
   FormFieldset,
   Grid,
@@ -12,6 +13,11 @@ import {
   Icon,
   Link,
   LinkButton,
+  ModalDialog,
+  ModalDialogBody,
+  ModalDialogFooter,
+  ModalDialogHeader,
+  ModalDialogHeading,
   PageBody,
   PageFooter,
   PageHeader,
@@ -41,27 +47,71 @@ const mainStyle: React.CSSProperties = {
 };
 
 // =============================================================================
-// META
+// HELPER COMPONENTS
 // =============================================================================
 
-const meta: Meta = {
-  title: 'Templates/Form flow/Form step: Example',
-  parameters: {
-    layout: 'fullscreen',
-  },
-};
+type ActiveModal = 'save' | 'stop' | null;
 
-export default meta;
+function FormModals({
+  activeModal,
+  onClose,
+}: {
+  activeModal: ActiveModal;
+  onClose: () => void;
+}) {
+  return (
+    <>
+      <ModalDialog isOpen={activeModal === 'save'} onClose={onClose}>
+        <ModalDialogHeader>
+          <ModalDialogHeading>Opslaan en later verder</ModalDialogHeading>
+        </ModalDialogHeader>
+        <ModalDialogBody>
+          <Stack space="md">
+            <Paragraph>
+              Vul uw e-mailadres in. Er wordt een unieke link naar uw
+              e-mailadres verstuurd. Hiermee kunt u dit formulier op een later
+              moment afmaken.
+            </Paragraph>
+            <FormField label="E-mailadres" htmlFor="modal-email">
+              <EmailInput id="modal-email" autoComplete="email" width="xl" />
+            </FormField>
+          </Stack>
+        </ModalDialogBody>
+        <ModalDialogFooter>
+          <ActionGroup>
+            <Button variant="strong">Opslaan</Button>
+            <Button variant="default" onClick={onClose}>
+              Annuleren
+            </Button>
+          </ActionGroup>
+        </ModalDialogFooter>
+      </ModalDialog>
+      <ModalDialog isOpen={activeModal === 'stop'} onClose={onClose}>
+        <ModalDialogHeader>
+          <ModalDialogHeading>Stoppen met het formulier</ModalDialogHeading>
+        </ModalDialogHeader>
+        <ModalDialogBody>
+          <Paragraph>
+            Weet u zeker dat u wilt stoppen met het formulier? Uw gegevens
+            worden niet opgeslagen.
+          </Paragraph>
+        </ModalDialogBody>
+        <ModalDialogFooter>
+          <ActionGroup>
+            <Button variant="strong">Stoppen</Button>
+            <Button variant="default" onClick={onClose}>
+              Annuleren
+            </Button>
+          </ActionGroup>
+        </ModalDialogFooter>
+      </ModalDialog>
+    </>
+  );
+}
 
-type Story = StoryObj;
-
-// =============================================================================
-// STORIES
-// =============================================================================
-
-export const Example: Story = {
-  name: 'Form step: Example',
-  render: () => (
+function FormStepExamplePage() {
+  const [activeModal, setActiveModal] = React.useState<ActiveModal>(null);
+  return (
     <Body>
       <SkipLink href="#main-content" />
       <PageLayout>
@@ -131,8 +181,12 @@ export const Example: Story = {
                         <Button variant="strong" type="submit">
                           Volgende stap
                         </Button>
-                        <LinkButton>Opslaan en later verder</LinkButton>
-                        <LinkButton>Stoppen met het formulier</LinkButton>
+                        <LinkButton onClick={() => setActiveModal('save')}>
+                          Opslaan en later verder
+                        </LinkButton>
+                        <LinkButton onClick={() => setActiveModal('stop')}>
+                          Stoppen met het formulier
+                        </LinkButton>
                       </ActionGroup>
                     </Stack>
                   </form>
@@ -148,6 +202,34 @@ export const Example: Story = {
           slot4={footerSlot4}
         />
       </PageLayout>
+      <FormModals
+        activeModal={activeModal}
+        onClose={() => setActiveModal(null)}
+      />
     </Body>
-  ),
+  );
+}
+
+// =============================================================================
+// META
+// =============================================================================
+
+const meta: Meta = {
+  title: 'Templates/Form flow/Form step: Example',
+  parameters: {
+    layout: 'fullscreen',
+  },
+};
+
+export default meta;
+
+type Story = StoryObj;
+
+// =============================================================================
+// STORIES
+// =============================================================================
+
+export const Example: Story = {
+  name: 'Form step: Example',
+  render: () => <FormStepExamplePage />,
 };
