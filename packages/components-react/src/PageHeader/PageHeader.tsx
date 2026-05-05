@@ -273,8 +273,6 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
     const compactSearchInputRef = React.useRef<HTMLInputElement>(null);
 
     const searchPanelId = React.useId();
-    const primaryNavId = React.useId();
-    const serviceNavId = React.useId();
     const compactSearchPanelId = React.useId();
 
     // Auto-hide: detecteer scrollrichting en toggle data-hidden attribuut
@@ -545,18 +543,10 @@ export const PageHeader = React.forwardRef<HTMLElement, PageHeaderProps>(
           <DrawerBody>
             <Stack space="5xl">
               {primaryNavigation && (
-                <nav aria-labelledby={primaryNavId}>
-                  <h3 id={primaryNavId} className="dsn-visually-hidden">
-                    {primaryNavAriaLabel}
-                  </h3>
-                  {primaryNavigation}
-                </nav>
+                <nav aria-label={primaryNavAriaLabel}>{primaryNavigation}</nav>
               )}
               {secondaryNavigation && (
-                <nav aria-labelledby={serviceNavId}>
-                  <h3 id={serviceNavId} className="dsn-visually-hidden">
-                    {secondaryNavAriaLabel}
-                  </h3>
+                <nav aria-label={secondaryNavAriaLabel}>
                   {secondaryNavigation}
                 </nav>
               )}

@@ -223,6 +223,29 @@ describe('PageHeader', () => {
     expect(container.querySelector('.dsn-page-header__searchbox')).toBeNull();
   });
 
+  it('drawer primaire nav heeft aria-label="Hoofd-navigatie"', () => {
+    const { container } = render(
+      <PageHeader logoSlot={defaultLogo} primaryNavigation={<span>nav</span>} />
+    );
+    const nav = container.querySelector(
+      '.dsn-drawer nav[aria-label="Hoofd-navigatie"]'
+    );
+    expect(nav).toBeTruthy();
+  });
+
+  it('drawer service nav heeft aria-label="Service-navigatie"', () => {
+    const { container } = render(
+      <PageHeader
+        logoSlot={defaultLogo}
+        secondaryNavigation={<span>nav</span>}
+      />
+    );
+    const nav = container.querySelector(
+      '.dsn-drawer nav[aria-label="Service-navigatie"]'
+    );
+    expect(nav).toBeTruthy();
+  });
+
   it('masthead nav heeft aria-label="Service-navigatie"', () => {
     const { container } = render(
       <PageHeader
