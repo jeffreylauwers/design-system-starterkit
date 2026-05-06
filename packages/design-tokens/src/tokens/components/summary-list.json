@@ -18,9 +18,9 @@
           "$description": "Horizontal gap between columns in the grid layout"
         },
         "padding-block": {
-          "$value": "{dsn.space.block.md}",
+          "$value": "{dsn.space.block.lg}",
           "$type": "dimension",
-          "$description": "Vertical spacing around each row — applies in both stacked and grid layout"
+          "$description": "Vertical spacing around each row — applies in both stacked and grid layout; matches Table cell padding"
         }
       },
       "key": {
@@ -49,7 +49,7 @@
       },
       "actions": {
         "gap": {
-          "$value": "{dsn.space.inline.md}",
+          "$value": "{dsn.space.inline.lg}",
           "$type": "dimension",
           "$description": "Gap between multiple action links in a single row"
         }

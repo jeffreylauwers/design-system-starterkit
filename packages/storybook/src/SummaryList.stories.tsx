@@ -7,6 +7,7 @@ import {
   SummaryListActions,
   Link,
   LinkButton,
+  Icon,
 } from '@dsn/components-react';
 import DocsPage from './SummaryList.docs.mdx';
 import { VEEL_TEKST } from './story-helpers';
@@ -38,15 +39,17 @@ export const Default: Story = {
     <SummaryList {...args}>
       <SummaryListRow>
         <SummaryListKey>Naam</SummaryListKey>
-        <SummaryListValue>Sarah Hendricks</SummaryListValue>
+        <SummaryListValue>Jeroen van Drouwen</SummaryListValue>
       </SummaryListRow>
       <SummaryListRow>
         <SummaryListKey>Geboortedatum</SummaryListKey>
-        <SummaryListValue>5 januari 1990</SummaryListValue>
+        <SummaryListValue>9 december 1984</SummaryListValue>
       </SummaryListRow>
       <SummaryListRow>
         <SummaryListKey>Adres</SummaryListKey>
-        <SummaryListValue>Kerkstraat 12, 1234 AB Amsterdam</SummaryListValue>
+        <SummaryListValue>
+          Laan der Voorbeelden, 1440 VP, Westerhaar-Vriezenveensewijk
+        </SummaryListValue>
       </SummaryListRow>
     </SummaryList>
   ),
@@ -62,27 +65,29 @@ export const WithActions: Story = {
     <SummaryList>
       <SummaryListRow>
         <SummaryListKey>Naam</SummaryListKey>
-        <SummaryListValue>Sarah Hendricks</SummaryListValue>
+        <SummaryListValue>Jeroen van Drouwen</SummaryListValue>
         <SummaryListActions>
-          <Link href="#">
+          <Link href="#" iconStart={<Icon name="edit" />}>
             Wijzig<span className="dsn-visually-hidden"> naam</span>
           </Link>
         </SummaryListActions>
       </SummaryListRow>
       <SummaryListRow>
         <SummaryListKey>Geboortedatum</SummaryListKey>
-        <SummaryListValue>5 januari 1990</SummaryListValue>
+        <SummaryListValue>9 december 1984</SummaryListValue>
         <SummaryListActions>
-          <Link href="#">
+          <Link href="#" iconStart={<Icon name="edit" />}>
             Wijzig<span className="dsn-visually-hidden"> geboortedatum</span>
           </Link>
         </SummaryListActions>
       </SummaryListRow>
       <SummaryListRow>
         <SummaryListKey>Adres</SummaryListKey>
-        <SummaryListValue>Kerkstraat 12, 1234 AB Amsterdam</SummaryListValue>
+        <SummaryListValue>
+          Laan der Voorbeelden, 1440 VP, Westerhaar-Vriezenveensewijk
+        </SummaryListValue>
         <SummaryListActions>
-          <Link href="#">
+          <Link href="#" iconStart={<Icon name="edit" />}>
             Wijzig<span className="dsn-visually-hidden"> adres</span>
           </Link>
         </SummaryListActions>
@@ -97,25 +102,39 @@ export const WithMultipleActions: Story = {
     <SummaryList>
       <SummaryListRow>
         <SummaryListKey>Naam</SummaryListKey>
-        <SummaryListValue>Sarah Hendricks</SummaryListValue>
+        <SummaryListValue>Jeroen van Drouwen</SummaryListValue>
         <SummaryListActions>
-          <Link href="#">
+          <Link href="#" iconStart={<Icon name="edit" />}>
             Wijzig<span className="dsn-visually-hidden"> naam</span>
           </Link>
-          <LinkButton onClick={() => {}}>
+          <LinkButton onClick={() => {}} iconStart={<Icon name="trash" />}>
             Verwijder<span className="dsn-visually-hidden"> naam</span>
           </LinkButton>
         </SummaryListActions>
       </SummaryListRow>
       <SummaryListRow>
         <SummaryListKey>Geboortedatum</SummaryListKey>
-        <SummaryListValue>5 januari 1990</SummaryListValue>
+        <SummaryListValue>9 december 1984</SummaryListValue>
         <SummaryListActions>
-          <Link href="#">
+          <Link href="#" iconStart={<Icon name="edit" />}>
             Wijzig<span className="dsn-visually-hidden"> geboortedatum</span>
           </Link>
-          <LinkButton onClick={() => {}}>
+          <LinkButton onClick={() => {}} iconStart={<Icon name="trash" />}>
             Verwijder<span className="dsn-visually-hidden"> geboortedatum</span>
+          </LinkButton>
+        </SummaryListActions>
+      </SummaryListRow>
+      <SummaryListRow>
+        <SummaryListKey>Adres</SummaryListKey>
+        <SummaryListValue>
+          Laan der Voorbeelden, 1440 VP, Westerhaar-Vriezenveensewijk
+        </SummaryListValue>
+        <SummaryListActions>
+          <Link href="#" iconStart={<Icon name="edit" />}>
+            Wijzig<span className="dsn-visually-hidden"> adres</span>
+          </Link>
+          <LinkButton onClick={() => {}} iconStart={<Icon name="trash" />}>
+            Verwijder<span className="dsn-visually-hidden"> adres</span>
           </LinkButton>
         </SummaryListActions>
       </SummaryListRow>
@@ -129,18 +148,18 @@ export const MixedRows: Story = {
     <SummaryList>
       <SummaryListRow>
         <SummaryListKey>Naam</SummaryListKey>
-        <SummaryListValue>Sarah Hendricks</SummaryListValue>
+        <SummaryListValue>Jeroen van Drouwen</SummaryListValue>
         <SummaryListActions>
-          <Link href="#">
+          <Link href="#" iconStart={<Icon name="edit" />}>
             Wijzig<span className="dsn-visually-hidden"> naam</span>
           </Link>
         </SummaryListActions>
       </SummaryListRow>
       <SummaryListRow>
         <SummaryListKey>Geboortedatum</SummaryListKey>
-        <SummaryListValue>5 januari 1990</SummaryListValue>
+        <SummaryListValue>9 december 1984</SummaryListValue>
         <SummaryListActions>
-          <Link href="#">
+          <Link href="#" iconStart={<Icon name="edit" />}>
             Wijzig<span className="dsn-visually-hidden"> geboortedatum</span>
           </Link>
         </SummaryListActions>
@@ -190,11 +209,11 @@ export const AllVariants: Story = {
         <SummaryList>
           <SummaryListRow>
             <SummaryListKey>Naam</SummaryListKey>
-            <SummaryListValue>Sarah Hendricks</SummaryListValue>
+            <SummaryListValue>Jeroen van Drouwen</SummaryListValue>
           </SummaryListRow>
           <SummaryListRow>
             <SummaryListKey>Geboortedatum</SummaryListKey>
-            <SummaryListValue>5 januari 1990</SummaryListValue>
+            <SummaryListValue>9 december 1984</SummaryListValue>
           </SummaryListRow>
         </SummaryList>
       </div>
@@ -204,18 +223,18 @@ export const AllVariants: Story = {
         <SummaryList>
           <SummaryListRow>
             <SummaryListKey>Naam</SummaryListKey>
-            <SummaryListValue>Sarah Hendricks</SummaryListValue>
+            <SummaryListValue>Jeroen van Drouwen</SummaryListValue>
             <SummaryListActions>
-              <Link href="#">
+              <Link href="#" iconStart={<Icon name="edit" />}>
                 Wijzig<span className="dsn-visually-hidden"> naam</span>
               </Link>
             </SummaryListActions>
           </SummaryListRow>
           <SummaryListRow>
             <SummaryListKey>Geboortedatum</SummaryListKey>
-            <SummaryListValue>5 januari 1990</SummaryListValue>
+            <SummaryListValue>9 december 1984</SummaryListValue>
             <SummaryListActions>
-              <Link href="#">
+              <Link href="#" iconStart={<Icon name="edit" />}>
                 Wijzig
                 <span className="dsn-visually-hidden"> geboortedatum</span>
               </Link>
@@ -269,7 +288,7 @@ export const LongText: Story = {
         <SummaryListKey>{VEEL_TEKST}</SummaryListKey>
         <SummaryListValue>{VEEL_TEKST}</SummaryListValue>
         <SummaryListActions>
-          <Link href="#">
+          <Link href="#" iconStart={<Icon name="edit" />}>
             Wijzig<span className="dsn-visually-hidden"> {VEEL_TEKST}</span>
           </Link>
         </SummaryListActions>
