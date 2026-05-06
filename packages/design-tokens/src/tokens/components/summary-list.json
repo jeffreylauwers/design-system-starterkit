@@ -52,6 +52,11 @@
           "$value": "{dsn.space.inline.lg}",
           "$type": "dimension",
           "$description": "Gap between multiple action links in a single row"
+        },
+        "margin-block-start-stacked": {
+          "$value": "{dsn.space.block.sm}",
+          "$type": "dimension",
+          "$description": "Extra space above the actions cell in the stacked (mobile) layout"
         }
       }
     }

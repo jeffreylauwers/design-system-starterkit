@@ -79,6 +79,9 @@
    =========================== */
 .dsn-summary-list__actions {
   margin: 0;
+  margin-block-start: var(
+    --dsn-summary-list-actions-margin-block-start-stacked
+  );
 }
 
 /* ===========================
@@ -138,6 +141,7 @@
 
   .dsn-summary-list__actions {
     grid-column: 3;
+    margin-block-start: 0;
     text-align: end;
   }
 }
