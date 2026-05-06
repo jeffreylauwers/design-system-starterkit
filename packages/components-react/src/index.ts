@@ -61,6 +61,7 @@ export * from './Alert';
 export * from './Note';
 export * from './Table';
 export * from './Details';
+export * from './SummaryList';
 
 // Branding Components
 export * from './Logo';

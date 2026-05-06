@@ -1,0 +1,64 @@
+{
+  "dsn": {
+    "summary-list": {
+      "row": {
+        "border-block-end-color": {
+          "$value": "{dsn.color.neutral.border-subtle}",
+          "$type": "color",
+          "$description": "Color of the row separator border"
+        },
+        "border-block-end-width": {
+          "$value": "{dsn.border.width.thin}",
+          "$type": "dimension",
+          "$description": "Width of the row separator border"
+        },
+        "gap": {
+          "$value": "{dsn.space.inline.lg}",
+          "$type": "dimension",
+          "$description": "Horizontal gap between columns in the grid layout"
+        },
+        "padding-block": {
+          "$value": "{dsn.space.block.lg}",
+          "$type": "dimension",
+          "$description": "Vertical spacing around each row — applies in both stacked and grid layout; matches Table cell padding"
+        }
+      },
+      "key": {
+        "color": {
+          "$value": "{dsn.color.neutral.color-document}",
+          "$type": "color",
+          "$description": "Text color of the key cell"
+        },
+        "font-weight": {
+          "$value": "{dsn.text.font-weight.bold}",
+          "$type": "fontWeight",
+          "$description": "Bold weight distinguishes the key from the value visually"
+        },
+        "basis": {
+          "$value": "30%",
+          "$type": "dimension",
+          "$description": "Width of the key column in the grid layout"
+        }
+      },
+      "value": {
+        "color": {
+          "$value": "{dsn.color.neutral.color-document}",
+          "$type": "color",
+          "$description": "Text color of the value cell"
+        }
+      },
+      "actions": {
+        "gap": {
+          "$value": "{dsn.space.inline.lg}",
+          "$type": "dimension",
+          "$description": "Gap between multiple action links in a single row"
+        },
+        "margin-block-start-stacked": {
+          "$value": "{dsn.space.block.md}",
+          "$type": "dimension",
+          "$description": "Extra space above the actions cell in the stacked (mobile) layout"
+        }
+      }
+    }
+  }
+}
