@@ -80,7 +80,7 @@ export const Example: Story = {
                   </Note>
 
                   <Stack space="md">
-                    <h2 className="dsn-heading dsn-heading--heading-2">
+                    <h2 className="dsn-heading dsn-heading--heading-4">
                       Dit gaat er nu gebeuren
                     </h2>
 
