@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Table, Icon, Checkbox, Link } from '@dsn/components-react';
+import { Table, Icon, Checkbox, Link, LinkButton } from '@dsn/components-react';
 import type { TableProps } from '@dsn/components-react';
 import DocsPage from './Table.docs.mdx';
 import { rtlDecorator } from './story-helpers';
@@ -572,16 +572,13 @@ export const WithDeleteAction: Story = {
             <td>{product.category}</td>
             <td className="dsn-table__cell--numeric">{product.price}</td>
             <td>
-              <button
-                type="button"
-                className="dsn-button dsn-button--subtle-negative dsn-button--size-small"
+              <LinkButton
+                onClick={() => {}}
+                iconStart={<Icon name="trash" aria-hidden />}
               >
-                <Icon name="trash" aria-hidden />
-                <span className="dsn-button__label">
-                  Verwijder
-                  <span className="dsn-visually-hidden"> {product.name}</span>
-                </span>
-              </button>
+                Verwijder
+                <span className="dsn-visually-hidden"> {product.name}</span>
+              </LinkButton>
             </td>
           </tr>
         ))}

@@ -17,9 +17,10 @@
  */
 
 .dsn-stack {
+  --dsn-stack-space: var(--dsn-space-row-md);
   display: flex;
   flex-direction: column;
-  gap: var(--dsn-stack-space, var(--dsn-space-row-md));
+  gap: var(--dsn-stack-space);
 }
 
 /* Space variant modifiers */

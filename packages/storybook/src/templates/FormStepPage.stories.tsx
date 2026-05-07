@@ -134,7 +134,7 @@ function FormStepExamplePage() {
 
                   <Stack space="sm">
                     <h2 className="dsn-heading dsn-heading--heading-2">
-                      Titel van de stap
+                      Titel van stap
                     </h2>
 
                     <Paragraph>
