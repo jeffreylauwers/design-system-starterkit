@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   ActionGroup,
   Body,
   Button,
+  CheckboxGroup,
+  CheckboxOption,
+  DateInput,
+  DateInputGroup,
+  DateInputGroupValue,
   EmailInput,
+  FileInput,
   FormField,
+  FormFieldDescription,
+  FormFieldLabel,
   FormFieldset,
   Grid,
   GridItem,
@@ -18,17 +26,24 @@ import {
   ModalDialogFooter,
   ModalDialogHeader,
   ModalDialogHeading,
+  NumberInput,
   PageBody,
   PageFooter,
   PageHeader,
   PageLayout,
   Paragraph,
+  PasswordInput,
   RadioGroup,
   RadioOption,
+  SearchInput,
+  Select,
   SkipLink,
   Stack,
   TelephoneInput,
+  TextArea,
   TextInput,
+  TimeInput,
+  UnorderedList,
 } from '@dsn/components-react';
 import {
   logoSlot,
@@ -109,8 +124,14 @@ function FormModals({
   );
 }
 
-function FormStepExamplePage() {
+function AllTypesPage() {
   const [activeModal, setActiveModal] = React.useState<ActiveModal>(null);
+  const [geboortedatum, setGeboortedatum] = useState<DateInputGroupValue>({
+    day: '',
+    month: '',
+    year: '',
+  });
+
   return (
     <Body>
       <SkipLink href="#main-content" />
@@ -134,9 +155,8 @@ function FormStepExamplePage() {
 
                   <Stack space="sm">
                     <h2 className="dsn-heading dsn-heading--heading-2">
-                      Titel van stap
+                      Alle formuliertypen
                     </h2>
-
                     <Paragraph>
                       Vul alles in. Als iets niet verplicht is, staat dat erbij.
                     </Paragraph>
@@ -144,33 +164,143 @@ function FormStepExamplePage() {
 
                   <form noValidate>
                     <Stack space="3xl">
-                      <FormField label="Naam" htmlFor="naam">
-                        <TextInput id="naam" autoComplete="name" />
+                      <FormField label="Tekstveld" htmlFor="text-input">
+                        <TextInput id="text-input" />
                       </FormField>
 
-                      <FormFieldset legend="Favoriete fruit">
-                        <RadioGroup>
-                          <RadioOption
-                            name="fruit"
-                            label="Appel"
-                            value="appel"
-                          />
-                          <RadioOption
-                            name="fruit"
-                            label="Banaan"
-                            value="banaan"
-                          />
-                          <RadioOption name="fruit" label="Kiwi" value="kiwi" />
-                        </RadioGroup>
-                      </FormFieldset>
+                      <FormField label="Tekstvlak" htmlFor="text-area">
+                        <TextArea id="text-area" />
+                      </FormField>
+
+                      <FormField label="Getal" htmlFor="number-input">
+                        <NumberInput id="number-input" width="xs" />
+                      </FormField>
+
+                      <FormField label="E-mailadres" htmlFor="email-input">
+                        <EmailInput
+                          id="email-input"
+                          autoComplete="email"
+                          width="xl"
+                        />
+                      </FormField>
 
                       <FormField
                         label="Telefoonnummer"
-                        htmlFor="telefoon"
-                        labelSuffix="(niet verplicht)"
+                        htmlFor="telephone-input"
                       >
-                        <TelephoneInput id="telefoon" width="md" />
+                        <TelephoneInput
+                          id="telephone-input"
+                          autoComplete="tel"
+                          width="md"
+                        />
                       </FormField>
+
+                      <FormField label="Wachtwoord" htmlFor="password-input">
+                        <PasswordInput
+                          id="password-input"
+                          autoComplete="current-password"
+                        />
+                      </FormField>
+
+                      <FormField label="Zoeken" htmlFor="search-input">
+                        <SearchInput id="search-input" />
+                      </FormField>
+
+                      <FormField label="Tijdstip" htmlFor="time-input">
+                        <TimeInput id="time-input" />
+                      </FormField>
+
+                      <FormField label="Datum" htmlFor="date-input">
+                        <DateInput id="date-input" />
+                      </FormField>
+
+                      <FormFieldset
+                        legend="Geboortedatum"
+                        description="Bijvoorbeeld: 15 3 1990"
+                      >
+                        <DateInputGroup
+                          id="date-input-group"
+                          value={geboortedatum}
+                          onChange={setGeboortedatum}
+                        />
+                      </FormFieldset>
+
+                      <FormField label="Selecteer een optie" htmlFor="select">
+                        <Select id="select">
+                          <option value="">Maak een keuze</option>
+                          <option value="optie-1">Optie 1</option>
+                          <option value="optie-2">Optie 2</option>
+                          <option value="optie-3">Optie 3</option>
+                        </Select>
+                      </FormField>
+
+                      <FormFieldset legend="Selecteer meerdere opties">
+                        <CheckboxGroup>
+                          <CheckboxOption
+                            id="checkbox-1"
+                            name="checkboxes"
+                            value="optie-1"
+                            label="Optie 1"
+                          />
+                          <CheckboxOption
+                            id="checkbox-2"
+                            name="checkboxes"
+                            value="optie-2"
+                            label="Optie 2"
+                          />
+                          <CheckboxOption
+                            id="checkbox-3"
+                            name="checkboxes"
+                            value="optie-3"
+                            label="Optie 3"
+                          />
+                        </CheckboxGroup>
+                      </FormFieldset>
+
+                      <FormFieldset legend="Selecteer één optie">
+                        <RadioGroup>
+                          <RadioOption
+                            id="radio-1"
+                            name="radios"
+                            value="optie-1"
+                            label="Optie 1"
+                          />
+                          <RadioOption
+                            id="radio-2"
+                            name="radios"
+                            value="optie-2"
+                            label="Optie 2"
+                          />
+                          <RadioOption
+                            id="radio-3"
+                            name="radios"
+                            value="optie-3"
+                            label="Optie 3"
+                          />
+                        </RadioGroup>
+                      </FormFieldset>
+
+                      <div className="dsn-form-field">
+                        <FormFieldLabel htmlFor="file-input">
+                          Bestand toevoegen
+                        </FormFieldLabel>
+                        <FormFieldDescription
+                          as="div"
+                          id="file-input-description"
+                        >
+                          <UnorderedList>
+                            <li>Het bestand mag maximaal 10 MB zijn.</li>
+                            <li>
+                              Toegestane bestandstypen: doc, docx, xlsx, pdf,
+                              zip, jpg, png, bmp en gif.
+                            </li>
+                          </UnorderedList>
+                        </FormFieldDescription>
+                        <FileInput
+                          id="file-input"
+                          aria-describedby="file-input-description"
+                        />
+                      </div>
 
                       <ActionGroup
                         direction="vertical"
@@ -215,7 +345,7 @@ function FormStepExamplePage() {
 // =============================================================================
 
 const meta: Meta = {
-  title: 'Templates/Form flow/Form step: Example',
+  title: 'Templates/Form flow/Form step: All form types',
   parameters: {
     layout: 'fullscreen',
   },
@@ -230,6 +360,6 @@ type Story = StoryObj;
 // =============================================================================
 
 export const Example: Story = {
-  name: 'Form step: Example',
-  render: () => <FormStepExamplePage />,
+  name: 'Form step: All form types',
+  render: () => <AllTypesPage />,
 };

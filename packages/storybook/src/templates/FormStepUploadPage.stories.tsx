@@ -5,8 +5,10 @@ import {
   Body,
   Button,
   EmailInput,
+  FileInput,
   FormField,
-  FormFieldset,
+  FormFieldDescription,
+  FormFieldLabel,
   Grid,
   GridItem,
   Heading,
@@ -23,12 +25,9 @@ import {
   PageHeader,
   PageLayout,
   Paragraph,
-  RadioGroup,
-  RadioOption,
   SkipLink,
   Stack,
-  TelephoneInput,
-  TextInput,
+  UnorderedList,
 } from '@dsn/components-react';
 import {
   logoSlot,
@@ -109,8 +108,9 @@ function FormModals({
   );
 }
 
-function FormStepExamplePage() {
+function UploadPage() {
   const [activeModal, setActiveModal] = React.useState<ActiveModal>(null);
+
   return (
     <Body>
       <SkipLink href="#main-content" />
@@ -132,45 +132,34 @@ function FormStepExamplePage() {
                     Vorige stap
                   </Link>
 
-                  <Stack space="sm">
-                    <h2 className="dsn-heading dsn-heading--heading-2">
-                      Titel van stap
-                    </h2>
-
-                    <Paragraph>
-                      Vul alles in. Als iets niet verplicht is, staat dat erbij.
-                    </Paragraph>
-                  </Stack>
+                  <h2 className="dsn-heading dsn-heading--heading-2">
+                    Bestand toevoegen
+                  </h2>
 
                   <form noValidate>
                     <Stack space="3xl">
-                      <FormField label="Naam" htmlFor="naam">
-                        <TextInput id="naam" autoComplete="name" />
-                      </FormField>
-
-                      <FormFieldset legend="Favoriete fruit">
-                        <RadioGroup>
-                          <RadioOption
-                            name="fruit"
-                            label="Appel"
-                            value="appel"
-                          />
-                          <RadioOption
-                            name="fruit"
-                            label="Banaan"
-                            value="banaan"
-                          />
-                          <RadioOption name="fruit" label="Kiwi" value="kiwi" />
-                        </RadioGroup>
-                      </FormFieldset>
-
-                      <FormField
-                        label="Telefoonnummer"
-                        htmlFor="telefoon"
-                        labelSuffix="(niet verplicht)"
-                      >
-                        <TelephoneInput id="telefoon" width="md" />
-                      </FormField>
+                      <div className="dsn-form-field">
+                        <FormFieldLabel htmlFor="bestand-upload">
+                          Bestand toevoegen
+                        </FormFieldLabel>
+                        <FormFieldDescription
+                          as="div"
+                          id="bestand-upload-description"
+                        >
+                          <UnorderedList>
+                            <li>Het bestand mag maximaal 10 MB zijn.</li>
+                            <li>
+                              Toegestane bestandstypen: doc, docx, xlsx, pdf,
+                              zip, jpg, png, bmp en gif.
+                            </li>
+                          </UnorderedList>
+                        </FormFieldDescription>
+                        <FileInput
+                          id="bestand-upload"
+                          aria-describedby="bestand-upload-description"
+                          required
+                        />
+                      </div>
 
                       <ActionGroup
                         direction="vertical"
@@ -215,7 +204,7 @@ function FormStepExamplePage() {
 // =============================================================================
 
 const meta: Meta = {
-  title: 'Templates/Form flow/Form step: Example',
+  title: 'Templates/Form flow/Form step: Upload',
   parameters: {
     layout: 'fullscreen',
   },
@@ -230,6 +219,6 @@ type Story = StoryObj;
 // =============================================================================
 
 export const Example: Story = {
-  name: 'Form step: Example',
-  render: () => <FormStepExamplePage />,
+  name: 'Form step: Upload',
+  render: () => <UploadPage />,
 };

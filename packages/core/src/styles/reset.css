@@ -112,9 +112,9 @@ h6 {
   text-wrap: balance;
 }
 
-/* Scroll margin for anchor links — prevents heading from touching the top edge */
+/* Scroll margin for anchor links — prevents target from touching the top edge */
 :target {
-  scroll-margin-block: 5ex;
+  scroll-margin-block: 6rem;
 }
 
 /* Link styles */

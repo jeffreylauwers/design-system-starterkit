@@ -15,6 +15,11 @@ import {
   Icon,
   Link,
   LinkButton,
+  ModalDialog,
+  ModalDialogBody,
+  ModalDialogFooter,
+  ModalDialogHeader,
+  ModalDialogHeading,
   PageBody,
   PageFooter,
   PageHeader,
@@ -42,27 +47,71 @@ const mainStyle: React.CSSProperties = {
 };
 
 // =============================================================================
-// META
+// HELPER COMPONENTS
 // =============================================================================
 
-const meta: Meta = {
-  title: 'Templates/Form flow/Form step: Simple details',
-  parameters: {
-    layout: 'fullscreen',
-  },
-};
+type ActiveModal = 'save' | 'stop' | null;
 
-export default meta;
+function FormModals({
+  activeModal,
+  onClose,
+}: {
+  activeModal: ActiveModal;
+  onClose: () => void;
+}) {
+  return (
+    <>
+      <ModalDialog isOpen={activeModal === 'save'} onClose={onClose}>
+        <ModalDialogHeader>
+          <ModalDialogHeading>Opslaan en later verder</ModalDialogHeading>
+        </ModalDialogHeader>
+        <ModalDialogBody>
+          <Stack space="md">
+            <Paragraph>
+              Vul uw e-mailadres in. Er wordt een unieke link naar uw
+              e-mailadres verstuurd. Hiermee kunt u dit formulier op een later
+              moment afmaken.
+            </Paragraph>
+            <FormField label="E-mailadres" htmlFor="modal-email">
+              <EmailInput id="modal-email" autoComplete="email" width="xl" />
+            </FormField>
+          </Stack>
+        </ModalDialogBody>
+        <ModalDialogFooter>
+          <ActionGroup>
+            <Button variant="strong">Opslaan</Button>
+            <Button variant="default" onClick={onClose}>
+              Annuleren
+            </Button>
+          </ActionGroup>
+        </ModalDialogFooter>
+      </ModalDialog>
+      <ModalDialog isOpen={activeModal === 'stop'} onClose={onClose}>
+        <ModalDialogHeader>
+          <ModalDialogHeading>Stoppen met het formulier</ModalDialogHeading>
+        </ModalDialogHeader>
+        <ModalDialogBody>
+          <Paragraph>
+            Weet u zeker dat u wilt stoppen met het formulier? Uw gegevens
+            worden niet opgeslagen.
+          </Paragraph>
+        </ModalDialogBody>
+        <ModalDialogFooter>
+          <ActionGroup>
+            <Button variant="strong">Stoppen</Button>
+            <Button variant="default" onClick={onClose}>
+              Annuleren
+            </Button>
+          </ActionGroup>
+        </ModalDialogFooter>
+      </ModalDialog>
+    </>
+  );
+}
 
-type Story = StoryObj;
-
-// =============================================================================
-// STORIES
-// =============================================================================
-
-export const Example: Story = {
-  name: 'Form step: Simple details',
-  render: () => (
+function SimpleDetailsPage() {
+  const [activeModal, setActiveModal] = React.useState<ActiveModal>(null);
+  return (
     <Body>
       <SkipLink href="#main-content" />
       <PageLayout>
@@ -84,8 +133,6 @@ export const Example: Story = {
                   </Link>
 
                   <Stack space="sm">
-                    <Paragraph>Stap 1 van 5</Paragraph>
-
                     <h2 className="dsn-heading dsn-heading--heading-2">
                       Uw gegevens
                     </h2>
@@ -97,12 +144,8 @@ export const Example: Story = {
 
                   <form noValidate>
                     <Stack space="3xl">
-                      <FormField label="Voornaam" htmlFor="voornaam">
-                        <TextInput id="voornaam" autoComplete="given-name" />
-                      </FormField>
-
-                      <FormField label="Achternaam" htmlFor="achternaam">
-                        <TextInput id="achternaam" autoComplete="family-name" />
+                      <FormField label="Naam" htmlFor="naam">
+                        <TextInput id="naam" autoComplete="name" />
                       </FormField>
 
                       <FormField label="E-mailadres" htmlFor="email">
@@ -122,8 +165,12 @@ export const Example: Story = {
                         <Button variant="strong" type="submit">
                           Volgende stap
                         </Button>
-                        <LinkButton>Opslaan en later verder</LinkButton>
-                        <LinkButton>Stoppen met het formulier</LinkButton>
+                        <LinkButton onClick={() => setActiveModal('save')}>
+                          Opslaan en later verder
+                        </LinkButton>
+                        <LinkButton onClick={() => setActiveModal('stop')}>
+                          Stoppen met het formulier
+                        </LinkButton>
                       </ActionGroup>
                     </Stack>
                   </form>
@@ -139,13 +186,17 @@ export const Example: Story = {
           slot4={footerSlot4}
         />
       </PageLayout>
+      <FormModals
+        activeModal={activeModal}
+        onClose={() => setActiveModal(null)}
+      />
     </Body>
-  ),
-};
+  );
+}
 
-export const WithUpload: Story = {
-  name: 'Form step: Simple details: With upload',
-  render: () => (
+function SimpleDetailsWithUploadPage() {
+  const [activeModal, setActiveModal] = React.useState<ActiveModal>(null);
+  return (
     <Body>
       <SkipLink href="#main-content" />
       <PageLayout>
@@ -167,8 +218,6 @@ export const WithUpload: Story = {
                   </Link>
 
                   <Stack space="sm">
-                    <Paragraph>Stap 1 van 5</Paragraph>
-
                     <h2 className="dsn-heading dsn-heading--heading-2">
                       Uw gegevens
                     </h2>
@@ -180,12 +229,8 @@ export const WithUpload: Story = {
 
                   <form noValidate>
                     <Stack space="3xl">
-                      <FormField label="Voornaam" htmlFor="voornaam">
-                        <TextInput id="voornaam" autoComplete="given-name" />
-                      </FormField>
-
-                      <FormField label="Achternaam" htmlFor="achternaam">
-                        <TextInput id="achternaam" autoComplete="family-name" />
+                      <FormField label="Naam" htmlFor="naam">
+                        <TextInput id="naam" autoComplete="name" />
                       </FormField>
 
                       <FormField label="E-mailadres" htmlFor="email">
@@ -227,6 +272,115 @@ export const WithUpload: Story = {
                         <Button variant="strong" type="submit">
                           Volgende stap
                         </Button>
+                        <LinkButton onClick={() => setActiveModal('save')}>
+                          Opslaan en later verder
+                        </LinkButton>
+                        <LinkButton onClick={() => setActiveModal('stop')}>
+                          Stoppen met het formulier
+                        </LinkButton>
+                      </ActionGroup>
+                    </Stack>
+                  </form>
+                </Stack>
+              </GridItem>
+            </Grid>
+          </main>
+        </PageBody>
+        <PageFooter
+          slot1={footerSlot1}
+          slot2={footerSlot2}
+          slot3={footerSlot3}
+          slot4={footerSlot4}
+        />
+      </PageLayout>
+      <FormModals
+        activeModal={activeModal}
+        onClose={() => setActiveModal(null)}
+      />
+    </Body>
+  );
+}
+
+// =============================================================================
+// META
+// =============================================================================
+
+const meta: Meta = {
+  title: 'Templates/Form flow/Form step: Simple details',
+  parameters: {
+    layout: 'fullscreen',
+  },
+};
+
+export default meta;
+
+type Story = StoryObj;
+
+// =============================================================================
+// STORIES
+// =============================================================================
+
+export const Example: Story = {
+  name: 'Form step: Simple details',
+  render: () => <SimpleDetailsPage />,
+};
+
+export const WithSaveForLaterModal: Story = {
+  name: 'Form step: Simple details: With "Save for later" modal',
+  render: () => (
+    <Body>
+      <SkipLink href="#main-content" />
+      <PageLayout>
+        <PageHeader
+          logoSlot={logoSlot}
+          layout="compact"
+          hideMenuButton
+          hideSearchButton
+        />
+        <PageBody>
+          <main id="main-content" tabIndex={-1} style={mainStyle}>
+            <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
+              <GridItem colSpan={12} colStartLg={3} colEndLg={11}>
+                <Stack space="3xl">
+                  <Heading level={1}>Titel formulier</Heading>
+
+                  <Link href="#" iconStart={<Icon name="arrow-left" />}>
+                    Vorige stap
+                  </Link>
+
+                  <Stack space="sm">
+                    <h2 className="dsn-heading dsn-heading--heading-2">
+                      Uw gegevens
+                    </h2>
+
+                    <Paragraph>
+                      Vul alles in. Als iets niet verplicht is, staat dat erbij.
+                    </Paragraph>
+                  </Stack>
+
+                  <form noValidate>
+                    <Stack space="3xl">
+                      <FormField label="Naam" htmlFor="naam">
+                        <TextInput id="naam" autoComplete="name" />
+                      </FormField>
+
+                      <FormField label="E-mailadres" htmlFor="email">
+                        <EmailInput
+                          id="email"
+                          autoComplete="email"
+                          width="xl"
+                        />
+                      </FormField>
+
+                      <ActionGroup
+                        direction="vertical"
+                        style={{
+                          marginBlockStart: 'var(--dsn-space-block-3xl)',
+                        }}
+                      >
+                        <Button variant="strong" type="submit">
+                          Volgende stap
+                        </Button>
                         <LinkButton>Opslaan en later verder</LinkButton>
                         <LinkButton>Stoppen met het formulier</LinkButton>
                       </ActionGroup>
@@ -244,6 +398,128 @@ export const WithUpload: Story = {
           slot4={footerSlot4}
         />
       </PageLayout>
+      <ModalDialog isOpen onClose={() => {}}>
+        <ModalDialogHeader>
+          <ModalDialogHeading>Opslaan en later verder</ModalDialogHeading>
+        </ModalDialogHeader>
+        <ModalDialogBody>
+          <Stack space="md">
+            <Paragraph>
+              Vul uw e-mailadres in. Er wordt een unieke link naar uw
+              e-mailadres verstuurd. Hiermee kunt u dit formulier op een later
+              moment afmaken.
+            </Paragraph>
+            <FormField label="E-mailadres" htmlFor="modal-email">
+              <EmailInput id="modal-email" autoComplete="email" width="xl" />
+            </FormField>
+          </Stack>
+        </ModalDialogBody>
+        <ModalDialogFooter>
+          <ActionGroup>
+            <Button variant="strong">Opslaan</Button>
+            <Button variant="default">Annuleren</Button>
+          </ActionGroup>
+        </ModalDialogFooter>
+      </ModalDialog>
     </Body>
   ),
+};
+
+export const WithStopFormModal: Story = {
+  name: 'Form step: Simple details: With "Stop form" modal',
+  render: () => (
+    <Body>
+      <SkipLink href="#main-content" />
+      <PageLayout>
+        <PageHeader
+          logoSlot={logoSlot}
+          layout="compact"
+          hideMenuButton
+          hideSearchButton
+        />
+        <PageBody>
+          <main id="main-content" tabIndex={-1} style={mainStyle}>
+            <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
+              <GridItem colSpan={12} colStartLg={3} colEndLg={11}>
+                <Stack space="3xl">
+                  <Heading level={1}>Titel formulier</Heading>
+
+                  <Link href="#" iconStart={<Icon name="arrow-left" />}>
+                    Vorige stap
+                  </Link>
+
+                  <Stack space="sm">
+                    <h2 className="dsn-heading dsn-heading--heading-2">
+                      Uw gegevens
+                    </h2>
+
+                    <Paragraph>
+                      Vul alles in. Als iets niet verplicht is, staat dat erbij.
+                    </Paragraph>
+                  </Stack>
+
+                  <form noValidate>
+                    <Stack space="3xl">
+                      <FormField label="Naam" htmlFor="naam">
+                        <TextInput id="naam" autoComplete="name" />
+                      </FormField>
+
+                      <FormField label="E-mailadres" htmlFor="email">
+                        <EmailInput
+                          id="email"
+                          autoComplete="email"
+                          width="xl"
+                        />
+                      </FormField>
+
+                      <ActionGroup
+                        direction="vertical"
+                        style={{
+                          marginBlockStart: 'var(--dsn-space-block-3xl)',
+                        }}
+                      >
+                        <Button variant="strong" type="submit">
+                          Volgende stap
+                        </Button>
+                        <LinkButton>Opslaan en later verder</LinkButton>
+                        <LinkButton>Stoppen met het formulier</LinkButton>
+                      </ActionGroup>
+                    </Stack>
+                  </form>
+                </Stack>
+              </GridItem>
+            </Grid>
+          </main>
+        </PageBody>
+        <PageFooter
+          slot1={footerSlot1}
+          slot2={footerSlot2}
+          slot3={footerSlot3}
+          slot4={footerSlot4}
+        />
+      </PageLayout>
+      <ModalDialog isOpen onClose={() => {}}>
+        <ModalDialogHeader>
+          <ModalDialogHeading>Stoppen met het formulier</ModalDialogHeading>
+        </ModalDialogHeader>
+        <ModalDialogBody>
+          <Paragraph>
+            Weet u zeker dat u wilt stoppen met het formulier? Uw gegevens
+            worden niet opgeslagen.
+          </Paragraph>
+        </ModalDialogBody>
+        <ModalDialogFooter>
+          <ActionGroup>
+            <Button variant="strong">Stoppen</Button>
+            <Button variant="default">Annuleren</Button>
+          </ActionGroup>
+        </ModalDialogFooter>
+      </ModalDialog>
+    </Body>
+  ),
+};
+
+export const WithUpload: Story = {
+  name: 'Form step: Simple details: With upload',
+  render: () => <SimpleDetailsWithUploadPage />,
 };
