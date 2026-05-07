@@ -49,7 +49,7 @@
       },
       "actions": {
         "gap": {
-          "$value": "{dsn.space.inline.lg}",
+          "$value": "{dsn.space.inline.3xl}",
           "$type": "dimension",
           "$description": "Gap between multiple action links in a single row"
         },
