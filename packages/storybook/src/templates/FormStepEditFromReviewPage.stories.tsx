@@ -4,6 +4,7 @@ import {
   ActionGroup,
   Body,
   Button,
+  EmailInput,
   FormField,
   Grid,
   GridItem,
@@ -79,22 +80,30 @@ export const Example: Story = {
 
                   <Stack space="sm">
                     <h2 className="dsn-heading dsn-heading--heading-2">
-                      Uw gegevens wijzigen
+                      Uw gegevens
                     </h2>
 
                     <Paragraph>
-                      Pas het gegeven aan en sla het op om terug te gaan naar de
-                      controlepagina.
+                      Vul alles in. Als iets niet verplicht is, staat dat erbij.
                     </Paragraph>
                   </Stack>
 
                   <form noValidate>
                     <Stack space="3xl">
-                      <FormField label="Voornaam" htmlFor="voornaam">
+                      <FormField label="Naam" htmlFor="naam">
                         <TextInput
-                          id="voornaam"
-                          autoComplete="given-name"
-                          defaultValue="Jeroen"
+                          id="naam"
+                          autoComplete="name"
+                          defaultValue="Jeroen van Drouwen"
+                        />
+                      </FormField>
+
+                      <FormField label="E-mailadres" htmlFor="email">
+                        <EmailInput
+                          id="email"
+                          autoComplete="email"
+                          width="xl"
+                          defaultValue="jeroenvandrouwen@gmail.com"
                         />
                       </FormField>
 
