@@ -75,7 +75,7 @@ export const Example: Story = {
                   <Heading level={1}>Titel formulier</Heading>
 
                   <Link href="#" iconStart={<Icon name="arrow-left" />}>
-                    Terug naar controle
+                    Terug
                   </Link>
 
                   <Stack space="sm">
@@ -114,7 +114,7 @@ export const Example: Story = {
                         }}
                       >
                         <Button variant="strong" type="submit">
-                          Opslaan en terug naar controle
+                          Opslaan en terug
                         </Button>
                         <Button variant="default" type="button">
                           Annuleren
