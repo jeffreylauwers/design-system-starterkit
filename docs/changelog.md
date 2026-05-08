@@ -6,6 +6,16 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.36.0 (May 8, 2026)
+
+### ActionGroup
+
+#### Changed
+
+- **`ActionGroup`**: voegt `role="group"` toe als standaard ARIA-rol zodat screenreaders de groep als semantische eenheid aankondigen; de rol is overschrijfbaar via de `role` prop
+
+---
+
 ## Version 5.35.0 (May 2, 2026)
 
 ### File + FileList

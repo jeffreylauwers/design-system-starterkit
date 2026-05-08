@@ -13,7 +13,7 @@ const meta: Meta<typeof ActionGroup> = {
       htmlTemplate: (args: any) => {
         const modifier =
           args.direction === 'vertical' ? ' dsn-action-group--vertical' : '';
-        return `<div class="dsn-action-group${modifier}">
+        return `<div class="dsn-action-group${modifier}" role="group">
   <button class="dsn-button dsn-button--strong dsn-button--size-default">
     <span class="dsn-button__label">Opslaan</span>
   </button>

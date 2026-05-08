@@ -47,7 +47,6 @@ ActionGroup is een lay-outprimitief voor het groeperen van één of meer gerelat
 
 ## Accessibility
 
-- ActionGroup heeft geen eigen ARIA-rol: de groepering is puur lay-out, geen semantische eenheid.
+- ActionGroup heeft standaard `role="group"`: screenreaders kondigen de groep aan als semantische eenheid.
 - De volgorde van children bepaalt de lees- en tabvolgorde: primaire actie altijd als eerste child.
 - Icon-only Buttons in een ActionGroup hebben hun label verborgen via `dsn-button__label` + `dsn-button--icon-only`: de ActionGroup zelf hoeft hier niets voor te doen.
-- Gebruik nooit `role="group"` of `aria-label` op de ActionGroup: dit voegt geen waarde toe voor screenreaders.

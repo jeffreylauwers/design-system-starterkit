@@ -168,7 +168,7 @@ Groepeert gerelateerde acties en verzorgt de lay-out van Buttons en Links. Horiz
 
 ```html
 <!-- Horizontaal (default) -->
-<div class="dsn-action-group">
+<div class="dsn-action-group" role="group">
   <button class="dsn-button dsn-button--strong dsn-button--size-default">
     <span class="dsn-button__label">Opslaan</span>
   </button>
@@ -178,7 +178,7 @@ Groepeert gerelateerde acties en verzorgt de lay-out van Buttons en Links. Horiz
 </div>
 
 <!-- Verticaal -->
-<div class="dsn-action-group dsn-action-group--vertical">
+<div class="dsn-action-group dsn-action-group--vertical" role="group">
   <button class="dsn-button dsn-button--strong dsn-button--size-default">
     <span class="dsn-button__label">Primaire actie</span>
   </button>

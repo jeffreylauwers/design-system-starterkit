@@ -111,4 +111,26 @@ describe('ActionGroup', () => {
     const el = screen.getByTestId('my-group');
     expect(el).toHaveAttribute('id', 'action-group-1');
   });
+
+  // ===========================
+  // Accessibility
+  // ===========================
+
+  it('has role="group" by default', () => {
+    const { container } = render(
+      <ActionGroup>
+        <button>Actie</button>
+      </ActionGroup>
+    );
+    expect(container.firstChild).toHaveAttribute('role', 'group');
+  });
+
+  it('allows role to be overridden', () => {
+    const { container } = render(
+      <ActionGroup role="toolbar">
+        <button>Actie</button>
+      </ActionGroup>
+    );
+    expect(container.firstChild).toHaveAttribute('role', 'toolbar');
+  });
 });
