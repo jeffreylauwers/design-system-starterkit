@@ -6,6 +6,19 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 5.37.0 (May 8, 2026)
+
+### Storybook upgrade
+
+#### Changed
+
+- **Storybook** geüpgraded van v7.6.21 naar **v10.3.6** (PR #249)
+  - Vite v4 → v6 en `vite-plugin-svgr` v4 → v5
+  - Imports bijgewerkt naar `@storybook/addon-docs/blocks` (vervangt `@storybook/blocks`)
+  - Storybook-configuratie (`main.ts`, `preview.ts`) gemigreerd naar v10-API
+
+---
+
 ## Version 5.36.0 (May 8, 2026)
 
 ### ActionGroup

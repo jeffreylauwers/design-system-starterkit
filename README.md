@@ -65,7 +65,7 @@ pnpm --filter @dsn/design-tokens watch
 # Start Storybook in development mode
 pnpm dev
 
-# Run tests (1495 tests across 73 test suites)
+# Run tests (1549 tests across 75 test suites)
 pnpm test
 
 # Run tests in watch mode
@@ -192,7 +192,7 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 | **Paragraph**     | Yes      | Yes   | Yes           |
 | **UnorderedList** | Yes      | Yes   | Yes           |
 
-**Display & Feedback Components (16)**
+**Display & Feedback Components (17)**
 
 | Component       | HTML/CSS | React | Web Component |
 | --------------- | -------- | ----- | ------------- |
@@ -211,6 +211,7 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 | **ProgressBar** | Yes      | Yes   | No            |
 | **Spinner**     | Yes      | Yes   | No            |
 | **StatusBadge** | Yes      | Yes   | No            |
+| **SummaryList** | Yes      | Yes   | No            |
 | **Table**       | Yes      | Yes   | No            |
 
 **Navigation Components (6)**
@@ -236,7 +237,7 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 | ------------ | -------- | ----- | ------------- |
 | **SkipLink** | Yes      | Yes   | No            |
 
-**Form Components (25)**
+**Form Components (26)**
 
 | Component                 | HTML/CSS | React | Web Component |
 | ------------------------- | -------- | ----- | ------------- |
@@ -246,6 +247,7 @@ All components are fully typed with TypeScript and include comprehensive JSDoc d
 | **DateInput**             | Yes      | Yes   | No            |
 | **DateInputGroup**        | Yes      | Yes   | No            |
 | **EmailInput**            | Yes      | Yes   | No            |
+| **FileInput**             | Yes      | Yes   | No            |
 | **FormField**             | Yes      | Yes   | No            |
 | **FormFieldDescription**  | Yes      | Yes   | No            |
 | **FormFieldErrorMessage** | Yes      | Yes   | No            |
@@ -409,7 +411,7 @@ Comprehensive documentation is available in the `/docs` folder:
 
 - **Pre-commit hooks** via Husky + lint-staged (ESLint + Prettier)
 - **Type checking** across all packages (`pnpm type-check`)
-- **1495 tests** covering React components, Web Components, and utilities
+- **1549 tests** covering React components, Web Components, and utilities
 - **CI/CD** via GitHub Actions (lint, type-check, test, build)
 
 ## Tech Stack
@@ -420,7 +422,7 @@ Comprehensive documentation is available in the `/docs` folder:
 - **React:** 18+
 - **TypeScript:** 5.3+
 - **Testing:** Vitest + React Testing Library
-- **Documentation:** Storybook 7.6
+- **Documentation:** Storybook 10.3.6
 - **CI/CD:** GitHub Actions
 - **Package Manager:** PNPM 8+
 - **Code Quality:** Husky, lint-staged, ESLint, Prettier

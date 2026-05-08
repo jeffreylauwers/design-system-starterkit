@@ -1,6 +1,6 @@
 # Components
 
-**Last Updated:** April 23, 2026
+**Last Updated:** May 8, 2026
 
 Complete component specifications and guidelines for the Design System Starter Kit.
 
@@ -1396,6 +1396,71 @@ Brengt consistente verticale ruimte aan tussen directe child-elementen via `flex
 ```
 
 **Tests:** React (6 tests)
+
+### SummaryList
+
+**Status:** Complete (HTML/CSS, React)
+
+**Location:** `packages/components-react/src/SummaryList/`
+
+**Props:**
+
+- `SummaryList`: `noBorder`, `children`
+- `SummaryListRow`: `noActions`, `children`
+- `SummaryListKey`: `children`
+- `SummaryListValue`: `children`
+- `SummaryListActions`: `children`
+
+**Features:**
+
+- `<dl>` beschrijvingslijst met `<div>` row-wrappers voor elke rij
+- Responsive: gestapeld (mobiel) → CSS Grid + subgrid (tablet+)
+- `noBorder` prop verwijdert rij-scheidingslijnen
+- `noActions` prop op een rij zonder actiecel voor consistente kolomuitlijning in gemengde lijsten
+- `SummaryListActions` wikkelt meerdere acties automatisch in een `<ul>` voor lijstsemantiek
+
+**HTML klassen:**
+
+```html
+<dl class="dsn-summary-list">
+  <div class="dsn-summary-list__row">
+    <dt class="dsn-summary-list__key">Naam</dt>
+    <dd class="dsn-summary-list__value">Sarah Hendricks</dd>
+    <dd class="dsn-summary-list__actions">
+      <a class="dsn-link" href="#">
+        Wijzig
+        <span class="dsn-visually-hidden"> naam</span>
+      </a>
+    </dd>
+  </div>
+</dl>
+
+<!-- Zonder borders -->
+<dl class="dsn-summary-list dsn-summary-list--no-border">...</dl>
+```
+
+**React:**
+
+```tsx
+<SummaryList>
+  <SummaryListRow>
+    <SummaryListKey>Naam</SummaryListKey>
+    <SummaryListValue>Sarah Hendricks</SummaryListValue>
+    <SummaryListActions>
+      <Link href="#">
+        Wijzig
+        <span className="dsn-visually-hidden"> naam</span>
+      </Link>
+    </SummaryListActions>
+  </SummaryListRow>
+</SummaryList>
+```
+
+**Design tokens:** `--dsn-summary-list-row-border-block-end-color`, `--dsn-summary-list-row-border-block-end-width`, `--dsn-summary-list-row-gap`, `--dsn-summary-list-row-padding-block`, `--dsn-summary-list-key-color`, `--dsn-summary-list-key-font-weight`, `--dsn-summary-list-key-basis`, `--dsn-summary-list-value-color`, `--dsn-summary-list-actions-gap`
+
+**Tests:** React (31 tests)
+
+---
 
 ### Alert
 
@@ -2861,7 +2926,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 
 ## Form Components
 
-**Status:** Complete (HTML/CSS, React): 25 components total
+**Status:** Complete (HTML/CSS, React): 26 components total
 
 **Location:** `packages/components-{html|react}/src/`
 
@@ -2970,6 +3035,22 @@ const [isOpen, setIsOpen] = React.useState(false);
 **Props:** `value` (`{ day, month, year }`), `onChange`, `invalid`, `disabled`, `id`
 
 **Tests:** React (9 tests)
+
+#### FileInput
+
+**Tokens:** `tokens/components/file-input.json`
+
+**Features:** Gestyled `<input type="file">` via `::file-selector-button` CSS pseudo-element. Knopstijl volgt `dsn-button--default` automatisch. Ondersteunt `multiple` en `accept` attributen. Geen wrapper element — de component is het `<input>` zelf.
+
+**Props:** `invalid`, en alle native `<input type="file">` attributen (behalve `type`)
+
+**HTML:**
+
+```html
+<input type="file" class="dsn-file-input" id="bijlage" />
+```
+
+**Tests:** React (14 tests)
 
 ### Selection Components
 
@@ -3170,15 +3251,15 @@ defineButton('my-custom-button');
 
 ## Component Statistics
 
-**Total Components:** 67
+**Total Components:** 71
 
 **Implementations:**
 
-- **HTML/CSS:** 67 components
-- **React:** 67 components (1495 tests total, 73 test suites)
+- **HTML/CSS:** 71 components
+- **React:** 71 components (1549 tests total, 75 test suites)
 - **Web Component:** 7 components (Button, Heading, Icon, Link, OrderedList, Paragraph, UnorderedList)
 
-**Test Coverage:** 1409 tests across 70 test suites
+**Test Coverage:** 1549 tests across 75 test suites
 
 ---
 
