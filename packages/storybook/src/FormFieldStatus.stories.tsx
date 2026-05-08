@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { FormFieldStatus } from '@dsn/components-react';
 import DocsPage from './FormFieldStatus.docs.mdx';
 import {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Source } from '@storybook/blocks';
+import { Source } from '@storybook/addon-docs/blocks';
 import './CodeTabs.css';
 
 interface CodeTabsProps {

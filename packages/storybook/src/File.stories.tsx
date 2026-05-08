@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { File, FileList } from '@dsn/components-react';
 import DocsPage from './File.docs.mdx';
 import { rtlDecorator, VEEL_TEKST } from './story-helpers';

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { OptionLabel } from '@dsn/components-react';
 import DocsPage from './OptionLabel.docs.mdx';
 import {

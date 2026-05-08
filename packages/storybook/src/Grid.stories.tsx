@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Grid, GridItem, Container } from '@dsn/components-react';
 import DocsPage from './Grid.docs.mdx';
 

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DateInput } from '@dsn/components-react';
 import DocsPage from './DateInput.docs.mdx';
 import { rtlDecorator } from './story-helpers';

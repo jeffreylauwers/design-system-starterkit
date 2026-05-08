@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TextInput } from '@dsn/components-react';
 import DocsPage from './TextInput.docs.mdx';
 import {
