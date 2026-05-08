@@ -50,7 +50,7 @@ export const ActionGroup = React.forwardRef<HTMLDivElement, ActionGroupProps>(
     );
 
     return (
-      <div ref={ref} className={classes} {...props}>
+      <div ref={ref} className={classes} role="group" {...props}>
         {children}
       </div>
     );
