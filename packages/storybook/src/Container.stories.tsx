@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Container, Stack, Paragraph, Heading } from '@dsn/components-react';
 import DocsPage from './Container.docs.mdx';
 

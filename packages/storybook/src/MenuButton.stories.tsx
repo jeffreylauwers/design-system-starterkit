@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DotBadge, Icon, MenuButton } from '@dsn/components-react';
 import type { IconName } from '@dsn/components-react/icon-registry.generated';
 import DocsPage from './MenuButton.docs.mdx';

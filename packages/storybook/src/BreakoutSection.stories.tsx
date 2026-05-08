@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { BreakoutSection, Heading, Paragraph } from '@dsn/components-react';
 import DocsPage from './BreakoutSection.docs.mdx';
 

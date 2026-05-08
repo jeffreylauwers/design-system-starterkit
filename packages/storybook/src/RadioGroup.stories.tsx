@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RadioGroup, RadioOption } from '@dsn/components-react';
 import DocsPage from './RadioGroup.docs.mdx';
 import {

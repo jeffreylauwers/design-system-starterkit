@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
 
 // NOTE: We do NOT import the token CSS statically here anymore.
 // The tokens are loaded dynamically by the decorator and preview-head.html
@@ -68,7 +68,7 @@ if (typeof window !== 'undefined') {
 
 const preview: Preview = {
   parameters: {
-    backgrounds: { disable: true },
+    backgrounds: { disabled: true },
     controls: {
       matchers: {
         color: /(background|color)$/i,

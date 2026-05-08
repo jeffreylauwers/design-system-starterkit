@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ButtonLink, Icon } from '@dsn/components-react';
 import type { IconName } from '@dsn/components-react/icon-registry.generated';
 import DocsPage from './ButtonLink.docs.mdx';

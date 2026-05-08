@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Radio } from '@dsn/components-react';
 import DocsPage from './Radio.docs.mdx';
 import { rtlDecorator } from './story-helpers';

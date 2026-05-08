@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { CheckboxGroup, CheckboxOption } from '@dsn/components-react';
 import DocsPage from './CheckboxGroup.docs.mdx';
 import {

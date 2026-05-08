@@ -1,8 +1,13 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
+import { fileURLToPath } from 'node:url';
 import type { StorybookConfig } from '@storybook/react-vite';
 import svgr from 'vite-plugin-svgr';
 import { mergeConfig } from 'vite';
-import path from 'path';
+import path, { dirname } from 'path';
 import { configureSort } from 'storybook-multilevel-sort';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 configureSort({
   storyOrder: {
@@ -24,10 +29,10 @@ configureSort({
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(ts|tsx)', '../src/**/*.mdx'],
   addons: [
-    '@storybook/addon-essentials',
     '@storybook/addon-links',
     '@storybook/addon-themes',
     '@storybook/addon-a11y',
+    '@storybook/addon-docs',
   ],
   framework: {
     name: '@storybook/react-vite',
