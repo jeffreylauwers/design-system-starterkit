@@ -5,6 +5,7 @@ import {
   Body,
   Grid,
   GridItem,
+  Icon,
   Link,
   Note,
   PageBody,
@@ -70,13 +71,10 @@ export const Example: Story = {
                 <Stack space="3xl">
                   <Note
                     variant="positive"
-                    heading="Uw aanvraag is verstuurd"
+                    heading="{Onderwerp} is verstuurd"
                     headingLevel={1}
                   >
-                    <Paragraph>
-                      Uw referentienummer is <strong>AB-2024-123456</strong>.
-                      Bewaar dit nummer voor uw administratie.
-                    </Paragraph>
+                    <Paragraph>Kenmerk: 2308290-1118-59dc</Paragraph>
                   </Note>
 
                   <Stack space="md">
@@ -86,16 +84,16 @@ export const Example: Story = {
 
                     <UnorderedList>
                       <li>
-                        U ontvangt direct een bevestigingsmail op{' '}
+                        U ontvangt {'{tijdsindicatie}'} een bevestigingsmail op
                         jeroenvandrouwen@gmail.com.
                       </li>
                       <li>
-                        Wij behandelen uw aanvraag. Wij nemen binnen 5 werkdagen
-                        contact met u op.
+                        Wij behandelen uw {'{onderwerp}'}. Wij nemen binnen{' '}
+                        {'{tijdsindicatie}'} contact met u op.
                       </li>
                       <li>
-                        U kunt in <Link href="#">Mijn omgeving</Link> de
-                        voortgang van uw aanvraag bekijken.
+                        U kunt in <Link href="#">{'{naam-mijn-omgeving}'}</Link>{' '}
+                        de voortgang van uw {'{onderwerp}'} bekijken.
                       </li>
                     </UnorderedList>
                   </Stack>
@@ -106,8 +104,18 @@ export const Example: Story = {
                       marginBlockStart: 'var(--dsn-space-block-3xl)',
                     }}
                   >
-                    <Link href="#">Print aanvraag</Link>
-                    <Link href="#">Download aanvraag als PDF</Link>
+                    <Link
+                      href="#"
+                      iconStart={<Icon name="printer" aria-hidden />}
+                    >
+                      Print {'{onderwerp}'}
+                    </Link>
+                    <Link
+                      href="#"
+                      iconStart={<Icon name="download" aria-hidden />}
+                    >
+                      Download {'{onderwerp}'} als PDF
+                    </Link>
                     <Link href="#">Terug naar voorbeeld.nl</Link>
                   </ActionGroup>
                 </Stack>
