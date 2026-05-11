@@ -6,6 +6,11 @@
         "$type": "dimension",
         "$description": "Horizontal gap between grid columns (overridden to column.md in information-dense)"
       },
+      "row-gap": {
+        "$value": "{dsn.space.column.xl}",
+        "$type": "dimension",
+        "$description": "Vertical gap between grid rows (overridden to column.md in information-dense)"
+      },
       "margin": {
         "$value": "{dsn.space.column.3xl}",
         "$type": "dimension",
