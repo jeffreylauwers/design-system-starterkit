@@ -32,7 +32,6 @@ import {
   DrawerHeading,
   EmailInput,
   File,
-  FileList,
   FileInput,
   FormField,
   FormFieldDescription,
@@ -322,7 +321,13 @@ function Section({
   return (
     <section>
       <Heading level={2}>{name}</Heading>
-      <Link href={docPath} target="_parent">
+      <Link
+        href={docPath}
+        onClick={(e: React.MouseEvent) => {
+          e.preventDefault();
+          window.parent.location.href = docPath;
+        }}
+      >
         Bekijk de documentatie voor {name}
       </Link>
       <div style={{ marginBlockStart: 'var(--dsn-space-block-3xl)' }}>
