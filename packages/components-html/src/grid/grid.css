@@ -40,6 +40,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: var(--dsn-grid-gutter);
+  row-gap: var(--dsn-grid-row-gap);
   padding-inline: var(--dsn-grid-margin);
 }
 

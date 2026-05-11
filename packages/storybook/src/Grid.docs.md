@@ -117,6 +117,7 @@ Grid en GridItem zijn puur visuele layout utilities. Ze voegen geen ARIA-attribu
 | Token                  | Standaard waarde                     | Omschrijving                                                        |
 | ---------------------- | ------------------------------------ | ------------------------------------------------------------------- |
 | `--dsn-grid-gutter`    | `var(--dsn-space-column-xl)` (16px)  | Horizontale ruimte tussen kolommen; 8px in information-dense        |
+| `--dsn-grid-row-gap`   | `var(--dsn-space-column-xl)` (16px)  | Verticale ruimte tussen rijen; 8px in information-dense             |
 | `--dsn-grid-margin`    | `var(--dsn-space-column-3xl)` (24px) | Outer padding aan weerszijden van de grid container                 |
 | `--dsn-grid-max-width` | `74rem` (~1184px)                    | Maximale breedte bij `contained` variant                            |
 | `--dsn-breakpoint-sm`  | `36em`                               | Referentiewaarde small breakpoint (niet te gebruiken in CSS @media) |
