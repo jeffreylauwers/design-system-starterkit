@@ -322,7 +322,9 @@ function Section({
   return (
     <section>
       <Heading level={2}>{name}</Heading>
-      <Link href={docPath}>Bekijk de documentatie voor {name}</Link>
+      <Link href={docPath} target="_parent">
+        Bekijk de documentatie voor {name}
+      </Link>
       <div style={{ marginBlockStart: 'var(--dsn-space-block-3xl)' }}>
         {children}
       </div>
