@@ -325,7 +325,8 @@ function Section({
         href={docPath}
         onClick={(e: React.MouseEvent) => {
           e.preventDefault();
-          window.parent.location.href = docPath;
+          const { origin, pathname } = window.parent.location;
+          window.parent.location.href = origin + pathname + docPath;
         }}
       >
         Bekijk de documentatie voor {name}
