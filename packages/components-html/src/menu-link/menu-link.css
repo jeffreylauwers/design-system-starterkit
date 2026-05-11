@@ -193,6 +193,7 @@
 
 .dsn-menu-link__expand-button {
   flex-shrink: 0;
+  align-self: center;
 }
 
 /* Chevron (chevron-down) — 180° rotatie wanneer uitgevouwen, zelfde als Details */
