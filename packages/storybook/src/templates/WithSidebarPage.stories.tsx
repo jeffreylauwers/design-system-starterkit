@@ -471,6 +471,57 @@ export const FullWidth: Story = {
   ),
 };
 
+export const FullWidthCenteredContent: Story = {
+  name: 'Full Width + Centered Main Content',
+  render: () => (
+    <Body>
+      <SkipLink href="#main-content" />
+      <PageLayout
+        style={{ '--dsn-page-max-inline-size': 'none' } as React.CSSProperties}
+      >
+        <PageHeader
+          logoSlot={logoSlot}
+          primaryNavigation={<PrimaryNavigation currentPage="level-1a" />}
+          primaryNavigationLarge={
+            <PrimaryNavigationLarge currentPage="level-1a" />
+          }
+          secondaryNavigation={secondaryNavigation}
+          secondaryNavigationLarge={secondaryNavigationLarge}
+          searchSlot={searchSlot}
+        />
+        <PageBody>
+          <div className="dsn-sidebar-layout">
+            <aside className="dsn-sidebar-layout__sidebar">
+              <SidebarNavigation currentPage="level-1a" />
+            </aside>
+            <main
+              id="main-content"
+              tabIndex={-1}
+              className="dsn-sidebar-layout__main"
+              style={mainStyle}
+            >
+              <div
+                style={{
+                  maxInlineSize: '75rem',
+                  marginInline: 'auto',
+                }}
+              >
+                <GridContent />
+              </div>
+            </main>
+          </div>
+        </PageBody>
+        <PageFooter
+          slot1={footerSlot1}
+          slot2={footerSlot2}
+          slot3={footerSlot3}
+          slot4={footerSlot4}
+        />
+      </PageLayout>
+    </Body>
+  ),
+};
+
 export const WithoutSidebar: Story = {
   name: 'No Sidebar',
   render: () => (
