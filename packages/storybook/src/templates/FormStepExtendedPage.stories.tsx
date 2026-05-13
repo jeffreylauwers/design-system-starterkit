@@ -158,6 +158,18 @@ function ExtendedDetailsPage() {
                         <TextInput id="voornaam" autoComplete="given-name" />
                       </FormField>
 
+                      <FormField
+                        label="Tussenvoegsel"
+                        htmlFor="tussenvoegsel"
+                        labelSuffix="(niet verplicht)"
+                      >
+                        <TextInput
+                          id="tussenvoegsel"
+                          width="sm"
+                          autoComplete="additional-name"
+                        />
+                      </FormField>
+
                       <FormField label="Achternaam" htmlFor="achternaam">
                         <TextInput id="achternaam" autoComplete="family-name" />
                       </FormField>
@@ -342,6 +354,18 @@ function SingleErrorPage() {
                           id="single-error-voornaam"
                           autoComplete="given-name"
                           defaultValue="Jeroen"
+                        />
+                      </FormField>
+
+                      <FormField
+                        label="Tussenvoegsel"
+                        htmlFor="single-error-tussenvoegsel"
+                        labelSuffix="(niet verplicht)"
+                      >
+                        <TextInput
+                          id="single-error-tussenvoegsel"
+                          width="sm"
+                          autoComplete="additional-name"
                         />
                       </FormField>
 
@@ -565,6 +589,18 @@ function MultipleErrorsPage() {
                           autoComplete="given-name"
                           defaultValue="4"
                           invalid
+                        />
+                      </FormField>
+
+                      <FormField
+                        label="Tussenvoegsel"
+                        htmlFor="multi-error-tussenvoegsel"
+                        labelSuffix="(niet verplicht)"
+                      >
+                        <TextInput
+                          id="multi-error-tussenvoegsel"
+                          width="sm"
+                          autoComplete="additional-name"
                         />
                       </FormField>
 
