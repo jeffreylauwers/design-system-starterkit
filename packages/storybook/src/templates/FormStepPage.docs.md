@@ -83,7 +83,7 @@ De `<main>` bevat een `Stack space="3xl"` met de volgende elementen in volgorde:
 
 ## Don't use when
 
-- Je een informatieve pagina toont: gebruik dan het Base Page of Grid Page template.
+- Je een informatieve pagina toont: gebruik dan het Base Page template.
 - Het formulier uit slechts één stap bestaat zonder stap-voor-stap navigatie.
 
 ## Accessibility
