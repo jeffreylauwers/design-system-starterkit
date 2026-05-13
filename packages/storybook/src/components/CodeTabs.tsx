@@ -100,10 +100,10 @@ export function CodeTabs({ of: storyRef, react, html }: CodeTabsProps) {
           // show it as static code. Otherwise, subscribe to STORY_ARGS_UPDATED via `of` so
           // the displayed code updates automatically when the user changes Controls.
           react ? (
-            <Source code={react} language="tsx" dark />
+            <Source key="react-static" code={react} language="tsx" dark />
           ) : (
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            <Source of={storyRef as any} dark />
+            <Source key="react-live" of={storyRef as any} dark />
           )
         ) : (
           // HTML tab: uses `of` for live subscription to STORY_ARGS_UPDATED,
@@ -111,6 +111,7 @@ export function CodeTabs({ of: storyRef, react, html }: CodeTabsProps) {
           // `parameters.dsn.htmlTemplate` function defined in each story file.
           // Falls back to the static `html` prop when no template is defined.
           <Source
+            key="html"
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             of={storyRef as any}
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
