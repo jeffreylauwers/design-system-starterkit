@@ -4,7 +4,7 @@ Paginatemplate met een prominente Hero direct onder de Page Header, gevolgd door
 
 ## Doel
 
-Het Home Page template bouwt voort op de Grid Page-structuur en plaatst een `Hero` als eerste element in de `<main>`, direct onder de `PageHeader`. Het template laat zien hoe je de Hero combineert met verschillende PageHeader-varianten (default, inverse, compact) en hoe je full-width en inverse kleurschema's combineert voor een sterk visueel openingsscherm.
+Het Home Page template bouwt voort op de Base Page-structuur en plaatst een `Hero` als eerste element in de `<main>`, direct onder de `PageHeader`. Het template laat zien hoe je de Hero combineert met verschillende PageHeader-varianten (default, inverse, compact) en hoe je full-width en inverse kleurschema's combineert voor een sterk visueel openingsscherm.
 
 Templates zijn Storybook-only composities van bestaande componenten. Ze bevatten geen eigen CSS of React component.
 
@@ -94,7 +94,7 @@ Combineer `colorScheme="inverse"` op de `PageHeader` met `variant="image-blend"`
 
 ## Don't use when
 
-- De pagina geen bijzondere openingssectie nodig heeft: gebruik dan het Grid Page of Base Page template.
+- De pagina geen bijzondere openingssectie nodig heeft: gebruik dan het Base Page template.
 - De Hero alleen decoratief is zonder informatieve koptekst: een Hero vereist altijd een herkenbare `<h1>` met `aria-labelledby`.
 
 ## Accessibility

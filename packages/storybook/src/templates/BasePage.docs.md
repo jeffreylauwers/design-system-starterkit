@@ -63,6 +63,67 @@ Dit template plaatst padding direct als inline style op `<main>`, zonder gebruik
 
 **Waarom inline style en niet een CSS-klasse?** De padding is template-specifiek. Een herbruikbare klasse zou suggereren dat dit het standaard patroon is voor alle templates — dat is niet het geval.
 
+## Grid-structuur
+
+Gebruik de `Base Page: with Grid` en `Base Page: Full Width + Grid` stories als startpunt voor pagina's met responsive kolomindeling.
+
+```html
+<main id="main-content">
+  <!-- Rij 1: volle breedte -->
+  <div class="dsn-grid">
+    <div class="dsn-col-12">...</div>
+  </div>
+
+  <!-- Rij 2: 2 kolommen vanaf md -->
+  <div class="dsn-grid">
+    <div class="dsn-col-12 dsn-col-md-6">...</div>
+    <div class="dsn-col-12 dsn-col-md-6">...</div>
+  </div>
+
+  <!-- Rij 3: 3 kolommen vanaf md -->
+  <div class="dsn-grid">
+    <div class="dsn-col-12 dsn-col-md-4">...</div>
+    <div class="dsn-col-12 dsn-col-md-4">...</div>
+    <div class="dsn-col-12 dsn-col-md-4">...</div>
+  </div>
+</main>
+```
+
+```tsx
+<main id="main-content" tabIndex={-1}>
+  <Stack space="2xl">
+    <Grid>
+      <GridItem colSpan={12}>...</GridItem>
+    </Grid>
+    <Grid>
+      <GridItem colSpan={12} colSpanMd={6}>
+        ...
+      </GridItem>
+      <GridItem colSpan={12} colSpanMd={6}>
+        ...
+      </GridItem>
+    </Grid>
+    <Grid>
+      <GridItem colSpan={12} colSpanMd={4}>
+        ...
+      </GridItem>
+      <GridItem colSpan={12} colSpanMd={4}>
+        ...
+      </GridItem>
+      <GridItem colSpan={12} colSpanMd={4}>
+        ...
+      </GridItem>
+    </Grid>
+  </Stack>
+</main>
+```
+
+| Rij | Klein (< md) | Medium en groter (>= md) |
+| --- | ------------ | ------------------------ |
+| 1   | 12/12        | 12/12                    |
+| 2   | 12/12 elk    | 6/12 elk                 |
+| 3   | 12/12 elk    | 4/12 elk                 |
+
 ## Use when
 
 - Je een volledige pagina opbouwt met header, inhoud en footer.

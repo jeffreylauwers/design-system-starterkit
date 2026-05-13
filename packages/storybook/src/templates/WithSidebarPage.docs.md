@@ -4,7 +4,7 @@ Paginatemplate met een vaste zijkolom voor subnavigatie, zichtbaar vanaf het lar
 
 ## Doel
 
-Het With Sidebar Page template bouwt voort op de GridPage-structuur en voegt een `dsn-sidebar-layout` toe: een flexbox-tweekoloms splitsing waarbij de linkerzijde een vaste breedte heeft voor subnavigatie en de rechterkolom de hoofdinhoud bevat.
+Het With Sidebar Page template bouwt voort op de Base Page-structuur en voegt een `dsn-sidebar-layout` toe: een flexbox-tweekoloms splitsing waarbij de linkerzijde een vaste breedte heeft voor subnavigatie en de rechterkolom de hoofdinhoud bevat.
 
 De sidebar is alleen zichtbaar op large viewport (>= 64em), hetzelfde moment waarop `dsn-page-header__large-layout` actief wordt en de Level 1 navigatie horizontaal in de header verschijnt. Op kleinere viewports staat de sidebar verborgen (`display: none`) en vult de hoofdinhoud de volledige breedte.
 
@@ -23,13 +23,13 @@ Templates zijn Storybook-only composities van bestaande componenten. De `dsn-sid
     </nav>
   </aside>
   <main id="main-content" class="dsn-sidebar-layout__main">
-    <!-- 12-koloms grid identiek aan GridPage -->
+    <!-- 12-koloms grid identiek aan Base Page -->
   </main>
 </div>
 
 <!-- Zonder sidebar (pagina zonder sub-items) -->
 <main id="main-content">
-  <!-- 12-koloms grid identiek aan GridPage -->
+  <!-- 12-koloms grid identiek aan Base Page -->
 </main>
 ```
 
@@ -93,11 +93,11 @@ De sidebar breedte is instelbaar via een CSS custom property:
 ## Use when
 
 - Een pagina heeft subnavigatie (Level 2 menu-items) die naast de hoofdinhoud getoond moeten worden.
-- Je dezelfde paginastructuur als GridPage wilt, aangevuld met een zijkolom.
+- Je dezelfde paginastructuur als Base Page wilt, aangevuld met een zijkolom.
 
 ## Don't use when
 
-- De pagina geen Level 2 sub-items heeft: gebruik dan GridPage rechtstreeks.
+- De pagina geen Level 2 sub-items heeft: gebruik dan Base Page rechtstreeks.
 - Je sidebar-content wilt tonen op alle viewports: dit patroon verbergt de sidebar op small en medium viewports.
 
 ## Accessibility

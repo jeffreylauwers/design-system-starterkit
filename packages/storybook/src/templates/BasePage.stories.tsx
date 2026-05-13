@@ -4,6 +4,9 @@ import {
   Body,
   BreakoutSection,
   Button,
+  Container,
+  Grid,
+  GridItem,
   Heading,
   Link,
   Menu,
@@ -15,6 +18,7 @@ import {
   Paragraph,
   SearchInput,
   SkipLink,
+  Stack,
 } from '@dsn/components-react';
 import {
   logoSlot,
@@ -181,6 +185,55 @@ const breakoutInnerStyle: React.CSSProperties = {
 const breakoutSectionStyle: React.CSSProperties = {
   backgroundColor: 'var(--dsn-color-accent-1-bg-default)',
 };
+
+// =============================================================================
+// GRID-INHOUD
+// =============================================================================
+
+function GridContent() {
+  return (
+    <Stack space="2xl">
+      <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
+        <GridItem colSpan={12}>
+          <Container>
+            <Paragraph>Rij 1 — volle breedte (12 kolommen)</Paragraph>
+          </Container>
+        </GridItem>
+      </Grid>
+
+      <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
+        <GridItem colSpan={12} colSpanMd={6}>
+          <Container>
+            <Paragraph>Rij 2 — kolom 1 van 2</Paragraph>
+          </Container>
+        </GridItem>
+        <GridItem colSpan={12} colSpanMd={6}>
+          <Container>
+            <Paragraph>Rij 2 — kolom 2 van 2</Paragraph>
+          </Container>
+        </GridItem>
+      </Grid>
+
+      <Grid style={{ '--dsn-grid-margin': '0' } as React.CSSProperties}>
+        <GridItem colSpan={12} colSpanMd={4}>
+          <Container>
+            <Paragraph>Rij 3 — kolom 1 van 3</Paragraph>
+          </Container>
+        </GridItem>
+        <GridItem colSpan={12} colSpanMd={4}>
+          <Container>
+            <Paragraph>Rij 3 — kolom 2 van 3</Paragraph>
+          </Container>
+        </GridItem>
+        <GridItem colSpan={12} colSpanMd={4}>
+          <Container>
+            <Paragraph>Rij 3 — kolom 3 van 3</Paragraph>
+          </Container>
+        </GridItem>
+      </Grid>
+    </Stack>
+  );
+}
 
 // =============================================================================
 // META
@@ -408,6 +461,68 @@ export const FullWidthWithBreakoutSection: Story = {
             <Paragraph>
               Normale paginainhoud na de uitgeslagen sectie.
             </Paragraph>
+          </main>
+        </PageBody>
+        <PageFooter
+          slot1={footerSlot1}
+          slot2={footerSlot2}
+          slot3={footerSlot3}
+          slot4={footerSlot4}
+        />
+      </PageLayout>
+    </Body>
+  ),
+};
+
+export const WithGrid: Story = {
+  name: 'Base Page: with Grid',
+  render: () => (
+    <Body>
+      <SkipLink href="#main-content" />
+      <PageLayout>
+        <PageHeader
+          logoSlot={logoSlot}
+          primaryNavigation={<PrimaryNavigation />}
+          primaryNavigationLarge={primaryNavigationLarge}
+          secondaryNavigation={secondaryNavigation}
+          secondaryNavigationLarge={secondaryNavigationLarge}
+          searchSlot={searchSlot}
+        />
+        <PageBody>
+          <main id="main-content" tabIndex={-1} style={mainStyle}>
+            <GridContent />
+          </main>
+        </PageBody>
+        <PageFooter
+          slot1={footerSlot1}
+          slot2={footerSlot2}
+          slot3={footerSlot3}
+          slot4={footerSlot4}
+        />
+      </PageLayout>
+    </Body>
+  ),
+};
+
+export const FullWidthWithGrid: Story = {
+  name: 'Base Page: Full Width + Grid',
+  render: () => (
+    <Body>
+      <SkipLink href="#main-content" />
+      <PageLayout
+        style={{ '--dsn-page-max-inline-size': 'none' } as React.CSSProperties}
+      >
+        <PageHeader
+          logoSlot={logoSlot}
+          primaryNavigation={<PrimaryNavigation />}
+          primaryNavigationLarge={primaryNavigationLarge}
+          secondaryNavigation={secondaryNavigation}
+          secondaryNavigationLarge={secondaryNavigationLarge}
+          searchSlot={searchSlot}
+        />
+        <PageBody>
+          <main id="main-content" tabIndex={-1} style={mainStyle}>
+            <GridContent />
           </main>
         </PageBody>
         <PageFooter

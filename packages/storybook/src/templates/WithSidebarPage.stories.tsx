@@ -522,38 +522,6 @@ export const FullWidthCenteredContent: Story = {
   ),
 };
 
-export const WithoutSidebar: Story = {
-  name: 'No Sidebar',
-  render: () => (
-    <Body>
-      <SkipLink href="#main-content" />
-      <PageLayout>
-        <PageHeader
-          logoSlot={logoSlot}
-          primaryNavigation={<PrimaryNavigation currentPage="level-1a" />}
-          primaryNavigationLarge={
-            <PrimaryNavigationLarge currentPage="level-1a" />
-          }
-          secondaryNavigation={secondaryNavigation}
-          secondaryNavigationLarge={secondaryNavigationLarge}
-          searchSlot={searchSlot}
-        />
-        <PageBody>
-          <main id="main-content" tabIndex={-1} style={mainStyle}>
-            <GridContent />
-          </main>
-        </PageBody>
-        <PageFooter
-          slot1={footerSlot1}
-          slot2={footerSlot2}
-          slot3={footerSlot3}
-          slot4={footerSlot4}
-        />
-      </PageLayout>
-    </Body>
-  ),
-};
-
 export const Level2a: Story = {
   name: 'Level 2a',
   render: () => (
