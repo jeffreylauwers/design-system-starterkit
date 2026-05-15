@@ -37,7 +37,7 @@ pnpm --filter @dsn/design-tokens watch
 # Start Storybook in development mode
 pnpm dev
 
-# Run tests (880 tests across 43 test suites)
+# Run tests (1549 tests across 75 test suites)
 pnpm test
 
 # Run tests in watch mode
@@ -495,7 +495,7 @@ Zie **[CSS & Token Naming Conventions](./06-css-naming-conventions.md)** voor de
 
 ### Test Coverage
 
-- **Total tests:** 880 across 43 test suites
+- **Total tests:** 1549 across 75 test suites
 - **Frameworks:** Vitest + React Testing Library
 - **Coverage areas:** React components, Web Components, utilities
 
