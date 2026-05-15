@@ -1,6 +1,6 @@
 {
   "name": "@dsn/components-react",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "React components for the design system",
   "main": "dist/index.js",
   "module": "dist/index.js",
