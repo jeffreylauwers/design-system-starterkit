@@ -9,10 +9,11 @@ Guidelines and workflows for developing and contributing to the Design System St
 ## Table of Contents
 
 1. [Package Scripts](#package-scripts)
-2. [Token Updates](#token-updates)
-3. [CSS Methodology](#css-methodology)
-4. [Testing Strategy](#testing-strategy)
-5. [Code Quality](#code-quality)
+2. [Versioning](#versioning)
+3. [Token Updates](#token-updates)
+4. [CSS Methodology](#css-methodology)
+5. [Testing Strategy](#testing-strategy)
+6. [Code Quality](#code-quality)
 
 ---
 
@@ -103,6 +104,41 @@ pnpm add -Dw eslint
 # Run script in all packages
 pnpm -r build
 ```
+
+---
+
+## Versioning
+
+All publishable packages (`@dsn/design-tokens`, `@dsn/core`, `@dsn/components-html`, `@dsn/components-react`, `@dsn/components-web`) are versioned together. They share a single version number so consumers can always install a coherent set.
+
+### When to bump
+
+| Change type                                         | Bump    | Examples                                                     |
+| --------------------------------------------------- | ------- | ------------------------------------------------------------ |
+| Bug fix, docs-only, internal refactor               | `patch` | Fix a broken token reference, correct a CSS regression       |
+| New component, new prop, new token, additive change | `minor` | Add a new component, add a new prop to an existing component |
+| Breaking API change                                 | `major` | Rename a component, remove a prop, change a token name       |
+
+### How to bump
+
+```bash
+# Bump all publishable packages together, then commit
+pnpm version:patch   # 1.0.0 → 1.0.1
+pnpm version:minor   # 1.0.0 → 1.1.0
+pnpm version:major   # 1.0.0 → 2.0.0
+
+# Then stage and commit the version bump
+git add packages/*/package.json package.json
+git commit -m "chore: bump to $(node -p "require('./package.json').version")"
+git tag "v$(node -p "require('./package.json').version")"
+```
+
+The scripts use `--no-git-tag-version` so you control exactly what gets committed and tagged. `@dsn/storybook` is private and excluded from the bump; its version is cosmetic.
+
+### After bumping
+
+1. Add an entry to `docs/changelog.md` under the new version number
+2. Push the tag: `git push origin --tags`
 
 ---
 

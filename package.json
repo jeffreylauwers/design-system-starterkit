@@ -29,7 +29,10 @@
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "type-check": "pnpm -r type-check",
     "clean": "pnpm -r clean && rm -rf node_modules",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "version:patch": "pnpm -r --filter '!@dsn/storybook' exec npm version patch --no-git-tag-version && npm version patch --no-git-tag-version --no-workspaces-update",
+    "version:minor": "pnpm -r --filter '!@dsn/storybook' exec npm version minor --no-git-tag-version && npm version minor --no-git-tag-version --no-workspaces-update",
+    "version:major": "pnpm -r --filter '!@dsn/storybook' exec npm version major --no-git-tag-version && npm version major --no-git-tag-version --no-workspaces-update"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",

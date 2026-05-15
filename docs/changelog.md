@@ -6,6 +6,19 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 1.0.0 (May 15, 2026)
+
+### Package version alignment
+
+#### Changed
+
+- All `@dsn/*` packages bumped from `0.1.0` to `1.0.0` to reflect stable, production-ready state
+- The changelog version history (2.3.0–5.37.0) tracked overall project progress; package.json files were never updated in step. This commit aligns them.
+- Root `package.json` already at `1.0.0`; all workspace packages now match
+- Added `version:patch`, `version:minor`, and `version:major` scripts to the root `package.json` for future coordinated bumps across all publishable packages
+
+---
+
 ## Version 5.37.0 (May 8, 2026)
 
 ### Storybook upgrade
