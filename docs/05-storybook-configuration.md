@@ -459,7 +459,7 @@ Each component has **three files**:
 ```tsx
 // Button.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@dsn/components-react';
+import { Button } from '@dsn-starter-kit/components-react';
 import DocsPage from './Button.docs.mdx';
 import { TEKST, rtlDecorator } from './story-helpers';
 
@@ -646,7 +646,7 @@ Components
 pnpm dev
 
 # Build static Storybook
-pnpm --filter @dsn/storybook build
+pnpm --filter @dsn-starter-kit/storybook build
 ```
 
 ### Adding Documentation for a New Component

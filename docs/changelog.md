@@ -6,6 +6,22 @@ All notable changes to this project are documented in this file.
 
 ---
 
+## Version 1.0.1 (May 16, 2026)
+
+### npm publishing
+
+#### Added
+
+- **npm publish workflow** (`.github/workflows/publish.yml`): publiceert alle 5 packages automatisch naar npm bij een versie-tag (`v*`) of via een handmatige workflow dispatch
+- **CSS build stap** in `@dsn-starter-kit/components-react`: `scripts/build-css.js` resolvet alle `@import`-ketens en schrijft zelfstandige CSS-bestanden naar `dist/` zodat componentstijlen correct worden meegeleverd bij npm-installatie
+- **`./css` export** aan `@dsn-starter-kit/components-react` toegevoegd: consumers kunnen `@dsn-starter-kit/components-react/css` importeren voor een gebundeld CSS-bestand met alle componentstijlen
+- **`publishConfig: { access: "public" }`** aan alle 5 publishable packages toegevoegd (vereist voor scoped packages op npm)
+- **`CONTRIBUTING.md`** toegevoegd met bijdragecriteria en PR-checklist (PR #262)
+
+#### Changed
+
+- **Scope hernoemd** van `@dsn/` naar `@dsn-starter-kit/` — de `@dsn` scope was al in gebruik op npm; alle package-namen, imports en workflow-filters zijn bijgewerkt
+
 ## Version 1.0.0 (May 15, 2026)
 
 ### Package version alignment

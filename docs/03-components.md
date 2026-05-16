@@ -34,10 +34,10 @@ import {
   Heading,
   FormField,
   Icon,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 
 // Also supported: Import individually
-import { Button } from '@dsn/components-react/Button';
+import { Button } from '@dsn-starter-kit/components-react/Button';
 ```
 
 **All React components are fully typed** and include JSDoc documentation with usage examples.
@@ -3217,16 +3217,16 @@ Web Components are **NOT** auto-registered on import to avoid side effects. You 
 
 ```ts
 // Option 1: Register all components at once
-import { defineAllComponents } from '@dsn/components-web';
+import { defineAllComponents } from '@dsn-starter-kit/components-web';
 defineAllComponents();
 
 // Option 2: Register specific components
-import { defineButton, defineIcon } from '@dsn/components-web';
+import { defineButton, defineIcon } from '@dsn-starter-kit/components-web';
 defineButton();
 defineIcon();
 
 // Option 3: Register with custom tag names
-import { defineButton } from '@dsn/components-web';
+import { defineButton } from '@dsn-starter-kit/components-web';
 defineButton('my-custom-button');
 ```
 
