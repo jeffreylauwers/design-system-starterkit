@@ -39,6 +39,9 @@
   ],
   "author": "Jeffrey Lauwers",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@dsn/design-tokens": "workspace:*"
   }

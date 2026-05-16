@@ -11,6 +11,7 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./css": "./dist/index.css",
     "./icon-registry.generated": {
       "types": "./dist/Icon/icon-registry.generated.d.ts",
       "import": "./dist/Icon/icon-registry.generated.js",
@@ -22,7 +23,7 @@
   ],
   "scripts": {
     "generate:icons": "node scripts/generate-icons.js",
-    "build": "node scripts/generate-icons.js && tsc",
+    "build": "node scripts/generate-icons.js && node scripts/build-css.js && tsc",
     "clean": "rm -rf dist",
     "type-check": "tsc --noEmit",
     "watch": "tsc --watch"
@@ -34,6 +35,9 @@
   ],
   "author": "Jeffrey Lauwers",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@dsn/core": "workspace:*",
     "@dsn/design-tokens": "workspace:*"

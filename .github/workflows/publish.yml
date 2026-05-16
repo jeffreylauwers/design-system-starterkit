@@ -1,0 +1,52 @@
+name: Publish to npm
+
+# Triggered by pushing a version tag (e.g. v1.0.1) or manually from the
+# Actions tab. Run `pnpm version:patch` (or minor/major) first to bump all
+# package versions, then `git tag v<version> && git push --tags`.
+#
+# Required secret: NPM_TOKEN
+#   Settings → Secrets and variables → Actions → New repository secret
+#   Generate at https://www.npmjs.com/settings/<user>/tokens (Granular or Classic Automation token)
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish packages
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write  # required for npm provenance attestations
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build all packages
+        run: pnpm build
+
+      - name: Publish to npm
+        run: pnpm publish -r --access public --no-git-checks --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
