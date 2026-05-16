@@ -143,6 +143,7 @@ packages/storybook/src/
 ### Exports en registraties
 
 - `packages/components-react/src/index.ts`: export toevoegen
+- `packages/components-html/package.json`: nieuwe entry toevoegen aan de `exports` map (`"./component-name": "./src/component-name/component-name.css"`) — de build-script pikt CSS automatisch op, maar de exports map niet
 - `packages/storybook/src/Introduction.mdx`: datum updaten + component in de lijst
 
 ### Token-bestanden (indien nieuwe tokens nodig)

@@ -185,6 +185,7 @@ Het [ComponentName] component wordt gebruikt voor:
 - [ ] `React.forwardRef<HTML[Element]Element>`
 - [ ] `index.ts` barrel file aangemaakt in de componentdirectory (exporteert component + prop types)
 - [ ] Export toegevoegd aan `packages/components-react/src/index.ts`
+- [ ] Export entry toegevoegd aan `packages/components-html/package.json` exports map
 
 ### Storybook
 
@@ -212,6 +213,7 @@ Het [ComponentName] component wordt gebruikt voor:
 
 - [ ] Drie Storybook-bestanden aangemaakt (`.stories.tsx`, `.docs.mdx`, `.docs.md`)
 - [ ] Export toegevoegd aan `packages/components-react/src/index.ts`
+- [ ] Export entry toegevoegd aan `packages/components-html/package.json` exports map
 - [ ] `Introduction.mdx` bijgewerkt (datum + componentnaam in de lijst)
 
 ### Kwaliteitscontrole
