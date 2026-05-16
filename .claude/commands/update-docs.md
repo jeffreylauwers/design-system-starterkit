@@ -66,12 +66,7 @@ Updaten bij:
 
 - Nieuwe componenten → toevoegen aan de juiste categorie met correcte BEM klassen, props, beschrijving
 - Gewijzigde API's → props, varianten, HTML klassen bijwerken
-- Componenttelling per categorie controleren:
-  - Layout Components: 4 (Container, Stack, Grid, GridItem)
-  - Content Components: 9 (Button, ButtonLink, Heading, Icon, Link, LinkButton, OrderedList, Paragraph, UnorderedList)
-  - Display & Feedback Components: 4 (Alert, Note, StatusBadge, Table)
-  - Form Components: 25 (7 option + 2 input + 7 field + 9 specialized)
-  - **Totaal: 42**
+- Componenttelling per categorie controleren: tel de werkelijke mappen in `packages/components-react/src/` en vergelijk met de aantallen in het document — gebruik nooit een hardcoded getal
 
 ### `docs/04-development-workflow.md`
 
@@ -113,7 +108,18 @@ Gebruik commit messages en PR-nummers als bron. Sla het over als alle recente co
 
 ---
 
-## Stap 4: Storybook `packages/storybook/src/*.docs.md`
+## Stap 4: `packages/components-html/README.md`
+
+Updaten bij nieuwe componenten:
+
+- **Exports lijst** (onder "In JavaScript/TypeScript Projects"): voeg de nieuwe `./component-name` export toe
+- **Components tabel**: voeg een rij toe met CSS-klassen en export path
+
+Controleer ook of de bestaande rijen nog kloppen (klassenamen, export paths).
+
+---
+
+## Stap 5: Storybook `packages/storybook/src/*.docs.md`
 
 **Voor elk nieuw component** dat nog geen `.docs.md` heeft:
 Maak een nieuw bestand aan in hetzelfde formaat als bestaande bestanden. Kijk naar een bestaand bestand in dezelfde categorie als voorbeeld. Secties:
@@ -132,7 +138,7 @@ Maak een nieuw bestand aan in hetzelfde formaat als bestaande bestanden. Kijk na
 
 ---
 
-## Stap 5: Commit
+## Stap 6: Commit
 
 Zijn er bestanden gewijzigd? Commit ze dan met een beschrijvend bericht:
 

@@ -56,43 +56,119 @@ import '@dsn-starter-kit/components-html';
 
 // Or import individual components
 import '@dsn-starter-kit/components-html/button';
-import '@dsn-starter-kit/components-html/icon';
-import '@dsn-starter-kit/components-html/text-input';
+import '@dsn-starter-kit/components-html/alert';
+import '@dsn-starter-kit/components-html/modal-dialog';
 ```
 
 **Available exports:**
 
-- `./button` - Button component styles
-- `./icon` - Icon component styles
-- `./paragraph` - Paragraph component styles
-- `./heading` - Heading component styles
-- `./link` - Link component styles
-- `./unordered-list` - Unordered list styles
-- `./ordered-list` - Ordered list styles
-- `./text-input` - Text input styles
-- `./text-area` - Text area styles
-- `./form-field-label` - Form field label styles
-- `./form-field-description` - Form field description styles
-- `./form-field-error-message` - Form field error message styles
-- `./form-field-status` - Form field status styles
+- `./action-group` — Action group styles
+- `./alert` — Alert component styles
+- `./backdrop` — Backdrop overlay styles
+- `./body` — Body component styles
+- `./breadcrumb-navigation` — Breadcrumb navigation styles
+- `./breakout-section` — Breakout section styles
+- `./button` — Button component styles
+- `./button-link` — ButtonLink component styles
+- `./card` — Card component styles
+- `./container` — Container layout styles
+- `./details` — Details/summary styles
+- `./dot-badge` — Dot badge styles
+- `./drawer` — Drawer component styles
+- `./file` — File component styles
+- `./file-input` — File input styles
+- `./form-field` — Form field container styles
+- `./form-field-description` — Form field description styles
+- `./form-field-error-message` — Form field error message styles
+- `./form-field-label` — Form field label styles
+- `./form-field-status` — Form field status styles
+- `./grid` — Grid layout styles
+- `./heading` — Heading styles
+- `./hero` — Hero section styles
+- `./icon` — Icon component styles
+- `./image` — Image component styles
+- `./link` — Link component styles
+- `./link-button` — LinkButton component styles
+- `./logo` — Logo component styles
+- `./menu` — Menu component styles
+- `./menu-button` — Menu button styles
+- `./menu-link` — Menu link styles
+- `./modal-dialog` — Modal dialog styles
+- `./note` — Note component styles
+- `./number-badge` — Number badge styles
+- `./ordered-list` — Ordered list styles
+- `./page-body` — Page body styles
+- `./page-footer` — Page footer styles
+- `./page-header` — Page header styles
+- `./page-layout` — Page layout styles
+- `./paragraph` — Paragraph styles
+- `./popover` — Popover component styles
+- `./progress-bar` — Progress bar styles
+- `./skip-link` — Skip link styles
+- `./spinner` — Spinner component styles
+- `./stack` — Stack layout styles
+- `./status-badge` — Status badge styles
+- `./summary-list` — Summary list styles
+- `./table` — Table component styles
+- `./text-area` — Text area styles
+- `./text-input` — Text input styles
+- `./unordered-list` — Unordered list styles
 
 ## Available Components
 
 | Component             | CSS Classes                                                      | Export Path                  |
 | --------------------- | ---------------------------------------------------------------- | ---------------------------- |
+| ActionGroup           | `dsn-action-group`                                               | `./action-group`             |
+| Alert                 | `dsn-alert`, `dsn-alert--{variant}`                              | `./alert`                    |
+| Backdrop              | `dsn-backdrop`                                                   | `./backdrop`                 |
+| Body                  | `dsn-body`                                                       | `./body`                     |
+| BreadcrumbNavigation  | `dsn-breadcrumb-navigation`                                      | `./breadcrumb-navigation`    |
+| BreakoutSection       | `dsn-breakout-section`                                           | `./breakout-section`         |
 | Button                | `dsn-button`, `dsn-button--{variant}`, `dsn-button--size-{size}` | `./button`                   |
-| Icon                  | `dsn-icon`, `dsn-icon--size-{size}`                              | `./icon`                     |
-| Heading               | `dsn-heading`, `dsn-heading--level-{level}`                      | `./heading`                  |
-| Paragraph             | `dsn-paragraph`, `dsn-paragraph--size-{size}`                    | `./paragraph`                |
-| Link                  | `dsn-link`, `dsn-link--external`                                 | `./link`                     |
-| UnorderedList         | `dsn-unordered-list`                                             | `./unordered-list`           |
-| OrderedList           | `dsn-ordered-list`                                               | `./ordered-list`             |
-| TextInput             | `dsn-text-input`, `dsn-text-input--size-{size}`                  | `./text-input`               |
-| TextArea              | `dsn-text-area`, `dsn-text-area--size-{size}`                    | `./text-area`                |
-| FormFieldLabel        | `dsn-form-field-label`                                           | `./form-field-label`         |
+| ButtonLink            | `dsn-button`                                                     | `./button-link`              |
+| Card                  | `dsn-card`                                                       | `./card`                     |
+| Container             | `dsn-container`                                                  | `./container`                |
+| Details               | `dsn-details`                                                    | `./details`                  |
+| DotBadge              | `dsn-dot-badge`, `dsn-dot-badge--{variant}`                      | `./dot-badge`                |
+| Drawer                | `dsn-drawer`                                                     | `./drawer`                   |
+| File                  | `dsn-file`                                                       | `./file`                     |
+| FileInput             | `dsn-file-input`                                                 | `./file-input`               |
+| FormField             | `dsn-form-field`                                                 | `./form-field`               |
 | FormFieldDescription  | `dsn-form-field-description`                                     | `./form-field-description`   |
 | FormFieldErrorMessage | `dsn-form-field-error-message`                                   | `./form-field-error-message` |
-| FormFieldStatus       | `dsn-form-field-status`                                          | `./form-field-status`        |
+| FormFieldLabel        | `dsn-form-field-label`                                           | `./form-field-label`         |
+| FormFieldStatus       | `dsn-form-field-status`, `dsn-form-field-status--{variant}`      | `./form-field-status`        |
+| Grid                  | `dsn-grid`                                                       | `./grid`                     |
+| Heading               | `dsn-heading`, `dsn-heading--level-{level}`                      | `./heading`                  |
+| Hero                  | `dsn-hero`                                                       | `./hero`                     |
+| Icon                  | `dsn-icon`, `dsn-icon--size-{size}`                              | `./icon`                     |
+| Image                 | `dsn-image`                                                      | `./image`                    |
+| Link                  | `dsn-link`, `dsn-link--external`                                 | `./link`                     |
+| LinkButton            | `dsn-link`                                                       | `./link-button`              |
+| Logo                  | `dsn-logo`                                                       | `./logo`                     |
+| Menu                  | `dsn-menu`, `dsn-menu--horizontal`                               | `./menu`                     |
+| MenuButton            | `dsn-menu-button`                                                | `./menu-button`              |
+| MenuLink              | `dsn-menu-link`                                                  | `./menu-link`                |
+| ModalDialog           | `dsn-modal-dialog`                                               | `./modal-dialog`             |
+| Note                  | `dsn-note`, `dsn-note--{variant}`                                | `./note`                     |
+| NumberBadge           | `dsn-number-badge`                                               | `./number-badge`             |
+| OrderedList           | `dsn-ordered-list`                                               | `./ordered-list`             |
+| PageBody              | `dsn-page-body`                                                  | `./page-body`                |
+| PageFooter            | `dsn-page-footer`                                                | `./page-footer`              |
+| PageHeader            | `dsn-page-header`                                                | `./page-header`              |
+| PageLayout            | `dsn-page-layout`                                                | `./page-layout`              |
+| Paragraph             | `dsn-paragraph`, `dsn-paragraph--size-{size}`                    | `./paragraph`                |
+| Popover               | `dsn-popover`                                                    | `./popover`                  |
+| ProgressBar           | `dsn-progress-bar`                                               | `./progress-bar`             |
+| SkipLink              | `dsn-skip-link`                                                  | `./skip-link`                |
+| Spinner               | `dsn-spinner`                                                    | `./spinner`                  |
+| Stack                 | `dsn-stack`, `dsn-stack--space-{size}`                           | `./stack`                    |
+| StatusBadge           | `dsn-status-badge`, `dsn-status-badge--{variant}`                | `./status-badge`             |
+| SummaryList           | `dsn-summary-list`                                               | `./summary-list`             |
+| Table                 | `dsn-table`                                                      | `./table`                    |
+| TextArea              | `dsn-text-area`, `dsn-text-area--size-{size}`                    | `./text-area`                |
+| TextInput             | `dsn-text-input`, `dsn-text-input--size-{size}`                  | `./text-input`               |
+| UnorderedList         | `dsn-unordered-list`                                             | `./unordered-list`           |
 
 ## Assets
 
