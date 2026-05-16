@@ -71,7 +71,7 @@ jobs:
         run: pnpm build
 
       - name: Install Playwright Chromium
-        run: pnpm --filter @dsn/storybook exec playwright install --with-deps chromium
+        run: pnpm --filter @dsn-starter-kit/storybook exec playwright install --with-deps chromium
 
       - name: Serve Storybook
         run: npx http-server packages/storybook/dist --port 6006 --silent &
@@ -80,7 +80,7 @@ jobs:
         run: npx wait-on http://localhost:6006 --timeout 60000
 
       - name: Run Storybook tests
-        run: pnpm --filter @dsn/storybook test-storybook --url http://localhost:6006
+        run: pnpm --filter @dsn-starter-kit/storybook test-storybook --url http://localhost:6006
 
   chromatic:
     name: Chromatic visual tests
