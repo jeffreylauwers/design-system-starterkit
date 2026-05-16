@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Image } from '@dsn/components-react';
+import { Image } from '@dsn-starter-kit/components-react';
 import DocsPage from './Image.docs.mdx';
 
 const PLACEHOLDER_SRC = 'https://picsum.photos/800/600';

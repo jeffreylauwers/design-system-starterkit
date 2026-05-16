@@ -1,5 +1,5 @@
 /**
- * @dsn/components-web
+ * @dsn-starter-kit/components-web
  * Web Components for the design system
  *
  * This package exports Web Components that can be registered manually or all at once.
@@ -7,20 +7,20 @@
  *
  * @example Register all components at once
  * ```ts
- * import { defineAllComponents } from '@dsn/components-web';
+ * import { defineAllComponents } from '@dsn-starter-kit/components-web';
  * defineAllComponents();
  * ```
  *
  * @example Register specific components
  * ```ts
- * import { defineButton, defineIcon } from '@dsn/components-web';
+ * import { defineButton, defineIcon } from '@dsn-starter-kit/components-web';
  * defineButton();
  * defineIcon();
  * ```
  *
  * @example Register with custom tag names
  * ```ts
- * import { defineButton } from '@dsn/components-web';
+ * import { defineButton } from '@dsn-starter-kit/components-web';
  * defineButton('my-custom-button');
  * ```
  */

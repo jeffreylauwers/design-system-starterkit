@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Radio } from '@dsn/components-react';
+import { Radio } from '@dsn-starter-kit/components-react';
 import DocsPage from './Radio.docs.mdx';
 import { rtlDecorator } from './story-helpers';
 

@@ -5,7 +5,7 @@ import {
   PageFooter,
   Paragraph,
   UnorderedList,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import { rtlDecorator } from './story-helpers';
 
 // =============================================================================

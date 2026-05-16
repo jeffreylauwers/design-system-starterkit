@@ -1,5 +1,5 @@
 {
-  "name": "@dsn/components-html",
+  "name": "@dsn-starter-kit/components-html",
   "version": "1.0.0",
   "description": "Pure HTML/CSS components for the design system",
   "style": "dist/components.css",
@@ -43,6 +43,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@dsn/design-tokens": "workspace:*"
+    "@dsn-starter-kit/design-tokens": "workspace:*"
   }
 }

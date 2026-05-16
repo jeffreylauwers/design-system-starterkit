@@ -11,7 +11,7 @@ import {
   MenuButton,
   ActionGroup,
   Paragraph,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import { rtlDecorator } from './story-helpers';
 
 const meta: Meta<typeof Popover> = {

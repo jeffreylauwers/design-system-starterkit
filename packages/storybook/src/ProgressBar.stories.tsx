@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ProgressBar } from '@dsn/components-react';
+import { ProgressBar } from '@dsn-starter-kit/components-react';
 import DocsPage from './ProgressBar.docs.mdx';
 
 const meta: Meta<typeof ProgressBar> = {

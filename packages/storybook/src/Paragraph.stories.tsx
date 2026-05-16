@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Paragraph } from '@dsn/components-react';
+import { Paragraph } from '@dsn-starter-kit/components-react';
 import DocsPage from './Paragraph.docs.mdx';
 import {
   TEKST,

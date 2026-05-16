@@ -6,7 +6,7 @@ import {
   MenuButton,
   MenuLink,
   NumberBadge,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './Menu.docs.mdx';
 
 // =============================================================================

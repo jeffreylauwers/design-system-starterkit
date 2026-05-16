@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from '@dsn/core';
+import { classNames } from '@dsn-starter-kit/core';
 import './Body.css';
 
 export interface BodyProps extends React.HTMLAttributes<HTMLDivElement> {

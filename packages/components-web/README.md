@@ -1,4 +1,4 @@
-# @dsn/components-web
+# @dsn-starter-kit/components-web
 
 Web Components for the design system: framework-agnostic custom elements using Shadow DOM.
 
@@ -14,7 +14,7 @@ Web Components for the design system: framework-agnostic custom elements using S
 ## Installation
 
 ```bash
-pnpm add @dsn/components-web
+pnpm add @dsn-starter-kit/components-web
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ Components must be explicitly registered before use. This gives you control over
 For quick setup, register all components at once:
 
 ```ts
-import { defineAllComponents } from '@dsn/components-web';
+import { defineAllComponents } from '@dsn-starter-kit/components-web';
 
 defineAllComponents();
 ```
@@ -44,7 +44,7 @@ Then use in HTML:
 For optimal bundle size, register only the components you need:
 
 ```ts
-import { defineButton, defineIcon } from '@dsn/components-web';
+import { defineButton, defineIcon } from '@dsn-starter-kit/components-web';
 
 defineButton();
 defineIcon();
@@ -55,7 +55,7 @@ defineIcon();
 Register components with your own tag names to avoid conflicts:
 
 ```ts
-import { defineButton } from '@dsn/components-web';
+import { defineButton } from '@dsn-starter-kit/components-web';
 
 defineButton('my-button');
 ```
@@ -95,10 +95,16 @@ button.iconOnly = true;
 All components are fully typed. Import types for use in your code:
 
 ```ts
-import type { ButtonVariant, ButtonSize } from '@dsn/components-web';
-import type { IconName, IconSize } from '@dsn/components-web';
-import type { HeadingLevel, HeadingAppearance } from '@dsn/components-web';
-import type { ParagraphVariant } from '@dsn/components-web';
+import type {
+  ButtonVariant,
+  ButtonSize,
+} from '@dsn-starter-kit/components-web';
+import type { IconName, IconSize } from '@dsn-starter-kit/components-web';
+import type {
+  HeadingLevel,
+  HeadingAppearance,
+} from '@dsn-starter-kit/components-web';
+import type { ParagraphVariant } from '@dsn-starter-kit/components-web';
 ```
 
 ## Building
@@ -106,7 +112,7 @@ import type { ParagraphVariant } from '@dsn/components-web';
 The build generates Shadow DOM CSS from shared sources, then compiles TypeScript:
 
 ```bash
-pnpm --filter @dsn/components-web build
+pnpm --filter @dsn-starter-kit/components-web build
 ```
 
 ## License

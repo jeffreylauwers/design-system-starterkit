@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { FormFieldErrorMessage } from '@dsn/components-react';
+import { FormFieldErrorMessage } from '@dsn-starter-kit/components-react';
 import DocsPage from './FormFieldErrorMessage.docs.mdx';
 import {
   TEKST,

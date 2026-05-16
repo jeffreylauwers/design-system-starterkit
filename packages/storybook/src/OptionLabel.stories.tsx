@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { OptionLabel } from '@dsn/components-react';
+import { OptionLabel } from '@dsn-starter-kit/components-react';
 import DocsPage from './OptionLabel.docs.mdx';
 import {
   TEKST,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from '@dsn/core';
+import { classNames } from '@dsn-starter-kit/core';
 import { FormFieldLabel } from '../FormFieldLabel';
 import { FormFieldDescription } from '../FormFieldDescription';
 import { FormFieldErrorMessage } from '../FormFieldErrorMessage';

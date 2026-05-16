@@ -1,5 +1,5 @@
 {
-  "name": "@dsn/storybook",
+  "name": "@dsn-starter-kit/storybook",
   "version": "1.0.0",
   "private": true,
   "description": "Documentation and component showcase for the design system",
@@ -18,9 +18,9 @@
   "author": "Jeffrey Lauwers",
   "license": "MIT",
   "dependencies": {
-    "@dsn/components-react": "workspace:*",
-    "@dsn/core": "workspace:*",
-    "@dsn/design-tokens": "workspace:*"
+    "@dsn-starter-kit/components-react": "workspace:*",
+    "@dsn-starter-kit/core": "workspace:*",
+    "@dsn-starter-kit/design-tokens": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^10.3.6",

@@ -1,5 +1,5 @@
 {
-  "name": "@dsn/design-tokens",
+  "name": "@dsn-starter-kit/design-tokens",
   "version": "1.0.0",
   "description": "Design tokens for the design system",
   "main": "dist/js/tokens.js",

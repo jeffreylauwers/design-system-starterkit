@@ -1,5 +1,5 @@
 import React, { useId } from 'react';
-import { classNames } from '@dsn/core';
+import { classNames } from '@dsn-starter-kit/core';
 import { Icon } from '../Icon';
 import { Heading } from '../Heading';
 import './Note.css';

@@ -72,8 +72,8 @@ Each base variant (strong, default, subtle) has negative and positive sentiment 
 ### React
 
 ```tsx
-import { Button } from '@dsn/components-react';
-import { Icon } from '@dsn/components-react';
+import { Button } from '@dsn-starter-kit/components-react';
+import { Icon } from '@dsn-starter-kit/components-react';
 
 // Basic
 <Button variant="strong">Save</Button>

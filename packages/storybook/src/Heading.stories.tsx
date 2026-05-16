@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Heading } from '@dsn/components-react';
+import { Heading } from '@dsn-starter-kit/components-react';
 import DocsPage from './Heading.docs.mdx';
 import {
   TEKST,

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { PasswordInput } from '@dsn/components-react';
+import { PasswordInput } from '@dsn-starter-kit/components-react';
 import DocsPage from './PasswordInput.docs.mdx';
 import { rtlDecorator } from './story-helpers';
 

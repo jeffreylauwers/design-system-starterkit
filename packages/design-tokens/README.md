@@ -1,4 +1,4 @@
-# @dsn/design-tokens
+# @dsn-starter-kit/design-tokens
 
 Design tokens for the design system: the single source of truth for colors, typography, spacing, sizing, borders, shadows, and more.
 
@@ -80,7 +80,7 @@ src/tokens/
 ## Installation
 
 ```bash
-pnpm add @dsn/design-tokens
+pnpm add @dsn-starter-kit/design-tokens
 ```
 
 ## Usage
@@ -89,11 +89,11 @@ pnpm add @dsn/design-tokens
 
 ```css
 /* Full configuration (recommended) */
-@import '@dsn/design-tokens/dist/css/start-light-default.css';
+@import '@dsn-starter-kit/design-tokens/dist/css/start-light-default.css';
 
 /* Or use backward-compatible aliases */
-@import '@dsn/design-tokens/css'; /* → start-light-default */
-@import '@dsn/design-tokens/css/dark'; /* → start-dark-default */
+@import '@dsn-starter-kit/design-tokens/css'; /* → start-light-default */
+@import '@dsn-starter-kit/design-tokens/css/dark'; /* → start-dark-default */
 ```
 
 ### Available Configurations
@@ -112,19 +112,19 @@ pnpm add @dsn/design-tokens
 ### SCSS
 
 ```scss
-@import '@dsn/design-tokens/dist/scss/start-light-default';
+@import '@dsn-starter-kit/design-tokens/dist/scss/start-light-default';
 
 /* Or backward-compatible */
-@import '@dsn/design-tokens/scss';
+@import '@dsn-starter-kit/design-tokens/scss';
 ```
 
 ### JavaScript / TypeScript
 
 ```ts
-import tokens from '@dsn/design-tokens/dist/js/start-light-default';
+import tokens from '@dsn-starter-kit/design-tokens/dist/js/start-light-default';
 
 // Or backward-compatible
-import tokens from '@dsn/design-tokens';
+import tokens from '@dsn-starter-kit/design-tokens';
 ```
 
 ### Runtime Theme Switching
@@ -269,7 +269,7 @@ For existing consumers, these aliases are maintained:
 ## Building
 
 ```bash
-pnpm --filter @dsn/design-tokens build
+pnpm --filter @dsn-starter-kit/design-tokens build
 ```
 
 ## Storybook Integration

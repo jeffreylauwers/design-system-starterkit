@@ -1,6 +1,10 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { BreakoutSection, Heading, Paragraph } from '@dsn/components-react';
+import {
+  BreakoutSection,
+  Heading,
+  Paragraph,
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './BreakoutSection.docs.mdx';
 
 const meta: Meta<typeof BreakoutSection> = {

@@ -33,7 +33,7 @@ import {
   TextArea,
   TextInput,
   UnorderedList,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import {
   logoSlot,
   footerSlot1,

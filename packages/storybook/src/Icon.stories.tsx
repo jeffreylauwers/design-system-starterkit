@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Icon } from '@dsn/components-react';
-import type { IconName } from '@dsn/components-react/icon-registry.generated';
+import { Icon } from '@dsn-starter-kit/components-react';
+import type { IconName } from '@dsn-starter-kit/components-react/icon-registry.generated';
 import DocsPage from './Icon.docs.mdx';
 
 const meta: Meta<typeof Icon> = {

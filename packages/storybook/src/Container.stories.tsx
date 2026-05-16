@@ -1,5 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Container, Stack, Paragraph, Heading } from '@dsn/components-react';
+import {
+  Container,
+  Stack,
+  Paragraph,
+  Heading,
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './Container.docs.mdx';
 
 /** Placeholder box voor visuele demonstratie van layout binnen een Container */

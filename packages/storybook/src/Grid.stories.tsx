@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Grid, GridItem, Container } from '@dsn/components-react';
+import { Grid, GridItem, Container } from '@dsn-starter-kit/components-react';
 import DocsPage from './Grid.docs.mdx';
 
 const meta: Meta<typeof Grid> = {

@@ -12,7 +12,7 @@ import {
   Link,
   StatusBadge,
   ButtonLink,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './Card.docs.mdx';
 import {
   WEINIG_TEKST,

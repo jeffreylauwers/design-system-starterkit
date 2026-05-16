@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { EmailInput } from '@dsn/components-react';
+import { EmailInput } from '@dsn-starter-kit/components-react';
 import DocsPage from './EmailInput.docs.mdx';
 import {
   WEINIG_TEKST,

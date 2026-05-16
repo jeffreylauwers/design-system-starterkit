@@ -1,5 +1,5 @@
 /**
- * @dsn/core
+ * @dsn-starter-kit/core
  * Core utilities and helpers for the design system
  */
 

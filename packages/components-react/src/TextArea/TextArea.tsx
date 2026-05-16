@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames, FormControlWidth } from '@dsn/core';
+import { classNames, FormControlWidth } from '@dsn-starter-kit/core';
 import './TextArea.css';
 
 export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {

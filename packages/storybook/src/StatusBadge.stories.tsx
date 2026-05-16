@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Icon, StatusBadge } from '@dsn/components-react';
-import type { IconName } from '@dsn/components-react/icon-registry.generated';
+import { Icon, StatusBadge } from '@dsn-starter-kit/components-react';
+import type { IconName } from '@dsn-starter-kit/components-react/icon-registry.generated';
 import DocsPage from './StatusBadge.docs.mdx';
 import {
   TEKST,

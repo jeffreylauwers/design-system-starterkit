@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Details, Paragraph, UnorderedList } from '@dsn/components-react';
+import {
+  Details,
+  Paragraph,
+  UnorderedList,
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './Details.docs.mdx';
 import {
   TEKST,

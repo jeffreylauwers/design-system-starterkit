@@ -4,7 +4,7 @@ import {
   DateInputGroup,
   DateInputGroupValue,
   FormFieldset,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './DateInputGroup.docs.mdx';
 import { rtlDecorator } from './story-helpers';
 

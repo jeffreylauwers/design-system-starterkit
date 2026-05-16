@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Checkbox } from '@dsn/components-react';
+import { Checkbox } from '@dsn-starter-kit/components-react';
 import DocsPage from './Checkbox.docs.mdx';
 import { rtlDecorator } from './story-helpers';
 

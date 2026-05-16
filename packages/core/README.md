@@ -1,4 +1,4 @@
-# @dsn/core
+# @dsn-starter-kit/core
 
 Core utilities and global styles for the design system: CSS reset, utility classes, and shared JavaScript helpers.
 
@@ -12,7 +12,7 @@ Core utilities and global styles for the design system: CSS reset, utility class
 ## Installation
 
 ```bash
-pnpm add @dsn/core
+pnpm add @dsn-starter-kit/core
 ```
 
 ## Usage
@@ -21,13 +21,13 @@ pnpm add @dsn/core
 
 ```css
 /* Import the global reset + utilities */
-@import '@dsn/core/css';
+@import '@dsn-starter-kit/core/css';
 ```
 
 ### JavaScript / TypeScript
 
 ```ts
-import { classNames, bem, bemModifiers } from '@dsn/core';
+import { classNames, bem, bemModifiers } from '@dsn-starter-kit/core';
 
 // Conditional class names
 classNames('btn', isActive && 'btn--active', className);
@@ -53,7 +53,7 @@ bemModifiers('card', { active: true, size: 'lg' });
 ## Building
 
 ```bash
-pnpm --filter @dsn/core build
+pnpm --filter @dsn-starter-kit/core build
 ```
 
 ## License

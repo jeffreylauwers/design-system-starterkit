@@ -19,7 +19,7 @@ import {
   SearchInput,
   SkipLink,
   Stack,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import {
   logoSlot,
   footerSlot1,

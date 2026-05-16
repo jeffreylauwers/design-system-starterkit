@@ -2,7 +2,7 @@
  * Design System Components - React
  *
  * Centralized exports for all design system components.
- * Import components like: import { Button, TextInput } from '@dsn/components-react'
+ * Import components like: import { Button, TextInput } from '@dsn-starter-kit/components-react'
  */
 
 // Layout Components

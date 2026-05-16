@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Button, DotBadge, Icon } from '@dsn/components-react';
+import { Button, DotBadge, Icon } from '@dsn-starter-kit/components-react';
 import DocsPage from './DotBadge.docs.mdx';
 
 const meta: Meta<typeof DotBadge> = {

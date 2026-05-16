@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SkipLink } from '@dsn/components-react';
+import { SkipLink } from '@dsn-starter-kit/components-react';
 import DocsPage from './SkipLink.docs.mdx';
 import { rtlDecorator } from './story-helpers';
 

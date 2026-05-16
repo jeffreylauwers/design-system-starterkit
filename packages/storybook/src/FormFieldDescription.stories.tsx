@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { FormFieldDescription, UnorderedList } from '@dsn/components-react';
+import {
+  FormFieldDescription,
+  UnorderedList,
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './FormFieldDescription.docs.mdx';
 import {
   TEKST,

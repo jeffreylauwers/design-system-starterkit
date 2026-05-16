@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { DotBadge, Icon, MenuButton } from '@dsn/components-react';
-import type { IconName } from '@dsn/components-react/icon-registry.generated';
+import { DotBadge, Icon, MenuButton } from '@dsn-starter-kit/components-react';
+import type { IconName } from '@dsn-starter-kit/components-react/icon-registry.generated';
 import DocsPage from './MenuButton.docs.mdx';
 import {
   TEKST,

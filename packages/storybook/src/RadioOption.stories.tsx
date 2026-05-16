@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { RadioOption } from '@dsn/components-react';
+import { RadioOption } from '@dsn-starter-kit/components-react';
 import DocsPage from './RadioOption.docs.mdx';
 import {
   TEKST,

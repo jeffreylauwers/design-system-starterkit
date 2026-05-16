@@ -1,4 +1,9 @@
-import { Link, Logo, Paragraph, UnorderedList } from '@dsn/components-react';
+import {
+  Link,
+  Logo,
+  Paragraph,
+  UnorderedList,
+} from '@dsn-starter-kit/components-react';
 
 export const logoSlot = (
   <a href="/">

@@ -1,5 +1,5 @@
 import React, { useId } from 'react';
-import { classNames } from '@dsn/core';
+import { classNames } from '@dsn-starter-kit/core';
 import './Logo.css';
 
 export interface LogoProps extends React.SVGProps<SVGSVGElement> {

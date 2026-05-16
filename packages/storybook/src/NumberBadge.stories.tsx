@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Button, Icon, NumberBadge } from '@dsn/components-react';
+import { Button, Icon, NumberBadge } from '@dsn-starter-kit/components-react';
 import DocsPage from './NumberBadge.docs.mdx';
 
 const meta: Meta<typeof NumberBadge> = {

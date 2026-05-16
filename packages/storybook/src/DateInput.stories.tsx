@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { DateInput } from '@dsn/components-react';
+import { DateInput } from '@dsn-starter-kit/components-react';
 import DocsPage from './DateInput.docs.mdx';
 import { rtlDecorator } from './story-helpers';
 

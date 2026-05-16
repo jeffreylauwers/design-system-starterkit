@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { FormFieldStatus } from '@dsn/components-react';
+import { FormFieldStatus } from '@dsn-starter-kit/components-react';
 import DocsPage from './FormFieldStatus.docs.mdx';
 import {
   TEKST,

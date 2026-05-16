@@ -14,7 +14,7 @@ import {
   SearchInput,
   SkipLink,
   UnorderedList,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 
 // =============================================================================
 // PAGE HEADER CONTENT (identiek aan PageHeader.stories.tsx Default)

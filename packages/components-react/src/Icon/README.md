@@ -10,7 +10,7 @@ Icon component using individual Tabler Icon SVG imports for optimal tree-shaking
 - Smaller bundles: No unused icons
 - Type-safe: TypeScript knows which icons exist
 - Modern build tools: Vite/Webpack optimize automatically
-- Easy imports: `import { Icon } from '@dsn/components-react'`
+- Easy imports: `import { Icon } from '@dsn-starter-kit/components-react'`
 
 ## Features
 
@@ -73,7 +73,7 @@ pnpm add -D vite-plugin-svgr
 ### React (Recommended)
 
 ```tsx
-import { Icon } from '@dsn/components-react';
+import { Icon } from '@dsn-starter-kit/components-react';
 
 function App() {
   return (
@@ -105,7 +105,7 @@ function App() {
 The Icon component is fully typed:
 
 ```tsx
-import { Icon, IconName, IconSize } from '@dsn/components-react';
+import { Icon, IconName, IconSize } from '@dsn-starter-kit/components-react';
 
 // TypeScript will autocomplete icon names
 <Icon name="check" /> // Valid
@@ -126,7 +126,10 @@ For static HTML without React:
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="@dsn/components-react/src/Icon/Icon.css" />
+    <link
+      rel="stylesheet"
+      href="@dsn-starter-kit/components-react/src/Icon/Icon.css"
+    />
   </head>
   <body>
     <!-- Inline SVG (copy from icons folder) -->
@@ -199,7 +202,7 @@ To add more icons from Tabler Icons:
 2. Save to `packages/components-html/assets/icons/[name].svg`
 3. Run the icon registry generator:
    ```bash
-   pnpm --filter @dsn/components-react generate:icons
+   pnpm --filter @dsn-starter-kit/components-react generate:icons
    ```
 
 The generator script scans the icons directory and automatically updates `icon-registry.generated.ts` with the correct imports, `IconName` type, and `iconMap`. No manual code changes needed.

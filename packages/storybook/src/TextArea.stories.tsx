@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { TextArea } from '@dsn/components-react';
+import { TextArea } from '@dsn-starter-kit/components-react';
 import DocsPage from './TextArea.docs.mdx';
 import {
   TEKST,

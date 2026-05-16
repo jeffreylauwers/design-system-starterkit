@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Table, Icon, Checkbox, Link, LinkButton } from '@dsn/components-react';
-import type { TableProps } from '@dsn/components-react';
+import {
+  Table,
+  Icon,
+  Checkbox,
+  Link,
+  LinkButton,
+} from '@dsn-starter-kit/components-react';
+import type { TableProps } from '@dsn-starter-kit/components-react';
 import DocsPage from './Table.docs.mdx';
 import { rtlDecorator } from './story-helpers';
 

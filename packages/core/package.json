@@ -1,5 +1,5 @@
 {
-  "name": "@dsn/core",
+  "name": "@dsn-starter-kit/core",
   "version": "1.0.0",
   "description": "Core styles and utilities for the design system",
   "main": "dist/index.js",
@@ -36,7 +36,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@dsn/design-tokens": "workspace:*"
+    "@dsn-starter-kit/design-tokens": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.3.3"

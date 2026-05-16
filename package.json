@@ -15,12 +15,12 @@
   },
   "scripts": {
     "build": "pnpm build:tokens && pnpm build:core && pnpm build:components && pnpm build:storybook",
-    "build:tokens": "pnpm --filter @dsn/design-tokens build",
-    "build:core": "pnpm --filter @dsn/core build",
-    "build:components": "pnpm --filter @dsn/components-html build && pnpm --filter @dsn/components-react build && pnpm --filter @dsn/components-web build",
-    "build:storybook": "pnpm --filter @dsn/storybook build",
-    "dev": "pnpm --filter @dsn/storybook dev",
-    "storybook": "pnpm --filter @dsn/storybook dev",
+    "build:tokens": "pnpm --filter @dsn-starter-kit/design-tokens build",
+    "build:core": "pnpm --filter @dsn-starter-kit/core build",
+    "build:components": "pnpm --filter @dsn-starter-kit/components-html build && pnpm --filter @dsn-starter-kit/components-react build && pnpm --filter @dsn-starter-kit/components-web build",
+    "build:storybook": "pnpm --filter @dsn-starter-kit/storybook build",
+    "dev": "pnpm --filter @dsn-starter-kit/storybook dev",
+    "storybook": "pnpm --filter @dsn-starter-kit/storybook dev",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
@@ -30,9 +30,9 @@
     "type-check": "pnpm -r type-check",
     "clean": "pnpm -r clean && rm -rf node_modules",
     "prepare": "husky install",
-    "version:patch": "pnpm -r --filter '!@dsn/storybook' exec npm version patch --no-git-tag-version && npm version patch --no-git-tag-version --no-workspaces-update",
-    "version:minor": "pnpm -r --filter '!@dsn/storybook' exec npm version minor --no-git-tag-version && npm version minor --no-git-tag-version --no-workspaces-update",
-    "version:major": "pnpm -r --filter '!@dsn/storybook' exec npm version major --no-git-tag-version && npm version major --no-git-tag-version --no-workspaces-update"
+    "version:patch": "pnpm -r --filter '!@dsn-starter-kit/storybook' exec npm version patch --no-git-tag-version && npm version patch --no-git-tag-version --no-workspaces-update",
+    "version:minor": "pnpm -r --filter '!@dsn-starter-kit/storybook' exec npm version minor --no-git-tag-version && npm version minor --no-git-tag-version --no-workspaces-update",
+    "version:major": "pnpm -r --filter '!@dsn-starter-kit/storybook' exec npm version major --no-git-tag-version && npm version major --no-git-tag-version --no-workspaces-update"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",

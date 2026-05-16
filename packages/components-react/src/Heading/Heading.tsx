@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from '@dsn/core';
+import { classNames } from '@dsn-starter-kit/core';
 import './Heading.css';
 
 export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;

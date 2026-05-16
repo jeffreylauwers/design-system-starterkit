@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from '@dsn/core';
+import { classNames } from '@dsn-starter-kit/core';
 import './Image.css';
 
 // fetchpriority is not yet in React 18's HTMLAttributes types (added in React 19).

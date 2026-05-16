@@ -4,7 +4,7 @@ import {
   type BodyProps,
   Heading,
   Paragraph,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './Body.docs.mdx';
 
 const meta: Meta<typeof Body> = {

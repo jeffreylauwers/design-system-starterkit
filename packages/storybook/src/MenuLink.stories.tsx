@@ -1,6 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Icon, Menu, MenuLink, NumberBadge } from '@dsn/components-react';
-import type { IconName } from '@dsn/components-react/icon-registry.generated';
+import {
+  Icon,
+  Menu,
+  MenuLink,
+  NumberBadge,
+} from '@dsn-starter-kit/components-react';
+import type { IconName } from '@dsn-starter-kit/components-react/icon-registry.generated';
 import DocsPage from './MenuLink.docs.mdx';
 import {
   TEKST,

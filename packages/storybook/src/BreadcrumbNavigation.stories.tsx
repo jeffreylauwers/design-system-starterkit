@@ -3,7 +3,7 @@ import {
   BreadcrumbNavigation,
   BreadcrumbNavigationItem,
   type BreadcrumbNavigationProps,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './BreadcrumbNavigation.docs.mdx';
 import { rtlDecorator } from './story-helpers';
 

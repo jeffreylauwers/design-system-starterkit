@@ -5,8 +5,8 @@ import {
   Paragraph,
   Link,
   UnorderedList,
-} from '@dsn/components-react';
-import type { IconName } from '@dsn/components-react/icon-registry.generated';
+} from '@dsn-starter-kit/components-react';
+import type { IconName } from '@dsn-starter-kit/components-react/icon-registry.generated';
 import DocsPage from './Note.docs.mdx';
 import {
   TEKST,

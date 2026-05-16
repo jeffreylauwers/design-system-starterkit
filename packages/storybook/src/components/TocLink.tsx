@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@dsn/components-react';
+import { Link } from '@dsn-starter-kit/components-react';
 
 interface TocLinkProps {
   targetId: string;

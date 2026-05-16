@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { NumberInput } from '@dsn/components-react';
+import { NumberInput } from '@dsn-starter-kit/components-react';
 import DocsPage from './NumberInput.docs.mdx';
 import { rtlDecorator } from './story-helpers';
 

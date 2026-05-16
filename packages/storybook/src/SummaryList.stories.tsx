@@ -8,7 +8,7 @@ import {
   Link,
   LinkButton,
   Icon,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './SummaryList.docs.mdx';
 import { VEEL_TEKST } from './story-helpers';
 

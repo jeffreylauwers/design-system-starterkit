@@ -1,5 +1,5 @@
 {
-  "name": "@dsn/components-react",
+  "name": "@dsn-starter-kit/components-react",
   "version": "1.0.0",
   "description": "React components for the design system",
   "main": "dist/index.js",
@@ -39,8 +39,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@dsn/core": "workspace:*",
-    "@dsn/design-tokens": "workspace:*"
+    "@dsn-starter-kit/core": "workspace:*",
+    "@dsn-starter-kit/design-tokens": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

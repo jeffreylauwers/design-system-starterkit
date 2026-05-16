@@ -71,16 +71,16 @@ importers:
 
   packages/components-html:
     dependencies:
-      '@dsn/design-tokens':
+      '@dsn-starter-kit/design-tokens':
         specifier: workspace:*
         version: link:../design-tokens
 
   packages/components-react:
     dependencies:
-      '@dsn/core':
+      '@dsn-starter-kit/core':
         specifier: workspace:*
         version: link:../core
-      '@dsn/design-tokens':
+      '@dsn-starter-kit/design-tokens':
         specifier: workspace:*
         version: link:../design-tokens
     devDependencies:
@@ -105,10 +105,10 @@ importers:
 
   packages/components-web:
     dependencies:
-      '@dsn/components-html':
+      '@dsn-starter-kit/components-html':
         specifier: workspace:*
         version: link:../components-html
-      '@dsn/design-tokens':
+      '@dsn-starter-kit/design-tokens':
         specifier: workspace:*
         version: link:../design-tokens
     devDependencies:
@@ -118,7 +118,7 @@ importers:
 
   packages/core:
     dependencies:
-      '@dsn/design-tokens':
+      '@dsn-starter-kit/design-tokens':
         specifier: workspace:*
         version: link:../design-tokens
     devDependencies:
@@ -134,13 +134,13 @@ importers:
 
   packages/storybook:
     dependencies:
-      '@dsn/components-react':
+      '@dsn-starter-kit/components-react':
         specifier: workspace:*
         version: link:../components-react
-      '@dsn/core':
+      '@dsn-starter-kit/core':
         specifier: workspace:*
         version: link:../core
-      '@dsn/design-tokens':
+      '@dsn-starter-kit/design-tokens':
         specifier: workspace:*
         version: link:../design-tokens
     devDependencies:

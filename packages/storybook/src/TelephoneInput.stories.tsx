@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { TelephoneInput } from '@dsn/components-react';
+import { TelephoneInput } from '@dsn-starter-kit/components-react';
 import DocsPage from './TelephoneInput.docs.mdx';
 import {
   WEINIG_TEKST,

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { FormFieldLabel } from '@dsn/components-react';
+import { FormFieldLabel } from '@dsn-starter-kit/components-react';
 import DocsPage from './FormFieldLabel.docs.mdx';
 import {
   TEKST,

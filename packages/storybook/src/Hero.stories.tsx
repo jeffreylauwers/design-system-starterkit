@@ -9,7 +9,7 @@ import {
   ButtonLink,
   Button,
   SearchInput,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './Hero.docs.mdx';
 
 const meta: Meta<typeof Hero> = {

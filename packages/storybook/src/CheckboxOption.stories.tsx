@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { CheckboxOption } from '@dsn/components-react';
+import { CheckboxOption } from '@dsn-starter-kit/components-react';
 import DocsPage from './CheckboxOption.docs.mdx';
 import {
   TEKST,

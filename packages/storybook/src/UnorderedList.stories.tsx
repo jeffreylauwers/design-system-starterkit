@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { UnorderedList } from '@dsn/components-react';
+import { UnorderedList } from '@dsn-starter-kit/components-react';
 import DocsPage from './UnorderedList.docs.mdx';
 import {
   TEKST,

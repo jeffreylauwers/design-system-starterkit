@@ -1,11 +1,11 @@
-# @dsn/components-react
+# @dsn-starter-kit/components-react
 
 React components for the Design System Starter Kit.
 
 ## Installation
 
 ```bash
-pnpm add @dsn/components-react
+pnpm add @dsn-starter-kit/components-react
 ```
 
 ## Usage
@@ -22,16 +22,16 @@ import {
   Heading,
   FormField,
   Icon,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 
 // Also supported: Import individually
-import { Button } from '@dsn/components-react/Button';
+import { Button } from '@dsn-starter-kit/components-react/Button';
 ```
 
 ### Example
 
 ```tsx
-import { Button, Icon } from '@dsn/components-react';
+import { Button, Icon } from '@dsn-starter-kit/components-react';
 
 function App() {
   return (
@@ -108,7 +108,12 @@ function App() {
 ## Component Composition
 
 ```tsx
-import { FormField, EmailInput, Button, Icon } from '@dsn/components-react';
+import {
+  FormField,
+  EmailInput,
+  Button,
+  Icon,
+} from '@dsn-starter-kit/components-react';
 
 function LoginForm() {
   const [email, setEmail] = useState('');
@@ -162,12 +167,12 @@ pnpm watch
 
 ## CSS
 
-CSS styles are imported from `@dsn/components-html` for each component. The CSS is not bundled with the JavaScript - you need to import it separately in your application.
+CSS styles are imported from `@dsn-starter-kit/components-html` for each component. The CSS is not bundled with the JavaScript - you need to import it separately in your application.
 
 ## Dependencies
 
-- `@dsn/core` - Core utilities and styles
-- `@dsn/design-tokens` - Design tokens
+- `@dsn-starter-kit/core` - Core utilities and styles
+- `@dsn-starter-kit/design-tokens` - Design tokens
 - `react` (peer dependency) - React 18+
 - `react-dom` (peer dependency) - React DOM 18+
 

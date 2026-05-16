@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from '@dsn/core';
+import { classNames } from '@dsn-starter-kit/core';
 import { iconMap } from './icon-registry.generated';
 import type { IconName } from './icon-registry.generated';
 

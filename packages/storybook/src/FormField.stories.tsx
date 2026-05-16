@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { FormField, TextInput, TextArea } from '@dsn/components-react';
+import {
+  FormField,
+  TextInput,
+  TextArea,
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './FormField.docs.mdx';
 import {
   TEKST,

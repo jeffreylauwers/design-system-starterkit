@@ -1,4 +1,4 @@
-# @dsn/components-html
+# @dsn-starter-kit/components-html
 
 Pure HTML/CSS components for the design system: no JavaScript required.
 
@@ -14,7 +14,7 @@ Use these components in static HTML pages, server-rendered templates, or any pro
 ## Installation
 
 ```bash
-pnpm add @dsn/components-html
+pnpm add @dsn-starter-kit/components-html
 ```
 
 ## Usage
@@ -24,8 +24,14 @@ pnpm add @dsn/components-html
 Include the CSS and use BEM classes on standard HTML elements:
 
 ```html
-<link rel="stylesheet" href="@dsn/design-tokens/dist/css/variables.css" />
-<link rel="stylesheet" href="@dsn/components-html/dist/components.css" />
+<link
+  rel="stylesheet"
+  href="@dsn-starter-kit/design-tokens/dist/css/variables.css"
+/>
+<link
+  rel="stylesheet"
+  href="@dsn-starter-kit/components-html/dist/components.css"
+/>
 
 <button class="dsn-button dsn-button--strong dsn-button--size-default">
   Save
@@ -46,12 +52,12 @@ The package exports individual component CSS files:
 
 ```tsx
 // Import all components
-import '@dsn/components-html';
+import '@dsn-starter-kit/components-html';
 
 // Or import individual components
-import '@dsn/components-html/button';
-import '@dsn/components-html/icon';
-import '@dsn/components-html/text-input';
+import '@dsn-starter-kit/components-html/button';
+import '@dsn-starter-kit/components-html/icon';
+import '@dsn-starter-kit/components-html/text-input';
 ```
 
 **Available exports:**
@@ -103,7 +109,7 @@ assets/icons/
 ## Building
 
 ```bash
-pnpm --filter @dsn/components-html build
+pnpm --filter @dsn-starter-kit/components-html build
 ```
 
 ## License

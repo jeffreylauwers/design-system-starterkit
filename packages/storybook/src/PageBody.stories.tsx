@@ -14,7 +14,7 @@ import {
   SearchInput,
   SkipLink,
   UnorderedList,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 
 // =============================================================================
 // GEDEELDE CONTENT (identiek aan PageLayout/PageHeader/PageFooter stories)

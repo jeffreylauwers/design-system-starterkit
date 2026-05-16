@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from '@dsn/core';
+import { classNames } from '@dsn-starter-kit/core';
 import { Grid } from '../Grid';
 import { GridItem } from '../Grid';
 import './PageFooter.css';

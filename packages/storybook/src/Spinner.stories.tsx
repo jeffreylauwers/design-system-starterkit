@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Spinner } from '@dsn/components-react';
+import { Spinner } from '@dsn-starter-kit/components-react';
 import DocsPage from './Spinner.docs.mdx';
 
 const meta: Meta<typeof Spinner> = {

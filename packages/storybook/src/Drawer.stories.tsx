@@ -9,7 +9,7 @@ import {
   ActionGroup,
   Button,
   Paragraph,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import {
   TEKST,
   VEEL_TEKST,

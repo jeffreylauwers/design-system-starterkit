@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Backdrop } from '@dsn/components-react';
+import { Backdrop } from '@dsn-starter-kit/components-react';
 import DocsPage from './Backdrop.docs.mdx';
 
 const meta: Meta<typeof Backdrop> = {

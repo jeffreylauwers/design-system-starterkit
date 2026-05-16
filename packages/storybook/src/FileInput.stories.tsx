@@ -3,7 +3,7 @@ import {
   FileInput,
   FormFieldLabel,
   UnorderedList,
-} from '@dsn/components-react';
+} from '@dsn-starter-kit/components-react';
 import DocsPage from './FileInput.docs.mdx';
 
 const meta: Meta<typeof FileInput> = {
