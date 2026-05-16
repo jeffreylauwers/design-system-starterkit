@@ -6,14 +6,30 @@ A production-ready, white-label design system starter kit built with design toke
 
 This monorepo contains the following packages:
 
-- **[@dsn/design-tokens](./packages/design-tokens)** - Design tokens (colors, typography, spacing, etc.)
-- **[@dsn/core](./packages/core)** - Core utilities and global styles (CSS reset, utility classes)
-- **[@dsn/components-html](./packages/components-html)** - Pure HTML/CSS components
-- **[@dsn/components-react](./packages/components-react)** - React components with TypeScript
-- **[@dsn/components-web](./packages/components-web)** - Web Components (vanilla TypeScript)
-- **[@dsn/storybook](./packages/storybook)** - Documentation and component showcase
+- **[@dsn-starter-kit/design-tokens](./packages/design-tokens)** - Design tokens (colors, typography, spacing, etc.)
+- **[@dsn-starter-kit/core](./packages/core)** - Core utilities and global styles (CSS reset, utility classes)
+- **[@dsn-starter-kit/components-html](./packages/components-html)** - Pure HTML/CSS components
+- **[@dsn-starter-kit/components-react](./packages/components-react)** - React components with TypeScript
+- **[@dsn-starter-kit/components-web](./packages/components-web)** - Web Components (vanilla TypeScript)
+- **[@dsn-starter-kit/storybook](./packages/storybook)** - Documentation and component showcase
 
 ## Quick Start
+
+### Option A: Install from npm (recommended for consumers)
+
+All packages are published to npm under the `@dsn-starter-kit` scope:
+
+```bash
+pnpm add @dsn-starter-kit/components-react @dsn-starter-kit/core
+```
+
+```tsx
+import '@dsn-starter-kit/core/css'; // design tokens + reset
+import '@dsn-starter-kit/components-react/css'; // all component styles
+import { Button, Stack, Heading } from '@dsn-starter-kit/components-react';
+```
+
+### Option B: Clone the repository (for contributors and forks)
 
 ### Prerequisites
 
@@ -60,7 +76,7 @@ pnpm build:components  # All component packages
 pnpm build:storybook   # Storybook static site
 
 # Watch design tokens for changes
-pnpm --filter @dsn/design-tokens watch
+pnpm --filter @dsn-starter-kit/design-tokens watch
 
 # Start Storybook in development mode
 pnpm dev
@@ -94,10 +110,10 @@ pnpm clean
 
 The build system ensures packages are built in the correct dependency order:
 
-1. **Design Tokens** (`@dsn/design-tokens`) - Generates CSS, SCSS, JS, and JSON files
-2. **Core** (`@dsn/core`) - Builds utilities and base styles
-3. **Components** (`@dsn/components-html`, `@dsn/components-react`, `@dsn/components-web`) - Builds all component packages
-4. **Storybook** (`@dsn/storybook`) - Generates static documentation site
+1. **Design Tokens** (`@dsn-starter-kit/design-tokens`) - Generates CSS, SCSS, JS, and JSON files
+2. **Core** (`@dsn-starter-kit/core`) - Builds utilities and base styles
+3. **Components** (`@dsn-starter-kit/components-html`, `@dsn-starter-kit/components-react`, `@dsn-starter-kit/components-web`) - Builds all component packages
+4. **Storybook** (`@dsn-starter-kit/storybook`) - Generates static documentation site
 
 Icon generation is automatically included in the React components build step.
 
@@ -105,10 +121,10 @@ Icon generation is automatically included in the React components build step.
 
 ```bash
 # Build a specific package
-pnpm --filter @dsn/design-tokens build
+pnpm --filter @dsn-starter-kit/design-tokens build
 
 # Add dependency to a package
-pnpm --filter @dsn/components-react add react
+pnpm --filter @dsn-starter-kit/components-react add react
 
 # Add dev dependency to root
 pnpm add -Dw eslint
@@ -152,10 +168,15 @@ The React component package provides a convenient barrel export for easy importi
 
 ```tsx
 // Import multiple components at once
-import { Button, TextInput, Heading, Icon } from '@dsn/components-react';
+import {
+  Button,
+  TextInput,
+  Heading,
+  Icon,
+} from '@dsn-starter-kit/components-react';
 
 // Or import individually (if preferred)
-import { Button } from '@dsn/components-react/Button';
+import { Button } from '@dsn-starter-kit/components-react/Button';
 ```
 
 All components are fully typed with TypeScript and include comprehensive JSDoc documentation.
@@ -381,16 +402,16 @@ Full dark mode support out of the box:
 
 ```css
 /* Light theme (default) */
-@import '@dsn/design-tokens/css';
+@import '@dsn-starter-kit/design-tokens/css';
 
 /* Dark theme */
-@import '@dsn/design-tokens/css/dark';
+@import '@dsn-starter-kit/design-tokens/css/dark';
 ```
 
 ```ts
 // JavaScript (typed exports)
-import { DsnColorNeutralBgDocument } from '@dsn/design-tokens';
-import { DsnColorNeutralBgDocument as Dark } from '@dsn/design-tokens/dark';
+import { DsnColorNeutralBgDocument } from '@dsn-starter-kit/design-tokens';
+import { DsnColorNeutralBgDocument as Dark } from '@dsn-starter-kit/design-tokens/dark';
 ```
 
 Toggle themes by switching CSS files or using CSS custom properties.

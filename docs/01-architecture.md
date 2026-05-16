@@ -22,7 +22,7 @@ This document describes the architecture of the Design System Starter Kit, inclu
 ### Repository Details
 
 - **Name:** `design-system-starter-kit`
-- **Package Scope:** `@dsn/*` (Design System Name - customizable per organization)
+- **Package Scope:** `@dsn-starter-kit/*` (customizable per organization when forking)
 - **Package Manager:** PNPM (with workspaces)
 - **License:** MIT
 - **Purpose:** Production-ready design system starter kit for organizations
@@ -49,7 +49,7 @@ design-system-starter-kit/
 ├── .husky/
 │   └── pre-commit               # Runs lint-staged
 ├── packages/
-│   ├── design-tokens/           # @dsn/design-tokens
+│   ├── design-tokens/           # @dsn-starter-kit/design-tokens
 │   │   └── src/
 │   │       ├── config/
 │   │       │   ├── build.js     # Multi-config build script
@@ -100,12 +100,12 @@ design-system-starter-kit/
 │   │               ├── text-input.json
 │   │               ├── time-input.json
 │   │               └── unordered-list.json
-│   ├── core/                    # @dsn/core
-│   ├── components-html/         # @dsn/components-html
-│   ├── components-react/        # @dsn/components-react
+│   ├── core/                    # @dsn-starter-kit/core
+│   ├── components-html/         # @dsn-starter-kit/components-html
+│   ├── components-react/        # @dsn-starter-kit/components-react
 │   │   └── scripts/
 │   │       └── generate-icons.js # Icon registry generator
-│   ├── components-web/          # @dsn/components-web
+│   ├── components-web/          # @dsn-starter-kit/components-web
 │   └── storybook/               # Documentation site
 │       ├── .storybook/
 │       │   ├── main.ts          # Storybook config + multilevel-sort
@@ -323,7 +323,7 @@ A minimal theme for prototyping and development.
 
 5. Build:
    ```bash
-   pnpm --filter @dsn/design-tokens build
+   pnpm --filter @dsn-starter-kit/design-tokens build
    ```
 
 ### Adding a New Project Type

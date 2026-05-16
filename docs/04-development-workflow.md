@@ -32,7 +32,7 @@ pnpm build:components  # All component packages
 pnpm build:storybook   # Storybook static site
 
 # Watch design tokens for changes
-pnpm --filter @dsn/design-tokens watch
+pnpm --filter @dsn-starter-kit/design-tokens watch
 
 # Start Storybook in development mode
 pnpm dev
@@ -93,10 +93,10 @@ pnpm build
 
 ```bash
 # Build a specific package
-pnpm --filter @dsn/design-tokens build
+pnpm --filter @dsn-starter-kit/design-tokens build
 
 # Add dependency to a package
-pnpm --filter @dsn/components-react add react
+pnpm --filter @dsn-starter-kit/components-react add react
 
 # Add dev dependency to root
 pnpm add -Dw eslint
@@ -109,7 +109,7 @@ pnpm -r build
 
 ## Versioning
 
-All publishable packages (`@dsn/design-tokens`, `@dsn/core`, `@dsn/components-html`, `@dsn/components-react`, `@dsn/components-web`) are versioned together. They share a single version number so consumers can always install a coherent set.
+All publishable packages (`@dsn-starter-kit/design-tokens`, `@dsn-starter-kit/core`, `@dsn-starter-kit/components-html`, `@dsn-starter-kit/components-react`, `@dsn-starter-kit/components-web`) are versioned together. They share a single version number so consumers can always install a coherent set.
 
 ### When to bump
 
@@ -133,12 +133,24 @@ git commit -m "chore: bump to $(node -p "require('./package.json').version")"
 git tag "v$(node -p "require('./package.json').version")"
 ```
 
-The scripts use `--no-git-tag-version` so you control exactly what gets committed and tagged. `@dsn/storybook` is private and excluded from the bump; its version is cosmetic.
+The scripts use `--no-git-tag-version` so you control exactly what gets committed and tagged. `@dsn-starter-kit/storybook` is private and excluded from the bump; its version is cosmetic.
 
 ### After bumping
 
 1. Add an entry to `docs/changelog.md` under the new version number
-2. Push the tag: `git push origin --tags`
+2. Push commit and tag — this automatically triggers the npm publish workflow:
+
+```bash
+git push && git push --tags
+```
+
+### Publishing to npm
+
+Packages are published automatically via GitHub Actions when a version tag is pushed. The workflow (`.github/workflows/publish.yml`) builds all packages and runs `pnpm publish -r`.
+
+**Required secret:** `NPM_TOKEN` must be set in GitHub → Settings → Secrets and variables → Actions. Use a Granular Access Token from npmjs.com with "Read and write" on "All packages" and "Bypass 2FA" enabled.
+
+You can also trigger a publish manually without a tag via GitHub → Actions → "Publish to npm" → Run workflow.
 
 ---
 
@@ -243,7 +255,7 @@ This makes each token file readable top-to-bottom: first what a thing looks like
 2. **Run the build**
 
    ```bash
-   pnpm --filter @dsn/design-tokens build
+   pnpm --filter @dsn-starter-kit/design-tokens build
    ```
 
 3. **Verify output** in `dist/css/`
@@ -310,14 +322,19 @@ See [Architecture: Adding a New Project Type](./01-architecture.md#adding-a-new-
 
 ### React Components (Barrel Exports)
 
-The `@dsn/components-react` package provides a barrel export for convenient importing:
+The `@dsn-starter-kit/components-react` package provides a barrel export for convenient importing:
 
 ```tsx
 // ✅ Recommended: Import multiple components from barrel export
-import { Button, TextInput, Heading, FormField } from '@dsn/components-react';
+import {
+  Button,
+  TextInput,
+  Heading,
+  FormField,
+} from '@dsn-starter-kit/components-react';
 
 // Also supported: Import individual components
-import { Button } from '@dsn/components-react/Button';
+import { Button } from '@dsn-starter-kit/components-react/Button';
 ```
 
 **Benefits:**
@@ -333,7 +350,7 @@ CSS components can be imported individually:
 
 ```tsx
 // In React components that use HTML/CSS styles
-import './Button.css'; // Re-exports from @dsn/components-html
+import './Button.css'; // Re-exports from @dsn-starter-kit/components-html
 
 // The CSS file contains:
 // @import '../../../components-html/src/button/button.css';
@@ -341,7 +358,7 @@ import './Button.css'; // Re-exports from @dsn/components-html
 
 **Package Exports:**
 
-The `@dsn/components-html` package exports individual CSS files:
+The `@dsn-starter-kit/components-html` package exports individual CSS files:
 
 ```json
 {
@@ -357,21 +374,21 @@ The `@dsn/components-html` package exports individual CSS files:
 
 ```tsx
 // CSS
-@import '@dsn/design-tokens/css';         // Light theme
-@import '@dsn/design-tokens/css/dark';    // Dark theme
+@import '@dsn-starter-kit/design-tokens/css';         // Light theme
+@import '@dsn-starter-kit/design-tokens/css/dark';    // Dark theme
 
 // JavaScript/TypeScript (typed exports)
-import { DsnColorNeutralBgDocument } from '@dsn/design-tokens';
+import { DsnColorNeutralBgDocument } from '@dsn-starter-kit/design-tokens';
 ```
 
 ### Core Utilities
 
 ```tsx
 // JavaScript utilities
-import { classNames, bem, bemModifiers } from '@dsn/core';
+import { classNames, bem, bemModifiers } from '@dsn-starter-kit/core';
 
 // CSS utilities and reset
-import '@dsn/core/css'; // Includes reset + utilities
+import '@dsn-starter-kit/core/css'; // Includes reset + utilities
 ```
 
 ---
@@ -521,7 +538,7 @@ pnpm test --coverage
 
 ```tsx
 import { render, screen } from '@testing-library/react';
-import { Button } from '@dsn/components-react';
+import { Button } from '@dsn-starter-kit/components-react';
 // or: import { Button } from './Button';
 
 describe('Button', () => {
@@ -605,7 +622,7 @@ The project uses Husky + lint-staged to run checks before commits:
 pnpm type-check
 
 # Type-check specific package
-pnpm --filter @dsn/components-react type-check
+pnpm --filter @dsn-starter-kit/components-react type-check
 ```
 
 ### Prettier
