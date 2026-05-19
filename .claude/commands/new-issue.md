@@ -68,6 +68,7 @@ Als [gebruiker/ontwikkelaar] wil ik [wat] zodat [waarom].
 - [ ] Drie Storybook-bestanden aangemaakt (`.stories.tsx`, `.docs.mdx`, `.docs.md`)
 - [ ] Export toegevoegd aan `packages/components-react/src/index.ts`
 - [ ] `Introduction.mdx` bijgewerkt (datum + componentnaam in de lijst)
+- [ ] Component manifest bijgewerkt: entry toegevoegd aan `packages/components-html/manifest.json`
 
 ### Kwaliteitscontrole
 

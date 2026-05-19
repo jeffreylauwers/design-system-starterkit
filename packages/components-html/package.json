@@ -6,6 +6,7 @@
   "main": "dist/components.css",
   "exports": {
     ".": "./dist/components.css",
+    "./manifest": "./manifest.json",
     "./action-group": "./src/action-group/action-group.css",
     "./alert": "./src/alert/alert.css",
     "./backdrop": "./src/backdrop/backdrop.css",
