@@ -215,6 +215,7 @@ Het [ComponentName] component wordt gebruikt voor:
 - [ ] Export toegevoegd aan `packages/components-react/src/index.ts`
 - [ ] Export entry toegevoegd aan `packages/components-html/package.json` exports map
 - [ ] `Introduction.mdx` bijgewerkt (datum + componentnaam in de lijst)
+- [ ] Component manifest bijgewerkt: entry toegevoegd aan `packages/components-html/manifest.json`
 
 ### Kwaliteitscontrole
 
