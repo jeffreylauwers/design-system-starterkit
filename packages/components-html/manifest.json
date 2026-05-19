@@ -1,0 +1,821 @@
+{
+  "$schema": "./manifest-schema.json",
+  "version": "1.0.0",
+  "description": "Framework-agnostic component manifest for the Design System Starter Kit. Each entry describes a component at the design system level, not at a specific platform implementation level. The HTML/CSS layer is the source of truth; React and Web Components are wrappers on top.",
+  "components": [
+    {
+      "name": "ActionGroup",
+      "cssBlock": "dsn-action-group",
+      "category": "layout",
+      "purpose": "Groups related actions (buttons and links) horizontally or vertically with automatic wrapping.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        {
+          "name": "orientation",
+          "values": ["horizontal", "vertical"],
+          "default": "horizontal"
+        }
+      ]
+    },
+    {
+      "name": "Body",
+      "cssBlock": "dsn-body",
+      "category": "layout",
+      "purpose": "Applies document-level cascade base styles (typography, colour, background) when placed on the <body> element.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "BreakoutSection",
+      "cssBlock": "dsn-breakout-section",
+      "category": "layout",
+      "purpose": "Breaks a section out of a constrained page width to span the full viewport width.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "Container",
+      "cssBlock": "dsn-container",
+      "category": "layout",
+      "purpose": "Centring wrapper with max-width and inline padding for page layout.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "Grid",
+      "cssBlock": "dsn-grid",
+      "category": "layout",
+      "purpose": "12-column CSS Grid container with gutter, margin, and optional constrained max-width.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "contained", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "Stack",
+      "cssBlock": "dsn-stack",
+      "category": "layout",
+      "purpose": "Vertical stacking with consistent row spacing between direct children.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        {
+          "name": "space",
+          "values": [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+            "2xl",
+            "3xl",
+            "4xl",
+            "5xl",
+            "6xl"
+          ],
+          "default": "md"
+        }
+      ]
+    },
+    {
+      "name": "Hero",
+      "cssBlock": "dsn-hero",
+      "category": "section",
+      "purpose": "Prominent introduction section directly below the page header with full viewport width and configurable background.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        {
+          "name": "background",
+          "values": ["default", "inverse", "image", "image-blend"],
+          "default": "default"
+        },
+        { "name": "align", "values": ["start", "center"], "default": "start" }
+      ]
+    },
+    {
+      "name": "Button",
+      "cssBlock": "dsn-button",
+      "category": "content",
+      "purpose": "Triggers an action; communicates visual hierarchy and intent via variant.",
+      "platforms": ["html-css", "react", "web-components"],
+      "primaryProps": [
+        {
+          "name": "variant",
+          "values": [
+            "default",
+            "strong",
+            "subtle",
+            "strong-negative",
+            "strong-positive",
+            "default-negative",
+            "default-positive",
+            "subtle-negative",
+            "subtle-positive"
+          ],
+          "default": "strong"
+        },
+        {
+          "name": "size",
+          "values": ["default", "small", "large"],
+          "default": "default"
+        },
+        { "name": "iconOnly", "type": "boolean", "default": false },
+        { "name": "loading", "type": "boolean", "default": false },
+        { "name": "fullWidth", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "ButtonLink",
+      "cssBlock": "dsn-button",
+      "category": "content",
+      "purpose": "Semantically an <a> element, visually a Button; for navigation actions with high visual prominence.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        {
+          "name": "variant",
+          "values": [
+            "default",
+            "strong",
+            "subtle",
+            "strong-negative",
+            "strong-positive",
+            "default-negative",
+            "default-positive",
+            "subtle-negative",
+            "subtle-positive"
+          ],
+          "default": "strong"
+        },
+        {
+          "name": "size",
+          "values": ["default", "small", "large"],
+          "default": "default"
+        },
+        { "name": "href", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "LinkButton",
+      "cssBlock": "dsn-link-button",
+      "category": "content",
+      "purpose": "Semantically a <button>, visually a Link; for low-prominence JavaScript actions.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "Icon",
+      "cssBlock": "dsn-icon",
+      "category": "content",
+      "purpose": "Renders a named SVG icon from the system's icon registry.",
+      "platforms": ["html-css", "react", "web-components"],
+      "primaryProps": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "size", "values": ["sm", "md", "lg", "xl"], "default": "md" }
+      ]
+    },
+    {
+      "name": "Heading",
+      "cssBlock": "dsn-heading",
+      "category": "content",
+      "purpose": "Semantic heading element (h1–h6) with a decoupled visual appearance level.",
+      "platforms": ["html-css", "react", "web-components"],
+      "primaryProps": [
+        { "name": "level", "values": [1, 2, 3, 4, 5, 6], "required": true },
+        {
+          "name": "appearance",
+          "values": [1, 2, 3, 4, 5, 6],
+          "default": "matches level"
+        }
+      ]
+    },
+    {
+      "name": "Paragraph",
+      "cssBlock": "dsn-paragraph",
+      "category": "content",
+      "purpose": "Body text with lead, default, and small-print size variants.",
+      "platforms": ["html-css", "react", "web-components"],
+      "primaryProps": [
+        {
+          "name": "size",
+          "values": ["default", "lead", "small-print"],
+          "default": "default"
+        }
+      ]
+    },
+    {
+      "name": "Link",
+      "cssBlock": "dsn-link",
+      "category": "content",
+      "purpose": "Hyperlink with optional icon support and automatic external link handling.",
+      "platforms": ["html-css", "react", "web-components"],
+      "primaryProps": [
+        { "name": "href", "type": "string", "required": true },
+        { "name": "external", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "UnorderedList",
+      "cssBlock": "dsn-unordered-list",
+      "category": "content",
+      "purpose": "Styled unordered list.",
+      "platforms": ["html-css", "react", "web-components"],
+      "primaryProps": []
+    },
+    {
+      "name": "OrderedList",
+      "cssBlock": "dsn-ordered-list",
+      "category": "content",
+      "purpose": "Styled ordered list.",
+      "platforms": ["html-css", "react", "web-components"],
+      "primaryProps": []
+    },
+    {
+      "name": "Alert",
+      "cssBlock": "dsn-alert",
+      "category": "display-feedback",
+      "purpose": "Live region message that informs the user of an important status related to the current activity.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        {
+          "name": "variant",
+          "values": ["info", "positive", "negative", "warning"],
+          "default": "info"
+        }
+      ]
+    },
+    {
+      "name": "Note",
+      "cssBlock": "dsn-note",
+      "category": "display-feedback",
+      "purpose": "Visually highlighted passive informational message; not a live region.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        {
+          "name": "variant",
+          "values": ["neutral", "info", "positive", "negative", "warning"],
+          "default": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "StatusBadge",
+      "cssBlock": "dsn-status-badge",
+      "category": "display-feedback",
+      "purpose": "Compact label communicating a status with a signal colour.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        {
+          "name": "variant",
+          "values": ["neutral", "info", "positive", "negative", "warning"],
+          "default": "neutral"
+        }
+      ]
+    },
+    {
+      "name": "DotBadge",
+      "cssBlock": "dsn-dot-badge",
+      "category": "display-feedback",
+      "purpose": "Small coloured dot that draws attention to a status change on a parent element, with an optional pulse animation.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        {
+          "name": "variant",
+          "values": ["negative", "positive", "warning", "info", "neutral"],
+          "default": "negative"
+        },
+        { "name": "pulse", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "NumberBadge",
+      "cssBlock": "dsn-number-badge",
+      "category": "display-feedback",
+      "purpose": "Compact inline element displaying a count (unread messages, pending tasks) inside a button or menu item.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "Table",
+      "cssBlock": "dsn-table",
+      "category": "display-feedback",
+      "purpose": "Accessible data table with a required caption, optional horizontal scroll wrapper, and CSS-based sort icon support.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "caption", "type": "string", "required": true },
+        { "name": "scrollable", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "Details",
+      "cssBlock": "dsn-details",
+      "category": "display-feedback",
+      "purpose": "Expandable content disclosure using the native <details>/<summary> HTML pattern.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "summary", "type": "string", "required": true },
+        { "name": "defaultOpen", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "Image",
+      "cssBlock": "dsn-image",
+      "category": "display-feedback",
+      "purpose": "Accessible image wrapper with lazy loading, fixed aspect ratios, and LCP priority support.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "src", "type": "string", "required": true },
+        { "name": "alt", "type": "string", "required": true },
+        {
+          "name": "aspectRatio",
+          "values": ["1/1", "4/3", "16/9", "3/2"],
+          "default": null
+        },
+        { "name": "priority", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "Card",
+      "cssBlock": "dsn-card",
+      "category": "display-feedback",
+      "purpose": "Configurable container for structured content (image, heading, description, action) with an optional stretched-link interaction.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "ModalDialog",
+      "cssBlock": "dsn-modal-dialog",
+      "category": "display-feedback",
+      "purpose": "Modal dialog for short focused actions; blocks the background via native <dialog> with a focus trap.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "Drawer",
+      "cssBlock": "dsn-drawer",
+      "category": "display-feedback",
+      "purpose": "Slide-in panel from the side of the viewport for secondary navigation or content.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "position", "values": ["start", "end"], "default": "end" }
+      ]
+    },
+    {
+      "name": "Backdrop",
+      "cssBlock": "dsn-backdrop",
+      "category": "display-feedback",
+      "purpose": "Fixed full-screen decorative overlay behind a Modal Dialog or Drawer; always aria-hidden.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "Spinner",
+      "cssBlock": "dsn-spinner",
+      "category": "display-feedback",
+      "purpose": "Circular loading indicator for indeterminate wait times with role=\"status\" and a required accessible label.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        {
+          "name": "size",
+          "values": ["default", "large"],
+          "default": "default"
+        },
+        { "name": "hideLabel", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "ProgressBar",
+      "cssBlock": "dsn-progress-bar",
+      "category": "display-feedback",
+      "purpose": "Horizontal progress bar for determinate wait times with a visual percentage label.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "value", "type": "number", "required": true },
+        { "name": "max", "type": "number", "default": 100 }
+      ]
+    },
+    {
+      "name": "File",
+      "cssBlock": "dsn-file",
+      "category": "display-feedback",
+      "purpose": "Displays file metadata (name, type, size) with contextual upload states and an optional interactive variant.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        {
+          "name": "state",
+          "values": ["default", "loading", "uploaded", "error"],
+          "default": "default"
+        },
+        {
+          "name": "ctaVariant",
+          "values": ["view", "download"],
+          "default": "view"
+        },
+        {
+          "name": "mediaType",
+          "values": ["document", "image"],
+          "default": "document"
+        }
+      ]
+    },
+    {
+      "name": "Popover",
+      "cssBlock": "dsn-popover",
+      "category": "display-feedback",
+      "purpose": "Lightweight non-modal overlay anchored to a trigger element, light-dismissed via the HTML Popover API.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "SummaryList",
+      "cssBlock": "dsn-summary-list",
+      "category": "display-feedback",
+      "purpose": "Semantic key-value list (<dl>) for form summaries and metadata overviews with a responsive grid layout.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "Logo",
+      "cssBlock": "dsn-logo",
+      "category": "branding",
+      "purpose": "Theme-aware inline SVG logo with design token colours that adapts automatically to every theme and colour mode.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "decorative", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "SkipLink",
+      "cssBlock": "dsn-skip-link",
+      "category": "accessibility",
+      "purpose": "First focusable element on the page, visible on keyboard focus to let users skip repeated navigation (WCAG 2.4.1).",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [{ "name": "href", "type": "string", "required": true }]
+    },
+    {
+      "name": "BreadcrumbNavigation",
+      "cssBlock": "dsn-breadcrumb-navigation",
+      "category": "navigation",
+      "purpose": "Hierarchical navigation trail with a compact variant triggered via container query.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "Menu",
+      "cssBlock": "dsn-menu",
+      "category": "navigation",
+      "purpose": "Container for MenuLink and MenuButton items in a vertical or horizontal navigation list.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        {
+          "name": "orientation",
+          "values": ["vertical", "horizontal"],
+          "default": "vertical"
+        }
+      ]
+    },
+    {
+      "name": "MenuButton",
+      "cssBlock": "dsn-menu-button",
+      "category": "navigation",
+      "purpose": "Navigation button for JavaScript actions (logout, open modal); semantically a <button>, visually consistent with MenuLink.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "level", "values": [1, 2, 3, 4], "default": 1 },
+        { "name": "current", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "MenuLink",
+      "cssBlock": "dsn-menu-link",
+      "category": "navigation",
+      "purpose": "Navigation link with level hierarchy (1–4), active page state, and expandable sub-navigation.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "level", "values": [1, 2, 3, 4], "default": 1 },
+        { "name": "current", "type": "boolean", "default": false },
+        { "name": "expanded", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "PageBody",
+      "cssBlock": "dsn-page-body",
+      "category": "navigation",
+      "purpose": "Structural wrapper for main page content that fills available vertical space so PageFooter stays at the bottom.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "PageFooter",
+      "cssBlock": "dsn-page-footer",
+      "category": "navigation",
+      "purpose": "Page footer with accent background, thick top border, and a 4-column grid layout.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "PageHeader",
+      "cssBlock": "dsn-page-header",
+      "category": "navigation",
+      "purpose": "Page-wide header bar with logo, navigation, and actions slots; theme-aware background via design tokens.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "PageLayout",
+      "cssBlock": "dsn-page-layout",
+      "category": "navigation",
+      "purpose": "Full-page structural wrapper that vertically stacks PageHeader, PageBody, and PageFooter with min-height: 100dvh.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "TextInput",
+      "cssBlock": "dsn-text-input",
+      "category": "form-input",
+      "purpose": "Single-line text input with an optional wrapper for inline icons or prefix/suffix labels.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "disabled", "type": "boolean", "default": false },
+        { "name": "invalid", "type": "boolean", "default": false },
+        {
+          "name": "width",
+          "values": ["xs", "sm", "md", "lg", "xl", "full"],
+          "default": "full"
+        }
+      ]
+    },
+    {
+      "name": "TextArea",
+      "cssBlock": "dsn-text-area",
+      "category": "form-input",
+      "purpose": "Multi-line text input.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "rows", "type": "number", "default": 4 },
+        { "name": "disabled", "type": "boolean", "default": false },
+        { "name": "invalid", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "FileInput",
+      "cssBlock": "dsn-file-input",
+      "category": "form-input",
+      "purpose": "File upload input with drag-and-drop support and multiple file selection.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "multiple", "type": "boolean", "default": false },
+        { "name": "accept", "type": "string", "default": null }
+      ]
+    },
+    {
+      "name": "EmailInput",
+      "cssBlock": "dsn-text-input",
+      "category": "form-input",
+      "purpose": "Email address input with type=\"email\" browser validation; extends TextInput styles.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "disabled", "type": "boolean", "default": false },
+        { "name": "invalid", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "PasswordInput",
+      "cssBlock": "dsn-text-input",
+      "category": "form-input",
+      "purpose": "Password input with a show/hide toggle button; extends TextInput styles.",
+      "platforms": ["react"],
+      "primaryProps": [
+        {
+          "name": "passwordAutocomplete",
+          "values": ["current-password", "new-password"],
+          "default": "current-password"
+        }
+      ]
+    },
+    {
+      "name": "NumberInput",
+      "cssBlock": "dsn-text-input",
+      "category": "form-input",
+      "purpose": "Numeric text input following the GOV.UK pattern; extends TextInput styles.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "allowDecimals", "type": "boolean", "default": false },
+        {
+          "name": "width",
+          "values": ["xs", "sm", "md", "lg", "xl", "full"],
+          "default": "full"
+        }
+      ]
+    },
+    {
+      "name": "TelephoneInput",
+      "cssBlock": "dsn-text-input",
+      "category": "form-input",
+      "purpose": "Telephone number input with type=\"tel\"; extends TextInput styles.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "disabled", "type": "boolean", "default": false },
+        { "name": "invalid", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "SearchInput",
+      "cssBlock": "dsn-text-input",
+      "category": "form-input",
+      "purpose": "Search input with an inline search icon and a suppressed native clear button.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "disabled", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "TimeInput",
+      "cssBlock": "dsn-text-input",
+      "category": "form-input",
+      "purpose": "Time input with an inline icon button that opens the native time picker.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "disabled", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "DateInput",
+      "cssBlock": "dsn-text-input",
+      "category": "form-input",
+      "purpose": "Date input with an inline calendar icon button that opens the native date picker.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "disabled", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "Select",
+      "cssBlock": "dsn-text-input",
+      "category": "form-input",
+      "purpose": "Native select dropdown with a custom chevron icon; extends TextInput wrapper styles.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "disabled", "type": "boolean", "default": false },
+        { "name": "invalid", "type": "boolean", "default": false },
+        {
+          "name": "width",
+          "values": ["xs", "sm", "md", "lg", "xl", "full"],
+          "default": "full"
+        }
+      ]
+    },
+    {
+      "name": "DateInputGroup",
+      "cssBlock": "dsn-date-input-group",
+      "category": "form-input",
+      "purpose": "Three separate day/month/year NumberInput fields; more accessible than a native date picker.",
+      "platforms": ["react"],
+      "primaryProps": []
+    },
+    {
+      "name": "Checkbox",
+      "cssBlock": "dsn-checkbox",
+      "category": "form-option",
+      "purpose": "Custom styled checkbox with a visual check indicator.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "checked", "type": "boolean", "default": false },
+        { "name": "disabled", "type": "boolean", "default": false },
+        { "name": "indeterminate", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "Radio",
+      "cssBlock": "dsn-radio",
+      "category": "form-option",
+      "purpose": "Custom styled radio button with an inner circle indicator.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "checked", "type": "boolean", "default": false },
+        { "name": "disabled", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "OptionLabel",
+      "cssBlock": "dsn-option-label",
+      "category": "form-option",
+      "purpose": "Label element paired with a Checkbox or Radio control.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "htmlFor", "type": "string", "required": true }
+      ]
+    },
+    {
+      "name": "CheckboxOption",
+      "cssBlock": "dsn-checkbox-option",
+      "category": "form-option",
+      "purpose": "Composite of Checkbox and OptionLabel for a single labelled checkbox option.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "label", "type": "string", "required": true },
+        { "name": "checked", "type": "boolean", "default": false },
+        { "name": "disabled", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "RadioOption",
+      "cssBlock": "dsn-radio-option",
+      "category": "form-option",
+      "purpose": "Composite of Radio and OptionLabel for a single labelled radio option.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "label", "type": "string", "required": true },
+        { "name": "checked", "type": "boolean", "default": false },
+        { "name": "disabled", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "CheckboxGroup",
+      "cssBlock": "dsn-checkbox-group",
+      "category": "form-option",
+      "purpose": "Container for a group of CheckboxOption items; wrap in FormFieldset for accessible labelling.",
+      "platforms": ["react"],
+      "primaryProps": []
+    },
+    {
+      "name": "RadioGroup",
+      "cssBlock": "dsn-radio-group",
+      "category": "form-option",
+      "purpose": "Container for a group of RadioOption items; wrap in FormFieldset for accessible labelling.",
+      "platforms": ["react"],
+      "primaryProps": []
+    },
+    {
+      "name": "FormFieldLabel",
+      "cssBlock": "dsn-form-field-label",
+      "category": "form-field",
+      "purpose": "Label element for a single form input; always paired with a FormField container.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        { "name": "required", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "FormFieldLegend",
+      "cssBlock": "dsn-form-field-label",
+      "category": "form-field",
+      "purpose": "Legend element for a fieldset group; visually identical to FormFieldLabel.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "required", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "FormFieldDescription",
+      "cssBlock": "dsn-form-field-description",
+      "category": "form-field",
+      "purpose": "Helper text below a form label that provides additional context for the input.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "FormFieldErrorMessage",
+      "cssBlock": "dsn-form-field-error-message",
+      "category": "form-field",
+      "purpose": "Inline error message shown below a form input when validation fails.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": []
+    },
+    {
+      "name": "FormFieldStatus",
+      "cssBlock": "dsn-form-field-status",
+      "category": "form-field",
+      "purpose": "Status indicator for a form field showing default, positive, or warning state.",
+      "platforms": ["html-css", "react"],
+      "primaryProps": [
+        {
+          "name": "variant",
+          "values": ["default", "positive", "warning"],
+          "default": "default"
+        }
+      ]
+    },
+    {
+      "name": "FormField",
+      "cssBlock": "dsn-form-field",
+      "category": "form-field",
+      "purpose": "Container that assembles FormFieldLabel, FormFieldDescription, FormFieldErrorMessage, FormFieldStatus, and a single form input.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "label", "type": "string", "required": true },
+        { "name": "invalid", "type": "boolean", "default": false },
+        { "name": "required", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "FormFieldset",
+      "cssBlock": "dsn-form-field",
+      "category": "form-field",
+      "purpose": "Fieldset/legend container for groups of form controls such as CheckboxGroup or RadioGroup.",
+      "platforms": ["react"],
+      "primaryProps": [
+        { "name": "legend", "type": "string", "required": true },
+        { "name": "invalid", "type": "boolean", "default": false }
+      ]
+    }
+  ]
+}
