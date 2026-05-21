@@ -53,9 +53,11 @@ export function ColorSwatch({ data, label, format }: Props) {
       className="color-swatch"
       style={{ backgroundColor: data.hex }}
       onClick={handleClick}
-      title={`${label}: ${displayValue}${contrastLabel}`}
-      aria-label={`${label} — ${displayValue}${copied ? ', gekopieerd' : ''}`}
+      aria-label={`${label} — ${displayValue}${contrastLabel}${copied ? ', gekopieerd' : ''}`}
     >
+      <span className="color-swatch__tooltip" aria-hidden="true">
+        {displayValue}
+      </span>
       {showContrast && !isFallback && (
         <span
           className={`color-swatch__badge ${pass ? 'color-swatch__badge--pass' : 'color-swatch__badge--fail'}`}
