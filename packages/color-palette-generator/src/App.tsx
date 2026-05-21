@@ -102,13 +102,15 @@ export function App() {
   }
 
   function handleExportDtcg() {
-    const { light, dark } = exportDtcg(groups, format);
-    downloadJson(light, 'colors-light.json');
-    setTimeout(() => downloadJson(dark, 'colors-dark.json'), 200);
+    const filename =
+      mode === 'light' ? 'colors-light.json' : 'colors-dark.json';
+    downloadJson(exportDtcg(groups, format), filename);
   }
 
   function handleExportTokensStudio() {
-    downloadJson(exportTokensStudio(groups), 'tokens-studio.json');
+    const filename =
+      mode === 'light' ? 'colors-light.json' : 'colors-dark.json';
+    downloadJson(exportTokensStudio(groups, format), filename);
   }
 
   function handleExportGeneric() {

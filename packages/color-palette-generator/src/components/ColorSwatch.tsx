@@ -14,14 +14,30 @@ export function ColorSwatch({ data, label, format }: Props) {
 
   const displayValue = formatColor(data.oklch, format);
 
-  async function handleClick() {
-    try {
-      await navigator.clipboard.writeText(displayValue);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    } catch {
-      // clipboard not available
-    }
+  function handleClick() {
+    const doCopy = async () => {
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(displayValue);
+        return;
+      }
+      // Fallback for HTTP or denied permissions
+      const el = document.createElement('textarea');
+      el.value = displayValue;
+      el.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    };
+
+    doCopy()
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1500);
+      })
+      .catch(() => {
+        // Copy not available in this environment
+      });
   }
 
   const showContrast = data.contrastVsBgDefault !== undefined;

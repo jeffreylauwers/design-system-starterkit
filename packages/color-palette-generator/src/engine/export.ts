@@ -51,73 +51,33 @@ function buildDtcgInverseGroup(
   return result;
 }
 
+function buildDtcgOutput(
+  groups: ColorGroup[],
+  format: 'oklch' | 'hex'
+): string {
+  const output: DtcgOutput = { dsn: { color: {} } };
+  for (const group of groups) {
+    output.dsn.color[group.name] = buildDtcgGroup(group, format);
+    output.dsn.color[`${group.name}-inverse`] = buildDtcgInverseGroup(
+      group,
+      format
+    );
+  }
+  return JSON.stringify(output, null, 2);
+}
+
 export function exportDtcg(
   groups: ColorGroup[],
   format: 'oklch' | 'hex' = 'oklch'
-): { light: string; dark: string } {
-  const lightOutput: DtcgOutput = { dsn: { color: {} } };
-  const darkOutput: DtcgOutput = { dsn: { color: {} } };
-
-  for (const group of groups) {
-    lightOutput.dsn.color[group.name] = buildDtcgGroup(group, format);
-    lightOutput.dsn.color[`${group.name}-inverse`] = buildDtcgInverseGroup(
-      group,
-      format
-    );
-    darkOutput.dsn.color[group.name] = buildDtcgGroup(group, format);
-    darkOutput.dsn.color[`${group.name}-inverse`] = buildDtcgInverseGroup(
-      group,
-      format
-    );
-  }
-
-  return {
-    light: JSON.stringify(lightOutput, null, 2),
-    dark: JSON.stringify(darkOutput, null, 2),
-  };
+): string {
+  return buildDtcgOutput(groups, format);
 }
 
-interface TokensStudioToken {
-  type: 'color';
-  value: string;
-}
-
-type TokensStudioOutput = Record<
-  string,
-  Record<string, Record<string, TokensStudioToken>>
->;
-
-export function exportTokensStudio(groups: ColorGroup[]): string {
-  const output: TokensStudioOutput = {};
-
-  for (const group of groups) {
-    output[group.name] = {};
-
-    for (const step of TOKEN_STEPS) {
-      const [track, ...rest] = step.split('-');
-      const key = rest.join('-');
-      if (!output[group.name][track]) output[group.name][track] = {};
-      output[group.name][track][key] = {
-        type: 'color',
-        value: group.tokens[step].hex,
-      };
-    }
-
-    output[`${group.name}-inverse`] = {};
-    for (const step of INVERSE_TOKEN_STEPS) {
-      const withoutInverse = step.replace('inverse-', '');
-      const [track, ...rest] = withoutInverse.split('-');
-      const key = rest.join('-');
-      if (!output[`${group.name}-inverse`][track])
-        output[`${group.name}-inverse`][track] = {};
-      output[`${group.name}-inverse`][track][key] = {
-        type: 'color',
-        value: group.inverseTokens[step].hex,
-      };
-    }
-  }
-
-  return JSON.stringify(output, null, 2);
+export function exportTokensStudio(
+  groups: ColorGroup[],
+  format: 'oklch' | 'hex' = 'hex'
+): string {
+  return buildDtcgOutput(groups, format);
 }
 
 type GenericOutput = Record<string, Record<string, string>>;
