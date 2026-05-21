@@ -15,7 +15,12 @@ Interactieve OKLCH kleurenpalet generator voor het Design System Starter Kit. Ge
 - **Custom kleurgroepen** — toevoegen, hernoemen, verwijderen
 - **Exporteren** in drie formaten: DTCG JSON, Tokens Studio JSON, Generieke JSON
 
-## Gebruik
+## Live
+
+De tool is beschikbaar op:
+**https://jeffreylauwers.github.io/design-system-starter-kit/color-palette-generator/**
+
+## Lokaal ontwikkelen
 
 ```bash
 pnpm --filter @dsn-starter-kit/color-palette-generator dev

@@ -66,35 +66,11 @@ export function PaletteGrid({
       <div
         className="palette-grid"
         style={{
-          gridTemplateColumns: `220px repeat(${visibleSteps.length}, minmax(56px, 1fr))`,
+          gridTemplateColumns: `220px repeat(${visibleSteps.length}, 160px)`,
         }}
       >
-        {/* Header row */}
-        <div className="palette-grid__header palette-grid__header--sticky">
-          <span className="palette-grid__header-label">Kleurgroep</span>
-        </div>
-
-        {TOKEN_STEPS.map((step) => (
-          <div key={step} className="palette-grid__header">
-            <span className="palette-grid__header-label">
-              {COLUMN_LABELS[step]}
-            </span>
-          </div>
-        ))}
-
-        {showInverse &&
-          INVERSE_TOKEN_STEPS.map((step) => (
-            <div
-              key={step}
-              className="palette-grid__header palette-grid__header--inverse"
-            >
-              <span className="palette-grid__header-label">
-                {COLUMN_LABELS[step]}
-              </span>
-            </div>
-          ))}
-
-        {/* Divider labels */}
+        {/* Row 1: Track labels (bovenste sticky rij) */}
+        <div className="palette-grid__track-spacer" />
         <div
           className="palette-grid__track-label"
           style={{ gridColumn: '2 / 8' }}
@@ -135,6 +111,31 @@ export function PaletteGrid({
             </div>
           </>
         )}
+
+        {/* Row 2: Kolomheaders */}
+        <div className="palette-grid__header palette-grid__header--sticky">
+          <span className="palette-grid__header-label">Kleurgroep</span>
+        </div>
+
+        {TOKEN_STEPS.map((step) => (
+          <div key={step} className="palette-grid__header">
+            <span className="palette-grid__header-label">
+              {COLUMN_LABELS[step]}
+            </span>
+          </div>
+        ))}
+
+        {showInverse &&
+          INVERSE_TOKEN_STEPS.map((step) => (
+            <div
+              key={step}
+              className="palette-grid__header palette-grid__header--inverse"
+            >
+              <span className="palette-grid__header-label">
+                {COLUMN_LABELS[step]}
+              </span>
+            </div>
+          ))}
 
         {/* Color group rows */}
         {groups.map((group) => (
