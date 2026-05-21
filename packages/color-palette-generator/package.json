@@ -1,0 +1,33 @@
+{
+  "name": "@dsn-starter-kit/color-palette-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive OKLCH color palette generator for white-label themes",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "design-system",
+    "color",
+    "oklch",
+    "palette",
+    "generator"
+  ],
+  "author": "Jeffrey Lauwers",
+  "license": "MIT",
+  "dependencies": {
+    "culori": "^4.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.3.3",
+    "vite": "^6.0.0"
+  }
+}
