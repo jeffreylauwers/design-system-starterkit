@@ -17,7 +17,8 @@ import type {
 function swatch(
   oklch: OklchColor,
   bgForContrast?: OklchColor,
-  required?: number
+  required?: number,
+  isFallback?: boolean
 ): SwatchData {
   const clamped = clampToSRGB(oklch);
   const hex = oklchToHex(clamped);
@@ -35,6 +36,7 @@ function swatch(
     contrastVsBgDefault,
     contrastRequired: required,
     contrastPass,
+    isFallback,
   };
 }
 
@@ -71,8 +73,9 @@ function generateLightPalette(
   const bgActive = makeOklch(0.895, C(baseC * 0.22), H);
 
   // Track 2: Borders (mid-range L, higher C)
+  // Anchor at L=0.52 for cross-group visual alignment; adjust only if needed.
   const borderSubtle = makeOklch(0.77, C(baseC * 0.45), H);
-  let borderDefault = makeOklch(base.l, C(baseC), H);
+  let borderDefault = makeOklch(0.52, C(baseC), H);
   borderDefault = adjustLForContrast(borderDefault, bgDefault, 3, 'darken');
   let borderHover = makeOklch(borderDefault.l - 0.04, C(borderDefault.c), H);
   borderHover = adjustLForContrast(borderHover, bgHover, 3, 'darken');
@@ -80,7 +83,8 @@ function generateLightPalette(
   borderActive = adjustLForContrast(borderActive, bgActive, 3, 'darken');
 
   // Track 3: Text/icons (high contrast)
-  let colorDefault = makeOklch(base.l, C(baseC), H);
+  // Anchor at L=0.40 for cross-group visual alignment; adjust only if needed.
+  let colorDefault = makeOklch(0.4, C(baseC), H);
   colorDefault = adjustLForContrast(colorDefault, bgDefault, 4.5, 'darken');
   let colorHover = makeOklch(colorDefault.l - 0.04, C(colorDefault.c), H);
   colorHover = adjustLForContrast(colorHover, bgHover, 4.5, 'darken');
@@ -93,8 +97,10 @@ function generateLightPalette(
     C(colorDefault.c * 0.9),
     H
   );
+  let colorSubtleFallback = false;
   if (contrastRatio(colorSubtle, bgSubtle) < 4.5) {
     colorSubtle = colorDefault;
+    colorSubtleFallback = true;
   }
 
   // color-document: very dark tint
@@ -191,11 +197,11 @@ function generateLightPalette(
       'bg-default': swatch(bgDefault),
       'bg-hover': swatch(bgHover),
       'bg-active': swatch(bgActive),
-      'border-subtle': swatch(borderSubtle),
+      'border-subtle': swatch(borderSubtle, bgDefault, 3),
       'border-default': swatch(borderDefault, bgDefault, 3),
       'border-hover': swatch(borderHover, bgHover, 3),
       'border-active': swatch(borderActive, bgActive, 3),
-      'color-subtle': swatch(colorSubtle, bgSubtle, 4.5),
+      'color-subtle': swatch(colorSubtle, bgSubtle, 4.5, colorSubtleFallback),
       'color-default': swatch(colorDefault, bgDefault, 4.5),
       'color-hover': swatch(colorHover, bgHover, 4.5),
       'color-active': swatch(colorActive, bgActive, 4.5),
@@ -237,8 +243,9 @@ function generateDarkPalette(
   const bgActive = makeOklch(0.26, C(baseC * 0.22), H);
 
   // Borders: mid-range, visible on dark bg
+  // Anchor at L=0.52 for cross-group visual alignment; adjust only if needed.
   const borderSubtle = makeOklch(0.38, C(baseC * 0.45), H);
-  let borderDefault = makeOklch(base.l, C(baseC), H);
+  let borderDefault = makeOklch(0.52, C(baseC), H);
   borderDefault = adjustLForContrast(borderDefault, bgDefault, 3, 'lighten');
   let borderHover = makeOklch(borderDefault.l + 0.04, C(borderDefault.c), H);
   borderHover = adjustLForContrast(borderHover, bgHover, 3, 'lighten');
@@ -246,8 +253,8 @@ function generateDarkPalette(
   borderActive = adjustLForContrast(borderActive, bgActive, 3, 'lighten');
 
   // Text: light on dark bg
-  let colorDefault = makeOklch(base.l, C(baseC), H);
-  if (colorDefault.l < 0.6) colorDefault = makeOklch(0.75, C(baseC * 0.8), H);
+  // Anchor at L=0.72 for cross-group visual alignment; adjust only if needed.
+  let colorDefault = makeOklch(0.72, C(baseC * 0.8), H);
   colorDefault = adjustLForContrast(colorDefault, bgDefault, 4.5, 'lighten');
 
   let colorHover = makeOklch(colorDefault.l + 0.04, C(colorDefault.c * 0.9), H);
@@ -260,7 +267,11 @@ function generateDarkPalette(
     C(colorDefault.c * 0.85),
     H
   );
-  if (contrastRatio(colorSubtle, bgSubtle) < 4.5) colorSubtle = colorDefault;
+  let colorSubtleFallback = false;
+  if (contrastRatio(colorSubtle, bgSubtle) < 4.5) {
+    colorSubtle = colorDefault;
+    colorSubtleFallback = true;
+  }
 
   let colorDocument = makeOklch(0.93, C(baseC * 0.15), H);
   colorDocument = adjustLForContrast(colorDocument, bgSubtle, 4.5, 'lighten');
@@ -345,11 +356,11 @@ function generateDarkPalette(
       'bg-default': swatch(bgDefault),
       'bg-hover': swatch(bgHover),
       'bg-active': swatch(bgActive),
-      'border-subtle': swatch(borderSubtle),
+      'border-subtle': swatch(borderSubtle, bgDefault, 3),
       'border-default': swatch(borderDefault, bgDefault, 3),
       'border-hover': swatch(borderHover, bgHover, 3),
       'border-active': swatch(borderActive, bgActive, 3),
-      'color-subtle': swatch(colorSubtle, bgSubtle, 4.5),
+      'color-subtle': swatch(colorSubtle, bgSubtle, 4.5, colorSubtleFallback),
       'color-default': swatch(colorDefault, bgDefault, 4.5),
       'color-hover': swatch(colorHover, bgHover, 4.5),
       'color-active': swatch(colorActive, bgActive, 4.5),

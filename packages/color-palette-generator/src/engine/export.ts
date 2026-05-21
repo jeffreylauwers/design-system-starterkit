@@ -58,6 +58,8 @@ function buildDtcgOutput(
   const output: DtcgOutput = { dsn: { color: {} } };
   for (const group of groups) {
     output.dsn.color[group.name] = buildDtcgGroup(group, format);
+  }
+  for (const group of groups) {
     output.dsn.color[`${group.name}-inverse`] = buildDtcgInverseGroup(
       group,
       format
@@ -90,7 +92,9 @@ export function exportGeneric(groups: ColorGroup[]): string {
     for (const step of TOKEN_STEPS) {
       output[group.name][step] = group.tokens[step].hex;
     }
+  }
 
+  for (const group of groups) {
     output[`${group.name}-inverse`] = {};
     for (const step of INVERSE_TOKEN_STEPS) {
       const key = step.replace('inverse-', '');
