@@ -9,6 +9,19 @@
         "export PATH=/usr/local/bin:$PATH && pnpm --filter storybook exec storybook dev -p 6007"
       ],
       "port": 6007
+    },
+    {
+      "name": "color-palette-generator",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--filter",
+        "@dsn-starter-kit/color-palette-generator",
+        "dev",
+        "--",
+        "--port",
+        "5174"
+      ],
+      "port": 5174
     }
   ]
 }

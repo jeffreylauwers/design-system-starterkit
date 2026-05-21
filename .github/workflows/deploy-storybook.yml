@@ -1,4 +1,4 @@
-name: Deploy Storybook to GitHub Pages
+name: Deploy Storybook + Color Palette Generator to GitHub Pages
 
 on:
   push:
@@ -48,13 +48,23 @@ jobs:
       - name: Build Storybook for GitHub Pages
         run: pnpm --filter @dsn-starter-kit/storybook run build:gh-pages
 
+      - name: Build Color Palette Generator
+        run: pnpm --filter @dsn-starter-kit/color-palette-generator build
+
+      - name: Assemble Pages artifact
+        run: |
+          mkdir -p pages-artifact
+          cp -r packages/storybook/dist/. pages-artifact/
+          mkdir -p pages-artifact/color-palette-generator
+          cp -r packages/color-palette-generator/dist/. pages-artifact/color-palette-generator/
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./packages/storybook/dist
+          path: ./pages-artifact
 
   deploy:
     name: Deploy to GitHub Pages
