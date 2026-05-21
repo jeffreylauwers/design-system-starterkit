@@ -107,6 +107,7 @@ export interface SwatchData {
   contrastVsBgDefault?: number;
   contrastRequired?: number;
   contrastPass?: boolean;
+  isFallback?: boolean;
 }
 
 export type TokenMap = Record<TokenStep, SwatchData>;

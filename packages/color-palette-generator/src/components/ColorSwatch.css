@@ -50,6 +50,12 @@
   color: white;
 }
 
+.color-swatch__badge--fallback {
+  background: rgba(180, 100, 0, 0.9);
+  color: white;
+  font-size: 11px;
+}
+
 .color-swatch__copied {
   position: absolute;
   inset: 0;

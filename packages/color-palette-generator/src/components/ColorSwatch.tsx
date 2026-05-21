@@ -42,21 +42,34 @@ export function ColorSwatch({ data, label, format }: Props) {
 
   const showContrast = data.contrastVsBgDefault !== undefined;
   const pass = data.contrastPass;
+  const isFallback = data.isFallback;
+
+  const contrastLabel = showContrast
+    ? ` — contrast: ${data.contrastVsBgDefault?.toFixed(2)}:1${isFallback ? ' (zelfde als color-default; subtle-variant haalt 4.5:1 niet zelfstandig)' : ''}`
+    : '';
 
   return (
     <button
       className="color-swatch"
       style={{ backgroundColor: data.hex }}
       onClick={handleClick}
-      title={`${label}: ${displayValue}${showContrast ? ` — contrast: ${data.contrastVsBgDefault?.toFixed(2)}:1` : ''}`}
+      title={`${label}: ${displayValue}${contrastLabel}`}
       aria-label={`${label} — ${displayValue}${copied ? ', gekopieerd' : ''}`}
     >
-      {showContrast && (
+      {showContrast && !isFallback && (
         <span
           className={`color-swatch__badge ${pass ? 'color-swatch__badge--pass' : 'color-swatch__badge--fail'}`}
           aria-hidden="true"
         >
           {pass ? '✓' : '✗'}
+        </span>
+      )}
+      {isFallback && (
+        <span
+          className="color-swatch__badge color-swatch__badge--fallback"
+          aria-hidden="true"
+        >
+          ≈
         </span>
       )}
       {copied && (
