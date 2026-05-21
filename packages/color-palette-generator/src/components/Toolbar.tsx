@@ -11,7 +11,6 @@ interface Props {
   onFormatChange: (format: DisplayFormat) => void;
   onShowInverseChange: (show: boolean) => void;
   onExportDtcg: () => void;
-  onExportTokensStudio: () => void;
   onExportGeneric: () => void;
 }
 
@@ -25,7 +24,6 @@ export function Toolbar({
   onFormatChange,
   onShowInverseChange,
   onExportDtcg,
-  onExportTokensStudio,
   onExportGeneric,
 }: Props) {
   return (
@@ -101,13 +99,6 @@ export function Toolbar({
             title="DTCG JSON formaat"
           >
             DTCG
-          </button>
-          <button
-            className="toolbar__export-btn"
-            onClick={onExportTokensStudio}
-            title="Tokens Studio formaat"
-          >
-            Tokens Studio
           </button>
           <button
             className="toolbar__export-btn"

@@ -3,12 +3,7 @@ import { PaletteGrid } from './components/PaletteGrid';
 import { Toolbar } from './components/Toolbar';
 import { parseToOklch } from './engine/oklch';
 import { buildColorGroup } from './engine/palette';
-import {
-  exportDtcg,
-  exportTokensStudio,
-  exportGeneric,
-  downloadJson,
-} from './engine/export';
+import { exportDtcg, exportGeneric, downloadJson } from './engine/export';
 import type { ColorGroup, ColorMode, DisplayFormat } from './types';
 import { DEFAULT_GROUP_NAMES, DEFAULT_BASE_COLORS } from './types';
 import './App.css';
@@ -107,12 +102,6 @@ export function App() {
     downloadJson(exportDtcg(groups, format), filename);
   }
 
-  function handleExportTokensStudio() {
-    const filename =
-      mode === 'light' ? 'colors-light.json' : 'colors-dark.json';
-    downloadJson(exportTokensStudio(groups, format), filename);
-  }
-
   function handleExportGeneric() {
     downloadJson(exportGeneric(groups), 'colors.json');
   }
@@ -141,7 +130,6 @@ export function App() {
           onFormatChange={setFormat}
           onShowInverseChange={setShowInverse}
           onExportDtcg={handleExportDtcg}
-          onExportTokensStudio={handleExportTokensStudio}
           onExportGeneric={handleExportGeneric}
         />
 
